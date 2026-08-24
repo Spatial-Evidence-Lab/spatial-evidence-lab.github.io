@@ -50,6 +50,46 @@ section{padding:34px 0}
 .featured-wrap{background:linear-gradient(180deg,var(--navy-dark),#091822)}
 .featured{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#0D1D29}
 .featured-grid{display:grid;grid-template-columns:43% 57%}
+ .featured-results-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.result-card{
+  border:1px solid var(--line);
+  border-radius:11px;
+  overflow:hidden;
+  background:#0D1D29;
+}
+
+.result-map{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  display:block;
+}
+
+.result-card .featured-content{
+  padding:22px;
+}
+
+.result-card .featured-content h2{
+  font-size:1.35rem;
+  line-height:1.15;
+  margin:9px 0 10px;
+}
+
+@media(max-width:900px){
+  .featured-results-grid{
+    grid-template-columns:1fr;
+  }
+
+  .result-map{
+    height:320px;
+  }
+}
+ 
 .featured-map{min-height:300px;background:url("assets/qol-map.jpg") center/cover no-repeat}
 .featured-content{padding:26px}
 .featured-content h2{font-size:1.7rem;line-height:1.12;margin:9px 0 10px}
@@ -336,77 +376,24 @@ footer{background:#07131D;padding:22px 0;color:#fff}.footer-top{display:flex;jus
       FEATURED RESULTS
     </div>
 
-    <div class="featured-grid">
+    <div class="featured-results-grid">
 
-      <!-- MAP 06 -->
+  <!-- MAP 06 -->
 
-      <article class="featured">
+  <article class="result-card">
 
-        <div class="featured-map"
-             style="background-image:url('maps/bandon-06-composite-accessibility.png')"
-             role="img"
-             aria-label="Composite Public Transport Accessibility Index for Bandon">
-        </div>
+      <!-- FEATURED RESULTS -->
 
-        <div class="featured-content">
-
-          <div class="star">★ &nbsp; FEATURED RESULT</div>
-
-          <h2>06 — Composite Public Transport Accessibility</h2>
-
-          <p>
-            The Composite Public Transport Accessibility Index (CAI)
-            combines walking accessibility and service frequency to
-            represent the overall level of public transport accessibility
-            across Bandon.
-          </p>
-
-          <div class="pills">
-            <span class="pill">Walking Accessibility</span>
-            <span class="pill">Service Frequency</span>
-            <span class="pill">Composite Index</span>
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- MAP 07 -->
-
-      <article class="featured">
-
-        <div class="featured-map"
-             style="background-image:url('maps/bandon-07-hotspots.png')"
-             role="img"
-             aria-label="Accessibility–Vulnerability Hotspots in Bandon">
-        </div>
-
-        <div class="featured-content">
-
-          <div class="star">★ &nbsp; KEY RESULT</div>
-
-          <h2>07 — Accessibility–Vulnerability Hotspots</h2>
-
-          <p>
-            The hotspot analysis identifies areas where lower public
-            transport accessibility coincides with higher population
-            vulnerability, highlighting potential areas of transport
-            disadvantage.
-          </p>
-
-          <div class="pills">
-            <span class="pill">Accessibility</span>
-            <span class="pill">Vulnerability</span>
-            <span class="pill">Spatial Overlay</span>
-            <span class="pill">Transport Disadvantage</span>
-          </div>
-
-        </div>
-
-      </article>
-
+    <div class="pipeline-title" style="margin-bottom:12px;">
+      FEATURED RESULTS
     </div>
+
+    <div class="featured-results-grid">
+
+  <!-- MAP 06 -->
+
+  <article class="result-card">
+
 
 
     <!-- EXPLORE THE ANALYSIS -->
@@ -423,7 +410,7 @@ footer{background:#07131D;padding:22px 0;color:#fff}.footer-top{display:flex;jus
 
         <article class="card" style="padding:0;overflow:hidden;">
 
-          <img src="maps/bandon-01-study-area.svg"
+          <img src="maps/bandon-01-study-area.png"
                alt="Study Area and Public Transport Network in Bandon"
                style="width:100%;height:190px;object-fit:cover;display:block;">
 
@@ -443,7 +430,7 @@ footer{background:#07131D;padding:22px 0;color:#fff}.footer-top{display:flex;jus
 
         <article class="card" style="padding:0;overflow:hidden;">
 
-          <img src="maps/bandon-02-walking-accessibility.svg"
+          <img src="maps/bandon-02-walking-accessibility.png"
                alt="Walking Accessibility to Public Transport in Bandon"
                style="width:100%;height:190px;object-fit:cover;display:block;">
 
@@ -463,7 +450,7 @@ footer{background:#07131D;padding:22px 0;color:#fff}.footer-top{display:flex;jus
 
         <article class="card" style="padding:0;overflow:hidden;">
 
-          <img src="maps/bandon-03-accessibility-score.svg"
+          <img src="maps/bandon-03-accessibility-score.png"
                alt="Public Transport Accessibility Score in Bandon"
                style="width:100%;height:190px;object-fit:cover;display:block;">
 
@@ -483,7 +470,7 @@ footer{background:#07131D;padding:22px 0;color:#fff}.footer-top{display:flex;jus
 
         <article class="card" style="padding:0;overflow:hidden;">
 
-          <img src="maps/bandon-04-peak-time-accessibility.svg"
+          <img src="maps/bandon-04-peak-time-accessibility.png"
                alt="Peak-Time Public Transport Accessibility in Bandon"
                style="width:100%;height:190px;object-fit:cover;display:block;">
 
@@ -503,7 +490,7 @@ footer{background:#07131D;padding:22px 0;color:#fff}.footer-top{display:flex;jus
 
         <article class="card" style="padding:0;overflow:hidden;">
 
-          <img src="maps/bandon-05-vulnerability.svg"
+          <img src="maps/bandon-05-vulnerability.png"
                alt="Population Vulnerability in Bandon"
                style="width:100%;height:190px;object-fit:cover;display:block;">
 
@@ -794,6 +781,90 @@ footer{background:#07131D;padding:22px 0;color:#fff}.footer-top{display:flex;jus
       </p>
 
     </div>
+
+  </div>
+</section>
+
+    <section id="conclusion">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>06 — Conclusion</h2>
+      <p>
+        Identifying spatial patterns of public transport accessibility
+        and potential transport disadvantage in Bandon.
+      </p>
+    </div>
+
+    <article class="featured">
+      <div class="featured-content">
+
+        <div class="star">★ &nbsp; KEY FINDINGS</div>
+
+        <h2>
+          Accessibility varies across Bandon, with some areas combining
+          lower public transport accessibility with greater population vulnerability.
+        </h2>
+
+        <p>
+          The analysis demonstrates how GIS-based network analysis,
+          service-frequency information and Census 2022 indicators can
+          be combined to identify spatial patterns of transport disadvantage.
+        </p>
+
+        <div class="research-grid" style="margin-top:22px;">
+
+          <article class="card">
+            <span class="card-num">01</span>
+            <h3>Accessibility Differences</h3>
+            <p>
+              Public transport accessibility varies spatially according
+              to walking distance and service availability.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-num">02</span>
+            <h3>Population Vulnerability</h3>
+            <p>
+              Vulnerability is not evenly distributed across the study area
+              and can be examined alongside transport accessibility.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-num">03</span>
+            <h3>Transport Disadvantage</h3>
+            <p>
+              Spatial overlap between lower accessibility and higher
+              vulnerability highlights areas for further investigation.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-num">04</span>
+            <h3>Planning Implications</h3>
+            <p>
+              The approach provides an evidence base for considering
+              where improvements in public transport accessibility may
+              have the greatest potential benefit.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="panel" style="margin-top:20px;">
+          <div class="pipeline-title">PROJECT STATUS</div>
+          <h2 style="margin-top:8px;">
+            Research / Development
+          </h2>
+          <p style="margin-top:5px;">
+            Bandon · County Cork · Ireland
+          </p>
+        </div>
+
+      </div>
+    </article>
 
   </div>
 </section>
