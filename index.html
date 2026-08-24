@@ -1,1065 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spatial Evidence Lab | Geospatial Research & Spatial Analytics</title>
-
-<meta name="description"
-      content="Spatial Evidence Lab — independent geospatial research and spatial analytics by José F. Spatial data. Place-based evidence.">
-
+<meta name="description" content="Spatial Evidence Lab — independent geospatial research, spatial analytics and geographic data engineering.">
 <style>
-    :root {
-        --navy: #172A3A;
-        --navy-dark: #0E1C27;
-        --teal: #1F7A8C;
-        --teal-light: #DCEFF1;
-        --orange: #E58F65;
-        --cream: #F5F3EE;
-        --white: #FFFFFF;
-        --slate: #536878;
-        --light: #E8ECEE;
-        --max-width: 1180px;
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            Roboto,
-            Helvetica,
-            Arial,
-            sans-serif;
-       color: #E8EEF1;
-background: #0E1C27;
-line-height: 1.6;
-
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .container {
-        width: min(92%, var(--max-width));
-        margin: 0 auto;
-    }
-
-    /* Navigation */
-
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: rgba(245, 243, 238, 0.95);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(23, 42, 58, 0.10);
-    }
-
-    .nav-inner {
-        min-height: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-    }
-
-    .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-    }
-
-    .brand-mark {
-        width: 38px;
-        height: 38px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        gap: 2px;
-    }
-
-    .brand-mark span {
-        background: var(--teal);
-    }
-
-    .brand-mark span:nth-child(2),
-    .brand-mark span:nth-child(5) {
-        background: var(--navy);
-    }
-
-    .brand-mark span:nth-child(7) {
-        background: var(--orange);
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 26px;
-        font-size: 0.92rem;
-        color: var(--slate);
-    }
-
-    .nav-links a:hover {
-        color: var(--teal);
-    }
-
-    /* Hero */
-
-    .hero {
-        background:
-            radial-gradient(circle at 85% 20%, rgba(31, 122, 140, 0.18), transparent 30%),
-            linear-gradient(135deg, var(--navy-dark), var(--navy));
-        color: var(--white);
-        padding: 110px 0 115px;
-        overflow: hidden;
-    }
-
-    .hero-grid {
-        display: grid;
-        grid-template-columns: 1.25fr 0.75fr;
-        gap: 70px;
-        align-items: center;
-    }
-
-    .eyebrow {
-        color: #8ED1D8;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        font-size: 0.78rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-    }
-
-    h1 {
-        font-size: clamp(3rem, 7vw, 5.8rem);
-        line-height: 0.98;
-        letter-spacing: -0.055em;
-        margin-bottom: 28px;
-    }
-
-    .hero h1 span {
-        color: #8ED1D8;
-    }
-
-    .hero-description {
-        max-width: 650px;
-        font-size: clamp(1.1rem, 2vw, 1.35rem);
-        color: #D8E2E7;
-        margin-bottom: 36px;
-    }
-
-    .tagline {
-        font-size: 1.05rem;
-        color: var(--white);
-        font-weight: 600;
-        margin-bottom: 30px;
-    }
-
-    .buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-    }
-
-    .button {
-        display: inline-block;
-        padding: 13px 21px;
-        border-radius: 7px;
-        font-weight: 700;
-        font-size: 0.92rem;
-        transition: 0.2s ease;
-    }
-
-    .button-primary {
-        background: var(--orange);
-        color: var(--navy-dark);
-    }
-
-    .button-primary:hover {
-        transform: translateY(-2px);
-        background: #F0A27D;
-    }
-
-    .button-secondary {
-        border: 1px solid rgba(255,255,255,0.35);
-        color: white;
-    }
-
-    .button-secondary:hover {
-        background: rgba(255,255,255,0.08);
-    }
-
-    /* Spatial graphic */
-
-    .spatial-graphic {
-        position: relative;
-        min-height: 350px;
-    }
-
-    .grid-map {
-        position: absolute;
-        inset: 20px;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        gap: 5px;
-        transform: rotate(-6deg);
-    }
-
-    .grid-map div {
-        border: 1px solid rgba(142, 209, 216, 0.28);
-        background: rgba(31, 122, 140, 0.12);
-    }
-
-    .grid-map div:nth-child(8),
-    .grid-map div:nth-child(15),
-    .grid-map div:nth-child(22),
-    .grid-map div:nth-child(29) {
-        background: rgba(229, 143, 101, 0.75);
-        border-color: transparent;
-    }
-
-    .grid-map div:nth-child(10),
-    .grid-map div:nth-child(16),
-    .grid-map div:nth-child(23),
-    .grid-map div:nth-child(27) {
-        background: rgba(142, 209, 216, 0.55);
-    }
-
-    /* Sections */
-
-    section {
-        padding: 95px 0;
-    }
-
-    .section-heading {
-        max-width: 720px;
-        margin-bottom: 45px;
-    }
-
-    .section-heading .eyebrow {
-        color: var(--teal);
-        margin-bottom: 10px;
-    }
-
-    h2 {
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        letter-spacing: -0.04em;
-        line-height: 1.05;
-        margin-bottom: 15px;
-    }
-
-    .section-heading p {
-        color: #AAB9C2;
-        font-size: 1.08rem;
-    }
-
-    /* Research */
-
-    .research-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    }
-
-    .research-card {
-        padding: 30px;
-        background: #172A3A;
-        border: 1px solid var(--light);
-        border-radius: 12px;
-        transition: 0.2s ease;
-    }
-
-    .research-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(31, 122, 140, 0.45);
-        box-shadow: 0 12px 30px rgba(23,42,58,0.07);
-    }
-
-    .research-number {
-        color: var(--orange);
-        font-weight: 800;
-        font-size: 0.78rem;
-        letter-spacing: 0.1em;
-        margin-bottom: 18px;
-    }
-
-    .research-card h3 {
-        margin-bottom: 10px;
-        font-size: 1.25rem;
-    }
-
-    .research-card p {
-        color: var(--slate);
-        font-size: 0.95rem;
-    }
-
-    /* Featured project */
-
-    .featured {
-         background: #111F2B;
-    }
-
-    .project {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        min-height: 430px;
-        border: 1px solid rgba(142, 209, 216, 0.14);
-        border-radius: 16px;
-        overflow: hidden;
-    }
-
-    .project-visual {
-        min-height: 350px;
-        background:
-            linear-gradient(135deg, rgba(31,122,140,0.9), rgba(23,42,58,0.95));
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px;
-    }
-
-    .map-placeholder {
-        width: 85%;
-        height: 80%;
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        gap: 3px;
-        opacity: 0.9;
-    }
-
-    .map-placeholder span {
-        background: rgba(255,255,255,0.12);
-    }
-
-    .map-placeholder span:nth-child(4n) {
-        background: rgba(229,143,101,0.7);
-    }
-
-    .project-content {
-        padding: 55px;
-        display: flex;
-        background: #172A3A;  
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .project-label {
-        color: var(--teal);
-        text-transform: uppercase;
-        letter-spacing: 0.13em;
-        font-size: 0.75rem;
-        font-weight: 800;
-        margin-bottom: 14px;
-    }
-
-    .project-content h3 {
-        font-size: 2.15rem;
-        line-height: 1.1;
-        margin-bottom: 18px;
-    }
-
-    .project-content p {
-        color: #AAB9C2;
-        margin-bottom: 25px;
-    }
-
-    .text-link {
-        color: var(--teal);
-        font-weight: 700;
-    }
-
-    .text-link:hover {
-        color: var(--navy);
-    }
-
-    /* Resources */
-
-    .resources {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    }
-
-    .resource {
-        background: var(--navy);
-        color: white;
-        padding: 35px;
-        border-radius: 12px;
-        min-height: 230px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .resource:nth-child(2) {
-        background: var(--teal);
-    }
-
-    .resource:nth-child(3) {
-        background: #315064;
-    }
-
-    .resource h3 {
-        font-size: 1.45rem;
-        margin-bottom: 8px;
-    }
-
-    .resource p {
-        color: rgba(255,255,255,0.78);
-        font-size: 0.94rem;
-    }
-
-    .resource a {
-        color: white;
-        font-weight: 700;
-    }
-
-    /* About */
-
-    .about {
-        background: #111F2B;
-    }
-
-    .about-grid {
-        display: grid;
-        grid-template-columns: 0.8fr 1.2fr;
-        gap: 80px;
-        align-items: center;
-    }
-
-    .about-mark {
-        width: 220px;
-        height: 220px;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        gap: 5px;
-        transform: rotate(-4deg);
-    }
-
-    .about-mark span {
-        background: var(--teal);
-    }
-
-    .about-mark span:nth-child(3n) {
-        background: var(--navy);
-    }
-
-    .about-mark span:nth-child(7) {
-        background: var(--orange);
-    }
-
-    .about-text p {
-         color: #AAB9C2;
-        margin-bottom: 18px;
-    }
-
-    /* Footer */
-
-    footer {
-        background: var(--navy-dark);
-        color: white;
-        padding: 55px 0 30px;
-    }
-
-    .footer-top {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-        padding-bottom: 40px;
-        border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .footer-brand {
-        font-size: 1.2rem;
-        font-weight: 800;
-    }
-
-    .footer-description {
-        color: #AAB9C2;
-        margin-top: 8px;
-        max-width: 420px;
-        font-size: 0.9rem;
-    }
-
-    .footer-links {
-        display: flex;
-        gap: 24px;
-        color: #D8E2E7;
-        font-size: 0.9rem;
-    }
-
-    .footer-links a:hover {
-        color: #8ED1D8;
-    }
-
-    .copyright {
-        padding-top: 25px;
-        color: #7F929E;
-        font-size: 0.8rem;
-    }
-
-    /* Mobile */
-
-    @media (max-width: 850px) {
-        .nav-links {
-            display: none;
-        }
-
-        .hero {
-            padding: 80px 0;
-        }
-
-        .hero-grid,
-        .about-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .spatial-graphic {
-            min-height: 260px;
-        }
-
-        .research-grid,
-        .resources {
-            grid-template-columns: 1fr;
-        }
-
-        .project {
-            grid-template-columns: 1fr;
-        }
-
-        .project-content {
-            padding: 35px;
-        }
-
-        .footer-top {
-            flex-direction: column;
-        }
-
-        .footer-links {
-            flex-wrap: wrap;
-        }
-    }
-
-    @media (max-width: 520px) {
-        section {
-            padding: 70px 0;
-        }
-
-        .brand span:last-child {
-            font-size: 0.9rem;
-        }
-
-        h1 {
-            font-size: 3.2rem;
-        }
-
-        .buttons {
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        .button {
-            text-align: center;
-        }
-
-        .spatial-graphic {
-            min-height: 220px;
-        }
-    }
+:root{
+  --navy:#172A3A; --navy-dark:#0E1C27; --navy-2:#111F2B;
+  --teal:#1F7A8C; --teal-light:#8ED1D8; --orange:#E58F65;
+  --cream:#F5F3EE; --white:#fff; --muted:#AAB9C2; --line:rgba(142,209,216,.18);
+  --max:1180px; --radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+background:var(--navy-dark);color:#E8EEF1;line-height:1.5}
+a{color:inherit;text-decoration:none}
+.container{width:min(94%,var(--max));margin:auto}
+nav{position:sticky;top:0;z-index:50;background:rgba(14,28,39,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}
+.brand-mark{width:38px;height:38px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:2px;transform:rotate(45deg)}
+.brand-mark span{background:var(--teal)}
+.brand-mark span:nth-child(2),.brand-mark span:nth-child(5){background:var(--navy)}
+.brand-mark span:nth-child(7){background:var(--orange)}
+.nav-links{display:flex;gap:30px;color:#D8E2E7;font-size:.92rem}
+.nav-links a{padding:28px 0;border-bottom:2px solid transparent}
+.nav-links a:hover,.nav-links a.active{color:#00D7E8;border-color:#00D7E8}
+.github{border:1px solid rgba(255,255,255,.25);border-radius:7px;padding:10px 13px;font-size:1.1rem}
+.hero{position:relative;overflow:hidden;background:
+radial-gradient(circle at 74% 22%,rgba(31,122,140,.20),transparent 28%),
+linear-gradient(135deg,#071520 0%,var(--navy-dark) 55%,#102B3A 100%);padding:58px 0 42px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.72rem;font-weight:800;color:#00D7E8;margin-bottom:13px}
+.hero h1{font-size:clamp(2.5rem,4.8vw,4.4rem);line-height:1.04;letter-spacing:-.05em;margin-bottom:20px}
+.hero p{color:#D8E2E7;max-width:590px;font-size:1rem;margin-bottom:18px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:12px;color:#00D7E8;font-size:.76rem;font-weight:700}
+.hero-tags span::before{content:"•";margin-right:7px}
+.hero-visual{position:relative;min-height:350px}
+.hero-map{position:absolute;inset:0;background:url("assets/hero-map.jpg") center/cover no-repeat;opacity:.95;mask-image:linear-gradient(to right,transparent 0%,black 14%,black 100%)}
+.hero-card{position:absolute;right:0;bottom:18px;width:min(360px,55%);padding:24px;background:rgba(14,28,39,.91);border:1px solid rgba(255,255,255,.2);border-radius:11px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.star{color:var(--orange);font-size:.85rem;font-weight:800;text-transform:uppercase}
+.hero-card h3{font-size:1.15rem;margin:11px 0 8px}.hero-card p{font-size:.84rem;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border-radius:6px;font-size:.8rem;font-weight:800}
+.btn-primary{background:#00AFC8;color:#071520}.btn-outline{border:1px solid rgba(255,255,255,.3)}
+section{padding:34px 0}
+.section-heading{margin-bottom:16px}.section-heading h2{font-size:1.25rem;color:#00D7E8;text-transform:uppercase;letter-spacing:.02em}.section-heading p{color:#AAB9C2;font-size:.82rem}
+.featured-wrap{background:linear-gradient(180deg,var(--navy-dark),#091822)}
+.featured{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#0D1D29}
+.featured-grid{display:grid;grid-template-columns:43% 57%}
+.featured-map{min-height:300px;background:url("assets/qol-map.jpg") center/cover no-repeat}
+.featured-content{padding:26px}
+.featured-content h2{font-size:1.7rem;line-height:1.12;margin:9px 0 10px}
+.featured-content p{color:#D0DCE2;font-size:.86rem;max-width:610px}
+.pipeline{margin:22px 0;border-top:1px solid var(--line);padding-top:15px}
+.pipeline-title{font-size:.7rem;color:#00D7E8;text-transform:uppercase;font-weight:800}
+.pipeline-row{display:flex;justify-content:space-between;gap:8px;margin-top:13px}
+.step{text-align:center;flex:1;font-size:.68rem;color:#D8E2E7}.step-icon{font-size:1.35rem;margin-bottom:5px;color:#fff}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}.pill{border:1px solid rgba(255,255,255,.22);border-radius:4px;padding:5px 8px;font-size:.7rem;color:#D8E2E7}
+.research-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.card{border:1px solid var(--line);background:#0E1F2B;border-radius:7px;padding:16px;min-height:125px;position:relative}
+.card-num{display:inline-flex;border:1px solid #00D7E8;color:#00D7E8;border-radius:4px;padding:3px 7px;font-weight:800;font-size:.75rem;margin-bottom:10px}
+.card h3{font-size:.92rem;margin-bottom:5px}.card p{font-size:.75rem;color:#AAB9C2;max-width:220px}
+.arrow{position:absolute;right:13px;bottom:12px;color:#00D7E8;font-size:1rem}
+.projects-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}.projects-head a{color:#00D7E8;font-size:.78rem}
+.projects{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.project-card{overflow:hidden;border:1px solid var(--line);border-radius:7px;background:#0E1F2B}
+.project-card img{width:100%;height:108px;object-fit:cover;display:block}.project-body{padding:10px}.project-body h3{font-size:.78rem;line-height:1.2;margin-bottom:6px}.project-body p{font-size:.68rem;color:#AAB9C2;min-height:42px}.badge{display:inline-block;margin-top:7px;border:1px solid var(--orange);color:var(--orange);border-radius:3px;padding:2px 5px;font-size:.58rem;font-weight:800}
+.engineering{display:grid;grid-template-columns:1.4fr 1fr;gap:10px}.panel{border:1px solid var(--line);border-radius:8px;background:#0E1F2B;padding:17px}.panel h2{font-size:1rem;color:#00D7E8;margin-bottom:5px}.panel>p{font-size:.72rem;color:#AAB9C2}
+.pipeline-large{display:flex;justify-content:space-between;gap:4px;align-items:center;margin:25px 0 16px}.pipe-step{text-align:center;flex:1;color:#D8E2E7;font-size:.63rem}.pipe-step strong{display:block;font-size:1.35rem;font-weight:400;margin-bottom:4px}.tech{display:flex;gap:6px;flex-wrap:wrap}.tech span{border:1px solid rgba(255,255,255,.2);padding:4px 7px;border-radius:4px;font-size:.65rem}
+.outputs{display:grid;grid-template-columns:1fr 1fr;gap:20px}.outputs ul{list-style:none;display:grid;gap:7px;margin-top:10px}.outputs li{font-size:.74rem;color:#D8E2E7}.repo{margin-top:12px;border:1px solid rgba(255,255,255,.15);padding:7px 9px;font-family:monospace;font-size:.68rem;color:#D8E2E7}
+.about{background:#0A1721;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:35px;align-items:center}.about h2{font-size:1.6rem;margin:5px 0 8px}.about p{color:#AAB9C2;font-size:.78rem;margin-bottom:9px}.about-mark{width:150px;height:150px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:3px;transform:rotate(-4deg)}.about-mark span{background:var(--teal)}.about-mark span:nth-child(3n){background:var(--navy)}.about-mark span:nth-child(7){background:var(--orange)}
+footer{background:#07131D;padding:22px 0;color:#fff}.footer-top{display:flex;justify-content:space-between;gap:25px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.1)}.footer-brand{font-weight:800}.footer-description{color:#7F929E;font-size:.7rem;margin-top:4px}.footer-links{display:flex;gap:20px;color:#AAB9C2;font-size:.72rem}.copyright{padding-top:12px;color:#627582;font-size:.65rem}
+@media(max-width:900px){.hero-grid,.featured-grid,.engineering,.about-grid{grid-template-columns:1fr}.hero-visual{min-height:310px}.research-grid{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:repeat(3,1fr)}.nav-links{display:none}.hero-card{width:52%}}
+@media(max-width:560px){.research-grid,.projects,.outputs{grid-template-columns:1fr}.hero{padding-top:35px}.hero h1{font-size:2.55rem}.hero-card{position:relative;width:100%;bottom:auto;margin-top:180px}.hero-visual{min-height:470px}.pipeline-large{flex-wrap:wrap}.pipe-step{min-width:22%}.footer-top{flex-direction:column}}
 </style>
-
-</head> <body> <!-- NAVIGATION --> <nav> <div class="container nav-inner">
-    <a href="#top" class="brand">
-        <div class="brand-mark" aria-hidden="true">
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-        </div>
-
-        <span>Spatial Evidence Lab</span>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <span>Spatial Evidence Lab</span>
     </a>
-
     <div class="nav-links">
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#resources">Resources</a>
-        <a href="#about">About</a>
+      <a class="active" href="#research">Research</a><a href="#projects">Projects</a><a href="#methods">Methods</a><a href="#data">Data</a><a href="#resources">Resources</a><a href="#about">About</a>
     </div>
+    <a class="github" href="https://github.com/" aria-label="GitHub">◉</a>
+  </div>
+</nav>
 
-</div>
-
-</nav> <!-- HERO --> <header class="hero" id="top">
-<div class="container hero-grid">
-
+<header class="hero" id="top">
+  <div class="container hero-grid">
     <div>
-
-        <div class="eyebrow">
-            Independent Geospatial Research
-        </div>
-
-        <h1>
-            Spatial<br>
-            <span>Evidence Lab</span>
-        </h1>
-
-        <p class="hero-description">
-            Exploring people, places and spatial systems through
-            geospatial data, spatial analytics and reproducible research.
-        </p>
-
-        <p class="tagline">
-            Spatial data. Place-based evidence.
-        </p>
-
-        <div class="buttons">
-            <a href="#projects" class="button button-primary">
-                Explore Research
-            </a>
-
-            <a href="#about" class="button button-secondary">
-                About the Lab
-            </a>
-        </div>
-
+      <div class="eyebrow">Independent Geospatial Research</div>
+      <h1>Understanding places through spatial data and geographic evidence.</h1>
+      <p>Spatial Evidence Lab combines GIS, spatial analytics and data engineering to investigate how people, services, environments and infrastructure vary across places.</p>
+      <div class="hero-tags"><span>GIS</span><span>SPATIAL ANALYTICS</span><span>DATA ENGINEERING</span><span>GEOGRAPHIC EVIDENCE</span></div>
+      <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="#research">EXPLORE RESEARCH →</a>
+        <a class="btn btn-outline" href="#projects">VIEW PROJECTS →</a>
+      </div>
     </div>
-
-
-    <div class="spatial-graphic" aria-hidden="true">
-
-        <div class="grid-map">
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-        </div>
-
+    <div class="hero-visual">
+      <div class="hero-map" aria-hidden="true"></div>
+      <div class="hero-card">
+        <div class="star">★ &nbsp; CORE RESEARCH</div>
+        <h3>Ireland Quality of Life Index</h3>
+        <p>Small-area analysis of quality of life across 19,000+ Census Areas.</p>
+        <a class="btn btn-outline" href="#featured">EXPLORE RESEARCH →</a>
+      </div>
     </div>
+  </div>
+</header>
 
-</div>
+<section id="featured" class="featured-wrap">
+  <div class="container">
+    <div class="section-heading"><h2>Featured Research (Flagship)</h2></div>
+    <article class="featured">
+      <div class="featured-grid">
+        <div class="featured-map" role="img" aria-label="Ireland Quality of Life Index map"></div>
+        <div class="featured-content">
+          <div class="star">★ &nbsp; FLAGSHIP RESEARCH</div>
+          <h2>Ireland Quality of Life Index</h2>
+          <p>A multidimensional small-area assessment of quality of life across the Republic of Ireland using Census data, spatial indicators and Urban–Rural Adjustment Functions (URAF).</p>
+          <div class="pipeline">
+            <div class="pipeline-title">Methodology pipeline</div>
+            <div class="pipeline-row">
+              <div class="step"><div class="step-icon">▤</div>Census Data</div><div class="step">→</div>
+              <div class="step"><div class="step-icon">▥</div>Indicators</div><div class="step">→</div>
+              <div class="step"><div class="step-icon">∿</div>Normalisation</div><div class="step">→</div>
+              <div class="step"><div class="step-icon">♧</div>URAF</div><div class="step">→</div>
+              <div class="step"><div class="step-icon">◎</div>Index</div>
+            </div>
+          </div>
+          <div class="pills"><span class="pill">Census 2022</span><span class="pill">19,000+ Small Areas</span><span class="pill">URAF</span><span class="pill">Spatial Indicators</span><span class="pill">Multidimensional</span></div>
+          <div style="display:flex;gap:9px;flex-wrap:wrap"><a class="btn btn-primary" href="#">EXPLORE RESEARCH →</a><a class="btn btn-outline" href="#methods">VIEW METHODS →</a><a class="btn btn-outline" href="#projects">VIEW MAPS →</a></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
 
-</header> <!-- RESEARCH --> <section id="research">
+<section id="research">
 <div class="container">
-
-    <div class="section-heading">
-
-        <div class="eyebrow">
-            Research Areas
-        </div>
-
-        <h2>
-            Understanding places through spatial data.
-        </h2>
-
-        <p>
-            Research combining GIS, spatial analytics, data engineering
-            and geographic evidence to investigate patterns across
-            people, places and systems.
-        </p>
-
-    </div>
-
-
-    <div class="research-grid">
-
-        <article class="research-card">
-
-            <div class="research-number">01</div>
-
-            <h3>Quality of Life</h3>
-
-            <p>
-                Exploring spatial variation in quality of life,
-                wellbeing and socioeconomic conditions.
-            </p>
-
-        </article>
-
-
-        <article class="research-card">
-
-            <div class="research-number">02</div>
-
-            <h3>Accessibility</h3>
-
-            <p>
-                Measuring geographic access to services,
-                opportunities, infrastructure and essential facilities.
-            </p>
-
-        </article>
-
-
-        <article class="research-card">
-
-            <div class="research-number">03</div>
-
-            <h3>Mobility &amp; Transport</h3>
-
-            <p>
-                Investigating transport networks, accessibility,
-                connectivity and spatial mobility.
-            </p>
-
-        </article>
-
-
-        <article class="research-card">
-
-            <div class="research-number">04</div>
-
-            <h3>Population &amp; Demography</h3>
-
-            <p>
-                Analysing population structures, demographic change
-                and spatial patterns of communities.
-            </p>
-
-        </article>
-
-
-        <article class="research-card">
-
-            <div class="research-number">05</div>
-
-            <h3>Urban &amp; Rural Analysis</h3>
-
-            <p>
-                Exploring geographic differences between urban,
-                rural and regional environments.
-            </p>
-
-        </article>
-
-
-        <article class="research-card">
-
-            <div class="research-number">06</div>
-
-            <h3>Spatial Methods</h3>
-
-            <p>
-                Developing reproducible workflows, spatial indicators,
-                geospatial ETL and analytical methods.
-            </p>
-
-        </article>
-
-    </div>
-
+  <div class="section-heading"><h2>Research Domains</h2><p>Research questions about people, places and spatial systems.</p></div>
+  <div class="research-grid">
+    <article class="card"><span class="card-num">01</span><h3>Quality of Life</h3><p>How does quality of life vary across small areas and regions?</p><span class="arrow">→</span></article>
+    <article class="card"><span class="card-num">02</span><h3>Accessibility</h3><p>How does geographic access to services and opportunities vary?</p><span class="arrow">→</span></article>
+    <article class="card"><span class="card-num">03</span><h3>Mobility &amp; Transport</h3><p>How do transport networks shape accessibility?</p><span class="arrow">→</span></article>
+    <article class="card"><span class="card-num">04</span><h3>Population &amp; Demography</h3><p>How are populations distributed over space and change over time?</p><span class="arrow">→</span></article>
+    <article class="card"><span class="card-num">05</span><h3>Housing &amp; Socioeconomic</h3><p>How do housing markets and affordability interact with place?</p><span class="arrow">→</span></article>
+    <article class="card"><span class="card-num">06</span><h3>Urban &amp; Rural Analysis</h3><p>How does place context alter spatial patterns and outcomes?</p><span class="arrow">→</span></article>
+    <article class="card"><span class="card-num">07</span><h3>Environment &amp; Climate</h3><p>How do environmental hazards and change create risk?</p><span class="arrow">→</span></article>
+    <article class="card"><span class="card-num">08</span><h3>Spatial Methods &amp; ETL</h3><p>How can data engineering and spatial methods generate evidence?</p><span class="arrow">→</span></article>
+  </div>
 </div>
+</section>
 
-</section> <!-- FEATURED PROJECT --> <section class="featured" id="projects">
+<section id="projects">
 <div class="container">
-
-    <div class="section-heading">
-
-        <div class="eyebrow">
-            Featured Research
-        </div>
-
-        <h2>
-            From datasets to spatial evidence.
-        </h2>
-
-        <p>
-            Research projects combining multiple sources of geographic
-            information to reveal patterns that are difficult to see
-            in individual datasets.
-        </p>
-
-    </div>
-
-
-    <div class="project">
-
-        <div class="project-visual">
-
-            <div class="map-placeholder" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
-            </div>
-
-        </div>
-
-
-        <div class="project-content">
-
-            <div class="project-label">
-                Research Project 01
-            </div>
-
-            <h3>
-                Ireland Quality of Life Index
-            </h3>
-
-            <p>
-                A small-area spatial analysis exploring how quality of
-                life varies across Ireland using demographic,
-                socioeconomic, accessibility, environmental and
-                infrastructure indicators.
-            </p>
-
-            <!-- Replace # with your ArcGIS project URL -->
-
-            <a href="#" class="text-link">
-                Explore the project →
-            </a>
-
-        </div>
-
-    </div>
-
+  <div class="projects-head"><div class="section-heading" style="margin:0"><h2>Selected Projects</h2></div><a href="#">View all projects →</a></div>
+  <div class="projects">
+    <article class="project-card"><img src="assets/project-qol.jpg"><div class="project-body"><h3>Ireland QoL Index</h3><p>Small-area composite quality of life index.</p><span class="badge">CORE RESEARCH</span></div></article>
+    <article class="project-card"><img src="assets/project-bandon.jpg"><div class="project-body"><h3>Bandon PT Accessibility</h3><p>Public transport accessibility model for Bandon, Co. Cork.</p><span class="badge">CORE RESEARCH</span></div></article>
+    <article class="project-card"><img src="assets/project-westcork.jpg"><div class="project-body"><h3>West Cork PTAL</h3><p>Public transport accessibility levels in West Cork.</p><span class="badge">EXPLORATORY</span></div></article>
+    <article class="project-card"><img src="assets/project-dublin.jpg"><div class="project-body"><h3>Dublin Transport Model</h3><p>Public transport coverage and network accessibility.</p><span class="badge">CORE RESEARCH</span></div></article>
+    <article class="project-card"><img src="assets/project-population.jpg"><div class="project-body"><h3>Dublin Population</h3><p>Population structure and demographic analysis.</p><span class="badge" style="color:#00D7E8;border-color:#00D7E8">EXPLORATORY</span></div></article>
+    <article class="project-card"><img src="assets/project-housing.jpg"><div class="project-body"><h3>Ireland Housing Model</h3><p>Housing markets and affordability analysis.</p><span class="badge" style="color:#00D7E8;border-color:#00D7E8">EXPLORATORY</span></div></article>
+  </div>
 </div>
+</section>
 
-</section> <!-- RESOURCES --> <section id="resources">
-<div class="container">
-
-    <div class="section-heading">
-
-        <div class="eyebrow">
-            Explore the Work
-        </div>
-
-        <h2>
-            Maps, data, methods and evidence.
-        </h2>
-
-        <p>
-            Interactive research outputs and supporting resources
-            developed through Spatial Evidence Lab.
-        </p>
-
+<section id="methods">
+<div class="container engineering">
+  <div class="panel">
+    <h2>METHODS &amp; SPATIAL DATA ENGINEERING</h2>
+    <p>Building structured spatial data pipelines that transform datasets into reproducible evidence.</p>
+    <div class="pipeline-large">
+      <div class="pipe-step"><strong>▤</strong>SOURCE</div><div>→</div><div class="pipe-step"><strong>▦</strong>STAGING</div><div>→</div><div class="pipe-step"><strong>⌁</strong>INTEGRATION</div><div>→</div><div class="pipe-step"><strong>▤</strong>REFERENCE</div><div>→</div><div class="pipe-step"><strong>▤</strong>WAREHOUSE</div><div>→</div><div class="pipe-step"><strong>⌁</strong>ANALYTICS</div><div>→</div><div class="pipe-step"><strong>◇</strong>MART</div><div>→</div><div class="pipe-step"><strong>{ }</strong>API</div>
     </div>
-
-
-    <div class="resources">
-
-        <article class="resource">
-
-            <div>
-                <h3>Maps</h3>
-
-                <p>
-                    Interactive maps and cartographic visualisations
-                    exploring spatial patterns.
-                </p>
-            </div>
-
-            <!-- Replace # with ArcGIS portfolio URL -->
-
-            <a href="#">
-                Explore Maps →
-            </a>
-
-        </article>
-
-
-        <article class="resource">
-
-            <div>
-                <h3>Dashboards</h3>
-
-                <p>
-                    Interactive analytical dashboards built around
-                    spatial indicators and geographic evidence.
-                </p>
-            </div>
-
-            <!-- Replace # with ArcGIS dashboard URL -->
-
-            <a href="#">
-                View Dashboards →
-            </a>
-
-        </article>
-
-
-        <article class="resource">
-
-            <div>
-                <h3>Datasets</h3>
-
-                <p>
-                    Research datasets, indicators and supporting
-                    geospatial resources.
-                </p>
-            </div>
-
-            <!-- Replace # with dataset portfolio URL -->
-
-            <a href="#">
-                Explore Data →
-            </a>
-
-        </article>
-
+    <div class="tech"><span>PostgreSQL</span><span>PostGIS</span><span>ArcGIS Pro</span><span>Python</span><span>SQL</span><span>QGIS</span><span>GDAL</span></div>
+  </div>
+  <div class="panel" id="data">
+    <h2>RESEARCH OUTPUTS &amp; OPEN RESEARCH</h2>
+    <div class="outputs">
+      <ul><li>◎ &nbsp; Interactive Maps</li><li>▥ &nbsp; Research Dashboards</li><li>□ &nbsp; GeoParquet Datasets</li><li>⌁ &nbsp; Python/PostGIS Workflows</li><li>▤ &nbsp; Technical Documentation</li></ul>
+      <div><div class="star">OPEN RESEARCH (GITHUB)</div><p style="margin-top:6px">Research should be inspectable. Methods, code, and datasets support transparency.</p><div class="repo">qol-index-ireland</div><div class="repo">spatial-etl-methods</div><div class="repo">gis-indicators-toolbox</div><a class="btn btn-primary" style="margin-top:8px" href="https://github.com/">VIEW GITHUB REPOSITORY →</a></div>
     </div>
-
+  </div>
 </div>
+</section>
 
-</section> <!-- GITHUB --> <section>
-<div class="container">
-
-    <div class="section-heading">
-
-        <div class="eyebrow">
-            Open Research
-        </div>
-
-        <h2>
-            Reproducible geospatial work.
-        </h2>
-
-        <p>
-            Code, workflows, methods and selected datasets are
-            developed with reproducibility and transparency in mind.
-        </p>
-
-    </div>
-
-
-    <div class="resource"
-         style="max-width: 600px;">
-
-        <div>
-
-            <h3>GitHub</h3>
-
-            <p>
-                Explore the technical side of Spatial Evidence Lab,
-                including geospatial workflows, analytical methods
-                and research projects.
-            </p>
-
-        </div>
-
-        <!-- Replace # with GitHub URL -->
-
-        <a href="#">
-            Visit GitHub →
-        </a>
-
-    </div>
-
-</div>
-
-</section> <!-- ABOUT --> <section class="about" id="about">
+<section class="about" id="about">
 <div class="container about-grid">
-
-    <div>
-
-        <div class="about-mark" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-        </div>
-
+  <div><div class="about-mark" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div></div>
+  <div>
+    <div class="eyebrow">About Spatial Evidence Lab</div>
+    <h2>Spatial Evidence Lab</h2>
+    <p>Spatial Evidence Lab is an independent research initiative focused on understanding places through spatial data and geographic evidence. Founded and led by José F.</p>
+    <p>The work combines GIS, spatial analysis, open data, data engineering and cartographic visualisation to investigate geographic patterns and inequalities.</p>
+    <div style="display:flex;gap:30px;margin-top:15px;flex-wrap:wrap;color:#D8E2E7;font-size:.72rem">
+      <span>✓ Evidence-Driven Research</span><span>♙ Independent &amp; Non-Commercial</span><span>♧ Open, Transparent &amp; Reproducible</span>
     </div>
-
-
-    <div class="about-text">
-
-        <div class="eyebrow">
-            About
-        </div>
-
-        <h2>
-            José F.
-        </h2>
-
-        <p>
-            Spatial Evidence Lab is an independent research initiative
-            founded by José F., focused on geospatial research,
-            spatial analytics and geographic data engineering.
-        </p>
-
-        <p>
-            The work explores how spatial data can be transformed
-            into reproducible evidence about people, places and
-            spatial systems.
-        </p>
-
-        <p>
-            Research combines GIS, spatial analysis, open data,
-            data engineering and cartographic visualisation to
-            investigate geographic patterns and inequalities.
-        </p>
-
-        <!-- Replace # with your LinkedIn profile -->
-
-        <a href="#"
-           class="text-link">
-            Connect with José F. →
-        </a>
-
-    </div>
-
+  </div>
 </div>
+</section>
 
-</section> <!-- FOOTER --> <footer>
+<footer>
 <div class="container">
-
-    <div class="footer-top">
-
-        <div>
-
-            <div class="footer-brand">
-                Spatial Evidence Lab
-            </div>
-
-            <div class="footer-description">
-                Independent Geospatial Research &amp; Spatial Analytics.
-                Spatial data. Place-based evidence.
-            </div>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="#research">Research</a>
-            <a href="#projects">Projects</a>
-            <a href="#resources">Resources</a>
-            <a href="#about">About</a>
-
-        </div>
-
-    </div>
-
-
-    <div class="copyright">
-        © 2026 Spatial Evidence Lab · José F.
-    </div>
-
+  <div class="footer-top"><div><div class="footer-brand">Spatial Evidence Lab</div><div class="footer-description">Independent Geospatial Research &amp; Spatial Analytics. Spatial data. Place-based evidence.</div></div>
+  <div class="footer-links"><a href="#research">Research</a><a href="#projects">Projects</a><a href="#methods">Methods</a><a href="#data">Data</a><a href="#about">About</a></div></div>
+  <div class="copyright">© 2026 Spatial Evidence Lab · José F.</div>
 </div>
-
-</footer> </body> </html>
+</footer>
+</body>
+</html>
