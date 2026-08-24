@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spatial Evidence Lab | Geospatial Research & Spatial Analytics</title>
-<meta name="description" content="Spatial Evidence Lab — independent geospatial research, spatial analytics and geographic data engineering.">
+<title>Accessibility to Public Transport in Bandon | Spatial Evidence Lab</title>
+<meta name="description" content="GIS-based assessment of public transport accessibility and population vulnerability in Bandon, County Cork, Ireland.">
 <style>
 :root{
   --navy:#172A3A; --navy-dark:#0E1C27; --navy-2:#111F2B;
@@ -81,118 +81,287 @@ footer{background:#07131D;padding:22px 0;color:#fff}.footer-top{display:flex;jus
 <body>
 <nav>
   <div class="container nav-inner">
-    <a class="brand" href="#top">
+    <a class="brand" href="../">
       <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <span>Spatial Evidence Lab</span>
     </a>
     <div class="nav-links">
-      <a class="active" href="#research">Research</a><a href="#projects">Projects</a><a href="#methods">Methods</a><a href="#data">Data</a><a href="#resources">Resources</a><a href="#about">About</a>
+      <a class="active" href="#overview">Overview</a>
+  <a href="#question">Research Question</a>
+  <a href="#methodology">Methodology</a>
+  <a href="#results">Results</a>
+  <a href="#data">Data</a>
+  <a href="#conclusion">Conclusion</a>
     </div>
     <a class="github" href="https://github.com/" aria-label="GitHub">◉</a>
   </div>
 </nav>
 
-<header class="hero" id="top">
+<header class="hero" id="overview">
   <div class="container hero-grid">
+
     <div>
-      <div class="eyebrow">Independent Geospatial Research</div>
-      <h1>Understanding places through spatial data and geographic evidence.</h1>
-      <p>Spatial Evidence Lab combines GIS, spatial analytics and data engineering to investigate how people, services, environments and infrastructure vary across places.</p>
-      <div class="hero-tags"><span>GIS</span><span>SPATIAL ANALYTICS</span><span>DATA ENGINEERING</span><span>GEOGRAPHIC EVIDENCE</span></div>
+      <div class="eyebrow">Spatial Accessibility Research</div>
+
+      <h1>Accessibility to Public Transport in Bandon</h1>
+
+      <p>
+        Bandon, County Cork, Ireland, is a commuter town located approximately
+        30 km southwest of Cork City and serves as a gateway to West Cork.
+      </p>
+
+      <p>
+        This project examines spatial variations in public transport
+        accessibility across Bandon and the relationship between accessibility
+        and population vulnerability.
+      </p>
+
+      <div class="hero-tags">
+        <span>GIS</span>
+        <span>NETWORK ANALYSIS</span>
+        <span>PUBLIC TRANSPORT</span>
+        <span>CENSUS 2022</span>
+      </div>
+
       <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn btn-primary" href="#research">EXPLORE RESEARCH →</a>
-        <a class="btn btn-outline" href="#projects">VIEW PROJECTS →</a>
+        <a class="btn btn-primary" href="#results">VIEW RESULTS →</a>
+        <a class="btn btn-outline" href="#methodology">VIEW METHODOLOGY →</a>
       </div>
     </div>
+
     <div class="hero-visual">
-      <div class="hero-map" aria-hidden="true"></div>
-      <div class="hero-card">
-        <div class="star">★ &nbsp; CORE RESEARCH</div>
-        <h3>Ireland Quality of Life Index</h3>
-        <p>Small-area analysis of quality of life across 19,000+ Census Areas.</p>
-        <a class="btn btn-outline" href="#featured">EXPLORE RESEARCH →</a>
+
+      <div class="hero-map"
+           style="background-image:url('maps/bandon-07-hotspots.png')"
+           aria-label="Accessibility–Vulnerability Hotspots in Bandon">
       </div>
+
+      <div class="hero-card">
+        <div class="star">★ &nbsp; FEATURED RESULT</div>
+
+        <h3>Accessibility–Vulnerability Hotspots</h3>
+
+        <p>
+          Areas where lower public transport accessibility coincides
+          with higher population vulnerability.
+        </p>
+
+        <a class="btn btn-primary" href="#results">
+          EXPLORE RESULTS →
+        </a>
+      </div>
+
     </div>
+
   </div>
 </header>
 
-<section id="featured" class="featured-wrap">
+
+<section id="question">
   <div class="container">
-    <div class="section-heading"><h2>Featured Research (Flagship)</h2></div>
+
+    <div class="section-heading">
+      <h2>02 — Research Question</h2>
+      <p>Framing the spatial accessibility problem.</p>
+    </div>
+
     <article class="featured">
-      <div class="featured-grid">
-        <div class="featured-map" role="img" aria-label="Ireland Quality of Life Index map"></div>
-        <div class="featured-content">
-          <div class="star">★ &nbsp; FLAGSHIP RESEARCH</div>
-          <h2>Ireland Quality of Life Index</h2>
-          <p>A multidimensional small-area assessment of quality of life across the Republic of Ireland using Census data, spatial indicators and Urban–Rural Adjustment Functions (URAF).</p>
-          <div class="pipeline">
-            <div class="pipeline-title">Methodology pipeline</div>
-            <div class="pipeline-row">
-              <div class="step"><div class="step-icon">▤</div>Census Data</div><div class="step">→</div>
-              <div class="step"><div class="step-icon">▥</div>Indicators</div><div class="step">→</div>
-              <div class="step"><div class="step-icon">∿</div>Normalisation</div><div class="step">→</div>
-              <div class="step"><div class="step-icon">♧</div>URAF</div><div class="step">→</div>
-              <div class="step"><div class="step-icon">◎</div>Index</div>
-            </div>
-          </div>
-          <div class="pills"><span class="pill">Census 2022</span><span class="pill">19,000+ Small Areas</span><span class="pill">URAF</span><span class="pill">Spatial Indicators</span><span class="pill">Multidimensional</span></div>
-          <div style="display:flex;gap:9px;flex-wrap:wrap"><a class="btn btn-primary" href="#">EXPLORE RESEARCH →</a><a class="btn btn-outline" href="#methods">VIEW METHODS →</a><a class="btn btn-outline" href="#projects">VIEW MAPS →</a></div>
+      <div class="featured-content">
+
+        <div class="star">RESEARCH QUESTION</div>
+
+        <h2>
+          How can GIS-based spatial accessibility and vulnerability
+          analysis be used to identify and prioritise areas of transport
+          disadvantage in Bandon, County Cork?
+        </h2>
+
+        <p>
+          The study investigates whether areas with lower public transport
+          accessibility also contain populations experiencing greater levels
+          of socio-demographic vulnerability.
+        </p>
+
+        <div class="pipeline">
+          <div class="pipeline-title">Research objectives</div>
         </div>
+
+        <div class="outputs">
+          <ul>
+            <li>◎ Measure spatial accessibility to public transport using GIS-based network analysis.</li>
+            <li>◎ Assess the spatial distribution of population vulnerability using Census 2022 indicators.</li>
+            <li>◎ Examine the spatial relationship between accessibility and vulnerability.</li>
+            <li>◎ Develop a Composite Public Transport Accessibility Index.</li>
+            <li>◎ Identify and prioritise potential areas of transport disadvantage.</li>
+          </ul>
+        </div>
+
       </div>
     </article>
+
   </div>
 </section>
 
-<section id="research">
-<div class="container">
-  <div class="section-heading"><h2>Research Domains</h2><p>Research questions about people, places and spatial systems.</p></div>
-  <div class="research-grid">
-    <article class="card"><span class="card-num">01</span><h3>Quality of Life</h3><p>How does quality of life vary across small areas and regions?</p><span class="arrow">→</span></article>
-    <article class="card"><span class="card-num">02</span><h3>Accessibility</h3><p>How does geographic access to services and opportunities vary?</p><span class="arrow">→</span></article>
-    <article class="card"><span class="card-num">03</span><h3>Mobility &amp; Transport</h3><p>How do transport networks shape accessibility?</p><span class="arrow">→</span></article>
-    <article class="card"><span class="card-num">04</span><h3>Population &amp; Demography</h3><p>How are populations distributed over space and change over time?</p><span class="arrow">→</span></article>
-    <article class="card"><span class="card-num">05</span><h3>Housing &amp; Socioeconomic</h3><p>How do housing markets and affordability interact with place?</p><span class="arrow">→</span></article>
-    <article class="card"><span class="card-num">06</span><h3>Urban &amp; Rural Analysis</h3><p>How does place context alter spatial patterns and outcomes?</p><span class="arrow">→</span></article>
-    <article class="card"><span class="card-num">07</span><h3>Environment &amp; Climate</h3><p>How do environmental hazards and change create risk?</p><span class="arrow">→</span></article>
-    <article class="card"><span class="card-num">08</span><h3>Spatial Methods &amp; ETL</h3><p>How can data engineering and spatial methods generate evidence?</p><span class="arrow">→</span></article>
-  </div>
-</div>
-</section>
+  <section id="methodology">
+  <div class="container">
 
-<section id="projects">
-<div class="container">
-  <div class="projects-head"><div class="section-heading" style="margin:0"><h2>Selected Projects</h2></div><a href="#">View all projects →</a></div>
-  <div class="projects">
-    <article class="project-card"><img src="assets/project-qol.jpg"><div class="project-body"><h3>Ireland QoL Index</h3><p>Small-area composite quality of life index.</p><span class="badge">CORE RESEARCH</span></div></article>
-    <article class="project-card"><img src="assets/project-bandon.jpg"><div class="project-body"><h3>Bandon PT Accessibility</h3><p>Public transport accessibility model for Bandon, Co. Cork.</p><span class="badge">CORE RESEARCH</span></div></article>
-    <article class="project-card"><img src="assets/project-westcork.jpg"><div class="project-body"><h3>West Cork PTAL</h3><p>Public transport accessibility levels in West Cork.</p><span class="badge">EXPLORATORY</span></div></article>
-    <article class="project-card"><img src="assets/project-dublin.jpg"><div class="project-body"><h3>Dublin Transport Model</h3><p>Public transport coverage and network accessibility.</p><span class="badge">CORE RESEARCH</span></div></article>
-    <article class="project-card"><img src="assets/project-population.jpg"><div class="project-body"><h3>Dublin Population</h3><p>Population structure and demographic analysis.</p><span class="badge" style="color:#00D7E8;border-color:#00D7E8">EXPLORATORY</span></div></article>
-    <article class="project-card"><img src="assets/project-housing.jpg"><div class="project-body"><h3>Ireland Housing Model</h3><p>Housing markets and affordability analysis.</p><span class="badge" style="color:#00D7E8;border-color:#00D7E8">EXPLORATORY</span></div></article>
-  </div>
-</div>
-</section>
-
-<section id="methods">
-<div class="container engineering">
-  <div class="panel">
-    <h2>METHODS &amp; SPATIAL DATA ENGINEERING</h2>
-    <p>Building structured spatial data pipelines that transform datasets into reproducible evidence.</p>
-    <div class="pipeline-large">
-      <div class="pipe-step"><strong>▤</strong>SOURCE</div><div>→</div><div class="pipe-step"><strong>▦</strong>STAGING</div><div>→</div><div class="pipe-step"><strong>⌁</strong>INTEGRATION</div><div>→</div><div class="pipe-step"><strong>▤</strong>REFERENCE</div><div>→</div><div class="pipe-step"><strong>▤</strong>WAREHOUSE</div><div>→</div><div class="pipe-step"><strong>⌁</strong>ANALYTICS</div><div>→</div><div class="pipe-step"><strong>◇</strong>MART</div><div>→</div><div class="pipe-step"><strong>{ }</strong>API</div>
+    <div class="section-heading">
+      <h2>03 — Methodology</h2>
+      <p>
+        A GIS-based spatial and network analysis workflow for measuring
+        public transport accessibility and population vulnerability.
+      </p>
     </div>
-    <div class="tech"><span>PostgreSQL</span><span>PostGIS</span><span>ArcGIS Pro</span><span>Python</span><span>SQL</span><span>QGIS</span><span>GDAL</span></div>
-  </div>
-  <div class="panel" id="data">
-    <h2>RESEARCH OUTPUTS &amp; OPEN RESEARCH</h2>
-    <div class="outputs">
-      <ul><li>◎ &nbsp; Interactive Maps</li><li>▥ &nbsp; Research Dashboards</li><li>□ &nbsp; GeoParquet Datasets</li><li>⌁ &nbsp; Python/PostGIS Workflows</li><li>▤ &nbsp; Technical Documentation</li></ul>
-      <div><div class="star">OPEN RESEARCH (GITHUB)</div><p style="margin-top:6px">Research should be inspectable. Methods, code, and datasets support transparency.</p><div class="repo">qol-index-ireland</div><div class="repo">spatial-etl-methods</div><div class="repo">gis-indicators-toolbox</div><a class="btn btn-primary" style="margin-top:8px" href="https://github.com/">VIEW GITHUB REPOSITORY →</a></div>
+
+    <article class="featured">
+
+      <div class="featured-content">
+
+        <div class="star">ANALYTICAL WORKFLOW</div>
+
+        <h2>
+          From transport network data to accessibility–vulnerability hotspots
+        </h2>
+
+        <p>
+          The methodology combines public transport network data, walking
+          accessibility, service frequency and Census 2022 indicators through
+          a sequence of GIS-based spatial analyses.
+        </p>
+
+        <div class="pipeline">
+
+          <div class="pipeline-title">Research workflow</div>
+
+          <div class="pipeline-row">
+
+            <div class="step">
+              <div class="step-icon">01</div>
+              Transport<br>Network
+            </div>
+
+            <div class="step">→</div>
+
+            <div class="step">
+              <div class="step-icon">02</div>
+              Walking<br>Accessibility
+            </div>
+
+            <div class="step">→</div>
+
+            <div class="step">
+              <div class="step-icon">03</div>
+              Accessibility<br>Score
+            </div>
+
+            <div class="step">→</div>
+
+            <div class="step">
+              <div class="step-icon">04</div>
+              Peak-Time<br>Frequency
+            </div>
+
+            <div class="step">→</div>
+
+            <div class="step">
+              <div class="step-icon">05</div>
+              Vulnerability<br>Index
+            </div>
+
+            <div class="step">→</div>
+
+            <div class="step">
+              <div class="step-icon">06</div>
+              Composite<br>Accessibility
+            </div>
+
+            <div class="step">→</div>
+
+            <div class="step">
+              <div class="step-icon">07</div>
+              Hotspot<br>Analysis
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <div style="height:18px"></div>
+
+    <div class="research-grid">
+
+      <article class="card">
+        <span class="card-num">01</span>
+        <h3>Transport Network</h3>
+        <p>
+          Public transport stops, routes and service information are
+          assembled to represent the network serving Bandon.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="card-num">02</span>
+        <h3>Walking Accessibility</h3>
+        <p>
+          Walking-network distances to public transport stops are analysed
+          to estimate access to the public transport network.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="card-num">03</span>
+        <h3>Accessibility Score</h3>
+        <p>
+          Walking distance is transformed into a standardised accessibility
+          measure, with shorter distances associated with higher accessibility.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="card-num">04</span>
+        <h3>Peak-Time Frequency</h3>
+        <p>
+          Peak-period service frequency is incorporated to account for
+          differences in public transport availability.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="card-num">05</span>
+        <h3>Vulnerability Index</h3>
+        <p>
+          Selected Census 2022 socio-demographic indicators are combined
+          to construct a spatial measure of population vulnerability.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="card-num">06</span>
+        <h3>Composite Accessibility</h3>
+        <p>
+          Walking accessibility and service frequency are combined into
+          a Composite Public Transport Accessibility Index (CAI).
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="card-num">07</span>
+        <h3>Hotspot Analysis</h3>
+        <p>
+          Accessibility and vulnerability are combined to identify areas
+          where lower accessibility coincides with higher vulnerability.
+        </p>
+      </article>
+
     </div>
+
   </div>
-</div>
 </section>
+
+
 
 <section class="about" id="about">
 <div class="container about-grid">
