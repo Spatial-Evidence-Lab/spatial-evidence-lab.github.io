@@ -157,13 +157,13 @@ nav{
 
   display:grid;
 
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(5,1fr);
 
-  grid-template-rows:repeat(3,1fr);
+  grid-template-rows:repeat(5,1fr);
 
   gap:2px;
 
-  transform:rotate(45deg);
+  transform:rotate(-4deg);
 
 }
 
@@ -175,8 +175,7 @@ nav{
 }
 
 
-.brand-mark span:nth-child(2),
-.brand-mark span:nth-child(5){
+.brand-mark span:nth-child(3n){
 
   background:var(--navy);
 
@@ -913,59 +912,17 @@ section{
 
   width:100%;
 
-  height:165px;
+  height:180px;
 
   object-fit:cover;
 
-  object-position:center center;
+  object-position:top center;
+
+  background:#09151E;
 
   display:block;
 
   flex-shrink:0;
-
-}
-
-
-/* Individual thumbnail positioning */
-
-.project-card:nth-child(1) img{
-
-  object-position:center center;
-
-}
-
-
-.project-card:nth-child(2) img{
-
-  object-position:center center;
-
-}
-
-
-.project-card:nth-child(3) img{
-
-  object-position:center center;
-
-}
-
-
-.project-card:nth-child(4) img{
-
-  object-position:center center;
-
-}
-
-
-.project-card:nth-child(5) img{
-
-  object-position:center center;
-
-}
-
-
-.project-card:nth-child(6) img{
-
-  object-position:center center;
 
 }
 
@@ -1471,7 +1428,7 @@ footer{
 
   .project-card img{
 
-    height:180px;
+    height:200px;
 
   }
 
@@ -1509,7 +1466,7 @@ footer{
 
   .project-card img{
 
-    height:210px;
+    height:230px;
 
   }
 
@@ -1608,17 +1565,11 @@ footer{
         aria-hidden="true"
       >
 
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
 
       </div>
 
@@ -2618,8 +2569,8 @@ footer{
 
 
         <div class="pipe-step">
-          <strong>⌁</strong>
-          INTEGRATION
+          <strong>∿</strong>
+          SPATIAL ANALYSIS
         </div>
 
 
@@ -2627,44 +2578,8 @@ footer{
 
 
         <div class="pipe-step">
-          <strong>▤</strong>
-          REFERENCE
-        </div>
-
-
-        <div>→</div>
-
-
-        <div class="pipe-step">
-          <strong>▤</strong>
-          WAREHOUSE
-        </div>
-
-
-        <div>→</div>
-
-
-        <div class="pipe-step">
-          <strong>⌁</strong>
-          ANALYTICS
-        </div>
-
-
-        <div>→</div>
-
-
-        <div class="pipe-step">
-          <strong>◇</strong>
-          MART
-        </div>
-
-
-        <div>→</div>
-
-
-        <div class="pipe-step">
-          <strong>{ }</strong>
-          API
+          <strong>◎</strong>
+          EVIDENCE
         </div>
 
 
@@ -2673,41 +2588,19 @@ footer{
 
       <div class="tech">
 
+        <span>Python</span>
 
-        <span>
-          PostgreSQL
-        </span>
+        <span>R</span>
 
+        <span>PostGIS</span>
 
-        <span>
-          PostGIS
-        </span>
+        <span>QGIS</span>
 
+        <span>DuckDB</span>
 
-        <span>
-          ArcGIS Pro
-        </span>
+        <span>GeoPandas</span>
 
-
-        <span>
-          Python
-        </span>
-
-
-        <span>
-          SQL
-        </span>
-
-
-        <span>
-          QGIS
-        </span>
-
-
-        <span>
-          GDAL
-        </span>
-
+        <span>sf</span>
 
       </div>
 
@@ -2715,7 +2608,7 @@ footer{
     </div>
 
 
-    <!-- OUTPUTS / DATA PANEL -->
+    <!-- DATA PANEL -->
 
     <div
       class="panel"
@@ -2724,85 +2617,42 @@ footer{
 
 
       <h2>
-        RESEARCH OUTPUTS &amp; OPEN RESEARCH
+        DATA &amp; OUTPUTS
       </h2>
+
+
+      <p>
+        Data resources, web maps, documentation and reproducible workflows.
+      </p>
 
 
       <div class="outputs">
 
 
-        <ul>
+        <div>
 
+          <ul>
 
-          <li>
-            ◎ &nbsp; Interactive Maps
-          </li>
+            <li>• Web Maps &amp; Dashboards</li>
 
+            <li>• Spatial Datasets (GeoPackage, GeoJSON)</li>
 
-          <li>
-            ▥ &nbsp; Research Dashboards
-          </li>
+            <li>• Technical Reports &amp; Documentation</li>
 
+          </ul>
 
-          <li>
-            □ &nbsp; GeoParquet Datasets
-          </li>
-
-
-          <li>
-            ⌁ &nbsp; Python/PostGIS Workflows
-          </li>
-
-
-          <li>
-            ▤ &nbsp; Technical Documentation
-          </li>
-
-
-        </ul>
+        </div>
 
 
         <div>
 
-
-          <div class="star">
-            OPEN RESEARCH (GITHUB)
-          </div>
-
-
-          <p style="margin-top:6px">
-
-            Research should be inspectable. Methods, code, and datasets
-            support transparency.
-
-          </p>
-
-
           <div class="repo">
-            qol-index-ireland
+
+            GitHub Repository:<br>
+
+            Spatial-Evidence-Lab
+
           </div>
-
-
-          <div class="repo">
-            spatial-etl-methods
-          </div>
-
-
-          <div class="repo">
-            gis-indicators-toolbox
-          </div>
-
-
-          <a
-            class="btn btn-primary"
-            style="margin-top:8px"
-            href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
-            target="_blank"
-            rel="noopener"
-          >
-            VIEW GITHUB REPOSITORY →
-          </a>
-
 
         </div>
 
@@ -2830,16 +2680,13 @@ footer{
 
     <div class="section-heading">
 
-
       <h2>
-        Resources
+        Resources &amp; Data
       </h2>
 
-
       <p>
-        Research code, project outputs and supporting materials.
+        Open resources, methodology papers and analytical outputs.
       </p>
-
 
     </div>
 
@@ -2847,128 +2694,54 @@ footer{
     <div class="research-grid">
 
 
-      <!-- RESOURCE 01 -->
-
       <article class="card">
 
-
-        <span class="card-num">
-          01
-        </span>
-
-
         <h3>
-          GitHub Repository
+          Methodology Guides
         </h3>
 
-
         <p>
-          Source code, project structure and reproducible research materials.
+          Documentation on spatial analysis techniques, indicator construction and normalisation.
         </p>
-
-
-        <a
-          class="arrow"
-          href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
-          target="_blank"
-          rel="noopener"
-        >
-          →
-        </a>
-
 
       </article>
 
 
-      <!-- RESOURCE 02 -->
-
       <article class="card">
 
-
-        <span class="card-num">
-          02
-        </span>
-
-
         <h3>
-          Spatial Evidence Lab
+          Open Datasets
         </h3>
 
-
         <p>
-          Project portfolio and published spatial research outputs.
+          Processed geospatial layers, small-area boundaries and structured spatial indicators.
         </p>
-
-
-        <a
-          class="arrow"
-          href="https://spatial-evidence-lab.github.io/"
-        >
-          →
-        </a>
-
 
       </article>
 
 
-      <!-- RESOURCE 03 -->
-
       <article class="card">
 
-
-        <span class="card-num">
-          03
-        </span>
-
-
         <h3>
-          Project Outputs
+          Code &amp; Notebooks
         </h3>
 
-
         <p>
-          Maps, analytical outputs and project-specific evidence.
+          Reproducible analytical pipelines, data engineering scripts and GIS workflows.
         </p>
-
-
-        <a
-          class="arrow"
-          href="#projects"
-        >
-          →
-        </a>
-
 
       </article>
 
 
-      <!-- RESOURCE 04 -->
-
       <article class="card">
 
-
-        <span class="card-num">
-          04
-        </span>
-
-
         <h3>
-          Methods
+          Publications
         </h3>
 
-
         <p>
-          Spatial analysis, GIS workflows and data engineering methods.
+          Research briefs, spatial findings and applied geographical evidence reports.
         </p>
-
-
-        <a
-          class="arrow"
-          href="#methods"
-        >
-          →
-        </a>
-
 
       </article>
 
@@ -2994,48 +2767,16 @@ footer{
   <div class="container about-grid">
 
 
-    <div>
+    <div
+      class="about-mark"
+      aria-hidden="true"
+    >
 
-
-      <div
-        class="about-mark"
-        aria-hidden="true"
-      >
-
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-
-
-      </div>
-
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
 
     </div>
 
@@ -3044,61 +2785,34 @@ footer{
 
 
       <div class="eyebrow">
-        About Spatial Evidence Lab
+
+        About the Lab
+
       </div>
 
 
       <h2>
+
         Spatial Evidence Lab
+
       </h2>
 
 
       <p>
 
-        Spatial Evidence Lab is an independent research initiative focused
-        on understanding places through spatial data and geographic evidence.
-        Founded and led by José Freire.
+        Spatial Evidence Lab is an independent geospatial research initiative focused on
+        producing rigorous, reproducible spatial analytics and geographical evidence.
 
       </p>
 
 
       <p>
 
-        The work combines GIS, spatial analysis, open data, data engineering
-        and cartographic visualisation to investigate geographic patterns
-        and inequalities.
+        By combining spatial data engineering, statistical modeling and GIS visualization,
+        the lab examines spatial disparities, service accessibility, environmental exposure,
+        and quality of life across small areas.
 
       </p>
-
-
-      <div
-        style="
-          display:flex;
-          gap:30px;
-          margin-top:15px;
-          flex-wrap:wrap;
-          color:#D8E2E7;
-          font-size:.72rem
-        "
-      >
-
-
-        <span>
-          ✓ Evidence-Driven Research
-        </span>
-
-
-        <span>
-          ♙ Independent &amp; Non-Commercial
-        </span>
-
-
-        <span>
-          ♧ Open, Transparent &amp; Reproducible
-        </span>
-
-
-      </div>
 
 
     </div>
@@ -3124,50 +2838,30 @@ footer{
 
       <div>
 
-
         <div class="footer-brand">
           Spatial Evidence Lab
         </div>
 
-
         <div class="footer-description">
-
-          Independent Geospatial Research &amp; Spatial Analytics.
-          Spatial data. Place-based evidence.
-
+          Independent Geospatial Research &amp; Spatial Analytics
         </div>
-
 
       </div>
 
 
       <div class="footer-links">
 
+        <a href="#research">Research</a>
 
-        <a href="#research">
-          Research
-        </a>
+        <a href="#projects">Projects</a>
 
+        <a href="#methods">Methods</a>
 
-        <a href="#projects">
-          Projects
-        </a>
+        <a href="#data">Data</a>
 
+        <a href="#resources">Resources</a>
 
-        <a href="#methods">
-          Methods
-        </a>
-
-
-        <a href="#data">
-          Data
-        </a>
-
-
-        <a href="#about">
-          About
-        </a>
-
+        <a href="#about">About</a>
 
       </div>
 
@@ -3177,13 +2871,12 @@ footer{
 
     <div class="copyright">
 
-      © 2026 Spatial Evidence Lab · José Freire
+      &copy; Spatial Evidence Lab. All rights reserved.
 
     </div>
 
 
   </div>
-
 
 </footer>
 
