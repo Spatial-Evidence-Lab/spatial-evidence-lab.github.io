@@ -6,7 +6,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Spatial Evidence Lab | Geospatial Research & Spatial Analytics</title>
+<title>
+  Spatial Evidence Lab | Geospatial Research & Spatial Analytics
+</title>
 
 <meta
   name="description"
@@ -56,11 +58,9 @@
   padding:0;
 }
 
-
 html{
   scroll-behavior:smooth;
 }
-
 
 body{
 
@@ -81,12 +81,14 @@ body{
 
 }
 
-
 a{
   color:inherit;
   text-decoration:none;
 }
 
+button{
+  font:inherit;
+}
 
 .container{
 
@@ -118,7 +120,6 @@ nav{
 
 }
 
-
 .nav-inner{
 
   min-height:76px;
@@ -134,6 +135,11 @@ nav{
 }
 
 
+/* =========================================================
+   SHARED LOGO
+   The exact same logo is used everywhere.
+   ========================================================= */
+
 .brand{
 
   display:flex;
@@ -147,7 +153,6 @@ nav{
   letter-spacing:-.02em;
 
 }
-
 
 .brand-mark{
 
@@ -165,8 +170,9 @@ nav{
 
   transform:rotate(-4deg);
 
-}
+  flex-shrink:0;
 
+}
 
 .brand-mark span{
 
@@ -174,17 +180,33 @@ nav{
 
 }
 
-
 .brand-mark span:nth-child(3n){
 
   background:var(--navy);
 
 }
 
-
 .brand-mark span:nth-child(7){
 
   background:var(--orange);
+
+}
+
+
+/*
+   Large version uses the exact same logo pattern.
+   Only the scale changes.
+*/
+
+.brand-mark--large{
+
+  width:150px;
+
+  height:150px;
+
+  gap:3px;
+
+  margin:auto;
 
 }
 
@@ -201,7 +223,6 @@ nav{
 
 }
 
-
 .nav-links a{
 
   padding:28px 0;
@@ -211,7 +232,6 @@ nav{
 
 }
 
-
 .nav-links a:hover,
 .nav-links a.active{
 
@@ -220,7 +240,6 @@ nav{
   border-color:var(--cyan);
 
 }
-
 
 .github{
 
@@ -236,7 +255,6 @@ nav{
   transition:.2s ease;
 
 }
-
 
 .github:hover{
 
@@ -276,7 +294,6 @@ nav{
 
 }
 
-
 .hero-grid{
 
   display:grid;
@@ -288,7 +305,6 @@ nav{
   align-items:center;
 
 }
-
 
 .eyebrow{
 
@@ -306,7 +322,6 @@ nav{
 
 }
 
-
 .hero h1{
 
   font-size:
@@ -320,7 +335,6 @@ nav{
 
 }
 
-
 .hero p{
 
   color:#D8E2E7;
@@ -332,7 +346,6 @@ nav{
   margin-bottom:18px;
 
 }
-
 
 .hero-tags{
 
@@ -350,7 +363,6 @@ nav{
 
 }
 
-
 .hero-tags span::before{
 
   content:"•";
@@ -359,7 +371,6 @@ nav{
 
 }
 
-
 .hero-visual{
 
   position:relative;
@@ -367,7 +378,6 @@ nav{
   min-height:350px;
 
 }
-
 
 .hero-map{
 
@@ -391,7 +401,6 @@ nav{
     );
 
 }
-
 
 .hero-card{
 
@@ -418,7 +427,6 @@ nav{
 
 }
 
-
 .star{
 
   color:var(--orange);
@@ -431,7 +439,6 @@ nav{
 
 }
 
-
 .hero-card h3{
 
   font-size:1.15rem;
@@ -439,7 +446,6 @@ nav{
   margin:11px 0 8px;
 
 }
-
 
 .hero-card p{
 
@@ -477,7 +483,6 @@ nav{
 
 }
 
-
 .btn-primary{
 
   background:#00AFC8;
@@ -486,7 +491,6 @@ nav{
 
 }
 
-
 .btn-outline{
 
   border:
@@ -494,13 +498,11 @@ nav{
 
 }
 
-
 .btn:hover{
 
   transform:translateY(-1px);
 
 }
-
 
 .btn-outline:hover{
 
@@ -521,13 +523,11 @@ section{
 
 }
 
-
 .section-heading{
 
   margin-bottom:16px;
 
 }
-
 
 .section-heading h2{
 
@@ -540,7 +540,6 @@ section{
   letter-spacing:.02em;
 
 }
-
 
 .section-heading p{
 
@@ -566,7 +565,6 @@ section{
 
 }
 
-
 .featured{
 
   border:
@@ -580,7 +578,6 @@ section{
 
 }
 
-
 .featured-grid{
 
   display:grid;
@@ -588,7 +585,6 @@ section{
   grid-template-columns:43% 57%;
 
 }
-
 
 .featured-map{
 
@@ -602,13 +598,11 @@ section{
 
 }
 
-
 .featured-content{
 
   padding:26px;
 
 }
-
 
 .featured-content h2{
 
@@ -619,7 +613,6 @@ section{
   margin:9px 0 10px;
 
 }
-
 
 .featured-content p{
 
@@ -647,7 +640,6 @@ section{
 
 }
 
-
 .pipeline-title{
 
   font-size:.7rem;
@@ -659,7 +651,6 @@ section{
   font-weight:800;
 
 }
-
 
 .pipeline-row{
 
@@ -673,7 +664,6 @@ section{
 
 }
 
-
 .step{
 
   text-align:center;
@@ -685,7 +675,6 @@ section{
   color:#D8E2E7;
 
 }
-
 
 .step-icon{
 
@@ -713,7 +702,6 @@ section{
   margin:12px 0 16px;
 
 }
-
 
 .pill{
 
@@ -747,7 +735,18 @@ section{
 }
 
 
-.card{
+/*
+   Domain cards are now real buttons so they are keyboard
+   accessible and can trigger the project filter.
+*/
+
+.domain-card{
+
+  width:100%;
+
+  text-align:left;
+
+  color:inherit;
 
   border:
     1px solid var(--line);
@@ -762,22 +761,42 @@ section{
 
   position:relative;
 
+  cursor:pointer;
+
   transition:
     transform .2s ease,
-    border-color .2s ease;
+    border-color .2s ease,
+    background .2s ease;
 
 }
 
-
-.card:hover{
+.domain-card:hover{
 
   transform:translateY(-2px);
 
   border-color:
-    rgba(0,215,232,.45);
+    rgba(0,215,232,.55);
+
+  background:#102633;
 
 }
 
+.domain-card:focus-visible{
+
+  outline:2px solid var(--cyan);
+
+  outline-offset:3px;
+
+}
+
+.domain-card.active{
+
+  border-color:var(--cyan);
+
+  box-shadow:
+    0 0 0 1px rgba(0,215,232,.15);
+
+}
 
 .card-num{
 
@@ -800,8 +819,7 @@ section{
 
 }
 
-
-.card h3{
+.domain-card h3{
 
   font-size:.92rem;
 
@@ -809,8 +827,7 @@ section{
 
 }
 
-
-.card p{
+.domain-card p{
 
   font-size:.75rem;
 
@@ -819,7 +836,6 @@ section{
   max-width:220px;
 
 }
-
 
 .arrow{
 
@@ -835,10 +851,32 @@ section{
 
 }
 
+.domain-count{
+
+  position:absolute;
+
+  top:16px;
+
+  right:16px;
+
+  color:#78909B;
+
+  font-size:.62rem;
+
+  font-weight:700;
+
+}
+
 
 /* =========================================================
    SELECTED PROJECTS
    ========================================================= */
+
+#projects{
+
+  scroll-margin-top:85px;
+
+}
 
 .projects-head{
 
@@ -852,12 +890,77 @@ section{
 
 }
 
-
 .projects-head a{
 
   color:var(--cyan);
 
   font-size:.78rem;
+
+  cursor:pointer;
+
+}
+
+
+/*
+   Active filter indicator
+*/
+
+.project-filter-bar{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  margin-bottom:16px;
+
+  padding:10px 12px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:7px;
+
+  background:#0B1B26;
+
+}
+
+.project-filter-status{
+
+  color:var(--muted);
+
+  font-size:.72rem;
+
+}
+
+.project-filter-status strong{
+
+  color:var(--cyan);
+
+}
+
+.clear-filter{
+
+  border:0;
+
+  background:transparent;
+
+  color:var(--cyan);
+
+  cursor:pointer;
+
+  font-size:.7rem;
+
+  font-weight:800;
+
+}
+
+.clear-filter:hover{
+
+  text-decoration:underline;
 
 }
 
@@ -876,6 +979,17 @@ section{
 }
 
 
+/*
+   PROJECT THUMBNAILS
+
+   Recommended source image:
+   1200 × 900 px minimum
+   1600 × 1200 px preferred
+   Aspect ratio: 4:3
+
+   CSS maintains the same 4:3 box at every breakpoint.
+*/
+
 .project-card{
 
   overflow:hidden;
@@ -889,14 +1003,14 @@ section{
 
   transition:
     transform .2s ease,
-    border-color .2s ease;
+    border-color .2s ease,
+    opacity .2s ease;
 
   display:flex;
 
   flex-direction:column;
 
 }
-
 
 .project-card:hover{
 
@@ -907,16 +1021,23 @@ section{
 
 }
 
+.project-card.is-hidden{
+
+  display:none;
+
+}
 
 .project-card img{
 
   width:100%;
 
-  height:180px;
+  aspect-ratio:4 / 3;
+
+  height:auto;
 
   object-fit:cover;
 
-  object-position:top center;
+  object-position:center;
 
   background:#09151E;
 
@@ -925,7 +1046,6 @@ section{
   flex-shrink:0;
 
 }
-
 
 .project-body{
 
@@ -938,7 +1058,6 @@ section{
   flex:1;
 
 }
-
 
 .project-id{
 
@@ -954,7 +1073,6 @@ section{
 
 }
 
-
 .project-body h3{
 
   font-size:.82rem;
@@ -965,7 +1083,6 @@ section{
 
 }
 
-
 .project-body p{
 
   font-size:.68rem;
@@ -974,35 +1091,57 @@ section{
 
   color:var(--muted);
 
-  margin-bottom:8px;
+  margin-bottom:10px;
 
   flex:1;
 
 }
 
 
-.badge{
+/*
+   Every domain associated with a project is displayed here.
+*/
+
+.project-domains{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:4px;
+
+  margin-top:auto;
+
+}
+
+.project-domain{
 
   display:inline-block;
 
-  align-self:flex-start;
-
-  margin-top:7px;
-
   border:
-    1px solid var(--orange);
+    1px solid rgba(0,215,232,.28);
 
-  color:var(--orange);
+  color:#8ED1D8;
 
   border-radius:4px;
 
-  padding:3px 6px;
+  padding:3px 5px;
 
-  font-size:.57rem;
+  font-size:.52rem;
 
   font-weight:800;
 
   line-height:1.2;
+
+  text-transform:uppercase;
+
+}
+
+.project-domain.primary{
+
+  border-color:var(--orange);
+
+  color:var(--orange);
 
 }
 
@@ -1022,7 +1161,6 @@ section{
 
 }
 
-
 .panel{
 
   border:
@@ -1036,7 +1174,6 @@ section{
 
 }
 
-
 .panel h2{
 
   font-size:1rem;
@@ -1046,7 +1183,6 @@ section{
   margin-bottom:5px;
 
 }
-
 
 .panel>p{
 
@@ -1072,7 +1208,6 @@ section{
 
 }
 
-
 .method-focus-title{
 
   color:var(--cyan);
@@ -1084,7 +1219,6 @@ section{
   margin-bottom:5px;
 
 }
-
 
 .method-focus-description{
 
@@ -1115,7 +1249,6 @@ section{
 
 }
 
-
 .pipe-step{
 
   text-align:center;
@@ -1127,7 +1260,6 @@ section{
   font-size:.63rem;
 
 }
-
 
 .pipe-step strong{
 
@@ -1141,7 +1273,6 @@ section{
 
 }
 
-
 .tech{
 
   display:flex;
@@ -1151,7 +1282,6 @@ section{
   flex-wrap:wrap;
 
 }
-
 
 .tech span{
 
@@ -1182,7 +1312,6 @@ section{
 
 }
 
-
 .outputs ul{
 
   list-style:none;
@@ -1195,7 +1324,6 @@ section{
 
 }
 
-
 .outputs li{
 
   font-size:.74rem;
@@ -1203,7 +1331,6 @@ section{
   color:#D8E2E7;
 
 }
-
 
 .repo{
 
@@ -1255,7 +1382,6 @@ section{
 
 }
 
-
 .about-grid{
 
   display:grid;
@@ -1269,7 +1395,6 @@ section{
 
 }
 
-
 .about h2{
 
   font-size:1.6rem;
@@ -1278,7 +1403,6 @@ section{
 
 }
 
-
 .about p{
 
   color:var(--muted);
@@ -1286,47 +1410,6 @@ section{
   font-size:.78rem;
 
   margin-bottom:9px;
-
-}
-
-
-.about-mark{
-
-  width:150px;
-
-  height:150px;
-
-  margin:auto;
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(5,1fr);
-
-  gap:3px;
-
-  transform:rotate(-4deg);
-
-}
-
-
-.about-mark span{
-
-  background:var(--teal);
-
-}
-
-
-.about-mark span:nth-child(3n){
-
-  background:var(--navy);
-
-}
-
-
-.about-mark span:nth-child(7){
-
-  background:var(--orange);
 
 }
 
@@ -1345,7 +1428,6 @@ footer{
 
 }
 
-
 .footer-top{
 
   display:flex;
@@ -1361,13 +1443,25 @@ footer{
 
 }
 
-
 .footer-brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
 
   font-weight:800;
 
 }
 
+.footer-brand .brand-mark{
+
+  width:28px;
+
+  height:28px;
+
+}
 
 .footer-description{
 
@@ -1378,7 +1472,6 @@ footer{
   margin-top:4px;
 
 }
-
 
 .footer-links{
 
@@ -1392,13 +1485,11 @@ footer{
 
 }
 
-
 .footer-links a:hover{
 
   color:var(--cyan);
 
 }
-
 
 .copyright{
 
@@ -1442,13 +1533,11 @@ footer{
 
   }
 
-
   .hero-visual{
 
     min-height:310px;
 
   }
-
 
   .research-grid{
 
@@ -1457,7 +1546,6 @@ footer{
 
   }
 
-
   .projects{
 
     grid-template-columns:
@@ -1465,20 +1553,11 @@ footer{
 
   }
 
-
-  .project-card img{
-
-    height:200px;
-
-  }
-
-
   .nav-links{
 
     display:none;
 
   }
-
 
   .hero-card{
 
@@ -1503,13 +1582,16 @@ footer{
 
   }
 
+  /*
+     At mobile width the same 4:3 ratio is preserved.
+     No fixed height is needed.
+  */
 
   .project-card img{
 
-    height:230px;
+    aspect-ratio:4 / 3;
 
   }
-
 
   .hero{
 
@@ -1517,13 +1599,11 @@ footer{
 
   }
 
-
   .hero h1{
 
     font-size:2.55rem;
 
   }
-
 
   .hero-card{
 
@@ -1537,13 +1617,11 @@ footer{
 
   }
 
-
   .hero-visual{
 
     min-height:470px;
 
   }
-
 
   .pipeline-large{
 
@@ -1551,20 +1629,17 @@ footer{
 
   }
 
-
   .pipe-step{
 
     min-width:22%;
 
   }
 
-
   .footer-top{
 
     flex-direction:column;
 
   }
-
 
   .projects-head{
 
@@ -1573,6 +1648,14 @@ footer{
     flex-direction:column;
 
     gap:8px;
+
+  }
+
+  .project-filter-bar{
+
+    align-items:flex-start;
+
+    flex-direction:column;
 
   }
 
@@ -1595,6 +1678,8 @@ footer{
   <div class="container nav-inner">
 
     <a class="brand" href="#top">
+
+      <!-- SAME LOGO USED THROUGHOUT THE SITE -->
 
       <div class="brand-mark" aria-hidden="true">
 
@@ -1805,9 +1890,7 @@ footer{
 
               </div>
 
-
               <div class="step">→</div>
-
 
               <div class="step">
 
@@ -1817,9 +1900,7 @@ footer{
 
               </div>
 
-
               <div class="step">→</div>
-
 
               <div class="step">
 
@@ -1829,9 +1910,7 @@ footer{
 
               </div>
 
-
               <div class="step">→</div>
-
 
               <div class="step">
 
@@ -1841,9 +1920,7 @@ footer{
 
               </div>
 
-
               <div class="step">→</div>
-
 
               <div class="step">
 
@@ -1864,879 +1941,4 @@ footer{
             <span class="pill">19,000+ Small Areas</span>
             <span class="pill">URAF</span>
             <span class="pill">Spatial Indicators</span>
-            <span class="pill">Multidimensional</span>
-
-          </div>
-
-
-          <div
-            style="
-              display:flex;
-              gap:9px;
-              flex-wrap:wrap
-            "
-          >
-
-            <a
-              class="btn btn-primary"
-              href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
-              target="_blank"
-              rel="noopener"
-            >
-              EXPLORE RESEARCH →
-            </a>
-
-            <a class="btn btn-outline" href="#methods">
-              VIEW METHODS →
-            </a>
-
-            <a class="btn btn-outline" href="#projects">
-              VIEW PROJECTS →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     RESEARCH DOMAINS — 7 SUBSTANTIVE DOMAINS
-     ========================================================= -->
-
-<section id="research">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <h2>
-        Research Domains
-      </h2>
-
-      <p>
-        Research questions about people, places and spatial systems.
-      </p>
-
-    </div>
-
-
-    <div class="research-grid">
-
-
-      <!-- 01 -->
-
-      <article class="card">
-
-        <span class="card-num">
-          01
-        </span>
-
-        <h3>
-          Quality of Life
-        </h3>
-
-        <p>
-          How does quality of life vary across small areas and regions?
-        </p>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </article>
-
-
-      <!-- 02 -->
-
-      <article class="card">
-
-        <span class="card-num">
-          02
-        </span>
-
-        <h3>
-          Accessibility
-        </h3>
-
-        <p>
-          How does geographic access to services and opportunities vary?
-        </p>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </article>
-
-
-      <!-- 03 -->
-
-      <article class="card">
-
-        <span class="card-num">
-          03
-        </span>
-
-        <h3>
-          Mobility &amp; Transport
-        </h3>
-
-        <p>
-          How do transport networks shape accessibility?
-        </p>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </article>
-
-
-      <!-- 04 -->
-
-      <article class="card">
-
-        <span class="card-num">
-          04
-        </span>
-
-        <h3>
-          Population &amp; Demography
-        </h3>
-
-        <p>
-          How are populations distributed over space and change over time?
-        </p>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </article>
-
-
-      <!-- 05 -->
-
-      <article class="card">
-
-        <span class="card-num">
-          05
-        </span>
-
-        <h3>
-          Housing &amp; Socioeconomic
-        </h3>
-
-        <p>
-          How do housing markets and affordability interact with place?
-        </p>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </article>
-
-
-      <!-- 06 -->
-
-      <article class="card">
-
-        <span class="card-num">
-          06
-        </span>
-
-        <h3>
-          Urban &amp; Rural Analysis
-        </h3>
-
-        <p>
-          How does place context alter spatial patterns and outcomes?
-        </p>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </article>
-
-
-      <!-- 07 -->
-
-      <article class="card">
-
-        <span class="card-num">
-          07
-        </span>
-
-        <h3>
-          Environment &amp; Climate
-        </h3>
-
-        <p>
-          How do environmental hazards and change create risk?
-        </p>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     SELECTED PROJECTS
-     ========================================================= -->
-
-<section id="projects">
-
-  <div class="container">
-
-    <div class="projects-head">
-
-      <div
-        class="section-heading"
-        style="margin:0"
-      >
-
-        <h2>
-          Selected Projects
-        </h2>
-
-      </div>
-
-      <a href="#projects">
-        Selected research portfolio →
-      </a>
-
-    </div>
-
-
-    <div class="projects">
-
-
-      <!-- =================================================
-           SEL-001 — QUALITY OF LIFE
-           ================================================= -->
-
-      <article class="project-card">
-
-        <img
-          src="project-qol.jpg"
-          alt="SEL-001 — Ireland Quality of Life Index"
-          loading="lazy"
-        >
-
-        <div class="project-body">
-
-          <div class="project-id">
-            SEL-001
-          </div>
-
-          <h3>
-            Ireland QoL Index
-          </h3>
-
-          <p>
-            Small-area spatial analysis of quality of life across Ireland
-            using Census 2022 indicators, composite measures and geographic
-            evidence.
-          </p>
-
-          <span class="badge">
-            QUALITY OF LIFE
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           SEL-002 — ACCESSIBILITY
-           ================================================= -->
-
-      <a
-        href="bandon/"
-        class="project-card"
-      >
-
-        <img
-          src="project-bandon.jpg"
-          alt="SEL-002 — Bandon Public Transport Accessibility Analysis"
-          loading="lazy"
-        >
-
-        <div class="project-body">
-
-          <div class="project-id">
-            SEL-002
-          </div>
-
-          <h3>
-            Bandon PT Accessibility
-          </h3>
-
-          <p>
-            Spatial assessment of public transport accessibility in Bandon,
-            combining walking access, service frequency and population
-            vulnerability.
-          </p>
-
-          <span class="badge">
-            ACCESSIBILITY
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- =================================================
-           SEL-005 — ENVIRONMENT & CLIMATE
-           ================================================= -->
-
-      <article class="project-card">
-
-        <img
-          src="project-heatrisk.jpg"
-          alt="SEL-005 — Greater Athens Heat Risk and Environmental Quality Assessment"
-          loading="lazy"
-        >
-
-        <div class="project-body">
-
-          <div class="project-id">
-            SEL-005
-          </div>
-
-          <h3>
-            Athens Heat Risk
-          </h3>
-
-          <p>
-            Spatial modelling of heat risk and environmental quality to
-            identify areas experiencing elevated environmental exposure
-            and vulnerability.
-          </p>
-
-          <span class="badge">
-            ENVIRONMENT &amp; CLIMATE
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           SEL-006 — ENVIRONMENT & CLIMATE
-           ================================================= -->
-
-      <article class="project-card">
-
-        <img
-          src="project-windenergy.jpg"
-          alt="SEL-006 — County Wicklow Wind Energy Potential Assessment"
-          loading="lazy"
-        >
-
-        <div class="project-body">
-
-          <div class="project-id">
-            SEL-006
-          </div>
-
-          <h3>
-            Wicklow Wind Energy
-          </h3>
-
-          <p>
-            Spatial multi-criteria assessment of wind energy potential,
-            combining geographic suitability factors to support renewable
-            energy planning.
-          </p>
-
-          <span class="badge">
-            ENVIRONMENT &amp; CLIMATE
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           SEL-007 — ENVIRONMENT & CLIMATE
-           ================================================= -->
-
-      <article class="project-card">
-
-        <img
-          src="project-rondonia.jpg"
-          alt="SEL-007 — Rondônia Deforestation and Forest Loss Analysis"
-          loading="lazy"
-        >
-
-        <div class="project-body">
-
-          <div class="project-id">
-            SEL-007
-          </div>
-
-          <h3>
-            Rondônia Deforestation
-          </h3>
-
-          <p>
-            Spatial analysis of deforestation in Rondônia, examining
-            patterns of forest loss and land-use change using geographic
-            and temporal evidence.
-          </p>
-
-          <span class="badge">
-            ENVIRONMENT &amp; CLIMATE
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           SEL-010 — ENVIRONMENT & CLIMATE
-           ================================================= -->
-
-      <article class="project-card">
-
-        <img
-          src="project-sealevel.jpg"
-          alt="SEL-010 — Miami Sea Level Rise Impact Assessment"
-          loading="lazy"
-        >
-
-        <div class="project-body">
-
-          <div class="project-id">
-            SEL-010
-          </div>
-
-          <h3>
-            Miami Sea Level Rise
-          </h3>
-
-          <p>
-            Spatial assessment of potential sea level rise impacts in Miami,
-            examining exposure of land, infrastructure and communities to
-            coastal inundation.
-          </p>
-
-          <span class="badge">
-            ENVIRONMENT &amp; CLIMATE
-          </span>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     METHODS & SPATIAL DATA ENGINEERING
-     ========================================================= -->
-
-<section id="methods">
-
-  <div class="container engineering">
-
-
-    <!-- =====================================================
-         METHODS PANEL
-         ===================================================== -->
-
-    <div class="panel">
-
-      <h2>
-        METHODS &amp; SPATIAL DATA ENGINEERING
-      </h2>
-
-      <p>
-        Building structured spatial data pipelines that transform datasets
-        into reproducible evidence.
-      </p>
-
-
-      <!-- MOVED FROM RESEARCH DOMAINS -->
-
-      <div class="method-focus">
-
-        <div class="method-focus-title">
-          Spatial Methods &amp; ETL
-        </div>
-
-        <div class="method-focus-description">
-          How can data engineering and spatial methods generate evidence?
-        </div>
-
-      </div>
-
-
-      <div class="pipeline-large">
-
-        <div class="pipe-step">
-
-          <strong>▤</strong>
-
-          SOURCE
-
-        </div>
-
-
-        <div>→</div>
-
-
-        <div class="pipe-step">
-
-          <strong>▦</strong>
-
-          STAGING
-
-        </div>
-
-
-        <div>→</div>
-
-
-        <div class="pipe-step">
-
-          <strong>∿</strong>
-
-          SPATIAL ANALYSIS
-
-        </div>
-
-
-        <div>→</div>
-
-
-        <div class="pipe-step">
-
-          <strong>◎</strong>
-
-          EVIDENCE
-
-        </div>
-
-      </div>
-
-
-      <div class="tech">
-
-        <span>Python</span>
-
-        <span>R</span>
-
-        <span>PostGIS</span>
-
-        <span>QGIS</span>
-
-        <span>DuckDB</span>
-
-        <span>GeoPandas</span>
-
-        <span>sf</span>
-
-      </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         DATA PANEL
-         ===================================================== -->
-
-    <div
-      class="panel"
-      id="data"
-    >
-
-      <h2>
-        DATA &amp; OUTPUTS
-      </h2>
-
-      <p>
-        Data resources, web maps, documentation and reproducible workflows.
-      </p>
-
-
-      <div class="outputs">
-
-        <div>
-
-          <ul>
-
-            <li>
-              • Web Maps &amp; Dashboards
-            </li>
-
-            <li>
-              • Spatial Datasets (GeoPackage, GeoJSON)
-            </li>
-
-            <li>
-              • Technical Reports &amp; Documentation
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <div>
-
-          <div class="repo">
-
-            GitHub Repository:<br>
-
-            Spatial-Evidence-Lab
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     RESOURCES
-     ========================================================= -->
-
-<section id="resources">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <h2>
-        Resources &amp; Data
-      </h2>
-
-      <p>
-        Open resources, methodology papers and analytical outputs.
-      </p>
-
-    </div>
-
-
-    <div class="research-grid">
-
-
-      <article class="card">
-
-        <h3>
-          Methodology Guides
-        </h3>
-
-        <p>
-          Documentation on spatial analysis techniques, indicator construction and normalisation.
-        </p>
-
-      </article>
-
-
-      <article class="card">
-
-        <h3>
-          Open Datasets
-        </h3>
-
-        <p>
-          Processed geospatial layers, small-area boundaries and structured spatial indicators.
-        </p>
-
-      </article>
-
-
-      <article class="card">
-
-        <h3>
-          Code &amp; Notebooks
-        </h3>
-
-        <p>
-          Reproducible analytical pipelines, data engineering scripts and GIS workflows.
-        </p>
-
-      </article>
-
-
-      <article class="card">
-
-        <h3>
-          Publications
-        </h3>
-
-        <p>
-          Research briefs, spatial findings and applied geographical evidence reports.
-        </p>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     ABOUT
-     ========================================================= -->
-
-<section
-  class="about"
-  id="about"
->
-
-  <div class="container about-grid">
-
-
-    <div
-      class="about-mark"
-      aria-hidden="true"
-    >
-
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-
-    </div>
-
-
-    <div>
-
-      <div class="eyebrow">
-        About the Lab
-      </div>
-
-      <h2>
-        Spatial Evidence Lab
-      </h2>
-
-      <p>
-        Spatial Evidence Lab is an independent geospatial research initiative focused on
-        producing rigorous, reproducible spatial analytics and geographical evidence.
-      </p>
-
-      <p>
-        By combining spatial data engineering, statistical modeling and GIS visualization,
-        the lab examines spatial disparities, service accessibility, environmental exposure,
-        and quality of life across small areas.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
-
-<footer>
-
-  <div class="container">
-
-    <div class="footer-top">
-
-      <div>
-
-        <div class="footer-brand">
-          Spatial Evidence Lab
-        </div>
-
-        <div class="footer-description">
-          Independent Geospatial Research &amp; Spatial Analytics
-        </div>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <a href="#research">
-          Research
-        </a>
-
-        <a href="#projects">
-          Projects
-        </a>
-
-        <a href="#methods">
-          Methods
-        </a>
-
-        <a href="#data">
-          Data
-        </a>
-
-        <a href="#resources">
-          Resources
-        </a>
-
-        <a href="#about">
-          About
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="copyright">
-
-      &copy; Spatial Evidence Lab. All rights reserved.
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-</body>
-
-</html>
+            <span class="pill">
