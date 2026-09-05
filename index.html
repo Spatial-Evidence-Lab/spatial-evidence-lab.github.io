@@ -20,7 +20,6 @@
    ========================================================= */
 
 :root{
-
   --navy:#172A3A;
   --navy-dark:#0E1C27;
   --navy-2:#111F2B;
@@ -42,7 +41,6 @@
   --max:1180px;
 
   --radius:10px;
-
 }
 
 
@@ -58,10 +56,10 @@
 
 html{
   scroll-behavior:smooth;
+  scroll-padding-top:80px;
 }
 
 body{
-
   font-family:
     Inter,
     -apple-system,
@@ -72,11 +70,8 @@ body{
     sans-serif;
 
   background:var(--navy-dark);
-
   color:#E8EEF1;
-
   line-height:1.5;
-
 }
 
 a{
@@ -88,17 +83,54 @@ img{
   max-width:100%;
 }
 
+.container{
+  width:min(94%,var(--max));
+  margin:auto;
+}
+
 
 /* =========================================================
-   LAYOUT
+   LOGO
    ========================================================= */
 
-.container{
+/*
+   logo.png must be located in the MAIN / ROOT directory:
 
-  width:min(94%,var(--max));
+   /
+   ├── index.html
+   ├── logo.png
+   ├── hero-map.jpg
+   ├── main.png
+   ├── project-qol.jpg
+   ├── project-bandon.jpg
+   ├── project-heatrisk.jpg
+   ├── project-windenergy.jpg
+   ├── project-rondonia.jpg
+   └── project-sealevel.jpg
 
-  margin:auto;
+   Root-relative /logo.png prevents broken paths when the
+   browser is on /bandon/ or another project directory.
+*/
 
+.logo-image{
+  display:block;
+  width:auto;
+  height:44px;
+  max-width:220px;
+  object-fit:contain;
+
+  /*
+     The container/background remains transparent.
+     If the PNG itself contains a white/coloured background,
+     that background must be removed from the PNG itself.
+  */
+  background:transparent;
+}
+
+.footer-logo{
+  height:48px;
+  max-width:240px;
+  background:transparent;
 }
 
 
@@ -107,11 +139,8 @@ img{
    ========================================================= */
 
 nav{
-
   position:sticky;
-
   top:0;
-
   z-index:50;
 
   background:rgba(14,28,39,.94);
@@ -120,12 +149,9 @@ nav{
 
   border-bottom:
     1px solid rgba(255,255,255,.08);
-
 }
 
-
 .nav-inner{
-
   min-height:76px;
 
   display:flex;
@@ -135,16 +161,9 @@ nav{
   justify-content:space-between;
 
   gap:30px;
-
 }
 
-
-/* =========================================================
-   LOGO
-   ========================================================= */
-
 .brand{
-
   display:flex;
 
   align-items:center;
@@ -154,27 +173,14 @@ nav{
   font-weight:800;
 
   letter-spacing:-.02em;
-
 }
 
-
-.brand-logo{
-
-  width:42px;
-
-  height:42px;
-
-  object-fit:contain;
-
-  display:block;
-
-  border-radius:5px;
-
+.brand .logo-image{
+  height:46px;
+  max-width:230px;
 }
-
 
 .nav-links{
-
   display:flex;
 
   gap:30px;
@@ -182,32 +188,23 @@ nav{
   color:#D8E2E7;
 
   font-size:.92rem;
-
 }
 
-
 .nav-links a{
-
   padding:28px 0;
 
   border-bottom:
     2px solid transparent;
-
 }
-
 
 .nav-links a:hover,
 .nav-links a.active{
-
   color:var(--cyan);
 
   border-color:var(--cyan);
-
 }
 
-
 .github{
-
   border:
     1px solid rgba(255,255,255,.25);
 
@@ -218,16 +215,11 @@ nav{
   font-size:1.1rem;
 
   transition:.2s ease;
-
 }
 
-
 .github:hover{
-
   border-color:var(--cyan);
-
   color:var(--cyan);
-
 }
 
 
@@ -236,13 +228,11 @@ nav{
    ========================================================= */
 
 .hero{
-
   position:relative;
 
   overflow:hidden;
 
   background:
-
     radial-gradient(
       circle at 74% 22%,
       rgba(31,122,140,.20),
@@ -257,12 +247,9 @@ nav{
     );
 
   padding:58px 0 42px;
-
 }
 
-
 .hero-grid{
-
   display:grid;
 
   grid-template-columns:1fr 1.15fr;
@@ -270,12 +257,9 @@ nav{
   gap:40px;
 
   align-items:center;
-
 }
 
-
 .eyebrow{
-
   text-transform:uppercase;
 
   letter-spacing:.13em;
@@ -287,12 +271,9 @@ nav{
   color:var(--cyan);
 
   margin-bottom:13px;
-
 }
 
-
 .hero h1{
-
   font-size:
     clamp(2.5rem,4.8vw,4.4rem);
 
@@ -301,12 +282,9 @@ nav{
   letter-spacing:-.05em;
 
   margin-bottom:20px;
-
 }
 
-
 .hero p{
-
   color:#D8E2E7;
 
   max-width:590px;
@@ -314,12 +292,9 @@ nav{
   font-size:1rem;
 
   margin-bottom:18px;
-
 }
 
-
 .hero-tags{
-
   display:flex;
 
   flex-wrap:wrap;
@@ -331,36 +306,26 @@ nav{
   font-size:.76rem;
 
   font-weight:700;
-
 }
-
 
 .hero-tags span::before{
-
   content:"•";
-
   margin-right:7px;
-
 }
 
-
 .hero-visual{
-
   position:relative;
 
   min-height:350px;
-
 }
 
-
 .hero-map{
-
   position:absolute;
 
   inset:0;
 
   background:
-    url("./hero-map.jpg")
+    url("/hero-map.jpg")
     center/cover
     no-repeat;
 
@@ -373,12 +338,9 @@ nav{
       black 14%,
       black 100%
     );
-
 }
 
-
 .hero-card{
-
   position:absolute;
 
   right:0;
@@ -399,12 +361,9 @@ nav{
 
   box-shadow:
     0 20px 50px rgba(0,0,0,.3);
-
 }
 
-
 .star{
-
   color:var(--orange);
 
   font-size:.85rem;
@@ -412,25 +371,18 @@ nav{
   font-weight:800;
 
   text-transform:uppercase;
-
 }
 
-
 .hero-card h3{
-
   font-size:1.15rem;
 
   margin:11px 0 8px;
-
 }
 
-
 .hero-card p{
-
   font-size:.84rem;
 
   margin-bottom:14px;
-
 }
 
 
@@ -439,7 +391,6 @@ nav{
    ========================================================= */
 
 .btn{
-
   display:inline-flex;
 
   align-items:center;
@@ -458,40 +409,25 @@ nav{
     transform .2s ease,
     border-color .2s ease,
     background .2s ease;
-
 }
-
 
 .btn-primary{
-
   background:#00AFC8;
-
   color:#071520;
-
 }
-
 
 .btn-outline{
-
   border:
     1px solid rgba(255,255,255,.3);
-
 }
-
 
 .btn:hover{
-
   transform:translateY(-1px);
-
 }
 
-
 .btn-outline:hover{
-
   border-color:var(--cyan);
-
   color:var(--cyan);
-
 }
 
 
@@ -500,21 +436,14 @@ nav{
    ========================================================= */
 
 section{
-
   padding:34px 0;
-
 }
-
 
 .section-heading{
-
   margin-bottom:16px;
-
 }
 
-
 .section-heading h2{
-
   font-size:1.25rem;
 
   color:var(--cyan);
@@ -522,16 +451,12 @@ section{
   text-transform:uppercase;
 
   letter-spacing:.02em;
-
 }
 
-
 .section-heading p{
-
   color:var(--muted);
 
   font-size:.82rem;
-
 }
 
 
@@ -540,19 +465,15 @@ section{
    ========================================================= */
 
 .featured-wrap{
-
   background:
     linear-gradient(
       180deg,
       var(--navy-dark),
       #091822
     );
-
 }
 
-
 .featured{
-
   border:
     1px solid var(--line);
 
@@ -561,58 +482,42 @@ section{
   overflow:hidden;
 
   background:#0D1D29;
-
 }
 
-
 .featured-grid{
-
   display:grid;
 
   grid-template-columns:43% 57%;
-
 }
 
-
 .featured-map{
-
   min-height:330px;
 
   background:
-    url("./main.png")
+    url("/main.png")
     center center/
     cover
     no-repeat;
-
 }
-
 
 .featured-content{
-
   padding:26px;
-
 }
 
-
 .featured-content h2{
-
   font-size:1.7rem;
 
   line-height:1.12;
 
   margin:9px 0 10px;
-
 }
 
-
 .featured-content p{
-
   color:#D0DCE2;
 
   font-size:.86rem;
 
   max-width:610px;
-
 }
 
 
@@ -621,19 +526,15 @@ section{
    ========================================================= */
 
 .pipeline{
-
   margin:22px 0;
 
   border-top:
     1px solid var(--line);
 
   padding-top:15px;
-
 }
 
-
 .pipeline-title{
-
   font-size:.7rem;
 
   color:var(--cyan);
@@ -641,12 +542,9 @@ section{
   text-transform:uppercase;
 
   font-weight:800;
-
 }
 
-
 .pipeline-row{
-
   display:flex;
 
   justify-content:space-between;
@@ -654,12 +552,9 @@ section{
   gap:8px;
 
   margin-top:13px;
-
 }
 
-
 .step{
-
   text-align:center;
 
   flex:1;
@@ -667,18 +562,14 @@ section{
   font-size:.68rem;
 
   color:#D8E2E7;
-
 }
 
-
 .step-icon{
-
   font-size:1.35rem;
 
   margin-bottom:5px;
 
   color:#fff;
-
 }
 
 
@@ -687,7 +578,6 @@ section{
    ========================================================= */
 
 .pills{
-
   display:flex;
 
   flex-wrap:wrap;
@@ -695,12 +585,9 @@ section{
   gap:8px;
 
   margin:12px 0 16px;
-
 }
 
-
 .pill{
-
   border:
     1px solid rgba(255,255,255,.22);
 
@@ -711,7 +598,6 @@ section{
   font-size:.7rem;
 
   color:#D8E2E7;
-
 }
 
 
@@ -720,19 +606,15 @@ section{
    ========================================================= */
 
 .research-grid{
-
   display:grid;
 
   grid-template-columns:
     repeat(4,1fr);
 
   gap:10px;
-
 }
 
-
 .card{
-
   border:
     1px solid var(--line);
 
@@ -742,32 +624,23 @@ section{
 
   padding:16px;
 
-  min-height:145px;
+  min-height:125px;
 
   position:relative;
 
   transition:
     transform .2s ease,
-    border-color .2s ease,
-    background .2s ease;
-
+    border-color .2s ease;
 }
 
-
 .card:hover{
-
   transform:translateY(-2px);
 
   border-color:
     rgba(0,215,232,.45);
-
-  background:#102533;
-
 }
 
-
 .card-num{
-
   display:inline-flex;
 
   border:
@@ -784,32 +657,23 @@ section{
   font-size:.75rem;
 
   margin-bottom:10px;
-
 }
 
-
 .card h3{
-
   font-size:.92rem;
 
   margin-bottom:5px;
-
 }
 
-
 .card p{
-
   font-size:.75rem;
 
   color:var(--muted);
 
   max-width:220px;
-
 }
 
-
 .arrow{
-
   position:absolute;
 
   right:13px;
@@ -819,16 +683,27 @@ section{
   color:var(--cyan);
 
   font-size:1rem;
-
 }
 
 
+/*
+   Entire research-domain card is clickable.
+   This preserves the visual card while connecting the
+   domain directly to its relevant project portfolio area.
+*/
+
 .domain-link{
-
   display:block;
-
   height:100%;
+}
 
+.domain-link:focus-visible{
+  outline:
+    2px solid var(--cyan);
+
+  outline-offset:3px;
+
+  border-radius:7px;
 }
 
 
@@ -837,7 +712,6 @@ section{
    ========================================================= */
 
 .projects-head{
-
   display:flex;
 
   justify-content:space-between;
@@ -845,21 +719,15 @@ section{
   align-items:end;
 
   margin-bottom:14px;
-
 }
 
-
 .projects-head a{
-
   color:var(--cyan);
 
   font-size:.78rem;
-
 }
 
-
 .projects{
-
   display:grid;
 
   grid-template-columns:
@@ -868,12 +736,9 @@ section{
   gap:14px;
 
   align-items:stretch;
-
 }
 
-
 .project-card{
-
   overflow:hidden;
 
   border:
@@ -891,21 +756,17 @@ section{
 
   flex-direction:column;
 
+  height:100%;
 }
 
-
 .project-card:hover{
-
   transform:translateY(-3px);
 
   border-color:
     rgba(0,215,232,.55);
-
 }
 
-
 .project-card img{
-
   width:100%;
 
   height:180px;
@@ -919,12 +780,9 @@ section{
   display:block;
 
   flex-shrink:0;
-
 }
 
-
 .project-body{
-
   padding:13px;
 
   display:flex;
@@ -932,12 +790,9 @@ section{
   flex-direction:column;
 
   flex:1;
-
 }
 
-
 .project-id{
-
   color:var(--cyan);
 
   font-size:.68rem;
@@ -947,23 +802,17 @@ section{
   letter-spacing:.08em;
 
   margin-bottom:6px;
-
 }
 
-
 .project-body h3{
-
   font-size:.82rem;
 
   line-height:1.2;
 
   margin-bottom:7px;
-
 }
 
-
 .project-body p{
-
   font-size:.68rem;
 
   line-height:1.55;
@@ -973,12 +822,9 @@ section{
   margin-bottom:8px;
 
   flex:1;
-
 }
 
-
 .badge{
-
   display:inline-block;
 
   align-self:flex-start;
@@ -999,19 +845,17 @@ section{
   font-weight:800;
 
   line-height:1.2;
-
 }
 
 
-.project-domain{
+/* Project/domain navigation */
 
+.project-domain-link{
   display:inline-flex;
 
   align-items:center;
 
-  gap:5px;
-
-  margin-top:9px;
+  margin-top:8px;
 
   color:var(--cyan);
 
@@ -1021,15 +865,11 @@ section{
 
   text-transform:uppercase;
 
-  letter-spacing:.03em;
-
+  letter-spacing:.04em;
 }
 
-
-.project-domain:hover{
-
+.project-domain-link:hover{
   color:#fff;
-
 }
 
 
@@ -1038,19 +878,15 @@ section{
    ========================================================= */
 
 .engineering{
-
   display:grid;
 
   grid-template-columns:
     1.4fr 1fr;
 
   gap:10px;
-
 }
 
-
 .panel{
-
   border:
     1px solid var(--line);
 
@@ -1059,27 +895,20 @@ section{
   background:#0E1F2B;
 
   padding:17px;
-
 }
 
-
 .panel h2{
-
   font-size:1rem;
 
   color:var(--cyan);
 
   margin-bottom:5px;
-
 }
 
-
 .panel>p{
-
   font-size:.72rem;
 
   color:var(--muted);
-
 }
 
 
@@ -1088,19 +917,15 @@ section{
    ========================================================= */
 
 .method-focus{
-
   margin-top:20px;
 
   padding-top:15px;
 
   border-top:
     1px solid var(--line);
-
 }
 
-
 .method-focus-title{
-
   color:var(--cyan);
 
   font-size:.85rem;
@@ -1108,18 +933,14 @@ section{
   font-weight:800;
 
   margin-bottom:5px;
-
 }
 
-
 .method-focus-description{
-
   color:var(--muted);
 
   font-size:.72rem;
 
   max-width:560px;
-
 }
 
 
@@ -1128,7 +949,6 @@ section{
    ========================================================= */
 
 .pipeline-large{
-
   display:flex;
 
   justify-content:space-between;
@@ -1138,12 +958,9 @@ section{
   align-items:center;
 
   margin:25px 0 16px;
-
 }
 
-
 .pipe-step{
-
   text-align:center;
 
   flex:1;
@@ -1151,12 +968,9 @@ section{
   color:#D8E2E7;
 
   font-size:.63rem;
-
 }
 
-
 .pipe-step strong{
-
   display:block;
 
   font-size:1.35rem;
@@ -1164,23 +978,17 @@ section{
   font-weight:400;
 
   margin-bottom:4px;
-
 }
 
-
 .tech{
-
   display:flex;
 
   gap:6px;
 
   flex-wrap:wrap;
-
 }
 
-
 .tech span{
-
   border:
     1px solid rgba(255,255,255,.2);
 
@@ -1189,7 +997,6 @@ section{
   border-radius:4px;
 
   font-size:.65rem;
-
 }
 
 
@@ -1198,19 +1005,15 @@ section{
    ========================================================= */
 
 .outputs{
-
   display:grid;
 
   grid-template-columns:
     1fr 1fr;
 
   gap:20px;
-
 }
 
-
 .outputs ul{
-
   list-style:none;
 
   display:grid;
@@ -1218,21 +1021,15 @@ section{
   gap:7px;
 
   margin-top:10px;
-
 }
 
-
 .outputs li{
-
   font-size:.74rem;
 
   color:#D8E2E7;
-
 }
 
-
 .repo{
-
   margin-top:12px;
 
   border:
@@ -1245,7 +1042,6 @@ section{
   font-size:.68rem;
 
   color:#D8E2E7;
-
 }
 
 
@@ -1254,14 +1050,12 @@ section{
    ========================================================= */
 
 #resources{
-
   background:
     linear-gradient(
       180deg,
       #0E1C27,
       #0B1923
     );
-
 }
 
 
@@ -1270,7 +1064,6 @@ section{
    ========================================================= */
 
 .about{
-
   background:#0A1721;
 
   border-top:
@@ -1278,12 +1071,9 @@ section{
 
   border-bottom:
     1px solid rgba(255,255,255,.06);
-
 }
 
-
 .about-grid{
-
   display:grid;
 
   grid-template-columns:
@@ -1292,48 +1082,47 @@ section{
   gap:35px;
 
   align-items:center;
-
 }
 
-
 .about h2{
-
   font-size:1.6rem;
 
   margin:5px 0 8px;
-
 }
 
-
 .about p{
-
   color:var(--muted);
 
   font-size:.78rem;
 
   margin-bottom:9px;
-
 }
 
 
-/* =========================================================
-   BOTTOM LOGO
-   ========================================================= */
+/*
+   Logo replaces the old generated bottom mark.
+*/
+
+.about-logo-wrap{
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  min-height:180px;
+
+  background:transparent;
+}
 
 .about-logo{
+  width:min(260px,80%);
 
-  width:170px;
-
-  height:170px;
-
-  margin:auto;
-
-  object-fit:contain;
+  height:auto;
 
   display:block;
 
-  border-radius:8px;
-
+  background:transparent;
 }
 
 
@@ -1342,18 +1131,14 @@ section{
    ========================================================= */
 
 footer{
-
   background:#07131D;
 
   padding:22px 0;
 
   color:#fff;
-
 }
 
-
 .footer-top{
-
   display:flex;
 
   justify-content:space-between;
@@ -1364,56 +1149,21 @@ footer{
 
   border-bottom:
     1px solid rgba(255,255,255,.1);
-
 }
-
-
-.footer-brand-wrap{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:12px;
-
-}
-
-
-.footer-logo{
-
-  width:38px;
-
-  height:38px;
-
-  object-fit:contain;
-
-  display:block;
-
-  border-radius:5px;
-
-}
-
 
 .footer-brand{
-
   font-weight:800;
-
 }
 
-
 .footer-description{
-
   color:#7F929E;
 
   font-size:.7rem;
 
   margin-top:4px;
-
 }
 
-
 .footer-links{
-
   display:flex;
 
   gap:20px;
@@ -1421,41 +1171,18 @@ footer{
   color:var(--muted);
 
   font-size:.72rem;
-
 }
-
 
 .footer-links a:hover{
-
   color:var(--cyan);
-
 }
 
-
 .copyright{
-
   padding-top:12px;
 
   color:#627582;
 
   font-size:.65rem;
-
-}
-
-
-/* =========================================================
-   IMAGE FALLBACK
-   ========================================================= */
-
-.image-fallback{
-
-  background:
-    linear-gradient(
-      135deg,
-      #102A38,
-      #07131D
-    );
-
 }
 
 
@@ -1466,10 +1193,8 @@ footer{
 @media(max-width:1100px){
 
   .projects{
-
     grid-template-columns:
       repeat(3,1fr);
-
   }
 
 }
@@ -1485,53 +1210,37 @@ footer{
   .featured-grid,
   .engineering,
   .about-grid{
-
     grid-template-columns:1fr;
-
   }
-
 
   .hero-visual{
-
     min-height:310px;
-
   }
-
 
   .research-grid{
-
     grid-template-columns:
       repeat(2,1fr);
-
   }
-
 
   .projects{
-
     grid-template-columns:
       repeat(2,1fr);
-
   }
-
 
   .project-card img{
-
     height:200px;
-
   }
-
 
   .nav-links{
-
     display:none;
-
   }
 
-
   .hero-card{
-
     width:52%;
+  }
 
+  .about-logo-wrap{
+    min-height:150px;
   }
 
 }
@@ -1546,35 +1255,31 @@ footer{
   .research-grid,
   .projects,
   .outputs{
-
     grid-template-columns:1fr;
-
   }
 
+  .brand .logo-image{
+    height:40px;
+    max-width:190px;
+  }
+
+  .github{
+    display:none;
+  }
 
   .project-card img{
-
     height:230px;
-
   }
-
 
   .hero{
-
     padding-top:35px;
-
   }
-
 
   .hero h1{
-
     font-size:2.55rem;
-
   }
 
-
   .hero-card{
-
     position:relative;
 
     width:100%;
@@ -1582,64 +1287,38 @@ footer{
     bottom:auto;
 
     margin-top:180px;
-
   }
-
 
   .hero-visual{
-
     min-height:470px;
-
   }
-
 
   .pipeline-large{
-
     flex-wrap:wrap;
-
   }
-
 
   .pipe-step{
-
     min-width:22%;
-
   }
-
 
   .footer-top{
-
     flex-direction:column;
-
   }
 
+  .footer-links{
+    flex-wrap:wrap;
+  }
 
   .projects-head{
-
     align-items:flex-start;
 
     flex-direction:column;
 
     gap:8px;
-
   }
-
-
-  .brand-logo{
-
-    width:38px;
-
-    height:38px;
-
-  }
-
 
   .about-logo{
-
-    width:130px;
-
-    height:130px;
-
+    width:210px;
   }
 
 }
@@ -1660,17 +1339,13 @@ footer{
 
   <div class="container nav-inner">
 
-    <a class="brand" href="#top">
+    <a class="brand" href="#top" aria-label="Spatial Evidence Lab home">
 
       <img
-        class="brand-logo"
-        src="./logo.jpg"
-        alt="Spatial Evidence Lab logo"
+        class="logo-image"
+        src="/logo.png"
+        alt="Spatial Evidence Lab"
       >
-
-      <span>
-        Spatial Evidence Lab
-      </span>
 
     </a>
 
@@ -1776,10 +1451,7 @@ footer{
 
     <div class="hero-visual">
 
-      <div
-        class="hero-map"
-        aria-hidden="true"
-      ></div>
+      <div class="hero-map" aria-hidden="true"></div>
 
       <div class="hero-card">
 
@@ -1795,10 +1467,7 @@ footer{
           Small-area analysis of quality of life across 19,000+ Census Areas.
         </p>
 
-        <a
-          class="btn btn-outline"
-          href="#featured"
-        >
+        <a class="btn btn-outline" href="#featured">
           EXPLORE RESEARCH →
         </a>
 
@@ -1815,10 +1484,7 @@ footer{
      FEATURED RESEARCH
      ========================================================= -->
 
-<section
-  id="featured"
-  class="featured-wrap"
->
+<section id="featured" class="featured-wrap">
 
   <div class="container">
 
@@ -1934,18 +1600,12 @@ footer{
               EXPLORE RESEARCH →
             </a>
 
-            <a
-              class="btn btn-outline"
-              href="#methods"
-            >
+            <a class="btn btn-outline" href="#methods">
               VIEW METHODS →
             </a>
 
-            <a
-              class="btn btn-outline"
-              href="#projects"
-            >
-              VIEW PROJECTS →
+            <a class="btn btn-outline" href="#domain-qol">
+              QUALITY OF LIFE →
             </a>
 
           </div>
@@ -1962,7 +1622,8 @@ footer{
 
 
 <!-- =========================================================
-     RESEARCH DOMAINS — 7 SUBSTANTIVE DOMAINS
+     RESEARCH DOMAINS
+     ALL SEVEN DOMAINS LINK TO THEIR PROJECT AREA
      ========================================================= -->
 
 <section id="research">
@@ -1985,17 +1646,15 @@ footer{
     <div class="research-grid">
 
 
-      <!-- =================================================
-           01 — QUALITY OF LIFE
-           ================================================= -->
+      <!-- 01 QUALITY OF LIFE -->
 
-      <a
-        class="domain-link"
-        id="domain-quality-of-life"
-        href="#projects-qol"
-      >
+      <article class="card" id="domain-qol">
 
-        <article class="card">
+        <a
+          class="domain-link"
+          href="#project-sel-001"
+          aria-label="View Quality of Life projects"
+        >
 
           <span class="card-num">
             01
@@ -2013,22 +1672,20 @@ footer{
             →
           </span>
 
-        </article>
+        </a>
 
-      </a>
+      </article>
 
 
-      <!-- =================================================
-           02 — ACCESSIBILITY
-           ================================================= -->
+      <!-- 02 ACCESSIBILITY -->
 
-      <a
-        class="domain-link"
-        id="domain-accessibility"
-        href="#projects-accessibility"
-      >
+      <article class="card" id="domain-accessibility">
 
-        <article class="card">
+        <a
+          class="domain-link"
+          href="#project-sel-002"
+          aria-label="View Accessibility projects"
+        >
 
           <span class="card-num">
             02
@@ -2046,22 +1703,20 @@ footer{
             →
           </span>
 
-        </article>
+        </a>
 
-      </a>
+      </article>
 
 
-      <!-- =================================================
-           03 — MOBILITY & TRANSPORT
-           ================================================= -->
+      <!-- 03 MOBILITY & TRANSPORT -->
 
-      <a
-        class="domain-link"
-        id="domain-mobility"
-        href="#projects-mobility"
-      >
+      <article class="card" id="domain-mobility">
 
-        <article class="card">
+        <a
+          class="domain-link"
+          href="#projects-mobility"
+          aria-label="View Mobility and Transport projects"
+        >
 
           <span class="card-num">
             03
@@ -2079,22 +1734,20 @@ footer{
             →
           </span>
 
-        </article>
+        </a>
 
-      </a>
+      </article>
 
 
-      <!-- =================================================
-           04 — POPULATION & DEMOGRAPHY
-           ================================================= -->
+      <!-- 04 POPULATION & DEMOGRAPHY -->
 
-      <a
-        class="domain-link"
-        id="domain-demography"
-        href="#projects-demography"
-      >
+      <article class="card" id="domain-demography">
 
-        <article class="card">
+        <a
+          class="domain-link"
+          href="#projects-demography"
+          aria-label="View Population and Demography projects"
+        >
 
           <span class="card-num">
             04
@@ -2112,22 +1765,20 @@ footer{
             →
           </span>
 
-        </article>
+        </a>
 
-      </a>
+      </article>
 
 
-      <!-- =================================================
-           05 — HOUSING & SOCIOECONOMIC
-           ================================================= -->
+      <!-- 05 HOUSING & SOCIOECONOMIC -->
 
-      <a
-        class="domain-link"
-        id="domain-housing"
-        href="#projects-housing"
-      >
+      <article class="card" id="domain-housing">
 
-        <article class="card">
+        <a
+          class="domain-link"
+          href="#projects-housing"
+          aria-label="View Housing and Socioeconomic projects"
+        >
 
           <span class="card-num">
             05
@@ -2145,22 +1796,20 @@ footer{
             →
           </span>
 
-        </article>
+        </a>
 
-      </a>
+      </article>
 
 
-      <!-- =================================================
-           06 — URBAN & RURAL
-           ================================================= -->
+      <!-- 06 URBAN & RURAL -->
 
-      <a
-        class="domain-link"
-        id="domain-urban-rural"
-        href="#projects-urban-rural"
-      >
+      <article class="card" id="domain-urban-rural">
 
-        <article class="card">
+        <a
+          class="domain-link"
+          href="#projects-urban-rural"
+          aria-label="View Urban and Rural Analysis projects"
+        >
 
           <span class="card-num">
             06
@@ -2178,22 +1827,20 @@ footer{
             →
           </span>
 
-        </article>
+        </a>
 
-      </a>
+      </article>
 
 
-      <!-- =================================================
-           07 — ENVIRONMENT & CLIMATE
-           ================================================= -->
+      <!-- 07 ENVIRONMENT & CLIMATE -->
 
-      <a
-        class="domain-link"
-        id="domain-environment"
-        href="#projects-environment"
-      >
+      <article class="card" id="domain-environment">
 
-        <article class="card">
+        <a
+          class="domain-link"
+          href="#project-sel-005"
+          aria-label="View Environment and Climate projects"
+        >
 
           <span class="card-num">
             07
@@ -2211,9 +1858,9 @@ footer{
             →
           </span>
 
-        </article>
+        </a>
 
-      </a>
+      </article>
 
 
     </div>
@@ -2260,14 +1907,13 @@ footer{
 
       <article
         class="project-card"
-        id="projects-qol"
+        id="project-sel-001"
       >
 
         <img
-          src="./project-qol.jpg"
+          src="/project-qol.jpg"
           alt="SEL-001 — Ireland Quality of Life Index"
           loading="lazy"
-          onerror="this.classList.add('image-fallback')"
         >
 
         <div class="project-body">
@@ -2291,8 +1937,8 @@ footer{
           </span>
 
           <a
-            class="project-domain"
-            href="#domain-quality-of-life"
+            class="project-domain-link"
+            href="#domain-qol"
           >
             Research Domain →
           </a>
@@ -2304,21 +1950,20 @@ footer{
 
       <!-- =================================================
            SEL-002 — ACCESSIBILITY
-           Bandon project page restored
+           Bandon connection restored
            ================================================= -->
 
       <a
-        href="./bandon/"
+        href="/bandon/"
         class="project-card"
-        id="projects-accessibility"
-        aria-label="Open Bandon Public Transport Accessibility project"
+        id="project-sel-002"
+        aria-label="Open SEL-002 Bandon Public Transport Accessibility Analysis"
       >
 
         <img
-          src="./project-bandon.jpg"
+          src="/project-bandon.jpg"
           alt="SEL-002 — Bandon Public Transport Accessibility Analysis"
           loading="lazy"
-          onerror="this.classList.add('image-fallback')"
         >
 
         <div class="project-body">
@@ -2341,22 +1986,8 @@ footer{
             ACCESSIBILITY
           </span>
 
-          <span
-            class="project-domain"
-            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='#domain-accessibility';"
-          >
-            Research Domain →
-          </span>
-
-          <span
-            style="
-              margin-top:7px;
-              color:#fff;
-              font-size:.61rem;
-              font-weight:800;
-            "
-          >
-            OPEN PROJECT →
+          <span class="project-domain-link">
+            Open Bandon Research →
           </span>
 
         </div>
@@ -2370,14 +2001,13 @@ footer{
 
       <article
         class="project-card"
-        id="projects-environment"
+        id="project-sel-005"
       >
 
         <img
-          src="./project-heatrisk.jpg"
+          src="/project-heatrisk.jpg"
           alt="SEL-005 — Greater Athens Heat Risk and Environmental Quality Assessment"
           loading="lazy"
-          onerror="this.classList.add('image-fallback')"
         >
 
         <div class="project-body">
@@ -2401,7 +2031,7 @@ footer{
           </span>
 
           <a
-            class="project-domain"
+            class="project-domain-link"
             href="#domain-environment"
           >
             Research Domain →
@@ -2416,13 +2046,15 @@ footer{
            SEL-006 — ENVIRONMENT & CLIMATE
            ================================================= -->
 
-      <article class="project-card">
+      <article
+        class="project-card"
+        id="project-sel-006"
+      >
 
         <img
-          src="./project-windenergy.jpg"
+          src="/project-windenergy.jpg"
           alt="SEL-006 — County Wicklow Wind Energy Potential Assessment"
           loading="lazy"
-          onerror="this.classList.add('image-fallback')"
         >
 
         <div class="project-body">
@@ -2446,7 +2078,7 @@ footer{
           </span>
 
           <a
-            class="project-domain"
+            class="project-domain-link"
             href="#domain-environment"
           >
             Research Domain →
@@ -2461,13 +2093,15 @@ footer{
            SEL-007 — ENVIRONMENT & CLIMATE
            ================================================= -->
 
-      <article class="project-card">
+      <article
+        class="project-card"
+        id="project-sel-007"
+      >
 
         <img
-          src="./project-rondonia.jpg"
+          src="/project-rondonia.jpg"
           alt="SEL-007 — Rondônia Deforestation and Forest Loss Analysis"
           loading="lazy"
-          onerror="this.classList.add('image-fallback')"
         >
 
         <div class="project-body">
@@ -2491,7 +2125,7 @@ footer{
           </span>
 
           <a
-            class="project-domain"
+            class="project-domain-link"
             href="#domain-environment"
           >
             Research Domain →
@@ -2506,13 +2140,15 @@ footer{
            SEL-010 — ENVIRONMENT & CLIMATE
            ================================================= -->
 
-      <article class="project-card">
+      <article
+        class="project-card"
+        id="project-sel-010"
+      >
 
         <img
-          src="./project-sealevel.jpg"
+          src="/project-sealevel.jpg"
           alt="SEL-010 — Miami Sea Level Rise Impact Assessment"
           loading="lazy"
-          onerror="this.classList.add('image-fallback')"
         >
 
         <div class="project-body">
@@ -2536,7 +2172,7 @@ footer{
           </span>
 
           <a
-            class="project-domain"
+            class="project-domain-link"
             href="#domain-environment"
           >
             Research Domain →
@@ -2549,190 +2185,35 @@ footer{
 
     </div>
 
-  </div>
 
-</section>
+    <!-- =====================================================
+         DOMAIN NAVIGATION TARGETS FOR FUTURE PROJECTS
+         ===================================================== -->
+
+    <div
+      id="projects-mobility"
+      aria-hidden="true"
+      style="height:1px"
+    ></div>
+
+    <div
+      id="projects-demography"
+      aria-hidden="true"
+      style="height:1px"
+    ></div>
+
+    <div
+      id="projects-housing"
+      aria-hidden="true"
+      style="height:1px"
+    ></div>
+
+    <div
+      id="projects-urban-rural"
+      aria-hidden="true"
+      style="height:1px"
+    ></div>
 
-
-<!-- =========================================================
-     DOMAIN NAVIGATION / PROJECT CONNECTIONS
-     ========================================================= -->
-
-<section id="domain-navigation">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <h2>
-        Research &amp; Project Navigation
-      </h2>
-
-      <p>
-        Explore projects through their corresponding research domains.
-      </p>
-
-    </div>
-
-
-    <div class="research-grid">
-
-
-      <a
-        class="domain-link"
-        href="#projects-qol"
-      >
-
-        <article class="card">
-
-          <span class="card-num">01</span>
-
-          <h3>Quality of Life</h3>
-
-          <p>
-            Ireland Quality of Life Index
-          </p>
-
-          <span class="arrow">→</span>
-
-        </article>
-
-      </a>
-
-
-      <a
-        class="domain-link"
-        href="./bandon/"
-      >
-
-        <article class="card">
-
-          <span class="card-num">02</span>
-
-          <h3>Accessibility</h3>
-
-          <p>
-            Bandon Public Transport Accessibility
-          </p>
-
-          <span class="arrow">→</span>
-
-        </article>
-
-      </a>
-
-
-      <a
-        class="domain-link"
-        href="#projects"
-      >
-
-        <article class="card">
-
-          <span class="card-num">03</span>
-
-          <h3>Mobility &amp; Transport</h3>
-
-          <p>
-            Transport and network-based spatial analysis.
-          </p>
-
-          <span class="arrow">→</span>
-
-        </article>
-
-      </a>
-
-
-      <a
-        class="domain-link"
-        href="#projects"
-      >
-
-        <article class="card">
-
-          <span class="card-num">04</span>
-
-          <h3>Population &amp; Demography</h3>
-
-          <p>
-            Population distribution and demographic change.
-          </p>
-
-          <span class="arrow">→</span>
-
-        </article>
-
-      </a>
-
-
-      <a
-        class="domain-link"
-        href="#projects"
-      >
-
-        <article class="card">
-
-          <span class="card-num">05</span>
-
-          <h3>Housing &amp; Socioeconomic</h3>
-
-          <p>
-            Housing, affordability and spatial inequality.
-          </p>
-
-          <span class="arrow">→</span>
-
-        </article>
-
-      </a>
-
-
-      <a
-        class="domain-link"
-        href="#projects"
-      >
-
-        <article class="card">
-
-          <span class="card-num">06</span>
-
-          <h3>Urban &amp; Rural Analysis</h3>
-
-          <p>
-            Spatial context and urban-rural patterns.
-          </p>
-
-          <span class="arrow">→</span>
-
-        </article>
-
-      </a>
-
-
-      <a
-        class="domain-link"
-        href="#projects-environment"
-      >
-
-        <article class="card">
-
-          <span class="card-num">07</span>
-
-          <h3>Environment &amp; Climate</h3>
-
-          <p>
-            Heat, energy, deforestation and coastal risk.
-          </p>
-
-          <span class="arrow">→</span>
-
-        </article>
-
-      </a>
-
-
-    </div>
 
   </div>
 
@@ -2748,7 +2229,7 @@ footer{
   <div class="container engineering">
 
 
-    <!-- METHODS -->
+    <!-- METHODS PANEL -->
 
     <div class="panel">
 
@@ -2785,9 +2266,7 @@ footer{
 
         </div>
 
-
         <div>→</div>
-
 
         <div class="pipe-step">
 
@@ -2797,9 +2276,7 @@ footer{
 
         </div>
 
-
         <div>→</div>
-
 
         <div class="pipe-step">
 
@@ -2809,9 +2286,7 @@ footer{
 
         </div>
 
-
         <div>→</div>
-
 
         <div class="pipe-step">
 
@@ -2839,7 +2314,7 @@ footer{
     </div>
 
 
-    <!-- DATA -->
+    <!-- DATA PANEL -->
 
     <div
       class="panel"
@@ -2999,12 +2474,14 @@ footer{
   <div class="container about-grid">
 
 
-    <div>
+    <!-- BOTTOM LOGO -->
+
+    <div class="about-logo-wrap">
 
       <img
         class="about-logo"
-        src="./logo.jpg"
-        alt="Spatial Evidence Lab logo"
+        src="/logo.png"
+        alt="Spatial Evidence Lab"
       >
 
     </div>
@@ -3053,26 +2530,23 @@ footer{
 
       <div>
 
-        <div class="footer-brand-wrap">
+        <!-- FOOTER LOGO -->
+
+        <a
+          href="#top"
+          aria-label="Return to Spatial Evidence Lab home"
+        >
 
           <img
-            class="footer-logo"
-            src="./logo.jpg"
-            alt="Spatial Evidence Lab logo"
+            class="logo-image footer-logo"
+            src="/logo.png"
+            alt="Spatial Evidence Lab"
           >
 
-          <div>
+        </a>
 
-            <div class="footer-brand">
-              Spatial Evidence Lab
-            </div>
-
-            <div class="footer-description">
-              Independent Geospatial Research &amp; Spatial Analytics
-            </div>
-
-          </div>
-
+        <div class="footer-description">
+          Independent Geospatial Research &amp; Spatial Analytics
         </div>
 
       </div>
