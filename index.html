@@ -193,7 +193,10 @@ nav{
 .hero-map{
   position:absolute;
   inset:0;
-  background:url("assets/hero-map.jpg") center/cover no-repeat;
+
+  /* IMAGE IS IN REPOSITORY ROOT */
+  background:url("hero-map.jpg") center/cover no-repeat;
+
   opacity:.95;
   mask-image:linear-gradient(
     to right,
@@ -244,6 +247,7 @@ nav{
   border-radius:6px;
   font-size:.8rem;
   font-weight:800;
+  transition:transform .2s ease;
 }
 
 .btn-primary{
@@ -309,7 +313,9 @@ section{
 
 .featured-map{
   min-height:300px;
-  background:url("assets/qol-map.jpg") center/cover no-repeat;
+
+  /* IMAGE IS IN REPOSITORY ROOT */
+  background:url("qol-map.jpg") center/cover no-repeat;
 }
 
 .featured-content{
@@ -434,7 +440,7 @@ section{
 }
 
 /* =========================
-   PROJECTS
+   SELECTED PROJECTS
    ========================= */
 
 .projects-head{
@@ -456,6 +462,7 @@ section{
 }
 
 .project-card{
+  display:block;
   overflow:hidden;
   border:1px solid var(--line);
   border-radius:7px;
@@ -479,6 +486,15 @@ section{
 
 .project-body{
   padding:10px;
+}
+
+.project-code{
+  display:block;
+  color:#00D7E8;
+  font-size:.58rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  margin-bottom:5px;
 }
 
 .project-body h3{
@@ -782,9 +798,11 @@ footer{
      ========================= -->
 
 <nav>
+
   <div class="container nav-inner">
 
     <a class="brand" href="#top">
+
       <div class="brand-mark" aria-hidden="true">
         <span></span>
         <span></span>
@@ -798,15 +816,18 @@ footer{
       </div>
 
       <span>Spatial Evidence Lab</span>
+
     </a>
 
     <div class="nav-links">
+
       <a class="active" href="#research">Research</a>
       <a href="#projects">Projects</a>
       <a href="#methods">Methods</a>
       <a href="#data">Data</a>
       <a href="#resources">Resources</a>
       <a href="#about">About</a>
+
     </div>
 
     <a
@@ -818,6 +839,7 @@ footer{
     >◉</a>
 
   </div>
+
 </nav>
 
 
@@ -982,11 +1004,13 @@ footer{
           </div>
 
           <div class="pills">
+
             <span class="pill">Census 2022</span>
             <span class="pill">19,000+ Small Areas</span>
             <span class="pill">URAF</span>
             <span class="pill">Spatial Indicators</span>
             <span class="pill">Multidimensional</span>
+
           </div>
 
           <div style="display:flex;gap:9px;flex-wrap:wrap">
@@ -1139,11 +1163,13 @@ footer{
     <div class="projects-head">
 
       <div class="section-heading" style="margin:0">
+
         <h2>Selected Projects</h2>
+
       </div>
 
       <a href="#projects">
-        View all projects →
+        Selected research portfolio →
       </a>
 
     </div>
@@ -1152,17 +1178,23 @@ footer{
     <div class="projects">
 
 
-      <!-- PROJECT 01 — IRELAND QOL -->
+      <!-- =====================
+           SEL-001
+           ===================== -->
 
       <article class="project-card">
 
         <img
-          src="assets/project-qol.jpg"
-          alt="Ireland Quality of Life Index"
+          src="project-qol.jpg"
+          alt="SEL-001 Ireland Quality of Life Index"
           loading="lazy"
         >
 
         <div class="project-body">
+
+          <span class="project-code">
+            SEL-001
+          </span>
 
           <h3>
             Ireland QoL Index
@@ -1173,7 +1205,7 @@ footer{
           </p>
 
           <span class="badge">
-            CORE RESEARCH
+            QUALITY OF LIFE
           </span>
 
         </div>
@@ -1181,28 +1213,34 @@ footer{
       </article>
 
 
-      <!-- PROJECT 02 — BANDON -->
+      <!-- =====================
+           SEL-002
+           ===================== -->
 
       <a href="bandon/" class="project-card">
 
         <img
-          src="assets/project-bandon.jpg"
-          alt="Bandon Public Transport Accessibility"
+          src="project-bandon.jpg"
+          alt="SEL-002 Bandon Public Transport Accessibility Analysis"
           loading="lazy"
         >
 
         <div class="project-body">
+
+          <span class="project-code">
+            SEL-002
+          </span>
 
           <h3>
             Bandon PT Accessibility
           </h3>
 
           <p>
-            Public transport accessibility model for Bandon, Co. Cork.
+            Public transport accessibility, service frequency and vulnerability.
           </p>
 
           <span class="badge">
-            CORE RESEARCH
+            TRANSPORT
           </span>
 
         </div>
@@ -1210,28 +1248,34 @@ footer{
       </a>
 
 
-      <!-- PROJECT 03 — WEST CORK -->
+      <!-- =====================
+           SEL-005
+           ===================== -->
 
       <article class="project-card">
 
         <img
-          src="assets/project-westcork.jpg"
-          alt="West Cork Public Transport Accessibility"
+          src="project-heatrisk.jpg"
+          alt="SEL-005 Greater Athens Heat Risk and Environmental Quality Assessment"
           loading="lazy"
         >
 
         <div class="project-body">
 
+          <span class="project-code">
+            SEL-005
+          </span>
+
           <h3>
-            West Cork PTAL
+            Athens Heat Risk
           </h3>
 
           <p>
-            Public transport accessibility levels in West Cork.
+            Spatial modelling of heat risk and environmental quality.
           </p>
 
           <span class="badge">
-            EXPLORATORY
+            ENVIRONMENT
           </span>
 
         </div>
@@ -1239,28 +1283,34 @@ footer{
       </article>
 
 
-      <!-- PROJECT 04 — DUBLIN TRANSPORT -->
+      <!-- =====================
+           SEL-006
+           ===================== -->
 
       <article class="project-card">
 
         <img
-          src="assets/project-dublin.jpg"
-          alt="Dublin Transport Model"
+          src="project-windenergy.jpg"
+          alt="SEL-006 County Wicklow Wind Energy Potential Assessment"
           loading="lazy"
         >
 
         <div class="project-body">
 
+          <span class="project-code">
+            SEL-006
+          </span>
+
           <h3>
-            Dublin Transport Model
+            Wicklow Wind Energy
           </h3>
 
           <p>
-            Public transport coverage and network accessibility.
+            Spatial multi-criteria assessment of wind energy potential.
           </p>
 
           <span class="badge">
-            CORE RESEARCH
+            RENEWABLE ENERGY
           </span>
 
         </div>
@@ -1268,31 +1318,34 @@ footer{
       </article>
 
 
-      <!-- PROJECT 05 — DUBLIN POPULATION -->
+      <!-- =====================
+           SEL-007
+           ===================== -->
 
       <article class="project-card">
 
         <img
-          src="assets/project-population.jpg"
-          alt="Dublin Population Analysis"
+          src="project-rondonia.jpg"
+          alt="SEL-007 Rondônia Deforestation and Forest Loss Analysis"
           loading="lazy"
         >
 
         <div class="project-body">
 
+          <span class="project-code">
+            SEL-007
+          </span>
+
           <h3>
-            Dublin Population
+            Rondônia Deforestation
           </h3>
 
           <p>
-            Population structure and demographic analysis.
+            Spatial and temporal analysis of forest loss in Rondônia.
           </p>
 
-          <span
-            class="badge"
-            style="color:#00D7E8;border-color:#00D7E8"
-          >
-            EXPLORATORY
+          <span class="badge">
+            FORESTS &amp; LAND COVER
           </span>
 
         </div>
@@ -1300,31 +1353,34 @@ footer{
       </article>
 
 
-      <!-- PROJECT 06 — HOUSING -->
+      <!-- =====================
+           SEL-010
+           ===================== -->
 
       <article class="project-card">
 
         <img
-          src="assets/project-housing.jpg"
-          alt="Ireland Housing Model"
+          src="project-sealevel.jpg"
+          alt="SEL-010 Miami Sea Level Rise Impact Assessment"
           loading="lazy"
         >
 
         <div class="project-body">
 
+          <span class="project-code">
+            SEL-010
+          </span>
+
           <h3>
-            Ireland Housing Model
+            Miami Sea Level Rise
           </h3>
 
           <p>
-            Housing markets and affordability analysis.
+            Spatial assessment of potential sea level rise exposure in Miami.
           </p>
 
-          <span
-            class="badge"
-            style="color:#00D7E8;border-color:#00D7E8"
-          >
-            EXPLORATORY
+          <span class="badge">
+            CLIMATE RISK
           </span>
 
         </div>
@@ -1479,8 +1535,8 @@ footer{
           </div>
 
           <p style="margin-top:6px">
-            Research should be inspectable. Methods, code, and datasets support
-            transparency.
+            Research should be inspectable. Methods, code, and datasets
+            support transparency.
           </p>
 
 
@@ -1539,11 +1595,14 @@ footer{
 
     <div class="research-grid">
 
+
       <article class="card">
 
         <span class="card-num">01</span>
 
-        <h3>GitHub Repository</h3>
+        <h3>
+          GitHub Repository
+        </h3>
 
         <p>
           Source code, project structure and reproducible research materials.
@@ -1565,7 +1624,9 @@ footer{
 
         <span class="card-num">02</span>
 
-        <h3>Spatial Evidence Lab</h3>
+        <h3>
+          Spatial Evidence Lab
+        </h3>
 
         <p>
           Project portfolio and published spatial research outputs.
@@ -1585,7 +1646,9 @@ footer{
 
         <span class="card-num">03</span>
 
-        <h3>Project Outputs</h3>
+        <h3>
+          Project Outputs
+        </h3>
 
         <p>
           Maps, analytical outputs and project-specific evidence.
@@ -1605,7 +1668,9 @@ footer{
 
         <span class="card-num">04</span>
 
-        <h3>Methods</h3>
+        <h3>
+          Methods
+        </h3>
 
         <p>
           Spatial analysis, GIS workflows and data engineering methods.
@@ -1619,6 +1684,7 @@ footer{
         </a>
 
       </article>
+
 
     </div>
 
