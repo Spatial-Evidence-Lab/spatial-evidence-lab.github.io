@@ -6,1189 +6,1053 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>
-  Spatial Evidence Lab | Geospatial Research & Spatial Analytics
-</title>
+<title>Spatial Evidence Lab | Geospatial Research & Spatial Analytics</title>
 
 <meta
-  name="description"
-  content="Spatial Evidence Lab — independent geospatial research, spatial analytics and geographic data engineering."
+name="description"
+content="Spatial Evidence Lab — independent geospatial research, spatial analytics and geographic data engineering."
 >
 
 <style>
 
 /* =========================================================
-   DESIGN SYSTEM
-   ========================================================= */
+  DESIGN SYSTEM
+  ========================================================= */
 
 :root{
 
-  --navy:#172A3A;
-  --navy-dark:#0E1C27;
-  --navy-2:#111F2B;
+--navy:#172A3A;
+--navy-dark:#0E1C27;
+--navy-2:#111F2B;
 
-  --teal:#1F7A8C;
-  --teal-light:#8ED1D8;
+--teal:#1F7A8C;
+--teal-light:#8ED1D8;
 
-  --cyan:#00D7E8;
+--cyan:#00D7E8;
 
-  --orange:#E58F65;
+--orange:#E58F65;
 
-  --cream:#F5F3EE;
-  --white:#fff;
+--cream:#F5F3EE;
+--white:#fff;
 
-  --muted:#AAB9C2;
+--muted:#AAB9C2;
 
-  --line:rgba(142,209,216,.18);
+--line:rgba(142,209,216,.18);
 
-  --max:1180px;
+--max:1180px;
 
-  --radius:10px;
+--radius:10px;
 
 }
 
 
 /* =========================================================
-   RESET
-   ========================================================= */
+  RESET
+  ========================================================= */
 
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
+
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
+
 
 body{
 
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Arial,
-    sans-serif;
+font-family:
+Inter,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Arial,
+sans-serif;
 
-  background:var(--navy-dark);
+background:var(--navy-dark);
 
-  color:#E8EEF1;
+color:#E8EEF1;
 
-  line-height:1.5;
+line-height:1.5;
 
 }
+
 
 a{
-  color:inherit;
-  text-decoration:none;
+color:inherit;
+text-decoration:none;
 }
 
-button{
-  font:inherit;
-}
 
 .container{
 
-  width:min(94%,var(--max));
+width:min(94%,var(--max));
 
-  margin:auto;
+margin:auto;
 
 }
 
 
 /* =========================================================
-   NAVIGATION
-   ========================================================= */
+  NAVIGATION
+  ========================================================= */
 
 nav{
 
-  position:sticky;
+position:sticky;
 
-  top:0;
+top:0;
 
-  z-index:50;
+z-index:50;
 
-  background:rgba(14,28,39,.94);
+background:rgba(14,28,39,.94);
 
-  backdrop-filter:blur(14px);
+backdrop-filter:blur(14px);
 
-  border-bottom:
-    1px solid rgba(255,255,255,.08);
+border-bottom:
+1px solid rgba(255,255,255,.08);
 
 }
+
 
 .nav-inner{
 
-  min-height:76px;
+min-height:76px;
 
-  display:flex;
+display:flex;
 
-  align-items:center;
+align-items:center;
 
-  justify-content:space-between;
+justify-content:space-between;
 
-  gap:30px;
+gap:30px;
 
 }
 
-
-/* =========================================================
-   SHARED LOGO
-   The exact same logo is used everywhere.
-   ========================================================= */
 
 .brand{
 
-  display:flex;
+display:flex;
 
-  align-items:center;
+align-items:center;
 
-  gap:12px;
+gap:12px;
 
-  font-weight:800;
+font-weight:800;
 
-  letter-spacing:-.02em;
+letter-spacing:-.02em;
 
 }
+
 
 .brand-mark{
 
-  width:38px;
+width:38px;
 
-  height:38px;
+height:38px;
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:repeat(5,1fr);
+grid-template-columns:repeat(5,1fr);
 
-  grid-template-rows:repeat(5,1fr);
+grid-template-rows:repeat(5,1fr);
 
-  gap:2px;
+gap:2px;
 
-  transform:rotate(-4deg);
-
-  flex-shrink:0;
+transform:rotate(-4deg);
 
 }
+
 
 .brand-mark span{
 
-  background:var(--teal);
+background:var(--teal);
 
 }
+
 
 .brand-mark span:nth-child(3n){
 
-  background:var(--navy);
+background:var(--navy);
 
 }
+
 
 .brand-mark span:nth-child(7){
 
-  background:var(--orange);
-
-}
-
-
-/*
-   Large version uses the exact same logo pattern.
-   Only the scale changes.
-*/
-
-.brand-mark--large{
-
-  width:150px;
-
-  height:150px;
-
-  gap:3px;
-
-  margin:auto;
+background:var(--orange);
 
 }
 
 
 .nav-links{
 
-  display:flex;
+display:flex;
 
-  gap:30px;
+gap:30px;
 
-  color:#D8E2E7;
+color:#D8E2E7;
 
-  font-size:.92rem;
+font-size:.92rem;
 
 }
+
 
 .nav-links a{
 
-  padding:28px 0;
+padding:28px 0;
 
-  border-bottom:
-    2px solid transparent;
+border-bottom:
+2px solid transparent;
 
 }
+
 
 .nav-links a:hover,
 .nav-links a.active{
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  border-color:var(--cyan);
+border-color:var(--cyan);
 
 }
+
 
 .github{
 
-  border:
-    1px solid rgba(255,255,255,.25);
+border:
+1px solid rgba(255,255,255,.25);
 
-  border-radius:7px;
+border-radius:7px;
 
-  padding:10px 13px;
+padding:10px 13px;
 
-  font-size:1.1rem;
+font-size:1.1rem;
 
-  transition:.2s ease;
+transition:.2s ease;
 
 }
+
 
 .github:hover{
 
-  border-color:var(--cyan);
+border-color:var(--cyan);
 
-  color:var(--cyan);
+color:var(--cyan);
 
 }
 
 
 /* =========================================================
-   HERO
-   ========================================================= */
+  HERO
+  ========================================================= */
 
 .hero{
 
-  position:relative;
+position:relative;
 
-  overflow:hidden;
+overflow:hidden;
 
-  background:
+background:
 
-    radial-gradient(
-      circle at 74% 22%,
-      rgba(31,122,140,.20),
-      transparent 28%
-    ),
+radial-gradient(
+circle at 74% 22%,
+rgba(31,122,140,.20),
+transparent 28%
+),
 
-    linear-gradient(
-      135deg,
-      #071520 0%,
-      var(--navy-dark) 55%,
-      #102B3A 100%
-    );
+linear-gradient(
+135deg,
+#071520 0%,
+var(--navy-dark) 55%,
+#102B3A 100%
+);
 
-  padding:58px 0 42px;
+padding:58px 0 42px;
 
 }
+
 
 .hero-grid{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:1fr 1.15fr;
+grid-template-columns:1fr 1.15fr;
 
-  gap:40px;
+gap:40px;
 
-  align-items:center;
+align-items:center;
 
 }
+
 
 .eyebrow{
 
-  text-transform:uppercase;
+text-transform:uppercase;
 
-  letter-spacing:.13em;
+letter-spacing:.13em;
 
-  font-size:.72rem;
+font-size:.72rem;
 
-  font-weight:800;
+font-weight:800;
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  margin-bottom:13px;
+margin-bottom:13px;
 
 }
+
 
 .hero h1{
 
-  font-size:
-    clamp(2.5rem,4.8vw,4.4rem);
+font-size:
+clamp(2.5rem,4.8vw,4.4rem);
 
-  line-height:1.04;
+line-height:1.04;
 
-  letter-spacing:-.05em;
+letter-spacing:-.05em;
 
-  margin-bottom:20px;
+margin-bottom:20px;
 
 }
+
 
 .hero p{
 
-  color:#D8E2E7;
+color:#D8E2E7;
 
-  max-width:590px;
+max-width:590px;
 
-  font-size:1rem;
+font-size:1rem;
 
-  margin-bottom:18px;
+margin-bottom:18px;
 
 }
+
 
 .hero-tags{
 
-  display:flex;
+display:flex;
 
-  flex-wrap:wrap;
+flex-wrap:wrap;
 
-  gap:12px;
+gap:12px;
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  font-size:.76rem;
+font-size:.76rem;
 
-  font-weight:700;
+font-weight:700;
 
 }
+
 
 .hero-tags span::before{
 
-  content:"•";
+content:"•";
 
-  margin-right:7px;
+margin-right:7px;
 
 }
+
 
 .hero-visual{
 
-  position:relative;
+position:relative;
 
-  min-height:350px;
+min-height:350px;
 
 }
+
 
 .hero-map{
 
-  position:absolute;
+position:absolute;
 
-  inset:0;
+inset:0;
 
-  background:
-    url("hero-map.jpg")
-    center/cover
-    no-repeat;
+background:
+url("hero-map.jpg")
+center/cover
+no-repeat;
 
-  opacity:.95;
+opacity:.95;
 
-  mask-image:
-    linear-gradient(
-      to right,
-      transparent 0%,
-      black 14%,
-      black 100%
-    );
+mask-image:
+linear-gradient(
+to right,
+transparent 0%,
+black 14%,
+black 100%
+);
 
 }
+
 
 .hero-card{
 
-  position:absolute;
+position:absolute;
 
-  right:0;
+right:0;
 
-  bottom:18px;
+bottom:18px;
 
-  width:min(360px,55%);
+width:min(360px,55%);
 
-  padding:24px;
+padding:24px;
 
-  background:
-    rgba(14,28,39,.91);
+background:
+rgba(14,28,39,.91);
 
-  border:
-    1px solid rgba(255,255,255,.2);
+border:
+1px solid rgba(255,255,255,.2);
 
-  border-radius:11px;
+border-radius:11px;
 
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.3);
+box-shadow:
+0 20px 50px rgba(0,0,0,.3);
 
 }
+
 
 .star{
 
-  color:var(--orange);
+color:var(--orange);
 
-  font-size:.85rem;
+font-size:.85rem;
 
-  font-weight:800;
+font-weight:800;
 
-  text-transform:uppercase;
+text-transform:uppercase;
 
 }
+
 
 .hero-card h3{
 
-  font-size:1.15rem;
+font-size:1.15rem;
 
-  margin:11px 0 8px;
+margin:11px 0 8px;
 
 }
+
 
 .hero-card p{
 
-  font-size:.84rem;
+font-size:.84rem;
 
-  margin-bottom:14px;
+margin-bottom:14px;
 
 }
 
 
 /* =========================================================
-   BUTTONS
-   ========================================================= */
+  BUTTONS
+  ========================================================= */
 
 .btn{
 
-  display:inline-flex;
+display:inline-flex;
 
-  align-items:center;
+align-items:center;
 
-  gap:10px;
+gap:10px;
 
-  padding:11px 16px;
+padding:11px 16px;
 
-  border-radius:6px;
+border-radius:6px;
 
-  font-size:.8rem;
+font-size:.8rem;
 
-  font-weight:800;
+font-weight:800;
 
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    background .2s ease;
+transition:
+transform .2s ease,
+border-color .2s ease,
+background .2s ease;
 
 }
+
 
 .btn-primary{
 
-  background:#00AFC8;
+background:#00AFC8;
 
-  color:#071520;
+color:#071520;
 
 }
+
 
 .btn-outline{
 
-  border:
-    1px solid rgba(255,255,255,.3);
+border:
+1px solid rgba(255,255,255,.3);
 
 }
+
 
 .btn:hover{
 
-  transform:translateY(-1px);
+transform:translateY(-1px);
 
 }
+
 
 .btn-outline:hover{
 
-  border-color:var(--cyan);
+border-color:var(--cyan);
 
-  color:var(--cyan);
+color:var(--cyan);
 
 }
 
 
 /* =========================================================
-   SECTIONS
-   ========================================================= */
+  SECTIONS
+  ========================================================= */
 
 section{
 
-  padding:34px 0;
+padding:34px 0;
 
 }
+
 
 .section-heading{
 
-  margin-bottom:16px;
+margin-bottom:16px;
 
 }
+
 
 .section-heading h2{
 
-  font-size:1.25rem;
+font-size:1.25rem;
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  text-transform:uppercase;
+text-transform:uppercase;
 
-  letter-spacing:.02em;
+letter-spacing:.02em;
 
 }
+
 
 .section-heading p{
 
-  color:var(--muted);
+color:var(--muted);
 
-  font-size:.82rem;
+font-size:.82rem;
 
 }
 
 
 /* =========================================================
-   FEATURED RESEARCH
-   ========================================================= */
+  FEATURED RESEARCH
+  ========================================================= */
 
 .featured-wrap{
 
-  background:
-    linear-gradient(
-      180deg,
-      var(--navy-dark),
-      #091822
-    );
+background:
+linear-gradient(
+180deg,
+var(--navy-dark),
+#091822
+);
 
 }
+
 
 .featured{
 
-  border:
-    1px solid var(--line);
+border:
+1px solid var(--line);
 
-  border-radius:11px;
+border-radius:11px;
 
-  overflow:hidden;
+overflow:hidden;
 
-  background:#0D1D29;
+background:#0D1D29;
 
 }
+
 
 .featured-grid{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:43% 57%;
+grid-template-columns:43% 57%;
 
 }
+
 
 .featured-map{
 
-  min-height:330px;
+min-height:330px;
 
-  background:
-    url("main.png")
-    center center/
-    cover
-    no-repeat;
+background:
+url("main.png")
+center center/
+cover
+no-repeat;
 
 }
+
 
 .featured-content{
 
-  padding:26px;
+padding:26px;
 
 }
+
 
 .featured-content h2{
 
-  font-size:1.7rem;
+font-size:1.7rem;
 
-  line-height:1.12;
+line-height:1.12;
 
-  margin:9px 0 10px;
+margin:9px 0 10px;
 
 }
+
 
 .featured-content p{
 
-  color:#D0DCE2;
+color:#D0DCE2;
 
-  font-size:.86rem;
+font-size:.86rem;
 
-  max-width:610px;
+max-width:610px;
 
 }
 
 
 /* =========================================================
-   PIPELINE
-   ========================================================= */
+  PIPELINE
+  ========================================================= */
 
 .pipeline{
 
-  margin:22px 0;
+margin:22px 0;
 
-  border-top:
-    1px solid var(--line);
+border-top:
+1px solid var(--line);
 
-  padding-top:15px;
+padding-top:15px;
 
 }
+
 
 .pipeline-title{
 
-  font-size:.7rem;
+font-size:.7rem;
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  text-transform:uppercase;
+text-transform:uppercase;
 
-  font-weight:800;
+font-weight:800;
 
 }
+
 
 .pipeline-row{
 
-  display:flex;
+display:flex;
 
-  justify-content:space-between;
+justify-content:space-between;
 
-  gap:8px;
+gap:8px;
 
-  margin-top:13px;
+margin-top:13px;
 
 }
+
 
 .step{
 
-  text-align:center;
+text-align:center;
 
-  flex:1;
+flex:1;
 
-  font-size:.68rem;
+font-size:.68rem;
 
-  color:#D8E2E7;
+color:#D8E2E7;
 
 }
+
 
 .step-icon{
 
-  font-size:1.35rem;
+font-size:1.35rem;
 
-  margin-bottom:5px;
+margin-bottom:5px;
 
-  color:#fff;
+color:#fff;
 
 }
 
 
 /* =========================================================
-   PILLS
-   ========================================================= */
+  PILLS
+  ========================================================= */
 
 .pills{
 
-  display:flex;
+display:flex;
 
-  flex-wrap:wrap;
+flex-wrap:wrap;
 
-  gap:8px;
+gap:8px;
 
-  margin:12px 0 16px;
+margin:12px 0 16px;
 
 }
+
 
 .pill{
 
-  border:
-    1px solid rgba(255,255,255,.22);
+border:
+1px solid rgba(255,255,255,.22);
 
-  border-radius:4px;
+border-radius:4px;
 
-  padding:5px 8px;
+padding:5px 8px;
 
-  font-size:.7rem;
+font-size:.7rem;
 
-  color:#D8E2E7;
+color:#D8E2E7;
 
 }
 
 
 /* =========================================================
-   RESEARCH DOMAINS
-   ========================================================= */
+  RESEARCH DOMAINS
+  ========================================================= */
 
 .research-grid{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-    repeat(4,1fr);
+grid-template-columns:
+repeat(4,1fr);
 
-  gap:10px;
+gap:10px;
+
+}
+
+
+.card{
+
+border:
+1px solid var(--line);
+
+background:#0E1F2B;
+
+border-radius:7px;
+
+padding:16px;
+
+min-height:125px;
+
+position:relative;
+
+transition:
+transform .2s ease,
+border-color .2s ease;
 
 }
 
 
-/*
-   Domain cards are now real buttons so they are keyboard
-   accessible and can trigger the project filter.
-*/
+.card:hover{
 
-.domain-card{
+transform:translateY(-2px);
 
-  width:100%;
-
-  text-align:left;
-
-  color:inherit;
-
-  border:
-    1px solid var(--line);
-
-  background:#0E1F2B;
-
-  border-radius:7px;
-
-  padding:16px;
-
-  min-height:125px;
-
-  position:relative;
-
-  cursor:pointer;
-
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    background .2s ease;
+border-color:
+rgba(0,215,232,.45);
 
 }
 
-.domain-card:hover{
-
-  transform:translateY(-2px);
-
-  border-color:
-    rgba(0,215,232,.55);
-
-  background:#102633;
-
-}
-
-.domain-card:focus-visible{
-
-  outline:2px solid var(--cyan);
-
-  outline-offset:3px;
-
-}
-
-.domain-card.active{
-
-  border-color:var(--cyan);
-
-  box-shadow:
-    0 0 0 1px rgba(0,215,232,.15);
-
-}
 
 .card-num{
 
-  display:inline-flex;
+display:inline-flex;
 
-  border:
-    1px solid var(--cyan);
+border:
+1px solid var(--cyan);
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  border-radius:4px;
+border-radius:4px;
 
-  padding:3px 7px;
+padding:3px 7px;
 
-  font-weight:800;
+font-weight:800;
 
-  font-size:.75rem;
+font-size:.75rem;
 
-  margin-bottom:10px;
-
-}
-
-.domain-card h3{
-
-  font-size:.92rem;
-
-  margin-bottom:5px;
+margin-bottom:10px;
 
 }
 
-.domain-card p{
 
-  font-size:.75rem;
+.card h3{
 
-  color:var(--muted);
+font-size:.92rem;
 
-  max-width:220px;
+margin-bottom:5px;
 
 }
+
+
+.card p{
+
+font-size:.75rem;
+
+color:var(--muted);
+
+max-width:220px;
+
+}
+
 
 .arrow{
 
-  position:absolute;
+position:absolute;
 
-  right:13px;
+right:13px;
 
-  bottom:12px;
+bottom:12px;
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  font-size:1rem;
-
-}
-
-.domain-count{
-
-  position:absolute;
-
-  top:16px;
-
-  right:16px;
-
-  color:#78909B;
-
-  font-size:.62rem;
-
-  font-weight:700;
+font-size:1rem;
 
 }
 
 
 /* =========================================================
-   SELECTED PROJECTS
-   ========================================================= */
-
-#projects{
-
-  scroll-margin-top:85px;
-
-}
+  SELECTED PROJECTS
+  ========================================================= */
 
 .projects-head{
 
-  display:flex;
+display:flex;
 
-  justify-content:space-between;
+justify-content:space-between;
 
-  align-items:end;
+align-items:end;
 
-  margin-bottom:14px;
+margin-bottom:14px;
 
 }
+
 
 .projects-head a{
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  font-size:.78rem;
-
-  cursor:pointer;
-
-}
-
-
-/*
-   Active filter indicator
-*/
-
-.project-filter-bar{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:12px;
-
-  margin-bottom:16px;
-
-  padding:10px 12px;
-
-  border:
-    1px solid var(--line);
-
-  border-radius:7px;
-
-  background:#0B1B26;
-
-}
-
-.project-filter-status{
-
-  color:var(--muted);
-
-  font-size:.72rem;
-
-}
-
-.project-filter-status strong{
-
-  color:var(--cyan);
-
-}
-
-.clear-filter{
-
-  border:0;
-
-  background:transparent;
-
-  color:var(--cyan);
-
-  cursor:pointer;
-
-  font-size:.7rem;
-
-  font-weight:800;
-
-}
-
-.clear-filter:hover{
-
-  text-decoration:underline;
+font-size:.78rem;
 
 }
 
 
 .projects{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-    repeat(6,1fr);
+grid-template-columns:
+repeat(6,1fr);
 
-  gap:14px;
+gap:14px;
 
-  align-items:stretch;
+align-items:stretch;
 
 }
 
-
-/*
-   PROJECT THUMBNAILS
-
-   Recommended source image:
-   1200 × 900 px minimum
-   1600 × 1200 px preferred
-   Aspect ratio: 4:3
-
-   CSS maintains the same 4:3 box at every breakpoint.
-*/
 
 .project-card{
 
-  overflow:hidden;
+overflow:hidden;
 
-  border:
-    1px solid var(--line);
+border:
+1px solid var(--line);
 
-  border-radius:8px;
+border-radius:8px;
 
-  background:#0E1F2B;
+background:#0E1F2B;
 
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    opacity .2s ease;
+transition:
+transform .2s ease,
+border-color .2s ease;
 
-  display:flex;
+display:flex;
 
-  flex-direction:column;
+flex-direction:column;
 
 }
+
 
 .project-card:hover{
 
-  transform:translateY(-3px);
+transform:translateY(-3px);
 
-  border-color:
-    rgba(0,215,232,.55);
-
-}
-
-.project-card.is-hidden{
-
-  display:none;
+border-color:
+rgba(0,215,232,.55);
 
 }
+
 
 .project-card img{
 
-  width:100%;
+width:100%;
 
-  aspect-ratio:4 / 3;
+height:180px;
 
-  height:auto;
+object-fit:cover;
 
-  object-fit:cover;
+object-position:top center;
 
-  object-position:center;
+background:#09151E;
 
-  background:#09151E;
+display:block;
 
-  display:block;
-
-  flex-shrink:0;
+flex-shrink:0;
 
 }
+
 
 .project-body{
 
-  padding:13px;
+padding:13px;
 
-  display:flex;
+display:flex;
 
-  flex-direction:column;
+flex-direction:column;
 
-  flex:1;
+flex:1;
 
 }
+
 
 .project-id{
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  font-size:.68rem;
+font-size:.68rem;
 
-  font-weight:800;
+font-weight:800;
 
-  letter-spacing:.08em;
+letter-spacing:.08em;
 
-  margin-bottom:6px;
+margin-bottom:6px;
 
 }
+
 
 .project-body h3{
 
-  font-size:.82rem;
+font-size:.82rem;
 
-  line-height:1.2;
+line-height:1.2;
 
-  margin-bottom:7px;
+margin-bottom:7px;
 
 }
+
 
 .project-body p{
 
-  font-size:.68rem;
+font-size:.68rem;
 
-  line-height:1.55;
+line-height:1.55;
 
-  color:var(--muted);
+color:var(--muted);
 
-  margin-bottom:10px;
+margin-bottom:8px;
 
-  flex:1;
-
-}
-
-
-/*
-   Every domain associated with a project is displayed here.
-*/
-
-.project-domains{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:4px;
-
-  margin-top:auto;
+flex:1;
 
 }
 
-.project-domain{
 
-  display:inline-block;
+.badge{
 
-  border:
-    1px solid rgba(0,215,232,.28);
+display:inline-block;
 
-  color:#8ED1D8;
+align-self:flex-start;
 
-  border-radius:4px;
+margin-top:7px;
 
-  padding:3px 5px;
+border:
+1px solid var(--orange);
 
-  font-size:.52rem;
+color:var(--orange);
 
-  font-weight:800;
+border-radius:4px;
 
-  line-height:1.2;
+padding:3px 6px;
 
-  text-transform:uppercase;
+font-size:.57rem;
 
-}
+font-weight:800;
 
-.project-domain.primary{
-
-  border-color:var(--orange);
-
-  color:var(--orange);
+line-height:1.2;
 
 }
 
 
 /* =========================================================
-   METHODS
-   ========================================================= */
+  METHODS
+  ========================================================= */
 
 .engineering{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-    1.4fr 1fr;
+grid-template-columns:
+1.4fr 1fr;
 
-  gap:10px;
+gap:10px;
 
 }
+
 
 .panel{
 
-  border:
-    1px solid var(--line);
+border:
+1px solid var(--line);
 
-  border-radius:8px;
+border-radius:8px;
 
-  background:#0E1F2B;
+background:#0E1F2B;
 
-  padding:17px;
+padding:17px;
 
 }
+
 
 .panel h2{
 
-  font-size:1rem;
+font-size:1rem;
 
-  color:var(--cyan);
+color:var(--cyan);
 
-  margin-bottom:5px;
+margin-bottom:5px;
 
 }
 
+
 .panel>p{
 
-  font-size:.72rem;
+font-size:.72rem;
 
-  color:var(--muted);
+color:var(--muted);
 
 }
 
@@ -1208,6 +1072,7 @@ section{
 
 }
 
+
 .method-focus-title{
 
   color:var(--cyan);
@@ -1219,6 +1084,7 @@ section{
   margin-bottom:5px;
 
 }
+
 
 .method-focus-description{
 
@@ -1232,432 +1098,483 @@ section{
 
 
 /* =========================================================
-   LARGE PIPELINE
-   ========================================================= */
+  LARGE PIPELINE
+  ========================================================= */
 
 .pipeline-large{
 
-  display:flex;
+display:flex;
 
-  justify-content:space-between;
+justify-content:space-between;
 
-  gap:4px;
+gap:4px;
 
-  align-items:center;
+align-items:center;
 
-  margin:25px 0 16px;
+margin:25px 0 16px;
 
 }
+
 
 .pipe-step{
 
-  text-align:center;
+text-align:center;
 
-  flex:1;
+flex:1;
 
-  color:#D8E2E7;
+color:#D8E2E7;
 
-  font-size:.63rem;
+font-size:.63rem;
 
 }
+
 
 .pipe-step strong{
 
-  display:block;
+display:block;
 
-  font-size:1.35rem;
+font-size:1.35rem;
 
-  font-weight:400;
+font-weight:400;
 
-  margin-bottom:4px;
+margin-bottom:4px;
 
 }
+
 
 .tech{
 
-  display:flex;
+display:flex;
 
-  gap:6px;
+gap:6px;
 
-  flex-wrap:wrap;
+flex-wrap:wrap;
 
 }
+
 
 .tech span{
 
-  border:
-    1px solid rgba(255,255,255,.2);
+border:
+1px solid rgba(255,255,255,.2);
 
-  padding:4px 7px;
+padding:4px 7px;
 
-  border-radius:4px;
+border-radius:4px;
 
-  font-size:.65rem;
+font-size:.65rem;
 
 }
 
 
 /* =========================================================
-   OUTPUTS
-   ========================================================= */
+  OUTPUTS
+  ========================================================= */
 
 .outputs{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-    1fr 1fr;
+grid-template-columns:
+1fr 1fr;
 
-  gap:20px;
+gap:20px;
 
 }
+
 
 .outputs ul{
 
-  list-style:none;
+list-style:none;
 
-  display:grid;
+display:grid;
 
-  gap:7px;
+gap:7px;
 
-  margin-top:10px;
+margin-top:10px;
 
 }
+
 
 .outputs li{
 
-  font-size:.74rem;
+font-size:.74rem;
 
-  color:#D8E2E7;
+color:#D8E2E7;
 
 }
+
 
 .repo{
 
-  margin-top:12px;
+margin-top:12px;
 
-  border:
-    1px solid rgba(255,255,255,.15);
+border:
+1px solid rgba(255,255,255,.15);
 
-  padding:7px 9px;
+padding:7px 9px;
 
-  font-family:monospace;
+font-family:monospace;
 
-  font-size:.68rem;
+font-size:.68rem;
 
-  color:#D8E2E7;
+color:#D8E2E7;
 
 }
 
 
 /* =========================================================
-   RESOURCES
-   ========================================================= */
+  RESOURCES
+  ========================================================= */
 
 #resources{
 
-  background:
-    linear-gradient(
-      180deg,
-      #0E1C27,
-      #0B1923
-    );
+background:
+linear-gradient(
+180deg,
+#0E1C27,
+#0B1923
+);
 
 }
 
 
 /* =========================================================
-   ABOUT
-   ========================================================= */
+  ABOUT
+  ========================================================= */
 
 .about{
 
-  background:#0A1721;
+background:#0A1721;
 
-  border-top:
-    1px solid rgba(255,255,255,.06);
+border-top:
+1px solid rgba(255,255,255,.06);
 
-  border-bottom:
-    1px solid rgba(255,255,255,.06);
+border-bottom:
+1px solid rgba(255,255,255,.06);
 
 }
+
 
 .about-grid{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-    1fr 2fr;
+grid-template-columns:
+1fr 2fr;
 
-  gap:35px;
+gap:35px;
 
-  align-items:center;
+align-items:center;
 
 }
+
 
 .about h2{
 
-  font-size:1.6rem;
+font-size:1.6rem;
 
-  margin:5px 0 8px;
+margin:5px 0 8px;
 
 }
+
 
 .about p{
 
-  color:var(--muted);
+color:var(--muted);
 
-  font-size:.78rem;
+font-size:.78rem;
 
-  margin-bottom:9px;
+margin-bottom:9px;
+
+}
+
+
+.about-mark{
+
+width:150px;
+
+height:150px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(5,1fr);
+
+gap:3px;
+
+transform:rotate(-4deg);
+
+}
+
+
+.about-mark span{
+
+background:var(--teal);
+
+}
+
+
+.about-mark span:nth-child(3n){
+
+background:var(--navy);
+
+}
+
+
+.about-mark span:nth-child(7){
+
+background:var(--orange);
 
 }
 
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
+  FOOTER
+  ========================================================= */
 
 footer{
 
-  background:#07131D;
+background:#07131D;
 
-  padding:22px 0;
+padding:22px 0;
 
-  color:#fff;
+color:#fff;
 
 }
+
 
 .footer-top{
 
-  display:flex;
+display:flex;
 
-  justify-content:space-between;
+justify-content:space-between;
 
-  gap:25px;
+gap:25px;
 
-  padding-bottom:15px;
+padding-bottom:15px;
 
-  border-bottom:
-    1px solid rgba(255,255,255,.1);
+border-bottom:
+1px solid rgba(255,255,255,.1);
 
 }
+
 
 .footer-brand{
 
-  display:flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  font-weight:800;
+font-weight:800;
 
 }
 
-.footer-brand .brand-mark{
-
-  width:28px;
-
-  height:28px;
-
-}
 
 .footer-description{
 
-  color:#7F929E;
+color:#7F929E;
 
-  font-size:.7rem;
+font-size:.7rem;
 
-  margin-top:4px;
+margin-top:4px;
 
 }
+
 
 .footer-links{
 
-  display:flex;
+display:flex;
 
-  gap:20px;
+gap:20px;
 
-  color:var(--muted);
+color:var(--muted);
 
-  font-size:.72rem;
+font-size:.72rem;
 
 }
+
 
 .footer-links a:hover{
 
-  color:var(--cyan);
+color:var(--cyan);
 
 }
+
 
 .copyright{
 
-  padding-top:12px;
+padding-top:12px;
 
-  color:#627582;
+color:#627582;
 
-  font-size:.65rem;
+font-size:.65rem;
 
 }
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
-   ========================================================= */
+  RESPONSIVE — TABLET
+  ========================================================= */
 
 @media(max-width:1100px){
 
-  .projects{
+.projects{
 
-    grid-template-columns:
-      repeat(3,1fr);
+grid-template-columns:
+repeat(3,1fr);
 
-  }
+}
 
 }
 
 
 /* =========================================================
-   RESPONSIVE — SMALL TABLET
-   ========================================================= */
+  RESPONSIVE — SMALL TABLET
+  ========================================================= */
 
 @media(max-width:900px){
 
-  .hero-grid,
-  .featured-grid,
-  .engineering,
-  .about-grid{
+.hero-grid,
+.featured-grid,
+.engineering,
+.about-grid{
 
-    grid-template-columns:1fr;
+grid-template-columns:1fr;
 
-  }
+}
 
-  .hero-visual{
 
-    min-height:310px;
+.hero-visual{
 
-  }
+min-height:310px;
 
-  .research-grid{
+}
 
-    grid-template-columns:
-      repeat(2,1fr);
 
-  }
+.research-grid{
 
-  .projects{
+grid-template-columns:
+repeat(2,1fr);
 
-    grid-template-columns:
-      repeat(2,1fr);
+}
 
-  }
 
-  .nav-links{
+.projects{
 
-    display:none;
+grid-template-columns:
+repeat(2,1fr);
 
-  }
+}
 
-  .hero-card{
 
-    width:52%;
+.project-card img{
 
-  }
+height:200px;
+
+}
+
+
+.nav-links{
+
+display:none;
+
+}
+
+
+.hero-card{
+
+width:52%;
+
+}
 
 }
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
-   ========================================================= */
+  RESPONSIVE — MOBILE
+  ========================================================= */
 
 @media(max-width:560px){
 
-  .research-grid,
-  .projects,
-  .outputs{
+.research-grid,
+.projects,
+.outputs{
 
-    grid-template-columns:1fr;
+grid-template-columns:1fr;
 
-  }
+}
 
-  /*
-     At mobile width the same 4:3 ratio is preserved.
-     No fixed height is needed.
-  */
 
-  .project-card img{
+.project-card img{
 
-    aspect-ratio:4 / 3;
+height:230px;
 
-  }
+}
 
-  .hero{
 
-    padding-top:35px;
+.hero{
 
-  }
+padding-top:35px;
 
-  .hero h1{
+}
 
-    font-size:2.55rem;
 
-  }
+.hero h1{
 
-  .hero-card{
+font-size:2.55rem;
 
-    position:relative;
+}
 
-    width:100%;
 
-    bottom:auto;
+.hero-card{
 
-    margin-top:180px;
+position:relative;
 
-  }
+width:100%;
 
-  .hero-visual{
+bottom:auto;
 
-    min-height:470px;
+margin-top:180px;
 
-  }
+}
 
-  .pipeline-large{
 
-    flex-wrap:wrap;
+.hero-visual{
 
-  }
+min-height:470px;
 
-  .pipe-step{
+}
 
-    min-width:22%;
 
-  }
+.pipeline-large{
 
-  .footer-top{
+flex-wrap:wrap;
 
-    flex-direction:column;
+}
 
-  }
 
-  .projects-head{
+.pipe-step{
 
-    align-items:flex-start;
+min-width:22%;
 
-    flex-direction:column;
+}
 
-    gap:8px;
 
-  }
+.footer-top{
 
-  .project-filter-bar{
+flex-direction:column;
 
-    align-items:flex-start;
+}
 
-    flex-direction:column;
 
-  }
+.projects-head{
+
+align-items:flex-start;
+
+flex-direction:column;
+
+gap:8px;
+
+}
 
 }
 
@@ -1670,275 +1587,1452 @@ footer{
 
 
 <!-- =========================================================
-     NAVIGATION
-     ========================================================= -->
+    NAVIGATION
+    ========================================================= -->
 
 <nav>
 
-  <div class="container nav-inner">
+<div class="container nav-inner">
 
     <a class="brand" href="#top">
 
-      <!-- SAME LOGO USED THROUGHOUT THE SITE -->
+    <a
+      class="brand"
+      href="#top"
+    >
 
+      <div
+        class="brand-mark"
+        aria-hidden="true"
+      >
       <div class="brand-mark" aria-hidden="true">
 
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
 
-      </div>
-
-      <span>
-        Spatial Evidence Lab
-      </span>
-
-    </a>
+</div>
 
 
-    <div class="nav-links">
+<span>
+Spatial Evidence Lab
+</span>
 
+</a>
+
+
+<div class="nav-links">
+
+      <a
+        class="active"
+        href="#research"
+      >
       <a class="active" href="#research">
-        Research
-      </a>
+Research
+</a>
 
-      <a href="#projects">
-        Projects
-      </a>
+<a href="#projects">
+Projects
+</a>
 
-      <a href="#methods">
-        Methods
-      </a>
+<a href="#methods">
+Methods
+</a>
 
-      <a href="#data">
-        Data
-      </a>
+<a href="#data">
+Data
+</a>
 
-      <a href="#resources">
-        Resources
-      </a>
+<a href="#resources">
+Resources
+</a>
 
-      <a href="#about">
-        About
-      </a>
+<a href="#about">
+About
+</a>
 
-    </div>
+</div>
 
 
-    <a
-      class="github"
-      href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
-      aria-label="Spatial Evidence Lab GitHub repository"
-      target="_blank"
-      rel="noopener"
-    >
-      ◉
-    </a>
+<a
+class="github"
+href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
+aria-label="Spatial Evidence Lab GitHub repository"
+target="_blank"
+rel="noopener"
+>
+◉
+</a>
 
-  </div>
+
+</div>
 
 </nav>
 
 
 <!-- =========================================================
-     HERO
-     ========================================================= -->
+    HERO
+    ========================================================= -->
+
+<header
+  class="hero"
+  id="top"
+>
 
 <header class="hero" id="top">
 
-  <div class="container hero-grid">
+<div class="container hero-grid">
 
-    <div>
 
-      <div class="eyebrow">
-        Independent Geospatial Research
-      </div>
+<div>
 
-      <h1>
-        Understanding places through spatial data and geographic evidence.
-      </h1>
 
-      <p>
-        Spatial Evidence Lab combines GIS, spatial analytics and data
-        engineering to investigate how people, services, environments and
-        infrastructure vary across places.
-      </p>
+<div class="eyebrow">
 
-      <div class="hero-tags">
+Independent Geospatial Research
 
-        <span>GIS</span>
-        <span>SPATIAL ANALYTICS</span>
-        <span>DATA ENGINEERING</span>
-        <span>GEOGRAPHIC EVIDENCE</span>
+</div>
 
-      </div>
+
+<h1>
+
+Understanding places through spatial data and geographic evidence.
+
+</h1>
+
+
+<p>
+
+Spatial Evidence Lab combines GIS, spatial analytics and data
+engineering to investigate how people, services, environments and
+infrastructure vary across places.
+
+</p>
+
+
+<div class="hero-tags">
+
+<span>GIS</span>
+
+<span>SPATIAL ANALYTICS</span>
+
+<span>DATA ENGINEERING</span>
+
+<span>GEOGRAPHIC EVIDENCE</span>
+
+</div>
+
+
+<div
+style="
+         margin-top:22px;
+         display:flex;
+         gap:10px;
+         flex-wrap:wrap
+       "
+>
+
+        <a
+          class="btn btn-primary"
+          href="#research"
+        >
+        <a class="btn btn-primary" href="#research">
+EXPLORE RESEARCH →
+</a>
+
+
+        <a
+          class="btn btn-outline"
+          href="#projects"
+        >
+        <a class="btn btn-outline" href="#projects">
+VIEW PROJECTS →
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="hero-visual">
+
 
       <div
-        style="
-          margin-top:22px;
-          display:flex;
-          gap:10px;
-          flex-wrap:wrap
-        "
-      >
-
-        <a class="btn btn-primary" href="#research">
-          EXPLORE RESEARCH →
-        </a>
-
-        <a class="btn btn-outline" href="#projects">
-          VIEW PROJECTS →
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="hero-visual">
+        class="hero-map"
+        aria-hidden="true"
+      ></div>
 
       <div class="hero-map" aria-hidden="true"></div>
 
-      <div class="hero-card">
+<div class="hero-card">
 
-        <div class="star">
-          ★ &nbsp; CORE RESEARCH
-        </div>
 
-        <h3>
-          Ireland Quality of Life Index
-        </h3>
+<div class="star">
 
-        <p>
-          Small-area analysis of quality of life across 19,000+ Census Areas.
-        </p>
+★ &nbsp; CORE RESEARCH
 
+</div>
+
+
+<h3>
+
+Ireland Quality of Life Index
+
+</h3>
+
+
+<p>
+
+Small-area analysis of quality of life across 19,000+ Census Areas.
+
+</p>
+
+
+        <a
+          class="btn btn-outline"
+          href="#featured"
+        >
         <a class="btn btn-outline" href="#featured">
-          EXPLORE RESEARCH →
-        </a>
+EXPLORE RESEARCH →
+</a>
 
-      </div>
 
-    </div>
+</div>
 
-  </div>
+
+</div>
+
+
+</div>
 
 </header>
 
 
 <!-- =========================================================
-     FEATURED RESEARCH
-     ========================================================= -->
+    FEATURED RESEARCH
+    ========================================================= -->
+
+<section
+  id="featured"
+  class="featured-wrap"
+>
 
 <section id="featured" class="featured-wrap">
 
-  <div class="container">
-
-    <div class="section-heading">
-
-      <h2>
-        Featured Research (Flagship)
-      </h2>
-
-    </div>
+<div class="container">
 
 
-    <article class="featured">
+<div class="section-heading">
 
-      <div class="featured-grid">
+<h2>
+Featured Research (Flagship)
+</h2>
 
-        <div
-          class="featured-map"
-          role="img"
-          aria-label="Ireland Quality of Life Index map"
-        ></div>
+</div>
 
 
-        <div class="featured-content">
-
-          <div class="star">
-            ★ &nbsp; FLAGSHIP RESEARCH
-          </div>
-
-          <h2>
-            Ireland Quality of Life Index
-          </h2>
-
-          <p>
-            A multidimensional small-area assessment of quality of life across
-            the Republic of Ireland using Census 2022 indicators, spatial
-            measures and Urban–Rural Adjustment Functions (URAF).
-          </p>
+<article class="featured">
 
 
-          <div class="pipeline">
-
-            <div class="pipeline-title">
-              Methodology pipeline
-            </div>
+<div class="featured-grid">
 
 
-            <div class="pipeline-row">
+<div
+class="featured-map"
+role="img"
+aria-label="Ireland Quality of Life Index map"
+></div>
 
-              <div class="step">
 
+<div class="featured-content">
+
+
+<div class="star">
+
+★ &nbsp; FLAGSHIP RESEARCH
+
+</div>
+
+
+<h2>
+
+Ireland Quality of Life Index
+
+</h2>
+
+
+<p>
+
+A multidimensional small-area assessment of quality of life across
+the Republic of Ireland using Census 2022 indicators, spatial
+measures and Urban–Rural Adjustment Functions (URAF).
+
+</p>
+
+
+<div class="pipeline">
+
+
+<div class="pipeline-title">
+
+Methodology pipeline
+
+</div>
+
+
+<div class="pipeline-row">
+
+
+<div class="step">
+
+                <div class="step-icon">
+                  ▤
+                </div>
                 <div class="step-icon">▤</div>
 
-                Census Data
+Census Data
 
-              </div>
+</div>
 
-              <div class="step">→</div>
 
               <div class="step">
+                →
+              </div>
+              <div class="step">→</div>
 
+
+<div class="step">
+
+                <div class="step-icon">
+                  ▥
+                </div>
                 <div class="step-icon">▥</div>
 
-                Indicators
+Indicators
 
-              </div>
+</div>
 
-              <div class="step">→</div>
 
               <div class="step">
+                →
+              </div>
+              <div class="step">→</div>
 
+
+<div class="step">
+
+                <div class="step-icon">
+                  ∿
+                </div>
                 <div class="step-icon">∿</div>
 
-                Normalisation
+Normalisation
 
-              </div>
+</div>
 
-              <div class="step">→</div>
 
               <div class="step">
+                →
+              </div>
+              <div class="step">→</div>
 
+
+<div class="step">
+
+                <div class="step-icon">
+                  ♧
+                </div>
                 <div class="step-icon">♧</div>
 
-                URAF
+URAF
 
-              </div>
+</div>
 
-              <div class="step">→</div>
 
               <div class="step">
+                →
+              </div>
+              <div class="step">→</div>
 
+
+<div class="step">
+
+                <div class="step-icon">
+                  ◎
+                </div>
                 <div class="step-icon">◎</div>
 
-                Index
+Index
 
-              </div>
-
-            </div>
-
-          </div>
+</div>
 
 
-          <div class="pills">
+</div>
+
+
+</div>
+
+
+<div class="pills">
+
+
+            <span class="pill">
+              Census 2022
+            </span>
+
+
+            <span class="pill">
+              19,000+ Small Areas
+            </span>
+
+
+            <span class="pill">
+              URAF
+            </span>
+
+
+            <span class="pill">
+              Spatial Indicators
+            </span>
+
+
+            <span class="pill">
+              Multidimensional
+            </span>
 
             <span class="pill">Census 2022</span>
             <span class="pill">19,000+ Small Areas</span>
             <span class="pill">URAF</span>
             <span class="pill">Spatial Indicators</span>
-            <span class="pill">
+            <span class="pill">Multidimensional</span>
+
+</div>
+
+
+<div
+style="
+             display:flex;
+             gap:9px;
+             flex-wrap:wrap
+           "
+>
+
+
+<a
+class="btn btn-primary"
+href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
+target="_blank"
+rel="noopener"
+>
+EXPLORE RESEARCH →
+</a>
+
+
+            <a
+              class="btn btn-outline"
+              href="#methods"
+            >
+            <a class="btn btn-outline" href="#methods">
+VIEW METHODS →
+</a>
+
+
+            <a
+              class="btn btn-outline"
+              href="#projects"
+            >
+            <a class="btn btn-outline" href="#projects">
+VIEW PROJECTS →
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     RESEARCH DOMAINS
+     RESEARCH DOMAINS — 7 SUBSTANTIVE DOMAINS
+    ========================================================= -->
+
+<section id="research">
+
+
+<div class="container">
+
+
+<div class="section-heading">
+
+
+<h2>
+Research Domains
+</h2>
+
+
+<p>
+Research questions about people, places and spatial systems.
+</p>
+
+
+</div>
+
+
+<div class="research-grid">
+
+
+      <!-- 01 -->
+
+<article class="card">
+
+<span class="card-num">
+01
+</span>
+
+<h3>
+Quality of Life
+</h3>
+
+<p>
+How does quality of life vary across small areas and regions?
+</p>
+
+<span class="arrow">
+→
+</span>
+
+</article>
+
+
+      <!-- 02 -->
+
+<article class="card">
+
+<span class="card-num">
+02
+</span>
+
+<h3>
+Accessibility
+</h3>
+
+<p>
+How does geographic access to services and opportunities vary?
+</p>
+
+<span class="arrow">
+→
+</span>
+
+</article>
+
+
+      <!-- 03 -->
+
+<article class="card">
+
+<span class="card-num">
+03
+</span>
+
+<h3>
+Mobility &amp; Transport
+</h3>
+
+<p>
+How do transport networks shape accessibility?
+</p>
+
+<span class="arrow">
+→
+</span>
+
+</article>
+
+
+      <!-- 04 -->
+
+<article class="card">
+
+<span class="card-num">
+04
+</span>
+
+<h3>
+Population &amp; Demography
+</h3>
+
+<p>
+How are populations distributed over space and change over time?
+</p>
+
+<span class="arrow">
+→
+</span>
+
+</article>
+
+
+      <!-- 05 -->
+
+<article class="card">
+
+<span class="card-num">
+05
+</span>
+
+<h3>
+Housing &amp; Socioeconomic
+</h3>
+
+<p>
+How do housing markets and affordability interact with place?
+</p>
+
+<span class="arrow">
+→
+</span>
+
+</article>
+
+
+      <!-- 06 -->
+
+<article class="card">
+
+<span class="card-num">
+06
+</span>
+
+<h3>
+Urban &amp; Rural Analysis
+</h3>
+
+<p>
+How does place context alter spatial patterns and outcomes?
+</p>
+
+<span class="arrow">
+→
+</span>
+
+</article>
+
+
+      <!-- 07 -->
+
+<article class="card">
+
+<span class="card-num">
+07
+</span>
+
+<h3>
+Environment &amp; Climate
+</h3>
+
+<p>
+How do environmental hazards and change create risk?
+</p>
+
+<span class="arrow">
+→
+</span>
+
+</article>
+
+
+      <article class="card">
+
+        <span class="card-num">
+          08
+        </span>
+
+        <h3>
+          Spatial Methods &amp; ETL
+        </h3>
+
+        <p>
+          How can data engineering and spatial methods generate evidence?
+        </p>
+
+        <span class="arrow">
+          →
+        </span>
+
+      </article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+    SELECTED PROJECTS
+    ========================================================= -->
+
+<section id="projects">
+
+
+<div class="container">
+
+
+<div class="projects-head">
+
+
+<div
+class="section-heading"
+style="margin:0"
+>
+
+<h2>
+Selected Projects
+</h2>
+
+</div>
+
+
+<a href="#projects">
+Selected research portfolio →
+</a>
+
+
+</div>
+
+
+<div class="projects">
+
+
+<!-- =================================================
+           SEL-001
+           SEL-001 — QUALITY OF LIFE
+          ================================================= -->
+
+<article class="project-card">
+
+
+<img
+src="project-qol.jpg"
+alt="SEL-001 — Ireland Quality of Life Index"
+loading="lazy"
+>
+
+
+<div class="project-body">
+
+
+<div class="project-id">
+SEL-001
+</div>
+
+
+<h3>
+Ireland QoL Index
+</h3>
+
+
+<p>
+Small-area spatial analysis of quality of life across Ireland
+using Census 2022 indicators, composite measures and geographic
+evidence.
+</p>
+
+
+<span class="badge">
+QUALITY OF LIFE
+</span>
+
+
+</div>
+
+
+</article>
+
+
+<!-- =================================================
+           SEL-002
+           SEL-002 — ACCESSIBILITY
+          ================================================= -->
+
+<a
+href="bandon/"
+class="project-card"
+>
+
+
+<img
+src="project-bandon.jpg"
+alt="SEL-002 — Bandon Public Transport Accessibility Analysis"
+loading="lazy"
+>
+
+
+<div class="project-body">
+
+
+<div class="project-id">
+SEL-002
+</div>
+
+
+<h3>
+Bandon PT Accessibility
+</h3>
+
+
+<p>
+Spatial assessment of public transport accessibility in Bandon,
+combining walking access, service frequency and population
+vulnerability.
+</p>
+
+
+<span class="badge">
+            TRANSPORT
+            ACCESSIBILITY
+</span>
+
+
+</div>
+
+
+</a>
+
+
+<!-- =================================================
+           SEL-005
+           SEL-005 — ENVIRONMENT & CLIMATE
+          ================================================= -->
+
+<article class="project-card">
+
+
+<img
+src="project-heatrisk.jpg"
+alt="SEL-005 — Greater Athens Heat Risk and Environmental Quality Assessment"
+loading="lazy"
+>
+
+
+<div class="project-body">
+
+
+<div class="project-id">
+SEL-005
+</div>
+
+
+<h3>
+Athens Heat Risk
+</h3>
+
+
+<p>
+Spatial modelling of heat risk and environmental quality to
+identify areas experiencing elevated environmental exposure
+and vulnerability.
+</p>
+
+
+<span class="badge">
+            ENVIRONMENT
+            ENVIRONMENT &amp; CLIMATE
+</span>
+
+
+</div>
+
+
+</article>
+
+
+<!-- =================================================
+           SEL-006
+           SEL-006 — ENVIRONMENT & CLIMATE
+          ================================================= -->
+
+<article class="project-card">
+
+
+<img
+src="project-windenergy.jpg"
+alt="SEL-006 — County Wicklow Wind Energy Potential Assessment"
+loading="lazy"
+>
+
+
+<div class="project-body">
+
+
+<div class="project-id">
+SEL-006
+</div>
+
+
+<h3>
+Wicklow Wind Energy
+</h3>
+
+
+<p>
+Spatial multi-criteria assessment of wind energy potential,
+combining geographic suitability factors to support renewable
+energy planning.
+</p>
+
+
+<span class="badge">
+            RENEWABLE ENERGY
+            ENVIRONMENT &amp; CLIMATE
+</span>
+
+
+</div>
+
+
+</article>
+
+
+<!-- =================================================
+           SEL-007
+           SEL-007 — ENVIRONMENT & CLIMATE
+          ================================================= -->
+
+<article class="project-card">
+
+
+<img
+src="project-rondonia.jpg"
+alt="SEL-007 — Rondônia Deforestation and Forest Loss Analysis"
+loading="lazy"
+>
+
+
+<div class="project-body">
+
+
+<div class="project-id">
+SEL-007
+</div>
+
+
+<h3>
+Rondônia Deforestation
+</h3>
+
+
+<p>
+Spatial analysis of deforestation in Rondônia, examining
+patterns of forest loss and land-use change using geographic
+and temporal evidence.
+</p>
+
+
+<span class="badge">
+            FORESTS &amp; LAND COVER
+            ENVIRONMENT &amp; CLIMATE
+</span>
+
+
+</div>
+
+
+</article>
+
+
+<!-- =================================================
+           SEL-010
+           SEL-010 — ENVIRONMENT & CLIMATE
+          ================================================= -->
+
+<article class="project-card">
+
+
+<img
+src="project-sealevel.jpg"
+alt="SEL-010 — Miami Sea Level Rise Impact Assessment"
+loading="lazy"
+>
+
+
+<div class="project-body">
+
+
+<div class="project-id">
+SEL-010
+</div>
+
+
+<h3>
+Miami Sea Level Rise
+</h3>
+
+
+<p>
+Spatial assessment of potential sea level rise impacts in Miami,
+examining exposure of land, infrastructure and communities to
+coastal inundation.
+</p>
+
+
+<span class="badge">
+            CLIMATE RISK
+            ENVIRONMENT &amp; CLIMATE
+</span>
+
+
+</div>
+
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     METHODS & DATA
+     METHODS & SPATIAL DATA ENGINEERING
+    ========================================================= -->
+
+<section id="methods">
+
+
+<div class="container engineering">
+
+
+    <!-- METHODS PANEL -->
+    <!-- =====================================================
+         METHODS PANEL
+         ===================================================== -->
+
+<div class="panel">
+
+
+<h2>
+METHODS &amp; SPATIAL DATA ENGINEERING
+</h2>
+
+
+<p>
+Building structured spatial data pipelines that transform datasets
+into reproducible evidence.
+</p>
+
+
+      <div class="pipeline-large">
+      <!-- MOVED FROM RESEARCH DOMAINS -->
+
+      <div class="method-focus">
+
+        <div class="method-focus-title">
+          Spatial Methods &amp; ETL
+        </div>
+
+        <div class="method-focus-description">
+          How can data engineering and spatial methods generate evidence?
+        </div>
+
+      </div>
+
+
+      <div class="pipeline-large">
+
+<div class="pipe-step">
+
+<strong>▤</strong>
+
+SOURCE
+
+</div>
+
+
+<div>→</div>
+
+
+<div class="pipe-step">
+
+<strong>▦</strong>
+
+STAGING
+
+</div>
+
+
+<div>→</div>
+
+
+<div class="pipe-step">
+
+<strong>∿</strong>
+
+SPATIAL ANALYSIS
+
+</div>
+
+
+<div>→</div>
+
+
+<div class="pipe-step">
+
+<strong>◎</strong>
+
+EVIDENCE
+        </div>
+
+        </div>
+
+</div>
+
+
+<div class="tech">
+
+<span>Python</span>
+
+<span>R</span>
+
+<span>PostGIS</span>
+
+<span>QGIS</span>
+
+<span>DuckDB</span>
+
+<span>GeoPandas</span>
+
+<span>sf</span>
+
+</div>
+
+
+</div>
+
+
+    <!-- DATA PANEL -->
+    <!-- =====================================================
+         DATA PANEL
+         ===================================================== -->
+
+<div
+class="panel"
+id="data"
+>
+
+
+<h2>
+DATA &amp; OUTPUTS
+</h2>
+
+
+<p>
+Data resources, web maps, documentation and reproducible workflows.
+</p>
+
+
+<div class="outputs">
+
+
+<div>
+
+<ul>
+
+            <li>• Web Maps &amp; Dashboards</li>
+            <li>
+              • Web Maps &amp; Dashboards
+            </li>
+
+            <li>• Spatial Datasets (GeoPackage, GeoJSON)</li>
+            <li>
+              • Spatial Datasets (GeoPackage, GeoJSON)
+            </li>
+
+            <li>• Technical Reports &amp; Documentation</li>
+            <li>
+              • Technical Reports &amp; Documentation
+            </li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<div class="repo">
+
+GitHub Repository:<br>
+
+Spatial-Evidence-Lab
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+    RESOURCES
+    ========================================================= -->
+
+<section id="resources">
+
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<h2>
+Resources &amp; Data
+</h2>
+
+<p>
+Open resources, methodology papers and analytical outputs.
+</p>
+
+</div>
+
+
+<div class="research-grid">
+
+
+<article class="card">
+
+<h3>
+Methodology Guides
+</h3>
+
+<p>
+Documentation on spatial analysis techniques, indicator construction and normalisation.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+Open Datasets
+</h3>
+
+<p>
+Processed geospatial layers, small-area boundaries and structured spatial indicators.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+Code &amp; Notebooks
+</h3>
+
+<p>
+Reproducible analytical pipelines, data engineering scripts and GIS workflows.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+Publications
+</h3>
+
+<p>
+Research briefs, spatial findings and applied geographical evidence reports.
+</p>
+
+</article>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+    ABOUT
+    ========================================================= -->
+
+<section
+class="about"
+id="about"
+>
+
+
+<div class="container about-grid">
+
+
+<div
+class="about-mark"
+aria-hidden="true"
+>
+
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+
+</div>
+
+
+<div>
+
+
+<div class="eyebrow">
+
+About the Lab
+
+</div>
+
+
+<h2>
+
+Spatial Evidence Lab
+
+</h2>
+
+
+<p>
+
+Spatial Evidence Lab is an independent geospatial research initiative focused on
+producing rigorous, reproducible spatial analytics and geographical evidence.
+
+</p>
+
+
+<p>
+
+By combining spatial data engineering, statistical modeling and GIS visualization,
+the lab examines spatial disparities, service accessibility, environmental exposure,
+and quality of life across small areas.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+    FOOTER
+    ========================================================= -->
+
+<footer>
+
+
+<div class="container">
+
+
+<div class="footer-top">
+
+
+<div>
+
+<div class="footer-brand">
+Spatial Evidence Lab
+</div>
+
+<div class="footer-description">
+Independent Geospatial Research &amp; Spatial Analytics
+</div>
+
+</div>
+
+
+<div class="footer-links">
+
+        <a href="#research">Research</a>
+        <a href="#research">
+          Research
+        </a>
+
+        <a href="#projects">Projects</a>
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#methods">Methods</a>
+        <a href="#methods">
+          Methods
+        </a>
+
+        <a href="#data">Data</a>
+        <a href="#data">
+          Data
+        </a>
+
+        <a href="#resources">Resources</a>
+        <a href="#resources">
+          Resources
+        </a>
+
+        <a href="#about">About</a>
+        <a href="#about">
+          About
+        </a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+&copy; Spatial Evidence Lab. All rights reserved.
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+</body>
+
+</html>
