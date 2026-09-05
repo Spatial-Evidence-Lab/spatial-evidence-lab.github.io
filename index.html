@@ -56,12 +56,9 @@
   padding:0;
 }
 
-
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:85px;
 }
-
 
 body{
 
@@ -82,17 +79,19 @@ body{
 
 }
 
-
 a{
   color:inherit;
   text-decoration:none;
 }
 
-
 img{
   max-width:100%;
 }
 
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
 
 .container{
 
@@ -140,6 +139,10 @@ nav{
 }
 
 
+/* =========================================================
+   LOGO
+   ========================================================= */
+
 .brand{
 
   display:flex;
@@ -155,42 +158,17 @@ nav{
 }
 
 
-.brand-mark{
+.brand-logo{
 
-  width:38px;
+  width:42px;
 
-  height:38px;
+  height:42px;
 
-  display:grid;
+  object-fit:contain;
 
-  grid-template-columns:repeat(5,1fr);
+  display:block;
 
-  grid-template-rows:repeat(5,1fr);
-
-  gap:2px;
-
-  transform:rotate(-4deg);
-
-}
-
-
-.brand-mark span{
-
-  background:var(--teal);
-
-}
-
-
-.brand-mark span:nth-child(3n){
-
-  background:var(--navy);
-
-}
-
-
-.brand-mark span:nth-child(7){
-
-  background:var(--orange);
+  border-radius:5px;
 
 }
 
@@ -764,13 +742,14 @@ section{
 
   padding:16px;
 
-  min-height:125px;
+  min-height:145px;
 
   position:relative;
 
   transition:
     transform .2s ease,
-    border-color .2s ease;
+    border-color .2s ease,
+    background .2s ease;
 
 }
 
@@ -782,19 +761,7 @@ section{
   border-color:
     rgba(0,215,232,.45);
 
-}
-
-
-/*
-   DOMAIN CARDS
-   The whole card is now navigational.
-*/
-
-.domain-card{
-
-  display:block;
-
-  color:inherit;
+  background:#102533;
 
 }
 
@@ -852,6 +819,15 @@ section{
   color:var(--cyan);
 
   font-size:1rem;
+
+}
+
+
+.domain-link{
+
+  display:block;
+
+  height:100%;
 
 }
 
@@ -928,19 +904,6 @@ section{
 }
 
 
-/*
-   IMAGE LINK
-*/
-
-.project-image-link{
-
-  display:block;
-
-  overflow:hidden;
-
-}
-
-
 .project-card img{
 
   width:100%;
@@ -956,19 +919,6 @@ section{
   display:block;
 
   flex-shrink:0;
-
-  transition:
-    transform .3s ease,
-    opacity .2s ease;
-
-}
-
-
-.project-image-link:hover img{
-
-  transform:scale(1.025);
-
-  opacity:.92;
 
 }
 
@@ -1001,20 +951,13 @@ section{
 }
 
 
-.project-title{
+.project-body h3{
 
   font-size:.82rem;
 
   line-height:1.2;
 
   margin-bottom:7px;
-
-}
-
-
-.project-title a:hover{
-
-  color:var(--cyan);
 
 }
 
@@ -1034,10 +977,6 @@ section{
 }
 
 
-/*
-   DOMAIN LINK
-*/
-
 .badge{
 
   display:inline-block;
@@ -1053,7 +992,7 @@ section{
 
   border-radius:4px;
 
-  padding:4px 7px;
+  padding:3px 6px;
 
   font-size:.57rem;
 
@@ -1061,63 +1000,35 @@ section{
 
   line-height:1.2;
 
-  transition:
-    background .2s ease,
-    color .2s ease,
-    border-color .2s ease;
-
 }
 
 
-.badge:hover{
+.project-domain{
 
-  background:var(--orange);
+  display:inline-flex;
 
-  color:#071520;
+  align-items:center;
 
-  border-color:var(--orange);
+  gap:5px;
 
-}
-
-
-/*
-   PROJECT NAVIGATION ROW
-*/
-
-.project-nav{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:7px;
-
-  margin-top:10px;
-
-}
-
-
-.project-nav a{
-
-  font-size:.61rem;
-
-  color:var(--muted);
-
-  border:
-    1px solid rgba(255,255,255,.14);
-
-  border-radius:4px;
-
-  padding:4px 6px;
-
-}
-
-
-.project-nav a:hover{
+  margin-top:9px;
 
   color:var(--cyan);
 
-  border-color:var(--cyan);
+  font-size:.62rem;
+
+  font-weight:800;
+
+  text-transform:uppercase;
+
+  letter-spacing:.03em;
+
+}
+
+
+.project-domain:hover{
+
+  color:#fff;
 
 }
 
@@ -1405,43 +1316,23 @@ section{
 }
 
 
-.about-mark{
+/* =========================================================
+   BOTTOM LOGO
+   ========================================================= */
 
-  width:150px;
+.about-logo{
 
-  height:150px;
+  width:170px;
+
+  height:170px;
 
   margin:auto;
 
-  display:grid;
+  object-fit:contain;
 
-  grid-template-columns:
-    repeat(5,1fr);
+  display:block;
 
-  gap:3px;
-
-  transform:rotate(-4deg);
-
-}
-
-
-.about-mark span{
-
-  background:var(--teal);
-
-}
-
-
-.about-mark span:nth-child(3n){
-
-  background:var(--navy);
-
-}
-
-
-.about-mark span:nth-child(7){
-
-  background:var(--orange);
+  border-radius:8px;
 
 }
 
@@ -1473,6 +1364,32 @@ footer{
 
   border-bottom:
     1px solid rgba(255,255,255,.1);
+
+}
+
+
+.footer-brand-wrap{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+}
+
+
+.footer-logo{
+
+  width:38px;
+
+  height:38px;
+
+  object-fit:contain;
+
+  display:block;
+
+  border-radius:5px;
 
 }
 
@@ -1522,6 +1439,22 @@ footer{
   color:#627582;
 
   font-size:.65rem;
+
+}
+
+
+/* =========================================================
+   IMAGE FALLBACK
+   ========================================================= */
+
+.image-fallback{
+
+  background:
+    linear-gradient(
+      135deg,
+      #102A38,
+      #07131D
+    );
 
 }
 
@@ -1691,6 +1624,24 @@ footer{
 
   }
 
+
+  .brand-logo{
+
+    width:38px;
+
+    height:38px;
+
+  }
+
+
+  .about-logo{
+
+    width:130px;
+
+    height:130px;
+
+  }
+
 }
 
 </style>
@@ -1698,7 +1649,7 @@ footer{
 </head>
 
 
-<body>
+<body id="top">
 
 
 <!-- =========================================================
@@ -1711,15 +1662,11 @@ footer{
 
     <a class="brand" href="#top">
 
-      <div class="brand-mark" aria-hidden="true">
-
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-
-      </div>
+      <img
+        class="brand-logo"
+        src="./logo.jpg"
+        alt="Spatial Evidence Lab logo"
+      >
 
       <span>
         Spatial Evidence Lab
@@ -1776,7 +1723,7 @@ footer{
      HERO
      ========================================================= -->
 
-<header class="hero" id="top">
+<header class="hero">
 
   <div class="container hero-grid">
 
@@ -1829,7 +1776,10 @@ footer{
 
     <div class="hero-visual">
 
-      <div class="hero-map" aria-hidden="true"></div>
+      <div
+        class="hero-map"
+        aria-hidden="true"
+      ></div>
 
       <div class="hero-card">
 
@@ -1845,7 +1795,10 @@ footer{
           Small-area analysis of quality of life across 19,000+ Census Areas.
         </p>
 
-        <a class="btn btn-outline" href="#project-qol">
+        <a
+          class="btn btn-outline"
+          href="#featured"
+        >
           EXPLORE RESEARCH →
         </a>
 
@@ -1862,7 +1815,10 @@ footer{
      FEATURED RESEARCH
      ========================================================= -->
 
-<section id="featured" class="featured-wrap">
+<section
+  id="featured"
+  class="featured-wrap"
+>
 
   <div class="container">
 
@@ -1913,59 +1869,36 @@ footer{
             <div class="pipeline-row">
 
               <div class="step">
-
                 <div class="step-icon">▤</div>
-
                 Census Data
-
               </div>
-
 
               <div class="step">→</div>
 
-
               <div class="step">
-
                 <div class="step-icon">▥</div>
-
                 Indicators
-
               </div>
-
 
               <div class="step">→</div>
 
-
               <div class="step">
-
                 <div class="step-icon">∿</div>
-
                 Normalisation
-
               </div>
-
 
               <div class="step">→</div>
 
-
               <div class="step">
-
                 <div class="step-icon">♧</div>
-
                 URAF
-
               </div>
-
 
               <div class="step">→</div>
 
-
               <div class="step">
-
                 <div class="step-icon">◎</div>
-
                 Index
-
               </div>
 
             </div>
@@ -1994,16 +1927,11 @@ footer{
 
             <a
               class="btn btn-primary"
-              href="#project-qol"
+              href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
+              target="_blank"
+              rel="noopener"
             >
-              VIEW PROJECT →
-            </a>
-
-            <a
-              class="btn btn-outline"
-              href="#research-quality-of-life"
-            >
-              QUALITY OF LIFE DOMAIN →
+              EXPLORE RESEARCH →
             </a>
 
             <a
@@ -2011,6 +1939,13 @@ footer{
               href="#methods"
             >
               VIEW METHODS →
+            </a>
+
+            <a
+              class="btn btn-outline"
+              href="#projects"
+            >
+              VIEW PROJECTS →
             </a>
 
           </div>
@@ -2027,7 +1962,7 @@ footer{
 
 
 <!-- =========================================================
-     RESEARCH DOMAINS
+     RESEARCH DOMAINS — 7 SUBSTANTIVE DOMAINS
      ========================================================= -->
 
 <section id="research">
@@ -2055,27 +1990,30 @@ footer{
            ================================================= -->
 
       <a
-        class="card domain-card"
-        id="research-quality-of-life"
-        href="#project-qol"
-        aria-label="Quality of Life research domain and related project"
+        class="domain-link"
+        id="domain-quality-of-life"
+        href="#projects-qol"
       >
 
-        <span class="card-num">
-          01
-        </span>
+        <article class="card">
 
-        <h3>
-          Quality of Life
-        </h3>
+          <span class="card-num">
+            01
+          </span>
 
-        <p>
-          How does quality of life vary across small areas and regions?
-        </p>
+          <h3>
+            Quality of Life
+          </h3>
 
-        <span class="arrow">
-          →
-        </span>
+          <p>
+            How does quality of life vary across small areas and regions?
+          </p>
+
+          <span class="arrow">
+            →
+          </span>
+
+        </article>
 
       </a>
 
@@ -2085,27 +2023,30 @@ footer{
            ================================================= -->
 
       <a
-        class="card domain-card"
-        id="research-accessibility"
-        href="#project-bandon"
-        aria-label="Accessibility research domain and Bandon project"
+        class="domain-link"
+        id="domain-accessibility"
+        href="#projects-accessibility"
       >
 
-        <span class="card-num">
-          02
-        </span>
+        <article class="card">
 
-        <h3>
-          Accessibility
-        </h3>
+          <span class="card-num">
+            02
+          </span>
 
-        <p>
-          How does geographic access to services and opportunities vary?
-        </p>
+          <h3>
+            Accessibility
+          </h3>
 
-        <span class="arrow">
-          →
-        </span>
+          <p>
+            How does geographic access to services and opportunities vary?
+          </p>
+
+          <span class="arrow">
+            →
+          </span>
+
+        </article>
 
       </a>
 
@@ -2115,27 +2056,30 @@ footer{
            ================================================= -->
 
       <a
-        class="card domain-card"
-        id="research-mobility"
-        href="#projects"
-        aria-label="Mobility and Transport research domain"
+        class="domain-link"
+        id="domain-mobility"
+        href="#projects-mobility"
       >
 
-        <span class="card-num">
-          03
-        </span>
+        <article class="card">
 
-        <h3>
-          Mobility &amp; Transport
-        </h3>
+          <span class="card-num">
+            03
+          </span>
 
-        <p>
-          How do transport networks shape accessibility?
-        </p>
+          <h3>
+            Mobility &amp; Transport
+          </h3>
 
-        <span class="arrow">
-          →
-        </span>
+          <p>
+            How do transport networks shape accessibility?
+          </p>
+
+          <span class="arrow">
+            →
+          </span>
+
+        </article>
 
       </a>
 
@@ -2145,27 +2089,30 @@ footer{
            ================================================= -->
 
       <a
-        class="card domain-card"
-        id="research-demography"
-        href="#projects"
-        aria-label="Population and Demography research domain"
+        class="domain-link"
+        id="domain-demography"
+        href="#projects-demography"
       >
 
-        <span class="card-num">
-          04
-        </span>
+        <article class="card">
 
-        <h3>
-          Population &amp; Demography
-        </h3>
+          <span class="card-num">
+            04
+          </span>
 
-        <p>
-          How are populations distributed over space and change over time?
-        </p>
+          <h3>
+            Population &amp; Demography
+          </h3>
 
-        <span class="arrow">
-          →
-        </span>
+          <p>
+            How are populations distributed over space and change over time?
+          </p>
+
+          <span class="arrow">
+            →
+          </span>
+
+        </article>
 
       </a>
 
@@ -2175,27 +2122,30 @@ footer{
            ================================================= -->
 
       <a
-        class="card domain-card"
-        id="research-housing"
-        href="#projects"
-        aria-label="Housing and Socioeconomic research domain"
+        class="domain-link"
+        id="domain-housing"
+        href="#projects-housing"
       >
 
-        <span class="card-num">
-          05
-        </span>
+        <article class="card">
 
-        <h3>
-          Housing &amp; Socioeconomic
-        </h3>
+          <span class="card-num">
+            05
+          </span>
 
-        <p>
-          How do housing markets and affordability interact with place?
-        </p>
+          <h3>
+            Housing &amp; Socioeconomic
+          </h3>
 
-        <span class="arrow">
-          →
-        </span>
+          <p>
+            How do housing markets and affordability interact with place?
+          </p>
+
+          <span class="arrow">
+            →
+          </span>
+
+        </article>
 
       </a>
 
@@ -2205,27 +2155,30 @@ footer{
            ================================================= -->
 
       <a
-        class="card domain-card"
-        id="research-urban-rural"
-        href="#projects"
-        aria-label="Urban and Rural Analysis research domain"
+        class="domain-link"
+        id="domain-urban-rural"
+        href="#projects-urban-rural"
       >
 
-        <span class="card-num">
-          06
-        </span>
+        <article class="card">
 
-        <h3>
-          Urban &amp; Rural Analysis
-        </h3>
+          <span class="card-num">
+            06
+          </span>
 
-        <p>
-          How does place context alter spatial patterns and outcomes?
-        </p>
+          <h3>
+            Urban &amp; Rural Analysis
+          </h3>
 
-        <span class="arrow">
-          →
-        </span>
+          <p>
+            How does place context alter spatial patterns and outcomes?
+          </p>
+
+          <span class="arrow">
+            →
+          </span>
+
+        </article>
 
       </a>
 
@@ -2235,27 +2188,30 @@ footer{
            ================================================= -->
 
       <a
-        class="card domain-card"
-        id="research-environment"
-        href="#project-heatrisk"
-        aria-label="Environment and Climate research domain and projects"
+        class="domain-link"
+        id="domain-environment"
+        href="#projects-environment"
       >
 
-        <span class="card-num">
-          07
-        </span>
+        <article class="card">
 
-        <h3>
-          Environment &amp; Climate
-        </h3>
+          <span class="card-num">
+            07
+          </span>
 
-        <p>
-          How do environmental hazards and change create risk?
-        </p>
+          <h3>
+            Environment &amp; Climate
+          </h3>
 
-        <span class="arrow">
-          →
-        </span>
+          <p>
+            How do environmental hazards and change create risk?
+          </p>
+
+          <span class="arrow">
+            →
+          </span>
+
+        </article>
 
       </a>
 
@@ -2288,8 +2244,8 @@ footer{
 
       </div>
 
-      <a href="#research">
-        ← Research domains
+      <a href="#projects">
+        Selected research portfolio →
       </a>
 
     </div>
@@ -2304,23 +2260,15 @@ footer{
 
       <article
         class="project-card"
-        id="project-qol"
+        id="projects-qol"
       >
 
-        <a
-          class="project-image-link"
-          href="#featured"
-          aria-label="Open Ireland Quality of Life Index research"
+        <img
+          src="./project-qol.jpg"
+          alt="SEL-001 — Ireland Quality of Life Index"
+          loading="lazy"
+          onerror="this.classList.add('image-fallback')"
         >
-
-          <img
-            src="./project-qol.jpg"
-            alt="SEL-001 — Ireland Quality of Life Index"
-            loading="lazy"
-          >
-
-        </a>
-
 
         <div class="project-body">
 
@@ -2328,12 +2276,8 @@ footer{
             SEL-001
           </div>
 
-          <h3 class="project-title">
-
-            <a href="#featured">
-              Ireland QoL Index
-            </a>
-
+          <h3>
+            Ireland QoL Index
           </h3>
 
           <p>
@@ -2342,27 +2286,16 @@ footer{
             evidence.
           </p>
 
+          <span class="badge">
+            QUALITY OF LIFE
+          </span>
 
           <a
-            class="badge"
-            href="#research-quality-of-life"
-            aria-label="Return to Quality of Life research domain"
+            class="project-domain"
+            href="#domain-quality-of-life"
           >
-            QUALITY OF LIFE →
+            Research Domain →
           </a>
-
-
-          <div class="project-nav">
-
-            <a href="#featured">
-              Research
-            </a>
-
-            <a href="#methods">
-              Methods
-            </a>
-
-          </div>
 
         </div>
 
@@ -2370,28 +2303,23 @@ footer{
 
 
       <!-- =================================================
-           SEL-002 — ACCESSIBILITY / BANDON
+           SEL-002 — ACCESSIBILITY
+           Bandon project page restored
            ================================================= -->
 
-      <article
+      <a
+        href="./bandon/"
         class="project-card"
-        id="project-bandon"
+        id="projects-accessibility"
+        aria-label="Open Bandon Public Transport Accessibility project"
       >
 
-        <a
-          class="project-image-link"
-          href="./bandon/"
-          aria-label="Open Bandon Public Transport Accessibility Analysis"
+        <img
+          src="./project-bandon.jpg"
+          alt="SEL-002 — Bandon Public Transport Accessibility Analysis"
+          loading="lazy"
+          onerror="this.classList.add('image-fallback')"
         >
-
-          <img
-            src="./project-bandon.jpg"
-            alt="SEL-002 — Bandon Public Transport Accessibility Analysis"
-            loading="lazy"
-          >
-
-        </a>
-
 
         <div class="project-body">
 
@@ -2399,12 +2327,8 @@ footer{
             SEL-002
           </div>
 
-          <h3 class="project-title">
-
-            <a href="./bandon/">
-              Bandon PT Accessibility
-            </a>
-
+          <h3>
+            Bandon PT Accessibility
           </h3>
 
           <p>
@@ -2413,31 +2337,31 @@ footer{
             vulnerability.
           </p>
 
+          <span class="badge">
+            ACCESSIBILITY
+          </span>
 
-          <a
-            class="badge"
-            href="#research-accessibility"
-            aria-label="Return to Accessibility research domain"
+          <span
+            class="project-domain"
+            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='#domain-accessibility';"
           >
-            ACCESSIBILITY →
-          </a>
+            Research Domain →
+          </span>
 
-
-          <div class="project-nav">
-
-            <a href="./bandon/">
-              Open Project
-            </a>
-
-            <a href="#research-accessibility">
-              Research Domain
-            </a>
-
-          </div>
+          <span
+            style="
+              margin-top:7px;
+              color:#fff;
+              font-size:.61rem;
+              font-weight:800;
+            "
+          >
+            OPEN PROJECT →
+          </span>
 
         </div>
 
-      </article>
+      </a>
 
 
       <!-- =================================================
@@ -2446,23 +2370,15 @@ footer{
 
       <article
         class="project-card"
-        id="project-heatrisk"
+        id="projects-environment"
       >
 
-        <a
-          class="project-image-link"
-          href="#research-environment"
-          aria-label="Greater Athens Heat Risk research"
+        <img
+          src="./project-heatrisk.jpg"
+          alt="SEL-005 — Greater Athens Heat Risk and Environmental Quality Assessment"
+          loading="lazy"
+          onerror="this.classList.add('image-fallback')"
         >
-
-          <img
-            src="./project-heatrisk.jpg"
-            alt="SEL-005 — Greater Athens Heat Risk and Environmental Quality Assessment"
-            loading="lazy"
-          >
-
-        </a>
-
 
         <div class="project-body">
 
@@ -2470,12 +2386,8 @@ footer{
             SEL-005
           </div>
 
-          <h3 class="project-title">
-
-            <a href="#research-environment">
-              Athens Heat Risk
-            </a>
-
+          <h3>
+            Athens Heat Risk
           </h3>
 
           <p>
@@ -2484,23 +2396,16 @@ footer{
             and vulnerability.
           </p>
 
+          <span class="badge">
+            ENVIRONMENT &amp; CLIMATE
+          </span>
 
           <a
-            class="badge"
-            href="#research-environment"
-            aria-label="Return to Environment and Climate research domain"
+            class="project-domain"
+            href="#domain-environment"
           >
-            ENVIRONMENT &amp; CLIMATE →
+            Research Domain →
           </a>
-
-
-          <div class="project-nav">
-
-            <a href="#research-environment">
-              Research Domain
-            </a>
-
-          </div>
 
         </div>
 
@@ -2511,25 +2416,14 @@ footer{
            SEL-006 — ENVIRONMENT & CLIMATE
            ================================================= -->
 
-      <article
-        class="project-card"
-        id="project-windenergy"
-      >
+      <article class="project-card">
 
-        <a
-          class="project-image-link"
-          href="#research-environment"
-          aria-label="County Wicklow Wind Energy research"
+        <img
+          src="./project-windenergy.jpg"
+          alt="SEL-006 — County Wicklow Wind Energy Potential Assessment"
+          loading="lazy"
+          onerror="this.classList.add('image-fallback')"
         >
-
-          <img
-            src="./project-windenergy.jpg"
-            alt="SEL-006 — County Wicklow Wind Energy Potential Assessment"
-            loading="lazy"
-          >
-
-        </a>
-
 
         <div class="project-body">
 
@@ -2537,12 +2431,8 @@ footer{
             SEL-006
           </div>
 
-          <h3 class="project-title">
-
-            <a href="#research-environment">
-              Wicklow Wind Energy
-            </a>
-
+          <h3>
+            Wicklow Wind Energy
           </h3>
 
           <p>
@@ -2551,23 +2441,16 @@ footer{
             energy planning.
           </p>
 
+          <span class="badge">
+            ENVIRONMENT &amp; CLIMATE
+          </span>
 
           <a
-            class="badge"
-            href="#research-environment"
-            aria-label="Return to Environment and Climate research domain"
+            class="project-domain"
+            href="#domain-environment"
           >
-            ENVIRONMENT &amp; CLIMATE →
+            Research Domain →
           </a>
-
-
-          <div class="project-nav">
-
-            <a href="#research-environment">
-              Research Domain
-            </a>
-
-          </div>
 
         </div>
 
@@ -2578,25 +2461,14 @@ footer{
            SEL-007 — ENVIRONMENT & CLIMATE
            ================================================= -->
 
-      <article
-        class="project-card"
-        id="project-rondonia"
-      >
+      <article class="project-card">
 
-        <a
-          class="project-image-link"
-          href="#research-environment"
-          aria-label="Rondônia Deforestation research"
+        <img
+          src="./project-rondonia.jpg"
+          alt="SEL-007 — Rondônia Deforestation and Forest Loss Analysis"
+          loading="lazy"
+          onerror="this.classList.add('image-fallback')"
         >
-
-          <img
-            src="./project-rondonia.jpg"
-            alt="SEL-007 — Rondônia Deforestation and Forest Loss Analysis"
-            loading="lazy"
-          >
-
-        </a>
-
 
         <div class="project-body">
 
@@ -2604,12 +2476,8 @@ footer{
             SEL-007
           </div>
 
-          <h3 class="project-title">
-
-            <a href="#research-environment">
-              Rondônia Deforestation
-            </a>
-
+          <h3>
+            Rondônia Deforestation
           </h3>
 
           <p>
@@ -2618,23 +2486,16 @@ footer{
             and temporal evidence.
           </p>
 
+          <span class="badge">
+            ENVIRONMENT &amp; CLIMATE
+          </span>
 
           <a
-            class="badge"
-            href="#research-environment"
-            aria-label="Return to Environment and Climate research domain"
+            class="project-domain"
+            href="#domain-environment"
           >
-            ENVIRONMENT &amp; CLIMATE →
+            Research Domain →
           </a>
-
-
-          <div class="project-nav">
-
-            <a href="#research-environment">
-              Research Domain
-            </a>
-
-          </div>
 
         </div>
 
@@ -2645,25 +2506,14 @@ footer{
            SEL-010 — ENVIRONMENT & CLIMATE
            ================================================= -->
 
-      <article
-        class="project-card"
-        id="project-sealevel"
-      >
+      <article class="project-card">
 
-        <a
-          class="project-image-link"
-          href="#research-environment"
-          aria-label="Miami Sea Level Rise research"
+        <img
+          src="./project-sealevel.jpg"
+          alt="SEL-010 — Miami Sea Level Rise Impact Assessment"
+          loading="lazy"
+          onerror="this.classList.add('image-fallback')"
         >
-
-          <img
-            src="./project-sealevel.jpg"
-            alt="SEL-010 — Miami Sea Level Rise Impact Assessment"
-            loading="lazy"
-          >
-
-        </a>
-
 
         <div class="project-body">
 
@@ -2671,12 +2521,8 @@ footer{
             SEL-010
           </div>
 
-          <h3 class="project-title">
-
-            <a href="#research-environment">
-              Miami Sea Level Rise
-            </a>
-
+          <h3>
+            Miami Sea Level Rise
           </h3>
 
           <p>
@@ -2685,27 +2531,205 @@ footer{
             coastal inundation.
           </p>
 
+          <span class="badge">
+            ENVIRONMENT &amp; CLIMATE
+          </span>
 
           <a
-            class="badge"
-            href="#research-environment"
-            aria-label="Return to Environment and Climate research domain"
+            class="project-domain"
+            href="#domain-environment"
           >
-            ENVIRONMENT &amp; CLIMATE →
+            Research Domain →
           </a>
-
-
-          <div class="project-nav">
-
-            <a href="#research-environment">
-              Research Domain
-            </a>
-
-          </div>
 
         </div>
 
       </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     DOMAIN NAVIGATION / PROJECT CONNECTIONS
+     ========================================================= -->
+
+<section id="domain-navigation">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <h2>
+        Research &amp; Project Navigation
+      </h2>
+
+      <p>
+        Explore projects through their corresponding research domains.
+      </p>
+
+    </div>
+
+
+    <div class="research-grid">
+
+
+      <a
+        class="domain-link"
+        href="#projects-qol"
+      >
+
+        <article class="card">
+
+          <span class="card-num">01</span>
+
+          <h3>Quality of Life</h3>
+
+          <p>
+            Ireland Quality of Life Index
+          </p>
+
+          <span class="arrow">→</span>
+
+        </article>
+
+      </a>
+
+
+      <a
+        class="domain-link"
+        href="./bandon/"
+      >
+
+        <article class="card">
+
+          <span class="card-num">02</span>
+
+          <h3>Accessibility</h3>
+
+          <p>
+            Bandon Public Transport Accessibility
+          </p>
+
+          <span class="arrow">→</span>
+
+        </article>
+
+      </a>
+
+
+      <a
+        class="domain-link"
+        href="#projects"
+      >
+
+        <article class="card">
+
+          <span class="card-num">03</span>
+
+          <h3>Mobility &amp; Transport</h3>
+
+          <p>
+            Transport and network-based spatial analysis.
+          </p>
+
+          <span class="arrow">→</span>
+
+        </article>
+
+      </a>
+
+
+      <a
+        class="domain-link"
+        href="#projects"
+      >
+
+        <article class="card">
+
+          <span class="card-num">04</span>
+
+          <h3>Population &amp; Demography</h3>
+
+          <p>
+            Population distribution and demographic change.
+          </p>
+
+          <span class="arrow">→</span>
+
+        </article>
+
+      </a>
+
+
+      <a
+        class="domain-link"
+        href="#projects"
+      >
+
+        <article class="card">
+
+          <span class="card-num">05</span>
+
+          <h3>Housing &amp; Socioeconomic</h3>
+
+          <p>
+            Housing, affordability and spatial inequality.
+          </p>
+
+          <span class="arrow">→</span>
+
+        </article>
+
+      </a>
+
+
+      <a
+        class="domain-link"
+        href="#projects"
+      >
+
+        <article class="card">
+
+          <span class="card-num">06</span>
+
+          <h3>Urban &amp; Rural Analysis</h3>
+
+          <p>
+            Spatial context and urban-rural patterns.
+          </p>
+
+          <span class="arrow">→</span>
+
+        </article>
+
+      </a>
+
+
+      <a
+        class="domain-link"
+        href="#projects-environment"
+      >
+
+        <article class="card">
+
+          <span class="card-num">07</span>
+
+          <h3>Environment &amp; Climate</h3>
+
+          <p>
+            Heat, energy, deforestation and coastal risk.
+          </p>
+
+          <span class="arrow">→</span>
+
+        </article>
+
+      </a>
 
 
     </div>
@@ -2724,9 +2748,7 @@ footer{
   <div class="container engineering">
 
 
-    <!-- =====================================================
-         METHODS PANEL
-         ===================================================== -->
+    <!-- METHODS -->
 
     <div class="panel">
 
@@ -2805,17 +2827,11 @@ footer{
       <div class="tech">
 
         <span>Python</span>
-
         <span>R</span>
-
         <span>PostGIS</span>
-
         <span>QGIS</span>
-
         <span>DuckDB</span>
-
         <span>GeoPandas</span>
-
         <span>sf</span>
 
       </div>
@@ -2823,9 +2839,7 @@ footer{
     </div>
 
 
-    <!-- =====================================================
-         DATA PANEL
-         ===================================================== -->
+    <!-- DATA -->
 
     <div
       class="panel"
@@ -2917,13 +2931,9 @@ footer{
         </h3>
 
         <p>
-          Documentation on spatial analysis techniques, indicator construction
-          and normalisation.
+          Documentation on spatial analysis techniques, indicator
+          construction and normalisation.
         </p>
-
-        <span class="arrow">
-          →
-        </span>
 
       </article>
 
@@ -2939,10 +2949,6 @@ footer{
           spatial indicators.
         </p>
 
-        <span class="arrow">
-          →
-        </span>
-
       </article>
 
 
@@ -2953,13 +2959,9 @@ footer{
         </h3>
 
         <p>
-          Reproducible analytical pipelines, data engineering scripts and GIS
-          workflows.
+          Reproducible analytical pipelines, data engineering scripts and
+          GIS workflows.
         </p>
-
-        <span class="arrow">
-          →
-        </span>
 
       </article>
 
@@ -2971,13 +2973,9 @@ footer{
         </h3>
 
         <p>
-          Research briefs, spatial findings and applied geographical evidence
-          reports.
+          Research briefs, spatial findings and applied geographical
+          evidence reports.
         </p>
-
-        <span class="arrow">
-          →
-        </span>
 
       </article>
 
@@ -3001,16 +2999,13 @@ footer{
   <div class="container about-grid">
 
 
-    <div
-      class="about-mark"
-      aria-hidden="true"
-    >
+    <div>
 
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
+      <img
+        class="about-logo"
+        src="./logo.jpg"
+        alt="Spatial Evidence Lab logo"
+      >
 
     </div>
 
@@ -3055,14 +3050,29 @@ footer{
 
     <div class="footer-top">
 
+
       <div>
 
-        <div class="footer-brand">
-          Spatial Evidence Lab
-        </div>
+        <div class="footer-brand-wrap">
 
-        <div class="footer-description">
-          Independent Geospatial Research &amp; Spatial Analytics
+          <img
+            class="footer-logo"
+            src="./logo.jpg"
+            alt="Spatial Evidence Lab logo"
+          >
+
+          <div>
+
+            <div class="footer-brand">
+              Spatial Evidence Lab
+            </div>
+
+            <div class="footer-description">
+              Independent Geospatial Research &amp; Spatial Analytics
+            </div>
+
+          </div>
+
         </div>
 
       </div>
