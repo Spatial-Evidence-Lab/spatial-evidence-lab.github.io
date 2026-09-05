@@ -108,6 +108,9 @@ nav{
 
 .nav-links{
     display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    flex-wrap:wrap;
     gap:20px;
 
     color:var(--muted);
@@ -121,6 +124,43 @@ nav{
 
 .nav-links a:hover{
     color:var(--white);
+}
+
+/* MAIN PAGE RETURN LINK */
+
+.home-link{
+    display:inline-flex;
+    align-items:center;
+
+    min-height:32px;
+
+    padding:6px 11px;
+
+    background:rgba(91,214,232,.08);
+
+    border:1px solid rgba(91,214,232,.45);
+    border-radius:5px;
+
+    color:var(--cyan) !important;
+
+    font-size:.62rem;
+    font-weight:700;
+
+    letter-spacing:.06em;
+    text-transform:uppercase;
+
+    white-space:nowrap;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease;
+}
+
+.home-link:hover{
+    background:var(--cyan);
+    border-color:var(--cyan);
+    color:#071018 !important;
 }
 
 /* =========================================================
@@ -1132,6 +1172,55 @@ footer{
 }
 
 /* =========================================================
+   FOOTER HOME NAVIGATION
+   ========================================================= */
+
+.footer-navigation{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:25px;
+    padding-top:22px;
+
+    border-top:1px solid var(--line);
+}
+
+.footer-home{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:40px;
+
+    padding:9px 16px;
+
+    background:var(--panel2);
+
+    border:1px solid var(--cyan);
+    border-radius:6px;
+
+    color:var(--cyan);
+
+    font-size:.66rem;
+    font-weight:700;
+
+    letter-spacing:.06em;
+    text-transform:uppercase;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.footer-home:hover{
+    background:var(--cyan);
+    color:#071018;
+}
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 
@@ -1173,8 +1262,17 @@ footer{
 
 @media(max-width:750px){
 
+    .nav-inner{
+        min-height:auto;
+        padding:12px 0;
+    }
+
     .nav-links{
         display:none;
+    }
+
+    .brand{
+        font-size:.68rem;
     }
 
     .hero{
@@ -1231,11 +1329,11 @@ footer{
         display:block;
     }
 
-}
+    .footer-grid > div + div{
+        margin-top:12px;
+    }
 
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
+}
 
 @media(max-width:480px){
 
@@ -1257,6 +1355,19 @@ footer{
 
     section{
         padding:55px 0;
+    }
+
+    .home-link{
+        font-size:.57rem;
+        padding:6px 8px;
+    }
+
+    .footer-navigation{
+        display:block;
+    }
+
+    .footer-home{
+        width:100%;
     }
 
 }
@@ -1281,6 +1392,15 @@ footer{
     </div>
 
     <div class="nav-links">
+
+        <!-- RETURN TO MAIN SITE -->
+        <a
+            class="home-link"
+            href="../index.html"
+            aria-label="Return to Spatial Evidence Lab main page"
+        >
+            ← Main Page
+        </a>
 
         <a href="#research">Research</a>
 
@@ -1676,8 +1796,6 @@ footer{
     <div class="map-grid">
 
 
-        <!-- MAP 01.00 -->
-
         <div class="map-card">
 
             <img
@@ -1687,9 +1805,7 @@ footer{
 
             <div class="map-card-content">
 
-                <div class="map-code">
-                    MAP 01.00
-                </div>
+                <div class="map-code">MAP 01.00</div>
 
                 <h3>
                     Study Area &amp; Transport Network
@@ -1712,9 +1828,7 @@ footer{
                         View output ↗
                     </a>
 
-                    <span class="map-format">
-                        PNG
-                    </span>
+                    <span class="map-format">PNG</span>
 
                 </div>
 
@@ -1722,8 +1836,6 @@ footer{
 
         </div>
 
-
-        <!-- MAP 01.01 -->
 
         <div class="map-card">
 
@@ -1734,9 +1846,7 @@ footer{
 
             <div class="map-card-content">
 
-                <div class="map-code">
-                    MAP 01.01
-                </div>
+                <div class="map-code">MAP 01.01</div>
 
                 <h3>
                     Walking Catchments
@@ -1759,9 +1869,7 @@ footer{
                         View output ↗
                     </a>
 
-                    <span class="map-format">
-                        PNG
-                    </span>
+                    <span class="map-format">PNG</span>
 
                 </div>
 
@@ -1769,8 +1877,6 @@ footer{
 
         </div>
 
-
-        <!-- MAP 01.02 -->
 
         <div class="map-card">
 
@@ -1781,9 +1887,7 @@ footer{
 
             <div class="map-card-content">
 
-                <div class="map-code">
-                    MAP 01.02
-                </div>
+                <div class="map-code">MAP 01.02</div>
 
                 <h3>
                     Walking Accessibility Score
@@ -1806,9 +1910,7 @@ footer{
                         View output ↗
                     </a>
 
-                    <span class="map-format">
-                        PNG
-                    </span>
+                    <span class="map-format">PNG</span>
 
                 </div>
 
@@ -1816,8 +1918,6 @@ footer{
 
         </div>
 
-
-        <!-- MAP 01.03 -->
 
         <div class="map-card">
 
@@ -1828,9 +1928,7 @@ footer{
 
             <div class="map-card-content">
 
-                <div class="map-code">
-                    MAP 01.03
-                </div>
+                <div class="map-code">MAP 01.03</div>
 
                 <h3>
                     Peak-Time Service Accessibility
@@ -1853,9 +1951,7 @@ footer{
                         View output ↗
                     </a>
 
-                    <span class="map-format">
-                        PNG
-                    </span>
+                    <span class="map-format">PNG</span>
 
                 </div>
 
@@ -1863,8 +1959,6 @@ footer{
 
         </div>
 
-
-        <!-- MAP 01.04 -->
 
         <div class="map-card">
 
@@ -1875,9 +1969,7 @@ footer{
 
             <div class="map-card-content">
 
-                <div class="map-code">
-                    MAP 01.04
-                </div>
+                <div class="map-code">MAP 01.04</div>
 
                 <h3>
                     Population Vulnerability
@@ -1900,9 +1992,7 @@ footer{
                         View output ↗
                     </a>
 
-                    <span class="map-format">
-                        PNG
-                    </span>
+                    <span class="map-format">PNG</span>
 
                 </div>
 
@@ -1910,8 +2000,6 @@ footer{
 
         </div>
 
-
-        <!-- MAP 01.05 -->
 
         <div class="map-card">
 
@@ -1922,9 +2010,7 @@ footer{
 
             <div class="map-card-content">
 
-                <div class="map-code">
-                    MAP 01.05
-                </div>
+                <div class="map-code">MAP 01.05</div>
 
                 <h3>
                     Composite Public Transport Accessibility Index
@@ -1947,9 +2033,7 @@ footer{
                         View output ↗
                     </a>
 
-                    <span class="map-format">
-                        PNG
-                    </span>
+                    <span class="map-format">PNG</span>
 
                 </div>
 
@@ -2098,7 +2182,6 @@ footer{
 
     <div class="insights">
 
-
         <div class="insight">
 
             <strong>
@@ -2201,7 +2284,6 @@ footer{
 
         </div>
 
-
     </div>
 
 
@@ -2259,7 +2341,6 @@ footer{
 
 
     <div class="typology">
-
 
         <div class="type">
 
@@ -2333,7 +2414,6 @@ footer{
 
         </div>
 
-
     </div>
 
 </div>
@@ -2372,79 +2452,57 @@ footer{
     </div>
 
 
-    <!-- WORKFLOW -->
-
     <div class="workflow">
 
         <div class="workflow-step">
-
             <strong>01.00</strong>
-
             <span>
                 Define study area and transport network
             </span>
-
         </div>
 
 
         <div class="workflow-step">
-
             <strong>01.01</strong>
-
             <span>
                 Generate walking-time catchments
             </span>
-
         </div>
 
 
         <div class="workflow-step">
-
             <strong>01.02</strong>
-
             <span>
                 Derive walking accessibility
             </span>
-
         </div>
 
 
         <div class="workflow-step">
-
             <strong>01.03</strong>
-
             <span>
                 Measure peak-time service
             </span>
-
         </div>
 
 
         <div class="workflow-step">
-
             <strong>01.04 → 01.05</strong>
-
             <span>
                 Add vulnerability and composite accessibility
             </span>
-
         </div>
 
 
         <div class="workflow-step">
-
             <strong>01.06</strong>
-
             <span>
                 Screen accessibility–vulnerability hotspots
             </span>
-
         </div>
 
     </div>
 
-
-    <!-- METHOD CARDS -->
 
     <div class="method-grid" style="margin-top:15px;">
 
@@ -2595,8 +2653,6 @@ footer{
     </div>
 
 
-    <!-- DATA FLOW -->
-
     <div style="margin-top:30px;">
 
         <div class="eyebrow">
@@ -2610,177 +2666,107 @@ footer{
                 <thead>
 
                     <tr>
-
-                        <th>
-                            Stage
-                        </th>
-
-                        <th>
-                            Input / Evidence
-                        </th>
-
-                        <th>
-                            GIS / Analytical Process
-                        </th>
-
-                        <th>
-                            Output
-                        </th>
-
+                        <th>Stage</th>
+                        <th>Input / Evidence</th>
+                        <th>GIS / Analytical Process</th>
+                        <th>Output</th>
                     </tr>
 
                 </thead>
 
                 <tbody>
 
-
                     <tr>
-
-                        <td>
-                            01.00
-                        </td>
-
+                        <td>01.00</td>
                         <td>
                             Public transport network and study area
                         </td>
-
                         <td>
                             Define analysis extent and map transport network
                         </td>
-
                         <td>
                             Network context
                         </td>
-
                     </tr>
 
-
                     <tr>
-
-                        <td>
-                            01.01
-                        </td>
-
+                        <td>01.01</td>
                         <td>
                             Stops + walking network
                         </td>
-
                         <td>
                             Network-based walking-time analysis
                         </td>
-
                         <td>
                             5 / 10 / 15 minute catchments
                         </td>
-
                     </tr>
 
-
                     <tr>
-
-                        <td>
-                            01.02
-                        </td>
-
+                        <td>01.02</td>
                         <td>
                             Walking network accessibility
                         </td>
-
                         <td>
                             Convert practical network access into spatial
                             accessibility measure
                         </td>
-
                         <td>
                             Walking accessibility
                         </td>
-
                     </tr>
 
-
                     <tr>
-
-                        <td>
-                            01.03
-                        </td>
-
+                        <td>01.03</td>
                         <td>
                             GTFS / scheduled service
                         </td>
-
                         <td>
                             Derive peak-time service availability/frequency
                         </td>
-
                         <td>
                             Service accessibility
                         </td>
-
                     </tr>
 
-
                     <tr>
-
-                        <td>
-                            01.04
-                        </td>
-
+                        <td>01.04</td>
                         <td>
                             Census 2022
                         </td>
-
                         <td>
                             Derive population vulnerability measure
                         </td>
-
                         <td>
                             Vulnerability surface
                         </td>
-
                     </tr>
 
-
                     <tr>
-
-                        <td>
-                            01.05
-                        </td>
-
+                        <td>01.05</td>
                         <td>
                             Walking accessibility + service
                         </td>
-
                         <td>
                             Combine accessibility dimensions
                         </td>
-
                         <td>
                             Composite Accessibility Index
                         </td>
-
                     </tr>
 
-
                     <tr>
-
-                        <td>
-                            01.06
-                        </td>
-
+                        <td>01.06</td>
                         <td>
                             Access deficit + VUL<sub>norm</sub>
                         </td>
-
                         <td>
                             Weighted equity-focused hotspot screening
                         </td>
-
                         <td>
                             Priority classification
                         </td>
-
                     </tr>
-
 
                 </tbody>
 
@@ -2791,10 +2777,7 @@ footer{
     </div>
 
 
-    <!-- INTERPRETATION -->
-
     <div class="method-grid" style="margin-top:15px;">
-
 
         <div class="method-card">
 
@@ -2858,7 +2841,6 @@ footer{
 
         </div>
 
-
     </div>
 
 </div>
@@ -2900,8 +2882,6 @@ footer{
     <div class="resource-grid">
 
 
-        <!-- CENSUS -->
-
         <div class="resource-card">
 
             <div class="resource-type">
@@ -2929,8 +2909,6 @@ footer{
 
         </div>
 
-
-        <!-- GTFS -->
 
         <div class="resource-card">
 
@@ -2960,8 +2938,6 @@ footer{
         </div>
 
 
-        <!-- GIS -->
-
         <div class="resource-card">
 
             <div class="resource-type">
@@ -2988,8 +2964,6 @@ footer{
 
         </div>
 
-
-        <!-- REPOSITORY -->
 
         <div class="resource-card">
 
@@ -3018,8 +2992,6 @@ footer{
         </div>
 
 
-        <!-- PROJECT PAGE -->
-
         <div class="resource-card">
 
             <div class="resource-type">
@@ -3038,17 +3010,14 @@ footer{
 
             <a
                 class="button-link"
-                href="https://spatial-evidence-lab.github.io/bandon/"
-                target="_blank"
-                rel="noopener"
+                href="./index.html"
+                aria-current="page"
             >
-                Open Project ↗
+                Current Project ↗
             </a>
 
         </div>
 
-
-        <!-- OUTPUTS -->
 
         <div class="resource-card">
 
@@ -3080,8 +3049,6 @@ footer{
     </div>
 
 
-    <!-- RESOURCE LINKS -->
-
     <div class="link-row">
 
         <a
@@ -3111,13 +3078,12 @@ footer{
             Map Outputs ↗
         </a>
 
+        <!-- RETURN TO MAIN SITE -->
         <a
             class="button-link"
-            href="https://spatial-evidence-lab.github.io/"
-            target="_blank"
-            rel="noopener"
+            href="../index.html"
         >
-            Spatial Evidence Lab ↗
+            ← Return to Spatial Evidence Lab
         </a>
 
     </div>
@@ -3630,6 +3596,23 @@ footer{
         <div class="footer-text">
             County Cork · Ireland
         </div>
+
+    </div>
+
+
+    <!-- =================================================
+         RETURN TO MAIN PAGE — BOTTOM
+         ================================================= -->
+
+    <div class="footer-navigation">
+
+        <a
+            class="footer-home"
+            href="../index.html"
+            aria-label="Return to Spatial Evidence Lab main page"
+        >
+            ← Return to Spatial Evidence Lab Main Page
+        </a>
 
     </div>
 
