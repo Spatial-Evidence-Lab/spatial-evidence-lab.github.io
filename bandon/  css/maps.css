@@ -1,21 +1,64 @@
 /* =========================================================
-   SEL-002 — MAP COMPONENTS
+   SEL-002 — BANDON
+   MAP COMPONENT STYLES
+   File: bandon/css/maps.css
    ========================================================= */
+
+
+/* =========================================================
+   MAP SECTION
+   ========================================================= */
+
+.map-section{
+    width:100%;
+}
+
+.map-section-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:30px;
+
+    margin-bottom:30px;
+}
+
+.map-section-header > div{
+    min-width:0;
+}
+
+.map-section-header h2{
+    margin:0;
+
+    color:var(--white);
+
+    font-size:1.8rem;
+    line-height:1.15;
+    letter-spacing:-.025em;
+}
+
+.map-section-header p{
+    max-width:580px;
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:.76rem;
+    line-height:1.65;
+}
 
 
 /* =========================================================
    MAP GRID
    ========================================================= */
 
-.map-grid {
-    display: grid;
+.map-grid{
+    display:grid;
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
 
-    gap: 16px;
+    gap:18px;
 
-    width: 100%;
+    width:100%;
 }
 
 
@@ -23,29 +66,48 @@
    MAP CARD
    ========================================================= */
 
-.map-card {
-    min-width: 0;
+.map-card{
+    position:relative;
 
-    overflow: hidden;
+    min-width:0;
 
-    background: var(--panel);
+    overflow:hidden;
 
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
+    background:var(--panel);
+
+    border:1px solid var(--line);
+    border-radius:var(--radius);
 
     transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
 }
 
-.map-card:hover {
-    transform: translateY(-2px);
+.map-card:hover{
+    transform:translateY(-2px);
 
-    border-color: #315364;
+    border-color:#315364;
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.18);
+        0 10px 30px rgba(0,0,0,.18);
+}
+
+
+/* =========================================================
+   MAP IMAGE WRAPPER
+   ========================================================= */
+
+.map-image{
+    position:relative;
+
+    width:100%;
+
+    overflow:hidden;
+
+    background:#08131A;
+
+    border-bottom:1px solid var(--line);
 }
 
 
@@ -53,128 +115,852 @@
    MAP IMAGE
    ========================================================= */
 
-.map-image-link {
-    display: block;
+.map-card img,
+.map-image img{
+    display:block;
 
-    width: 100%;
+    width:100%;
+    height:auto;
 
-    overflow: hidden;
+    max-width:100%;
 
-    background: #050d12;
-}
+    object-fit:contain;
 
-.map-card img {
-    display: block;
-
-    width: 100%;
-    height: 280px;
-
-    object-fit: cover;
-
-    border-bottom: 1px solid var(--line);
+    background:#08131A;
 
     transition:
-        transform 0.3s ease,
-        opacity 0.2s ease;
+        transform .25s ease,
+        opacity .2s ease;
 }
 
-.map-card:hover img {
-    transform: scale(1.015);
-}
-
-.map-image-link:focus-visible {
-    outline: 2px solid var(--cyan);
-    outline-offset: -2px;
+.map-card:hover img{
+    transform:scale(1.01);
 }
 
 
-/* =========================================================
-   MAP CONTENT
-   ========================================================= */
+/*
+   Standard map-card image height.
 
-.map-card-content {
-    padding: 19px;
-}
+   object-fit:cover is deliberately NOT used here.
+   GIS maps often contain legends, scale bars and north arrows
+   near the edges. Containing the full image prevents those
+   elements being cropped.
+*/
 
-.map-code {
-    color: var(--cyan);
+.map-card > img{
+    height:280px;
 
-    font-size: 0.63rem;
-    font-weight: 700;
-
-    letter-spacing: 0.1em;
-}
-
-.map-card h3 {
-    margin: 7px 0 9px;
-
-    color: var(--white);
-
-    font-size: 1.02rem;
-    line-height: 1.25;
-}
-
-.map-card p {
-    margin: 0;
-
-    color: var(--muted);
-
-    font-size: 0.72rem;
-    line-height: 1.6;
+    object-fit:cover;
 }
 
 
 /* =========================================================
-   MAP FOOTER
+   MAP IMAGE OVERLAY
    ========================================================= */
 
-.map-card-footer {
-    display: flex;
+.map-image-overlay{
+    position:absolute;
 
-    align-items: center;
-    justify-content: space-between;
+    inset:0;
 
-    gap: 10px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
 
-    margin-top: 17px;
-    padding-top: 12px;
+    padding:12px;
 
-    border-top: 1px solid var(--line);
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.38),
+            transparent 35%
+        );
 }
 
-.map-link {
-    color: var(--cyan);
+.map-image-label{
+    display:inline-flex;
+    align-items:center;
 
-    font-size: 0.63rem;
-    font-weight: 700;
+    min-height:25px;
 
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    padding:5px 8px;
 
-    transition: color 0.2s ease;
-}
+    background:rgba(7,16,24,.88);
 
-.map-link:hover {
-    color: var(--white);
-}
+    border:1px solid rgba(91,214,232,.35);
+    border-radius:4px;
 
-.map-format {
-    color: #71858f;
+    color:var(--cyan);
 
-    font-size: 0.59rem;
+    font-size:.58rem;
+    font-weight:700;
 
-    letter-spacing: 0.06em;
-
-    text-transform: uppercase;
+    letter-spacing:.08em;
+    text-transform:uppercase;
 }
 
 
 /* =========================================================
-   MAP IMAGE HOVER
+   MAP CARD CONTENT
    ========================================================= */
 
-.map-image-link:hover img {
-    opacity: 0.92;
+.map-card-content{
+    min-width:0;
+
+    padding:19px;
+}
+
+.map-code{
+    color:var(--cyan);
+
+    font-size:.63rem;
+    font-weight:700;
+
+    letter-spacing:.1em;
+    text-transform:uppercase;
+}
+
+.map-card h3{
+    margin:7px 0 9px;
+
+    color:var(--white);
+
+    font-size:1.02rem;
+    line-height:1.25;
+}
+
+.map-card p{
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:.72rem;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   MAP CARD FOOTER
+   ========================================================= */
+
+.map-card-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-top:17px;
+    padding-top:12px;
+
+    border-top:1px solid var(--line);
+}
+
+.map-card-footer-left{
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    min-width:0;
+}
+
+.map-card-footer-right{
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    margin-left:auto;
+}
+
+
+/* =========================================================
+   MAP LINK
+   ========================================================= */
+
+.map-link{
+    display:inline-flex;
+    align-items:center;
+
+    min-height:30px;
+
+    color:var(--cyan);
+
+    font-size:.63rem;
+    font-weight:700;
+
+    letter-spacing:.06em;
+    text-transform:uppercase;
+
+    transition:
+        color .2s ease,
+        opacity .2s ease;
+}
+
+.map-link:hover{
+    color:var(--white);
+}
+
+.map-link:focus-visible{
+    outline:2px solid var(--cyan);
+    outline-offset:3px;
+}
+
+
+/* =========================================================
+   MAP FORMAT
+   ========================================================= */
+
+.map-format{
+    color:#71858F;
+
+    font-size:.59rem;
+
+    letter-spacing:.06em;
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   MAP METADATA
+   ========================================================= */
+
+.map-meta{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-top:13px;
+}
+
+.map-meta-item{
+    display:inline-flex;
+    align-items:center;
+
+    min-height:25px;
+
+    padding:4px 7px;
+
+    background:var(--panel2);
+
+    border:1px solid var(--line);
+    border-radius:4px;
+
+    color:var(--muted);
+
+    font-size:.57rem;
+
+    letter-spacing:.05em;
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   FEATURED MAP
+   ========================================================= */
+
+.hero-map{
+    display:grid;
+
+    grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);
+
+    width:100%;
+
+    overflow:hidden;
+
+    background:var(--panel);
+
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+}
+
+.hero-map-image{
+    min-width:0;
+
+    overflow:hidden;
+
+    background:#08131A;
+}
+
+.hero-map-image img{
+    display:block;
+
+    width:100%;
+    height:390px;
+
+    max-width:100%;
+
+    object-fit:cover;
+}
+
+.hero-map-content{
+    min-width:0;
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.hero-map-content h3{
+    margin:8px 0 11px;
+
+    color:var(--white);
+
+    font-size:1.5rem;
+    line-height:1.15;
+}
+
+.hero-map-content p{
+    margin:0;
+
+    color:#D0DCE2;
+
+    font-size:.78rem;
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   FEATURED MAP — RESULT LABEL
+   ========================================================= */
+
+.map-result-label{
+    color:var(--cyan);
+
+    font-size:.66rem;
+    font-weight:700;
+
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   MAP PRIORITY BOX
+   ========================================================= */
+
+.map-priority{
+    margin-top:15px;
+    padding:13px;
+
+    background:#211421;
+
+    border-left:3px solid var(--pink);
+    border-radius:5px;
+}
+
+.map-priority strong{
+    display:block;
+
+    margin-bottom:3px;
+
+    color:var(--pink);
+
+    font-size:.66rem;
+
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.map-priority p{
+    margin:0;
+
+    color:#D5DDE1;
+
+    font-size:.7rem;
+}
+
+
+/* =========================================================
+   MAP WARNING
+   ========================================================= */
+
+.map-warning{
+    margin-top:15px;
+    padding:14px;
+
+    background:#211A17;
+
+    border-left:3px solid var(--orange);
+    border-radius:5px;
+
+    color:#D8E2E7;
+
+    font-size:.69rem;
+    line-height:1.55;
+}
+
+.map-warning strong{
+    color:var(--orange);
+}
+
+
+/* =========================================================
+   MAP VIEWER
+   ========================================================= */
+
+.map-viewer{
+    width:100%;
+
+    overflow:hidden;
+
+    background:#08131A;
+
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+}
+
+.map-viewer img{
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    max-width:100%;
+
+    object-fit:contain;
+}
+
+
+/* =========================================================
+   FULL-WIDTH MAP
+   ========================================================= */
+
+.map-full{
+    width:100%;
+
+    overflow:hidden;
+
+    background:var(--panel);
+
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+}
+
+.map-full img{
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    max-width:100%;
+}
+
+
+/* =========================================================
+   MAP CAPTION
+   ========================================================= */
+
+.map-caption{
+    padding:14px 17px;
+
+    border-top:1px solid var(--line);
+
+    color:var(--muted);
+
+    font-size:.68rem;
+    line-height:1.55;
+}
+
+.map-caption strong{
+    color:var(--text);
+}
+
+
+/* =========================================================
+   MAP LEGEND
+   ========================================================= */
+
+.map-legend{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:8px 15px;
+
+    margin-top:14px;
+}
+
+.map-legend-item{
+    display:inline-flex;
+    align-items:center;
+
+    gap:7px;
+
+    color:var(--muted);
+
+    font-size:.62rem;
+}
+
+.map-legend-swatch{
+    width:11px;
+    height:11px;
+
+    flex:0 0 11px;
+
+    border-radius:2px;
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+
+/* =========================================================
+   MAP BUTTON ROW
+   ========================================================= */
+
+.map-actions{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:20px;
+}
+
+.map-actions a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:38px;
+
+    padding:8px 14px;
+
+    background:var(--panel2);
+
+    border:1px solid var(--line);
+    border-radius:6px;
+
+    color:var(--text);
+
+    font-size:.68rem;
+    font-weight:700;
+
+    transition:
+        border-color .2s ease,
+        color .2s ease,
+        background .2s ease;
+}
+
+.map-actions a:hover{
+    border-color:var(--cyan);
+
+    color:var(--cyan);
+
+    background:#112B37;
+}
+
+.map-actions a:focus-visible{
+    outline:2px solid var(--cyan);
+    outline-offset:3px;
+}
+
+
+/* =========================================================
+   MAP OUTPUT LIST
+   ========================================================= */
+
+.map-output-list{
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.map-output-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    min-width:0;
+
+    padding:14px 16px;
+
+    background:var(--panel);
+
+    border:1px solid var(--line);
+    border-radius:6px;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease;
+}
+
+.map-output-item:hover{
+    border-color:#315364;
+
+    background:var(--panel2);
+}
+
+.map-output-item-info{
+    min-width:0;
+}
+
+.map-output-item-code{
+    display:block;
+
+    color:var(--cyan);
+
+    font-size:.6rem;
+    font-weight:700;
+
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.map-output-item-title{
+    display:block;
+
+    margin-top:4px;
+
+    overflow:hidden;
+
+    color:var(--text);
+
+    font-size:.7rem;
+
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.map-output-item-link{
+    flex:0 0 auto;
+
+    color:var(--cyan);
+
+    font-size:.6rem;
+    font-weight:700;
+
+    letter-spacing:.05em;
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   MAP INDEX PAGE
+   ========================================================= */
+
+.maps-index{
+    width:100%;
+}
+
+.maps-index-header{
+    max-width:850px;
+
+    margin-bottom:35px;
+}
+
+.maps-index-header h1{
+    margin:0 0 15px;
+
+    color:var(--white);
+
+    font-size:clamp(2rem,4vw,3.5rem);
+    line-height:1.05;
+
+    letter-spacing:-.04em;
+}
+
+.maps-index-header p{
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:.82rem;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   MAP INDEX GRID
+   ========================================================= */
+
+.maps-index-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:18px;
+}
+
+
+/* =========================================================
+   MAP INDEX CARD
+   ========================================================= */
+
+.maps-index-card{
+    min-width:0;
+
+    overflow:hidden;
+
+    background:var(--panel);
+
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease;
+}
+
+.maps-index-card:hover{
+    transform:translateY(-2px);
+
+    border-color:#315364;
+}
+
+.maps-index-card-image{
+    width:100%;
+
+    overflow:hidden;
+
+    background:#08131A;
+
+    border-bottom:1px solid var(--line);
+}
+
+.maps-index-card-image img{
+    display:block;
+
+    width:100%;
+    height:280px;
+
+    max-width:100%;
+
+    object-fit:cover;
+}
+
+.maps-index-card-content{
+    padding:18px;
+}
+
+.maps-index-card-code{
+    color:var(--cyan);
+
+    font-size:.62rem;
+    font-weight:700;
+
+    letter-spacing:.1em;
+    text-transform:uppercase;
+}
+
+.maps-index-card h2{
+    margin:7px 0 9px;
+
+    color:var(--white);
+
+    font-size:1rem;
+    line-height:1.25;
+}
+
+.maps-index-card p{
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:.7rem;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   MAP NUMBER BADGE
+   ========================================================= */
+
+.map-number{
+    position:absolute;
+
+    top:12px;
+    left:12px;
+
+    z-index:3;
+
+    display:inline-flex;
+    align-items:center;
+
+    min-height:27px;
+
+    padding:5px 8px;
+
+    background:rgba(7,16,24,.9);
+
+    border:1px solid rgba(91,214,232,.4);
+    border-radius:4px;
+
+    color:var(--cyan);
+
+    font-size:.58rem;
+    font-weight:700;
+
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   MAP LIGHTBOX TARGET
+   ========================================================= */
+
+.map-lightbox-trigger{
+    cursor:zoom-in;
+}
+
+.map-lightbox-trigger img{
+    transition:
+        transform .25s ease,
+        filter .25s ease;
+}
+
+.map-lightbox-trigger:hover img{
+    transform:scale(1.015);
+
+    filter:brightness(1.05);
+}
+
+
+/* =========================================================
+   PREVENT IMAGE / MAP OVERFLOW
+   ========================================================= */
+
+.map-card,
+.map-image,
+.map-viewer,
+.map-full,
+.hero-map,
+.hero-map-image,
+.maps-index-card,
+.maps-index-card-image{
+    max-width:100%;
+}
+
+.map-card img,
+.map-image img,
+.map-viewer img,
+.map-full img,
+.hero-map-image img,
+.maps-index-card-image img{
+    max-width:100%;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.map-card a:focus-visible,
+.maps-index-card a:focus-visible{
+    outline:2px solid var(--cyan);
+    outline-offset:3px;
 }
 
 
@@ -182,14 +968,79 @@
    TABLET
    ========================================================= */
 
-@media (max-width: 750px) {
+@media (max-width:900px){
 
-    .map-grid {
-        grid-template-columns: 1fr;
+    .map-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+        gap:15px;
     }
 
-    .map-card img {
-        height: 300px;
+    .hero-map{
+        grid-template-columns:1fr;
+    }
+
+    .hero-map-image img{
+        height:320px;
+    }
+
+    .map-output-list,
+    .maps-index-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:750px){
+
+    .map-section-header{
+        display:block;
+    }
+
+    .map-section-header p{
+        margin-top:10px;
+    }
+
+    .map-grid{
+        grid-template-columns:1fr;
+
+        gap:15px;
+    }
+
+    .map-card > img{
+        height:auto;
+
+        object-fit:contain;
+    }
+
+    .hero-map{
+        grid-template-columns:1fr;
+    }
+
+    .hero-map-image img{
+        height:auto;
+
+        object-fit:contain;
+    }
+
+    .hero-map-content{
+        padding:21px;
+    }
+
+    .map-output-list,
+    .maps-index-grid{
+        grid-template-columns:1fr;
+    }
+
+    .maps-index-card-image img{
+        height:auto;
+
+        object-fit:contain;
     }
 
 }
@@ -199,7 +1050,38 @@
    SMALL MOBILE
    ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width:480px){
 
-    .map-card img {
-        height: 220
+    .map-card-content{
+        padding:16px;
+    }
+
+    .map-card-footer{
+        align-items:flex-start;
+    }
+
+    .map-actions{
+        display:grid;
+
+        grid-template-columns:1fr;
+    }
+
+    .map-actions a{
+        width:100%;
+    }
+
+    .hero-map-content{
+        padding:18px;
+    }
+
+    .map-output-item{
+        align-items:flex-start;
+
+        padding:13px;
+    }
+
+    .map-output-item-title{
+        white-space:normal;
+    }
+
+}
