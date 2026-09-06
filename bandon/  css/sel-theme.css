@@ -1,0 +1,7368 @@
+/* ============================================================
+   SPATIAL EVIDENCE LAB
+   SEL-002 — BANDON PUBLIC TRANSPORT ACCESSIBILITY ANALYSIS
+
+   File:
+   css/sel-theme.css
+
+   Design system:
+   - StoryMaps-inspired spatial storytelling
+   - Apple-inspired research/editorial layout
+   - Dark scientific interface
+   - Responsive / mobile-first
+   - Accessible colour contrast
+   - Lightbox / gallery support
+   - Interactive maps
+   - KPI dashboards
+   - Methodology diagrams
+   - Data / metadata tables
+   - Policy intervention cards
+   - SQL / code presentation
+   - Print-friendly foundations
+
+   Palette:
+   #071018  Deep background
+   #0D1821  Surface
+   #111F2A  Elevated surface
+   #00D7E8  Cyan
+   #36D399  Green
+   #E58F65  Orange
+   #F472B6  Pink
+
+   Typography:
+   Inter
+   IBM Plex Sans
+   system-ui fallback
+
+   ============================================================ */
+
+
+/* ============================================================
+   01. DESIGN TOKENS
+   ============================================================ */
+
+:root{
+
+  /* ----------------------------------------------------------
+     CORE COLOURS
+     ---------------------------------------------------------- */
+
+  --sel-bg:
+    #071018;
+
+  --sel-bg-2:
+    #09151E;
+
+  --sel-bg-3:
+    #0B1923;
+
+  --sel-surface:
+    #0D1821;
+
+  --sel-surface-2:
+    #111F2A;
+
+  --sel-surface-3:
+    #152632;
+
+  --sel-panel:
+    rgba(17,31,42,.82);
+
+  --sel-panel-solid:
+    #111F2A;
+
+  --sel-white:
+    #FFFFFF;
+
+  --sel-text:
+    #EDF5F7;
+
+  --sel-text-soft:
+    #D3E0E5;
+
+  --sel-muted:
+    #8EA2AD;
+
+  --sel-muted-2:
+    #657A86;
+
+  --sel-line:
+    rgba(255,255,255,.09);
+
+  --sel-line-strong:
+    rgba(255,255,255,.16);
+
+  /* ----------------------------------------------------------
+     ACCENT COLOURS
+     ---------------------------------------------------------- */
+
+  --sel-cyan:
+    #00D7E8;
+
+  --sel-cyan-bright:
+    #36E7F3;
+
+  --sel-cyan-dark:
+    #007F8C;
+
+  --sel-green:
+    #36D399;
+
+  --sel-green-bright:
+    #5EE7B7;
+
+  --sel-green-dark:
+    #167A59;
+
+  --sel-orange:
+    #E58F65;
+
+  --sel-orange-bright:
+    #F1AA85;
+
+  --sel-orange-dark:
+    #9B573A;
+
+  --sel-pink:
+    #F472B6;
+
+  --sel-pink-bright:
+    #FB8CC6;
+
+  --sel-pink-dark:
+    #A93D73;
+
+  --sel-yellow:
+    #F4D35E;
+
+  --sel-red:
+    #F87171;
+
+  --sel-blue:
+    #60A5FA;
+
+  /* ----------------------------------------------------------
+     GRADIENTS
+     ---------------------------------------------------------- */
+
+  --gradient-hero:
+    linear-gradient(
+      135deg,
+      #071018 0%,
+      #091923 48%,
+      #0A2631 100%
+    );
+
+  --gradient-cyan:
+    linear-gradient(
+      135deg,
+      #00D7E8,
+      #008C9A
+    );
+
+  --gradient-green:
+    linear-gradient(
+      135deg,
+      #36D399,
+      #167A59
+    );
+
+  --gradient-hotspot:
+    linear-gradient(
+      135deg,
+      #F472B6,
+      #E58F65
+    );
+
+  --gradient-panel:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.018)
+    );
+
+  --gradient-map:
+    linear-gradient(
+      180deg,
+      rgba(7,16,24,.05),
+      rgba(7,16,24,.88)
+    );
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY
+     ---------------------------------------------------------- */
+
+  --font-sans:
+    Inter,
+    "IBM Plex Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  --font-mono:
+    "IBM Plex Mono",
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  --text-xs:
+    .68rem;
+
+  --text-sm:
+    .78rem;
+
+  --text-md:
+    .9rem;
+
+  --text-base:
+    1rem;
+
+  --text-lg:
+    1.15rem;
+
+  --text-xl:
+    1.45rem;
+
+  --text-2xl:
+    1.85rem;
+
+  --text-3xl:
+    2.5rem;
+
+  --text-4xl:
+    3.4rem;
+
+  --text-5xl:
+    4.8rem;
+
+  /* ----------------------------------------------------------
+     SPACING
+     ---------------------------------------------------------- */
+
+  --space-1:
+    .25rem;
+
+  --space-2:
+    .5rem;
+
+  --space-3:
+    .75rem;
+
+  --space-4:
+    1rem;
+
+  --space-5:
+    1.25rem;
+
+  --space-6:
+    1.5rem;
+
+  --space-8:
+    2rem;
+
+  --space-10:
+    2.5rem;
+
+  --space-12:
+    3rem;
+
+  --space-16:
+    4rem;
+
+  --space-20:
+    5rem;
+
+  --space-24:
+    6rem;
+
+  --space-32:
+    8rem;
+
+  --space-40:
+    10rem;
+
+  /* ----------------------------------------------------------
+     LAYOUT
+     ---------------------------------------------------------- */
+
+  --container:
+    1240px;
+
+  --container-wide:
+    1440px;
+
+  --container-narrow:
+    880px;
+
+  --gutter:
+    clamp(
+      1.1rem,
+      4vw,
+      3rem
+    );
+
+  /* ----------------------------------------------------------
+     RADII
+     ---------------------------------------------------------- */
+
+  --radius-xs:
+    4px;
+
+  --radius-sm:
+    7px;
+
+  --radius-md:
+    12px;
+
+  --radius-lg:
+    18px;
+
+  --radius-xl:
+    26px;
+
+  --radius-pill:
+    999px;
+
+  /* ----------------------------------------------------------
+     SHADOWS
+     ---------------------------------------------------------- */
+
+  --shadow-sm:
+    0 8px 24px rgba(0,0,0,.18);
+
+  --shadow-md:
+    0 18px 50px rgba(0,0,0,.26);
+
+  --shadow-lg:
+    0 30px 90px rgba(0,0,0,.38);
+
+  --shadow-glow:
+    0 0 45px rgba(0,215,232,.12);
+
+  /* ----------------------------------------------------------
+     TRANSITIONS
+     ---------------------------------------------------------- */
+
+  --ease:
+    cubic-bezier(.2,.75,.25,1);
+
+  --transition-fast:
+    .16s var(--ease);
+
+  --transition:
+    .28s var(--ease);
+
+  --transition-slow:
+    .55s var(--ease);
+
+  /* ----------------------------------------------------------
+     Z-INDEX
+     ---------------------------------------------------------- */
+
+  --z-base:
+    1;
+
+  --z-header:
+    100;
+
+  --z-progress:
+    150;
+
+  --z-lightbox:
+    500;
+
+  --z-modal:
+    600;
+
+}
+
+
+/* ============================================================
+   02. RESET
+   ============================================================ */
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{
+  margin:0;
+  padding:0;
+
+  scroll-behavior:smooth;
+
+  scroll-padding-top:
+    82px;
+
+  background:
+    var(--sel-bg);
+}
+
+body{
+  margin:0;
+
+  padding:0;
+
+  background:
+    var(--sel-bg);
+
+  color:
+    var(--sel-text);
+
+  font-family:
+    var(--font-sans);
+
+  font-size:
+    16px;
+
+  line-height:
+    1.6;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  text-rendering:
+    optimizeLegibility;
+}
+
+body.no-scroll{
+  overflow:hidden;
+}
+
+img,
+svg,
+video,
+canvas{
+  max-width:100%;
+
+  display:block;
+}
+
+img{
+  height:auto;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  color:inherit;
+}
+
+a{
+  color:inherit;
+
+  text-decoration:none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin-top:0;
+}
+
+ul,
+ol{
+  margin-top:0;
+}
+
+::selection{
+  color:
+    #00171C;
+
+  background:
+    var(--sel-cyan);
+}
+
+
+/* ============================================================
+   03. BASE TYPOGRAPHY
+   ============================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  color:
+    var(--sel-white);
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    -.035em;
+}
+
+h1{
+  font-size:
+    clamp(
+      2.7rem,
+      7vw,
+      5.8rem
+    );
+
+  line-height:
+    .96;
+}
+
+h2{
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.5rem
+    );
+
+  line-height:
+    1.02;
+}
+
+h3{
+  font-size:
+    clamp(
+      1.1rem,
+      2vw,
+      1.45rem
+    );
+
+  line-height:
+    1.15;
+}
+
+h4{
+  font-size:
+    1rem;
+
+  line-height:
+    1.25;
+}
+
+p{
+  color:
+    var(--sel-text-soft);
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.7;
+}
+
+strong{
+  color:
+    var(--sel-white);
+}
+
+small{
+  color:
+    var(--sel-muted);
+}
+
+code{
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .9em;
+}
+
+pre{
+  font-family:
+    var(--font-mono);
+}
+
+
+/* ============================================================
+   04. ACCESSIBILITY
+   ============================================================ */
+
+:focus-visible{
+  outline:
+    2px solid var(--sel-cyan);
+
+  outline-offset:
+    4px;
+}
+
+.sr-only{
+  position:absolute;
+
+  width:1px;
+
+  height:1px;
+
+  padding:0;
+
+  margin:-1px;
+
+  overflow:hidden;
+
+  clip:rect(0,0,0,0);
+
+  white-space:nowrap;
+
+  border:0;
+}
+
+
+/* ============================================================
+   05. CONTAINERS
+   ============================================================ */
+
+.sel-container{
+  width:
+    min(
+      calc(100% - (var(--gutter) * 2)),
+      var(--container)
+    );
+
+  margin-inline:
+    auto;
+}
+
+.sel-container-wide{
+  width:
+    min(
+      calc(100% - (var(--gutter) * 2)),
+      var(--container-wide)
+    );
+
+  margin-inline:
+    auto;
+}
+
+.sel-container-narrow{
+  width:
+    min(
+      calc(100% - (var(--gutter) * 2)),
+      var(--container-narrow)
+    );
+
+  margin-inline:
+    auto;
+}
+
+
+/* ============================================================
+   06. SECTION SYSTEM
+   ============================================================ */
+
+.sel-section{
+  position:relative;
+
+  padding:
+    clamp(
+      5rem,
+      10vw,
+      9rem
+    )
+    0;
+
+  overflow:hidden;
+}
+
+.sel-section--compact{
+  padding:
+    clamp(
+      3.5rem,
+      7vw,
+      6rem
+    )
+    0;
+}
+
+.sel-section--large{
+  padding:
+    clamp(
+      7rem,
+      13vw,
+      12rem
+    )
+    0;
+}
+
+.sel-section--dark{
+  background:
+    var(--sel-bg);
+}
+
+.sel-section--surface{
+  background:
+    var(--sel-bg-2);
+}
+
+.sel-section--elevated{
+  background:
+    var(--sel-bg-3);
+}
+
+.sel-section--gradient{
+  background:
+    linear-gradient(
+      180deg,
+      var(--sel-bg),
+      var(--sel-bg-2)
+    );
+}
+
+.sel-section--cyan{
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(0,215,232,.08),
+      transparent 32%
+    ),
+    var(--sel-bg);
+}
+
+.sel-section--green{
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(54,211,153,.06),
+      transparent 32%
+    ),
+    var(--sel-bg);
+}
+
+.sel-section--pink{
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(244,114,182,.06),
+      transparent 32%
+    ),
+    var(--sel-bg);
+}
+
+
+/* ============================================================
+   07. SECTION DIVIDERS
+   ============================================================ */
+
+.sel-divider{
+  width:
+    100%;
+
+  height:
+    1px;
+
+  background:
+    var(--sel-line);
+}
+
+.sel-divider--cyan{
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0,215,232,.65),
+      transparent
+    );
+}
+
+.sel-divider--green{
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(54,211,153,.55),
+      transparent
+    );
+}
+
+
+/* ============================================================
+   08. SECTION EYEBROWS
+   ============================================================ */
+
+.sel-eyebrow{
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    .65rem;
+
+  margin-bottom:
+    1.2rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-size:
+    .7rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .16em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-eyebrow::before{
+  content:"";
+
+  width:
+    22px;
+
+  height:
+    1px;
+
+  background:
+    currentColor;
+}
+
+.sel-eyebrow--green{
+  color:
+    var(--sel-green);
+}
+
+.sel-eyebrow--orange{
+  color:
+    var(--sel-orange);
+}
+
+.sel-eyebrow--pink{
+  color:
+    var(--sel-pink);
+}
+
+
+/* ============================================================
+   09. SECTION HEADINGS
+   ============================================================ */
+
+.sel-section-heading{
+  max-width:
+    820px;
+
+  margin-bottom:
+    clamp(
+      2.5rem,
+      6vw,
+      5rem
+    );
+}
+
+.sel-section-heading h2{
+  margin-bottom:
+    1.25rem;
+}
+
+.sel-section-heading p{
+  max-width:
+    700px;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    clamp(
+      .95rem,
+      1.5vw,
+      1.15rem
+    );
+}
+
+.sel-section-heading--center{
+  margin-inline:
+    auto;
+
+  text-align:
+    center;
+}
+
+.sel-section-heading--center p{
+  margin-inline:
+    auto;
+}
+
+
+/* ============================================================
+   10. GLOBAL HEADER
+   ============================================================ */
+
+.sel-header{
+  position:
+    sticky;
+
+  top:
+    0;
+
+  z-index:
+    var(--z-header);
+
+  height:
+    76px;
+
+  background:
+    rgba(7,16,24,.76);
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.07);
+
+  backdrop-filter:
+    blur(22px)
+    saturate(130%);
+
+  -webkit-backdrop-filter:
+    blur(22px)
+    saturate(130%);
+
+  transition:
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+.sel-header.is-scrolled{
+  background:
+    rgba(7,16,24,.94);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.18);
+}
+
+.sel-header__inner{
+  height:
+    100%;
+
+  width:
+    min(
+      calc(100% - (var(--gutter) * 2)),
+      var(--container-wide)
+    );
+
+  margin-inline:
+    auto;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    2rem;
+}
+
+.sel-brand{
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    .8rem;
+
+  min-width:
+    0;
+}
+
+.sel-brand img{
+  width:
+    auto;
+
+  height:
+    42px;
+
+  object-fit:
+    contain;
+}
+
+.sel-brand__text{
+  font-size:
+    .9rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -.02em;
+
+  white-space:
+    nowrap;
+}
+
+.sel-brand__project{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .65rem;
+
+  letter-spacing:
+    .1em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   11. MAIN NAVIGATION
+   ============================================================ */
+
+.sel-nav{
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    1.6rem;
+}
+
+.sel-nav a{
+  position:
+    relative;
+
+  padding:
+    .45rem 0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .75rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .04em;
+
+  transition:
+    color var(--transition-fast);
+}
+
+.sel-nav a::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  right:0;
+
+  bottom:0;
+
+  height:1px;
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    right;
+
+  background:
+    var(--sel-cyan);
+
+  transition:
+    transform var(--transition);
+}
+
+.sel-nav a:hover,
+.sel-nav a.is-active{
+  color:
+    var(--sel-white);
+}
+
+.sel-nav a:hover::after,
+.sel-nav a.is-active::after{
+  transform:
+    scaleX(1);
+
+  transform-origin:
+    left;
+}
+
+
+/* ============================================================
+   12. HERO
+   ============================================================ */
+
+.sel-hero{
+  position:
+    relative;
+
+  min-height:
+    min(
+      900px,
+      92vh
+    );
+
+  display:
+    flex;
+
+  align-items:
+    flex-end;
+
+  overflow:
+    hidden;
+
+  background:
+    var(--gradient-hero);
+}
+
+.sel-hero__media{
+  position:absolute;
+
+  inset:0;
+
+  z-index:0;
+}
+
+.sel-hero__media img,
+.sel-hero__media video{
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  opacity:
+    .58;
+
+  filter:
+    saturate(.78)
+    contrast(1.08);
+}
+
+.sel-hero__media::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7,16,24,.12) 0%,
+      rgba(7,16,24,.22) 35%,
+      rgba(7,16,24,.90) 84%,
+      #071018 100%
+    );
+}
+
+.sel-hero__grid{
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  width:
+    min(
+      calc(100% - (var(--gutter) * 2)),
+      var(--container-wide)
+    );
+
+  margin:
+    0 auto;
+
+  padding:
+    8rem 0 5rem;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0,1.2fr)
+    minmax(320px,.8fr);
+
+  gap:
+    4rem;
+
+  align-items:
+    end;
+}
+
+.sel-hero__content{
+  max-width:
+    820px;
+}
+
+.sel-hero__code{
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    .6rem;
+
+  margin-bottom:
+    1.2rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .7rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    .08em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-hero__code::before{
+  content:"";
+
+  width:
+    28px;
+
+  height:
+    1px;
+
+  background:
+    currentColor;
+}
+
+.sel-hero h1{
+  max-width:
+    900px;
+
+  margin-bottom:
+    1.5rem;
+
+  color:
+    #fff;
+
+  text-shadow:
+    0 10px 45px rgba(0,0,0,.25);
+}
+
+.sel-hero__lead{
+  max-width:
+    720px;
+
+  margin-bottom:
+    2rem;
+
+  color:
+    rgba(237,245,247,.88);
+
+  font-size:
+    clamp(
+      1rem,
+      1.8vw,
+      1.25rem
+    );
+
+  line-height:
+    1.65;
+}
+
+.sel-hero__actions{
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    .75rem;
+}
+
+
+/* ============================================================
+   13. HERO BADGES
+   ============================================================ */
+
+.sel-badges{
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    .5rem;
+
+  margin-bottom:
+    1.6rem;
+}
+
+.sel-badge{
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  min-height:
+    30px;
+
+  padding:
+    .35rem .65rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,.16);
+
+  border-radius:
+    var(--radius-pill);
+
+  background:
+    rgba(7,16,24,.54);
+
+  color:
+    var(--sel-text-soft);
+
+  font-size:
+    .66rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .07em;
+
+  text-transform:
+    uppercase;
+
+  backdrop-filter:
+    blur(10px);
+}
+
+.sel-badge--cyan{
+  border-color:
+    rgba(0,215,232,.35);
+
+  color:
+    var(--sel-cyan);
+}
+
+.sel-badge--green{
+  border-color:
+    rgba(54,211,153,.35);
+
+  color:
+    var(--sel-green);
+}
+
+.sel-badge--orange{
+  border-color:
+    rgba(229,143,101,.35);
+
+  color:
+    var(--sel-orange);
+}
+
+.sel-badge--pink{
+  border-color:
+    rgba(244,114,182,.35);
+
+  color:
+    var(--sel-pink);
+}
+
+
+/* ============================================================
+   14. BUTTON SYSTEM
+   ============================================================ */
+
+.sel-btn{
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    .6rem;
+
+  min-height:
+    46px;
+
+  padding:
+    .7rem 1rem;
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius:
+    var(--radius-sm);
+
+  font-size:
+    .72rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .06em;
+
+  text-transform:
+    uppercase;
+
+  cursor:
+    pointer;
+
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.sel-btn:hover{
+  transform:
+    translateY(-2px);
+}
+
+.sel-btn--primary{
+  background:
+    var(--sel-cyan);
+
+  color:
+    #031318;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0,215,232,.14);
+}
+
+.sel-btn--primary:hover{
+  background:
+    var(--sel-cyan-bright);
+
+  box-shadow:
+    0 14px 36px
+    rgba(0,215,232,.22);
+}
+
+.sel-btn--secondary{
+  border-color:
+    rgba(255,255,255,.2);
+
+  background:
+    rgba(255,255,255,.04);
+
+  color:
+    var(--sel-white);
+}
+
+.sel-btn--secondary:hover{
+  border-color:
+    rgba(0,215,232,.55);
+
+  color:
+    var(--sel-cyan);
+}
+
+.sel-btn--green{
+  background:
+    var(--sel-green);
+
+  color:
+    #031810;
+}
+
+.sel-btn--orange{
+  background:
+    var(--sel-orange);
+
+  color:
+    #1C0D07;
+}
+
+.sel-btn--pink{
+  background:
+    var(--sel-pink);
+
+  color:
+    #210A16;
+}
+
+.sel-btn--small{
+  min-height:
+    38px;
+
+  padding:
+    .5rem .75rem;
+
+  font-size:
+    .64rem;
+}
+
+
+/* ============================================================
+   15. HERO KPI FLOATING PANEL
+   ============================================================ */
+
+.sel-hero__metrics{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:
+    .7rem;
+}
+
+.sel-hero__metric{
+  padding:
+    1.1rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,.13);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(7,16,24,.64);
+
+  backdrop-filter:
+    blur(18px);
+
+  box-shadow:
+    var(--shadow-md);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
+}
+
+.sel-hero__metric:hover{
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(0,215,232,.35);
+}
+
+.sel-hero__metric-value{
+  display:
+    block;
+
+  color:
+    var(--sel-cyan);
+
+  font-size:
+    clamp(
+      1.6rem,
+      3vw,
+      2.5rem
+    );
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -.05em;
+
+  line-height:
+    1;
+}
+
+.sel-hero__metric-label{
+  display:
+    block;
+
+  margin-top:
+    .45rem;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .66rem;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.35;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .07em;
+}
+
+
+/* ============================================================
+   16. SCROLL INDICATOR
+   ============================================================ */
+
+.sel-scroll-indicator{
+  position:absolute;
+
+  left:
+    50%;
+
+  bottom:
+    1.5rem;
+
+  z-index:
+    5;
+
+  transform:
+    translateX(-50%);
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    .45rem;
+
+  color:
+    rgba(255,255,255,.58);
+
+  font-size:
+    .58rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .12em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-scroll-indicator__line{
+  width:
+    1px;
+
+  height:
+    46px;
+
+  overflow:
+    hidden;
+
+  background:
+    rgba(255,255,255,.18);
+}
+
+.sel-scroll-indicator__line::after{
+  content:"";
+
+  display:block;
+
+  width:
+    100%;
+
+  height:
+    50%;
+
+  background:
+    var(--sel-cyan);
+
+  animation:
+    sel-scroll-line
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+@keyframes sel-scroll-line{
+
+  0%{
+    transform:
+      translateY(-100%);
+  }
+
+  50%{
+    transform:
+      translateY(100%);
+  }
+
+  100%{
+    transform:
+      translateY(200%);
+  }
+
+}
+
+
+/* ============================================================
+   17. EXECUTIVE DASHBOARD
+   ============================================================ */
+
+.sel-dashboard{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:
+    1px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--sel-line);
+
+  box-shadow:
+    var(--shadow-md);
+}
+
+.sel-metric{
+  position:
+    relative;
+
+  min-height:
+    180px;
+
+  padding:
+    1.5rem;
+
+  background:
+    var(--sel-surface);
+
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+.sel-metric:hover{
+  background:
+    var(--sel-surface-2);
+
+  z-index:
+    2;
+}
+
+.sel-metric__index{
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  margin-bottom:
+    2rem;
+
+  color:
+    var(--sel-muted-2);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .62rem;
+}
+
+.sel-metric__icon{
+  width:
+    30px;
+
+  height:
+    30px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(0,215,232,.2);
+
+  border-radius:
+    8px;
+
+  color:
+    var(--sel-cyan);
+}
+
+.sel-metric__value{
+  display:
+    block;
+
+  margin-bottom:
+    .45rem;
+
+  color:
+    var(--sel-white);
+
+  font-size:
+    clamp(
+      1.7rem,
+      3vw,
+      2.8rem
+    );
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -.055em;
+
+  line-height:
+    1;
+}
+
+.sel-metric__label{
+  display:
+    block;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .7rem;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.35;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .07em;
+}
+
+.sel-metric--cyan .sel-metric__value{
+  color:
+    var(--sel-cyan);
+}
+
+.sel-metric--green .sel-metric__value{
+  color:
+    var(--sel-green);
+}
+
+.sel-metric--orange .sel-metric__value{
+  color:
+    var(--sel-orange);
+}
+
+.sel-metric--pink .sel-metric__value{
+  color:
+    var(--sel-pink);
+}
+
+
+/* ============================================================
+   18. DASHBOARD STATUS
+   ============================================================ */
+
+.sel-status{
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    .45rem;
+
+  color:
+    var(--sel-green);
+
+  font-size:
+    .65rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .06em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-status::before{
+  content:"";
+
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    currentColor;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(54,211,153,.08);
+}
+
+.sel-status--warning{
+  color:
+    var(--sel-orange);
+}
+
+.sel-status--warning::before{
+  box-shadow:
+    0 0 0 4px
+    rgba(229,143,101,.08);
+}
+
+
+/* ============================================================
+   19. STUDY AREA
+   ============================================================ */
+
+.sel-study-area{
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0,1.6fr)
+    minmax(300px,.7fr);
+
+  gap:
+    1.5rem;
+}
+
+.sel-study-map{
+  position:
+    relative;
+
+  min-height:
+    600px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    #0A151D;
+
+  box-shadow:
+    var(--shadow-lg);
+}
+
+.sel-study-map__canvas{
+  position:
+    absolute;
+
+  inset:
+    0;
+}
+
+.sel-study-map__overlay{
+  position:absolute;
+
+  left:
+    1rem;
+
+  bottom:
+    1rem;
+
+  z-index:
+    5;
+
+  max-width:
+    310px;
+
+  padding:
+    1rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(7,16,24,.88);
+
+  backdrop-filter:
+    blur(15px);
+}
+
+.sel-study-map__overlay h3{
+  margin-bottom:
+    .4rem;
+
+  font-size:
+    .95rem;
+}
+
+.sel-study-map__overlay p{
+  margin-bottom:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .72rem;
+}
+
+
+/* ============================================================
+   20. MAP CONTROLS
+   ============================================================ */
+
+.sel-map-control{
+  position:
+    relative;
+
+  z-index:
+    10;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    .5rem;
+
+  padding:
+    .55rem .7rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,.16);
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    rgba(7,16,24,.88);
+
+  color:
+    var(--sel-white);
+
+  font-size:
+    .68rem;
+
+  font-weight:
+    700;
+
+  backdrop-filter:
+    blur(12px);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+.sel-map-control button{
+  border:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    inherit;
+
+  cursor:
+    pointer;
+}
+
+.sel-map-control button:hover{
+  color:
+    var(--sel-cyan);
+}
+
+
+/* ============================================================
+   21. MAP LEGEND
+   ============================================================ */
+
+.sel-map-legend{
+  position:
+    absolute;
+
+  right:
+    1rem;
+
+  bottom:
+    1rem;
+
+  z-index:
+    10;
+
+  width:
+    min(
+      250px,
+      calc(100% - 2rem)
+    );
+
+  padding:
+    1rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(7,16,24,.9);
+
+  backdrop-filter:
+    blur(16px);
+
+  box-shadow:
+    var(--shadow-md);
+}
+
+.sel-map-legend h4{
+  margin-bottom:
+    .8rem;
+
+  color:
+    var(--sel-white);
+
+  font-size:
+    .72rem;
+
+  letter-spacing:
+    .08em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-legend-item{
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    .65rem;
+
+  margin-bottom:
+    .45rem;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .68rem;
+}
+
+.sel-legend-item:last-child{
+  margin-bottom:
+    0;
+}
+
+.sel-legend-swatch{
+  width:
+    18px;
+
+  height:
+    10px;
+
+  flex:
+    0 0 auto;
+
+  border-radius:
+    3px;
+}
+
+.sel-legend-swatch--cyan{
+  background:
+    var(--sel-cyan);
+}
+
+.sel-legend-swatch--green{
+  background:
+    var(--sel-green);
+}
+
+.sel-legend-swatch--orange{
+  background:
+    var(--sel-orange);
+}
+
+.sel-legend-swatch--pink{
+  background:
+    var(--sel-pink);
+}
+
+.sel-legend-swatch--gradient{
+  background:
+    linear-gradient(
+      90deg,
+      var(--sel-green),
+      var(--sel-yellow),
+      var(--sel-orange),
+      var(--sel-pink)
+    );
+}
+
+
+/* ============================================================
+   22. STUDY CONTEXT CARDS
+   ============================================================ */
+
+.sel-context-stack{
+  display:
+    grid;
+
+  gap:
+    .8rem;
+}
+
+.sel-context-card{
+  padding:
+    1.35rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--sel-surface);
+
+  transition:
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.sel-context-card:hover{
+  transform:
+    translateX(4px);
+
+  border-color:
+    rgba(0,215,232,.3);
+}
+
+.sel-context-card__label{
+  display:
+    block;
+
+  margin-bottom:
+    .45rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .6rem;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-context-card strong{
+  display:
+    block;
+
+  margin-bottom:
+    .35rem;
+
+  font-size:
+    1.05rem;
+}
+
+.sel-context-card p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .75rem;
+}
+
+
+/* ============================================================
+   23. RESEARCH QUESTIONS
+   ============================================================ */
+
+.sel-question-grid{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    1rem;
+}
+
+.sel-question{
+  position:
+    relative;
+
+  min-height:
+    270px;
+
+  padding:
+    1.7rem;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--sel-surface);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.sel-question::before{
+  content:"";
+
+  position:absolute;
+
+  width:
+    150px;
+
+  height:
+    150px;
+
+  right:
+    -60px;
+
+  bottom:
+    -70px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(0,215,232,.06);
+}
+
+.sel-question:hover{
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(0,215,232,.32);
+
+  background:
+    var(--sel-surface-2);
+}
+
+.sel-question__number{
+  display:
+    inline-flex;
+
+  margin-bottom:
+    2rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .7rem;
+
+  font-weight:
+    700;
+}
+
+.sel-question h3{
+  margin-bottom:
+    .7rem;
+}
+
+.sel-question p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .8rem;
+}
+
+
+/* ============================================================
+   24. FRAMEWORK / EVIDENCE CHAIN
+   ============================================================ */
+
+.sel-framework{
+  position:
+    relative;
+}
+
+.sel-framework__line{
+  position:absolute;
+
+  left:
+    7%;
+
+  right:
+    7%;
+
+  top:
+    44px;
+
+  height:
+    1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--sel-cyan),
+      var(--sel-green),
+      var(--sel-orange),
+      var(--sel-pink)
+    );
+
+  opacity:
+    .35;
+}
+
+.sel-framework-grid{
+  position:
+    relative;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(7,1fr);
+
+  gap:
+    .6rem;
+}
+
+.sel-framework-step{
+  position:
+    relative;
+
+  text-align:
+    center;
+}
+
+.sel-framework-step__node{
+  width:
+    52px;
+
+  height:
+    52px;
+
+  margin:
+    0 auto 1rem;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(0,215,232,.45);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--sel-bg);
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .68rem;
+
+  font-weight:
+    800;
+
+  position:
+    relative;
+
+  z-index:
+    2;
+}
+
+.sel-framework-step:nth-child(2)
+.sel-framework-step__node{
+  color:
+    var(--sel-green);
+
+  border-color:
+    rgba(54,211,153,.45);
+}
+
+.sel-framework-step:nth-child(3)
+.sel-framework-step__node{
+  color:
+    var(--sel-orange);
+
+  border-color:
+    rgba(229,143,101,.45);
+}
+
+.sel-framework-step:nth-child(4)
+.sel-framework-step__node{
+  color:
+    var(--sel-pink);
+
+  border-color:
+    rgba(244,114,182,.45);
+}
+
+.sel-framework-step h3{
+  margin-bottom:
+    .35rem;
+
+  font-size:
+    .75rem;
+}
+
+.sel-framework-step p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .62rem;
+
+  line-height:
+    1.45;
+}
+
+
+/* ============================================================
+   25. METHODOLOGY SVG CONTAINER
+   ============================================================ */
+
+.sel-method-diagram{
+  padding:
+    clamp(
+      1rem,
+      4vw,
+      3rem
+    );
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--sel-surface);
+
+  overflow:
+    hidden;
+}
+
+.sel-method-diagram svg{
+  width:
+    100%;
+
+  height:
+    auto;
+
+  min-height:
+    260px;
+}
+
+.sel-method-diagram--glow{
+  box-shadow:
+    var(--shadow-glow);
+}
+
+
+/* ============================================================
+   26. STORYMAP GALLERY
+   ============================================================ */
+
+.sel-story-gallery{
+  display:
+    grid;
+
+  gap:
+    7rem;
+}
+
+.sel-story{
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0,1.35fr)
+    minmax(300px,.65fr);
+
+  gap:
+    3rem;
+
+  align-items:
+    center;
+}
+
+.sel-story:nth-child(even){
+  grid-template-columns:
+    minmax(300px,.65fr)
+    minmax(0,1.35fr);
+}
+
+.sel-story:nth-child(even)
+.sel-story__media{
+  order:
+    2;
+}
+
+.sel-story__media{
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    #09131B;
+
+  box-shadow:
+    var(--shadow-lg);
+}
+
+.sel-story__media img{
+  width:
+    100%;
+
+  aspect-ratio:
+    16 / 10;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform .8s var(--ease);
+}
+
+.sel-story__media:hover img{
+  transform:
+    scale(1.025);
+}
+
+.sel-story__map-label{
+  position:absolute;
+
+  left:
+    1rem;
+
+  top:
+    1rem;
+
+  z-index:
+    2;
+
+  padding:
+    .45rem .6rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  border-radius:
+    5px;
+
+  background:
+    rgba(7,16,24,.85);
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .62rem;
+
+  backdrop-filter:
+    blur(10px);
+}
+
+.sel-story__zoom{
+  position:absolute;
+
+  right:
+    1rem;
+
+  bottom:
+    1rem;
+
+  z-index:
+    2;
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(255,255,255,.18);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(7,16,24,.85);
+
+  color:
+    #fff;
+
+  cursor:
+    pointer;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.sel-story__zoom:hover{
+  background:
+    var(--sel-cyan);
+
+  color:
+    #031318;
+}
+
+.sel-story__content{
+  max-width:
+    540px;
+}
+
+.sel-story__number{
+  margin-bottom:
+    .8rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .68rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .08em;
+}
+
+.sel-story__content h3{
+  margin-bottom:
+    1rem;
+
+  font-size:
+    clamp(
+      1.6rem,
+      3vw,
+      2.5rem
+    );
+}
+
+.sel-story__content > p{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .9rem;
+}
+
+.sel-story__meta{
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    .5rem;
+
+  margin-top:
+    1.4rem;
+}
+
+.sel-story__meta span{
+  padding:
+    .4rem .55rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    4px;
+
+  color:
+    var(--sel-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .6rem;
+}
+
+
+/* ============================================================
+   27. STORYMAP CAPTION
+   ============================================================ */
+
+.sel-story-caption{
+  padding:
+    .85rem 1rem;
+
+  border-top:
+    1px solid
+    var(--sel-line);
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .7rem;
+
+  line-height:
+    1.5;
+}
+
+.sel-story-caption strong{
+  color:
+    var(--sel-text-soft);
+}
+
+
+/* ============================================================
+   28. MAP FULLSCREEN
+   ============================================================ */
+
+.sel-map-immersive{
+  width:
+    100vw;
+
+  margin-left:
+    calc(
+      50% - 50vw
+    );
+
+  min-height:
+    680px;
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  background:
+    #08131B;
+}
+
+.sel-map-immersive img{
+  width:
+    100%;
+
+  height:
+    100%;
+
+  min-height:
+    680px;
+
+  object-fit:
+    cover;
+}
+
+.sel-map-immersive__caption{
+  position:absolute;
+
+  left:
+    4vw;
+
+  bottom:
+    3vw;
+
+  max-width:
+    500px;
+
+  padding:
+    1.5rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(7,16,24,.86);
+
+  backdrop-filter:
+    blur(18px);
+}
+
+
+/* ============================================================
+   29. LIGHTBOX
+   ============================================================ */
+
+.sel-lightbox{
+  position:
+    fixed;
+
+  inset:
+    0;
+
+  z-index:
+    var(--z-lightbox);
+
+  display:
+    none;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    2rem;
+
+  background:
+    rgba(2,7,11,.94);
+
+  backdrop-filter:
+    blur(16px);
+}
+
+.sel-lightbox.is-open{
+  display:
+    flex;
+}
+
+.sel-lightbox__inner{
+  position:
+    relative;
+
+  width:
+    min(
+      1400px,
+      96vw
+    );
+
+  max-height:
+    92vh;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    .7rem;
+}
+
+.sel-lightbox__image{
+  width:
+    100%;
+
+  max-height:
+    82vh;
+
+  object-fit:
+    contain;
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    #08131B;
+
+  box-shadow:
+    var(--shadow-lg);
+}
+
+.sel-lightbox__close{
+  position:absolute;
+
+  top:
+    -1rem;
+
+  right:
+    -1rem;
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(255,255,255,.2);
+
+  border-radius:
+    50%;
+
+  background:
+    #111F2A;
+
+  color:
+    #fff;
+
+  cursor:
+    pointer;
+
+  z-index:
+    3;
+}
+
+.sel-lightbox__close:hover{
+  background:
+    var(--sel-cyan);
+
+  color:
+    #031318;
+}
+
+.sel-lightbox__caption{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .75rem;
+
+  text-align:
+    center;
+}
+
+
+/* ============================================================
+   30. FINDINGS SPLIT PANEL
+   ============================================================ */
+
+.sel-split{
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  min-height:
+    540px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    var(--shadow-lg);
+}
+
+.sel-split__panel{
+  position:
+    relative;
+
+  padding:
+    clamp(
+      2rem,
+      5vw,
+      4rem
+    );
+
+  overflow:
+    hidden;
+}
+
+.sel-split__panel--access{
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0,215,232,.09),
+      var(--sel-surface)
+    );
+}
+
+.sel-split__panel--vulnerability{
+  background:
+    linear-gradient(
+      145deg,
+      rgba(244,114,182,.09),
+      var(--sel-surface)
+    );
+}
+
+.sel-split__panel h3{
+  margin-bottom:
+    .8rem;
+
+  font-size:
+    clamp(
+      1.5rem,
+      3vw,
+      2.4rem
+    );
+}
+
+.sel-split__panel p{
+  max-width:
+    480px;
+
+  color:
+    var(--sel-muted);
+}
+
+.sel-split__number{
+  margin-bottom:
+    2rem;
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .65rem;
+
+  color:
+    var(--sel-cyan);
+}
+
+.sel-split__panel--vulnerability
+.sel-split__number{
+  color:
+    var(--sel-pink);
+}
+
+
+/* ============================================================
+   31. COMPARISON EQUATION
+   ============================================================ */
+
+.sel-equation{
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    .65rem;
+
+  margin-top:
+    2rem;
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    clamp(
+      .8rem,
+      1.5vw,
+      1rem
+    );
+}
+
+.sel-equation__item{
+  padding:
+    .7rem .8rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    rgba(255,255,255,.025);
+
+  color:
+    var(--sel-text-soft);
+}
+
+.sel-equation__operator{
+  color:
+    var(--sel-cyan);
+
+  font-weight:
+    800;
+}
+
+
+/* ============================================================
+   32. CAI EXPLORER
+   ============================================================ */
+
+.sel-cai{
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    minmax(300px,.7fr);
+
+  gap:
+    1.5rem;
+}
+
+.sel-cai__main{
+  padding:
+    clamp(
+      1.5rem,
+      4vw,
+      3rem
+    );
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-cai__formula{
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    .5rem;
+
+  margin:
+    2rem 0;
+
+  padding:
+    2rem;
+
+  border:
+    1px solid
+    rgba(0,215,232,.16);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(0,215,232,.025);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    clamp(
+      1rem,
+      2vw,
+      1.4rem
+    );
+
+  text-align:
+    center;
+}
+
+.sel-cai__formula strong{
+  color:
+    var(--sel-cyan);
+}
+
+.sel-cai__side{
+  display:
+    grid;
+
+  gap:
+    .8rem;
+}
+
+.sel-cai__info{
+  padding:
+    1.3rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-cai__info h4{
+  margin-bottom:
+    .5rem;
+}
+
+.sel-cai__info p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .74rem;
+}
+
+
+/* ============================================================
+   33. ACCESSIBILITY CLASS SCALE
+   ============================================================ */
+
+.sel-class-scale{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(5,1fr);
+
+  gap:
+    .5rem;
+}
+
+.sel-class{
+  min-height:
+    120px;
+
+  padding:
+    1rem;
+
+  border-radius:
+    var(--radius-sm);
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    space-between;
+
+  color:
+    #061016;
+}
+
+.sel-class strong{
+  color:
+    inherit;
+
+  font-size:
+    .82rem;
+}
+
+.sel-class span{
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .65rem;
+}
+
+.sel-class--very-low{
+  background:
+    #C53D65;
+}
+
+.sel-class--low{
+  background:
+    var(--sel-orange);
+}
+
+.sel-class--moderate{
+  background:
+    var(--sel-yellow);
+}
+
+.sel-class--high{
+  background:
+    var(--sel-green);
+}
+
+.sel-class--very-high{
+  background:
+    var(--sel-cyan);
+}
+
+
+/* ============================================================
+   34. SENSITIVITY ANALYSIS
+   ============================================================ */
+
+.sel-sensitivity{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:
+    1rem;
+
+  margin-top:
+    1.5rem;
+}
+
+.sel-sensitivity-card{
+  padding:
+    1.4rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-sensitivity-card.is-selected{
+  border-color:
+    rgba(0,215,232,.5);
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(0,215,232,.08);
+}
+
+.sel-sensitivity-card__model{
+  margin-bottom:
+    1rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .68rem;
+
+  font-weight:
+    800;
+}
+
+.sel-sensitivity-card strong{
+  display:
+    block;
+
+  margin-bottom:
+    .4rem;
+}
+
+.sel-sensitivity-card p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .72rem;
+}
+
+
+/* ============================================================
+   35. HOTSPOT MATRIX
+   ============================================================ */
+
+.sel-hotspot-matrix{
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    2px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--sel-line);
+}
+
+.sel-hotspot-cell{
+  min-height:
+    210px;
+
+  padding:
+    1.5rem;
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-hotspot-cell strong{
+  display:
+    block;
+
+  margin-bottom:
+    .45rem;
+
+  font-size:
+    1rem;
+}
+
+.sel-hotspot-cell p{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .74rem;
+}
+
+.sel-hotspot-cell--critical{
+  background:
+    linear-gradient(
+      145deg,
+      rgba(244,114,182,.13),
+      var(--sel-surface)
+    );
+}
+
+.sel-hotspot-cell--critical strong{
+  color:
+    var(--sel-pink);
+}
+
+.sel-hotspot-cell--high{
+  background:
+    linear-gradient(
+      145deg,
+      rgba(229,143,101,.1),
+      var(--sel-surface)
+    );
+}
+
+.sel-hotspot-cell--high strong{
+  color:
+    var(--sel-orange);
+}
+
+.sel-hotspot-cell--moderate strong{
+  color:
+    var(--sel-yellow);
+}
+
+.sel-hotspot-cell--low strong{
+  color:
+    var(--sel-green);
+}
+
+
+/* ============================================================
+   36. POLICY RECOMMENDATIONS
+   ============================================================ */
+
+.sel-policy-grid{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    1rem;
+}
+
+.sel-policy{
+  position:
+    relative;
+
+  min-height:
+    300px;
+
+  padding:
+    1.6rem;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--sel-surface);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
+}
+
+.sel-policy:hover{
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(0,215,232,.3);
+}
+
+.sel-policy__icon{
+  width:
+    48px;
+
+  height:
+    48px;
+
+  margin-bottom:
+    2rem;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(0,215,232,.25);
+
+  border-radius:
+    12px;
+
+  color:
+    var(--sel-cyan);
+
+  background:
+    rgba(0,215,232,.045);
+}
+
+.sel-policy:nth-child(2)
+.sel-policy__icon{
+  color:
+    var(--sel-green);
+
+  border-color:
+    rgba(54,211,153,.25);
+}
+
+.sel-policy:nth-child(3)
+.sel-policy__icon{
+  color:
+    var(--sel-orange);
+
+  border-color:
+    rgba(229,143,101,.25);
+}
+
+.sel-policy:nth-child(4)
+.sel-policy__icon{
+  color:
+    var(--sel-pink);
+
+  border-color:
+    rgba(244,114,182,.25);
+}
+
+.sel-policy h3{
+  margin-bottom:
+    .7rem;
+
+  font-size:
+    1.1rem;
+}
+
+.sel-policy p{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .76rem;
+}
+
+.sel-policy__tag{
+  position:absolute;
+
+  right:
+    1rem;
+
+  top:
+    1rem;
+
+  color:
+    var(--sel-muted-2);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .58rem;
+}
+
+
+/* ============================================================
+   37. DATA CATALOGUE
+   ============================================================ */
+
+.sel-data-grid{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    1rem;
+}
+
+.sel-data-card{
+  padding:
+    1.5rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--sel-surface);
+
+  transition:
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.sel-data-card:hover{
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(0,215,232,.25);
+}
+
+.sel-data-card__type{
+  display:
+    inline-flex;
+
+  margin-bottom:
+    1.3rem;
+
+  padding:
+    .3rem .5rem;
+
+  border-radius:
+    4px;
+
+  background:
+    rgba(0,215,232,.08);
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .58rem;
+
+  font-weight:
+    800;
+}
+
+.sel-data-card h3{
+  margin-bottom:
+    .5rem;
+
+  font-size:
+    1rem;
+}
+
+.sel-data-card p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .72rem;
+}
+
+
+/* ============================================================
+   38. METADATA TABLE
+   ============================================================ */
+
+.sel-table-wrap{
+  width:
+    100%;
+
+  overflow-x:
+    auto;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-table{
+  width:
+    100%;
+
+  min-width:
+    700px;
+
+  border-collapse:
+    collapse;
+}
+
+.sel-table th{
+  padding:
+    .85rem 1rem;
+
+  background:
+    var(--sel-surface-2);
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .62rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .06em;
+
+  text-align:
+    left;
+
+  text-transform:
+    uppercase;
+
+  border-bottom:
+    1px solid
+    var(--sel-line);
+}
+
+.sel-table td{
+  padding:
+    .85rem 1rem;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .72rem;
+
+  border-bottom:
+    1px solid
+    var(--sel-line);
+}
+
+.sel-table tr:last-child td{
+  border-bottom:
+    0;
+}
+
+.sel-table tr:hover td{
+  background:
+    rgba(255,255,255,.02);
+
+  color:
+    var(--sel-text-soft);
+}
+
+
+/* ============================================================
+   39. ARCHITECTURE DIAGRAM
+   ============================================================ */
+
+.sel-architecture{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(5,1fr);
+
+  gap:
+    .7rem;
+
+  align-items:
+    stretch;
+}
+
+.sel-architecture__node{
+  position:
+    relative;
+
+  min-height:
+    160px;
+
+  padding:
+    1.2rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--sel-surface);
+
+  text-align:
+    center;
+}
+
+.sel-architecture__node:not(:last-child)::after{
+  content:
+    "→";
+
+  position:absolute;
+
+  right:
+    -1rem;
+
+  top:
+    50%;
+
+  transform:
+    translateY(-50%);
+
+  color:
+    var(--sel-cyan);
+
+  z-index:
+    2;
+}
+
+.sel-architecture__node strong{
+  display:
+    block;
+
+  margin-bottom:
+    .7rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-size:
+    .9rem;
+}
+
+.sel-architecture__node span{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .65rem;
+
+  line-height:
+    1.45;
+}
+
+
+/* ============================================================
+   40. CODE BLOCKS
+   ============================================================ */
+
+.sel-code{
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    #050B10;
+
+  box-shadow:
+    var(--shadow-md);
+}
+
+.sel-code__header{
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    1rem;
+
+  padding:
+    .65rem .85rem;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.07);
+
+  background:
+    #0B151D;
+}
+
+.sel-code__language{
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .6rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .08em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-code__copy{
+  border:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    var(--sel-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .58rem;
+
+  cursor:
+    pointer;
+}
+
+.sel-code__copy:hover{
+  color:
+    var(--sel-cyan);
+}
+
+.sel-code pre{
+  margin:
+    0;
+
+  padding:
+    1.3rem;
+
+  overflow-x:
+    auto;
+
+  color:
+    #D7E7EB;
+
+  font-size:
+    .72rem;
+
+  line-height:
+    1.7;
+}
+
+.sel-code .keyword{
+  color:
+    var(--sel-pink);
+}
+
+.sel-code .function{
+  color:
+    var(--sel-cyan);
+}
+
+.sel-code .string{
+  color:
+    var(--sel-green);
+}
+
+.sel-code .comment{
+  color:
+    #526872;
+}
+
+.sel-code .number{
+  color:
+    var(--sel-orange);
+}
+
+
+/* ============================================================
+   41. SQL LIGHT THEME
+   ============================================================ */
+
+.sel-code--light{
+  background:
+    #F5F8F9;
+
+  border-color:
+    #D6E0E4;
+}
+
+.sel-code--light .sel-code__header{
+  background:
+    #EAF0F2;
+
+  border-color:
+    #D6E0E4;
+}
+
+.sel-code--light .sel-code__language{
+  color:
+    #087D8B;
+}
+
+.sel-code--light .sel-code__copy{
+  color:
+    #58707A;
+}
+
+.sel-code--light pre{
+  color:
+    #26353D;
+}
+
+.sel-code--light .keyword{
+  color:
+    #A52862;
+}
+
+.sel-code--light .function{
+  color:
+    #007A89;
+}
+
+.sel-code--light .string{
+  color:
+    #197A53;
+}
+
+.sel-code--light .comment{
+  color:
+    #71848C;
+}
+
+.sel-code--light .number{
+  color:
+    #A65C34;
+}
+
+
+/* ============================================================
+   42. FORMULA CARD
+   ============================================================ */
+
+.sel-formula-card{
+  padding:
+    2rem;
+
+  border:
+    1px solid
+    rgba(0,215,232,.18);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0,215,232,.06),
+      var(--sel-surface)
+    );
+}
+
+.sel-formula-card__title{
+  margin-bottom:
+    1rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-size:
+    .68rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .1em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-formula-card__formula{
+  margin-bottom:
+    1rem;
+
+  color:
+    var(--sel-white);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    clamp(
+      .95rem,
+      2vw,
+      1.25rem
+    );
+
+  line-height:
+    1.6;
+}
+
+.sel-formula-card__description{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .75rem;
+}
+
+
+/* ============================================================
+   43. REPRODUCIBILITY STATUS
+   ============================================================ */
+
+.sel-repro{
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    1px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--sel-line);
+}
+
+.sel-repro__item{
+  padding:
+    1.3rem;
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-repro__label{
+  display:
+    block;
+
+  margin-bottom:
+    .4rem;
+
+  color:
+    var(--sel-muted-2);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .58rem;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-repro__value{
+  color:
+    var(--sel-white);
+
+  font-size:
+    .85rem;
+
+  font-weight:
+    700;
+}
+
+.sel-repro__value--pass{
+  color:
+    var(--sel-green);
+}
+
+.sel-repro__value--pending{
+  color:
+    var(--sel-orange);
+}
+
+
+/* ============================================================
+   44. FAIR / INSPIRE / ISO BADGES
+   ============================================================ */
+
+.sel-standard-badges{
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    .7rem;
+}
+
+.sel-standard{
+  min-width:
+    100px;
+
+  padding:
+    .8rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    var(--sel-surface);
+
+  text-align:
+    center;
+}
+
+.sel-standard strong{
+  display:
+    block;
+
+  margin-bottom:
+    .2rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-size:
+    .75rem;
+}
+
+.sel-standard span{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .55rem;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   45. DOWNLOAD CENTRE
+   ============================================================ */
+
+.sel-download-grid{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:
+    .8rem;
+}
+
+.sel-download{
+  position:
+    relative;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  min-height:
+    190px;
+
+  padding:
+    1.3rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--sel-surface);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.sel-download:hover{
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(0,215,232,.32);
+
+  background:
+    var(--sel-surface-2);
+}
+
+.sel-download__icon{
+  width:
+    38px;
+
+  height:
+    38px;
+
+  margin-bottom:
+    1.5rem;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(0,215,232,.2);
+
+  border-radius:
+    8px;
+
+  color:
+    var(--sel-cyan);
+}
+
+.sel-download h3{
+  margin-bottom:
+    .35rem;
+
+  font-size:
+    .9rem;
+}
+
+.sel-download p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .67rem;
+}
+
+.sel-download__format{
+  margin-top:
+    auto;
+
+  padding-top:
+    1rem;
+
+  color:
+    var(--sel-muted-2);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .55rem;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   46. RELATED PROJECTS
+   ============================================================ */
+
+.sel-related-grid{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(5,1fr);
+
+  gap:
+    1rem;
+}
+
+.sel-related{
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  min-height:
+    270px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--sel-surface);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
+}
+
+.sel-related:hover{
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(0,215,232,.3);
+}
+
+.sel-related__image{
+  aspect-ratio:
+    16 / 9;
+
+  overflow:
+    hidden;
+
+  background:
+    #09131B;
+}
+
+.sel-related__image img{
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform .6s var(--ease);
+}
+
+.sel-related:hover
+.sel-related__image img{
+  transform:
+    scale(1.04);
+}
+
+.sel-related__body{
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  flex:
+    1;
+
+  padding:
+    1rem;
+}
+
+.sel-related__id{
+  margin-bottom:
+    .45rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .58rem;
+}
+
+.sel-related h3{
+  margin-bottom:
+    .45rem;
+
+  font-size:
+    .88rem;
+}
+
+.sel-related p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .65rem;
+
+  line-height:
+    1.5;
+}
+
+.sel-related__arrow{
+  margin-top:
+    auto;
+
+  padding-top:
+    1rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-size:
+    .65rem;
+
+  font-weight:
+    800;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   47. TIMELINE
+   ============================================================ */
+
+.sel-timeline{
+  position:
+    relative;
+
+  display:
+    grid;
+
+  gap:
+    1.5rem;
+}
+
+.sel-timeline::before{
+  content:"";
+
+  position:absolute;
+
+  left:
+    17px;
+
+  top:
+    0;
+
+  bottom:
+    0;
+
+  width:
+    1px;
+
+  background:
+    linear-gradient(
+      var(--sel-cyan),
+      var(--sel-green),
+      var(--sel-pink)
+    );
+
+  opacity:
+    .35;
+}
+
+.sel-timeline__item{
+  position:
+    relative;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    36px 1fr;
+
+  gap:
+    1.2rem;
+}
+
+.sel-timeline__node{
+  width:
+    35px;
+
+  height:
+    35px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(0,215,232,.4);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--sel-bg);
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .55rem;
+
+  font-weight:
+    800;
+
+  z-index:
+    2;
+}
+
+.sel-timeline__content{
+  padding:
+    .1rem 0 1.4rem;
+}
+
+.sel-timeline__content h3{
+  margin-bottom:
+    .35rem;
+
+  font-size:
+    1rem;
+}
+
+.sel-timeline__content p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .74rem;
+}
+
+
+/* ============================================================
+   48. EVIDENCE STATEMENT
+   ============================================================ */
+
+.sel-evidence{
+  position:
+    relative;
+
+  padding:
+    clamp(
+      2rem,
+      5vw,
+      4rem
+    );
+
+  border:
+    1px solid
+    rgba(0,215,232,.16);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(0,215,232,.09),
+      transparent 30%
+    ),
+    var(--sel-surface);
+}
+
+.sel-evidence__label{
+  margin-bottom:
+    1rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .62rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .1em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-evidence blockquote{
+  max-width:
+    920px;
+
+  margin:
+    0;
+
+  color:
+    var(--sel-white);
+
+  font-size:
+    clamp(
+      1.3rem,
+      3vw,
+      2.3rem
+    );
+
+  line-height:
+    1.2;
+
+  letter-spacing:
+    -.035em;
+}
+
+.sel-evidence__note{
+  max-width:
+    750px;
+
+  margin-top:
+    1.4rem;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .75rem;
+}
+
+
+/* ============================================================
+   49. CALLOUTS
+   ============================================================ */
+
+.sel-callout{
+  padding:
+    1.25rem 1.4rem;
+
+  border-left:
+    3px solid
+    var(--sel-cyan);
+
+  border-radius:
+    0 var(--radius-sm)
+    var(--radius-sm) 0;
+
+  background:
+    rgba(0,215,232,.045);
+}
+
+.sel-callout p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .76rem;
+}
+
+.sel-callout strong{
+  color:
+    var(--sel-cyan);
+}
+
+.sel-callout--warning{
+  border-color:
+    var(--sel-orange);
+
+  background:
+    rgba(229,143,101,.045);
+}
+
+.sel-callout--warning strong{
+  color:
+    var(--sel-orange);
+}
+
+.sel-callout--equity{
+  border-color:
+    var(--sel-pink);
+
+  background:
+    rgba(244,114,182,.045);
+}
+
+.sel-callout--equity strong{
+  color:
+    var(--sel-pink);
+}
+
+.sel-callout--success{
+  border-color:
+    var(--sel-green);
+
+  background:
+    rgba(54,211,153,.045);
+}
+
+.sel-callout--success strong{
+  color:
+    var(--sel-green);
+}
+
+
+/* ============================================================
+   50. ANIMATION / SCROLL REVEAL
+   ============================================================ */
+
+[data-reveal]{
+  opacity:
+    0;
+
+  transform:
+    translateY(28px);
+
+  transition:
+    opacity .7s var(--ease),
+    transform .7s var(--ease);
+}
+
+[data-reveal].is-visible{
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+}
+
+[data-reveal="left"]{
+  transform:
+    translateX(-30px);
+}
+
+[data-reveal="right"]{
+  transform:
+    translateX(30px);
+}
+
+[data-reveal="scale"]{
+  transform:
+    scale(.96);
+}
+
+[data-reveal].is-visible{
+  transform:
+    none;
+}
+
+[data-delay="1"]{
+  transition-delay:
+    .08s;
+}
+
+[data-delay="2"]{
+  transition-delay:
+    .16s;
+}
+
+[data-delay="3"]{
+  transition-delay:
+    .24s;
+}
+
+[data-delay="4"]{
+  transition-delay:
+    .32s;
+}
+
+[data-delay="5"]{
+  transition-delay:
+    .40s;
+}
+
+
+/* ============================================================
+   51. STICKY PROGRESS NAVIGATION
+   ============================================================ */
+
+.sel-progress{
+  position:
+    fixed;
+
+  right:
+    1rem;
+
+  top:
+    50%;
+
+  z-index:
+    var(--z-progress);
+
+  transform:
+    translateY(-50%);
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    .45rem;
+
+  padding:
+    .65rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,.09);
+
+  border-radius:
+    var(--radius-pill);
+
+  background:
+    rgba(7,16,24,.76);
+
+  backdrop-filter:
+    blur(15px);
+}
+
+.sel-progress__item{
+  position:
+    relative;
+
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255,255,255,.2);
+
+  cursor:
+    pointer;
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.sel-progress__item:hover,
+.sel-progress__item.is-active{
+  transform:
+    scale(1.55);
+
+  background:
+    var(--sel-cyan);
+}
+
+.sel-progress__tooltip{
+  position:absolute;
+
+  right:
+    18px;
+
+  top:
+    50%;
+
+  transform:
+    translateY(-50%);
+
+  padding:
+    .35rem .5rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    4px;
+
+  background:
+    #111F2A;
+
+  color:
+    var(--sel-text-soft);
+
+  font-size:
+    .58rem;
+
+  white-space:
+    nowrap;
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  transition:
+    opacity var(--transition-fast);
+}
+
+.sel-progress__item:hover
+.sel-progress__tooltip{
+  opacity:
+    1;
+}
+
+
+/* ============================================================
+   52. MINI NAV / ANCHOR BAR
+   ============================================================ */
+
+.sel-anchor-bar{
+  position:
+    sticky;
+
+  top:
+    76px;
+
+  z-index:
+    80;
+
+  border-bottom:
+    1px solid
+    var(--sel-line);
+
+  background:
+    rgba(7,16,24,.88);
+
+  backdrop-filter:
+    blur(16px);
+}
+
+.sel-anchor-bar__inner{
+  width:
+    min(
+      calc(100% - (var(--gutter) * 2)),
+      var(--container-wide)
+    );
+
+  margin-inline:
+    auto;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    1.5rem;
+
+  overflow-x:
+    auto;
+}
+
+.sel-anchor-bar a{
+  flex:
+    0 0 auto;
+
+  padding:
+    .8rem 0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .62rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .05em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-anchor-bar a:hover,
+.sel-anchor-bar a.is-active{
+  color:
+    var(--sel-cyan);
+}
+
+
+/* ============================================================
+   53. ICON SYSTEM
+   ============================================================ */
+
+.sel-icon{
+  width:
+    24px;
+
+  height:
+    24px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex:
+    0 0 auto;
+}
+
+.sel-icon svg{
+  width:
+    100%;
+
+  height:
+    100%;
+
+  fill:
+    none;
+
+  stroke:
+    currentColor;
+
+  stroke-width:
+    1.7;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+.sel-icon--large{
+  width:
+    42px;
+
+  height:
+    42px;
+}
+
+.sel-icon--cyan{
+  color:
+    var(--sel-cyan);
+}
+
+.sel-icon--green{
+  color:
+    var(--sel-green);
+}
+
+.sel-icon--orange{
+  color:
+    var(--sel-orange);
+}
+
+.sel-icon--pink{
+  color:
+    var(--sel-pink);
+}
+
+
+/* ============================================================
+   54. IMAGE FRAME
+   ============================================================ */
+
+.sel-image-frame{
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    #09131B;
+}
+
+.sel-image-frame img{
+  width:
+    100%;
+
+  height:
+    auto;
+
+  object-fit:
+    cover;
+}
+
+.sel-image-frame--16-9 img{
+  aspect-ratio:
+    16 / 9;
+
+  object-fit:
+    cover;
+}
+
+.sel-image-frame--contain img{
+  object-fit:
+    contain;
+}
+
+
+/* ============================================================
+   55. MAP SERIES NUMBER STRIP
+   ============================================================ */
+
+.sel-map-series{
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    .5rem;
+
+  margin-bottom:
+    1rem;
+}
+
+.sel-map-series__number{
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .68rem;
+
+  font-weight:
+    800;
+}
+
+.sel-map-series__line{
+  width:
+    35px;
+
+  height:
+    1px;
+
+  background:
+    var(--sel-cyan);
+
+  opacity:
+    .5;
+}
+
+.sel-map-series__type{
+  color:
+    var(--sel-muted-2);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .58rem;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   56. RESULT CARD
+   ============================================================ */
+
+.sel-result-card{
+  padding:
+    1.5rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-result-card__label{
+  margin-bottom:
+    .7rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .6rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .08em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-result-card h3{
+  margin-bottom:
+    .55rem;
+
+  font-size:
+    1rem;
+}
+
+.sel-result-card p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .72rem;
+}
+
+
+/* ============================================================
+   57. RESULT GRID
+   ============================================================ */
+
+.sel-result-grid{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    .8rem;
+}
+
+
+/* ============================================================
+   58. PILL GROUP
+   ============================================================ */
+
+.sel-pill-group{
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    .45rem;
+}
+
+.sel-pill{
+  padding:
+    .35rem .55rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-pill);
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .62rem;
+
+  line-height:
+    1;
+}
+
+
+/* ============================================================
+   59. FOOTNOTE / SOURCE
+   ============================================================ */
+
+.sel-source{
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    .5rem;
+
+  margin-top:
+    1rem;
+
+  color:
+    var(--sel-muted-2);
+
+  font-size:
+    .62rem;
+
+  line-height:
+    1.5;
+}
+
+.sel-source::before{
+  content:
+    "SOURCE";
+
+  flex:
+    0 0 auto;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .52rem;
+
+  font-weight:
+    800;
+}
+
+
+/* ============================================================
+   60. FOOTER
+   ============================================================ */
+
+.sel-footer{
+  padding:
+    5rem 0 2rem;
+
+  border-top:
+    1px solid
+    var(--sel-line);
+
+  background:
+    #050D13;
+}
+
+.sel-footer__grid{
+  display:
+    grid;
+
+  grid-template-columns:
+    1.5fr repeat(3,1fr);
+
+  gap:
+    3rem;
+
+  padding-bottom:
+    4rem;
+}
+
+.sel-footer__brand img{
+  width:
+    auto;
+
+  height:
+    48px;
+
+  margin-bottom:
+    1rem;
+}
+
+.sel-footer__brand p{
+  max-width:
+    360px;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .72rem;
+}
+
+.sel-footer h3{
+  margin-bottom:
+    .9rem;
+
+  color:
+    var(--sel-white);
+
+  font-size:
+    .7rem;
+
+  letter-spacing:
+    .08em;
+
+  text-transform:
+    uppercase;
+}
+
+.sel-footer ul{
+  list-style:
+    none;
+
+  padding:
+    0;
+
+  margin:
+    0;
+
+  display:
+    grid;
+
+  gap:
+    .45rem;
+}
+
+.sel-footer li,
+.sel-footer a{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .68rem;
+}
+
+.sel-footer a:hover{
+  color:
+    var(--sel-cyan);
+}
+
+.sel-footer__bottom{
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  gap:
+    2rem;
+
+  padding-top:
+    1.3rem;
+
+  border-top:
+    1px solid
+    var(--sel-line);
+
+  color:
+    var(--sel-muted-2);
+
+  font-size:
+    .6rem;
+}
+
+.sel-footer__social{
+  display:
+    flex;
+
+  gap:
+    .7rem;
+}
+
+.sel-footer__social a{
+  width:
+    34px;
+
+  height:
+    34px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    50%;
+}
+
+
+/* ============================================================
+   61. FLOATING BACK TO TOP
+   ============================================================ */
+
+.sel-back-top{
+  position:
+    fixed;
+
+  right:
+    1.2rem;
+
+  bottom:
+    1.2rem;
+
+  z-index:
+    90;
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(7,16,24,.88);
+
+  color:
+    var(--sel-cyan);
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  transform:
+    translateY(10px);
+
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.sel-back-top.is-visible{
+  opacity:
+    1;
+
+  pointer-events:
+    auto;
+
+  transform:
+    translateY(0);
+}
+
+
+/* ============================================================
+   62. HERO GRID DECORATION
+   ============================================================ */
+
+.sel-grid-decoration{
+  position:absolute;
+
+  inset:
+    0;
+
+  pointer-events:
+    none;
+
+  opacity:
+    .13;
+
+  background-image:
+    linear-gradient(
+      rgba(0,215,232,.25) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0,215,232,.25) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    70px 70px;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent,
+      black 25%,
+      black 75%,
+      transparent
+    );
+}
+
+
+/* ============================================================
+   63. GLOW ORBS
+   ============================================================ */
+
+.sel-orb{
+  position:absolute;
+
+  width:
+    420px;
+
+  height:
+    420px;
+
+  border-radius:
+    50%;
+
+  filter:
+    blur(80px);
+
+  opacity:
+    .09;
+
+  pointer-events:
+    none;
+}
+
+.sel-orb--cyan{
+  background:
+    var(--sel-cyan);
+
+  right:
+    -180px;
+
+  top:
+    -160px;
+}
+
+.sel-orb--green{
+  background:
+    var(--sel-green);
+
+  left:
+    -200px;
+
+  bottom:
+    -200px;
+}
+
+.sel-orb--pink{
+  background:
+    var(--sel-pink);
+
+  right:
+    10%;
+
+  bottom:
+    -280px;
+}
+
+
+/* ============================================================
+   64. ARTICLE CONTENT
+   ============================================================ */
+
+.sel-prose{
+  max-width:
+    760px;
+}
+
+.sel-prose h2{
+  margin-top:
+    3rem;
+
+  margin-bottom:
+    1rem;
+}
+
+.sel-prose h3{
+  margin-top:
+    2rem;
+
+  margin-bottom:
+    .7rem;
+}
+
+.sel-prose p{
+  color:
+    var(--sel-text-soft);
+}
+
+.sel-prose ul,
+.sel-prose ol{
+  color:
+    var(--sel-muted);
+
+  padding-left:
+    1.3rem;
+}
+
+.sel-prose li{
+  margin-bottom:
+    .45rem;
+}
+
+
+/* ============================================================
+   65. TWO-COLUMN CONTENT
+   ============================================================ */
+
+.sel-two-col{
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    clamp(
+      2rem,
+      6vw,
+      5rem
+    );
+
+  align-items:
+    center;
+}
+
+.sel-two-col--wide{
+  grid-template-columns:
+    1.2fr .8fr;
+}
+
+.sel-two-col--reverse{
+  grid-template-columns:
+    .8fr 1.2fr;
+}
+
+
+/* ============================================================
+   66. THREE-COLUMN CONTENT
+   ============================================================ */
+
+.sel-three-col{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    1rem;
+}
+
+
+/* ============================================================
+   67. FOUR-COLUMN CONTENT
+   ============================================================ */
+
+.sel-four-col{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:
+    1rem;
+}
+
+
+/* ============================================================
+   68. LARGE NUMBER
+   ============================================================ */
+
+.sel-large-number{
+  display:
+    block;
+
+  color:
+    rgba(255,255,255,.045);
+
+  font-size:
+    clamp(
+      5rem,
+      15vw,
+      12rem
+    );
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -.09em;
+
+  line-height:
+    .7;
+
+  user-select:
+    none;
+}
+
+
+/* ============================================================
+   69. SECTION INDEX
+   ============================================================ */
+
+.sel-section-index{
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    .7rem;
+
+  margin-bottom:
+    1rem;
+
+  color:
+    var(--sel-muted-2);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .62rem;
+
+  font-weight:
+    700;
+}
+
+.sel-section-index strong{
+  color:
+    var(--sel-cyan);
+}
+
+
+/* ============================================================
+   70. INTERACTIVE TOGGLE
+   ============================================================ */
+
+.sel-toggle{
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    .2rem;
+
+  padding:
+    .25rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-pill);
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-toggle button{
+  border:
+    0;
+
+  border-radius:
+    var(--radius-pill);
+
+  padding:
+    .45rem .7rem;
+
+  background:
+    transparent;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .62rem;
+
+  font-weight:
+    800;
+
+  cursor:
+    pointer;
+}
+
+.sel-toggle button.is-active{
+  background:
+    var(--sel-cyan);
+
+  color:
+    #031318;
+}
+
+
+/* ============================================================
+   71. TOOLTIPS
+   ============================================================ */
+
+[data-tooltip]{
+  position:
+    relative;
+}
+
+[data-tooltip]::after{
+  content:
+    attr(data-tooltip);
+
+  position:absolute;
+
+  left:
+    50%;
+
+  bottom:
+    calc(100% + 8px);
+
+  transform:
+    translateX(-50%)
+    translateY(4px);
+
+  width:
+    max-content;
+
+  max-width:
+    220px;
+
+  padding:
+    .4rem .55rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    5px;
+
+  background:
+    #111F2A;
+
+  color:
+    var(--sel-text-soft);
+
+  font-size:
+    .6rem;
+
+  line-height:
+    1.35;
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+
+  z-index:
+    20;
+}
+
+[data-tooltip]:hover::after{
+  opacity:
+    1;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+
+/* ============================================================
+   72. ACCESSIBILITY POPOVER
+   ============================================================ */
+
+.sel-popover{
+  position:
+    absolute;
+
+  z-index:
+    30;
+
+  width:
+    min(
+      320px,
+      calc(100vw - 2rem)
+    );
+
+  padding:
+    1rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(17,31,42,.97);
+
+  box-shadow:
+    var(--shadow-lg);
+
+  backdrop-filter:
+    blur(18px);
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  transform:
+    translateY(5px);
+
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.sel-popover.is-open{
+  opacity:
+    1;
+
+  pointer-events:
+    auto;
+
+  transform:
+    translateY(0);
+}
+
+.sel-popover h4{
+  margin-bottom:
+    .4rem;
+}
+
+.sel-popover p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .7rem;
+}
+
+
+/* ============================================================
+   73. MOBILE MENU
+   ============================================================ */
+
+.sel-menu-toggle{
+  display:
+    none;
+
+  width:
+    40px;
+
+  height:
+    40px;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    8px;
+
+  background:
+    transparent;
+
+  color:
+    #fff;
+
+  cursor:
+    pointer;
+}
+
+.sel-mobile-menu{
+  display:
+    none;
+
+  position:
+    fixed;
+
+  inset:
+    76px 0 0;
+
+  z-index:
+    99;
+
+  padding:
+    1.5rem;
+
+  background:
+    rgba(7,16,24,.98);
+
+  overflow-y:
+    auto;
+}
+
+.sel-mobile-menu.is-open{
+  display:
+    block;
+}
+
+.sel-mobile-menu a{
+  display:
+    block;
+
+  padding:
+    1rem 0;
+
+  border-bottom:
+    1px solid
+    var(--sel-line);
+
+  color:
+    var(--sel-text-soft);
+
+  font-size:
+    1rem;
+
+  font-weight:
+    700;
+}
+
+
+/* ============================================================
+   74. CARD HOVER LINE
+   ============================================================ */
+
+.sel-hover-line{
+  position:
+    relative;
+
+  overflow:
+    hidden;
+}
+
+.sel-hover-line::after{
+  content:"";
+
+  position:absolute;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  bottom:
+    0;
+
+  height:
+    2px;
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    left;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--sel-cyan),
+      var(--sel-green)
+    );
+
+  transition:
+    transform var(--transition);
+}
+
+.sel-hover-line:hover::after{
+  transform:
+    scaleX(1);
+}
+
+
+/* ============================================================
+   75. MAP LOADING STATE
+   ============================================================ */
+
+.sel-map-loading{
+  position:absolute;
+
+  inset:
+    0;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  background:
+    #08131B;
+
+  color:
+    var(--sel-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .65rem;
+
+  z-index:
+    20;
+}
+
+.sel-map-loading::before{
+  content:"";
+
+  width:
+    26px;
+
+  height:
+    26px;
+
+  margin-bottom:
+    .7rem;
+
+  border:
+    2px solid
+    rgba(255,255,255,.12);
+
+  border-top-color:
+    var(--sel-cyan);
+
+  border-radius:
+    50%;
+
+  animation:
+    sel-spin
+    .8s
+    linear
+    infinite;
+}
+
+@keyframes sel-spin{
+
+  to{
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* ============================================================
+   76. LEAFLET OVERRIDES
+   ============================================================ */
+
+.sel-map .leaflet-container{
+  font-family:
+    var(--font-sans);
+
+  background:
+    #09131B;
+}
+
+.sel-map .leaflet-control{
+  border:
+    1px solid
+    rgba(255,255,255,.12) !important;
+
+  border-radius:
+    7px !important;
+
+  overflow:
+    hidden;
+
+  box-shadow:
+    var(--shadow-sm) !important;
+}
+
+.sel-map .leaflet-control a{
+  background:
+    rgba(7,16,24,.9) !important;
+
+  color:
+    #fff !important;
+
+  border-color:
+    rgba(255,255,255,.1) !important;
+}
+
+.sel-map .leaflet-control a:hover{
+  color:
+    var(--sel-cyan) !important;
+}
+
+.sel-map .leaflet-popup-content-wrapper,
+.sel-map .leaflet-popup-tip{
+  background:
+    #111F2A;
+
+  color:
+    var(--sel-text);
+}
+
+.sel-map .leaflet-popup-content{
+  font-size:
+    .72rem;
+
+  line-height:
+    1.5;
+}
+
+.sel-map .leaflet-popup-content strong{
+  color:
+    var(--sel-cyan);
+}
+
+.sel-map .leaflet-control-attribution{
+  background:
+    rgba(7,16,24,.78) !important;
+
+  color:
+    #7C919C !important;
+
+  font-size:
+    9px;
+}
+
+.sel-map .leaflet-control-attribution a{
+  color:
+    var(--sel-cyan) !important;
+
+  background:
+    transparent !important;
+}
+
+
+/* ============================================================
+   77. MAP LEGEND COLLAPSE
+   ============================================================ */
+
+.sel-legend-toggle{
+  display:
+    none;
+}
+
+
+/* ============================================================
+   78. DATA VERSION LABEL
+   ============================================================ */
+
+.sel-version{
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    .4rem;
+
+  color:
+    var(--sel-muted-2);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .58rem;
+}
+
+.sel-version::before{
+  content:"";
+
+  width:
+    5px;
+
+  height:
+    5px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--sel-green);
+}
+
+
+/* ============================================================
+   79. CITATION BLOCK
+   ============================================================ */
+
+.sel-citation{
+  padding:
+    1.2rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    #09131B;
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .68rem;
+
+  line-height:
+    1.7;
+
+  color:
+    var(--sel-muted);
+}
+
+.sel-citation strong{
+  color:
+    var(--sel-text-soft);
+}
+
+
+/* ============================================================
+   80. QA CHECKLIST
+   ============================================================ */
+
+.sel-qa{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:
+    .7rem;
+}
+
+.sel-qa__item{
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    .7rem;
+
+  padding:
+    .9rem;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-qa__check{
+  flex:
+    0 0 auto;
+
+  width:
+    22px;
+
+  height:
+    22px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(54,211,153,.3);
+
+  border-radius:
+    50%;
+
+  color:
+    var(--sel-green);
+
+  font-size:
+    .65rem;
+}
+
+.sel-qa__item strong{
+  display:
+    block;
+
+  margin-bottom:
+    .15rem;
+
+  font-size:
+    .72rem;
+}
+
+.sel-qa__item span{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .63rem;
+}
+
+
+/* ============================================================
+   81. LIMITATIONS
+   ============================================================ */
+
+.sel-limitations{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    .8rem;
+}
+
+.sel-limitation{
+  padding:
+    1.1rem;
+
+  border:
+    1px solid
+    rgba(229,143,101,.13);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(229,143,101,.025);
+}
+
+.sel-limitation__number{
+  margin-bottom:
+    .6rem;
+
+  color:
+    var(--sel-orange);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .6rem;
+}
+
+.sel-limitation strong{
+  display:
+    block;
+
+  margin-bottom:
+    .3rem;
+
+  font-size:
+    .75rem;
+}
+
+.sel-limitation p{
+  margin:
+    0;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .65rem;
+}
+
+
+/* ============================================================
+   82. NEXT RESEARCH
+   ============================================================ */
+
+.sel-next{
+  position:
+    relative;
+
+  padding:
+    clamp(
+      2rem,
+      5vw,
+      4rem
+    );
+
+  border:
+    1px solid
+    rgba(244,114,182,.16);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(244,114,182,.08),
+      transparent 35%
+    ),
+    var(--sel-surface);
+}
+
+.sel-next h3{
+  margin-bottom:
+    .7rem;
+}
+
+.sel-next p{
+  max-width:
+    720px;
+
+  color:
+    var(--sel-muted);
+}
+
+
+/* ============================================================
+   83. HERO MAP OVERLAY
+   ============================================================ */
+
+.sel-hero-map-overlay{
+  position:absolute;
+
+  inset:
+    0;
+
+  z-index:
+    1;
+
+  pointer-events:
+    none;
+
+  opacity:
+    .38;
+
+  background:
+    radial-gradient(
+      ellipse at 75% 35%,
+      rgba(0,215,232,.13),
+      transparent 35%
+    );
+}
+
+.sel-hero-map-overlay::before{
+  content:"";
+
+  position:absolute;
+
+  width:
+    48vw;
+
+  height:
+    48vw;
+
+  max-width:
+    700px;
+
+  max-height:
+    700px;
+
+  right:
+    2vw;
+
+  top:
+    8vh;
+
+  border:
+    1px solid
+    rgba(0,215,232,.18);
+
+  border-radius:
+    50%;
+
+  box-shadow:
+    0 0 0 50px
+    rgba(0,215,232,.015),
+    0 0 0 100px
+    rgba(0,215,232,.01);
+}
+
+
+/* ============================================================
+   84. STAT COUNTER ANIMATION SUPPORT
+   ============================================================ */
+
+[data-counter]{
+  font-variant-numeric:
+    tabular-nums;
+
+  font-feature-settings:
+    "tnum";
+}
+
+.counter-complete{
+  animation:
+    sel-counter-pulse
+    .5s
+    var(--ease);
+}
+
+@keyframes sel-counter-pulse{
+
+  0%{
+    transform:
+      scale(1);
+  }
+
+  50%{
+    transform:
+      scale(1.04);
+  }
+
+  100%{
+    transform:
+      scale(1);
+  }
+
+}
+
+
+/* ============================================================
+   85. GALLERY THUMBNAILS
+   ============================================================ */
+
+.sel-gallery-thumbs{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:
+    .7rem;
+}
+
+.sel-gallery-thumb{
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    #09131B;
+
+  cursor:
+    pointer;
+}
+
+.sel-gallery-thumb img{
+  width:
+    100%;
+
+  aspect-ratio:
+    16 / 10;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform var(--transition);
+}
+
+.sel-gallery-thumb:hover img{
+  transform:
+    scale(1.05);
+}
+
+.sel-gallery-thumb__label{
+  position:absolute;
+
+  left:
+    .5rem;
+
+  bottom:
+    .5rem;
+
+  padding:
+    .3rem .4rem;
+
+  border-radius:
+    3px;
+
+  background:
+    rgba(7,16,24,.85);
+
+  color:
+    #fff;
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .52rem;
+}
+
+
+/* ============================================================
+   86. SPATIAL TYPOLOGY
+   ============================================================ */
+
+.sel-typology{
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    1px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--sel-line);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--sel-line);
+}
+
+.sel-type{
+  min-height:
+    280px;
+
+  padding:
+    1.6rem;
+
+  background:
+    var(--sel-surface);
+}
+
+.sel-type__number{
+  display:
+    block;
+
+  margin-bottom:
+    3rem;
+
+  color:
+    var(--sel-cyan);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .62rem;
+}
+
+.sel-type:nth-child(2)
+.sel-type__number{
+  color:
+    var(--sel-orange);
+}
+
+.sel-type:nth-child(3)
+.sel-type__number{
+  color:
+    var(--sel-pink);
+}
+
+.sel-type h3{
+  margin-bottom:
+    .6rem;
+
+  font-size:
+    1.15rem;
+}
+
+.sel-type p{
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .74rem;
+}
+
+.sel-type ul{
+  margin:
+    1rem 0 0;
+
+  padding-left:
+    1rem;
+
+  color:
+    var(--sel-muted);
+
+  font-size:
+    .68rem;
+}
+
+.sel-type li{
+  margin-bottom:
+    .3rem;
+}
+
+
+/* ============================================================
+   87. EVIDENCE CHAIN HORIZONTAL SCROLL
+   ============================================================ */
+
+.sel-chain-scroll{
+  overflow-x:
+    auto;
+
+  padding-bottom:
+    .8rem;
+
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    var(--sel-cyan)
+    transparent;
+}
+
+
+/* ============================================================
+   88. BREADCRUMBS
+   ============================================================ */
+
+.sel-breadcrumbs{
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    .4rem;
+
+  color:
+    var(--sel-muted-2);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    .6rem;
+}
+
+.sel-breadcrumbs a:hover{
+  color:
