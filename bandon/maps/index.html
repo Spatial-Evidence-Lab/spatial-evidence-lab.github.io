@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>SEL-002 | Bandon Map Series</title>
+
+<meta name="description"
+      content="Spatial Evidence Lab — SEL-002 Bandon Public Transport Accessibility Analysis map output series.">
+
+<meta name="theme-color" content="#071018">
+
+<style>
+:root{
+  --bg:#071018;
+  --surface:#0c1a24;
+  --surface2:#102532;
+  --line:#213b48;
+  --text:#e9f1f4;
+  --muted:#9db0b9;
+  --cyan:#5bd6e8;
+  --green:#6bd39b;
+  --pink:#e98acb;
+  --max:1240px;
+  --radius:12px;
+  --shadow:0 18px 50px rgba(0,0,0,.25);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.65;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(var(--max),92%);
+  margin:auto;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(7,16,24,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--cyan);
+}
+
+.navlinks{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.navlinks a{
+  font-size:.68rem;
+  color:var(--muted);
+}
+
+.navlinks a:hover{
+  color:#fff;
+}
+
+.home{
+  border:1px solid rgba(91,214,232,.5);
+  padding:7px 10px;
+  border-radius:6px;
+  color:var(--cyan)!important;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero{
+  padding:82px 0 65px;
+  border-bottom:1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(91,214,232,.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 90%,
+      rgba(233,138,203,.07),
+      transparent 30%
+    );
+}
+
+.eyebrow{
+  font-size:.66rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--cyan);
+  margin-bottom:13px;
+}
+
+h1{
+  font-size:clamp(2.5rem,6vw,5rem);
+  line-height:.98;
+  letter-spacing:-.055em;
+  max-width:900px;
+  margin:0 0 22px;
+}
+
+.lead{
+  font-size:1rem;
+  color:var(--muted);
+  max-width:820px;
+  margin:0;
+}
+
+.hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 15px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--surface2);
+  font-size:.72rem;
+  font-weight:800;
+}
+
+.btn.primary{
+  background:var(--cyan);
+  border-color:var(--cyan);
+  color:#071018;
+}
+
+.btn:hover{
+  border-color:var(--cyan);
+}
+
+/* ============================================================
+   MAP GRID
+   ============================================================ */
+
+section{
+  padding:72px 0;
+}
+
+.sectionhead{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:30px;
+}
+
+.sectionhead h2{
+  margin:0;
+  font-size:2rem;
+  letter-spacing:-.03em;
+  line-height:1.1;
+}
+
+.sectionhead p{
+  max-width:610px;
+  margin:0;
+  color:var(--muted);
+  font-size:.78rem;
+}
+
+.map-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.map-card{
+  overflow:hidden;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.map-card img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  background:#0a151c;
+}
+
+.mapbody{
+  padding:20px;
+}
+
+.tag{
+  font-size:.62rem;
+  color:var(--cyan);
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.mapbody h3{
+  margin:7px 0 9px;
+  font-size:1.05rem;
+}
+
+.mapbody p{
+  font-size:.72rem;
+  color:var(--muted);
+  margin:0;
+}
+
+.mapfoot{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  padding-top:13px;
+  border-top:1px solid var(--line);
+}
+
+.mapfoot a{
+  font-size:.64rem;
+  color:var(--cyan);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.mapfoot span{
+  font-size:.62rem;
+  color:var(--muted);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer{
+  padding:45px 0;
+  color:var(--muted);
+  font-size:.7rem;
+  border-top:1px solid var(--line);
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.footer a:hover{
+  color:var(--cyan);
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media(max-width:900px){
+
+  .map-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:650px){
+
+  .navlinks{
+    display:none;
+  }
+
+  .hero{
+    padding-top:60px;
+  }
+
+  .sectionhead{
+    display:block;
+  }
+
+  .sectionhead p{
+    margin-top:12px;
+  }
+
+  h1{
+    font-size:2.7rem;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      Spatial Evidence Lab
+    </a>
+
+    <div class="navlinks">
+      <a href="../index.html">Project</a>
+      <a href="index.html">Maps</a>
+
+      <a
+        class="home"
+        href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/bandon/maps"
+        target="_blank"
+        rel="noopener">
+        GitHub ↗
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+
+    <div class="eyebrow">
+      SEL-002 · Evidence Maps
+    </div>
+
+    <h1>
+      Bandon Map Output Series
+    </h1>
+
+    <p class="lead">
+      Authoritative 01.00–01.06 map outputs from the
+      Bandon Public Transport Accessibility Analysis.
+      The series progresses from study-area context through
+      walking accessibility, service frequency, population
+      vulnerability, composite accessibility and equity-focused
+      hotspot screening.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn primary" href="../index.html#maps">
+        ← Back to evidence chain
+      </a>
+
+      <a class="btn" href="../downloads/SEL-002_Report.pdf">
+        Read full report ↗
+      </a>
+
+    </div>
+
+  </div>
+</header>
+
+<section>
+
+  <div class="container">
+
+    <div class="sectionhead">
+
+      <div>
+        <div class="eyebrow">
+          01 · Map outputs
+        </div>
+
+        <h2>
+          Seven-map evidence chain
+        </h2>
+      </div>
+
+      <p>
+        Open the authoritative PNG outputs directly or use
+        your browser's image viewer to inspect each map at
+        full resolution.
+      </p>
+
+    </div>
+
+    <div class="map-grid">
+
+      <!-- 01.00 -->
+
+      <article class="map-card">
+
+        <a href="01.00.png" target="_blank">
+          <img
+            src="01.00.png"
+            alt="Map 01.00 — Bandon Accessibility Study Area">
+        </a>
+
+        <div class="mapbody">
+
+          <div class="tag">
+            01.00 · Context
+          </div>
+
+          <h3>
+            Accessibility Study Area
+          </h3>
+
+          <p>
+            Study boundary, public transport stops and
+            local road network establishing the spatial
+            context for the analysis.
+          </p>
+
+          <div class="mapfoot">
+
+            <a href="01.00.png" target="_blank">
+              Open map ↗
+            </a>
+
+            <span>
+              Context
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 01.01 -->
+
+      <article class="map-card">
+
+        <a href="01.01.png" target="_blank">
+          <img
+            src="01.01.png"
+            alt="Map 01.01 — Bandon Walking Catchments">
+        </a>
+
+        <div class="mapbody">
+
+          <div class="tag">
+            01.01 · Walking access
+          </div>
+
+          <h3>
+            Walking Catchments
+          </h3>
+
+          <p>
+            Network-based 5-, 10- and 15-minute walking
+            catchments around public transport stops.
+          </p>
+
+          <div class="mapfoot">
+
+            <a href="01.01.png" target="_blank">
+              Open map ↗
+            </a>
+
+            <span>
+              5 / 10 / 15 min
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 01.02 -->
+
+      <article class="map-card">
+
+        <a href="01.02.png" target="_blank">
+          <img
+            src="01.02.png"
+            alt="Map 01.02 — Bandon Walking Distance Score">
+        </a>
+
+        <div class="mapbody">
+
+          <div class="tag">
+            01.02 · Distance
+          </div>
+
+          <h3>
+            Walking Distance Score
+          </h3>
+
+          <p>
+            Relative spatial accessibility based on network
+            walking distance, from Low to Very High.
+          </p>
+
+          <div class="mapfoot">
+
+            <a href="01.02.png" target="_blank">
+              Open map ↗
+            </a>
+
+            <span>
+              Relative score
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 01.03 -->
+
+      <article class="map-card">
+
+        <a href="01.03.png" target="_blank">
+          <img
+            src="01.03.png"
+            alt="Map 01.03 — Bandon Peak-Time Service">
+        </a>
+
+        <div class="mapbody">
+
+          <div class="tag">
+            01.03 · Service
+          </div>
+
+          <h3>
+            Peak-Time Service
+          </h3>
+
+          <p>
+            Scheduled peak-time service frequency adds
+            a temporal dimension to physical accessibility.
+          </p>
+
+          <div class="mapfoot">
+
+            <a href="01.03.png" target="_blank">
+              Open map ↗
+            </a>
+
+            <span>
+              GTFS
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 01.04 -->
+
+      <article class="map-card">
+
+        <a href="01.04.png" target="_blank">
+          <img
+            src="01.04.png"
+            alt="Map 01.04 — Bandon Population Vulnerability">
+        </a>
+
+        <div class="mapbody">
+
+          <div class="tag">
+            01.04 · Population need
+          </div>
+
+          <h3>
+            Population Vulnerability
+          </h3>
+
+          <p>
+            Census 2022 indicators standardised into five
+            relative vulnerability classes across Small Areas.
+          </p>
+
+          <div class="mapfoot">
+
+            <a href="01.04.png" target="_blank">
+              Open map ↗
+            </a>
+
+            <span>
+              5 classes
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 01.05 -->
+
+      <article class="map-card">
+
+        <a href="01.05.png" target="_blank">
+          <img
+            src="01.05.png"
+            alt="Map 01.05 — Bandon Composite Accessibility Index">
+        </a>
+
+        <div class="mapbody">
+
+          <div class="tag">
+            01.05 · Composite index
+          </div>
+
+          <h3>
+            Composite Accessibility Index
+          </h3>
+
+          <p>
+            Integrated assessment of walking access and
+            public transport service frequency, classified
+            from Very Poor to Excellent.
+          </p>
+
+          <div class="mapfoot">
+
+            <a href="01.05.png" target="_blank">
+              Open map ↗
+            </a>
+
+            <span>
+              CAI
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 01.06 -->
+
+      <article class="map-card">
+
+        <a href="01.06.png" target="_blank">
+          <img
+            src="01.06.png"
+            alt="Map 01.06 — Bandon Accessibility Vulnerability Hotspots">
+        </a>
+
+        <div class="mapbody">
+
+          <div
+            class="tag"
+            style="color:var(--pink)">
+            01.06 · Equity
+          </div>
+
+          <h3>
+            Accessibility–Vulnerability Hotspots
+          </h3>
+
+          <p>
+            Identifies locations where lower accessibility
+            and higher population vulnerability combine to
+            indicate greater potential priority.
+          </p>
+
+          <div class="mapfoot">
+
+            <a href="01.06.png" target="_blank">
+              Open map ↗
+            </a>
+
+            <span>
+              Priority screening
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="container footer">
+
+    <div>
+      <strong style="color:#fff">
+        Spatial Evidence Lab
+      </strong>
+      <br>
+      SEL-002 · Bandon Public Transport Accessibility Analysis
+      <br>
+      County Cork · Republic of Ireland
+    </div>
+
+    <div>
+
+      <a href="../index.html">
+        ← SEL-002 project page
+      </a>
+
+      <br>
+
+      <a
+        href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/bandon/maps"
+        target="_blank"
+        rel="noopener">
+        Map files on GitHub ↗
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
