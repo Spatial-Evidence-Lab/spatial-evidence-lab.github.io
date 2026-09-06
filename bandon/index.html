@@ -5,20 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SEL-002: Bandon Public Transport Accessibility Analysis</title>
   
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="css/sel-theme.css">
-  <link rel="stylesheet" href="css/maps.css">
-  <link rel="stylesheet" href="css/print.css" media="print">
-  
-  <!-- KaTeX for LaTeX rendering -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for Math Formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
           onload="renderMathInElement(document.body);"></script>
+
+  <!-- Critical Theme CSS -->
+  <style>
+    :root {
+      --bg-deep: #071018;
+      --surface: #0D1821;
+      --surface-elevated: #111F2A;
+      --cyan: #00D7E8;
+      --green: #36D399;
+      --orange: #E58F65;
+      --pink: #F472B6;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border-color: #1E293B;
+      --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background-color: var(--bg-deep) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-body);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--text-main); }
+
+    .sel-header {
+      background: var(--surface) !important;
+      border-bottom: 1px solid var(--border-color);
+      padding: 2.5rem 1rem;
+    }
+
+    .sel-header .meta-badge {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .sel-header h1 { font-size: 2.2rem; margin: 0.5rem 0; }
+    .sel-header .subtitle { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+    .action-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .btn {
+      font-family: var(--font-heading);
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary { background: var(--cyan); color: var(--bg-deep) !important; }
+    .btn-secondary { background: var(--surface-elevated); color: var(--text-main) !important; border: 1px solid var(--border-color); }
+
+    .card {
+      background: var(--surface) !important;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      color: var(--cyan) !important;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem; }
+
+    .info-box {
+      background: var(--surface-elevated) !important;
+      border-left: 4px solid var(--green);
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    .info-box h3 { font-size: 1rem; color: var(--green) !important; margin-bottom: 0.5rem; }
+
+    .table-wrapper { overflow-x: auto; margin: 1rem 0; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; background: var(--surface-elevated); }
+    th, td { padding: 0.75rem; border: 1px solid var(--border-color); }
+    th { background: var(--surface); color: var(--cyan); font-family: var(--font-heading); }
+    
+    code {
+      font-family: monospace;
+      background: var(--bg-deep);
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--orange);
+      border: 1px solid var(--border-color);
+    }
+
+    .formula-block {
+      background: var(--surface-elevated) !important;
+      padding: 1.25rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--pink);
+      margin-top: 1rem;
+      overflow-x: auto;
+    }
+
+    .katex { color: var(--pink) !important; }
+
+    .map-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+    .map-card { background: var(--surface-elevated); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; }
+    .map-card img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border-color); }
+    .map-info { padding: 1rem; }
+    .map-id { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--cyan); }
+    .map-info h4 { font-size: 1rem; margin: 0.25rem 0 0.5rem 0; }
+    .map-info p { font-size: 0.85rem; color: var(--text-muted); }
+    .span-full { grid-column: 1 / -1; }
+
+    .sel-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      background: var(--surface);
+    }
+  </style>
+
+  <!-- External Stylesheets (Fallback) -->
+  <link rel="stylesheet" href="./css/sel-theme.css">
+  <link rel="stylesheet" href="./css/maps.css">
 </head>
 <body>
 
-  <!-- Header Section -->
   <header class="sel-header">
     <div class="container">
       <div class="meta-badge">SEL-002 | Spatial Evidence Lab</div>
@@ -26,16 +169,14 @@
       <p class="subtitle">A reproducible GIS-based spatial evidence study on transport equity and regional connectivity in Bandon, Co. Cork.</p>
       
       <div class="action-bar">
-        <a href="downloads/SEL-002_Report.pdf" class="btn btn-primary" download>Download Full PDF Report</a>
+        <a href="./downloads/SEL-002_Report.pdf" class="btn btn-primary" download>Download Full PDF Report</a>
         <a href="#maps" class="btn btn-secondary">View Map Series</a>
       </div>
     </div>
   </header>
 
-  <!-- Main Content Area -->
   <main class="container">
 
-    <!-- Executive Summary & Research Questions -->
     <section class="card">
       <h2>Executive Summary & Core Questions</h2>
       <p>Bandon functions as both a commuter town for Cork City and a gateway to West Cork[cite: 2]. This study evaluates whether public transport offers a viable alternative to car ownership and identifies local areas subject to transport disadvantage[cite: 2].</p>
@@ -52,22 +193,20 @@
       </div>
     </section>
 
-    <!-- Refined Methodology Pipeline -->
     <section class="card">
       <h2>Refined Analytical Methodology</h2>
       <p>The analysis follows a 6-stage reproducible GIS pipeline processing spatial data, schedules, and Census demographics[cite: 2]:</p>
       
-      <ol class="pipeline-list">
+      <ol style="padding-left: 1.2rem; margin-top: 0.5rem;">
         <li><strong>Pedestrian Network Catchments:</strong> Generates 5, 10, and 15-minute network service areas around GTFS bus stops using OpenStreetMap topology[cite: 2].</li>
         <li><strong>Temporal Service Frequency:</strong> Extracts peak morning trips from NTA GTFS feeds to calculate schedule-adjusted service intensity[cite: 2].</li>
-        <li><strong>Composite Accessibility Index (CAI):** Integrates physical network walking scores and service frequency into a 5-tier classification[cite: 2].</li>
+        <li><strong>Composite Accessibility Index (CAI):</strong> Integrates physical network walking scores and service frequency into a 5-tier classification[cite: 2].</li>
         <li><strong>Vulnerability Index Normalisation:</strong> Standardises Census 2022 Small Area indicators into a unified population need score[cite: 2].</li>
         <li><strong>Equity Hotspot Modeling:</strong> Overlays transit access deficits against population vulnerability using weighted scoring[cite: 2].</li>
         <li><strong>Policy Prioritisation Matrix:</strong> Categorises Small Areas into actionable priority levels (Critical, High, Moderate, Low, Well Served)[cite: 2].</li>
       </ol>
     </section>
 
-    <!-- Population Vulnerability Domains -->
     <section class="card">
       <h2>Population Vulnerability Framework</h2>
       <p>Population need is evaluated using 15 CSO Census 2022 Small Area variables structured into four distinct analytical domains[cite: 2]:</p>
@@ -105,10 +244,9 @@
           </tbody>
         </table>
       </div>
-      <p class="table-note">* Total population (<code>T1_1AGETT</code>) serves as the standardising denominator[cite: 2].</p>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">* Total population (<code>T1_1AGETT</code>) serves as the standardising denominator[cite: 2].</p>
     </section>
 
-    <!-- Mathematical Formulation Section -->
     <section class="card">
       <h2>Model Formulation & Scoring</h2>
       <p>To prioritize social equity, the primary model assigns a 60% weighting to population vulnerability and a 40% weighting to physical transport access deficits[cite: 2]:</p>
@@ -117,25 +255,20 @@
         <p><strong>1. Access Deficit Calculation:</strong></p>
         $$\text{Access Deficit} = 1 - \text{Normalised CAI}$$
         
-        <p><strong>2. Primary Model (Equity-Led Prioritisation):</strong></p>
+        <p style="margin-top: 0.75rem;"><strong>2. Primary Model (Equity-Led Prioritisation):</strong></p>
         $$\text{Hotspot Score}_{\text{Equity}} = 0.4 \times \text{Access Deficit} + 0.6 \times \text{VUL}_{\text{norm}}$$
         
-        <p><strong>3. Sensitivity Model (Balanced Split):</strong></p>
+        <p style="margin-top: 0.75rem;"><strong>3. Sensitivity Model (Balanced Split):</strong></p>
         $$\text{Hotspot Score}_{\text{Balanced}} = 0.5 \times \text{Access Deficit} + 0.5 \times \text{VUL}_{\text{norm}}$$
       </div>
     </section>
 
-    <!-- Map Series Gallery -->
     <section id="maps" class="card">
       <h2>Map Series (SEL-002 Deliverables)</h2>
-      <p>Click on any map image to open the full-resolution preview[cite: 2].</p>
       
       <div class="map-grid">
-        <!-- Map 01.00 -->
         <div class="map-card">
-          <a href="maps/01.00.png" class="lightbox-trigger" data-caption="Map 01.00: Accessibility Study Area">
-            <img src="maps/01.00.png" alt="Map 01.00 - Accessibility Study Area" loading="lazy">
-          </a>
+          <img src="./maps/01.00.png" alt="Map 01.00" loading="lazy">
           <div class="map-info">
             <span class="map-id">SEL-002 | 01.00</span>
             <h4>Study Area Overview</h4>
@@ -143,11 +276,8 @@
           </div>
         </div>
 
-        <!-- Map 01.01 -->
         <div class="map-card">
-          <a href="maps/01.01.png" class="lightbox-trigger" data-caption="Map 01.01: Walking Catchments">
-            <img src="maps/01.01.png" alt="Map 01.01 - Walking Catchments" loading="lazy">
-          </a>
+          <img src="./maps/01.01.png" alt="Map 01.01" loading="lazy">
           <div class="map-info">
             <span class="map-id">SEL-002 | 01.01</span>
             <h4>Walking Catchments</h4>
@@ -155,11 +285,8 @@
           </div>
         </div>
 
-        <!-- Map 01.02 -->
         <div class="map-card">
-          <a href="maps/01.02.png" class="lightbox-trigger" data-caption="Map 01.02: Walking Distance Score">
-            <img src="maps/01.02.png" alt="Map 01.02 - Walking Distance Score" loading="lazy">
-          </a>
+          <img src="./maps/01.02.png" alt="Map 01.02" loading="lazy">
           <div class="map-info">
             <span class="map-id">SEL-002 | 01.02</span>
             <h4>Walking Distance Score</h4>
@@ -167,11 +294,8 @@
           </div>
         </div>
 
-        <!-- Map 01.03 -->
         <div class="map-card">
-          <a href="maps/01.03.png" class="lightbox-trigger" data-caption="Map 01.03: Peak-Time Service">
-            <img src="maps/01.03.png" alt="Map 01.03 - Peak-Time Service" loading="lazy">
-          </a>
+          <img src="./maps/01.03.png" alt="Map 01.03" loading="lazy">
           <div class="map-info">
             <span class="map-id">SEL-002 | 01.03</span>
             <h4>Peak-Time Service</h4>
@@ -179,11 +303,8 @@
           </div>
         </div>
 
-        <!-- Map 01.04 -->
         <div class="map-card">
-          <a href="maps/01.04.png" class="lightbox-trigger" data-caption="Map 01.04: Population Vulnerability">
-            <img src="maps/01.04.png" alt="Map 01.04 - Population Vulnerability" loading="lazy">
-          </a>
+          <img src="./maps/01.04.png" alt="Map 01.04" loading="lazy">
           <div class="map-info">
             <span class="map-id">SEL-002 | 01.04</span>
             <h4>Population Vulnerability</h4>
@@ -191,11 +312,8 @@
           </div>
         </div>
 
-        <!-- Map 01.05 -->
         <div class="map-card">
-          <a href="maps/01.05.png" class="lightbox-trigger" data-caption="Map 01.05: Composite Accessibility Index">
-            <img src="maps/01.05.png" alt="Map 01.05 - Composite Accessibility Index" loading="lazy">
-          </a>
+          <img src="./maps/01.05.png" alt="Map 01.05" loading="lazy">
           <div class="map-info">
             <span class="map-id">SEL-002 | 01.05</span>
             <h4>Composite Accessibility (CAI)</h4>
@@ -203,11 +321,8 @@
           </div>
         </div>
 
-        <!-- Map 01.06 -->
         <div class="map-card span-full">
-          <a href="maps/01.06.png" class="lightbox-trigger" data-caption="Map 01.06: Equity-Focused Hotspots">
-            <img src="maps/01.06.png" alt="Map 01.06 - Equity-Focused Hotspots" loading="lazy">
-          </a>
+          <img src="./maps/01.06.png" alt="Map 01.06" loading="lazy">
           <div class="map-info">
             <span class="map-id">SEL-002 | 01.06</span>
             <h4>Equity-Focused Vulnerability Hotspots</h4>
@@ -219,7 +334,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="sel-footer">
     <div class="container">
       <p><strong>Spatial Evidence Lab</strong> | Independent Geospatial Research[cite: 2]</p>
@@ -227,9 +341,8 @@
     </div>
   </footer>
 
-  <!-- JS Scripts -->
-  <script src="js/counters.js"></script>
-  <script src="js/lightbox.js"></script>
-  <script src="js/sel-interactions.js"></script>
+  <script src="./js/counters.js"></script>
+  <script src="./js/lightbox.js"></script>
+  <script src="./js/sel-interactions.js"></script>
 </body>
 </html>
