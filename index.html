@@ -100,7 +100,7 @@ img{
    ├── index.html
    ├── logo.png
    ├── hero-map.jpg
-   ├── main.png
+   ├── main.jpg
    ├── project-qol.jpg
    ├── project-bandon.jpg
    ├── project-heatrisk.jpg
@@ -173,6 +173,14 @@ nav{
   font-weight:800;
 
   letter-spacing:-.02em;
+}
+
+.brand-name{
+  color:#fff;
+  font-size:1.02rem;
+  font-weight:800;
+  letter-spacing:-.025em;
+  white-space:nowrap;
 }
 
 .brand .logo-image{
@@ -326,16 +334,17 @@ nav{
 
   background:
     url("/hero-map.jpg")
-    center/cover
+    center center/contain
     no-repeat;
 
   opacity:.95;
+  background-color:rgba(7,21,32,.35);
 
   mask-image:
     linear-gradient(
       to right,
       transparent 0%,
-      black 14%,
+      black 8%,
       black 100%
     );
 }
@@ -494,10 +503,12 @@ section{
   min-height:330px;
 
   background:
-    url("/main.png")
+    url("/main.jpg")
     center center/
-    cover
+    contain
     no-repeat;
+
+  background-color:#09151E;
 }
 
 .featured-content{
@@ -780,6 +791,19 @@ section{
   display:block;
 
   flex-shrink:0;
+}
+
+/*
+   SEL-005 — keep the complete Athens Heat Risk artwork visible.
+   The source artwork contains a logo/branding area that should not
+   be cropped by the standard project-card cover treatment.
+*/
+.project-card--heat-risk img{
+  height:135px;
+  object-fit:contain;
+  object-position:center center;
+  padding:4px 10px;
+  background:#09151E;
 }
 
 .project-body{
@@ -1263,6 +1287,10 @@ footer{
     max-width:190px;
   }
 
+  .brand-name{
+    font-size:.9rem;
+  }
+
   .github{
     display:none;
   }
@@ -1346,6 +1374,8 @@ footer{
         src="/logo.png"
         alt="Spatial Evidence Lab"
       >
+
+      <span class="brand-name">Spatial Evidence Lab</span>
 
     </a>
 
@@ -2000,7 +2030,7 @@ footer{
            ================================================= -->
 
       <article
-        class="project-card"
+        class="project-card project-card--heat-risk"
         id="project-sel-005"
       >
 
