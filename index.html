@@ -93,37 +93,12 @@ img{
    LOGO
    ========================================================= */
 
-/*
-   logo.png must be located in the MAIN / ROOT directory:
-
-   /
-   ├── index.html
-   ├── logo.png
-   ├── hero-map.jpg
-   ├── main.png
-   ├── project-qol.jpg
-   ├── project-bandon.jpg
-   ├── project-heatrisk.jpg
-   ├── project-windenergy.jpg
-   ├── project-rondonia.jpg
-   └── project-sealevel.jpg
-
-   Root-relative /logo.png prevents broken paths when the
-   browser is on /bandon/ or another project directory.
-*/
-
 .logo-image{
   display:block;
   width:auto;
   height:44px;
   max-width:220px;
   object-fit:contain;
-
-  /*
-     The container/background remains transparent.
-     If the PNG itself contains a white/coloured background,
-     that background must be removed from the PNG itself.
-  */
   background:transparent;
 }
 
@@ -648,8 +623,38 @@ section{
     rgba(0,215,232,.45);
 }
 
-.card-num{
+
+/* =========================================================
+   RESEARCH DOMAIN ICONS
+   ========================================================= */
+
+.domain-icon{
+  position:absolute;
+
+  top:10px;
+  left:10px;
+
+  width:30px;
+  height:30px;
+
+  object-fit:contain;
+
+  display:block;
+
+  z-index:2;
+
+  pointer-events:none;
+}
+
+
+/*
+   Keep the domain number clear of the icon.
+*/
+
+.domain-card-num{
   display:inline-flex;
+
+  margin-left:38px;
 
   border:
     1px solid var(--cyan);
@@ -790,10 +795,6 @@ section{
   flex-shrink:0;
 }
 
-/*
-   SEL-005 uses contain so the complete heat-risk artwork/logo remains
-   visible inside the same 180px image frame used by every project card.
-*/
 .project-card img.project-image-fit{
   object-fit:contain;
   object-position:center center;
@@ -867,7 +868,9 @@ section{
 }
 
 
-/* Project/domain navigation */
+/* =========================================================
+   PROJECT / DOMAIN NAVIGATION
+   ========================================================= */
 
 .project-domain-link{
   display:inline-flex;
@@ -1117,11 +1120,6 @@ section{
   margin-bottom:9px;
 }
 
-
-/*
-   Logo replaces the old generated bottom mark.
-*/
-
 .about-logo-wrap{
   display:flex;
 
@@ -1352,6 +1350,23 @@ footer{
     width:210px;
   }
 
+  /*
+     Smaller research icons on mobile while keeping
+     them clearly visible in the top-left corner.
+  */
+
+  .domain-icon{
+    width:27px;
+    height:27px;
+
+    top:9px;
+    left:9px;
+  }
+
+  .domain-card-num{
+    margin-left:34px;
+  }
+
 }
 
 </style>
@@ -1370,7 +1385,11 @@ footer{
 
   <div class="container nav-inner">
 
-    <a class="brand" href="#top" aria-label="Spatial Evidence Lab home">
+    <a
+      class="brand"
+      href="#top"
+      aria-label="Spatial Evidence Lab home"
+    >
 
       <img
         class="logo-image"
@@ -1378,7 +1397,9 @@ footer{
         alt="Spatial Evidence Lab"
       >
 
-      <span class="brand-name">Spatial Evidence Lab</span>
+      <span class="brand-name">
+        Spatial Evidence Lab
+      </span>
 
     </a>
 
@@ -1484,7 +1505,10 @@ footer{
 
     <div class="hero-visual">
 
-      <div class="hero-map" aria-hidden="true"></div>
+      <div
+        class="hero-map"
+        aria-hidden="true"
+      ></div>
 
       <div class="hero-card">
 
@@ -1497,10 +1521,13 @@ footer{
         </h3>
 
         <p>
-          Small-area analysis of quality of life across 19,000+ Census Areas.
+          Small-area analysis of quality of life across 18,919 Census Areas.
         </p>
 
-        <a class="btn btn-outline" href="#featured">
+        <a
+          class="btn btn-outline"
+          href="#featured"
+        >
           EXPLORE RESEARCH →
         </a>
 
@@ -1517,7 +1544,10 @@ footer{
      FEATURED RESEARCH
      ========================================================= -->
 
-<section id="featured" class="featured-wrap">
+<section
+  id="featured"
+  class="featured-wrap"
+>
 
   <div class="container">
 
@@ -1568,36 +1598,69 @@ footer{
             <div class="pipeline-row">
 
               <div class="step">
-                <div class="step-icon">▤</div>
+
+                <div class="step-icon">
+                  ▤
+                </div>
+
                 Census Data
+
               </div>
 
-              <div class="step">→</div>
+              <div class="step">
+                →
+              </div>
 
               <div class="step">
-                <div class="step-icon">▥</div>
+
+                <div class="step-icon">
+                  ▥
+                </div>
+
                 Indicators
+
               </div>
 
-              <div class="step">→</div>
+              <div class="step">
+                →
+              </div>
 
               <div class="step">
-                <div class="step-icon">∿</div>
+
+                <div class="step-icon">
+                  ∿
+                </div>
+
                 Normalisation
+
               </div>
 
-              <div class="step">→</div>
+              <div class="step">
+                →
+              </div>
 
               <div class="step">
-                <div class="step-icon">♧</div>
+
+                <div class="step-icon">
+                  ♧
+                </div>
+
                 URAF
+
               </div>
 
-              <div class="step">→</div>
+              <div class="step">
+                →
+              </div>
 
               <div class="step">
-                <div class="step-icon">◎</div>
+
+                <div class="step-icon">
+                  ◎
+                </div>
+
                 Index
+
               </div>
 
             </div>
@@ -1607,11 +1670,25 @@ footer{
 
           <div class="pills">
 
-            <span class="pill">Census 2022</span>
-            <span class="pill">19,000+ Small Areas</span>
-            <span class="pill">URAF</span>
-            <span class="pill">Spatial Indicators</span>
-            <span class="pill">Multidimensional</span>
+            <span class="pill">
+              Census 2022
+            </span>
+
+            <span class="pill">
+              18,919 Census Areas
+            </span>
+
+            <span class="pill">
+              URAF
+            </span>
+
+            <span class="pill">
+              Spatial Indicators
+            </span>
+
+            <span class="pill">
+              Multidimensional
+            </span>
 
           </div>
 
@@ -1633,11 +1710,17 @@ footer{
               EXPLORE RESEARCH →
             </a>
 
-            <a class="btn btn-outline" href="#methods">
+            <a
+              class="btn btn-outline"
+              href="#methods"
+            >
               VIEW METHODS →
             </a>
 
-            <a class="btn btn-outline" href="#domain-qol">
+            <a
+              class="btn btn-outline"
+              href="#domain-qol"
+            >
               QUALITY OF LIFE →
             </a>
 
@@ -1679,9 +1762,21 @@ footer{
     <div class="research-grid">
 
 
-      <!-- 01 QUALITY OF LIFE -->
+      <!-- =================================================
+           01 QUALITY OF LIFE
+           ================================================= -->
 
-      <article class="card" id="domain-qol">
+      <article
+        class="card"
+        id="domain-qol"
+      >
+
+        <img
+          class="domain-icon"
+          src="/1.png"
+          alt=""
+          aria-hidden="true"
+        >
 
         <a
           class="domain-link"
@@ -1689,7 +1784,7 @@ footer{
           aria-label="View Quality of Life projects"
         >
 
-          <span class="card-num">
+          <span class="domain-card-num">
             01
           </span>
 
@@ -1710,9 +1805,21 @@ footer{
       </article>
 
 
-      <!-- 02 ACCESSIBILITY -->
+      <!-- =================================================
+           02 ACCESSIBILITY
+           ================================================= -->
 
-      <article class="card" id="domain-accessibility">
+      <article
+        class="card"
+        id="domain-accessibility"
+      >
+
+        <img
+          class="domain-icon"
+          src="/2.png"
+          alt=""
+          aria-hidden="true"
+        >
 
         <a
           class="domain-link"
@@ -1720,7 +1827,7 @@ footer{
           aria-label="View Accessibility projects"
         >
 
-          <span class="card-num">
+          <span class="domain-card-num">
             02
           </span>
 
@@ -1741,9 +1848,21 @@ footer{
       </article>
 
 
-      <!-- 03 MOBILITY & TRANSPORT -->
+      <!-- =================================================
+           03 MOBILITY & TRANSPORT
+           ================================================= -->
 
-      <article class="card" id="domain-mobility">
+      <article
+        class="card"
+        id="domain-mobility"
+      >
+
+        <img
+          class="domain-icon"
+          src="/3.png"
+          alt=""
+          aria-hidden="true"
+        >
 
         <a
           class="domain-link"
@@ -1751,7 +1870,7 @@ footer{
           aria-label="View Mobility and Transport projects"
         >
 
-          <span class="card-num">
+          <span class="domain-card-num">
             03
           </span>
 
@@ -1772,9 +1891,21 @@ footer{
       </article>
 
 
-      <!-- 04 POPULATION & DEMOGRAPHY -->
+      <!-- =================================================
+           04 POPULATION & DEMOGRAPHY
+           ================================================= -->
 
-      <article class="card" id="domain-demography">
+      <article
+        class="card"
+        id="domain-demography"
+      >
+
+        <img
+          class="domain-icon"
+          src="/4.png"
+          alt=""
+          aria-hidden="true"
+        >
 
         <a
           class="domain-link"
@@ -1782,7 +1913,7 @@ footer{
           aria-label="View Population and Demography projects"
         >
 
-          <span class="card-num">
+          <span class="domain-card-num">
             04
           </span>
 
@@ -1803,9 +1934,21 @@ footer{
       </article>
 
 
-      <!-- 05 HOUSING & SOCIOECONOMIC -->
+      <!-- =================================================
+           05 HOUSING & SOCIOECONOMIC
+           ================================================= -->
 
-      <article class="card" id="domain-housing">
+      <article
+        class="card"
+        id="domain-housing"
+      >
+
+        <img
+          class="domain-icon"
+          src="/5.png"
+          alt=""
+          aria-hidden="true"
+        >
 
         <a
           class="domain-link"
@@ -1813,7 +1956,7 @@ footer{
           aria-label="View Housing and Socioeconomic projects"
         >
 
-          <span class="card-num">
+          <span class="domain-card-num">
             05
           </span>
 
@@ -1834,9 +1977,21 @@ footer{
       </article>
 
 
-      <!-- 06 URBAN & RURAL -->
+      <!-- =================================================
+           06 URBAN & RURAL
+           ================================================= -->
 
-      <article class="card" id="domain-urban-rural">
+      <article
+        class="card"
+        id="domain-urban-rural"
+      >
+
+        <img
+          class="domain-icon"
+          src="/6.png"
+          alt=""
+          aria-hidden="true"
+        >
 
         <a
           class="domain-link"
@@ -1844,7 +1999,7 @@ footer{
           aria-label="View Urban and Rural Analysis projects"
         >
 
-          <span class="card-num">
+          <span class="domain-card-num">
             06
           </span>
 
@@ -1865,9 +2020,21 @@ footer{
       </article>
 
 
-      <!-- 07 ENVIRONMENT & CLIMATE -->
+      <!-- =================================================
+           07 ENVIRONMENT & CLIMATE
+           ================================================= -->
 
-      <article class="card" id="domain-environment">
+      <article
+        class="card"
+        id="domain-environment"
+      >
+
+        <img
+          class="domain-icon"
+          src="/7.png"
+          alt=""
+          aria-hidden="true"
+        >
 
         <a
           class="domain-link"
@@ -1875,7 +2042,7 @@ footer{
           aria-label="View Environment and Climate projects"
         >
 
-          <span class="card-num">
+          <span class="domain-card-num">
             07
           </span>
 
@@ -1983,7 +2150,6 @@ footer{
 
       <!-- =================================================
            SEL-002 — ACCESSIBILITY
-           Bandon connection restored
            ================================================= -->
 
       <a
@@ -2294,37 +2460,51 @@ footer{
 
         <div class="pipe-step">
 
-          <strong>▤</strong>
+          <strong>
+            ▤
+          </strong>
 
           SOURCE
 
         </div>
 
-        <div>→</div>
+        <div>
+          →
+        </div>
 
         <div class="pipe-step">
 
-          <strong>▦</strong>
+          <strong>
+            ▦
+          </strong>
 
           STAGING
 
         </div>
 
-        <div>→</div>
+        <div>
+          →
+        </div>
 
         <div class="pipe-step">
 
-          <strong>∿</strong>
+          <strong>
+            ∿
+          </strong>
 
           SPATIAL ANALYSIS
 
         </div>
 
-        <div>→</div>
+        <div>
+          →
+        </div>
 
         <div class="pipe-step">
 
-          <strong>◎</strong>
+          <strong>
+            ◎
+          </strong>
 
           EVIDENCE
 
@@ -2335,13 +2515,33 @@ footer{
 
       <div class="tech">
 
-        <span>Python</span>
-        <span>R</span>
-        <span>PostGIS</span>
-        <span>QGIS</span>
-        <span>DuckDB</span>
-        <span>GeoPandas</span>
-        <span>sf</span>
+        <span>
+          Python
+        </span>
+
+        <span>
+          R
+        </span>
+
+        <span>
+          PostGIS
+        </span>
+
+        <span>
+          QGIS
+        </span>
+
+        <span>
+          DuckDB
+        </span>
+
+        <span>
+          GeoPandas
+        </span>
+
+        <span>
+          sf
+        </span>
 
       </div>
 
