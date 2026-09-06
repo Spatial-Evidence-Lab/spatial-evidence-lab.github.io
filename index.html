@@ -140,13 +140,9 @@ nav{
 
 .brand{
   display:flex;
-
   align-items:center;
-
   gap:12px;
-
   font-weight:800;
-
   letter-spacing:-.02em;
 }
 
@@ -165,25 +161,19 @@ nav{
 
 .nav-links{
   display:flex;
-
   gap:30px;
-
   color:#D8E2E7;
-
   font-size:.92rem;
 }
 
 .nav-links a{
   padding:28px 0;
-
-  border-bottom:
-    2px solid transparent;
+  border-bottom:2px solid transparent;
 }
 
 .nav-links a:hover,
 .nav-links a.active{
   color:var(--cyan);
-
   border-color:var(--cyan);
 }
 
@@ -212,7 +202,6 @@ nav{
 
 .hero{
   position:relative;
-
   overflow:hidden;
 
   background:
@@ -234,25 +223,17 @@ nav{
 
 .hero-grid{
   display:grid;
-
   grid-template-columns:1fr 1.15fr;
-
   gap:40px;
-
   align-items:center;
 }
 
 .eyebrow{
   text-transform:uppercase;
-
   letter-spacing:.13em;
-
   font-size:.72rem;
-
   font-weight:800;
-
   color:var(--cyan);
-
   margin-bottom:13px;
 }
 
@@ -261,33 +242,23 @@ nav{
     clamp(2.5rem,4.8vw,4.4rem);
 
   line-height:1.04;
-
   letter-spacing:-.05em;
-
   margin-bottom:20px;
 }
 
 .hero p{
   color:#D8E2E7;
-
   max-width:590px;
-
   font-size:1rem;
-
   margin-bottom:18px;
 }
 
 .hero-tags{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:12px;
-
   color:var(--cyan);
-
   font-size:.76rem;
-
   font-weight:700;
 }
 
@@ -298,13 +269,11 @@ nav{
 
 .hero-visual{
   position:relative;
-
   min-height:350px;
 }
 
 .hero-map{
   position:absolute;
-
   inset:0;
 
   background:
@@ -325,13 +294,9 @@ nav{
 
 .hero-card{
   position:absolute;
-
   right:0;
-
   bottom:18px;
-
   width:min(360px,55%);
-
   padding:24px;
 
   background:
@@ -348,23 +313,18 @@ nav{
 
 .star{
   color:var(--orange);
-
   font-size:.85rem;
-
   font-weight:800;
-
   text-transform:uppercase;
 }
 
 .hero-card h3{
   font-size:1.15rem;
-
   margin:11px 0 8px;
 }
 
 .hero-card p{
   font-size:.84rem;
-
   margin-bottom:14px;
 }
 
@@ -375,9 +335,7 @@ nav{
 
 .btn{
   display:inline-flex;
-
   align-items:center;
-
   gap:10px;
 
   padding:11px 16px;
@@ -385,7 +343,6 @@ nav{
   border-radius:6px;
 
   font-size:.8rem;
-
   font-weight:800;
 
   transition:
@@ -428,17 +385,13 @@ section{
 
 .section-heading h2{
   font-size:1.25rem;
-
   color:var(--cyan);
-
   text-transform:uppercase;
-
   letter-spacing:.02em;
 }
 
 .section-heading p{
   color:var(--muted);
-
   font-size:.82rem;
 }
 
@@ -461,15 +414,12 @@ section{
     1px solid var(--line);
 
   border-radius:11px;
-
   overflow:hidden;
-
   background:#0D1D29;
 }
 
 .featured-grid{
   display:grid;
-
   grid-template-columns:43% 57%;
 }
 
@@ -489,17 +439,13 @@ section{
 
 .featured-content h2{
   font-size:1.7rem;
-
   line-height:1.12;
-
   margin:9px 0 10px;
 }
 
 .featured-content p{
   color:#D0DCE2;
-
   font-size:.86rem;
-
   max-width:610px;
 }
 
@@ -510,48 +456,34 @@ section{
 
 .pipeline{
   margin:22px 0;
-
-  border-top:
-    1px solid var(--line);
-
+  border-top:1px solid var(--line);
   padding-top:15px;
 }
 
 .pipeline-title{
   font-size:.7rem;
-
   color:var(--cyan);
-
   text-transform:uppercase;
-
   font-weight:800;
 }
 
 .pipeline-row{
   display:flex;
-
   justify-content:space-between;
-
   gap:8px;
-
   margin-top:13px;
 }
 
 .step{
   text-align:center;
-
   flex:1;
-
   font-size:.68rem;
-
   color:#D8E2E7;
 }
 
 .step-icon{
   font-size:1.35rem;
-
   margin-bottom:5px;
-
   color:#fff;
 }
 
@@ -562,11 +494,8 @@ section{
 
 .pills{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:8px;
-
   margin:12px 0 16px;
 }
 
@@ -579,7 +508,6 @@ section{
   padding:5px 8px;
 
   font-size:.7rem;
-
   color:#D8E2E7;
 }
 
@@ -588,26 +516,19 @@ section{
    RESEARCH DOMAINS
    ========================================================= */
 
-/*
-   IMPORTANT:
-   Keep the desktop layout as:
-   ROW 1 = 4 cards
-   ROW 2 = 3 cards
-*/
-
 .research-grid{
   display:grid;
 
+  /*
+     KEEP THE ORIGINAL 4 + 3 LAYOUT.
+     Four cards on row one.
+     Three cards on row two.
+  */
   grid-template-columns:
     repeat(4,1fr);
 
   gap:10px;
 }
-
-
-/* =========================================================
-   RESEARCH DOMAIN CARD
-   ========================================================= */
 
 .card{
   border:
@@ -619,15 +540,15 @@ section{
 
   padding:16px;
 
-  min-height:180px;
+  min-height:125px;
 
   position:relative;
-
-  overflow:hidden;
 
   transition:
     transform .2s ease,
     border-color .2s ease;
+
+  overflow:hidden;
 }
 
 .card:hover{
@@ -639,7 +560,7 @@ section{
 
 
 /* =========================================================
-   DOMAIN NUMBER FRAME
+   RESEARCH DOMAIN NUMBER
    ========================================================= */
 
 .card-num{
@@ -648,49 +569,50 @@ section{
   align-items:center;
   justify-content:center;
 
-  width:78px;
-  height:78px;
+  width:54px;
+  height:46px;
 
   border:
     1px solid var(--cyan);
 
   color:var(--cyan);
 
-  border-radius:12px;
-
-  padding:0;
+  border-radius:4px;
 
   font-weight:800;
 
-  font-size:1.45rem;
+  font-size:.75rem;
 
-  margin-bottom:18px;
+  margin-bottom:10px;
 
   position:relative;
-
-  z-index:3;
+  z-index:2;
 }
 
 
 /* =========================================================
-   DOMAIN ICON
-   Each icon is exactly 2x the number frame:
-   78px frame → 156px icon
+   RESEARCH DOMAIN ICONS
+   1.png → Quality of Life
+   2.png → Accessibility
+   3.png → Mobility & Transport
+   4.png → Population & Demography
+   5.png → Housing & Socioeconomic
+   6.png → Urban & Rural Analysis
+   7.png → Environment & Climate
+
+   ICON IS APPROXIMATELY 2× THE NUMBER FRAME.
    ========================================================= */
 
 .domain-icon{
   position:absolute;
 
-  top:12px;
+  top:10px;
+  right:12px;
 
-  right:18px;
-
-  width:156px;
-
-  height:156px;
+  width:108px;
+  height:92px;
 
   object-fit:contain;
-
   object-position:center;
 
   display:block;
@@ -707,45 +629,32 @@ section{
 
 .card h3{
   font-size:.92rem;
-
   margin-bottom:5px;
 
   position:relative;
-
-  z-index:3;
-
-  max-width:60%;
+  z-index:2;
 }
 
 .card p{
   font-size:.75rem;
-
   color:var(--muted);
-
-  max-width:58%;
+  max-width:220px;
 
   position:relative;
-
-  z-index:3;
+  z-index:2;
 }
-
-
-/* =========================================================
-   DOMAIN ARROW
-   ========================================================= */
 
 .arrow{
   position:absolute;
 
   right:13px;
-
   bottom:12px;
 
   color:var(--cyan);
 
   font-size:1rem;
 
-  z-index:4;
+  z-index:3;
 }
 
 
@@ -755,12 +664,7 @@ section{
 
 .domain-link{
   display:block;
-
   height:100%;
-
-  position:relative;
-
-  z-index:2;
 }
 
 .domain-link:focus-visible{
@@ -779,28 +683,22 @@ section{
 
 .projects-head{
   display:flex;
-
   justify-content:space-between;
-
   align-items:end;
-
   margin-bottom:14px;
 }
 
 .projects-head a{
   color:var(--cyan);
-
   font-size:.78rem;
 }
 
 .projects{
   display:grid;
-
   grid-template-columns:
     repeat(6,1fr);
 
   gap:14px;
-
   align-items:stretch;
 }
 
@@ -859,9 +757,7 @@ section{
   padding:13px;
 
   display:flex;
-
   flex-direction:column;
-
   flex:1;
 }
 
@@ -869,7 +765,6 @@ section{
   color:var(--cyan);
 
   font-size:.68rem;
-
   font-weight:800;
 
   letter-spacing:.08em;
@@ -879,21 +774,15 @@ section{
 
 .project-body h3{
   font-size:.82rem;
-
   line-height:1.2;
-
   margin-bottom:7px;
 }
 
 .project-body p{
   font-size:.68rem;
-
   line-height:1.55;
-
   color:var(--muted);
-
   margin-bottom:8px;
-
   flex:1;
 }
 
@@ -914,16 +803,10 @@ section{
   padding:3px 6px;
 
   font-size:.57rem;
-
   font-weight:800;
 
   line-height:1.2;
 }
-
-
-/* =========================================================
-   PROJECT DOMAIN NAVIGATION
-   ========================================================= */
 
 .project-domain-link{
   display:inline-flex;
@@ -935,11 +818,9 @@ section{
   color:var(--cyan);
 
   font-size:.62rem;
-
   font-weight:800;
 
   text-transform:uppercase;
-
   letter-spacing:.04em;
 }
 
@@ -974,15 +855,12 @@ section{
 
 .panel h2{
   font-size:1rem;
-
   color:var(--cyan);
-
   margin-bottom:5px;
 }
 
 .panel>p{
   font-size:.72rem;
-
   color:var(--muted);
 }
 
@@ -1288,8 +1166,7 @@ footer{
   }
 
   /*
-     Keep Research Domains as 2 columns on tablet.
-     This produces 2 + 2 + 2 + 1.
+     Research domains remain two columns on tablet.
   */
 
   .research-grid{
@@ -1322,14 +1199,13 @@ footer{
     min-height:150px;
   }
 
-  .domain-icon{
-    width:130px;
-    height:130px;
-  }
+  /*
+     Keep domain icons large but contained on tablet.
+  */
 
-  .card h3,
-  .card p{
-    max-width:60%;
+  .domain-icon{
+    width:96px;
+    height:82px;
   }
 
 }
@@ -1419,35 +1295,35 @@ footer{
   }
 
   /*
-     Mobile domain cards retain the large icon,
-     but reduce it slightly so the content remains readable.
+     Mobile domain icons.
+     Still approximately 2× the number frame.
   */
 
   .domain-icon{
-    width:120px;
-    height:120px;
+    width:96px;
+    height:82px;
 
+    top:9px;
     right:10px;
-    top:10px;
   }
 
-  .card{
-    min-height:165px;
+}
+
+
+/* =========================================================
+   EXTRA SMALL SCREENS
+   ========================================================= */
+
+@media(max-width:380px){
+
+  .domain-icon{
+    width:82px;
+    height:70px;
   }
 
   .card-num{
-    width:60px;
-    height:60px;
-
-    font-size:1.15rem;
-  }
-
-  .card h3{
-    max-width:55%;
-  }
-
-  .card p{
-    max-width:55%;
+    width:50px;
+    height:43px;
   }
 
 }
@@ -1588,7 +1464,10 @@ footer{
 
     <div class="hero-visual">
 
-      <div class="hero-map" aria-hidden="true"></div>
+      <div
+        class="hero-map"
+        aria-hidden="true"
+      ></div>
 
       <div class="hero-card">
 
@@ -1604,7 +1483,10 @@ footer{
           Small-area analysis of quality of life across 18,919 Census Areas.
         </p>
 
-        <a class="btn btn-outline" href="#featured">
+        <a
+          class="btn btn-outline"
+          href="#featured"
+        >
           EXPLORE RESEARCH →
         </a>
 
@@ -1621,7 +1503,10 @@ footer{
      FEATURED RESEARCH
      ========================================================= -->
 
-<section id="featured" class="featured-wrap">
+<section
+  id="featured"
+  class="featured-wrap"
+>
 
   <div class="container">
 
@@ -1751,11 +1636,17 @@ footer{
               EXPLORE RESEARCH →
             </a>
 
-            <a class="btn btn-outline" href="#methods">
+            <a
+              class="btn btn-outline"
+              href="#methods"
+            >
               VIEW METHODS →
             </a>
 
-            <a class="btn btn-outline" href="#domain-qol">
+            <a
+              class="btn btn-outline"
+              href="#domain-qol"
+            >
               QUALITY OF LIFE →
             </a>
 
@@ -1774,7 +1665,7 @@ footer{
 
 <!-- =========================================================
      RESEARCH DOMAINS
-     4 CARDS TOP / 3 CARDS BOTTOM
+     4 CARDS TOP + 3 CARDS BOTTOM
      ========================================================= -->
 
 <section id="research">
@@ -2136,9 +2027,7 @@ footer{
     <div class="projects">
 
 
-      <!-- =================================================
-           SEL-001 — QUALITY OF LIFE
-           ================================================= -->
+      <!-- SEL-001 -->
 
       <article
         class="project-card"
@@ -2183,9 +2072,7 @@ footer{
       </article>
 
 
-      <!-- =================================================
-           SEL-002 — ACCESSIBILITY
-           ================================================= -->
+      <!-- SEL-002 -->
 
       <a
         href="/bandon/"
@@ -2229,9 +2116,7 @@ footer{
       </a>
 
 
-      <!-- =================================================
-           SEL-005 — ENVIRONMENT & CLIMATE
-           ================================================= -->
+      <!-- SEL-005 -->
 
       <article
         class="project-card"
@@ -2253,3 +2138,568 @@ footer{
 
           <h3>
             Athens Heat Risk
+          </h3>
+
+          <p>
+            Spatial modelling of heat risk and environmental quality to
+            identify areas experiencing elevated environmental exposure
+            and vulnerability.
+          </p>
+
+          <span class="badge">
+            ENVIRONMENT &amp; CLIMATE
+          </span>
+
+          <a
+            class="project-domain-link"
+            href="#domain-environment"
+          >
+            Research Domain →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- SEL-006 -->
+
+      <article
+        class="project-card"
+        id="project-sel-006"
+      >
+
+        <img
+          src="/project-windenergy.jpg"
+          alt="SEL-006 — County Wicklow Wind Energy Potential Assessment"
+          loading="lazy"
+        >
+
+        <div class="project-body">
+
+          <div class="project-id">
+            SEL-006
+          </div>
+
+          <h3>
+            Wicklow Wind Energy
+          </h3>
+
+          <p>
+            Spatial multi-criteria assessment of wind energy potential,
+            combining geographic suitability factors to support renewable
+            energy planning.
+          </p>
+
+          <span class="badge">
+            ENVIRONMENT &amp; CLIMATE
+          </span>
+
+          <a
+            class="project-domain-link"
+            href="#domain-environment"
+          >
+            Research Domain →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- SEL-007 -->
+
+      <article
+        class="project-card"
+        id="project-sel-007"
+      >
+
+        <img
+          src="/project-rondonia.jpg"
+          alt="SEL-007 — Rondônia Deforestation and Forest Loss Analysis"
+          loading="lazy"
+        >
+
+        <div class="project-body">
+
+          <div class="project-id">
+            SEL-007
+          </div>
+
+          <h3>
+            Rondônia Deforestation
+          </h3>
+
+          <p>
+            Spatial analysis of deforestation in Rondônia, examining
+            patterns of forest loss and land-use change using geographic
+            and temporal evidence.
+          </p>
+
+          <span class="badge">
+            ENVIRONMENT &amp; CLIMATE
+          </span>
+
+          <a
+            class="project-domain-link"
+            href="#domain-environment"
+          >
+            Research Domain →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- SEL-010 -->
+
+      <article
+        class="project-card"
+        id="project-sel-010"
+      >
+
+        <img
+          src="/project-sealevel.jpg"
+          alt="SEL-010 — Miami Sea Level Rise Impact Assessment"
+          loading="lazy"
+        >
+
+        <div class="project-body">
+
+          <div class="project-id">
+            SEL-010
+          </div>
+
+          <h3>
+            Miami Sea Level Rise
+          </h3>
+
+          <p>
+            Spatial assessment of potential sea level rise impacts in Miami,
+            examining exposure of land, infrastructure and communities to
+            coastal inundation.
+          </p>
+
+          <span class="badge">
+            ENVIRONMENT &amp; CLIMATE
+          </span>
+
+          <a
+            class="project-domain-link"
+            href="#domain-environment"
+          >
+            Research Domain →
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- DOMAIN NAVIGATION TARGETS -->
+
+    <div
+      id="projects-mobility"
+      aria-hidden="true"
+      style="height:1px"
+    ></div>
+
+    <div
+      id="projects-demography"
+      aria-hidden="true"
+      style="height:1px"
+    ></div>
+
+    <div
+      id="projects-housing"
+      aria-hidden="true"
+      style="height:1px"
+    ></div>
+
+    <div
+      id="projects-urban-rural"
+      aria-hidden="true"
+      style="height:1px"
+    ></div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     METHODS & SPATIAL DATA ENGINEERING
+     ========================================================= -->
+
+<section id="methods">
+
+  <div class="container engineering">
+
+
+    <div class="panel">
+
+      <h2>
+        METHODS &amp; SPATIAL DATA ENGINEERING
+      </h2>
+
+      <p>
+        Building structured spatial data pipelines that transform datasets
+        into reproducible evidence.
+      </p>
+
+
+      <div class="method-focus">
+
+        <div class="method-focus-title">
+          Spatial Methods &amp; ETL
+        </div>
+
+        <div class="method-focus-description">
+          How can data engineering and spatial methods generate evidence?
+        </div>
+
+      </div>
+
+
+      <div class="pipeline-large">
+
+        <div class="pipe-step">
+
+          <strong>▤</strong>
+
+          SOURCE
+
+        </div>
+
+        <div>→</div>
+
+        <div class="pipe-step">
+
+          <strong>▦</strong>
+
+          STAGING
+
+        </div>
+
+        <div>→</div>
+
+        <div class="pipe-step">
+
+          <strong>∿</strong>
+
+          SPATIAL ANALYSIS
+
+        </div>
+
+        <div>→</div>
+
+        <div class="pipe-step">
+
+          <strong>◎</strong>
+
+          EVIDENCE
+
+        </div>
+
+      </div>
+
+
+      <div class="tech">
+
+        <span>Python</span>
+        <span>R</span>
+        <span>PostGIS</span>
+        <span>QGIS</span>
+        <span>DuckDB</span>
+        <span>GeoPandas</span>
+        <span>sf</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- DATA PANEL -->
+
+    <div
+      class="panel"
+      id="data"
+    >
+
+      <h2>
+        DATA &amp; OUTPUTS
+      </h2>
+
+      <p>
+        Data resources, web maps, documentation and reproducible workflows.
+      </p>
+
+
+      <div class="outputs">
+
+        <div>
+
+          <ul>
+
+            <li>
+              • Web Maps &amp; Dashboards
+            </li>
+
+            <li>
+              • Spatial Datasets (GeoPackage, GeoJSON)
+            </li>
+
+            <li>
+              • Technical Reports &amp; Documentation
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div>
+
+          <div class="repo">
+
+            GitHub Repository:<br>
+
+            Spatial-Evidence-Lab
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESOURCES
+     ========================================================= -->
+
+<section id="resources">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <h2>
+        Resources &amp; Data
+      </h2>
+
+      <p>
+        Open resources, methodology papers and analytical outputs.
+      </p>
+
+    </div>
+
+
+    <div class="research-grid">
+
+
+      <article class="card">
+
+        <h3>
+          Methodology Guides
+        </h3>
+
+        <p>
+          Documentation on spatial analysis techniques, indicator
+          construction and normalisation.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <h3>
+          Open Datasets
+        </h3>
+
+        <p>
+          Processed geospatial layers, small-area boundaries and structured
+          spatial indicators.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <h3>
+          Code &amp; Notebooks
+        </h3>
+
+        <p>
+          Reproducible analytical pipelines, data engineering scripts and
+          GIS workflows.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <h3>
+          Publications
+        </h3>
+
+        <p>
+          Research briefs, spatial findings and applied geographical
+          evidence reports.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+     ========================================================= -->
+
+<section
+  class="about"
+  id="about"
+>
+
+  <div class="container about-grid">
+
+
+    <div class="about-logo-wrap">
+
+      <img
+        class="about-logo"
+        src="/logo.png"
+        alt="Spatial Evidence Lab"
+      >
+
+    </div>
+
+
+    <div>
+
+      <div class="eyebrow">
+        About the Lab
+      </div>
+
+      <h2>
+        Spatial Evidence Lab
+      </h2>
+
+      <p>
+        Spatial Evidence Lab is an independent geospatial research initiative
+        focused on producing rigorous, reproducible spatial analytics and
+        geographical evidence.
+      </p>
+
+      <p>
+        By combining spatial data engineering, statistical modeling and GIS
+        visualization, the lab examines spatial disparities, service
+        accessibility, environmental exposure, and quality of life across
+        small areas.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-top">
+
+
+      <div>
+
+        <a
+          href="#top"
+          aria-label="Return to Spatial Evidence Lab home"
+        >
+
+          <img
+            class="logo-image footer-logo"
+            src="/logo.png"
+            alt="Spatial Evidence Lab"
+          >
+
+        </a>
+
+        <div class="footer-description">
+          Independent Geospatial Research &amp; Spatial Analytics
+        </div>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="#research">
+          Research
+        </a>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#methods">
+          Methods
+        </a>
+
+        <a href="#data">
+          Data
+        </a>
+
+        <a href="#resources">
+          Resources
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      &copy; Spatial Evidence Lab. All rights reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>
