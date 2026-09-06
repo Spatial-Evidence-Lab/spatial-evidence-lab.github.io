@@ -100,7 +100,7 @@ img{
    ├── index.html
    ├── logo.png
    ├── hero-map.jpg
-   ├── main.jpg
+   ├── main.png
    ├── project-qol.jpg
    ├── project-bandon.jpg
    ├── project-heatrisk.jpg
@@ -175,17 +175,17 @@ nav{
   letter-spacing:-.02em;
 }
 
-.brand-name{
-  color:#fff;
-  font-size:1.02rem;
-  font-weight:800;
-  letter-spacing:-.025em;
-  white-space:nowrap;
-}
-
 .brand .logo-image{
   height:46px;
   max-width:230px;
+}
+
+.brand-name{
+  color:#fff;
+  font-size:1.05rem;
+  font-weight:800;
+  letter-spacing:-.025em;
+  white-space:nowrap;
 }
 
 .nav-links{
@@ -334,17 +334,16 @@ nav{
 
   background:
     url("/hero-map.jpg")
-    center center/contain
+    center/contain
     no-repeat;
 
   opacity:.95;
-  background-color:rgba(7,21,32,.35);
 
   mask-image:
     linear-gradient(
       to right,
       transparent 0%,
-      black 8%,
+      black 14%,
       black 100%
     );
 }
@@ -503,12 +502,10 @@ section{
   min-height:330px;
 
   background:
-    url("/main.jpg")
+    url("/main.png")
     center center/
     contain
     no-repeat;
-
-  background-color:#09151E;
 }
 
 .featured-content{
@@ -794,15 +791,13 @@ section{
 }
 
 /*
-   SEL-005 — keep the complete Athens Heat Risk artwork visible.
-   The source artwork contains a logo/branding area that should not
-   be cropped by the standard project-card cover treatment.
+   SEL-005 uses contain so the complete heat-risk artwork/logo remains
+   visible inside the same 180px image frame used by every project card.
 */
-.project-card--heat-risk img{
-  height:135px;
+.project-card img.project-image-fit{
   object-fit:contain;
   object-position:center center;
-  padding:4px 10px;
+  padding:0;
   background:#09151E;
 }
 
@@ -1255,6 +1250,10 @@ footer{
     height:200px;
   }
 
+  .project-card img.project-image-fit{
+    object-fit:contain;
+  }
+
   .nav-links{
     display:none;
   }
@@ -1288,7 +1287,7 @@ footer{
   }
 
   .brand-name{
-    font-size:.9rem;
+    font-size:.92rem;
   }
 
   .github{
@@ -1297,6 +1296,10 @@ footer{
 
   .project-card img{
     height:230px;
+  }
+
+  .project-card img.project-image-fit{
+    object-fit:contain;
   }
 
   .hero{
@@ -2030,11 +2033,12 @@ footer{
            ================================================= -->
 
       <article
-        class="project-card project-card--heat-risk"
+        class="project-card"
         id="project-sel-005"
       >
 
         <img
+          class="project-image-fit"
           src="/project-heatrisk.jpg"
           alt="SEL-005 — Greater Athens Heat Risk and Environmental Quality Assessment"
           loading="lazy"
