@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -10,14 +8,21 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        SEL-002 — Bandon Public Transport Accessibility Analysis
-    </title>
-
     <meta
         name="description"
-        content="Spatial Evidence Lab — SEL-002 Bandon Public Transport Accessibility Analysis, County Cork, Ireland."
+        content="SEL-002 — Bandon Public Transport Accessibility Analysis, County Cork, Ireland."
     >
+
+    <meta
+        name="theme-color"
+        content="#071018"
+    >
+
+    <title>SEL-002 — Bandon Public Transport Accessibility Analysis</title>
+
+    <!-- =====================================================
+         BANDON PROJECT STYLES
+         ===================================================== -->
 
     <link
         rel="stylesheet"
@@ -29,55 +34,52 @@
         href="css/maps.css"
     >
 
+    <link
+        rel="stylesheet"
+        href="css/print.css"
+        media="print"
+    >
 </head>
+
 
 <body>
 
-<!-- =====================================================
+<!-- =========================================================
      NAVIGATION
-     ===================================================== -->
+     ========================================================= -->
 
-<nav>
+<nav class="site-nav" aria-label="Primary navigation">
 
     <div class="container nav-inner">
 
-        <div class="brand">
+        <a
+            class="brand"
+            href="../index.html"
+            aria-label="Spatial Evidence Lab main page"
+        >
             Spatial Evidence Lab · SEL-002
-        </div>
+        </a>
 
         <div class="nav-links">
 
             <a
                 class="home-link"
                 href="../index.html"
-                aria-label="Return to Spatial Evidence Lab main page"
             >
                 ← Main Page
             </a>
 
-            <a href="#research">
-                Research
-            </a>
+            <a href="#research">Research</a>
 
-            <a href="#maps">
-                Maps
-            </a>
+            <a href="#maps">Maps</a>
 
-            <a href="#evidence">
-                Evidence
-            </a>
+            <a href="#evidence">Evidence</a>
 
-            <a href="#method">
-                Method
-            </a>
+            <a href="#method">Method</a>
 
-            <a href="#data">
-                Data
-            </a>
+            <a href="#data">Data</a>
 
-            <a href="#planning">
-                Planning
-            </a>
+            <a href="#planning">Planning</a>
 
         </div>
 
@@ -86,9 +88,9 @@
 </nav>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HERO
-     ===================================================== -->
+     ========================================================= -->
 
 <header class="hero">
 
@@ -108,6 +110,7 @@
             service, population vulnerability and transport equity
             in Bandon, County Cork, Ireland.
         </p>
+
 
         <div class="kpis">
 
@@ -138,11 +141,11 @@
 </header>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FEATURED RESULT
-     ===================================================== -->
+     ========================================================= -->
 
-<section>
+<section class="feature-section">
 
     <div class="container">
 
@@ -171,12 +174,17 @@
 
         <div class="hero-result">
 
-            <img
-                src="maps/01.06.png"
-                alt="Bandon accessibility and vulnerability hotspots map"
-            >
+            <div class="hero-result-image">
 
-            <div class="content">
+                <img
+                    src="maps/01.06.png"
+                    alt="Bandon accessibility and vulnerability hotspots map"
+                >
+
+            </div>
+
+
+            <div class="hero-result-content">
 
                 <div class="star">
                     EQUITY RESULT · MAP 01.06
@@ -194,10 +202,11 @@
                     potential transport disadvantage.
                 </p>
 
+
                 <div class="priority">
 
                     <strong>
-                        KEY FINDING
+                        Key Finding
                     </strong>
 
                     <p>
@@ -209,10 +218,11 @@
 
                 </div>
 
+
                 <div class="priority">
 
                     <strong>
-                        PRIORITY LOGIC
+                        Priority Logic
                     </strong>
 
                     <p>
@@ -225,10 +235,11 @@
 
                 </div>
 
+
                 <div class="priority">
 
                     <strong>
-                        PLANNING RELEVANCE
+                        Planning Relevance
                     </strong>
 
                     <p>
@@ -240,11 +251,10 @@
 
                 </div>
 
+
                 <div class="warning">
 
-                    <strong>
-                        Important:
-                    </strong>
+                    <strong>Important:</strong>
 
                     Hotspots indicate potential transport
                     disadvantage and should not be interpreted as
@@ -263,9 +273,9 @@
 </section>
 
 
-<!-- =====================================================
-     RESEARCH
-     ===================================================== -->
+<!-- =========================================================
+     01 — RESEARCH QUESTIONS
+     ========================================================= -->
 
 <section id="research">
 
@@ -296,11 +306,9 @@
 
         <div class="questions">
 
-            <div class="question">
+            <article class="question">
 
-                <span>
-                    RQ01
-                </span>
+                <span>RQ01</span>
 
                 <h3>
                     Where is public transport physically accessible?
@@ -311,14 +319,12 @@
                     transport vary across the Bandon urban area?
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="question">
+            <article class="question">
 
-                <span>
-                    RQ02
-                </span>
+                <span>RQ02</span>
 
                 <h3>
                     Where is effective service accessibility lower?
@@ -329,14 +335,12 @@
                     peak-time service combine spatially?
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="question">
+            <article class="question">
 
-                <span>
-                    RQ03
-                </span>
+                <span>RQ03</span>
 
                 <h3>
                     Where may transport disadvantage be greatest?
@@ -347,7 +351,7 @@
                     population vulnerability?
                 </p>
 
-            </div>
+            </article>
 
         </div>
 
@@ -356,9 +360,9 @@
 </section>
 
 
-<!-- =====================================================
-     ANALYTICAL FRAMEWORK
-     ===================================================== -->
+<!-- =========================================================
+     02 — ANALYTICAL FRAMEWORK
+     ========================================================= -->
 
 <section>
 
@@ -389,47 +393,109 @@
 
         <div class="framework">
 
-            <div class="step">
+            <article class="step">
+
                 <div class="step-number">01.00</div>
-                <h3>Transport Network</h3>
-                <p>Stops, routes and study-area context.</p>
-            </div>
 
-            <div class="step">
+                <h3>
+                    Transport Network
+                </h3>
+
+                <p>
+                    Stops, routes and study-area context.
+                </p>
+
+            </article>
+
+
+            <article class="step">
+
                 <div class="step-number">01.01</div>
-                <h3>Walking Catchments</h3>
-                <p>5, 10 and 15 minute walking access.</p>
-            </div>
 
-            <div class="step">
+                <h3>
+                    Walking Catchments
+                </h3>
+
+                <p>
+                    5, 10 and 15 minute walking access.
+                </p>
+
+            </article>
+
+
+            <article class="step">
+
                 <div class="step-number">01.02</div>
-                <h3>Walking Accessibility</h3>
-                <p>Network-based access score.</p>
-            </div>
 
-            <div class="step">
+                <h3>
+                    Walking Accessibility
+                </h3>
+
+                <p>
+                    Network-based access score.
+                </p>
+
+            </article>
+
+
+            <article class="step">
+
                 <div class="step-number">01.03</div>
-                <h3>Peak-Time Service</h3>
-                <p>Scheduled service frequency.</p>
-            </div>
 
-            <div class="step">
+                <h3>
+                    Peak-Time Service
+                </h3>
+
+                <p>
+                    Scheduled service frequency.
+                </p>
+
+            </article>
+
+
+            <article class="step">
+
                 <div class="step-number">01.04</div>
-                <h3>Population Vulnerability</h3>
-                <p>Census-based vulnerability indicators.</p>
-            </div>
 
-            <div class="step">
+                <h3>
+                    Population Vulnerability
+                </h3>
+
+                <p>
+                    Census-based vulnerability indicators.
+                </p>
+
+            </article>
+
+
+            <article class="step">
+
                 <div class="step-number">01.05</div>
-                <h3>Composite Accessibility</h3>
-                <p>Walking access and service combined.</p>
-            </div>
 
-            <div class="step">
+                <h3>
+                    Composite Accessibility
+                </h3>
+
+                <p>
+                    Walking access and service combined.
+                </p>
+
+            </article>
+
+
+            <article class="step">
+
                 <div class="step-number">01.06</div>
-                <h3>Equity Hotspots</h3>
-                <p>Accessibility deficit and vulnerability.</p>
-            </div>
+
+                <h3>
+                    Equity Hotspots
+                </h3>
+
+                <p>
+                    Accessibility deficit and vulnerability.
+                </p>
+
+            </article>
 
         </div>
 
@@ -438,9 +504,9 @@
 </section>
 
 
-<!-- =====================================================
-     MAP RESULTS
-     ===================================================== -->
+<!-- =========================================================
+     03 — MAP RESULTS
+     ========================================================= -->
 
 <section id="maps">
 
@@ -474,12 +540,23 @@
 
             <!-- MAP 01.00 -->
 
-            <div class="map-card">
+            <article class="map-card">
 
-                <img
-                    src="maps/01.00.png"
-                    alt="Bandon study area and public transport network"
+                <a
+                    class="map-image-link"
+                    href="maps/01.00.png"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open Map 01.00"
                 >
+
+                    <img
+                        src="maps/01.00.png"
+                        alt="Bandon study area and public transport network"
+                        loading="lazy"
+                    >
+
+                </a>
 
                 <div class="map-card-content">
 
@@ -517,17 +594,28 @@
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- MAP 01.01 -->
 
-            <div class="map-card">
+            <article class="map-card">
 
-                <img
-                    src="maps/01.01.png"
-                    alt="Bandon public transport walking catchments"
+                <a
+                    class="map-image-link"
+                    href="maps/01.01.png"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open Map 01.01"
                 >
+
+                    <img
+                        src="maps/01.01.png"
+                        alt="Bandon public transport walking catchments"
+                        loading="lazy"
+                    >
+
+                </a>
 
                 <div class="map-card-content">
 
@@ -565,17 +653,28 @@
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- MAP 01.02 -->
 
-            <div class="map-card">
+            <article class="map-card">
 
-                <img
-                    src="maps/01.02.png"
-                    alt="Bandon walking accessibility score"
+                <a
+                    class="map-image-link"
+                    href="maps/01.02.png"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open Map 01.02"
                 >
+
+                    <img
+                        src="maps/01.02.png"
+                        alt="Bandon walking accessibility score"
+                        loading="lazy"
+                    >
+
+                </a>
 
                 <div class="map-card-content">
 
@@ -589,9 +688,10 @@
 
                     <p>
                         Converts network-based walking access to
-                        public transport into a spatial accessibility
-                        measure, highlighting differences between
-                        central and peripheral locations.
+                        public transport into a spatial
+                        accessibility measure, highlighting
+                        differences between central and
+                        peripheral locations.
                     </p>
 
                     <div class="map-card-footer">
@@ -613,17 +713,28 @@
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- MAP 01.03 -->
 
-            <div class="map-card">
+            <article class="map-card">
 
-                <img
-                    src="maps/01.03.png"
-                    alt="Bandon peak-time public transport service accessibility"
+                <a
+                    class="map-image-link"
+                    href="maps/01.03.png"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open Map 01.03"
                 >
+
+                    <img
+                        src="maps/01.03.png"
+                        alt="Bandon peak-time public transport service accessibility"
+                        loading="lazy"
+                    >
+
+                </a>
 
                 <div class="map-card-content">
 
@@ -662,17 +773,28 @@
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- MAP 01.04 -->
 
-            <div class="map-card">
+            <article class="map-card">
 
-                <img
-                    src="maps/01.04.png"
-                    alt="Bandon population vulnerability"
+                <a
+                    class="map-image-link"
+                    href="maps/01.04.png"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open Map 01.04"
                 >
+
+                    <img
+                        src="maps/01.04.png"
+                        alt="Bandon population vulnerability"
+                        loading="lazy"
+                    >
+
+                </a>
 
                 <div class="map-card-content">
 
@@ -710,17 +832,28 @@
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- MAP 01.05 -->
 
-            <div class="map-card">
+            <article class="map-card">
 
-                <img
-                    src="maps/01.05.png"
-                    alt="Bandon composite public transport accessibility index"
+                <a
+                    class="map-image-link"
+                    href="maps/01.05.png"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open Map 01.05"
                 >
+
+                    <img
+                        src="maps/01.05.png"
+                        alt="Bandon composite public transport accessibility index"
+                        loading="lazy"
+                    >
+
+                </a>
 
                 <div class="map-card-content">
 
@@ -734,9 +867,9 @@
 
                     <p>
                         Combines walking-network accessibility and
-                        scheduled public transport service frequency
-                        to represent effective public transport
-                        accessibility.
+                        scheduled public transport service
+                        frequency to represent effective public
+                        transport accessibility.
                     </p>
 
                     <div class="map-card-footer">
@@ -758,17 +891,28 @@
 
                 </div>
 
-            </div>
+            </article>
 
 
             <!-- MAP 01.06 -->
 
-            <div class="map-card">
+            <article class="map-card">
 
-                <img
-                    src="maps/01.06.png"
-                    alt="Bandon accessibility and vulnerability hotspots"
+                <a
+                    class="map-image-link"
+                    href="maps/01.06.png"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open Map 01.06"
                 >
+
+                    <img
+                        src="maps/01.06.png"
+                        alt="Bandon accessibility and vulnerability hotspots"
+                        loading="lazy"
+                    >
+
+                </a>
 
                 <div class="map-card-content">
 
@@ -805,7 +949,8 @@
 
                 </div>
 
-            </div>
+            </article>
+
 
         </div>
 
@@ -814,9 +959,9 @@
 </section>
 
 
-<!-- =====================================================
-     COMPOSITE RESULT
-     ===================================================== -->
+<!-- =========================================================
+     01.05 — COMPOSITE RESULT
+     ========================================================= -->
 
 <section>
 
@@ -847,12 +992,18 @@
 
         <div class="hero-result">
 
-            <img
-                src="maps/01.05.png"
-                alt="Bandon Composite Public Transport Accessibility Index"
-            >
+            <div class="hero-result-image">
 
-            <div class="content">
+                <img
+                    src="maps/01.05.png"
+                    alt="Bandon Composite Public Transport Accessibility Index"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="hero-result-content">
 
                 <div class="star">
                     KEY RESULT · MAP 01.05
@@ -863,55 +1014,60 @@
                 </h3>
 
                 <p>
-                    The Composite Accessibility Index integrates
-                    walking-network accessibility with scheduled
-                    public transport service frequency. This
-                    provides a combined measure of effective
-                    public transport accessibility across Bandon.
+                    The Composite Accessibility Index (CAI)
+                    integrates walking-network accessibility
+                    with scheduled public transport service
+                    frequency. This provides a combined measure
+                    of effective public transport accessibility
+                    across Bandon.
                 </p>
+
 
                 <div class="priority">
 
                     <strong>
-                        KEY FINDING
+                        Key Finding
                     </strong>
 
                     <p>
-                        Accessibility is generally strongest within
-                        and around the central urban area, while
-                        lower composite accessibility extends
-                        toward peripheral residential areas.
+                        Accessibility is generally strongest
+                        within and around the central urban area,
+                        while lower composite accessibility
+                        extends toward peripheral residential
+                        areas.
                     </p>
 
                 </div>
 
+
                 <div class="priority">
 
                     <strong>
-                        INTERPRETATION
+                        Interpretation
                     </strong>
 
                     <p>
                         Proximity to a public transport stop does
                         not necessarily indicate equivalent
-                        effective accessibility. Walking access and
-                        scheduled service frequency both influence
-                        the overall accessibility result.
+                        effective accessibility. Walking access
+                        and scheduled service frequency both
+                        influence the overall accessibility result.
                     </p>
 
                 </div>
 
+
                 <div class="priority">
 
                     <strong>
-                        PLANNING RELEVANCE
+                        Planning Relevance
                     </strong>
 
                     <p>
                         Areas with lower composite accessibility
                         provide a screening layer for investigating
-                        pedestrian connections, stop provision and
-                        public transport service coverage.
+                        pedestrian connections, stop provision
+                        and public transport service coverage.
                     </p>
 
                 </div>
@@ -925,9 +1081,9 @@
 </section>
 
 
-<!-- =====================================================
-     EVIDENCE
-     ===================================================== -->
+<!-- =========================================================
+     05 — EVIDENCE SYNTHESIS
+     ========================================================= -->
 
 <section id="evidence">
 
@@ -948,10 +1104,10 @@
             </div>
 
             <p>
-                The seven maps form a connected evidence chain
-                from network structure and walking access through
-                service availability, vulnerability, composite
-                accessibility and equity.
+                The seven maps form a connected evidence chain from
+                network structure and walking access through service
+                availability, vulnerability, composite accessibility
+                and equity.
             </p>
 
         </div>
@@ -959,7 +1115,8 @@
 
         <div class="insights">
 
-            <div class="insight">
+
+            <article class="insight">
 
                 <strong>
                     01 · NETWORK → CONNECTIVITY
@@ -979,10 +1136,10 @@
                     spatially constrained.
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="insight">
+            <article class="insight">
 
                 <strong>
                     02 · WALKING → CORE–PERIPHERY
@@ -996,16 +1153,17 @@
                 <p>
                     The walking catchments and accessibility score
                     indicate a broad core-to-periphery pattern.
-                    Central areas benefit from closer access to the
-                    transport network, while peripheral residential
-                    locations tend to experience greater walking
-                    distances or weaker network connectivity.
+                    Central areas benefit from closer access to
+                    the transport network, while peripheral
+                    residential locations tend to experience
+                    greater walking distances or weaker network
+                    connectivity.
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="insight">
+            <article class="insight">
 
                 <strong>
                     03 · SERVICE → FREQUENCY
@@ -1024,10 +1182,1518 @@
                     service.
                 </p>
 
+            </article>
+
+
+            <article class="insight">
+
+                <strong>
+                    04 · VULNERABILITY → EXPOSURE
+                </strong>
+
+                <h3>
+                    Population vulnerability is spatially
+                    differentiated
+                </h3>
+
+                <p>
+                    Vulnerability is not distributed uniformly
+                    across Bandon. Areas with greater potential
+                    transport dependence therefore need to be
+                    considered alongside the accessibility pattern
+                    rather than assessed independently.
+                </p>
+
+            </article>
+
+
+            <article class="insight">
+
+                <strong>
+                    05 · EQUITY → PRIORITY
+                </strong>
+
+                <h3>
+                    The strongest equity signal occurs where
+                    deficits overlap with vulnerability
+                </h3>
+
+                <p>
+                    The final hotspot analysis brings the evidence
+                    together. Locations with lower accessibility
+                    and higher vulnerability receive greater
+                    screening priority.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <div class="next-research">
+
+            <strong>
+                Evidence chain
+            </strong>
+
+            <p>
+                <b>01.00</b> establishes the network →
+                <b>01.01</b> measures walking reach →
+                <b>01.02</b> quantifies walking accessibility →
+                <b>01.03</b> adds service frequency →
+                <b>01.04</b> identifies vulnerability →
+                <b>01.05</b> produces the composite accessibility
+                result →
+                <b>01.06</b> identifies potential equity hotspots.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SPATIAL TYPOLOGY
+     ========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    Spatial Interpretation
+                </div>
+
+                <h2>
+                    Spatial Typology
+                </h2>
+
+            </div>
+
+            <p>
+                The combined evidence suggests three broad spatial
+                conditions that can be used to interpret the
+                accessibility pattern.
+            </p>
+
+        </div>
+
+
+        <div class="typology">
+
+
+            <article class="type">
+
+                <div class="label">
+                    Type 01
+                </div>
+
+                <h3>
+                    Well-Served Core
+                </h3>
+
+                <p>
+                    Central urban areas where walking access and
+                    public transport service are comparatively
+                    strong.
+                </p>
+
+                <ul>
+                    <li>Shorter walking distances</li>
+                    <li>Greater network connectivity</li>
+                    <li>Stronger composite accessibility</li>
+                </ul>
+
+            </article>
+
+
+            <article class="type">
+
+                <div class="label">
+                    Type 02
+                </div>
+
+                <h3>
+                    Transitional Residential Areas
+                </h3>
+
+                <p>
+                    Areas where accessibility remains available
+                    but becomes more dependent on walking
+                    connections and service characteristics.
+                </p>
+
+                <ul>
+                    <li>Intermediate walking access</li>
+                    <li>Variable service availability</li>
+                    <li>Potential localised accessibility deficits</li>
+                </ul>
+
+            </article>
+
+
+            <article class="type">
+
+                <div class="label">
+                    Type 03
+                </div>
+
+                <h3>
+                    Peripheral Estates &amp; Margins
+                </h3>
+
+                <p>
+                    Outer residential locations where walking
+                    access, service availability and vulnerability
+                    may combine to create greater potential
+                    transport disadvantage.
+                </p>
+
+                <ul>
+                    <li>Longer walking access</li>
+                    <li>Lower composite accessibility</li>
+                    <li>Potential hotspot conditions</li>
+                </ul>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     06 — METHOD
+     ========================================================= -->
+
+<section id="method">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    06 · Method &amp; Reproducibility
+                </div>
+
+                <h2>
+                    How the Analysis Was Built
+                </h2>
+
+            </div>
+
+            <p>
+                The workflow separates transport network
+                accessibility, scheduled service, population
+                vulnerability and equity screening.
+            </p>
+
+        </div>
+
+
+        <!-- WORKFLOW -->
+
+        <div class="workflow">
+
+            <div class="workflow-step">
+
+                <strong>01.00</strong>
+
+                <span>
+                    Define study area and transport network
+                </span>
+
             </div>
 
 
-            <div class="insight">
+            <div class="workflow-step">
+
+                <strong>01.01</strong>
+
+                <span>
+                    Generate walking-time catchments
+                </span>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>01.02</strong>
+
+                <span>
+                    Derive walking accessibility
+                </span>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>01.03</strong>
+
+                <span>
+                    Measure peak-time service
+                </span>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>01.04 → 01.05</strong>
+
+                <span>
+                    Add vulnerability and composite accessibility
+                </span>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>01.06</strong>
+
+                <span>
+                    Screen accessibility–vulnerability hotspots
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- METHOD CARDS -->
+
+        <div class="method-grid">
+
+
+            <article class="method-card">
+
+                <div class="method-label">
+                    Input 01 · Census 2022
+                </div>
+
+                <h3>
+                    Population &amp; Vulnerability
+                </h3>
+
+                <p>
+                    Census 2022 population characteristics provide
+                    the population-based evidence used to represent
+                    spatial differences in potential transport
+                    vulnerability and dependence.
+                </p>
+
+                <ul>
+                    <li>Population characteristics</li>
+                    <li>Transport-relevant vulnerability</li>
+                    <li>Small-area spatial analysis</li>
+                </ul>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="method-label">
+                    Input 02 · Public Transport / GTFS
+                </div>
+
+                <h3>
+                    Stops, Routes &amp; Scheduled Service
+                </h3>
+
+                <p>
+                    Public transport stop and scheduled service
+                    information defines the transport network and
+                    provides the service frequency dimension used
+                    in the analysis.
+                </p>
+
+                <ul>
+                    <li>Stop locations</li>
+                    <li>Route/service information</li>
+                    <li>Peak-period service</li>
+                </ul>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="method-label">
+                    Input 03 · GIS Network Analysis
+                </div>
+
+                <h3>
+                    Walking Accessibility
+                </h3>
+
+                <p>
+                    GIS network analysis is used to represent
+                    practical walking access to public transport
+                    rather than relying only on straight-line
+                    distance.
+                </p>
+
+                <ul>
+                    <li>Walking network</li>
+                    <li>5-minute access</li>
+                    <li>10-minute access</li>
+                    <li>15-minute access</li>
+                </ul>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="method-label">
+                    Processing
+                </div>
+
+                <h3>
+                    Spatial Integration
+                </h3>
+
+                <p>
+                    Transport, walking, service and population
+                    datasets are processed through sequential GIS
+                    operations to generate comparable spatial
+                    measures.
+                </p>
+
+                <ul>
+                    <li>Network accessibility</li>
+                    <li>Spatial aggregation</li>
+                    <li>Normalisation</li>
+                    <li>Composite scoring</li>
+                </ul>
+
+            </article>
+
+
+            <article class="method-card full">
+
+                <div class="method-label">
+                    Analytical Integration
+                </div>
+
+                <h3>
+                    Composite Accessibility &amp; Equity Screening
+                </h3>
+
+                <p>
+                    Walking accessibility and scheduled service
+                    frequency are combined to produce the
+                    Composite Accessibility Index. The composite
+                    result is then used to derive an accessibility
+                    deficit, which is combined with normalised
+                    population vulnerability for the final
+                    equity-focused hotspot screening.
+                </p>
+
+
+                <div class="formula">
+
+                    <div class="formula-label">
+                        Hotspot screening model
+                    </div>
+
+                    <div class="formula-equation">
+                        Hotspot Score =
+                        0.40 × Access Deficit
+                        +
+                        0.60 × VUL<sub>norm</sub>
+                    </div>
+
+                    <div class="formula-note">
+                        Higher values indicate greater combined
+                        screening priority based on accessibility
+                        deficit and population vulnerability.
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- DATA FLOW -->
+
+        <div class="processing-section">
+
+            <div class="eyebrow">
+                Processing Workflow
+            </div>
+
+
+            <div class="data-table-wrap">
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Stage</th>
+                            <th>Input / Evidence</th>
+                            <th>GIS / Analytical Process</th>
+                            <th>Output</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>01.00</td>
+
+                            <td>
+                                Public transport network and
+                                study area
+                            </td>
+
+                            <td>
+                                Define analysis extent and map
+                                transport network
+                            </td>
+
+                            <td>
+                                Network context
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>01.01</td>
+
+                            <td>
+                                Stops + walking network
+                            </td>
+
+                            <td>
+                                Network-based walking-time analysis
+                            </td>
+
+                            <td>
+                                5 / 10 / 15 minute catchments
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>01.02</td>
+
+                            <td>
+                                Walking network accessibility
+                            </td>
+
+                            <td>
+                                Convert practical network access
+                                into spatial accessibility measure
+                            </td>
+
+                            <td>
+                                Walking accessibility
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>01.03</td>
+
+                            <td>
+                                GTFS / scheduled service
+                            </td>
+
+                            <td>
+                                Derive peak-time service
+                                availability/frequency
+                            </td>
+
+                            <td>
+                                Service accessibility
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>01.04</td>
+
+                            <td>
+                                Census 2022
+                            </td>
+
+                            <td>
+                                Derive population vulnerability
+                                measure
+                            </td>
+
+                            <td>
+                                Vulnerability surface
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>01.05</td>
+
+                            <td>
+                                Walking accessibility + service
+                            </td>
+
+                            <td>
+                                Combine accessibility dimensions
+                            </td>
+
+                            <td>
+                                Composite Accessibility Index
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>01.06</td>
+
+                            <td>
+                                Access deficit + VUL<sub>norm</sub>
+                            </td>
+
+                            <td>
+                                Weighted equity-focused hotspot
+                                screening
+                            </td>
+
+                            <td>
+                                Priority classification
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- INTERPRETATION -->
+
+        <div class="method-grid">
+
+
+            <article class="method-card">
+
+                <div class="method-label">
+                    Interpretation Principle
+                </div>
+
+                <h3>
+                    Accessibility is multidimensional
+                </h3>
+
+                <p>
+                    The analysis does not treat proximity to a
+                    public transport stop as a complete measure
+                    of accessibility. Walking connectivity and
+                    scheduled service both contribute to effective
+                    access.
+                </p>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="method-label">
+                    Equity Principle
+                </div>
+
+                <h3>
+                    Need is considered alongside access
+                </h3>
+
+                <p>
+                    The hotspot stage introduces population
+                    vulnerability so that areas with lower
+                    accessibility can be distinguished according
+                    to the potential social significance of that
+                    deficit.
+                </p>
+
+            </article>
+
+
+            <article class="method-card full">
+
+                <div class="method-label">
+                    Reproducibility &amp; Limitations
+                </div>
+
+                <h3>
+                    Screening evidence rather than a final
+                    investment decision
+                </h3>
+
+                <p>
+                    The outputs are designed as a reproducible
+                    spatial screening framework. Results should
+                    be interpreted alongside local knowledge,
+                    current service conditions, detailed site
+                    assessment, operational feasibility,
+                    stakeholder engagement and other relevant
+                    planning evidence.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DATA & REPRODUCIBILITY
+     ========================================================= -->
+
+<section id="data">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    Data &amp; Reproducibility
+                </div>
+
+                <h2>
+                    Evidence Base, Sources &amp; Outputs
+                </h2>
+
+            </div>
+
+            <p>
+                The project separates source datasets, analytical
+                processing and published outputs so that the
+                workflow can be reviewed, reused and updated.
+            </p>
+
+        </div>
+
+
+        <div class="resource-grid">
+
+
+            <article class="resource-card">
+
+                <div class="resource-type">
+                    DATA SOURCE · 01
+                </div>
+
+                <h3>
+                    Census 2022
+                </h3>
+
+                <p>
+                    Census 2022 population data provide the
+                    demographic evidence used to represent spatial
+                    differences in potential transport vulnerability.
+                </p>
+
+                <a
+                    class="button-link"
+                    href="https://www.cso.ie/en/census/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    CSO Census ↗
+                </a>
+
+            </article>
+
+
+            <article class="resource-card">
+
+                <div class="resource-type">
+                    DATA SOURCE · 02
+                </div>
+
+                <h3>
+                    Public Transport / GTFS
+                </h3>
+
+                <p>
+                    Public transport stop, route and scheduled
+                    service information provides the network and
+                    peak-time service dimensions of the analysis.
+                </p>
+
+                <a
+                    class="button-link"
+                    href="https://www.transportforireland.ie/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Transport for Ireland ↗
+                </a>
+
+            </article>
+
+
+            <article class="resource-card">
+
+                <div class="resource-type">
+                    ANALYSIS · 03
+                </div>
+
+                <h3>
+                    GIS Network Analysis
+                </h3>
+
+                <p>
+                    Walking-network analysis converts transport
+                    stop locations into practical walking
+                    accessibility measures and catchments.
+                </p>
+
+                <a
+                    class="button-link"
+                    href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ArcGIS Pro ↗
+                </a>
+
+            </article>
+
+
+            <article class="resource-card">
+
+                <div class="resource-type">
+                    REPOSITORY · 04
+                </div>
+
+                <h3>
+                    Spatial Evidence Lab
+                </h3>
+
+                <p>
+                    The project repository contains the web
+                    presentation, analytical outputs and
+                    supporting project materials.
+                </p>
+
+                <a
+                    class="button-link"
+                    href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    GitHub Repository ↗
+                </a>
+
+            </article>
+
+
+            <article class="resource-card">
+
+                <div class="resource-type">
+                    PROJECT · 05
+                </div>
+
+                <h3>
+                    SEL-002 Project Page
+                </h3>
+
+                <p>
+                    The project landing page provides the published
+                    research narrative, map series and
+                    interpretation of the Bandon accessibility
+                    analysis.
+                </p>
+
+                <a
+                    class="button-link"
+                    href="./index.html"
+                    aria-current="page"
+                >
+                    Current Project ↗
+                </a>
+
+            </article>
+
+
+            <article class="resource-card">
+
+                <div class="resource-type">
+                    OUTPUTS · 06
+                </div>
+
+                <h3>
+                    Map Output Series
+                </h3>
+
+                <p>
+                    Published outputs are organised as Map 01.00
+                    through Map 01.06, following the project's
+                    analytical evidence chain.
+                </p>
+
+                <a
+                    class="button-link"
+                    href="./maps/index.html"
+                >
+                    View Map Series ↗
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <div class="link-row">
+
+            <a
+                class="button-link"
+                href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
+                target="_blank"
+                rel="noopener"
+            >
+                GitHub Repository ↗
+            </a>
+
+            <a
+                class="button-link"
+                href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/bandon"
+                target="_blank"
+                rel="noopener"
+            >
+                SEL-002 Source Files ↗
+            </a>
+
+            <a
+                class="button-link"
+                href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/bandon/maps"
+                target="_blank"
+                rel="noopener"
+            >
+                Map Outputs ↗
+            </a>
+
+            <a
+                class="button-link"
+                href="../index.html"
+            >
+                ← Return to Spatial Evidence Lab
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     07 — HOTSPOTS
+     ========================================================= -->
+
+<section id="hotspots">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    07 · Equity Screening
+                </div>
+
+                <h2>
+                    Accessibility–Vulnerability Hotspots
+                </h2>
+
+            </div>
+
+            <p>
+                Map 01.06 identifies locations where accessibility
+                deficits and population vulnerability overlap.
+            </p>
+
+        </div>
+
+
+        <div class="hero-result">
+
+            <div class="hero-result-image">
+
+                <img
+                    src="maps/01.06.png"
+                    alt="Bandon equity-focused vulnerability hotspots"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="hero-result-content">
+
+                <div class="star hotspot-star">
+                    EQUITY RESULT · MAP 01.06
+                </div>
+
+                <h3>
+                    Accessibility–Vulnerability Hotspots
+                </h3>
+
+                <p>
+                    The final hotspot analysis identifies locations
+                    where lower public transport accessibility
+                    overlaps with higher population vulnerability,
+                    providing an equity-focused screening of
+                    potential transport disadvantage.
+                </p>
+
+
+                <div class="priority">
+
+                    <strong>
+                        Key Finding
+                    </strong>
+
+                    <p>
+                        Priority areas emerge where accessibility
+                        deficits and population vulnerability occur
+                        together, rather than where either condition
+                        exists in isolation.
+                    </p>
+
+                </div>
+
+
+                <div class="priority">
+
+                    <strong>
+                        Priority Logic
+                    </strong>
+
+                    <p>
+                        Critical Hotspots represent very low
+                        accessibility combined with high population
+                        vulnerability. High Priority areas combine
+                        lower accessibility with elevated
+                        vulnerability.
+                    </p>
+
+                </div>
+
+
+                <div class="priority">
+
+                    <strong>
+                        Planning Relevance
+                    </strong>
+
+                    <p>
+                        These locations provide a spatial screening
+                        tool for prioritising further investigation
+                        of pedestrian infrastructure, public
+                        transport coverage and service provision.
+                    </p>
+
+                </div>
+
+
+                <div class="warning">
+
+                    <strong>Important:</strong>
+
+                    Hotspots indicate potential transport
+                    disadvantage and should not be interpreted as
+                    definitive investment decisions without local
+                    validation, stakeholder knowledge and
+                    operational feasibility assessment.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="link-row">
+
+            <a
+                class="button-link"
+                href="maps/01.06.png"
+                target="_blank"
+                rel="noopener"
+            >
+                Open Map 01.06 ↗
+            </a>
+
+            <a
+                class="button-link"
+                href="./maps/index.html"
+            >
+                View All Outputs ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     08 — PLANNING IMPLICATIONS
+     ========================================================= -->
+
+<section id="planning">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    08 · Planning
+                </div>
+
+                <h2>
+                    Planning Implications
+                </h2>
+
+            </div>
+
+            <p>
+                The analysis provides a spatial screening framework
+                for identifying where further transport and
+                public-realm investigation may provide the greatest
+                potential benefit.
+            </p>
+
+        </div>
+
+
+        <div class="implications">
+
+
+            <article class="implication">
+
+                <div class="implication-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        Priority infrastructure interventions
+                    </h3>
+
+                    <p>
+                        Use Map 01.06 as an initial screening layer
+                        for potential investment in pedestrian
+                        infrastructure. Critical hotspot areas can
+                        be investigated for footpath connectivity,
+                        lighting and safer crossings along access
+                        corridors to central public transport stops.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="implication">
+
+                <div class="implication-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Bus stop network expansion and micro-routing
+                    </h3>
+
+                    <p>
+                        Areas with weaker walking access can be
+                        evaluated for additional stops, feeder
+                        arrangements or local loop routing.
+                        Peripheral residential areas may benefit
+                        from closer connections to the existing
+                        network where demand and operational
+                        feasibility support intervention.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="implication">
+
+                <div class="implication-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        Peak service frequency optimisation
+                    </h3>
+
+                    <p>
+                        The service-frequency analysis provides a
+                        basis for examining whether peak-period
+                        service levels adequately support movement
+                        between Bandon and Cork City and whether
+                        identified accessibility deficits are partly
+                        associated with service availability.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="implication">
+
+                <div class="implication-number">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>
+                        Institutionalise GIS accessibility monitoring
+                    </h3>
+
+                    <p>
+                        The workflow can be incorporated into local
+                        planning and transport monitoring processes
+                        and rerun as updated GTFS, Census and
+                        network data become available.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     09 — QUALITY ASSURANCE
+     ========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    09 · Publication QA
+                </div>
+
+                <h2>
+                    Final Quality Assurance
+                </h2>
+
+            </div>
+
+            <p>
+                The final publication check should confirm that the
+                analytical content, visual presentation, navigation
+                and deployed outputs remain aligned.
+            </p>
+
+        </div>
+
+
+        <div class="qa-grid">
+
+
+            <article class="qa-card">
+
+                <div class="qa-status">
+                    Check · Maps
+                </div>
+
+                <h3>
+                    Map links
+                </h3>
+
+                <p>
+                    Confirm that 01.00–01.06 display correctly and
+                    that every output link resolves to the intended
+                    file.
+                </p>
+
+            </article>
+
+
+            <article class="qa-card">
+
+                <div class="qa-status">
+                    Check · Mobile
+                </div>
+
+                <h3>
+                    Responsive layout
+                </h3>
+
+                <p>
+                    Check cards, map images, tables, navigation and
+                    text at desktop, tablet and mobile widths.
+                </p>
+
+            </article>
+
+
+            <article class="qa-card">
+
+                <div class="qa-status">
+                    Check · Navigation
+                </div>
+
+                <h3>
+                    Anchors
+                </h3>
+
+                <p>
+                    Confirm that Research, Maps, Evidence, Method,
+                    Data and Planning navigation anchors land on
+                    the correct sections.
+                </p>
+
+            </article>
+
+
+            <article class="qa-card">
+
+                <div class="qa-status">
+                    Check · Deployment
+                </div>
+
+                <h3>
+                    GitHub Pages
+                </h3>
+
+                <p>
+                    Confirm the published page loads correctly and
+                    that the latest committed version is being
+                    served.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <div class="warning">
+
+            <strong>
+                Publication rule:
+            </strong>
+
+            Do not remove obsolete map or project files until the
+            replacement page has been committed, deployed and
+            independently checked on the live GitHub Pages site.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONCLUSION
+     ========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    Conclusion
+                </div>
+
+                <h2>
+                    From Access to Equity
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="conclusion">
+
+            <p>
+                The Bandon analysis demonstrates that public
+                transport accessibility cannot be understood from
+                stop proximity alone. The spatial pattern is shaped
+                by the interaction between the transport network,
+                walking connectivity, scheduled service frequency
+                and the characteristics of the population living
+                in different locations.
+            </p>
+
+
+            <p>
+                The evidence indicates a broad central-to-peripheral
+                accessibility pattern, with the strongest composite
+                accessibility generally associated with the central
+                urban area and lower accessibility extending into
+                peripheral residential locations.
+            </p>
+
+
+            <p>
+                The final equity analysis adds an important
+                planning dimension: areas with poor accessibility
+                are not necessarily the same as areas where poor
+                accessibility may have the greatest social
+                significance. Combining accessibility deficits with
+                vulnerability provides a more targeted basis for
+                screening potential transport disadvantage.
+            </p>
+
+
+            <div class="next-research">
 
                 <strong>
-                    04
+                    Next research
+                </strong>
+
+                <p>
+                    Future development could extend the analysis
+                    through more detailed temporal service analysis,
+                    population-demand modelling, accessibility by
+                    destination type, validation against observed
+                    travel behaviour and scenario testing for
+                    proposed stop, routing or service interventions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="footer-title">
+                    Spatial Evidence Lab
+                </div>
+
+                <div class="footer-text">
+                    SEL-002 · Bandon Public Transport
+                    Accessibility Analysis
+                </div>
+
+            </div>
+
+
+            <div class="footer-text">
+                County Cork · Ireland
+            </div>
+
+        </div>
+
+
+        <div class="footer-navigation">
+
+            <a
+                class="footer-home"
+                href="../index.html"
+            >
+                ← Return to Spatial Evidence Lab Main Page
+            </a>
+
+            <a
+                class="footer-home secondary"
+                href="#top"
+                onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;"
+            >
+                ↑ Back to Top
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     OPTIONAL PROJECT JAVASCRIPT
+     ========================================================= -->
+
+<script src="js/sel-interactions.js"></script>
+
+</body>
+</html>
