@@ -56,3 +56,7 @@ footer{padding:45px 0;color:var(--muted);font-size:.7rem;border-top:1px solid va
 @media(max-width:600px){.navlinks{gap:7px;justify-content:flex-end}.navlinks a{font-size:.6rem}.brand{font-size:.62rem}.hero{padding-top:60px}h1{font-size:2.7rem}.mapbody{padding:17px}.map-card-head{padding:18px 17px 14px}.map-actions{padding-top:18px}}
 @media(max-width:600px){.evidence-chain{grid-template-columns:repeat(2,1fr);margin-bottom:24px;padding:12px}.evidence-chain a{min-width:0;padding:8px}.evidence-chain b{font-size:.6rem}}
 @media(max-width:390px){.container{width:90%}.hero h1{font-size:2.35rem}.hero-actions{flex-direction:column;align-items:flex-start}}
+
+/* Keep map narratives readable while retaining compact metadata labels. */
+.sectionhead>p,.mapbody section p:last-child{font-size:1rem;line-height:1.7}
+.map-card figcaption{font-size:.75rem;line-height:1.5}

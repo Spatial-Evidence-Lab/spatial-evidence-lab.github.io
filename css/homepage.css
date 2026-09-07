@@ -2,3 +2,6 @@
 @media(max-width:900px){.hero-grid,.feature-grid,.spotlight,.catalogue-layout{grid-template-columns:1fr}.hero-home{padding-top:65px}.hero-art{margin-top:30px}.metrics{grid-template-columns:repeat(2,1fr)}.metrics>div:nth-child(3){padding-left:0}.metrics>div:nth-child(2){border-right:0}.project-feature-main{min-height:420px}.catalogue-layout{gap:35px}}
 @media(max-width:600px){.metrics>div{padding:22px 12px}.metrics strong{font-size:1.9rem}.project-feature-main{min-height:360px}.project-overlay{padding:90px 22px 22px}.project-overlay h3{font-size:1.55rem}}
 @media(max-width:390px){.hero-copy h1{font-size:3.25rem}.hero-intro{font-size:.94rem}.hero-actions{align-items:stretch;flex-direction:column}.button,.text-link{width:max-content}}
+
+/* Let project summaries carry the same reading weight as the rest of the portal. */
+.project-overlay p,.spotlight-copy>p:not(.kicker),.catalogue p:not(.kicker){font-size:1rem;line-height:1.7}
