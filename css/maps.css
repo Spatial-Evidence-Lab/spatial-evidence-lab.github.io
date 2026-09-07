@@ -22,6 +22,12 @@ section{padding:72px 0}
 .sectionhead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}
 .sectionhead h2{margin:0;font-size:2rem;letter-spacing:-.03em}
 .sectionhead>p{max-width:610px;margin:0;color:var(--muted);font-size:.78rem}
+.evidence-chain{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 34px;padding:18px 20px;background:#0c1a24;border:1px solid var(--line);border-radius:10px}
+.evidence-chain a{display:flex;min-width:92px;flex-direction:column;gap:4px;padding:9px 10px;border:1px solid transparent;border-radius:6px}
+.evidence-chain a:hover,.evidence-chain a:focus-visible{background:#102f38;border-color:var(--cyan);outline:none}
+.evidence-chain span{color:var(--cyan);font-size:.61rem;font-weight:800;letter-spacing:.1em}
+.evidence-chain b{color:var(--text);font-size:.68rem;letter-spacing:.08em}
+.evidence-chain i{color:var(--orange);font-style:normal;font-size:.9rem}
 .map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .map-card{overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column}
 .map-card figure{margin:0}
@@ -42,6 +48,8 @@ footer{padding:45px 0;color:var(--muted);font-size:.7rem;border-top:1px solid va
 .footer{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
 @media(max-width:1100px){.container{width:min(94%,var(--max))}.hero{padding:70px 0 55px}}
 @media(max-width:900px){.nav{min-height:70px}.navlinks{gap:9px}.map-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sectionhead{align-items:start}}
+@media(max-width:900px){.evidence-chain{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.evidence-chain i{display:none}}
 @media(max-width:767px){.map-grid{grid-template-columns:1fr}.sectionhead{display:block}.sectionhead>p{margin-top:12px}}
 @media(max-width:600px){.navlinks{gap:7px;justify-content:flex-end}.navlinks a{font-size:.6rem}.brand{font-size:.62rem}.hero{padding-top:60px}h1{font-size:2.7rem}.mapbody{padding:17px}.map-card-head{padding:18px 17px 14px}.map-actions{padding-top:18px}}
+@media(max-width:600px){.evidence-chain{grid-template-columns:repeat(2,1fr);margin-bottom:24px;padding:12px}.evidence-chain a{min-width:0;padding:8px}.evidence-chain b{font-size:.6rem}}
 @media(max-width:390px){.container{width:90%}.hero h1{font-size:2.35rem}.hero-actions{flex-direction:column;align-items:flex-start}}
