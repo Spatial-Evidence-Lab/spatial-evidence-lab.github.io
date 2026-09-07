@@ -1,0 +1,886 @@
+/* =========================================================
+   SEL-002 — BANDON
+   MAPS / CARDS / ANALYTICAL COMPONENTS
+   ========================================================= */
+
+/* =========================================================
+   RESEARCH QUESTIONS
+   ========================================================= */
+
+.questions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.question {
+    min-width: 0;
+
+    padding: 22px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.question span {
+    color: var(--cyan);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+.question h3 {
+    margin: 9px 0;
+
+    font-size: 0.96rem;
+    line-height: 1.3;
+}
+
+.question p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.73rem;
+}
+
+/* =========================================================
+   ANALYTICAL FRAMEWORK
+   ========================================================= */
+
+.framework {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, minmax(0, 1fr));
+
+    gap: 7px;
+}
+
+.step {
+    min-width: 0;
+    min-height: 120px;
+
+    padding: 15px 10px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: 7px;
+}
+
+.step-number {
+    color: var(--cyan);
+
+    font-size: 0.63rem;
+    font-weight: 700;
+}
+
+.step h3 {
+    margin: 9px 0 6px;
+
+    color: var(--white);
+
+    font-size: 0.76rem;
+    line-height: 1.25;
+}
+
+.step p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.62rem;
+    line-height: 1.45;
+}
+
+/* =========================================================
+   MAP GRID
+   ========================================================= */
+
+.map-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.map-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.map-card:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--line-light);
+}
+
+.map-card > img {
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.map-card-content {
+    padding: 19px;
+}
+
+.map-code {
+    color: var(--cyan);
+
+    font-size: 0.63rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+.map-card h3 {
+    margin: 7px 0 9px;
+
+    color: var(--white);
+
+    font-size: 1.02rem;
+    line-height: 1.25;
+}
+
+.map-card p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+    line-height: 1.6;
+}
+
+.map-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 17px;
+    padding-top: 12px;
+
+    border-top: 1px solid var(--line);
+}
+
+.map-link {
+    color: var(--cyan);
+
+    font-size: 0.63rem;
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.map-link:hover {
+    color: var(--white);
+}
+
+.map-format {
+    color: #71858f;
+
+    font-size: 0.59rem;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   EVIDENCE INSIGHTS
+   ========================================================= */
+
+.insights {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.insight {
+    min-width: 0;
+    min-height: 235px;
+
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.insight strong {
+    display: block;
+
+    color: var(--cyan);
+
+    font-size: 0.63rem;
+    line-height: 1.4;
+
+    letter-spacing: 0.08em;
+}
+
+.insight h3 {
+    margin: 12px 0 10px;
+
+    color: var(--white);
+
+    font-size: 0.92rem;
+    line-height: 1.3;
+}
+
+.insight p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.7rem;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   SPATIAL TYPOLOGY
+   ========================================================= */
+
+.typology {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.type {
+    min-width: 0;
+
+    padding: 22px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.type .label {
+    color: var(--cyan);
+
+    font-size: 0.63rem;
+    font-weight: 700;
+
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.type h3 {
+    margin: 9px 0;
+
+    color: var(--white);
+
+    font-size: 1.02rem;
+}
+
+.type p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.73rem;
+}
+
+.type ul {
+    margin: 12px 0 0;
+    padding-left: 18px;
+
+    color: var(--muted);
+
+    font-size: 0.7rem;
+}
+
+.type li {
+    margin-bottom: 5px;
+}
+
+/* =========================================================
+   METHODOLOGY
+   ========================================================= */
+
+.method-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.method-card {
+    min-width: 0;
+
+    padding: 22px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.method-card.full {
+    grid-column: 1 / -1;
+}
+
+.method-label {
+    color: var(--cyan);
+
+    font-size: 0.63rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.method-card h3 {
+    margin: 9px 0 10px;
+
+    color: var(--white);
+
+    font-size: 0.98rem;
+}
+
+.method-card p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+    line-height: 1.65;
+}
+
+.method-card ul {
+    margin: 11px 0 0;
+    padding-left: 19px;
+
+    color: var(--muted);
+
+    font-size: 0.7rem;
+}
+
+.method-card li {
+    margin-bottom: 5px;
+}
+
+/* =========================================================
+   WORKFLOW
+   ========================================================= */
+
+.workflow {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+.workflow-step {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 17px 12px;
+
+    background: var(--panel-2);
+
+    border: 1px solid var(--line);
+    border-radius: 7px;
+}
+
+.workflow-step:not(:last-child)::after {
+    content: "→";
+
+    position: absolute;
+
+    right: -10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--cyan);
+
+    font-size: 0.85rem;
+
+    z-index: 5;
+}
+
+.workflow-step strong {
+    display: block;
+
+    color: var(--cyan);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.08em;
+}
+
+.workflow-step span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--text);
+
+    font-size: 0.67rem;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   FORMULA
+   ========================================================= */
+
+.formula {
+    margin-top: 17px;
+    padding: 20px;
+
+    background: var(--panel-3);
+
+    border: 1px solid var(--line);
+    border-radius: 7px;
+
+    text-align: center;
+}
+
+.formula-label {
+    color: var(--muted);
+
+    font-size: 0.61rem;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.formula-equation {
+    margin-top: 9px;
+
+    color: var(--white);
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.formula-note {
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 0.65rem;
+}
+
+/* =========================================================
+   DATA TABLE
+   ========================================================= */
+
+.data-table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-top: 15px;
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+    width: 100%;
+    min-width: 760px;
+
+    border-collapse: collapse;
+
+    background: var(--panel);
+}
+
+.data-table th {
+    padding: 13px 15px;
+
+    background: var(--panel-2);
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--cyan);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.08em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.data-table td {
+    padding: 13px 15px;
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.69rem;
+    line-height: 1.5;
+
+    vertical-align: top;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table td:first-child {
+    color: var(--text);
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   RESOURCE CARDS
+   ========================================================= */
+
+.resource-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.resource-card {
+    min-width: 0;
+
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.resource-type {
+    color: var(--cyan);
+
+    font-size: 0.62rem;
+    font-weight: 700;
+
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.resource-card h3 {
+    margin: 8px 0;
+
+    color: var(--white);
+
+    font-size: 0.9rem;
+}
+
+.resource-card p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.69rem;
+    line-height: 1.6;
+}
+
+.resource-card .button-link {
+    margin-top: 14px;
+}
+
+/* =========================================================
+   QA
+   ========================================================= */
+
+.qa-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.qa-card {
+    min-width: 0;
+
+    padding: 18px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.qa-status {
+    color: var(--green);
+
+    font-size: 0.61rem;
+    font-weight: 700;
+
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.qa-card h3 {
+    margin: 8px 0 7px;
+
+    color: var(--white);
+
+    font-size: 0.85rem;
+}
+
+.qa-card p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.67rem;
+    line-height: 1.55;
+}
+
+/* =========================================================
+   PLANNING IMPLICATIONS
+   ========================================================= */
+
+.implications {
+    display: grid;
+
+    gap: 12px;
+}
+
+.implication {
+    display: grid;
+
+    grid-template-columns: 55px minmax(0, 1fr);
+
+    gap: 20px;
+
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.implication-number {
+    color: var(--cyan);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.implication h3 {
+    margin: 0 0 5px;
+
+    color: var(--white);
+
+    font-size: 0.93rem;
+}
+
+.implication p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.71rem;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   CONCLUSION
+   ========================================================= */
+
+.conclusion {
+    max-width: 870px;
+}
+
+.conclusion p {
+    color: var(--soft);
+
+    font-size: 0.84rem;
+    line-height: 1.75;
+}
+
+.next-research {
+    margin-top: 22px;
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--cyan);
+
+    border-radius: 7px;
+}
+
+.next-research strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--cyan);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.next-research p {
+    margin: 0;
+
+    font-size: 0.72rem;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .framework {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+    .insights {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .workflow {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .workflow-step:not(:last-child)::after {
+        display: none;
+    }
+
+    .qa-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================================
+   SMALL LAPTOP / TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .questions {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .resource-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .map-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .questions,
+    .map-grid,
+    .typology,
+    .method-grid,
+    .resource-grid,
+    .qa-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insights {
+        grid-template-columns: 1fr;
+    }
+
+    .framework {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+
+    .implication {
+        grid-template-columns: 42px minmax(0, 1fr);
+
+        gap: 14px;
+    }
+
+    .map-card > img {
+        height: 260px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .framework {
+        grid-template-columns: 1fr;
+    }
+
+    .map-card > img {
+        height: 220px;
+    }
+
+    .implication {
+        grid-template-columns: 1fr;
+    }
+
+    .implication-number {
+        margin-bottom: -5px;
+    }
+}
