@@ -291,6 +291,13 @@ nav {
     text-transform: uppercase;
 }
 
+.kpi-cork,
+.kpi-cork strong,
+.kpi-cork span,
+.kpi-cork small {
+    color: var(--white);
+}
+
 /* =========================================================
    SECTIONS
    ========================================================= */
