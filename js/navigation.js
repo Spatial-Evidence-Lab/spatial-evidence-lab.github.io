@@ -6,4 +6,10 @@ if (menu && nav) {
     menu.setAttribute('aria-expanded', String(!open));
     nav.classList.toggle('is-open', !open);
   });
+  nav.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || menu.getAttribute('aria-expanded') !== 'true') return;
+    menu.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('is-open');
+    menu.focus();
+  });
 }
