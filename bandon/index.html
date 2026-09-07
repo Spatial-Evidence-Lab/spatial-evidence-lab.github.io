@@ -1376,6 +1376,37 @@ padding:55px 0;
 
 }
 
+
+/* =========================================================
+   DEPLOYMENT-SAFE OVERRIDES
+   ========================================================= */
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+.hero-result > img,
+.map-card > img{
+    background:var(--panel-3);
+    object-fit:contain;
+    object-position:center center;
+}
+
+@media (min-width:901px){
+    .nav-inner{ flex-wrap:nowrap; }
+    .hero-result{
+        grid-template-columns:minmax(0,1.2fr) minmax(340px,.8fr);
+    }
+}
+
 </style>
 </head>
 
@@ -1511,7 +1542,7 @@ greatest.
 <div class="hero-result">
 
 <img
-src="maps/01.06.png"
+src="./maps/01.06.png"
 alt="Bandon accessibility and vulnerability hotspots map"
 >
 
@@ -1805,7 +1836,7 @@ to the overall accessibility and equity assessment.
 <div class="map-card">
 
 <img
-src="maps/01.00.png"
+src="./maps/01.00.png"
 alt="Bandon study area and public transport network"
 >
 
@@ -1830,7 +1861,7 @@ public transport stops and principal routes.
 
 <a
 class="map-link"
-href="maps/01.00.png"
+href="./maps/01.00.png"
 target="_blank"
 rel="noopener"
 >
@@ -1854,7 +1885,7 @@ View output ↗
 <div class="map-card">
 
 <img
-src="maps/01.01.png"
+src="./maps/01.01.png"
 alt="Bandon public transport walking catchments"
 >
 
@@ -1879,7 +1910,7 @@ of the existing stop network.
 
 <a
 class="map-link"
-href="maps/01.01.png"
+href="./maps/01.01.png"
 target="_blank"
 rel="noopener"
 >
@@ -1903,7 +1934,7 @@ View output ↗
 <div class="map-card">
 
 <img
-src="maps/01.02.png"
+src="./maps/01.02.png"
 alt="Bandon walking accessibility score"
 >
 
@@ -1928,7 +1959,7 @@ differences between central and peripheral locations.
 
 <a
 class="map-link"
-href="maps/01.02.png"
+href="./maps/01.02.png"
 target="_blank"
 rel="noopener"
 >
@@ -1952,7 +1983,7 @@ View output ↗
 <div class="map-card">
 
 <img
-src="maps/01.03.png"
+src="./maps/01.03.png"
 alt="Bandon peak-time public transport service accessibility"
 >
 
@@ -1977,7 +2008,7 @@ not necessarily imply equivalent service availability.
 
 <a
 class="map-link"
-href="maps/01.03.png"
+href="./maps/01.03.png"
 target="_blank"
 rel="noopener"
 >
@@ -2001,7 +2032,7 @@ View output ↗
 <div class="map-card">
 
 <img
-src="maps/01.04.png"
+src="./maps/01.04.png"
 alt="Bandon population vulnerability"
 >
 
@@ -2026,7 +2057,7 @@ vulnerability is spatially differentiated.
 
 <a
 class="map-link"
-href="maps/01.04.png"
+href="./maps/01.04.png"
 target="_blank"
 rel="noopener"
 >
@@ -2050,7 +2081,7 @@ View output ↗
 <div class="map-card">
 
 <img
-src="maps/01.05.png"
+src="./maps/01.05.png"
 alt="Bandon composite public transport accessibility index"
 >
 
@@ -2075,7 +2106,7 @@ public transport accessibility.
 
 <a
 class="map-link"
-href="maps/01.05.png"
+href="./maps/01.05.png"
 target="_blank"
 rel="noopener"
 >
@@ -2134,7 +2165,7 @@ walking access with scheduled public transport service.
 <div class="hero-result">
 
 <img
-src="maps/01.05.png"
+src="./maps/01.05.png"
 alt="Bandon Composite Public Transport Accessibility Index"
 >
 
@@ -3314,7 +3345,7 @@ population vulnerability overlap.
 <div class="hero-result">
 
 <img
-src="maps/01.06.png"
+src="./maps/01.06.png"
 alt="Bandon equity-focused vulnerability hotspots"
 >
 
@@ -3395,7 +3426,7 @@ feasibility assessment.
 
 <a
 class="button-link"
-href="maps/01.06.png"
+href="./maps/01.06.png"
 target="_blank"
 rel="noopener"
 >
