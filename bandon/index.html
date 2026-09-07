@@ -1,33 +1,632 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SEL-002 | Bandon accessibility study | Spatial Evidence Lab</title>
-  <meta name="description" content="A spatial analysis of public transport accessibility, vulnerability and equity in Bandon, County Cork.">
-  <link rel="stylesheet" href="../css/sel-theme.css"><link rel="stylesheet" href="../css/components.css"><link rel="stylesheet" href="../css/bandon.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="SEL-002 — Bandon Public Transport Accessibility & Equity Analysis. Spatial Evidence Lab.">
+  <meta name="theme-color" content="#0b1220">
+  <title>SEL-002 — Bandon Public Transport Accessibility & Equity</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="bandon-page">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header"><div class="shell nav-wrap"><a class="wordmark" href="../" aria-label="Spatial Evidence Lab home"><span class="wordmark-mark">SE</span><span>SPATIAL EVIDENCE <b>LAB</b></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Research navigation"><a href="#research">Research</a><a href="maps/">Maps</a><a href="#story">Evidence</a><a href="#method">Method</a><a href="#data">Data</a><a href="#planning">Planning</a><a class="nav-cta" href="maps/">Explore maps</a></nav></div></header>
-  <main id="main-content">
-    <section id="research" class="bandon-hero"><div class="shell bandon-hero-inner"><div class="bandon-hero-copy reveal"><p class="kicker">SPATIAL EVIDENCE LAB</p><p class="project-identity">SEL-002</p><h1>BANDON<br><em>TRANSPORT EQUITY</em></h1><p>How easily can people in Bandon reach public transport — and what happens when access meets vulnerability?</p><div class="hero-actions"><a class="button button-primary" href="#story">Follow the evidence <span>↓</span></a><a class="button button-ghost" href="downloads/SEL-002_Report.pdf">Download report&nbsp; ↗</a></div></div><div class="bandon-hero-map reveal"><img src="maps/01.00.png" alt="Study area map showing Bandon and public transport stops"><div class="map-stamp">51°44′N<br><b>BANDON</b><br>8°44′W</div></div></div></section>
-    <section class="dashboard" aria-labelledby="dashboard-title"><div class="shell"><div class="dashboard-intro"><p class="kicker">Executive dashboard</p><h2 id="dashboard-title" class="sr-only">Bandon transport accessibility indicators</h2><p>One regional settlement. Four evidence layers. An equity-led view of transport investment.</p></div><div class="dashboard-grid"><div><strong data-counter="8196">0</strong><span>residents<br>Census 2022</span></div><div><strong data-counter="30" data-suffix=" km">0</strong><span>to Cork City<br>Commuter &amp; Gateway Node</span></div><div><strong data-counter="4">0</strong><span>principal bus stops<br>Regional Network Modelled</span></div><div><strong>60 / 40</strong><span>weighting<br>Vulnerability / Access Deficit</span></div></div></div></section>
-    <section class="briefing section shell"><div class="section-heading-row"><div><p class="kicker">Executive briefing</p><h2>Transport access<br><em>is not evenly shared.</em></h2></div><p>Bandon functions as a regional settlement and commuter node within the Greater Cork metropolitan area. Central corridors benefit from close proximity to principal stops and peak services, while peripheral estates face longer network walking distances and weaker coverage.</p></div><div class="briefing-grid"><div class="briefing-callout"><span class="story-number">THE DECISION QUESTION</span><p>Where should transport planning prioritise investment when lower accessibility overlaps with greater potential transport dependence?</p></div><div class="briefing-copy"><p>Accessibility and vulnerability do not follow the same spatial pattern. Older adults, people with disabilities or poor health, long-term unemployed residents and carless households may be more dependent on public transport precisely where access is weakest.</p><p class="briefing-note">The hotspot model is a screening and prioritisation framework, not proof of unmet demand. Site-level and operational validation remains essential.</p></div></div></section>
-    <section class="research-questions section shell"><div class="section-heading-row"><div><p class="kicker">Research questions</p><h2>What does<br><em>access really mean?</em></h2></div><p>The study evaluates public transport as a practical alternative to private-car commuting, then considers who may be most exposed when access is limited.</p></div><div class="questions-grid"><article><span>RQ01</span><h3>Is public transport a viable alternative to private-car commuting between Bandon and Cork City?</h3></article><article><span>RQ02</span><h3>Which areas are potentially most vulnerable to limited public transport accessibility because of their demographic, health, employment, or household characteristics?</h3></article></div><p class="questions-context">The first question focuses on the spatial performance of the public transport system through walking accessibility and service frequency. The second recognises that accessibility should be evaluated within a broader social context, acknowledging that some population groups are more likely to depend on public transport than others. A bus stop may be geographically accessible, yet still fail to provide meaningful accessibility if services are infrequent or if populations with greater mobility needs remain poorly served.</p></section>
-    <section id="story" class="section shell"><div class="section-heading-row"><div><p class="kicker">The evidence chain</p><h2>Read the town<br><em>layer by layer.</em></h2></div><p>Scroll through the analysis from place and movement to a composite measure of accessibility and equity.</p></div><div class="story-grid" id="maps">
-      <article class="story-card reveal"><a href="maps/01.01.png" class="lightbox-link"><img src="maps/01.01.png" alt="Walking catchments around Bandon public transport stops"></a><span class="story-number">01 / 05</span><h3>Pedestrian catchments</h3><p>Network-based 5, 10 and 15-minute catchments reveal true physical reach over straight-line buffers.</p></article>
-      <article class="story-card reveal"><a href="maps/01.02.png" class="lightbox-link"><img src="maps/01.02.png" alt="Walking distance accessibility score map"></a><span class="story-number">02 / 05</span><h3>The core–periphery gradient</h3><p>Walking accessibility drops significantly towards outer residential peripheries.</p></article>
-      <article class="story-card reveal"><a href="maps/01.03.png" class="lightbox-link"><img src="maps/01.03.png" alt="Peak-time public transport frequency map"></a><span class="story-number">03 / 05</span><h3>Peak service frequency</h3><p>Proximity alone is insufficient; timetable intensity determines actual utility for daily Cork City commuters.</p></article>
-      <article class="story-card reveal"><a href="maps/01.04.png" class="lightbox-link"><img src="maps/01.04.png" alt="Population vulnerability map for Bandon"></a><span class="story-number">04 / 05</span><h3>The equity gap</h3><p>Socio-demographic vulnerability is spatially differentiated and often highest where transport supply is weakest.</p></article>
-      <article class="story-card story-highlight reveal"><a href="maps/01.05.png" class="lightbox-link"><img src="maps/01.05.png" alt="Composite accessibility index map"></a><div><span class="story-number">05 / 05</span><h3>Composite performance</h3><p>The Composite Accessibility Index integrates walking distance and service frequency into five relative tiers.</p></div></article>
-    </div></section>
-    <section class="findings-section section shell"><div class="section-heading-row"><div><p class="kicker">What did we find?</p><h2>Four signals<br><em>worth acting on.</em></h2></div><p>The evidence chain moves from physical reach to service quality, social context and an equity-led prioritisation signal.</p></div><div class="findings-grid"><article><span>01</span><h3>Access declines toward peripheral areas</h3><p>Walking access becomes weaker in parts of the peripheral residential network.</p></article><article><span>02</span><h3>Stop proximity ≠ service accessibility</h3><p>Being geographically close to a stop does not necessarily mean access to frequent or useful public transport.</p></article><article><span>03</span><h3>Vulnerability is spatially uneven</h3><p>Population vulnerability varies considerably across Bandon's Small Areas.</p></article><article><span>04</span><h3>Accessibility + vulnerability creates a stronger signal</h3><p>The greatest potential transport disadvantage emerges where accessibility deficits overlap with higher vulnerability.</p></article></div></section>
-    <section id="planning" class="implications-section section shell"><div class="section-heading-row"><div><p class="kicker">What could this mean for Bandon?</p><h2>From findings<br><em>to next steps.</em></h2></div><p>These are focused areas for further investigation, not direct investment decisions. Each should be tested with local knowledge and operational appraisal.</p></div><div class="implications-grid"><article><span>01</span><h3>Pedestrian connections</h3><p>Investigate footpath connectivity, crossing conditions and walking routes around identified areas of potential disadvantage.</p></article><article><span>02</span><h3>Bus network</h3><p>Assess whether stop locations and routing adequately serve areas with weaker accessibility.</p></article><article><span>03</span><h3>Service frequency</h3><p>Examine whether service levels correspond with areas where transport dependence may be greater.</p></article><article><span>04</span><h3>Monitoring</h3><p>Repeat the analysis as Census, GTFS and network data are updated.</p></article></div></section>
-    <section id="method" class="method-section"><div class="shell"><div class="section-heading-row"><div><p class="kicker">Methodology</p><h2>From raw feeds<br><em>to useful evidence.</em></h2></div><p>A reproducible workflow joins transport, network, census and spatial data into one transparent analysis.</p></div><div class="method-flow"><div class="method-step"><b>01</b><span>GTFS workflow</span><small>Routes, stops &amp; frequency</small></div><i>→</i><div class="method-step"><b>02</b><span>PostGIS ETL</span><small>Clean, join &amp; spatialise</small></div><i>→</i><div class="method-step"><b>03</b><span>Network Analyst</span><small>Real walking distance</small></div><i>→</i><div class="method-step"><b>04</b><span>Census integration</span><small>Need &amp; vulnerability</small></div><i>→</i><div class="method-step method-final"><b>05</b><span>Composite index</span><small>Accessibility × equity</small></div></div><div class="formula"><span>Composite Accessibility Index</span><strong>( Walking score × 0.6 ) + ( Frequency score × 0.4 )</strong><small>Weights are explicit, inspectable and designed to be revised.</small></div><div class="formula equity-formula"><span>Equity hotspot priority</span><strong>( Access deficit × 0.4 ) + ( Vulnerability × 0.6 )</strong><small>Prioritise where low access meets higher vulnerability.</small></div></div></section>
-    <section class="typology-section section shell"><div class="section-heading-row"><div><p class="kicker">Bandon spatial typology</p><h2>Maintain.<br><em>Target. Prioritise.</em></h2></div><p>Three spatial systems translate the evidence into a practical planning sequence, from well-served areas to transport disadvantage.</p></div><div class="typology-grid"><div><span>01</span><h3>Well-served core</h3><p>High accessibility / lower vulnerability. Maintain the town-centre advantage.</p></div><div><span>02</span><h3>Transitional residential</h3><p>Moderate accessibility / mixed vulnerability. Target neighbourhood-level gaps.</p></div><div><span>03</span><h3>Transport disadvantage</h3><p>Low accessibility / higher vulnerability. Prioritise further assessment.</p></div></div></section>
-    <section id="data" class="reproducibility-section section"><div class="shell"><div class="section-heading-row"><div><p class="kicker">Data &amp; reproducibility</p><h2>Open inputs.<br><em>Repeatable outputs.</em></h2></div><p>The study is designed to be inspected and extended: source datasets, outputs and processing references are organised around the evidence chain.</p></div><div class="repro-grid"><section class="repro-panel"><p class="repro-label">Data</p><ul class="data-list"><li>Census 2022</li><li>GTFS</li><li>Walking network</li><li>Transport stops</li><li>Small Areas</li></ul></section><section class="repro-panel"><p class="repro-label">Project outputs</p><div class="resource-links"><a href="maps/">Download map PNGs <span>↗</span></a><a href="downloads/SEL-002_Report.pdf">Download PDF report <span>↗</span></a><a class="resource-muted" href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/bandon" target="_blank" rel="noopener">Download GeoPackage <small>repository resource</small><span>↗</span></a></div></section><section class="repro-panel"><p class="repro-label">Source</p><div class="resource-links"><a href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/bandon" target="_blank" rel="noopener">GitHub Repository <span>↗</span></a></div></section><section class="repro-panel"><p class="repro-label">Processing</p><div class="resource-links"><a href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/bandon" target="_blank" rel="noopener">PostGIS SQL <small>repository resource</small><span>↗</span></a><a href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/bandon" target="_blank" rel="noopener">Processing scripts <small>repository resource</small><span>↗</span></a></div></section></div></div></section>
-  </main>
-  <footer class="site-footer"><div class="shell project-footer"><div><a class="footer-brand" href="../">SPATIAL EVIDENCE LAB</a><p>SEL-002 · Bandon</p></div><a class="footer-back" href="../">← All Research</a><p class="footer-prompt">Explore other Spatial Evidence Lab projects</p></div></footer>
-  <script src="../js/sel-core.js"></script><script src="../js/navigation.js"></script><script src="../js/counters.js"></script><script src="../js/lightbox.js"></script><script src="../js/accessibility.js"></script>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="../index.html" aria-label="Spatial Evidence Lab home">
+      <span class="brand-mark">SEL</span>
+      <span>
+        <strong>Spatial Evidence Lab</strong>
+        <small>SEL-002 · Bandon</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#research">Research</a>
+      <a href="#maps">Maps</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#method">Method</a>
+      <a href="#data">Data</a>
+      <a href="#planning">Planning</a>
+      <a class="nav-home" href="../index.html">Main site ↗</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#research">Research</a>
+    <a href="#maps">Maps</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#method">Method</a>
+    <a href="#data">Data</a>
+    <a href="#planning">Planning</a>
+    <a href="../index.html">Main site ↗</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">SEL-002 · Spatial Accessibility Analysis</p>
+        <h1>Bandon Public Transport <em>Accessibility &amp; Equity</em></h1>
+        <p class="hero-lead">
+          A small-area spatial assessment of walking access, scheduled public transport
+          service, population vulnerability and potential transport disadvantage in
+          Bandon, County Cork, Ireland.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#equity">Explore the evidence ↓</a>
+          <a class="button button-secondary" href="#maps">Explore maps</a>
+        </div>
+
+        <div class="hero-stats" aria-label="Project context">
+          <div><strong>8,196</strong><span>Residents</span><small>Census 2022</small></div>
+          <div><strong>30 <b>km</b></strong><span>To Cork City</span><small>Commuter &amp; gateway node</small></div>
+          <div><strong>4</strong><span>Principal bus stops</span><small>Regional network modelled</small></div>
+          <div><strong>60 / 40</strong><span>Weighting</span><small>Vulnerability / access deficit</small></div>
+        </div>
+      </div>
+
+      <div class="hero-map">
+        <div class="map-frame">
+          <img src="./maps/01.06.png"
+               alt="Map 01.06 showing accessibility and population vulnerability hotspots in Bandon">
+          <div class="map-caption">
+            <span>MAP 01.06</span>
+            <strong>Accessibility–Vulnerability Hotspots</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FINDING -->
+  <section class="key-finding">
+    <div class="container key-finding-panel">
+      <div class="finding-grid">
+        <div>
+          <p class="eyebrow">Key finding</p>
+          <h2>Accessibility is strongest where network reach, service frequency and lower vulnerability overlap.</h2>
+        </div>
+        <p>
+          The analysis points to a central-to-peripheral pattern: some locations have good physical access to public transport, while others combine weaker access with characteristics that may increase dependence on transport services.
+        </p>
+      </div>
+      <div class="finding-note">
+        <strong>Interpretation</strong> Public transport appears capable of supporting some Bandon–Cork journeys, but the evidence does not establish a universal private-car replacement because door-to-door journey time, capacity, fares and observed commuting behaviour are outside this analysis.
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" class="section">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="section-number">01</p>
+          <h2>Research questions</h2>
+        </div>
+        <p>
+          The analysis moves from physical network access toward an equity-focused
+          understanding of where transport disadvantage may matter most.
+        </p>
+      </div>
+
+      <div class="question-grid question-grid-two">
+        <article class="question">
+          <span>RQ01</span>
+          <h3>Is public transport a viable alternative to private-car commuting between Bandon and Cork City?</h3>
+          <p>The analysis tests whether the combination of walking access and scheduled peak-time service provides a credible spatial basis for public transport use, while recognising that journey time, fares, capacity and observed travel behaviour require further assessment.</p>
+        </article>
+        <article class="question">
+          <span>RQ02</span>
+          <h3>Which areas are potentially most vulnerable to limited public transport accessibility?</h3>
+          <p>The analysis identifies locations where accessibility deficits overlap with demographic, health, employment or household characteristics associated with greater potential transport dependence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP EXPLORER -->
+  <section id="maps" class="section">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="section-number">02</p>
+          <h2>Map explorer</h2>
+        </div>
+        <p>
+          Each output answers a specific analytical question. Open any map for the
+          full-resolution published output.
+        </p>
+      </div>
+
+      <div class="map-explorer">
+        <div class="map-tabs" role="tablist" aria-label="Map outputs">
+          <button class="map-tab active" data-map="0100" role="tab" aria-selected="true">01.00</button>
+          <button class="map-tab" data-map="0101" role="tab" aria-selected="false">01.01</button>
+          <button class="map-tab" data-map="0102" role="tab" aria-selected="false">01.02</button>
+          <button class="map-tab" data-map="0103" role="tab" aria-selected="false">01.03</button>
+          <button class="map-tab" data-map="0104" role="tab" aria-selected="false">01.04</button>
+          <button class="map-tab" data-map="0105" role="tab" aria-selected="false">01.05</button>
+          <a class="map-tab map-tab-final" href="#equity">01.06 ↗</a>
+        </div>
+
+        <div class="map-display">
+          <div class="map-large">
+            <img id="explorer-image" src="./maps/01.00.png" alt="Map 01.00 — Study Area & Transport Network">
+          </div>
+          <div class="map-description">
+            <p id="explorer-code" class="eyebrow">MAP 01.00</p>
+            <h3 id="explorer-title">Study Area &amp; Transport Network</h3>
+            <p id="explorer-text">
+              Defines the geographic and transport-network context, showing the
+              relationship between Bandon's built-up area, public transport stops
+              and principal routes.
+            </p>
+            <a id="explorer-link" class="text-link" href="./maps/01.00.png" target="_blank" rel="noopener">
+              Open full map ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-explorer-note">
+        <span>MAP SERIES</span>
+        <p>Use the map explorer above to move through Maps 01.00–01.06. Each output is presented at full resolution without repeating the same thumbnails on this page.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUITY RESULT -->
+  <section id="equity" class="section equity-section">
+    <div class="container">
+      <div class="equity-heading">
+        <div>
+          <p class="section-number">03</p>
+          <p class="eyebrow equity-eyebrow">Final analytical result · Map 01.06</p>
+          <h2>Where poor access may matter most</h2>
+          <p>
+            The final hotspot analysis identifies locations where lower public
+            transport accessibility overlaps with higher population vulnerability.
+          </p>
+        </div>
+        <a class="button button-primary" href="./maps/01.06.png" target="_blank" rel="noopener">Open Map 01.06 ↗</a>
+      </div>
+
+      <div class="equity-grid">
+        <div class="equity-map">
+          <img src="./maps/01.06.png" alt="Map 01.06 — Accessibility-Vulnerability Hotspots">
+        </div>
+
+        <div class="equity-insights">
+          <div class="equity-point">
+            <span>01</span>
+            <div>
+              <h3>Priority logic</h3>
+              <p>Critical hotspots represent very low accessibility combined with high population vulnerability. High Priority areas combine lower accessibility with elevated vulnerability.</p>
+            </div>
+          </div>
+          <div class="equity-point">
+            <span>02</span>
+            <div>
+              <h3>Why it matters</h3>
+              <p>Priority areas emerge where accessibility deficits and vulnerability occur together, rather than where either condition exists in isolation.</p>
+            </div>
+          </div>
+          <div class="equity-point">
+            <span>03</span>
+            <div>
+              <h3>Planning relevance</h3>
+              <p>The result provides a spatial screening layer for further investigation of pedestrian infrastructure, public transport coverage and service provision.</p>
+            </div>
+          </div>
+
+          <div class="caveat">
+            <strong>Screening evidence, not an investment decision.</strong>
+            <p>
+              Hotspots should be interpreted alongside local validation, stakeholder
+              knowledge, current operational conditions and feasibility assessment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE -->
+  <section id="evidence" class="section">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="section-number">04</p>
+          <h2>What the evidence shows</h2>
+        </div>
+        <p>
+          The results answer two linked questions: whether public transport can function as a practical alternative for some Bandon–Cork trips, and where limited accessibility may carry greater social significance.
+        </p>
+      </div>
+
+      <div class="insight-list">
+        <article class="insight-row">
+          <span>01</span>
+          <div><p class="insight-tag">ACCESS → VIABILITY</p><h3>Public transport is a credible option for part of the Bandon–Cork commuter market</h3></div>
+          <p>Where homes are within practical walking reach of stops and those stops are supported by scheduled peak-time service, public transport has the spatial conditions needed to serve commuter trips. The analysis therefore supports a viable alternative for some locations, rather than a universal replacement for private-car travel.</p>
+        </article>
+
+        <article class="insight-row">
+          <span>02</span>
+          <div><p class="insight-tag">ACCESS → CORE–PERIPHERY</p><h3>Effective accessibility becomes weaker away from the best-connected urban areas</h3></div>
+          <p>Walking-network access and scheduled service do not remain spatially uniform across Bandon. Peripheral residential areas are more likely to experience longer walking connections, weaker network reach or lower service accessibility.</p>
+        </article>
+
+        <article class="insight-row">
+          <span>03</span>
+          <div><p class="insight-tag">SERVICE → OPPORTUNITY</p><h3>Stop proximity alone overstates the practical opportunity to use public transport</h3></div>
+          <p>A nearby stop provides physical access, but the availability of scheduled peak service determines whether that access translates into a usable transport opportunity. Accessibility is therefore a combination of reach and service.</p>
+        </article>
+
+        <article class="insight-row">
+          <span>04</span>
+          <div><p class="insight-tag">VULNERABILITY → DEPENDENCE</p><h3>Potential exposure to limited access is socially differentiated</h3></div>
+          <p>Demographic, health, employment and household characteristics vary across the study area. Locations with greater potential transport dependence therefore warrant attention even when their accessibility deficit is not the most extreme.</p>
+        </article>
+
+        <article class="insight-row insight-final">
+          <span>05</span>
+          <div><p class="insight-tag">EQUITY → PRIORITY</p><h3>The strongest priority signal occurs where access deficits and vulnerability overlap</h3></div>
+          <p>The final equity screen shifts the analysis from simply mapping poor access to identifying places where limited public transport may have greater consequences for residents. These are priority areas for validation, not automatic investment decisions.</p>
+        </article>
+      </div>
+
+      <div class="evidence-summary">
+        <span>NETWORK</span><i>→</i><span>WALKING</span><i>→</i><span>SERVICE</span><i>→</i><span>VULNERABILITY</span><i>→</i><strong>EQUITY</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOLOGY -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="section-number">05</p>
+          <h2>Spatial typology</h2>
+        </div>
+        <p>
+          Three broad spatial conditions help interpret the combined accessibility
+          pattern across Bandon.
+        </p>
+      </div>
+
+      <div class="typology">
+        <article class="type-card">
+          <span>TYPE 01</span>
+          <h3>Well-Served Core</h3>
+          <p>Central urban areas where walking access and public transport service are comparatively strong.</p>
+          <ul><li>Shorter walking distances</li><li>Greater network connectivity</li><li>Stronger composite accessibility</li></ul>
+        </article>
+
+        <article class="type-card">
+          <span>TYPE 02</span>
+          <h3>Transitional Residential Areas</h3>
+          <p>Areas where accessibility remains available but becomes more dependent on walking connections and service characteristics.</p>
+          <ul><li>Intermediate walking access</li><li>Variable service availability</li><li>Potential localised deficits</li></ul>
+        </article>
+
+        <article class="type-card">
+          <span>TYPE 03</span>
+          <h3>Peripheral Estates &amp; Margins</h3>
+          <p>Outer residential locations where access, service and vulnerability may combine to create greater potential disadvantage.</p>
+          <ul><li>Longer walking access</li><li>Lower composite accessibility</li><li>Potential hotspot conditions</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section id="method" class="section">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="section-number">06</p>
+          <h2>Method &amp; reproducibility</h2>
+        </div>
+        <p>
+          The workflow separates network accessibility, scheduled service,
+          vulnerability and equity screening so that each stage can be interpreted independently.
+        </p>
+      </div>
+
+      <div class="method-flow">
+        <div><span>01.00</span><strong>Define</strong><small>Study area &amp; network</small></div>
+        <i>→</i>
+        <div><span>01.01</span><strong>Measure</strong><small>Walking catchments</small></div>
+        <i>→</i>
+        <div><span>01.02</span><strong>Score</strong><small>Walking accessibility</small></div>
+        <i>→</i>
+        <div><span>01.03</span><strong>Measure</strong><small>Peak service</small></div>
+        <i>→</i>
+        <div><span>01.04</span><strong>Model</strong><small>Vulnerability</small></div>
+        <i>→</i>
+        <div><span>01.05</span><strong>Combine</strong><small>Composite access</small></div>
+        <i>→</i>
+        <div class="method-final"><span>01.06</span><strong>Screen</strong><small>Equity hotspots</small></div>
+      </div>
+
+      <div class="method-grid">
+        <article class="method-card">
+          <span>INPUT 01 · CENSUS 2022</span>
+          <h3>Population &amp; vulnerability</h3>
+          <p>Census 2022 population characteristics provide the population-based evidence used to represent spatial differences in potential transport vulnerability and dependence.</p>
+          <ul><li>Population characteristics</li><li>Transport-relevant vulnerability</li><li>Small-area spatial analysis</li></ul>
+        </article>
+
+        <article class="method-card">
+          <span>INPUT 02 · GTFS</span>
+          <h3>Stops, routes &amp; scheduled service</h3>
+          <p>Public transport stop and scheduled service information defines the network and provides the service-frequency dimension.</p>
+          <ul><li>Stop locations</li><li>Route and service information</li><li>Peak-period service</li></ul>
+        </article>
+
+        <article class="method-card">
+          <span>INPUT 03 · GIS NETWORK ANALYSIS</span>
+          <h3>Walking accessibility</h3>
+          <p>GIS network analysis represents practical walking access to public transport rather than relying only on straight-line distance.</p>
+          <ul><li>Walking network</li><li>5-minute access</li><li>10-minute access</li><li>15-minute access</li></ul>
+        </article>
+
+        <article class="method-card">
+          <span>PROCESSING</span>
+          <h3>Spatial integration</h3>
+          <p>Transport, walking, service and population datasets are processed through sequential GIS operations to generate comparable spatial measures.</p>
+          <ul><li>Network accessibility</li><li>Spatial aggregation</li><li>Normalisation</li><li>Composite scoring</li></ul>
+        </article>
+      </div>
+
+      <div class="formula-card">
+        <div>
+          <span>ANALYTICAL INTEGRATION</span>
+          <h3>Composite accessibility &amp; equity screening</h3>
+          <p>
+            Walking accessibility and scheduled service frequency are combined to
+            produce the Composite Accessibility Index. The result is used to derive
+            an accessibility deficit, which is combined with normalised vulnerability
+            for the final equity-focused hotspot screening.
+          </p>
+        </div>
+        <div class="formula">
+          <small>HOTSPOT SCREENING MODEL</small>
+          <strong>Hotspot Score = 0.40 × Access Deficit + 0.60 × VUL<sub>norm</sub></strong>
+          <p>Higher values indicate greater combined screening priority.</p>
+        </div>
+      </div>
+
+      <div class="principles">
+        <article><span>Interpretation principle</span><h3>Accessibility is multidimensional</h3><p>Proximity to a public transport stop is not treated as a complete measure of accessibility. Walking connectivity and scheduled service both contribute to effective access.</p></article>
+        <article><span>Equity principle</span><h3>Need is considered alongside access</h3><p>The hotspot stage introduces population vulnerability so that lower-access areas can be distinguished according to their potential social significance.</p></article>
+        <article><span>Limitation</span><h3>Screening evidence rather than a final investment decision</h3><p>Results should be interpreted alongside local knowledge, current service conditions, detailed site assessment, operational feasibility and stakeholder engagement.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA -->
+  <section id="data" class="section section-dark">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="section-number">07</p>
+          <h2>Evidence base &amp; sources</h2>
+        </div>
+        <p>
+          Source datasets, analytical processing and published outputs are separated
+          so the workflow can be reviewed, reused and updated.
+        </p>
+      </div>
+
+      <div class="resource-grid">
+        <article class="resource-card">
+          <span>DATA SOURCE · 01</span>
+          <h3>Census 2022</h3>
+          <p>Population data provide the demographic evidence used to represent spatial differences in potential transport vulnerability.</p>
+          <a href="https://www.cso.ie/en/census/" target="_blank" rel="noopener">CSO Census ↗</a>
+        </article>
+
+        <article class="resource-card">
+          <span>DATA SOURCE · 02</span>
+          <h3>Public Transport / GTFS</h3>
+          <p>Stop, route and scheduled service information provides the network and peak-time service dimensions.</p>
+          <a href="https://www.transportforireland.ie/transit-data-services/" target="_blank" rel="noopener">Transport for Ireland ↗</a>
+        </article>
+
+        <article class="resource-card">
+          <span>ANALYSIS · 03</span>
+          <h3>GIS Network Analysis</h3>
+          <p>Walking-network analysis converts transport stop locations into practical walking accessibility measures and catchments.</p>
+          <a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview" target="_blank" rel="noopener">ArcGIS Pro ↗</a>
+        </article>
+
+        <article class="resource-card">
+          <span>REPOSITORY · 04</span>
+          <h3>Spatial Evidence Lab</h3>
+          <p>The project repository contains the web presentation, analytical outputs and supporting project materials.</p>
+          <a href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io" target="_blank" rel="noopener">GitHub Repository ↗</a>
+        </article>
+
+        <article class="resource-card">
+          <span>OUTPUTS · 05</span>
+          <h3>Map output series</h3>
+          <p>Published outputs are organised as Map 01.00 through Map 01.06 following the analytical evidence chain.</p>
+          <a href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/bandon/maps" target="_blank" rel="noopener">View map outputs ↗</a>
+        </article>
+
+        <article class="resource-card">
+          <span>PROJECT · 06</span>
+          <h3>SEL-002 project page</h3>
+          <p>This page provides the published research narrative, map series and interpretation of the Bandon accessibility analysis.</p>
+          <a href="../index.html">Return to Spatial Evidence Lab ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANNING -->
+  <section id="planning" class="section">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="section-number">08</p>
+          <h2>What could this evidence support?</h2>
+        </div>
+        <p>
+          The analysis provides a screening framework for identifying where further
+          transport and public-realm investigation may provide the greatest potential benefit.
+        </p>
+      </div>
+
+      <div class="planning-grid">
+        <article><span>01</span><h3>Pedestrian infrastructure</h3><p>Investigate footpath connectivity, lighting and safer crossings along access corridors to central public transport stops.</p></article>
+        <article><span>02</span><h3>Bus-stop network &amp; micro-routing</h3><p>Evaluate additional stops, feeder arrangements or local loop routing where weaker walking access and demand justify intervention.</p></article>
+        <article><span>03</span><h3>Peak service frequency</h3><p>Examine whether peak-period service levels adequately support movement between Bandon and Cork City and whether deficits relate to service availability.</p></article>
+        <article><span>04</span><h3>Ongoing accessibility monitoring</h3><p>Institutionalise the workflow and rerun it as updated GTFS, Census and network data become available.</p></article>
+      </div>
+
+      <div class="planning-statement">
+        <p class="eyebrow">Planning principle</p>
+        <h3>Use the hotspot map as a starting point for investigation — not as a substitute for local knowledge.</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="section conclusion-section">
+    <div class="container conclusion">
+      <p class="eyebrow">From access to equity</p>
+      <h2>Public transport accessibility cannot be understood from stop proximity alone.</h2>
+      <p>
+        The Bandon analysis shows how the interaction between the transport network,
+        walking connectivity, scheduled service frequency and population characteristics
+        creates different spatial conditions of access.
+      </p>
+      <p>
+        The final equity analysis adds a planning dimension: areas with poor accessibility
+        are not necessarily the same as areas where poor accessibility may have the greatest
+        social significance. Combining accessibility deficits with vulnerability provides a
+        more targeted basis for screening potential transport disadvantage.
+      </p>
+
+      <div class="next-research">
+        <span>Next research</span>
+        <p>
+          Future development could extend the analysis through more detailed temporal service
+          analysis, population-demand modelling, accessibility by destination type, validation
+          against observed travel behaviour and scenario testing for proposed stop, routing or service interventions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Spatial Evidence Lab</strong>
+      <span>SEL-002 · Bandon Public Transport Accessibility &amp; Equity</span>
+    </div>
+    <a href="../index.html">← Return to Spatial Evidence Lab</a>
+  </div>
+</footer>
+
+<script>
+const mapData = {
+  "0100": {
+    code: "MAP 01.00",
+    title: "Study Area & Transport Network",
+    text: "Defines the geographic and transport-network context, showing the relationship between Bandon's built-up area, public transport stops and principal routes.",
+    image: "./maps/01.00.png"
+  },
+  "0101": {
+    code: "MAP 01.01",
+    title: "Walking Catchments",
+    text: "Shows 5, 10 and 15 minute walking-time catchments around public transport stops, illustrating the spatial reach of the existing stop network.",
+    image: "./maps/01.01.png"
+  },
+  "0102": {
+    code: "MAP 01.02",
+    title: "Walking Accessibility Score",
+    text: "Converts network-based walking access to public transport into a spatial accessibility measure, highlighting differences between central and peripheral locations.",
+    image: "./maps/01.02.png"
+  },
+  "0103": {
+    code: "MAP 01.03",
+    title: "Peak-Time Service Accessibility",
+    text: "Represents scheduled peak-time public transport service frequency, demonstrating that access to a nearby stop does not necessarily imply equivalent service availability.",
+    image: "./maps/01.03.png"
+  },
+  "0104": {
+    code: "MAP 01.04",
+    title: "Population Vulnerability",
+    text: "Maps Census 2022 population characteristics relevant to potential transport dependence and identifies areas where vulnerability is spatially differentiated.",
+    image: "./maps/01.04.png"
+  },
+  "0105": {
+    code: "MAP 01.05",
+    title: "Composite Public Transport Accessibility Index",
+    text: "Combines walking-network accessibility and scheduled public transport service frequency to represent effective public transport accessibility.",
+    image: "./maps/01.05.png"
+  }
+};
+
+const tabs = document.querySelectorAll(".map-tab[data-map]");
+const image = document.getElementById("explorer-image");
+const code = document.getElementById("explorer-code");
+const title = document.getElementById("explorer-title");
+const text = document.getElementById("explorer-text");
+const link = document.getElementById("explorer-link");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    const data = mapData[tab.dataset.map];
+    if (!data) return;
+
+    tabs.forEach(t => {
+      t.classList.remove("active");
+      t.setAttribute("aria-selected", "false");
+    });
+
+    tab.classList.add("active");
+    tab.setAttribute("aria-selected", "true");
+
+    image.src = data.image;
+    image.alt = data.code + " — " + data.title;
+    code.textContent = data.code;
+    title.textContent = data.title;
+    text.textContent = data.text;
+    link.href = data.image;
+  });
+});
+
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileNav = document.querySelector(".mobile-nav");
+
+menuToggle.addEventListener("click", () => {
+  const open = mobileNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+});
+
+mobileNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+</script>
+
 </body>
 </html>
