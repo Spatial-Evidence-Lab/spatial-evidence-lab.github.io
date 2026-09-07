@@ -416,7 +416,7 @@ button {
 
 .section {
   padding: 88px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 0;
 }
 
 .section-dark {
