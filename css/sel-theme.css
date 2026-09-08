@@ -5,9 +5,9 @@
 
 :root {
 
-    /* =====================================================
-       COLOUR SYSTEM
-    ===================================================== */
+    /* -----------------------------------------------------
+       COLOURS
+    ----------------------------------------------------- */
 
     --sel-section: #0B1D25;
     --sel-box: #293735;
@@ -25,14 +25,12 @@
 
     --sel-white: #FFFFFF;
 
-    --sel-paper: #0B1D25;
-
     --sel-text: #E8F0F1;
     --sel-text-soft: #B8C9CC;
     --sel-muted: #8FA5A9;
 
-    --sel-line: rgba(255, 255, 255, 0.14);
-    --sel-line-dark: rgba(255, 255, 255, 0.18);
+    --sel-line: rgba(255,255,255,.14);
+    --sel-line-dark: rgba(255,255,255,.18);
 
     --sel-cyan: #00D7E8;
     --sel-teal-light: #8ED1D8;
@@ -41,55 +39,27 @@
     --sel-positive: #55A878;
     --sel-negative: #D9485F;
 
-
-    /* =====================================================
-       QUALITY OF LIFE COLOURS
-    ===================================================== */
-
-    --qol-economic: #C69214;
-    --qol-education: #8B68C7;
-    --qol-health: #D96878;
-    --qol-housing: #E69452;
-    --qol-environment: #55A878;
-    --qol-accessibility: #3C9B9B;
-    --qol-social: #A25C9D;
-    --qol-urban: #4E93AA;
-
-
-    /* =====================================================
+    /* -----------------------------------------------------
        LAYOUT
-    ===================================================== */
+    ----------------------------------------------------- */
 
     --max: 1200px;
     --content-width: 1200px;
-
-    --shell-padding: 24px;
 
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 12px;
 
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
-
     --sel-header-height: 72px;
 
-
-    /* =====================================================
-       TRANSITIONS / SHADOWS
-    ===================================================== */
-
-    --sel-transition: 180ms ease;
+    --sel-transition: .2s ease;
 
     --sel-shadow-sm:
-        0 8px 24px rgba(0, 0, 0, 0.18);
+        0 8px 24px rgba(0,0,0,.18);
 
-
-    /* =====================================================
+    /* -----------------------------------------------------
        TYPOGRAPHY
-    ===================================================== */
+    ----------------------------------------------------- */
 
     --sans:
         Inter,
@@ -121,6 +91,15 @@
 }
 
 
+/*
+   IMPORTANT
+   ---------------------------------------------------------
+   Never use 100vw for page-level elements.
+
+   100vw includes the browser scrollbar and can make the
+   document wider than the visible viewport.
+*/
+
 html {
     width: 100%;
     max-width: 100%;
@@ -128,8 +107,10 @@ html {
     margin: 0;
     padding: 0;
 
+    background: var(--sel-section);
+
     scroll-behavior: smooth;
-    scroll-padding-top: var(--sel-header-height);
+    scroll-padding-top: 84px;
 
     overflow-x: hidden;
 }
@@ -154,9 +135,27 @@ body {
 }
 
 
-/* =========================================================
-   MEDIA
-   ========================================================= */
+/*
+   Main page wrapper must never become wider than viewport.
+*/
+
+main {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: clip;
+}
+
+
+/*
+   Prevent replaced elements from creating overflow.
+*/
 
 img,
 svg,
@@ -170,9 +169,9 @@ iframe {
 }
 
 
-/* =========================================================
-   TEXT SAFETY
-   ========================================================= */
+/*
+   Prevent long content from expanding grid/flex layouts.
+*/
 
 h1,
 h2,
@@ -185,10 +184,10 @@ a,
 span,
 strong,
 b {
-    max-width: 100%;
+    min-width: 0;
 
-    overflow-wrap: anywhere;
-    word-break: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 
@@ -206,39 +205,19 @@ a {
    SHARED CONTAINER
    ========================================================= */
 
-/*
-   IMPORTANT:
-
-   The shell itself is always exactly 100% of its parent.
-   Padding creates the visual side margins.
-
-   This avoids the previous:
-       width: calc(100% - 48px)
-
-   calculation being combined with other width rules.
-*/
-
 .shell {
-    width: 100%;
+    width: calc(100% - 48px);
     max-width: var(--max);
 
-    margin-inline: auto;
-
-    padding-inline: var(--shell-padding);
+    margin-left: auto;
+    margin-right: auto;
 
     min-width: 0;
-
-    box-sizing: border-box;
 }
 
 
-/* =========================================================
-   CHILD SAFETY
-   ========================================================= */
-
 .shell > * {
     min-width: 0;
-    max-width: 100%;
 }
 
 
@@ -283,7 +262,7 @@ a {
 
     overflow: hidden;
 
-    clip: rect(0, 0, 0, 0);
+    clip: rect(0,0,0,0);
 
     white-space: nowrap;
 
@@ -312,36 +291,14 @@ a {
 
 
 /* =========================================================
-   GLOBAL LAYOUT PROTECTION
-   ========================================================= */
-
-main,
-section,
-article,
-header,
-footer {
-    min-width: 0;
-    max-width: 100%;
-}
-
-
-main > *,
-section > *,
-article > *,
-header > *,
-footer > * {
-    min-width: 0;
-}
-
-
-/* =========================================================
-   RESPONSIVE
+   RESPONSIVE SHELL
    ========================================================= */
 
 @media (max-width: 700px) {
 
-    :root {
-        --shell-padding: 16px;
+    .shell {
+        width: calc(100% - 32px);
+        max-width: var(--max);
     }
 
 }
@@ -349,8 +306,8 @@ footer > * {
 
 @media (max-width: 420px) {
 
-    :root {
-        --shell-padding: 14px;
+    .shell {
+        width: calc(100% - 28px);
     }
 
 }
