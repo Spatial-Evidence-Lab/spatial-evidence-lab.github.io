@@ -1,20 +1,7 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB
    MASTER DESIGN SYSTEM
-   sel-theme.css
-
-   PURPOSE
-   ---------------------------------------------------------
-   Global design tokens, reset, typography, accessibility
-   and basic layout utilities.
-
-   IMPORTANT
-   ---------------------------------------------------------
-   This file does NOT style homepage sections, cards,
-   header, footer or portfolio components.
-   Those belong to sel-components.css and portfolio.css.
    ========================================================= */
-
 
 /* =========================================================
    01. DESIGN TOKENS
@@ -23,49 +10,72 @@
 :root {
 
     /* -----------------------------------------------------
-       Brand
+       BRAND COLOURS
     ----------------------------------------------------- */
 
-    --sel-blue: #004DA8;
-    --sel-blue-dark: #003B82;
-    --sel-blue-deep: #002F66;
-    --sel-blue-light: #2E73C4;
-    --sel-blue-pale: #E7F0FA;
+    --sel-blue: #0057A8;
+    --sel-blue-dark: #004486;
+    --sel-blue-deep: #002F5F;
+    --sel-blue-light: #2F78BE;
 
     /* -----------------------------------------------------
-       Dark colours
+       DARK MODE / DARK SURFACES
     ----------------------------------------------------- */
 
-    --sel-navy: #07111F;
-    --sel-navy-2: #0B1828;
-    --sel-navy-3: #102338;
+    --sel-navy: #071522;
+    --sel-navy-2: #0B1D2D;
+    --sel-navy-3: #10283B;
+
+    --sel-dark-surface: #0B1D2D;
+    --sel-dark-card: #10283B;
+    --sel-dark-card-hover: #15344A;
 
     /* -----------------------------------------------------
-       Neutral colours
+       LIGHT SURFACES
     ----------------------------------------------------- */
 
-    --sel-white: #FFFFFF;
-    --sel-paper: #F5F8FB;
-    --sel-text: #172536;
-    --sel-text-soft: #40556A;
-    --sel-muted: #6D7F91;
-
-    --sel-line: #D6E0EA;
-    --sel-line-dark: #26394D;
+    --sel-paper: #F5F7F9;
+    --sel-surface: #FFFFFF;
+    --sel-surface-alt: #EEF2F5;
+    --sel-surface-blue: #EAF2F9;
 
     /* -----------------------------------------------------
-       Accent colours
+       TEXT
     ----------------------------------------------------- */
 
-    --sel-cyan: #00D7E8;
-    --sel-teal-light: #8ED1D8;
+    --sel-text: #182635;
+    --sel-text-soft: #405466;
+    --sel-muted: #6C7D8D;
+
+    --sel-dark-text: #F4F8FB;
+    --sel-dark-text-soft: #C2D0DC;
+    --sel-dark-muted: #91A5B5;
+
+    /* -----------------------------------------------------
+       BORDERS
+       
+       IMPORTANT:
+       These are intentionally subtle. Sections themselves
+       do NOT receive borders.
+    ----------------------------------------------------- */
+
+    --sel-line: #D8E0E7;
+    --sel-line-light: #E6EBEF;
+    --sel-line-dark: #294052;
+
+    /* -----------------------------------------------------
+       ACCENT COLOURS
+    ----------------------------------------------------- */
+
+    --sel-cyan: #00C9DA;
+    --sel-teal: #5FAEB8;
 
     --sel-warning: #C69214;
     --sel-positive: #2E8B57;
     --sel-negative: #D9485F;
 
     /* -----------------------------------------------------
-       Quality-of-life colours
+       QUALITY OF LIFE COLOURS
     ----------------------------------------------------- */
 
     --qol-economic: #C69214;
@@ -78,37 +88,23 @@
     --qol-urban: #267C9D;
 
     /* -----------------------------------------------------
-       Layout
+       LAYOUT
     ----------------------------------------------------- */
 
-    --sel-max-width: 1200px;
-    --sel-content-width: 1100px;
-    --sel-reading-width: 850px;
+    --max: 1200px;
 
-    --sel-gutter: 4%;
+    --section-space: clamp(76px, 9vw, 128px);
+    --section-space-small: clamp(56px, 7vw, 90px);
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
 
     /* -----------------------------------------------------
-       Radius
+       TYPOGRAPHY
     ----------------------------------------------------- */
 
-    --sel-radius-sm: 4px;
-    --sel-radius-md: 8px;
-
-    /* -----------------------------------------------------
-       Shadows
-    ----------------------------------------------------- */
-
-    --sel-shadow-sm:
-        0 4px 14px rgba(7, 17, 31, 0.05);
-
-    --sel-shadow-md:
-        0 10px 30px rgba(7, 17, 31, 0.08);
-
-    /* -----------------------------------------------------
-       Typography
-    ----------------------------------------------------- */
-
-    --sel-sans:
+    --sans:
         Inter,
         ui-sans-serif,
         system-ui,
@@ -117,29 +113,29 @@
         "Segoe UI",
         sans-serif;
 
-    --sel-serif:
+    --serif:
         Georgia,
         "Times New Roman",
         serif;
 
+    --body-size: 16px;
+    --body-line: 1.7;
+
+    --heading-tight: 1.05;
+    --heading-letter-spacing: -0.045em;
+
     /* -----------------------------------------------------
-       Motion
+       TRANSITIONS
     ----------------------------------------------------- */
 
-    --sel-transition:
-        180ms ease;
-
-    /* -----------------------------------------------------
-       Header
-    ----------------------------------------------------- */
-
-    --sel-header-height: 78px;
+    --transition-fast: 160ms ease;
+    --transition: 220ms ease;
 
 }
 
 
 /* =========================================================
-   02. RESET
+   02. GLOBAL RESET
 ========================================================= */
 
 *,
@@ -148,14 +144,10 @@
     box-sizing: border-box;
 }
 
-
 html {
-    margin: 0;
-    padding: 0;
     scroll-behavior: smooth;
-    scroll-padding-top: var(--sel-header-height);
+    scroll-padding-top: 84px;
 }
-
 
 body {
     margin: 0;
@@ -164,139 +156,103 @@ body {
     background: var(--sel-paper);
     color: var(--sel-text);
 
-    font-family: var(--sel-sans);
-    font-size: 16px;
-    line-height: 1.7;
+    font-family: var(--sans);
+    font-size: var(--body-size);
+    line-height: var(--body-line);
 
-    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
-
 
 body,
 button,
 input,
 textarea,
 select {
-    font-family: var(--sel-sans);
+    font-family: var(--sans);
 }
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin-top: 0;
-}
-
 
 img,
-svg,
-video {
+svg {
     display: block;
     max-width: 100%;
 }
-
-
-img {
-    height: auto;
-}
-
-
-button,
-input,
-textarea,
-select {
-    font: inherit;
-}
-
-
-button {
-    cursor: pointer;
-}
-
 
 a {
     color: inherit;
     text-decoration: none;
 }
 
+button {
+    color: inherit;
+}
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-    outline: 3px solid var(--sel-cyan);
-    outline-offset: 3px;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: var(--heading-tight);
+}
+
+h1,
+h2 {
+    letter-spacing: var(--heading-letter-spacing);
 }
 
 
 /* =========================================================
-   03. SELECTION
-========================================================= */
-
-::selection {
-    background: var(--sel-blue);
-    color: var(--sel-white);
-}
-
-
-/* =========================================================
-   04. BASIC LAYOUT
+   03. LAYOUT
 ========================================================= */
 
 .shell {
-    width: min(
-        calc(100% - 8%),
-        var(--sel-max-width)
-    );
-
+    width: min(92%, var(--max));
     margin-inline: auto;
 }
 
 
-@media (max-width: 600px) {
-
-    .shell {
-        width: min(
-            calc(100% - 10%),
-            var(--sel-max-width)
-        );
-    }
-
-}
-
-
 /* =========================================================
-   05. ACCESSIBILITY
+   04. ACCESSIBILITY
 ========================================================= */
 
 .skip-link {
-    position: fixed;
-
-    top: 10px;
+    position: absolute;
     left: -9999px;
+    top: 10px;
 
     z-index: 9999;
 
     padding: 9px 14px;
 
     background: var(--sel-blue);
-    color: var(--sel-white);
+    color: #fff;
 
-    font-size: .78rem;
+    font-size: .8rem;
     font-weight: 800;
 }
-
 
 .skip-link:focus {
     left: 10px;
 }
 
+:focus-visible {
+    outline: 3px solid var(--sel-cyan);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   05. SCREEN READER ONLY
+========================================================= */
 
 .sr-only {
     position: absolute;
@@ -317,22 +273,23 @@ select:focus-visible {
 
 
 /* =========================================================
-   06. TYPOGRAPHIC UTILITIES
+   06. SECTIONS — GLOBAL RESET
+       
+   IMPORTANT:
+   No section is allowed to introduce horizontal rules
+   through border-top or border-bottom.
 ========================================================= */
 
-.serif {
-    font-family: var(--sel-serif);
-    font-weight: 400;
-}
+.project-section,
+.portfolio-hero,
+.research-introduction,
+.research-domains,
+.geographic-scope,
+.research-workflow {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
 
-
-.text-blue {
-    color: var(--sel-blue);
-}
-
-
-.text-muted {
-    color: var(--sel-muted);
+    box-shadow: none;
 }
 
 
@@ -349,10 +306,10 @@ select:focus-visible {
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 
 }
