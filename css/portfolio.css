@@ -1,232 +1,199 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB
-   HOMEPAGE / PORTFOLIO SYSTEM
+   PORTFOLIO / HOMEPAGE SYSTEM
    ========================================================= */
 
 
 /* =========================================================
-   01 · GLOBAL SECTION SYSTEM
+   GLOBAL SECTION RESET
 ========================================================= */
 
-.project-section {
-    width: 100%;
-    position: relative;
-
-    background: #0B1D25 !important;
-    color: var(--sel-text);
-
-    border: 0 !important;
-    border-top: none !important;
-    border-bottom: none !important;
-
-    box-shadow: none !important;
-
-    padding: 100px 0;
-}
-
-
-/*
-   All four homepage sections deliberately use exactly
-   the same background.
-*/
-
+.portfolio-hero,
+.project-section,
 .research-introduction,
 .research-domains,
 .geographic-scope,
 .research-workflow {
-    background: #0B1D25 !important;
-
-    border-top: none !important;
-    border-bottom: none !important;
-
-    box-shadow: none !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
 }
 
 
 /* =========================================================
-   02 · HERO
+   HERO
 ========================================================= */
 
 .portfolio-hero {
-    position: relative;
-
-    background: #0B1D25;
+    background: var(--sel-hero) !important;
     color: var(--sel-text);
 
-    padding: 78px 0 92px;
+    padding: 92px 0 96px;
 
     border: 0 !important;
 }
 
 
 .portfolio-hero .shell {
-    width: min(92%, var(--max));
+    position: relative;
 }
 
 
-/* ---------------------------------------------------------
-   Eyebrow
---------------------------------------------------------- */
+/* =========================================================
+   HERO EYEBROW
+========================================================= */
 
 .research-eyebrow {
-    margin: 0 0 30px;
+    margin: 0 0 22px;
 
-    color: var(--sel-blue-light);
+    color: var(--sel-cyan-soft);
 
     font-size: .72rem;
+    font-weight: 850;
+    letter-spacing: .10em;
     line-height: 1.4;
-
-    font-weight: 800;
-    letter-spacing: .13em;
     text-transform: uppercase;
 }
 
 
-/* ---------------------------------------------------------
-   Hero title
---------------------------------------------------------- */
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
 .hero-title {
-    max-width: 1000px;
+    max-width: 1180px;
 
-    margin: 0 0 30px;
-
-    color: var(--sel-white);
-
-    font-size: clamp(2.2rem, 4.2vw, 4.2rem);
-    line-height: 1.05;
-
-    font-weight: 800;
-    letter-spacing: -.045em;
-}
-
-
-/* ---------------------------------------------------------
-   Hero copy
---------------------------------------------------------- */
-
-.hero-copy {
-    max-width: 850px;
-}
-
-
-.hero-lead {
     margin: 0;
 
-    color: var(--sel-text-soft);
+    color: #FFFFFF;
 
-    font-size: 1.05rem;
+    font-size: clamp(2.25rem, 5vw, 4.25rem);
+    font-weight: 750;
+    line-height: 1.05;
+    letter-spacing: -.055em;
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.hero-copy {
+    max-width: 980px;
+
+    margin-top: 28px;
+}
+
+
+.hero-copy p {
+    margin: 0;
+
+    color: #D0DDE1;
+
+    font-size: 1rem;
     line-height: 1.7;
 }
 
 
-/* ---------------------------------------------------------
-   Hero actions
---------------------------------------------------------- */
+.hero-copy .hero-lead {
+    color: #FFFFFF;
 
-.portfolio-hero .project-actions {
-    margin-top: 38px;
+    font-size: 1.05rem;
+    line-height: 1.65;
 }
 
 
 /* =========================================================
-   03 · SHARED SECTION HEADINGS
+   HERO ACTIONS
 ========================================================= */
 
-.project-section-head {
-    display: grid;
+.portfolio-hero .project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 
-    grid-template-columns:
-        minmax(0, .8fr)
-        minmax(0, 1.2fr);
-
-    align-items: start;
-
-    column-gap: 80px;
-
-    margin-bottom: 55px;
-}
-
-
-/* ---------------------------------------------------------
-   Section number/title
---------------------------------------------------------- */
-
-.programme-title,
-.project-number {
-    color: var(--sel-white);
-
-    font-size: clamp(1.15rem, 2vw, 1.55rem);
-    line-height: 1.2;
-
-    font-weight: 800;
-    letter-spacing: .015em;
-
-    margin: 0;
-}
-
-
-/*
-   Current index.html uses .programme-title for
-   section headings 01–04.
-*/
-
-.programme-title {
-    font-size: clamp(1.25rem, 2.15vw, 1.7rem);
-    font-weight: 800;
-}
-
-
-/* ---------------------------------------------------------
-   Section introduction
---------------------------------------------------------- */
-
-.section-lead,
-.project-intro {
-    max-width: 760px;
-
-    margin: 0;
-
-    color: var(--sel-text-soft);
-
-    font-size: .98rem;
-    line-height: 1.75;
+    margin-top: 34px;
 }
 
 
 /* =========================================================
-   04 · RESEARCH PROGRAMME
+   STANDARD PROJECT SECTION
+========================================================= */
+
+.project-section {
+    position: relative;
+
+    background: var(--sel-section) !important;
+    color: var(--sel-text);
+
+    padding: 96px 0;
+
+    border: 0 !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD ALT / DARK BACKGROUNDS
+========================================================= */
+
+.project-section.alt,
+.project-section.dark,
+.research-introduction,
+.research-domains,
+.geographic-scope,
+.research-workflow {
+    background: var(--sel-section) !important;
+    color: var(--sel-text);
+
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   SECTION 01
 ========================================================= */
 
 .research-introduction {
-    padding-top: 92px;
+    padding-top: 100px;
     padding-bottom: 105px;
 }
 
 
 .programme-heading {
-    display: grid;
+    max-width: 1100px;
 
-    grid-template-columns:
-        minmax(0, .8fr)
-        minmax(0, 1.2fr);
-
-    column-gap: 80px;
-
-    align-items: start;
-
-    margin-bottom: 48px;
+    margin-bottom: 42px;
 }
 
 
-.programme-heading .section-lead {
-    max-width: 760px;
+.programme-title {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+
+    font-weight: 900;
+    line-height: 1.15;
+
+    letter-spacing: -.035em;
+}
+
+
+.research-introduction .section-lead {
+    max-width: 900px;
+
+    margin: 22px 0 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 
 /* =========================================================
-   05 · RESEARCH PRINCIPLES
-   Measure → Map → Understand
+   RESEARCH PRINCIPLES
 ========================================================= */
 
 .research-principles {
@@ -236,66 +203,58 @@
 
     gap: 18px;
 
-    width: 100%;
+    max-width: 1050px;
 }
 
 
 .research-principle {
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    padding: 26px 28px;
+
     min-width: 0;
 
-    padding: 27px 28px;
-
-    background: var(--sel-card);
-
-    border: 1px solid var(--sel-card-border);
-
-    border-radius: var(--radius-md);
-
     transition:
-        background var(--transition-standard),
-        border-color var(--transition-standard),
-        transform var(--transition-standard);
+        border-color .2s ease,
+        background-color .2s ease,
+        transform .2s ease;
 }
 
 
 .research-principle:hover {
-    background: var(--sel-card-hover);
+    background: #30423F;
 
-    border-color: rgba(114,214,223,.28);
+    border-color: rgba(0,215,232,.28);
 
     transform: translateY(-2px);
 }
 
 
-.research-principle-content {
-    min-width: 0;
+.research-principle-content h3 {
+    margin: 0 0 10px;
+
+    color: #FFFFFF;
+
+    font-size: 1.15rem;
+    font-weight: 850;
+    line-height: 1.2;
 }
 
 
-.research-principle h3 {
-    margin: 0 0 9px;
-
-    color: var(--sel-white);
-
-    font-size: 1.05rem;
-    line-height: 1.25;
-
-    font-weight: 800;
-}
-
-
-.research-principle p {
+.research-principle-content p {
     margin: 0;
 
-    color: var(--sel-text-soft);
+    color: #B8C8CA;
 
-    font-size: .86rem;
+    font-size: .9rem;
     line-height: 1.6;
 }
 
 
 /* =========================================================
-   06 · RESEARCH DOMAINS
+   SECTION 02 — RESEARCH DOMAINS
 ========================================================= */
 
 .research-domains {
@@ -304,14 +263,39 @@
 }
 
 
+.project-section-head {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr);
+
+    gap: 70px;
+
+    align-items: start;
+
+    margin-bottom: 48px;
+}
+
+
 .domain-heading {
-    margin-bottom: 45px;
+    margin-bottom: 44px;
+}
+
+
+.project-intro {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 
 /* =========================================================
-   07 · DOMAIN GRID
-   Two columns on desktop.
+   DOMAIN GRID
+   Two columns
 ========================================================= */
 
 .domain-grid {
@@ -326,147 +310,94 @@
 
 
 /* =========================================================
-   08 · DOMAIN CARDS
+   DOMAIN CARD
 ========================================================= */
 
 .domain-card {
-    position: relative;
-
-    min-width: 0;
-    width: 100%;
-
     display: flex;
     flex-direction: column;
 
-    min-height: 190px;
+    min-width: 0;
 
-    padding: 25px 27px 20px;
+    min-height: 205px;
 
-    background: var(--sel-card);
+    background: var(--sel-box);
 
-    border: 1px solid var(--sel-card-border);
-    border-radius: var(--radius-md);
+    border: 1px solid rgba(255,255,255,.12);
+
+    padding: 24px 26px;
 
     color: var(--sel-text);
 
-    overflow: hidden;
-
     transition:
-        background var(--transition-standard),
-        border-color var(--transition-standard),
-        transform var(--transition-standard);
+        background-color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
 }
 
 
 .domain-card:hover {
-    background: var(--sel-card-hover);
+    background: #30423F;
 
-    border-color: rgba(114,214,223,.30);
+    border-color: rgba(0,215,232,.35);
 
     transform: translateY(-2px);
 }
 
 
-/* ---------------------------------------------------------
-   Domain body
---------------------------------------------------------- */
-
 .domain-card-body {
-    min-width: 0;
+    flex: 1;
 }
 
 
 .domain-card h3 {
-    margin: 0 0 10px;
+    margin: 0 0 13px;
 
-    color: var(--sel-white);
+    color: #FFFFFF;
 
-    font-size: 1rem;
-    line-height: 1.35;
-
+    font-size: 1.05rem;
     font-weight: 800;
-    letter-spacing: -.015em;
+    line-height: 1.3;
 }
 
 
 .domain-question {
-    max-width: 620px;
-
     margin: 0;
 
-    color: var(--sel-text-soft);
+    color: #B8C8CA;
 
-    font-size: .82rem;
+    font-size: .88rem;
     line-height: 1.55;
 }
 
 
-/* ---------------------------------------------------------
-   Domain footer
---------------------------------------------------------- */
-
 .domain-card-footer {
     display: flex;
-
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    gap: 15px;
+    gap: 12px;
 
-    margin-top: auto;
-    padding-top: 20px;
+    margin-top: 25px;
+    padding-top: 14px;
 
-    color: var(--sel-muted);
+    border-top: 1px solid rgba(255,255,255,.10);
 
-    font-size: .66rem;
-    line-height: 1.3;
+    color: #91A7AA;
 
-    font-weight: 700;
-    letter-spacing: .04em;
-    text-transform: uppercase;
+    font-size: .68rem;
+    font-weight: 750;
+    letter-spacing: .03em;
 }
 
 
 .domain-card-footer span:last-child {
-    color: var(--sel-cyan);
-}
-
-
-/* ---------------------------------------------------------
-   Domain colour accents
---------------------------------------------------------- */
-
-.domain-qoli {
-    border-left: 3px solid var(--qol-economic);
-}
-
-.domain-access {
-    border-left: 3px solid var(--qol-accessibility);
-}
-
-.domain-population {
-    border-left: 3px solid var(--qol-social);
-}
-
-.domain-housing {
-    border-left: 3px solid var(--qol-housing);
-}
-
-.domain-land {
-    border-left: 3px solid var(--qol-urban);
-}
-
-.domain-environment {
-    border-left: 3px solid var(--qol-environment);
-}
-
-.domain-energy {
-    border-left: 3px solid var(--qol-education);
+    color: var(--sel-accent);
 }
 
 
 /* =========================================================
-   09 · DOMAIN CTA
+   DOMAIN CTA
 ========================================================= */
 
 .domain-cta {
@@ -475,7 +406,7 @@
 
 
 /* =========================================================
-   10 · GEOGRAPHIC SCOPE
+   SECTION 03 — GEOGRAPHIC SCOPE
 ========================================================= */
 
 .geographic-scope {
@@ -485,7 +416,7 @@
 
 
 /* =========================================================
-   11 · SCOPE GRID
+   SCOPE GRID
 ========================================================= */
 
 .scope-grid {
@@ -493,76 +424,70 @@
 
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    gap: 16px;
+    gap: 18px;
 
-    width: 100%;
+    margin-top: 10px;
 }
 
 
 .scope-item {
-    min-width: 0;
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.12);
 
     padding: 24px 26px;
 
-    background: var(--sel-card);
-
-    border: 1px solid var(--sel-card-border);
-
-    border-radius: var(--radius-md);
+    min-width: 0;
 
     transition:
-        background var(--transition-standard),
-        border-color var(--transition-standard),
-        transform var(--transition-standard);
+        background-color .2s ease,
+        border-color .2s ease;
 }
 
 
 .scope-item:hover {
-    background: var(--sel-card-hover);
+    background: #30423F;
 
-    border-color: rgba(114,214,223,.30);
-
-    transform: translateY(-2px);
+    border-color: rgba(0,215,232,.28);
 }
 
 
 .scope-item h3 {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
 
-    color: var(--sel-white);
+    color: #FFFFFF;
 
-    font-size: 1rem;
-    line-height: 1.3;
-
+    font-size: 1.05rem;
     font-weight: 800;
+    line-height: 1.25;
 }
 
 
 .scope-item p {
     margin: 0;
 
-    color: var(--sel-text-soft);
+    color: #B8C8CA;
 
-    font-size: .81rem;
+    font-size: .86rem;
     line-height: 1.55;
 }
 
 
 /* =========================================================
-   12 · RESEARCH APPROACH
+   SECTION 04 — RESEARCH APPROACH
 ========================================================= */
 
 .research-workflow {
     padding-top: 105px;
-    padding-bottom: 105px;
+    padding-bottom: 110px;
 
-    border-top: none !important;
-    border-bottom: none !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
 }
 
 
 /* =========================================================
-   13 · WORKFLOW
+   WORKFLOW GRID
 ========================================================= */
 
 .workflow {
@@ -572,297 +497,144 @@
 
     gap: 16px;
 
-    width: 100%;
+    margin-top: 12px;
 }
 
 
+/* =========================================================
+   WORKFLOW CARD
+========================================================= */
+
 .workflow-step {
-    min-width: 0;
-
-    min-height: 180px;
-
     display: flex;
     flex-direction: column;
 
-    padding: 25px 27px;
+    min-width: 0;
+    min-height: 190px;
 
-    background: var(--sel-card);
+    background: var(--sel-box);
 
-    border: 1px solid var(--sel-card-border);
+    border: 1px solid rgba(255,255,255,.12);
 
-    border-radius: var(--radius-md);
+    padding: 26px 28px;
 
     transition:
-        background var(--transition-standard),
-        border-color var(--transition-standard),
-        transform var(--transition-standard);
+        background-color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
 }
 
 
 .workflow-step:hover {
-    background: var(--sel-card-hover);
+    background: #30423F;
 
-    border-color: rgba(114,214,223,.30);
+    border-color: rgba(0,215,232,.28);
 
     transform: translateY(-2px);
 }
 
 
-/* ---------------------------------------------------------
-   Large workflow numbers
---------------------------------------------------------- */
+/* Large sequence numbers */
 
 .workflow-step b {
     display: block;
 
-    margin-bottom: 23px;
+    margin-bottom: 25px;
 
-    color: var(--sel-cyan);
+    color: var(--sel-cyan-soft);
 
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 900;
     line-height: 1;
 
-    font-weight: 800;
     letter-spacing: -.04em;
 }
 
 
-/* ---------------------------------------------------------
-   Workflow title
---------------------------------------------------------- */
-
 .workflow-step strong {
     display: block;
 
-    margin-bottom: 7px;
+    color: #FFFFFF;
 
-    color: var(--sel-white);
-
-    font-size: .92rem;
-    line-height: 1.35;
-
-    font-weight: 800;
+    font-size: .98rem;
+    font-weight: 850;
+    line-height: 1.3;
 }
 
-
-/* ---------------------------------------------------------
-   Workflow description
---------------------------------------------------------- */
 
 .workflow-step span {
     display: block;
 
-    margin-top: auto;
+    margin-top: 8px;
 
-    color: var(--sel-text-soft);
+    color: #B8C8CA;
 
-    font-size: .78rem;
-    line-height: 1.55;
+    font-size: .82rem;
+    line-height: 1.5;
 }
 
 
 /* =========================================================
-   14 · BUTTONS / ACTION AREAS
+   WORKFLOW ACTIONS
 ========================================================= */
 
-.project-actions {
+.research-workflow .project-actions {
     display: flex;
-
     flex-wrap: wrap;
-
-    align-items: center;
 
     gap: 12px;
 
-    margin-top: 35px;
+    margin-top: 32px;
 }
 
 
 /* =========================================================
-   15 · FOOTER
+   HERO / SECTION ACCENTS
 ========================================================= */
 
-.site-footer {
-    width: 100%;
-
-    background: #07151B;
-
-    color: var(--sel-text-soft);
-
-    padding: 65px 0 22px;
-
-    border-top: none !important;
+.project-number,
+.research-eyebrow {
+    color: var(--sel-accent);
 }
 
 
-.footer-grid {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        auto;
-
-    align-items: start;
-
-    gap: 70px;
-}
-
-
-/* ---------------------------------------------------------
-   Footer identity
---------------------------------------------------------- */
-
-.footer-identity {
-    min-width: 0;
-}
-
-
-.footer-brand-lockup {
-    display: flex;
-
-    align-items: center;
-
-    gap: 11px;
-
-    white-space: nowrap;
-}
-
-
-.footer-brand-lockup img {
-    width: 30px;
-    height: 30px;
-
-    object-fit: contain;
-
-    flex: 0 0 auto;
-}
-
-
-.footer-brand {
-    display: inline-block;
-
-    color: var(--sel-white);
-
-    font-size: .9rem;
-    line-height: 1.2;
-
-    font-weight: 800;
-
-    white-space: nowrap;
-}
-
-
-/*
-   The previous descriptive footer paragraph is deliberately
-   hidden because the current homepage removes it.
-*/
-
-.footer-identity > p {
-    display: none;
+.domain-arrow,
+.scope-number {
+    color: var(--sel-accent);
 }
 
 
 /* =========================================================
-   16 · FOOTER LINKS
+   PREVENT HORIZONTAL OVERFLOW
 ========================================================= */
 
-.footer-links {
-    display: flex;
-
-    gap: 65px;
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 
-.footer-links > div {
-    display: flex;
+.project-section > .shell,
+.portfolio-hero > .shell {
+    width: min(92%, var(--max));
 
-    flex-direction: column;
+    max-width: 100%;
 
-    gap: 8px;
-
-    min-width: 80px;
-}
-
-
-.footer-links b {
-    margin-bottom: 5px;
-
-    color: var(--sel-white);
-
-    font-size: .65rem;
-    line-height: 1.2;
-
-    font-weight: 800;
-
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
-
-
-.footer-links a {
-    color: var(--sel-text-soft);
-
-    font-size: .72rem;
-    line-height: 1.4;
-
-    transition: color var(--transition-fast);
-}
-
-
-.footer-links a:hover {
-    color: var(--sel-cyan);
+    margin-inline: auto;
 }
 
 
 /* =========================================================
-   17 · FOOTER BOTTOM
-========================================================= */
-
-.footer-bottom {
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 20px;
-
-    margin-top: 55px;
-    padding-top: 18px;
-
-    border-top: 1px solid rgba(255,255,255,.10);
-
-    color: var(--sel-muted);
-
-    font-size: .66rem;
-    line-height: 1.4;
-}
-
-
-/* =========================================================
-   18 · TABLET
+   MOBILE
 ========================================================= */
 
 @media (max-width: 900px) {
 
-    .project-section {
-        padding-top: 85px;
-        padding-bottom: 85px;
-    }
-
-
-    .portfolio-hero {
-        padding-top: 65px;
-        padding-bottom: 75px;
-    }
-
-
-    .project-section-head,
-    .programme-heading {
+    .project-section-head {
         grid-template-columns: 1fr;
 
-        gap: 20px;
-
-        margin-bottom: 40px;
+        gap: 24px;
     }
 
 
@@ -879,184 +651,99 @@
     .workflow {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
 }
 
 
-/* =========================================================
-   19 · MOBILE
-========================================================= */
-
 @media (max-width: 700px) {
 
-    .project-section {
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-
     .portfolio-hero {
-        padding-top: 48px;
-        padding-bottom: 65px;
-    }
-
-
-    .research-eyebrow {
-        margin-bottom: 22px;
-
-        font-size: .64rem;
-
-        line-height: 1.5;
+        padding: 70px 0 76px;
     }
 
 
     .hero-title {
-        max-width: 100%;
-
-        margin-bottom: 22px;
-
-        font-size: clamp(2rem, 9vw, 2.8rem);
-
+        font-size: clamp(2rem, 9vw, 3rem);
         line-height: 1.08;
     }
 
 
-    .hero-lead {
-        font-size: .92rem;
+    .project-section {
+        padding: 72px 0;
+    }
+
+
+    .research-introduction,
+    .research-domains,
+    .geographic-scope,
+    .research-workflow {
+        padding-top: 75px;
+        padding-bottom: 78px;
     }
 
 
     .programme-title {
-        font-size: 1.2rem;
-    }
-
-
-    .section-lead,
-    .project-intro {
-        font-size: .9rem;
-    }
-
-
-    .research-principle {
-        padding: 23px;
+        font-size: 1.65rem;
     }
 
 
     .domain-grid {
         grid-template-columns: 1fr;
-
-        gap: 13px;
-    }
-
-
-    .domain-card {
-        min-height: 175px;
-
-        padding: 23px;
-    }
-
-
-    .scope-grid {
-        grid-template-columns: 1fr;
-
-        gap: 13px;
-    }
-
-
-    .scope-item {
-        padding: 22px 23px;
     }
 
 
     .workflow {
         grid-template-columns: 1fr;
+    }
 
-        gap: 13px;
+
+    .domain-card {
+        min-height: 0;
     }
 
 
     .workflow-step {
-        min-height: 160px;
-
-        padding: 23px;
+        min-height: 0;
     }
 
 
     .workflow-step b {
-        margin-bottom: 18px;
-
-        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
-
-
-    .project-actions {
-        align-items: stretch;
-
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-
-    .project-actions .button {
-        width: 100%;
-    }
-
-
-    .footer-links {
-        gap: 40px;
-    }
-
-
-    .footer-bottom {
-        display: block;
-    }
-
-
-    .footer-bottom > * {
-        display: block;
-
-        margin-top: 8px;
-    }
-
 }
 
 
-/* =========================================================
-   20 · SMALL MOBILE
-========================================================= */
+@media (max-width: 480px) {
 
-@media (max-width: 430px) {
-
-    .shell {
-        width: 90%;
+    .research-eyebrow {
+        font-size: .65rem;
     }
 
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 
 
-    .domain-card-footer {
-        align-items: flex-start;
+    .hero-copy .hero-lead {
+        font-size: .95rem;
+    }
 
+
+    .button {
+        width: 100%;
+    }
+
+
+    .portfolio-hero .project-actions,
+    .research-workflow .project-actions {
         flex-direction: column;
-
-        gap: 8px;
     }
 
 
-    .footer-links {
-        flex-direction: column;
-
-        gap: 28px;
+    .domain-card,
+    .scope-item,
+    .workflow-step,
+    .research-principle {
+        padding: 22px;
     }
-
 }
