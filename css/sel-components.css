@@ -1,610 +1,789 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB
-   MASTER DESIGN SYSTEM
-   =========================================================
-
-   Architecture
-
-   SEL
-   ├── Dark interface
-   ├── Typography
-   ├── UI accents
-   ├── Publication / Map ID
-   ├── QoLI analytical palette
-   ├── QoLI domain palettes
-   ├── Analytical/status colours
-   ├── Selection
-   └── Geographic reference colours
-
-   IMPORTANT
-   ---------------------------------------------------------
-   Dark colours belong to the interface.
-   Data colours belong to analytical content.
-   #004DA8 is reserved for publication / Map IDs.
+   SHARED COMPONENT SYSTEM
+   v3
    ========================================================= */
 
 
 /* =========================================================
-   01. ROOT TOKENS
+   01 — BUTTONS
    ========================================================= */
 
-:root {
-
-  /* -------------------------------------------------------
-     SEL — DARK INTERFACE / FOUNDATION
-     ------------------------------------------------------- */
-
-  --sel-bg-950:        #050E12;
-  --sel-bg-900:        #071318;
-  --sel-bg-850:        #09171D;
-  --sel-bg-800:        #0B1B22;
-
-  --sel-surface-700:   #10262D;
-  --sel-surface-650:   #122B32;
-  --sel-surface-600:   #163139;
-
-  --sel-border-500:    #29444A;
-  --sel-border-400:    #355157;
-  --sel-border-300:    #46666B;
-
-
-  /* -------------------------------------------------------
-     SEL — TYPOGRAPHY
-     ------------------------------------------------------- */
-
-  --sel-text-100:      #F1F6F5;
-  --sel-text-200:      #D6E2E1;
-  --sel-text-300:      #C2D1D0;
-  --sel-text-400:      #A7B8BA;
-  --sel-text-500:      #8FA4A7;
-  --sel-text-600:      #718589;
-  --sel-text-700:      #5D7276;
-
-
-  /* -------------------------------------------------------
-     SEL — INTERFACE ACCENTS
-     These are interface colours.
-     They are NOT analytical map colours.
-     ------------------------------------------------------- */
-
-  --sel-teal:          #35C8C0;
-  --sel-teal-hover:    #54D5CE;
-  --sel-teal-dark:     #208F89;
-
-  --sel-cyan:          #54D5E5;
-  --sel-cyan-dark:     #269BAA;
-
-
-  /* -------------------------------------------------------
-     PUBLICATION / MAP ID BLUE
-     Reserved for publication identity and Map IDs.
-     Always use white text on this colour.
-     ------------------------------------------------------- */
-
-  --map-id-blue:       #004DA8;
-  --map-id-blue-hover: #0759B8;
-  --map-id-text:       #FFFFFF;
-
-
-  /* -------------------------------------------------------
-     QoLI — MASTER INDEX BLUE
-     Overall Quality of Life Index only.
-     ------------------------------------------------------- */
-
-  --qoli-blue-050:     #F2F7FA;
-  --qoli-blue-100:     #E8F1F7;
-  --qoli-blue-200:     #C9DFEB;
-  --qoli-blue-300:     #9FC5D8;
-  --qoli-blue-400:     #6FA7C1;
-  --qoli-blue-500:     #4389AA;
-  --qoli-blue-600:     #176B91;
-  --qoli-blue-700:     #084F73;
-
-
-  /* -------------------------------------------------------
-     QoLI — NATIONAL DECILES
-     D01 = lowest
-     D10 = highest
-     ------------------------------------------------------- */
-
-  --qoli-d01:          #EEF5F8;
-  --qoli-d02:          #DCEBF1;
-  --qoli-d03:          #C8E0E9;
-  --qoli-d04:          #AED1DE;
-  --qoli-d05:          #91BFCE;
-  --qoli-d06:          #70A9BE;
-  --qoli-d07:          #4D94AD;
-  --qoli-d08:          #2F7F9E;
-  --qoli-d09:          #176B91;
-  --qoli-d10:          #084F73;
-
-
-  /* -------------------------------------------------------
-     QoLI — DOMAIN BASE COLOURS
-     Canonical identity colours.
-     ------------------------------------------------------- */
-
-  --domain-economic:    #D6A536;
-  --domain-education:   #8064A2;
-  --domain-health:      #D95F5F;
-  --domain-housing:     #E7833A;
-  --domain-environment: #4E9F70;
-  --domain-access:      #2D9C95;
-  --domain-social:      #925070;
-  --domain-urban:       #4F8A9A;
-
-
-  /* -------------------------------------------------------
-     QoLI — ECONOMIC & MATERIAL WELLBEING
-     ------------------------------------------------------- */
-
-  --economic-100:      #F4E8C5;
-  --economic-200:      #E8D18E;
-  --economic-300:      #D6B85A;
-  --economic-400:      #C59B32;
-  --economic-500:      #9C741C;
-
-
-  /* -------------------------------------------------------
-     QoLI — EDUCATION & EMPLOYMENT
-     ------------------------------------------------------- */
-
-  --education-100:     #E7DFF0;
-  --education-200:     #CDB9DF;
-  --education-300:     #B095C9;
-  --education-400:     #9275B1;
-  --education-500:     #6D4E8C;
-
-
-  /* -------------------------------------------------------
-     QoLI — HEALTH & WELLBEING
-     ------------------------------------------------------- */
-
-  --health-100:        #F4D4D4;
-  --health-200:        #E9AAAA;
-  --health-300:        #DF8585;
-  --health-400:        #D05F60;
-  --health-500:        #A94347;
-
-
-  /* -------------------------------------------------------
-     QoLI — HOUSING & AFFORDABILITY
-     ------------------------------------------------------- */
-
-  --housing-100:       #F6DDC8;
-  --housing-200:       #EDB992;
-  --housing-300:       #E59A5C;
-  --housing-400:       #D97C35;
-  --housing-500:       #AD5822;
-
-
-  /* -------------------------------------------------------
-     QoLI — ENVIRONMENTAL QUALITY
-     ------------------------------------------------------- */
-
-  --environment-100:   #D8ECDD;
-  --environment-200:   #B4D7BD;
-  --environment-300:   #8EC49F;
-  --environment-400:   #64AC7D;
-  --environment-500:   #39815A;
-
-
-  /* -------------------------------------------------------
-     QoLI — ACCESSIBILITY & SERVICES
-     ------------------------------------------------------- */
-
-  --access-100:        #D7ECEA;
-  --access-200:        #B2DAD6;
-  --access-300:        #82C3BC;
-  --access-400:        #55AAA2;
-  --access-500:        #287D77;
-
-
-  /* -------------------------------------------------------
-     QoLI — SOCIAL & COMMUNITY WELLBEING
-     ------------------------------------------------------- */
-
-  --social-100:        #EBD9E2;
-  --social-200:        #D5B2C3;
-  --social-300:        #BC8BA4;
-  --social-400:        #A26583;
-  --social-500:        #78435F;
-
-
-  /* -------------------------------------------------------
-     QoLI — URBAN VITALITY
-     ------------------------------------------------------- */
-
-  --urban-100:         #DCE8EA;
-  --urban-200:         #B8D1D5;
-  --urban-300:         #8FB8BE;
-  --urban-400:         #689BA4;
-  --urban-500:         #4F737B;
-
-
-  /* -------------------------------------------------------
-     ANALYTICAL / STATUS COLOURS
-     ------------------------------------------------------- */
-
-  --analysis-positive:  #2D9C95;
-  --analysis-neutral:   #718589;
-  --analysis-attention: #D6A536;
-  --analysis-warning:   #E7833A;
-  --analysis-high:      #D95F5F;
-  --analysis-critical:  #A94347;
-
-
-  /* -------------------------------------------------------
-     SELECTION / HIGHLIGHT
-     ------------------------------------------------------- */
-
-  --selection:          #54D5E5;
-  --selection-bg:       #123D45;
-  --selection-border:   #35C8C0;
-
-
-  /* -------------------------------------------------------
-     REFERENCE / GEOGRAPHIC
-     ------------------------------------------------------- */
-
-  --reference-land:     #263B40;
-  --reference-land-2:   #31484D;
-  --reference-road:     #718589;
-  --reference-boundary: #52676B;
-  --reference-water:    #092831;
-  --reference-label:    #D6E2E1;
-
-
-  /* -------------------------------------------------------
-     TYPOGRAPHY
-     ------------------------------------------------------- */
-
-  --sans:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  --serif:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-
-  /* -------------------------------------------------------
-     LAYOUT
-     ------------------------------------------------------- */
-
-  --max: 1200px;
-  --max-wide: 1380px;
-
-  --shell-width: min(92%, var(--max));
-  --shell-wide: min(94%, var(--max-wide));
-
-
-  /* -------------------------------------------------------
-     RADII
-     SEL intentionally uses restrained geometry.
-     ------------------------------------------------------- */
-
-  --radius-none: 0;
-  --radius-sm:   2px;
-  --radius-md:   4px;
-  --radius-lg:   8px;
-
-
-  /* -------------------------------------------------------
-     SHADOWS
-     ------------------------------------------------------- */
-
-  --shadow-sm:
-    0 4px 14px rgba(0, 0, 0, .16);
-
-  --shadow-md:
-    0 12px 35px rgba(0, 0, 0, .22);
-
-
-  /* -------------------------------------------------------
-     MOTION
-     ------------------------------------------------------- */
-
-  --ease:
-    cubic-bezier(.2, .65, .3, 1);
-
-  --transition-fast:
-    .16s var(--ease);
-
-  --transition:
-    .22s var(--ease);
-
-}
-
-
-/* =========================================================
-   02. GLOBAL RESET
-   ========================================================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 84px;
-  background: var(--sel-bg-900);
-}
-
-body {
-  margin: 0;
-  background: var(--sel-bg-900);
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+
+  min-height: 44px;
+  padding: .72rem 1rem;
+
+  border: 1px solid var(--sel-border-400);
+  border-radius: var(--radius-sm);
+
+  background: transparent;
   color: var(--sel-text-100);
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+
+  font-size: .7rem;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.button:hover {
+  transform: translateY(-1px);
 }
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
+
+/* Primary UI action */
+
+.button-primary {
+  background: var(--sel-teal);
+  border-color: var(--sel-teal);
+  color: var(--sel-bg-950);
 }
 
-button {
-  color: inherit;
-}
-
-img,
-svg,
-video {
-  display: block;
-  max-width: 100%;
-}
-
-img {
-  height: auto;
-}
-
-::selection {
-  background: var(--selection);
+.button-primary:hover {
+  background: var(--sel-teal-hover);
+  border-color: var(--sel-teal-hover);
   color: var(--sel-bg-950);
 }
 
 
-/* =========================================================
-   03. GLOBAL PAGE ROLES
-   ========================================================= */
+/* Dark publication action */
 
-.page,
-.sel-site {
-  min-height: 100vh;
-  background: var(--sel-bg-900);
-  color: var(--sel-text-100);
+.button-dark {
+  background: var(--map-id-blue);
+  border-color: var(--map-id-blue);
+  color: #fff;
 }
 
-.section {
-  background: var(--sel-bg-800);
+.button-dark:hover {
+  background: var(--map-id-blue-hover);
+  border-color: var(--map-id-blue-hover);
+  color: #fff;
 }
 
-.surface {
-  background: var(--sel-surface-700);
+
+/* Light button on dark hero */
+
+.button-light {
+  background: var(--sel-text-100);
+  border-color: var(--sel-text-100);
+  color: var(--sel-bg-950);
 }
 
-.card {
-  background: var(--sel-surface-700);
-  border: 1px solid var(--sel-border-500);
+.button-light:hover {
+  background: #fff;
+  border-color: #fff;
 }
 
-.card:hover {
-  background: var(--sel-surface-600);
+
+/* Ghost button on dark background */
+
+.button-ghost-dark {
   border-color: var(--sel-border-400);
+  color: var(--sel-text-200);
+}
+
+.button-ghost-dark:hover {
+  border-color: var(--sel-teal);
+  color: var(--sel-teal);
+}
+
+
+/* Ghost button on dark section */
+
+.button-ghost {
+  border-color: var(--sel-border-500);
+  color: var(--sel-text-300);
+}
+
+.button-ghost:hover {
+  border-color: var(--sel-teal);
+  color: var(--sel-teal);
 }
 
 
 /* =========================================================
-   04. TYPOGRAPHY ROLES
+   02 — SECTION LABELS
    ========================================================= */
 
-.heading,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--sel-text-100);
-}
+.section-kicker,
+.research-eyebrow,
+.project-kicker {
+  margin: 0;
 
-.body {
-  color: var(--sel-text-400);
-}
-
-.meta {
-  color: var(--sel-text-600);
-}
-
-.muted {
-  color: var(--sel-text-600);
-}
-
-.eyebrow,
-.kicker {
   color: var(--sel-teal);
-  font-size: .68rem;
-  font-weight: 800;
+
+  font-size: .66rem;
+  font-weight: 850;
+  line-height: 1.3;
   letter-spacing: .14em;
-  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+
+/* Numbered research sections */
+
+.project-number {
+  margin: 0 0 .8rem;
+
+  color: var(--sel-teal);
+
+  font-size: .66rem;
+  font-weight: 850;
+  line-height: 1.3;
+  letter-spacing: .14em;
   text-transform: uppercase;
 }
 
 
 /* =========================================================
-   05. SHELL
+   03 — HEADINGS
    ========================================================= */
 
-.shell {
-  width: var(--shell-width);
-  margin-inline: auto;
+.section-title {
+  margin: .5rem 0 0;
+
+  color: var(--sel-text-100);
+
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+  font-weight: 750;
+  line-height: .98;
+  letter-spacing: -.05em;
+}
+
+.section-title em {
+  font-family: var(--serif);
+  font-weight: 400;
 }
 
 
 /* =========================================================
-   06. ACCESSIBILITY
+   04 — HEADER
    ========================================================= */
 
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 10px;
-  z-index: 200;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
-  padding: 9px 14px;
+  background: rgba(5, 14, 18, .94);
+
+  border-bottom: 1px solid var(--sel-border-500);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.nav-wrap {
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   WORDMARK
+   ========================================================= */
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--sel-text-100);
+
+  font-size: .92rem;
+  font-weight: 500;
+  letter-spacing: -.025em;
+}
+
+.wordmark b {
+  font-weight: 800;
+}
+
+.wordmark-mark {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: var(--radius-sm);
 
   background: var(--map-id-blue);
   color: #fff;
 
-  border: 1px solid var(--map-id-blue-hover);
+  font: 800 .62rem var(--sans);
+  letter-spacing: -.06em;
+}
+
+
+/* =========================================================
+   PRIMARY NAVIGATION
+   ========================================================= */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.site-nav a {
+  position: relative;
+
+  padding: 29px 0;
+
+  border-bottom: 2px solid transparent;
+
+  color: var(--sel-text-400);
+
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--sel-text-100);
+  border-color: var(--sel-teal);
+}
+
+
+/* GitHub / external CTA */
+
+.site-nav .nav-cta {
+  padding: 8px 12px;
+
+  border: 1px solid var(--sel-border-400);
+  border-bottom-color: var(--sel-border-400);
+
+  color: var(--sel-text-200);
+}
+
+.site-nav .nav-cta:hover {
+  border-color: var(--sel-teal);
+  color: var(--sel-teal);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.menu-toggle {
+  display: none;
+
+  padding: 9px 12px;
+
+  border: 1px solid var(--sel-border-400);
   border-radius: var(--radius-sm);
 
-  font-size: .75rem;
+  background: transparent;
+  color: var(--sel-text-200);
+
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  border-color: var(--sel-teal);
+  color: var(--sel-teal);
+}
+
+
+/* =========================================================
+   05 — MAP ID
+     
+   Core publication component.
+     
+   IMPORTANT:
+   #004DA8 is reserved for publication/map identity.
+   ========================================================= */
+
+.map-id {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 2.5rem;
+
+  padding: .35rem .65rem;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--map-id-blue);
+  color: var(--map-id-text);
+
+  font-size: .68rem;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: .04em;
+}
+
+.map-id:hover {
+  background: var(--map-id-blue-hover);
+}
+
+
+/* =========================================================
+   06 — MAP HEADER
+   ========================================================= */
+
+.map-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: .75rem;
+}
+
+.map-domain {
+  color: var(--project-primary, var(--sel-teal));
+
+  font-size: .66rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.map-title {
+  flex-basis: 100%;
+
+  margin: .35rem 0 0;
+
+  color: var(--sel-text-100);
+
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+
+
+/* =========================================================
+   07 — DOMAIN MARKER
+   ========================================================= */
+
+.domain-marker {
+  width: .55rem;
+  height: .55rem;
+
+  display: inline-block;
+
+  border-radius: 50%;
+
+  background: var(--domain-colour, var(--sel-teal));
+}
+
+
+/* =========================================================
+   08 — DOMAIN CARD
+   ========================================================= */
+
+.domain-card {
+  --domain-colour: var(--sel-teal);
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 270px;
+
+  padding: 1.4rem;
+
+  background: var(--sel-surface-700);
+
+  border: 1px solid var(--sel-border-500);
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.domain-card:hover {
+  background: var(--sel-surface-600);
+  border-color: var(--domain-colour);
+  transform: translateY(-2px);
+}
+
+.domain-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.domain-number {
+  color: var(--sel-text-600);
+
+  font-size: .65rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+}
+
+.domain-arrow {
+  color: var(--domain-colour);
+
+  font-size: 1rem;
+
+  transition: transform var(--transition-fast);
+}
+
+.domain-card:hover .domain-arrow {
+  transform: translateX(4px);
+}
+
+.domain-card-body {
+  margin-top: 2.8rem;
+}
+
+.domain-card h3 {
+  margin: 0 0 .7rem;
+
+  color: var(--sel-text-100);
+
+  font-size: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.domain-question {
+  margin: 0;
+
+  color: var(--sel-text-400);
+
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.domain-card-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  border-top: 1px solid var(--sel-border-500);
+
+  color: var(--sel-text-600);
+
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.domain-card-footer span:last-child {
+  color: var(--domain-colour);
+}
+
+
+/* =========================================================
+   DOMAIN CARD COLOURS
+   ========================================================= */
+
+.domain-card:nth-child(1) {
+  --domain-colour: var(--domain-economic);
+}
+
+.domain-card:nth-child(2) {
+  --domain-colour: var(--domain-access);
+}
+
+.domain-card:nth-child(3) {
+  --domain-colour: var(--domain-urban);
+}
+
+.domain-card:nth-child(4) {
+  --domain-colour: var(--domain-housing);
+}
+
+.domain-card:nth-child(5) {
+  --domain-colour: var(--domain-urban);
+}
+
+.domain-card:nth-child(6) {
+  --domain-colour: var(--domain-environment);
+}
+
+.domain-card:nth-child(7) {
+  --domain-colour: var(--domain-economic);
+}
+
+
+/* =========================================================
+   09 — RESEARCH PRINCIPLES
+   ========================================================= */
+
+.research-principle {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+
+  gap: 1.2rem;
+
+  padding: 1.5rem 0;
+
+  border-top: 1px solid var(--sel-border-500);
+}
+
+.research-principle:last-child {
+  border-bottom: 1px solid var(--sel-border-500);
+}
+
+.research-principle > span {
+  color: var(--sel-teal);
+
+  font-size: .65rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+
+.research-principle h3 {
+  margin: 0 0 .35rem;
+
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.research-principle p {
+  margin: 0;
+
+  color: var(--sel-text-400);
+
+  font-size: .88rem;
+}
+
+
+/* =========================================================
+   10 — PROJECT CARDS
+   ========================================================= */
+
+.project-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.4rem;
+
+  background: var(--sel-surface-700);
+  border: 1px solid var(--sel-border-500);
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.project-card:hover {
+  background: var(--sel-surface-600);
+  border-color: var(--project-primary, var(--sel-teal));
+  transform: translateY(-2px);
+}
+
+.project-card .map-id {
+  align-self: flex-start;
+}
+
+.project-card h3 {
+  margin: 1.4rem 0 .6rem;
+
+  color: var(--sel-text-100);
+
+  font-size: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.project-card p {
+  margin: 0;
+
+  color: var(--sel-text-400);
+
+  font-size: .86rem;
+}
+
+
+/* =========================================================
+   11 — WORKFLOW
+   ========================================================= */
+
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  border-top: 1px solid var(--sel-border-500);
+  border-bottom: 1px solid var(--sel-border-500);
+}
+
+.workflow-step {
+  min-height: 170px;
+
+  padding: 1.25rem;
+
+  border-right: 1px solid var(--sel-border-500);
+}
+
+.workflow-step:last-child {
+  border-right: 0;
+}
+
+.workflow-step b {
+  display: block;
+
+  margin-bottom: 2.2rem;
+
+  color: var(--sel-teal);
+
+  font-size: .65rem;
+  letter-spacing: .08em;
+}
+
+.workflow-step strong {
+  display: block;
+
+  color: var(--sel-text-100);
+
+  font-size: .82rem;
+  line-height: 1.25;
+}
+
+.workflow-step span {
+  display: block;
+
+  margin-top: .45rem;
+
+  color: var(--sel-text-600);
+
+  font-size: .7rem;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   12 — MAP UI
+   ========================================================= */
+
+.map-ui {
+  background: rgba(7, 19, 24, .94);
+  color: var(--sel-text-100);
+
+  border: 1px solid var(--sel-border-500);
+
+  backdrop-filter: blur(12px);
+}
+
+.map-ui-button {
+  padding: .55rem .7rem;
+
+  background: var(--sel-surface-700);
+  color: var(--sel-text-200);
+
+  border: 0;
+
+  cursor: pointer;
+}
+
+.map-ui-button:hover {
+  background: var(--sel-surface-600);
+  color: var(--sel-text-100);
+}
+
+.map-ui-button.active {
+  background: var(--map-id-blue);
+  color: #fff;
+}
+
+
+/* =========================================================
+   13 — LEGENDS
+   ========================================================= */
+
+.legend {
+  background: rgba(7, 19, 24, .96);
+
+  color: var(--sel-text-100);
+
+  border: 1px solid var(--sel-border-500);
+
+  padding: .8rem;
+
+  font-size: .72rem;
+}
+
+.legend-title {
+  margin-bottom: .55rem;
+
+  color: var(--sel-text-200);
+
+  font-size: .68rem;
   font-weight: 800;
 }
 
-.skip-link:focus {
-  left: 10px;
-}
-
-.sr-only {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-
-  padding: 0;
-  margin: -1px;
-
-  overflow: hidden;
-
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-
-  border: 0;
+.legend-label {
+  color: var(--sel-text-400);
 }
 
 
 /* =========================================================
-   07. FOCUS STATES
+   14 — QoLI MAP
    ========================================================= */
 
-:focus-visible {
-  outline: 2px solid var(--selection);
-  outline-offset: 3px;
+.qoli-map {
+  --map-low: var(--qoli-blue-100);
+  --map-2: var(--qoli-blue-200);
+  --map-3: var(--qoli-blue-300);
+  --map-4: var(--qoli-blue-400);
+  --map-5: var(--qoli-blue-500);
+  --map-6: var(--qoli-blue-600);
+  --map-high: var(--qoli-blue-700);
 }
 
 
 /* =========================================================
-   08. PROJECT THEME ARCHITECTURE
-   =========================================================
-
-   Every project inherits the SEL interface.
-
-   A project then defines only its analytical identity.
-
-   Example:
-
-   .project-bandon {
-     --project-primary: var(--domain-access);
-     --project-primary-light: var(--access-300);
-     --project-primary-dark: var(--access-500);
-   }
-
+   15 — QoLI DECILE MAP
    ========================================================= */
 
-.project-page,
-.project {
-  --project-background: var(--sel-bg-900);
-  --project-surface: var(--sel-surface-700);
-  --project-border: var(--sel-border-500);
-
-  --project-text: var(--sel-text-100);
-  --project-body: var(--sel-text-400);
-  --project-muted: var(--sel-text-600);
-
-  --project-map-id: var(--map-id-blue);
-  --project-map-id-text: var(--map-id-text);
-
-  background: var(--project-background);
-  color: var(--project-text);
+.qoli-decile-map {
+  --map-d01: var(--qoli-d01);
+  --map-d02: var(--qoli-d02);
+  --map-d03: var(--qoli-d03);
+  --map-d04: var(--qoli-d04);
+  --map-d05: var(--qoli-d05);
+  --map-d06: var(--qoli-d06);
+  --map-d07: var(--qoli-d07);
+  --map-d08: var(--qoli-d08);
+  --map-d09: var(--qoli-d09);
+  --map-d10: var(--qoli-d10);
 }
 
 
 /* =========================================================
-   09. PROJECT DOMAIN THEMES
-   ========================================================= */
-
-.project-domain-economic {
-  --project-primary: var(--domain-economic);
-  --project-primary-light: var(--economic-200);
-  --project-primary-dark: var(--economic-500);
-}
-
-.project-domain-education {
-  --project-primary: var(--domain-education);
-  --project-primary-light: var(--education-200);
-  --project-primary-dark: var(--education-500);
-}
-
-.project-domain-health {
-  --project-primary: var(--domain-health);
-  --project-primary-light: var(--health-200);
-  --project-primary-dark: var(--health-500);
-}
-
-.project-domain-housing {
-  --project-primary: var(--domain-housing);
-  --project-primary-light: var(--housing-200);
-  --project-primary-dark: var(--housing-500);
-}
-
-.project-domain-environment {
-  --project-primary: var(--domain-environment);
-  --project-primary-light: var(--environment-200);
-  --project-primary-dark: var(--environment-500);
-}
-
-.project-domain-accessibility {
-  --project-primary: var(--domain-access);
-  --project-primary-light: var(--access-300);
-  --project-primary-dark: var(--access-500);
-}
-
-.project-domain-social {
-  --project-primary: var(--domain-social);
-  --project-primary-light: var(--social-200);
-  --project-primary-dark: var(--social-500);
-}
-
-.project-domain-urban {
-  --project-primary: var(--domain-urban);
-  --project-primary-light: var(--urban-200);
-  --project-primary-dark: var(--urban-500);
-}
-
-
-/* =========================================================
-   10. DOMAIN MARKERS
+   16 — DOMAIN MAP THEMES
    ========================================================= */
 
 .domain-economic {
@@ -641,192 +820,7 @@ h6 {
 
 
 /* =========================================================
-   11. MAP ID
-   ========================================================= */
-
-.map-id {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 3rem;
-
-  padding: .35rem .65rem;
-
-  background: var(--map-id-blue);
-  color: var(--map-id-text);
-
-  border-radius: var(--radius-sm);
-
-  font-size: .7rem;
-  font-weight: 800;
-  letter-spacing: .04em;
-  line-height: 1.2;
-
-  transition:
-    background var(--transition-fast),
-    transform var(--transition-fast);
-}
-
-.map-id:hover {
-  background: var(--map-id-blue-hover);
-  transform: translateY(-1px);
-}
-
-
-/* =========================================================
-   12. MAP HEADER
-   ========================================================= */
-
-.map-header {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .75rem;
-}
-
-.map-domain {
-  color: var(--project-primary, var(--sel-teal));
-  font-size: .72rem;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.map-title {
-  flex-basis: 100%;
-  margin: .25rem 0 0;
-
-  color: var(--sel-text-100);
-
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  line-height: 1.08;
-  letter-spacing: -.04em;
-}
-
-
-/* =========================================================
-   13. QoLI MAP
-   ========================================================= */
-
-.qoli-map {
-  --map-low:  var(--qoli-blue-100);
-  --map-2:    var(--qoli-blue-200);
-  --map-3:    var(--qoli-blue-300);
-  --map-4:    var(--qoli-blue-400);
-  --map-5:    var(--qoli-blue-500);
-  --map-6:    var(--qoli-blue-600);
-  --map-high: var(--qoli-blue-700);
-}
-
-
-/* =========================================================
-   14. QOL DOMAIN MAPS
-   ========================================================= */
-
-.domain-economic-map {
-  --map-1: var(--economic-100);
-  --map-2: var(--economic-200);
-  --map-3: var(--economic-300);
-  --map-4: var(--economic-400);
-  --map-5: var(--economic-500);
-}
-
-.domain-education-map {
-  --map-1: var(--education-100);
-  --map-2: var(--education-200);
-  --map-3: var(--education-300);
-  --map-4: var(--education-400);
-  --map-5: var(--education-500);
-}
-
-.domain-health-map {
-  --map-1: var(--health-100);
-  --map-2: var(--health-200);
-  --map-3: var(--health-300);
-  --map-4: var(--health-400);
-  --map-5: var(--health-500);
-}
-
-.domain-housing-map {
-  --map-1: var(--housing-100);
-  --map-2: var(--housing-200);
-  --map-3: var(--housing-300);
-  --map-4: var(--housing-400);
-  --map-5: var(--housing-500);
-}
-
-.domain-environment-map {
-  --map-1: var(--environment-100);
-  --map-2: var(--environment-200);
-  --map-3: var(--environment-300);
-  --map-4: var(--environment-400);
-  --map-5: var(--environment-500);
-}
-
-.domain-accessibility-map {
-  --map-1: var(--access-100);
-  --map-2: var(--access-200);
-  --map-3: var(--access-300);
-  --map-4: var(--access-400);
-  --map-5: var(--access-500);
-}
-
-.domain-social-map {
-  --map-1: var(--social-100);
-  --map-2: var(--social-200);
-  --map-3: var(--social-300);
-  --map-4: var(--social-400);
-  --map-5: var(--social-500);
-}
-
-.domain-urban-map {
-  --map-1: var(--urban-100);
-  --map-2: var(--urban-200);
-  --map-3: var(--urban-300);
-  --map-4: var(--urban-400);
-  --map-5: var(--urban-500);
-}
-
-
-/* =========================================================
-   15. DIVERGING ANALYTICAL SCALE
-   ========================================================= */
-
-:root {
-
-  --diverging-low-3:  #7F3F5F;
-  --diverging-low-2:  #B8758E;
-  --diverging-low-1:  #D8B4C2;
-
-  --diverging-mid:    #E8E5DF;
-
-  --diverging-high-1: #B9D8D3;
-  --diverging-high-2: #66AAA2;
-  --diverging-high-3: #287D77;
-
-}
-
-
-/* =========================================================
-   16. RANKING MAPS
-   ========================================================= */
-
-.top-100 {
-  --ranking-background: #1C3036;
-  --ranking-highlight: var(--sel-teal);
-  --ranking-outline: var(--sel-cyan);
-}
-
-.bottom-100 {
-  --ranking-background: #1C3036;
-  --ranking-highlight: var(--analysis-high);
-  --ranking-outline: #FF9A8C;
-}
-
-
-/* =========================================================
-   17. REFERENCE MAP
+   17 — REFERENCE MAP
    ========================================================= */
 
 .reference-map {
@@ -841,22 +835,196 @@ h6 {
 
 
 /* =========================================================
-   18. REDUCED MOTION
+   18 — FOOTER
    ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+.site-footer {
+  background: var(--sel-bg-950);
+  color: var(--sel-text-300);
 
-  html {
-    scroll-behavior: auto;
+  padding: 65px 0 22px;
+
+  border-top: 1px solid var(--sel-border-500);
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+.footer-brand {
+  color: var(--sel-text-100);
+}
+
+.footer-grid p {
+  max-width: 520px;
+
+  margin: 14px 0 0;
+
+  color: var(--sel-text-600);
+
+  font-size: .78rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 65px;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  font-size: .72rem;
+}
+
+.footer-links b {
+  margin-bottom: 4px;
+
+  color: var(--sel-text-100);
+
+  font-size: .65rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.footer-links a {
+  color: var(--sel-text-500);
+
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--sel-teal);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 60px;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--sel-border-500);
+
+  color: var(--sel-text-600);
+
+  font-size: .67rem;
+}
+
+
+/* =========================================================
+   19 — RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .workflow {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-    scroll-behavior: auto !important;
+  .workflow-step:nth-child(3) {
+    border-right: 0;
+  }
+
+  .workflow-step:nth-child(n + 4) {
+    border-top: 1px solid var(--sel-border-500);
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 78px;
+
+    padding: 10px 4%;
+
+    background: var(--sel-bg-900);
+
+    border-bottom: 1px solid var(--sel-border-500);
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 13px 0;
+
+    border-bottom: 1px solid var(--sel-border-500);
+  }
+
+  .site-nav .nav-cta {
+    margin: 10px 0;
+    padding: 10px 12px;
+  }
+
+  .footer-grid {
+    display: block;
+  }
+
+  .footer-links {
+    margin-top: 30px;
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    display: block;
+  }
+
+  .footer-bottom > * {
+    display: block;
+    margin-top: 7px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .workflow {
+    display: block;
+  }
+
+  .workflow-step {
+    min-height: auto;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--sel-border-500);
+  }
+
+  .workflow-step:last-child {
+    border-bottom: 0;
+  }
+
+  .workflow-step b {
+    margin-bottom: .8rem;
+  }
+
+  .domain-card {
+    min-height: 230px;
   }
 
 }
