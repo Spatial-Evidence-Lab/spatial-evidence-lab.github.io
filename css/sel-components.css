@@ -1,14 +1,24 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB
    SHARED COMPONENTS
+   =========================================================
+   Version: 2.0
+   Components:
+   - Buttons
+   - Header
+   - Navigation
+   - Wordmark
+   - Mobile menu
+   - Footer
    ========================================================= */
 
 
 /* =========================================================
-   BUTTONS
+   01. BUTTON BASE
    ========================================================= */
 
 .button {
+
     display: inline-flex;
 
     align-items: center;
@@ -16,19 +26,32 @@
 
     gap: 9px;
 
+    min-width: 0;
     min-height: 44px;
 
     padding: 11px 17px;
 
     border: 1px solid var(--sel-line);
 
+    border-radius: var(--radius-sm);
+
+    font-family: var(--sans);
+
     font-size: .70rem;
+
     font-weight: 850;
 
     line-height: 1.2;
 
     letter-spacing: .065em;
+
+    text-align: center;
+
     text-transform: uppercase;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
 
     transition:
         background-color var(--sel-transition),
@@ -43,7 +66,17 @@
 }
 
 
+.button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   02. PRIMARY BUTTON
+   ========================================================= */
+
 .button-primary {
+
     background: var(--sel-blue);
 
     border-color: var(--sel-blue);
@@ -53,12 +86,19 @@
 
 
 .button-primary:hover {
+
     background: var(--sel-blue-dark);
+
     border-color: var(--sel-blue-dark);
 }
 
 
+/* =========================================================
+   03. LIGHT BUTTON
+   ========================================================= */
+
 .button-light {
+
     background: var(--sel-white);
 
     border-color: var(--sel-white);
@@ -68,12 +108,19 @@
 
 
 .button-light:hover {
+
     background: var(--sel-blue-pale);
+
     border-color: var(--sel-blue-pale);
 }
 
 
+/* =========================================================
+   04. DARK BUTTON
+   ========================================================= */
+
 .button-dark {
+
     background: var(--sel-blue);
 
     border-color: var(--sel-blue);
@@ -83,12 +130,19 @@
 
 
 .button-dark:hover {
+
     background: var(--sel-blue-dark);
+
     border-color: var(--sel-blue-dark);
 }
 
 
+/* =========================================================
+   05. GHOST BUTTON
+   ========================================================= */
+
 .button-ghost {
+
     background: transparent;
 
     border-color: var(--sel-line);
@@ -98,12 +152,19 @@
 
 
 .button-ghost:hover {
+
     border-color: var(--sel-blue);
+
     color: var(--sel-blue);
 }
 
 
+/* =========================================================
+   06. DARK GHOST BUTTON
+   ========================================================= */
+
 .button-ghost-dark {
+
     background: transparent;
 
     border-color: rgba(255,255,255,.32);
@@ -113,13 +174,15 @@
 
 
 .button-ghost-dark:hover {
+
     border-color: var(--sel-accent);
+
     color: var(--sel-accent);
 }
 
 
 /* =========================================================
-   SITE HEADER
+   07. SITE HEADER
    ========================================================= */
 
 .site-header {
@@ -131,21 +194,40 @@
     z-index: 1000;
 
     width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
 
     min-height: var(--sel-header-height);
 
-    background: #102A32;
+    background: rgba(16,42,50,.97);
 
     border-bottom: 1px solid rgba(255,255,255,.10);
+
+    overflow-x: hidden;
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
 
 
+/* =========================================================
+   08. NAVIGATION WRAPPER
+   ========================================================= */
+
 .nav-wrap {
 
+    position: relative;
+
+    width: 100%;
+    max-width: var(--max);
+
+    min-width: 0;
+
     min-height: var(--sel-header-height);
+
+    margin-left: auto;
+    margin-right: auto;
 
     display: flex;
 
@@ -153,14 +235,14 @@
 
     justify-content: space-between;
 
-    gap: 28px;
+    gap: 25px;
 
-    min-width: 0;
+    overflow: hidden;
 }
 
 
 /* =========================================================
-   WORDMARK
+   09. WORDMARK
    ========================================================= */
 
 .wordmark {
@@ -171,9 +253,10 @@
 
     gap: 10px;
 
-    flex: 0 0 auto;
+    flex: 0 1 auto;
 
     min-width: 0;
+    max-width: 100%;
 
     color: var(--sel-white);
 
@@ -184,6 +267,8 @@
     letter-spacing: -.025em;
 
     white-space: nowrap;
+
+    overflow: hidden;
 }
 
 
@@ -200,19 +285,27 @@
 
 .wordmark-name {
 
-    display: inline-block;
+    display: block;
+
+    min-width: 0;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 
     white-space: nowrap;
 }
 
 
 .wordmark-name b {
+
     font-weight: 850;
 }
 
 
 /* =========================================================
-   NAVIGATION
+   10. SITE NAV
    ========================================================= */
 
 .site-nav {
@@ -221,9 +314,16 @@
 
     align-items: center;
 
+    justify-content: flex-end;
+
     gap: 25px;
 
+    flex: 1 1 auto;
+
     min-width: 0;
+    max-width: 100%;
+
+    overflow: hidden;
 }
 
 
@@ -233,6 +333,11 @@
 
     align-items: center;
 
+    justify-content: center;
+
+    flex: 0 1 auto;
+
+    min-width: 0;
     min-height: var(--sel-header-height);
 
     padding: 0;
@@ -269,10 +374,12 @@
 
 
 /* =========================================================
-   GITHUB
+   11. NAVIGATION CTA
    ========================================================= */
 
 .site-nav .nav-cta {
+
+    flex: 0 0 auto;
 
     min-height: auto;
 
@@ -281,6 +388,8 @@
     border: 1px solid var(--sel-line);
 
     color: var(--sel-text);
+
+    white-space: nowrap;
 }
 
 
@@ -293,7 +402,7 @@
 
 
 /* =========================================================
-   MOBILE MENU
+   12. MOBILE MENU TOGGLE
    ========================================================= */
 
 .menu-toggle {
@@ -301,7 +410,13 @@
     display: none;
 
     align-items: center;
+
     justify-content: center;
+
+    flex: 0 0 auto;
+
+    min-width: 44px;
+    min-height: 42px;
 
     padding: 9px 12px;
 
@@ -309,13 +424,19 @@
 
     border: 1px solid var(--sel-line);
 
+    border-radius: var(--radius-sm);
+
     color: var(--sel-text);
+
+    font-family: var(--sans);
 
     font-size: .72rem;
 
     font-weight: 800;
 
     line-height: 1;
+
+    text-transform: uppercase;
 }
 
 
@@ -328,12 +449,15 @@
 
 
 /* =========================================================
-   FOOTER
+   13. FOOTER
    ========================================================= */
 
 .site-footer {
 
     width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
 
     background: #07151B;
 
@@ -347,13 +471,17 @@
 }
 
 
+/* =========================================================
+   14. FOOTER GRID
+   ========================================================= */
+
 .footer-grid {
 
     display: grid;
 
     grid-template-columns:
         minmax(0,1fr)
-        auto;
+        minmax(0,auto);
 
     gap: 60px;
 
@@ -366,8 +494,13 @@
 .footer-identity {
 
     min-width: 0;
+    max-width: 100%;
 }
 
+
+/* =========================================================
+   15. FOOTER BRAND
+   ========================================================= */
 
 .footer-brand-lockup {
 
@@ -380,6 +513,8 @@
     max-width: 100%;
 
     min-width: 0;
+
+    overflow: hidden;
 
     white-space: nowrap;
 }
@@ -398,7 +533,14 @@
 
 .footer-brand {
 
-    display: inline-block;
+    display: block;
+
+    min-width: 0;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 
     color: var(--sel-white);
 
@@ -413,7 +555,7 @@
 
 
 /* =========================================================
-   FOOTER LINKS
+   16. FOOTER LINKS
    ========================================================= */
 
 .footer-links {
@@ -422,9 +564,14 @@
 
     align-items: flex-start;
 
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+
     gap: 60px;
 
     min-width: 0;
+    max-width: 100%;
 }
 
 
@@ -437,6 +584,8 @@
     gap: 8px;
 
     min-width: 0;
+
+    max-width: 180px;
 }
 
 
@@ -473,7 +622,7 @@
 
 
 /* =========================================================
-   FOOTER BOTTOM
+   17. FOOTER BOTTOM
    ========================================================= */
 
 .footer-bottom {
@@ -483,6 +632,8 @@
     align-items: center;
 
     justify-content: space-between;
+
+    flex-wrap: wrap;
 
     gap: 15px;
 
@@ -496,30 +647,57 @@
 
     font-size: .67rem;
 
+    line-height: 1.5;
+
     min-width: 0;
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+.footer-bottom > * {
 
-@media (max-width: 900px) {
-
-    .site-nav {
-        gap: 18px;
-    }
-
+    min-width: 0;
+    max-width: 100%;
 }
 
 
-@media (max-width: 800px) {
+/* =========================================================
+   18. DESKTOP NAVIGATION
+   ========================================================= */
+
+@media (min-width: 1201px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .site-nav {
+        display: flex;
+    }
+}
+
+
+/* =========================================================
+   19. COLLAPSED NAVIGATION
+   =========================================================
+   IMPORTANT:
+   Navigation collapses at 1200px.
+   This prevents the logo + six links + CTA from
+   forcing the viewport wider than the browser.
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .nav-wrap {
+
+        gap: 16px;
+
+        overflow: visible;
+    }
+
 
     .menu-toggle {
 
         display: inline-flex;
-
-        flex: 0 0 auto;
     }
 
 
@@ -534,65 +712,96 @@
 
         display: none;
 
+        width: 100%;
+        max-width: 100%;
+
         flex-direction: column;
 
         align-items: stretch;
 
+        justify-content: flex-start;
+
         gap: 0;
 
-        padding:
-            8px 5% 14px;
+        padding: 12px 5% 18px;
 
         background: #102A32;
 
         border-bottom: 1px solid var(--sel-line);
 
         box-shadow: var(--sel-shadow-sm);
+
+        overflow: hidden;
     }
 
 
     .site-nav.open {
+
         display: flex;
     }
 
 
     .site-nav a {
 
+        display: flex;
+
+        width: 100%;
+        max-width: 100%;
+
         min-height: auto;
 
-        padding: 13px 0;
+        justify-content: flex-start;
+
+        padding: 14px 0;
 
         border-bottom: 1px solid var(--sel-line);
+
+        white-space: normal;
     }
 
 
     .site-nav a:last-child {
-        border-bottom: 0;
+
+        border-bottom: none;
     }
 
 
     .site-nav .nav-cta {
 
-        margin-top: 8px;
+        width: auto;
 
-        padding: 11px 12px;
+        align-self: flex-start;
+
+        margin-top: 10px;
+
+        padding: 11px 14px;
 
         border: 1px solid var(--sel-line);
     }
+}
 
+
+/* =========================================================
+   20. TABLET FOOTER
+   ========================================================= */
+
+@media (max-width: 900px) {
 
     .footer-grid {
 
         grid-template-columns: 1fr;
 
+        gap: 0;
     }
 
 
     .footer-links {
 
+        justify-content: flex-start;
+
         margin-top: 32px;
 
-        gap: 45px;
+        gap: 40px;
     }
 
 
@@ -608,14 +817,34 @@
 
         margin-top: 7px;
     }
-
 }
 
 
-@media (max-width: 480px) {
+/* =========================================================
+   21. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+
+        min-height: 68px;
+    }
+
+
+    .nav-wrap {
+
+        min-height: 68px;
+
+        gap: 12px;
+    }
+
 
     .wordmark {
-        font-size: .84rem;
+
+        font-size: .86rem;
+
+        gap: 8px;
     }
 
 
@@ -628,8 +857,76 @@
     }
 
 
-    .footer-links {
-        gap: 32px;
+    .site-nav {
+
+        top: 68px;
     }
 
+
+    .site-footer {
+
+        padding-top: 52px;
+    }
+
+
+    .footer-links {
+
+        gap: 28px;
+    }
+
+
+    .footer-links > div {
+
+        max-width: 160px;
+    }
 }
+
+
+/* =========================================================
+   22. VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .wordmark {
+
+        font-size: .80rem;
+    }
+
+
+    .wordmark-logo {
+
+        width: 29px;
+        height: 29px;
+
+        flex-basis: 29px;
+    }
+
+
+    .menu-toggle {
+
+        min-width: 42px;
+
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+
+    .footer-links {
+
+        flex-direction: column;
+
+        gap: 24px;
+    }
+
+
+    .footer-links > div {
+
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   END OF SEL COMPONENTS
+   ========================================================= */
