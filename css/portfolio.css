@@ -5,48 +5,49 @@
 
 
 /* =========================================================
-   PAGE-WIDE SAFETY
+   HARD WIDTH RESET
    ========================================================= */
 
-main,
-section,
-article,
-header,
-footer,
-div {
-    min-width: 0;
-}
-
-
 main {
-    width: 100%;
-    max-width: 100%;
+    display: block;
 
-    overflow-x: clip;
+    width: 100%;
+
+    max-width: none;
+
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
 }
 
 
 /*
-   CRITICAL:
-   Never use width:100vw here.
+   IMPORTANT:
 
-   width:100% keeps the background exactly within the
-   document viewport.
+   Do NOT use width:100vw here.
+   100vw includes the scrollbar width and can create
+   horizontal overflow.
 */
 
 .project-section,
-.portfolio-hero,
-.site-footer {
+.portfolio-hero {
+
+    position: relative;
+
     display: block;
 
     width: 100%;
-    max-width: 100%;
+
+    max-width: none;
+
     min-width: 0;
 
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
 
-    overflow-x: clip;
+    border: 0;
+
+    overflow: hidden;
 }
 
 
@@ -55,34 +56,21 @@ main {
    ========================================================= */
 
 .portfolio-hero {
-    position: relative;
-
-    width: 100%;
-    max-width: 100%;
-
-    margin: 0;
-
-    padding: 72px 0 82px;
 
     background: var(--sel-hero);
+
     color: var(--sel-white);
 
-    border: 0;
-
-    overflow-x: clip;
+    padding: 72px 0 82px;
 }
 
-
-.portfolio-hero::before,
-.portfolio-hero::after {
-    content: none;
-}
-
-
-/* Hero container */
 
 .portfolio-hero .shell {
+
+    position: relative;
+
     width: calc(100% - 48px);
+
     max-width: var(--max);
 
     margin-left: auto;
@@ -92,109 +80,148 @@ main {
 }
 
 
-/* Hero eyebrow */
+/* ---------------------------------------------------------
+   HERO EYEBROW
+   --------------------------------------------------------- */
 
 .research-eyebrow {
-    margin: 0 0 28px;
+
+    margin: 0 0 24px;
 
     color: var(--sel-accent);
 
     font-size: .68rem;
+
     font-weight: 800;
 
     letter-spacing: .12em;
+
     text-transform: uppercase;
 
     line-height: 1.4;
 }
 
 
-/* Hero title */
+/* ---------------------------------------------------------
+   HERO TITLE
+   --------------------------------------------------------- */
 
 .hero-title {
+
     width: 100%;
+
     max-width: 1100px;
 
     margin: 0;
 
-    color: var(--sel-white);
+    color: #FFFFFF;
 
     font-size: clamp(
-        1.8rem,
-        2.8vw,
-        2.7rem
+        1.65rem,
+        2.7vw,
+        2.2rem
     );
 
-    line-height: 1.08;
+    line-height: 1.12;
 
-    letter-spacing: -.045em;
+    letter-spacing: -.035em;
 
     font-weight: 800;
 }
 
 
-/* Hero copy */
+/* ---------------------------------------------------------
+   HERO COPY
+   --------------------------------------------------------- */
 
 .hero-copy {
+
     width: 100%;
+
     max-width: 920px;
 
-    margin-top: 28px;
+    margin-top: 24px;
 
     min-width: 0;
 }
 
 
 .hero-lead {
+
     margin: 0;
 
-    color: rgba(255,255,255,.92);
+    color: rgba(255,255,255,.90);
 
-    font-size: 1rem;
+    font-size: .96rem;
 
     line-height: 1.65;
 }
 
 
-/* Hero buttons */
+/* ---------------------------------------------------------
+   HERO ACTIONS
+   --------------------------------------------------------- */
 
 .portfolio-hero .project-actions {
-    margin-top: 32px;
+
+    margin-top: 30px;
 }
 
 
 /* =========================================================
-   SHARED PROJECT SECTIONS
+   SHARED PROJECT SECTION
    ========================================================= */
 
 .project-section {
-    position: relative;
 
-    width: 100%;
-    max-width: 100%;
+    background: var(--sel-section);
 
-    margin: 0;
+    color: var(--sel-text);
 
     padding: 88px 0;
 
-    background: var(--sel-section);
-    color: var(--sel-text);
-
     border: 0 !important;
 
-    overflow-x: clip;
+    border-top: 0 !important;
+
+    border-bottom: 0 !important;
+
+    box-shadow: none !important;
+
+    outline: 0 !important;
 }
 
 
 /*
-   Explicitly remove any decorative horizontal rules
-   from previous styles.
+   Explicitly neutralise older classes.
+
+   This prevents old CSS from introducing grey lines
+   or different backgrounds.
+*/
+
+.project-section.alt,
+.project-section.dark,
+.project-section.research-introduction,
+.project-section.research-domains,
+.project-section.geographic-scope,
+.project-section.research-workflow {
+
+    background: var(--sel-section);
+
+    border: 0 !important;
+
+    box-shadow: none !important;
+}
+
+
+/*
+   Disable decorative pseudo-elements that may have existed
+   in previous stylesheets.
 */
 
 .project-section::before,
-.project-section::after,
-.project-section .shell::before,
-.project-section .shell::after {
+.project-section::after {
+
     content: none !important;
 
     display: none !important;
@@ -203,31 +230,31 @@ main {
 }
 
 
-/*
-   All variants use exactly the same section background.
-*/
+/* =========================================================
+   SECTION CONTENT
+   ========================================================= */
 
-.project-section.alt,
-.project-section.dark,
-.research-introduction,
-.research-domains,
-.geographic-scope,
-.research-workflow {
-    background: var(--sel-section);
+.project-section > .shell {
 
-    border-top: 0 !important;
-    border-right: 0 !important;
-    border-bottom: 0 !important;
-    border-left: 0 !important;
+    width: calc(100% - 48px);
+
+    max-width: var(--max);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    min-width: 0;
 }
 
 
 /* =========================================================
-   SECTION HEADINGS
+   SECTION HEAD
    ========================================================= */
 
 .project-section-head {
+
     width: 100%;
+
     max-width: 100%;
 
     display: grid;
@@ -247,12 +274,21 @@ main {
 
 
 .project-section-head > * {
+
     min-width: 0;
+
+    max-width: 100%;
 }
 
 
+/* =========================================================
+   PROGRAMME HEADING
+   ========================================================= */
+
 .programme-heading {
+
     width: 100%;
+
     max-width: 100%;
 
     margin-bottom: 52px;
@@ -262,14 +298,21 @@ main {
 
 
 .programme-title {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
     margin: 0;
 
-    color: var(--sel-white);
+    color: #FFFFFF;
 
     font-size: clamp(
-        1.35rem,
-        2.2vw,
-        1.8rem
+        1.3rem,
+        1.9vw,
+        1.6rem
     );
 
     line-height: 1.2;
@@ -282,9 +325,11 @@ main {
 
 .section-lead,
 .project-intro {
+
     margin: 0;
 
     width: 100%;
+
     max-width: 720px;
 
     color: var(--sel-text-soft);
@@ -296,17 +341,25 @@ main {
 
 
 /* =========================================================
-   01 — RESEARCH PROGRAMME
+   RESEARCH PROGRAMME
    ========================================================= */
 
 .research-introduction {
-    padding-top: 92px;
-    padding-bottom: 92px;
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
 }
 
 
+/* ---------------------------------------------------------
+   PROGRAMME CARDS
+   --------------------------------------------------------- */
+
 .research-principles {
+
     width: 100%;
+
     max-width: 100%;
 
     display: grid;
@@ -321,10 +374,10 @@ main {
 
 
 .research-principle {
-    width: 100%;
-    max-width: 100%;
 
     min-width: 0;
+
+    max-width: 100%;
 
     background: var(--sel-box);
 
@@ -332,7 +385,9 @@ main {
 
     border-radius: var(--radius-md);
 
-    padding: 28px 26px;
+    padding: 25px;
+
+    overflow: hidden;
 
     transition:
         transform .2s ease,
@@ -342,6 +397,7 @@ main {
 
 
 .research-principle:hover {
+
     transform: translateY(-2px);
 
     background: #30413E;
@@ -351,15 +407,18 @@ main {
 
 
 .research-principle-content {
+
     width: 100%;
+
     min-width: 0;
 }
 
 
 .research-principle h3 {
-    margin: 0 0 10px;
 
-    color: var(--sel-white);
+    margin: 0 0 9px;
+
+    color: #FFFFFF;
 
     font-size: 1.05rem;
 
@@ -370,6 +429,7 @@ main {
 
 
 .research-principle p {
+
     margin: 0;
 
     color: var(--sel-text-soft);
@@ -381,22 +441,31 @@ main {
 
 
 /* =========================================================
-   02 — RESEARCH DOMAINS
+   RESEARCH DOMAINS
    ========================================================= */
 
 .research-domains {
-    padding-top: 92px;
-    padding-bottom: 92px;
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
 }
 
 
 .domain-heading {
+
     margin-bottom: 46px;
 }
 
 
+/* ---------------------------------------------------------
+   DOMAIN GRID
+   --------------------------------------------------------- */
+
 .domain-grid {
+
     width: 100%;
+
     max-width: 100%;
 
     display: grid;
@@ -410,14 +479,19 @@ main {
 }
 
 
+/* ---------------------------------------------------------
+   DOMAIN CARD
+   --------------------------------------------------------- */
+
 .domain-card {
-    width: 100%;
-    max-width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
 
     min-width: 0;
 
-    display: flex;
-    flex-direction: column;
+    max-width: 100%;
 
     background: var(--sel-box);
 
@@ -429,6 +503,8 @@ main {
 
     color: var(--sel-text);
 
+    overflow: hidden;
+
     transition:
         transform .2s ease,
         background-color .2s ease,
@@ -437,6 +513,7 @@ main {
 
 
 .domain-card:hover {
+
     transform: translateY(-2px);
 
     background: #30413E;
@@ -446,14 +523,18 @@ main {
 
 
 .domain-card-body {
+
     min-width: 0;
+
+    max-width: 100%;
 }
 
 
 .domain-card h3 {
+
     margin: 0;
 
-    color: var(--sel-white);
+    color: #FFFFFF;
 
     font-size: .98rem;
 
@@ -464,6 +545,7 @@ main {
 
 
 .domain-question {
+
     margin: 10px 0 0;
 
     color: var(--sel-text-soft);
@@ -475,14 +557,17 @@ main {
 
 
 .domain-card-footer {
+
     display: flex;
 
-    justify-content: space-between;
     align-items: center;
+
+    justify-content: space-between;
 
     gap: 15px;
 
-    margin-top: 22px;
+    margin-top: 20px;
+
     padding-top: 14px;
 
     border-top: 1px solid rgba(255,255,255,.10);
@@ -492,10 +577,19 @@ main {
     font-size: .65rem;
 
     line-height: 1.4;
+
+    min-width: 0;
+}
+
+
+.domain-card-footer span {
+
+    min-width: 0;
 }
 
 
 .domain-card-footer span:last-child {
+
     color: var(--sel-accent);
 
     white-space: nowrap;
@@ -503,22 +597,27 @@ main {
 
 
 .domain-cta {
+
     margin-top: 32px;
 }
 
 
 /* =========================================================
-   03 — GEOGRAPHIC SCOPE
+   GEOGRAPHIC SCOPE
    ========================================================= */
 
 .geographic-scope {
-    padding-top: 92px;
-    padding-bottom: 92px;
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
 }
 
 
 .scope-grid {
+
     width: 100%;
+
     max-width: 100%;
 
     display: grid;
@@ -533,10 +632,10 @@ main {
 
 
 .scope-item {
-    width: 100%;
-    max-width: 100%;
 
     min-width: 0;
+
+    max-width: 100%;
 
     background: var(--sel-box);
 
@@ -544,16 +643,17 @@ main {
 
     border-radius: var(--radius-md);
 
-    padding: 20px 22px;
+    padding: 22px;
 
-    color: var(--sel-text);
+    overflow: hidden;
 }
 
 
 .scope-item h3 {
+
     margin: 0 0 9px;
 
-    color: var(--sel-white);
+    color: #FFFFFF;
 
     font-size: .98rem;
 
@@ -564,6 +664,7 @@ main {
 
 
 .scope-item p {
+
     margin: 0;
 
     color: var(--sel-text-soft);
@@ -575,17 +676,25 @@ main {
 
 
 /* =========================================================
-   04 — RESEARCH APPROACH
+   RESEARCH APPROACH
    ========================================================= */
 
 .research-workflow {
-    padding-top: 92px;
-    padding-bottom: 92px;
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
 }
 
 
+/* ---------------------------------------------------------
+   WORKFLOW
+   --------------------------------------------------------- */
+
 .workflow {
+
     width: 100%;
+
     max-width: 100%;
 
     display: grid;
@@ -600,10 +709,10 @@ main {
 
 
 .workflow-step {
-    width: 100%;
-    max-width: 100%;
 
     min-width: 0;
+
+    max-width: 100%;
 
     background: var(--sel-box);
 
@@ -611,23 +720,27 @@ main {
 
     border-radius: var(--radius-md);
 
-    padding: 24px;
+    padding: 22px;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 8px;
+
+    overflow: hidden;
 }
 
 
 .workflow-step b {
+
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 
     color: var(--sel-accent);
 
-    font-size: 1.65rem;
+    font-size: 1.45rem;
 
     line-height: 1;
 
@@ -638,9 +751,10 @@ main {
 
 
 .workflow-step strong {
+
     display: block;
 
-    color: var(--sel-white);
+    color: #FFFFFF;
 
     font-size: .9rem;
 
@@ -651,6 +765,7 @@ main {
 
 
 .workflow-step span {
+
     display: block;
 
     color: var(--sel-text-soft);
@@ -662,10 +777,11 @@ main {
 
 
 /* =========================================================
-   ACTIONS
+   PROJECT ACTIONS
    ========================================================= */
 
 .project-actions {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -679,13 +795,18 @@ main {
 
 
 /* =========================================================
-   FOOTER
+   FOOTER SAFETY
    ========================================================= */
 
 .site-footer {
-    background: #07151B;
 
-    border: 0 !important;
+    width: 100%;
+
+    max-width: none;
+
+    min-width: 0;
+
+    overflow: hidden;
 }
 
 
@@ -696,6 +817,7 @@ main {
 @media (max-width: 900px) {
 
     .project-section-head {
+
         grid-template-columns: 1fr;
 
         gap: 24px;
@@ -705,17 +827,20 @@ main {
 
 
     .research-principles {
+
         grid-template-columns: 1fr;
     }
 
 
     .scope-grid {
+
         grid-template-columns:
             repeat(2,minmax(0,1fr));
     }
 
 
     .workflow {
+
         grid-template-columns:
             repeat(2,minmax(0,1fr));
     }
@@ -730,39 +855,44 @@ main {
 @media (max-width: 700px) {
 
     .portfolio-hero {
+
         padding: 54px 0 62px;
     }
 
 
-    .portfolio-hero .shell {
+    .portfolio-hero .shell,
+    .project-section > .shell {
+
         width: calc(100% - 32px);
     }
 
 
     .hero-title {
-        font-size: 1.75rem;
+
+        font-size: 1.65rem;
+
         line-height: 1.12;
     }
 
 
     .research-eyebrow {
+
         margin-bottom: 20px;
 
         font-size: .62rem;
     }
 
 
-    .project-section,
-    .research-introduction,
-    .research-domains,
-    .geographic-scope,
-    .research-workflow {
+    .project-section {
+
         padding-top: 64px;
+
         padding-bottom: 64px;
     }
 
 
     .programme-title {
+
         font-size: 1.3rem;
     }
 
@@ -770,6 +900,7 @@ main {
     .domain-grid,
     .scope-grid,
     .workflow {
+
         grid-template-columns: 1fr;
     }
 
@@ -778,20 +909,24 @@ main {
     .scope-item,
     .workflow-step,
     .research-principle {
+
         width: 100%;
+
         max-width: 100%;
-    }
-
-
-    .footer-links {
-        gap: 35px;
-
-        flex-wrap: wrap;
     }
 
 
     .project-actions {
-        max-width: 100%;
+
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .project-actions .button {
+
+        width: 100%;
     }
 
 }
@@ -803,7 +938,15 @@ main {
 
 @media (max-width: 420px) {
 
+    .portfolio-hero .shell,
+    .project-section > .shell {
+
+        width: calc(100% - 28px);
+    }
+
+
     .hero-title {
+
         font-size: 1.55rem;
     }
 
@@ -812,24 +955,8 @@ main {
     .scope-item,
     .workflow-step,
     .research-principle {
+
         padding: 20px;
-    }
-
-
-    .project-actions {
-        align-items: stretch;
-
-        flex-direction: column;
-    }
-
-
-    .project-actions .button {
-        width: 100%;
-    }
-
-
-    .footer-brand {
-        font-size: .85rem;
     }
 
 }
