@@ -1,1051 +1,379 @@
 /* =========================================================
-   SPATIAL EVIDENCE LAB
-   PORTFOLIO / HOMEPAGE SYSTEM
+   SEL HOMEPAGE — SECTIONS 01–04
+   All four research sections use the same background
    ========================================================= */
 
+.research-introduction,
+.research-domains,
+.geographic-scope,
+.research-workflow {
+    background: var(--sel-paper) !important;
+    color: var(--sel-text);
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+}
 
-/* =========================================================
-   GLOBAL HOMEPAGE VARIABLES
-========================================================= */
 
-:root{
-    --portfolio-blue:var(--sel-blue);
-    --portfolio-blue-dark:var(--sel-blue-dark);
-    --portfolio-paper:var(--sel-paper);
-    --portfolio-text:var(--sel-text);
-    --portfolio-soft:var(--sel-text-soft);
-    --portfolio-muted:var(--sel-muted);
-    --portfolio-line:var(--sel-line);
-    --portfolio-navy:var(--sel-navy);
+/* Remove any legacy dark-section treatment */
 
-    --section-space:clamp(88px,9vw,140px);
-    --section-space-small:clamp(64px,7vw,100px);
+.research-introduction.dark,
+.research-domains.dark,
+.geographic-scope.dark,
+.research-workflow.dark {
+    background: var(--sel-paper) !important;
+    color: var(--sel-text) !important;
+}
 
-    --card-radius:8px;
+
+/* Remove legacy alternate/grey treatment */
+
+.research-introduction.alt,
+.research-domains.alt,
+.geographic-scope.alt,
+.research-workflow.alt {
+    background: var(--sel-paper) !important;
+    color: var(--sel-text) !important;
+}
+
+
+/* Ensure headings and paragraph text remain dark */
+
+.research-introduction h2,
+.research-domains h2,
+.geographic-scope h2,
+.research-workflow h2,
+.research-introduction h3,
+.research-domains h3,
+.geographic-scope h3,
+.research-workflow h3,
+.research-introduction p,
+.research-domains p,
+.geographic-scope p,
+.research-workflow p {
+    color: var(--sel-text);
 }
 
 
 /* =========================================================
-   PAGE FOUNDATION
-========================================================= */
+   SECTION SPACING
+   ========================================================= */
 
-body{
-    overflow-x:hidden;
-}
-
-main{
-    width:100%;
-}
-
-.project-section{
-    position:relative;
-    width:100%;
-    padding-top:var(--section-space);
-    padding-bottom:var(--section-space);
+.research-introduction,
+.research-domains,
+.geographic-scope,
+.research-workflow {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 
 /* =========================================================
-   HERO
-========================================================= */
+   SECTION HEADINGS
+   ========================================================= */
 
-.portfolio-hero{
-    position:relative;
-    background:var(--sel-blue);
-    color:#fff;
-    padding:clamp(54px,6vw,82px) 0 clamp(70px,8vw,105px);
-    overflow:hidden;
-}
-
-/*
-   Prevent old section rules / pseudo elements
-   from creating unwanted horizontal lines.
-*/
-
-.portfolio-hero::before,
-.portfolio-hero::after{
-    display:none;
-}
-
-.portfolio-hero .shell{
-    position:relative;
-    z-index:2;
-}
-
-
-/* Eyebrow */
-
-.research-eyebrow{
-    margin:0 0 24px;
-    color:#dcecff;
-    font-size:.72rem;
-    line-height:1.4;
-    font-weight:800;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-}
-
-
-/* Main title */
-
-.hero-title{
-    max-width:1100px;
-    margin:0;
-    color:#fff;
-    font-size:clamp(2rem,3.2vw,3.25rem);
-    line-height:1.08;
-    letter-spacing:-.045em;
-    font-weight:800;
-}
-
-
-/*
-   Keep the title visually compact.
-   It should normally occupy two lines rather than
-   becoming a large 4–5 line display heading.
-*/
-
-.hero-title br{
-    display:block;
-}
-
-
-/* Hero copy */
-
-.hero-copy{
-    max-width:980px;
-    margin-top:26px;
-}
-
-.hero-copy p{
-    margin:0;
-    max-width:980px;
-    color:rgba(255,255,255,.88);
-    font-size:1rem;
-    line-height:1.7;
-}
-
-.hero-copy .hero-lead{
-    color:#fff;
-    font-size:1.05rem;
-    line-height:1.65;
-}
-
-
-/* Hero actions */
-
-.portfolio-hero .project-actions{
-    margin-top:34px;
+.programme-title {
+    margin: 0;
+    color: var(--sel-text);
+    font-size: clamp(1.55rem, 2.3vw, 2.15rem);
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: -.025em;
 }
 
 
 /* =========================================================
-   SHARED SECTION HEADING
-========================================================= */
+   SECTION 01 — RESEARCH PROGRAMME
+   ========================================================= */
 
-.project-section-head{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(300px,1fr);
-    gap:70px;
-    align-items:start;
-    margin-bottom:52px;
+.research-introduction {
+    background: var(--sel-paper) !important;
+}
+
+.programme-heading {
+    max-width: 900px;
+    margin-bottom: 48px;
+}
+
+.research-introduction .section-lead {
+    max-width: 850px;
+    margin: 24px 0 0;
+    color: var(--sel-text-soft);
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 
-/*
-   01–04 headings should all have the same visual hierarchy.
-*/
+/* Sequential boxes */
 
-.programme-title{
-    margin:0;
-    color:var(--portfolio-text);
-    font-size:clamp(1.55rem,2.3vw,2.15rem);
-    line-height:1.12;
-    letter-spacing:-.035em;
-    font-weight:900;
+.research-principles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1100px;
 }
 
-
-/*
-   Keep the section heading itself compact.
-*/
-
-.programme-heading{
-    display:grid;
-    grid-template-columns:minmax(240px,.75fr) minmax(0,1.5fr);
-    gap:60px;
-    align-items:start;
-    margin-bottom:48px;
+.research-principle {
+    background: #fff;
+    border: 1px solid var(--sel-line);
+    padding: 28px 30px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
 }
 
-.programme-heading .section-lead{
-    margin:0;
+.research-principle-content h3 {
+    margin: 0 0 9px;
+    color: var(--sel-blue);
+    font-size: 1.15rem;
+    font-weight: 850;
+    line-height: 1.2;
 }
 
-
-/* Section descriptive text */
-
-.section-lead,
-.project-intro{
-    margin:0;
-    color:var(--portfolio-soft);
-    font-size:1rem;
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   SECTION 01
-   RESEARCH PROGRAMME
-========================================================= */
-
-.research-introduction{
-    background:#eef3f8;
-    border:0;
-    box-shadow:none;
-}
-
-
-/*
-   Explicitly remove any legacy rules that might have
-   produced horizontal framing.
-*/
-
-.research-introduction::before,
-.research-introduction::after{
-    display:none;
-    content:none;
-}
-
-.research-introduction .shell{
-    position:relative;
-}
-
-.research-introduction .programme-heading{
-    margin-bottom:46px;
-}
-
-
-/* Sequential programme */
-
-.research-principles{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:18px;
-    align-items:stretch;
-}
-
-
-/*
-   Compact sequential cards.
-   No numbers.
-*/
-
-.research-principle{
-    position:relative;
-    min-height:145px;
-    padding:25px 27px 24px;
-    background:#fff;
-    border:1px solid #dce5ee;
-    border-radius:var(--card-radius);
-    box-shadow:0 3px 14px rgba(7,17,31,.045);
-}
-
-.research-principle-content{
-    display:block;
-}
-
-.research-principle h3{
-    margin:0 0 9px;
-    color:var(--portfolio-blue);
-    font-size:1.05rem;
-    line-height:1.25;
-    font-weight:900;
-    letter-spacing:-.02em;
-}
-
-.research-principle p{
-    margin:0;
-    color:var(--portfolio-soft);
-    font-size:.87rem;
-    line-height:1.6;
-}
-
-
-/*
-   Sequential visual connection.
-*/
-
-.research-principle:not(:last-child)::after{
-    content:"→";
-    position:absolute;
-    right:-16px;
-    top:50%;
-    z-index:4;
-    width:30px;
-    height:30px;
-    display:grid;
-    place-items:center;
-    transform:translateY(-50%);
-    background:var(--sel-blue);
-    color:#fff;
-    border-radius:50%;
-    font-size:.8rem;
-    font-weight:900;
+.research-principle-content p {
+    margin: 0;
+    color: var(--sel-text-soft);
+    font-size: .88rem;
+    line-height: 1.55;
 }
 
 
 /* =========================================================
-   SECTION 02
-   RESEARCH DOMAINS
-========================================================= */
+   SECTION 02 — RESEARCH DOMAINS
+   ========================================================= */
 
-.research-domains{
-    background:var(--portfolio-paper);
-    border:0;
-    box-shadow:none;
-}
-
-.research-domains::before,
-.research-domains::after{
-    display:none;
-    content:none;
-}
-
-.domain-heading{
-    margin-bottom:44px;
+.research-domains {
+    background: var(--sel-paper) !important;
 }
 
 
-/*
-   Two-column domain layout.
-   Seven cards naturally become:
-   01 02
-   03 04
-   05 06
-   07
-*/
+/* Two columns */
 
-.domain-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:18px;
+.domain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 42px;
 }
 
 
-/* Domain cards */
+/* Smaller domain cards */
 
-.domain-card{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-
-    min-height:185px;
-
-    padding:24px 26px 20px;
-
-    background:#fff;
-    border:1px solid #dce5ee;
-    border-radius:var(--card-radius);
-
-    color:var(--portfolio-text);
-
-    box-shadow:0 3px 14px rgba(7,17,31,.04);
-
+.domain-card {
+    min-height: 190px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid var(--sel-line);
+    display: flex;
+    flex-direction: column;
     transition:
         transform .2s ease,
         border-color .2s ease,
         box-shadow .2s ease;
 }
 
-.domain-card:hover{
-    transform:translateY(-3px);
-    border-color:var(--sel-blue);
-    box-shadow:0 9px 24px rgba(7,17,31,.08);
+.domain-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--sel-blue);
+    box-shadow: 0 8px 24px rgba(7,17,31,.07);
 }
 
-
-/* Domain body */
-
-.domain-card-body{
-    padding:0;
+.domain-card-body {
+    padding: 24px 26px 20px;
+    flex: 1;
 }
 
-.domain-card h3{
-    margin:0 0 12px;
-    max-width:620px;
-    color:var(--portfolio-text);
-    font-size:1rem;
-    line-height:1.3;
-    font-weight:850;
-    letter-spacing:-.015em;
+.domain-card-body h3 {
+    margin: 0;
+    color: var(--sel-text);
+    font-size: 1.05rem;
+    line-height: 1.3;
+    font-weight: 850;
 }
 
-.domain-question{
-    margin:0;
-    max-width:620px;
-    color:var(--portfolio-soft);
-    font-size:.86rem;
-    line-height:1.6;
+.domain-question {
+    margin: 12px 0 0;
+    color: var(--sel-text-soft);
+    font-size: .84rem;
+    line-height: 1.55;
 }
 
-
-/* Footer */
-
-.domain-card-footer{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-
-    margin-top:24px;
-    padding-top:13px;
-
-    border-top:1px solid #e3e9ef;
-
-    color:var(--portfolio-muted);
-    font-size:.65rem;
-    line-height:1.3;
-    font-weight:800;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-}
-
-.domain-card-footer span:last-child{
-    color:var(--sel-blue);
-}
-
-
-/*
-   Existing domain colour classes retained.
-   They now act as subtle top accents rather than
-   completely different card designs.
-*/
-
-.domain-qoli,
-.domain-access,
-.domain-population,
-.domain-housing,
-.domain-land,
-.domain-environment,
-.domain-energy{
-    border-top:3px solid var(--sel-blue);
-}
-
-
-/* Domain CTA */
-
-.domain-cta{
-    margin-top:30px;
+.domain-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 26px;
+    border-top: 1px solid var(--sel-line);
+    color: var(--sel-muted);
+    font-size: .68rem;
+    font-weight: 750;
 }
 
 
 /* =========================================================
-   SECTION 03
-   GEOGRAPHIC SCOPE
-========================================================= */
+   SECTION 03 — GEOGRAPHIC SCOPE
+   ========================================================= */
 
-.geographic-scope{
-    background:#eef3f8;
-    color:var(--portfolio-text);
-    border:0;
-}
-
-.geographic-scope::before,
-.geographic-scope::after{
-    display:none;
-    content:none;
-}
-
-.geographic-scope .programme-title{
-    color:var(--portfolio-text);
-}
-
-.geographic-scope .project-intro{
-    color:var(--portfolio-soft);
+.geographic-scope {
+    background: var(--sel-paper) !important;
+    color: var(--sel-text) !important;
 }
 
 
-/* Scope cards */
+/* Smaller scope boxes */
 
-.scope-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:18px;
+.scope-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 42px;
 }
 
-.scope-item{
-    min-height:155px;
-    padding:25px 27px 24px;
-
-    background:#fff;
-    border:1px solid #dce5ee;
-    border-top:3px solid var(--sel-blue);
-    border-radius:var(--card-radius);
-
-    box-shadow:0 3px 14px rgba(7,17,31,.04);
+.scope-item {
+    background: #fff;
+    border: 1px solid var(--sel-line);
+    padding: 24px 26px;
+    min-height: 0;
+    height: auto;
 }
 
-.scope-item h3{
-    margin:0 0 10px;
-    color:var(--portfolio-text);
-    font-size:1rem;
-    line-height:1.3;
-    font-weight:850;
-    letter-spacing:-.015em;
+.scope-item h3 {
+    margin: 0 0 9px;
+    color: var(--sel-text);
+    font-size: 1.05rem;
+    line-height: 1.25;
+    font-weight: 850;
 }
 
-.scope-item p{
-    margin:0;
-    color:var(--portfolio-soft);
-    font-size:.85rem;
-    line-height:1.6;
+.scope-item p {
+    margin: 0;
+    color: var(--sel-text-soft);
+    font-size: .84rem;
+    line-height: 1.55;
 }
 
 
 /* =========================================================
-   SECTION 04
-   RESEARCH APPROACH
-========================================================= */
+   SECTION 04 — RESEARCH APPROACH
+   ========================================================= */
 
-.research-workflow{
-    background:var(--portfolio-paper);
-    border:0;
-    box-shadow:none;
+.research-workflow {
+    background: var(--sel-paper) !important;
+    color: var(--sel-text) !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
 }
+
+
+/* Remove grey horizontal rules */
 
 .research-workflow::before,
-.research-workflow::after{
-    display:none;
-    content:none;
-}
-
-
-/*
-   Explicitly prevent old portfolio rules from adding
-   grey background / top / bottom lines.
-*/
-
-.research-workflow{
-    border-top:0 !important;
-    border-bottom:0 !important;
-}
-
-
-/* Workflow grid */
-
-.workflow{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:18px;
+.research-workflow::after {
+    display: none !important;
+    content: none !important;
 }
 
 
 /* Workflow cards */
 
-.workflow-step{
-    min-height:175px;
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 42px;
+}
 
-    padding:25px 27px 24px;
-
-    background:#fff;
-    border:1px solid #dce5ee;
-    border-top:3px solid var(--sel-blue);
-    border-radius:var(--card-radius);
-
-    box-shadow:0 3px 14px rgba(7,17,31,.04);
-
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
+.workflow-step {
+    background: #fff;
+    border: 1px solid var(--sel-line);
+    padding: 26px 28px;
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 
-/*
-   Large numbers.
-*/
+/* Bigger workflow numbers */
 
-.workflow-step b{
-    display:block;
-    margin:0 0 18px;
-
-    color:var(--sel-blue);
-
-    font-size:2rem;
-    line-height:1;
-    font-weight:900;
-    letter-spacing:-.05em;
+.workflow-step b {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--sel-blue);
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -.04em;
 }
 
-
-/* Workflow title */
-
-.workflow-step strong{
-    display:block;
-    margin:0 0 7px;
-
-    color:var(--portfolio-text);
-
-    font-size:.95rem;
-    line-height:1.3;
-    font-weight:850;
+.workflow-step strong {
+    display: block;
+    color: var(--sel-text);
+    font-size: .95rem;
+    line-height: 1.3;
+    font-weight: 850;
 }
 
-
-/* Workflow description */
-
-.workflow-step span{
-    display:block;
-
-    color:var(--portfolio-soft);
-
-    font-size:.83rem;
-    line-height:1.55;
-}
-
-
-/* Workflow buttons */
-
-.research-workflow .project-actions{
-    margin-top:32px;
+.workflow-step span {
+    display: block;
+    margin-top: 8px;
+    color: var(--sel-text-soft);
+    font-size: .8rem;
+    line-height: 1.5;
 }
 
 
 /* =========================================================
-   SHARED BUTTON AREA
-========================================================= */
+   RESPONSIVE
+   ========================================================= */
 
-.project-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.site-footer{
-    position:relative;
-}
-
-
-/*
-   Correct footer identity alignment.
-   Logo and Spatial Evidence Lab sit beside one another.
-*/
-
-.footer-identity{
-    display:flex;
-    align-items:center;
-}
-
-.footer-brand-lockup{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.footer-brand-lockup img{
-    width:30px;
-    height:30px;
-    flex:0 0 30px;
-    object-fit:contain;
-}
-
-.footer-brand{
-    display:block;
-    margin:0;
-    color:#fff;
-    font-size:.9rem;
-    line-height:1.2;
-    font-weight:800;
-}
-
-
-/*
-   Footer description should sit beneath the identity,
-   not float into a separate alignment column.
-*/
-
-.footer-grid{
-    align-items:start;
-}
-
-.footer-grid > .footer-identity{
-    min-width:0;
-}
-
-
-/*
-   If the description is a direct child of footer-grid,
-   align it as part of the identity column.
-*/
-
-.footer-identity + p{
-    max-width:430px;
-    margin:3px 0 0;
-    color:#91a7ba;
-    font-size:.76rem;
-    line-height:1.55;
-}
-
-
-/* Footer links */
-
-.footer-links{
-    align-items:flex-start;
-}
-
-
-/* =========================================================
-   REMOVE LEGACY FULL-WIDTH SECTION RULES
-========================================================= */
-
-.research-introduction,
-.research-domains,
-.geographic-scope,
-.research-workflow{
-    outline:0;
-}
-
-
-/*
-   Some older versions of the stylesheet may have used
-   pseudo-elements or box shadows to frame sections.
-*/
-
-.research-introduction *,
-.research-domains *,
-.geographic-scope *,
-.research-workflow *{
-    box-shadow:none;
-}
-
-
-/*
-   Restore intended shadows only on actual cards.
-*/
-
-.research-principle,
-.domain-card,
-.scope-item,
-.workflow-step{
-    box-shadow:0 3px 14px rgba(7,17,31,.04);
-}
-
-
-/* =========================================================
-   LARGE SCREENS
-========================================================= */
-
-@media (min-width:1200px){
-
-    .portfolio-hero{
-        padding-top:62px;
-        padding-bottom:92px;
-    }
-
-    .hero-title{
-        font-size:3rem;
-    }
-
-    .project-section{
-        padding-top:125px;
-        padding-bottom:125px;
-    }
-
-    .research-introduction{
-        padding-top:110px;
-        padding-bottom:110px;
-    }
-
-    .domain-card{
-        min-height:180px;
-    }
-
-    .workflow-step{
-        min-height:170px;
-    }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width:900px){
-
-    .project-section{
-        padding-top:88px;
-        padding-bottom:88px;
-    }
-
-    .project-section-head,
-    .programme-heading{
-        grid-template-columns:1fr;
-        gap:22px;
-        margin-bottom:38px;
-    }
-
-    .research-principles{
-        grid-template-columns:1fr;
-    }
-
-    .research-principle{
-        min-height:auto;
-    }
-
-    .research-principle:not(:last-child)::after{
-        right:auto;
-        left:50%;
-        top:auto;
-        bottom:-15px;
-        transform:translateX(-50%);
-    }
-
-    .domain-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-
-    .scope-grid{
-        grid-template-columns:1fr;
-    }
-
-    .workflow{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-
-    .hero-title{
-        font-size:2.35rem;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width:650px){
-
-    .portfolio-hero{
-        padding-top:40px;
-        padding-bottom:62px;
-    }
-
-    .research-eyebrow{
-        margin-bottom:19px;
-        font-size:.64rem;
-        line-height:1.5;
-    }
-
-    /*
-       Mobile title remains compact.
-    */
-
-    .hero-title{
-        max-width:100%;
-        font-size:1.75rem;
-        line-height:1.12;
-        letter-spacing:-.035em;
-    }
-
-    .hero-copy{
-        margin-top:20px;
-    }
-
-    .hero-copy p,
-    .hero-copy .hero-lead{
-        font-size:.9rem;
-        line-height:1.6;
-    }
-
-    .portfolio-hero .project-actions{
-        margin-top:27px;
-    }
-
-
-    /* Sections */
-
-    .project-section{
-        padding-top:68px;
-        padding-bottom:68px;
-    }
-
-    .research-introduction{
-        padding-top:70px;
-        padding-bottom:70px;
-    }
-
-    .programme-title{
-        font-size:1.55rem;
-        line-height:1.15;
-    }
-
-    .section-lead,
-    .project-intro{
-        font-size:.9rem;
-        line-height:1.65;
-    }
-
-
-    /* Programme */
-
-    .research-principles{
-        gap:14px;
-    }
-
-    .research-principle{
-        padding:21px 22px;
-    }
-
-    .research-principle h3{
-        font-size:1rem;
-    }
-
-    .research-principle p{
-        font-size:.82rem;
-    }
-
-
-    /* Domains */
-
-    .domain-grid{
-        grid-template-columns:1fr;
-        gap:14px;
-    }
-
-    .domain-card{
-        min-height:160px;
-        padding:21px 22px 18px;
-    }
-
-    .domain-card h3{
-        font-size:.95rem;
-    }
-
-    .domain-question{
-        font-size:.82rem;
-    }
-
-    .domain-card-footer{
-        margin-top:20px;
-    }
-
-
-    /* Scope */
-
-    .scope-grid{
-        gap:14px;
-    }
-
-    .scope-item{
-        min-height:auto;
-        padding:21px 22px;
-    }
-
-
-    /* Workflow */
-
-    .workflow{
-        grid-template-columns:1fr;
-        gap:14px;
-    }
-
-    .workflow-step{
-        min-height:auto;
-        padding:22px;
-    }
-
-    .workflow-step b{
-        margin-bottom:14px;
-        font-size:1.85rem;
-    }
-
-
-    /* Buttons */
-
-    .project-actions{
-        width:100%;
-    }
-
-    .project-actions .button{
-        width:100%;
-    }
-
-
-    /* Footer */
-
-    .footer-brand-lockup{
-        gap:9px;
-    }
-
-    .footer-brand-lockup img{
-        width:28px;
-        height:28px;
-        flex-basis:28px;
-    }
-
-    .footer-brand{
-        font-size:.86rem;
-    }
-
-    .footer-identity + p{
-        margin-top:12px;
-    }
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-@media (prefers-reduced-motion:reduce){
-
-    .domain-card{
-        transition:none;
-    }
-
-    html{
-        scroll-behavior:auto;
-    }
-}
-
-
-/* =========================================================
-   PRINT
-========================================================= */
-
-@media print{
-
-    .portfolio-hero{
-        background:#fff !important;
-        color:#000 !important;
-    }
-
-    .portfolio-hero h1,
-    .portfolio-hero p{
-        color:#000 !important;
-    }
-
-    .project-section{
-        padding-top:40px;
-        padding-bottom:40px;
-    }
+@media (max-width: 800px) {
 
     .research-introduction,
-    .geographic-scope{
-        background:#fff !important;
+    .research-domains,
+    .geographic-scope,
+    .research-workflow {
+        padding-top: 72px;
+        padding-bottom: 72px;
     }
 
-    .domain-card,
-    .research-principle,
-    .scope-item,
-    .workflow-step{
-        box-shadow:none !important;
-        border:1px solid #bbb;
-        break-inside:avoid;
+    .research-principles,
+    .scope-grid,
+    .workflow {
+        grid-template-columns: 1fr;
     }
+
+    .domain-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .research-principle {
+        min-height: 0;
+    }
+
+    .workflow-step {
+        min-height: 0;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .research-introduction,
+    .research-domains,
+    .geographic-scope,
+    .research-workflow {
+        padding-top: 58px;
+        padding-bottom: 58px;
+    }
+
+    .domain-card-body,
+    .scope-item,
+    .workflow-step,
+    .research-principle {
+        padding: 21px;
+    }
+
 }
