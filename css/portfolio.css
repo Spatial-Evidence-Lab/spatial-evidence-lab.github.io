@@ -1,6 +1,6 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB
-   PORTFOLIO / RESEARCH PAGE LAYOUT
+   PORTFOLIO / RESEARCH PAGE
    ========================================================= */
 
 
@@ -8,29 +8,49 @@
    GLOBAL SECTION SAFETY
    ========================================================= */
 
-main,
-section,
-article,
-header,
-footer,
-div {
+.project-section,
+.portfolio-hero {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    margin: 0;
+    border: 0;
+
+    overflow: hidden;
+}
+
+
+.project-section *,
+.portfolio-hero * {
     min-width: 0;
 }
 
 
 /*
-   Sections themselves occupy the viewport width.
-   Content is constrained by .shell.
+   Explicitly prevent legacy stylesheets from putting
+   lines or pseudo-elements around sections.
 */
 
 .project-section,
-.portfolio-hero,
-.site-footer {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+.project-section.alt,
+.project-section.dark,
+.research-introduction,
+.research-domains,
+.geographic-scope,
+.research-workflow {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
 
-    overflow-x: hidden;
+    box-shadow: none;
+}
+
+
+.project-section::before,
+.project-section::after {
+    content: none !important;
+    display: none !important;
 }
 
 
@@ -40,81 +60,86 @@ div {
 
 .portfolio-hero {
     background: var(--sel-hero);
+
     color: var(--sel-white);
 
-    padding: 72px 0 82px;
-
-    position: relative;
+    padding: 68px 0 76px;
 }
 
 
-/*
-   The hero background belongs to the section, not .shell.
-
-   This prevents the coloured background from extending
-   beyond the content boundaries.
-*/
-
 .portfolio-hero .shell {
-    width: min(
-        calc(100% - 48px),
-        var(--max)
-    );
-
+    width: 100%;
     max-width: var(--max);
 
     margin-inline: auto;
 
     min-width: 0;
+
+    box-sizing: border-box;
 }
 
 
-/* Hero eyebrow */
+/* =========================================================
+   HERO EYEBROW
+   ========================================================= */
 
 .research-eyebrow {
-    margin: 0 0 28px;
+    margin: 0 0 22px;
 
-    color: var(--sel-cyan);
+    color: var(--sel-accent);
 
-    font-size: 0.68rem;
+    font-size: .68rem;
+
     font-weight: 800;
 
-    letter-spacing: 0.12em;
+    letter-spacing: .12em;
+
     text-transform: uppercase;
 
     line-height: 1.4;
 }
 
 
-/* Hero title */
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
 
 .hero-title {
+    width: 100%;
     max-width: 1100px;
 
     margin: 0;
 
     color: #FFFFFF;
 
+    /*
+       Deliberately reduced so the heading reads as
+       approximately two lines on desktop.
+    */
+
     font-size: clamp(
-        2rem,
-        4vw,
-        3.2rem
+        1.55rem,
+        2.6vw,
+        2.15rem
     );
 
-    line-height: 1.08;
+    line-height: 1.12;
 
-    letter-spacing: -0.045em;
+    letter-spacing: -.035em;
 
     font-weight: 800;
 }
 
 
-/* Hero copy */
+/* =========================================================
+   HERO COPY
+   ========================================================= */
 
 .hero-copy {
+    width: 100%;
     max-width: 920px;
 
-    margin-top: 28px;
+    margin-top: 24px;
 
     min-width: 0;
 }
@@ -123,18 +148,20 @@ div {
 .hero-lead {
     margin: 0;
 
-    color: rgba(255, 255, 255, 0.92);
+    color: rgba(255,255,255,.90);
 
-    font-size: 1rem;
+    font-size: .94rem;
 
     line-height: 1.65;
 }
 
 
-/* Hero buttons */
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
 
 .portfolio-hero .project-actions {
-    margin-top: 32px;
+    margin-top: 28px;
 }
 
 
@@ -143,42 +170,24 @@ div {
    ========================================================= */
 
 .project-section {
-    width: 100%;
-    max-width: 100%;
-
-    padding: 88px 0;
-
     background: var(--sel-section);
 
     color: var(--sel-text);
 
-    border: 0;
-
-    position: relative;
-
-    overflow-x: hidden;
+    padding: 82px 0;
 }
 
 
 /*
-   IMPORTANT:
-
-   Explicitly remove borders/backgrounds that may have been
-   inherited from older versions of the stylesheet.
+   All four research sections deliberately use exactly
+   the same background colour.
 */
 
-.project-section::before,
-.project-section::after {
-    display: none;
-}
-
-
-.project-section.alt,
-.project-section.dark {
-    background: var(--sel-section);
-
-    border-top: 0;
-    border-bottom: 0;
+.research-introduction,
+.research-domains,
+.geographic-scope,
+.research-workflow {
+    background: var(--sel-section) !important;
 }
 
 
@@ -193,19 +202,20 @@ div {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 0.9fr)
+        minmax(0, .9fr)
         minmax(0, 1.1fr);
 
-    gap: 64px;
+    gap: 56px;
 
     align-items: start;
 
-    margin-bottom: 52px;
+    margin-bottom: 46px;
 }
 
 
 .project-section-head > * {
     min-width: 0;
+    max-width: 100%;
 }
 
 
@@ -213,11 +223,15 @@ div {
     width: 100%;
     max-width: 100%;
 
-    margin-bottom: 52px;
+    margin-bottom: 46px;
 
     min-width: 0;
 }
 
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
 
 .programme-title {
     margin: 0;
@@ -225,59 +239,61 @@ div {
     color: #FFFFFF;
 
     font-size: clamp(
-        1.35rem,
-        2.2vw,
-        1.8rem
+        1.30rem,
+        1.8vw,
+        1.55rem
     );
 
     line-height: 1.2;
 
-    letter-spacing: -0.025em;
+    letter-spacing: -.025em;
 
     font-weight: 800;
 }
 
+
+/*
+   Remove any old numbering styles if another stylesheet
+   still contains .project-number.
+*/
 
 .project-number {
-    margin: 0 0 12px;
-
-    color: var(--sel-accent);
-
-    font-size: 0.7rem;
-    font-weight: 800;
-
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    display: none;
 }
 
+
+/* =========================================================
+   SECTION TEXT
+   ========================================================= */
 
 .section-lead,
 .project-intro {
     margin: 0;
 
+    width: 100%;
     max-width: 720px;
 
     color: var(--sel-text-soft);
 
-    font-size: 0.95rem;
+    font-size: .92rem;
 
     line-height: 1.65;
 }
 
 
 /* =========================================================
-   RESEARCH PROGRAMME
+   01 — RESEARCH PROGRAMME
    ========================================================= */
 
 .research-introduction {
-    background: var(--sel-section);
-
-    padding-top: 92px;
-    padding-bottom: 92px;
-
-    border: 0;
+    padding-top: 82px;
+    padding-bottom: 82px;
 }
 
+
+/* =========================================================
+   RESEARCH PRINCIPLES
+   ========================================================= */
 
 .research-principles {
     width: 100%;
@@ -288,50 +304,56 @@ div {
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
-    gap: 18px;
+    gap: 16px;
 
     min-width: 0;
 }
 
 
 .research-principle {
+    width: 100%;
+    max-width: 100%;
+
     min-width: 0;
 
     background: var(--sel-box);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,.08);
 
     border-radius: var(--radius-md);
 
-    padding: 28px 26px;
+    padding: 25px 24px;
 
     transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
+        transform .2s ease,
+        border-color .2s ease,
+        background-color .2s ease;
 }
 
 
 .research-principle:hover {
     transform: translateY(-2px);
 
-    border-color: rgba(0, 215, 232, 0.28);
+    border-color: rgba(0,215,232,.28);
 
     background: #30413E;
 }
 
 
 .research-principle-content {
+    width: 100%;
+    max-width: 100%;
+
     min-width: 0;
 }
 
 
 .research-principle h3 {
-    margin: 0 0 10px;
+    margin: 0 0 9px;
 
     color: #FFFFFF;
 
-    font-size: 1.05rem;
+    font-size: 1.02rem;
 
     line-height: 1.25;
 
@@ -344,38 +366,30 @@ div {
 
     color: var(--sel-text-soft);
 
-    font-size: 0.84rem;
+    font-size: .82rem;
 
-    line-height: 1.6;
+    line-height: 1.55;
 }
 
 
 /* =========================================================
-   RESEARCH DOMAINS
+   02 — RESEARCH DOMAINS
    ========================================================= */
 
 .research-domains {
-    background: var(--sel-section);
-
-    padding-top: 92px;
-    padding-bottom: 92px;
-
-    border: 0;
+    padding-top: 82px;
+    padding-bottom: 82px;
 }
 
 
 .domain-heading {
-    margin-bottom: 46px;
+    margin-bottom: 44px;
 }
 
 
-/*
-   TWO-COLUMN GRID
-
-   minmax(0, 1fr) is critical.
-   It prevents grid children from forcing the grid
-   beyond its available width.
-*/
+/* =========================================================
+   DOMAIN GRID
+   ========================================================= */
 
 .domain-grid {
     width: 100%;
@@ -392,27 +406,36 @@ div {
 }
 
 
+/* =========================================================
+   DOMAIN CARD
+   ========================================================= */
+
 .domain-card {
-    min-width: 0;
+    width: 100%;
     max-width: 100%;
 
+    min-width: 0;
+
     display: flex;
+
     flex-direction: column;
 
     background: var(--sel-box);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,.08);
 
     border-radius: var(--radius-md);
 
-    padding: 22px 24px;
+    padding: 21px 23px;
 
     color: var(--sel-text);
 
+    overflow: hidden;
+
     transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+        transform .2s ease,
+        background-color .2s ease,
+        border-color .2s ease;
 }
 
 
@@ -421,11 +444,14 @@ div {
 
     background: #30413E;
 
-    border-color: rgba(0, 215, 232, 0.28);
+    border-color: rgba(0,215,232,.28);
 }
 
 
 .domain-card-body {
+    width: 100%;
+    max-width: 100%;
+
     min-width: 0;
 }
 
@@ -435,7 +461,7 @@ div {
 
     color: #FFFFFF;
 
-    font-size: 0.98rem;
+    font-size: .96rem;
 
     line-height: 1.35;
 
@@ -444,11 +470,11 @@ div {
 
 
 .domain-question {
-    margin: 10px 0 0;
+    margin: 9px 0 0;
 
     color: var(--sel-text-soft);
 
-    font-size: 0.8rem;
+    font-size: .79rem;
 
     line-height: 1.55;
 }
@@ -457,21 +483,29 @@ div {
 .domain-card-footer {
     display: flex;
 
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     gap: 15px;
 
-    margin-top: 22px;
-    padding-top: 14px;
+    min-width: 0;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid rgba(255,255,255,.10);
 
     color: var(--sel-muted);
 
-    font-size: 0.65rem;
+    font-size: .64rem;
 
     line-height: 1.4;
+}
+
+
+.domain-card-footer span {
+    min-width: 0;
 }
 
 
@@ -483,23 +517,23 @@ div {
 
 
 .domain-cta {
-    margin-top: 32px;
+    margin-top: 30px;
 }
 
 
 /* =========================================================
-   GEOGRAPHIC SCOPE
+   03 — GEOGRAPHIC SCOPE
    ========================================================= */
 
 .geographic-scope {
-    background: var(--sel-section);
-
-    padding-top: 92px;
-    padding-bottom: 92px;
-
-    border: 0;
+    padding-top: 82px;
+    padding-bottom: 82px;
 }
 
+
+/* =========================================================
+   SCOPE GRID
+   ========================================================= */
 
 .scope-grid {
     width: 100%;
@@ -516,28 +550,41 @@ div {
 }
 
 
+/* =========================================================
+   SCOPE CARDS
+   ========================================================= */
+
 .scope-item {
-    min-width: 0;
+    width: 100%;
     max-width: 100%;
+
+    min-width: 0;
 
     background: var(--sel-box);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,.08);
 
     border-radius: var(--radius-md);
 
-    padding: 24px;
+    /*
+       Reduced vertical padding.
+       This removes the excessive empty space.
+    */
+
+    padding: 20px 22px;
 
     color: var(--sel-text);
+
+    overflow: hidden;
 }
 
 
 .scope-item h3 {
-    margin: 0 0 9px;
+    margin: 0 0 8px;
 
     color: #FFFFFF;
 
-    font-size: 0.98rem;
+    font-size: .96rem;
 
     line-height: 1.3;
 
@@ -550,25 +597,25 @@ div {
 
     color: var(--sel-text-soft);
 
-    font-size: 0.8rem;
+    font-size: .79rem;
 
-    line-height: 1.55;
+    line-height: 1.52;
 }
 
 
 /* =========================================================
-   RESEARCH WORKFLOW
+   04 — RESEARCH APPROACH
    ========================================================= */
 
 .research-workflow {
-    background: var(--sel-section);
-
-    padding-top: 92px;
-    padding-bottom: 92px;
-
-    border: 0;
+    padding-top: 82px;
+    padding-bottom: 82px;
 }
 
+
+/* =========================================================
+   WORKFLOW
+   ========================================================= */
 
 .workflow {
     width: 100%;
@@ -586,38 +633,43 @@ div {
 
 
 .workflow-step {
-    min-width: 0;
+    width: 100%;
     max-width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
 
     background: var(--sel-box);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,.08);
 
     border-radius: var(--radius-md);
 
-    padding: 24px;
+    padding: 22px;
 
-    display: flex;
-    flex-direction: column;
-
-    gap: 8px;
+    overflow: hidden;
 }
 
 
 .workflow-step b {
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
     color: var(--sel-accent);
 
-    font-size: 1.65rem;
+    font-size: 1.45rem;
 
     line-height: 1;
 
     font-weight: 800;
 
-    letter-spacing: -0.04em;
+    letter-spacing: -.04em;
 }
 
 
@@ -626,7 +678,7 @@ div {
 
     color: #FFFFFF;
 
-    font-size: 0.9rem;
+    font-size: .88rem;
 
     line-height: 1.3;
 
@@ -639,14 +691,14 @@ div {
 
     color: var(--sel-text-soft);
 
-    font-size: 0.76rem;
+    font-size: .75rem;
 
     line-height: 1.5;
 }
 
 
 /* =========================================================
-   BUTTON AREA
+   ACTION AREA
    ========================================================= */
 
 .project-actions {
@@ -659,147 +711,8 @@ div {
     gap: 12px;
 
     min-width: 0;
-}
 
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.site-footer {
-    width: 100%;
     max-width: 100%;
-
-    background: #07151B;
-
-    color: var(--sel-text);
-
-    padding: 64px 0 22px;
-
-    border: 0;
-
-    overflow-x: hidden;
-}
-
-
-.footer-grid {
-    width: 100%;
-    max-width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        auto;
-
-    gap: 60px;
-
-    align-items: start;
-
-    min-width: 0;
-}
-
-
-.footer-identity {
-    min-width: 0;
-}
-
-
-.footer-brand-lockup {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    min-width: 0;
-}
-
-
-.footer-brand-lockup img {
-    width: 30px;
-    height: 30px;
-
-    flex: 0 0 30px;
-
-    object-fit: contain;
-}
-
-
-.footer-brand {
-    color: #FFFFFF;
-
-    font-size: 0.95rem;
-
-    line-height: 1.2;
-
-    white-space: nowrap;
-}
-
-
-.footer-links {
-    display: flex;
-
-    gap: 60px;
-
-    min-width: 0;
-}
-
-
-.footer-links div {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 8px;
-
-    min-width: 0;
-}
-
-
-.footer-links b {
-    margin-bottom: 4px;
-
-    color: #FFFFFF;
-
-    font-size: 0.65rem;
-
-    letter-spacing: 0.1em;
-
-    text-transform: uppercase;
-}
-
-
-.footer-links a {
-    color: var(--sel-text-soft);
-
-    font-size: 0.72rem;
-
-    line-height: 1.4;
-}
-
-
-.footer-links a:hover {
-    color: var(--sel-accent);
-}
-
-
-.footer-bottom {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-top: 55px;
-
-    padding-top: 18px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-
-    color: var(--sel-muted);
-
-    font-size: 0.67rem;
 }
 
 
@@ -812,9 +725,9 @@ div {
     .project-section-head {
         grid-template-columns: 1fr;
 
-        gap: 24px;
+        gap: 22px;
 
-        margin-bottom: 38px;
+        margin-bottom: 36px;
     }
 
 
@@ -834,11 +747,6 @@ div {
             repeat(2, minmax(0, 1fr));
     }
 
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
 }
 
 
@@ -849,21 +757,21 @@ div {
 @media (max-width: 700px) {
 
     .portfolio-hero {
-        padding: 54px 0 62px;
+        padding: 52px 0 60px;
     }
 
 
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.55rem;
 
         line-height: 1.12;
     }
 
 
     .research-eyebrow {
-        margin-bottom: 20px;
+        margin-bottom: 18px;
 
-        font-size: 0.62rem;
+        font-size: .60rem;
     }
 
 
@@ -872,13 +780,13 @@ div {
     .research-domains,
     .geographic-scope,
     .research-workflow {
-        padding-top: 64px;
-        padding-bottom: 64px;
+        padding-top: 62px;
+        padding-bottom: 62px;
     }
 
 
     .programme-title {
-        font-size: 1.3rem;
+        font-size: 1.30rem;
     }
 
 
@@ -898,22 +806,13 @@ div {
     }
 
 
-    .footer-links {
-        gap: 35px;
-
-        flex-wrap: wrap;
+    .project-actions {
+        width: 100%;
     }
 
 
-    .footer-bottom {
-        display: block;
-    }
-
-
-    .footer-bottom > * {
-        display: block;
-
-        margin-top: 7px;
+    .project-actions .button {
+        max-width: 100%;
     }
 
 }
@@ -925,13 +824,8 @@ div {
 
 @media (max-width: 420px) {
 
-    .shell {
-        width: calc(100% - 28px);
-    }
-
-
     .hero-title {
-        font-size: 1.55rem;
+        font-size: 1.45rem;
     }
 
 
@@ -939,7 +833,7 @@ div {
     .scope-item,
     .workflow-step,
     .research-principle {
-        padding: 20px;
+        padding: 19px;
     }
 
 
@@ -952,11 +846,6 @@ div {
 
     .project-actions .button {
         width: 100%;
-    }
-
-
-    .footer-brand {
-        font-size: 0.85rem;
     }
 
 }
