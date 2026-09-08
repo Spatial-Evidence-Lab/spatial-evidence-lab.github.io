@@ -38,8 +38,6 @@
         color var(--sel-transition),
         transform var(--sel-transition),
         box-shadow var(--sel-transition);
-
-    box-sizing: border-box;
 }
 
 
@@ -102,9 +100,7 @@
 
 .button-ghost-dark {
     background: transparent;
-
     border-color: rgba(255,255,255,.32);
-
     color: var(--sel-white);
 }
 
@@ -133,20 +129,18 @@
 
     background: #102A32;
 
-    border: 0;
     border-bottom: 1px solid rgba(255,255,255,.10);
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
-    overflow: visible;
+    overflow-x: clip;
 }
 
 
 .nav-wrap {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+    width: calc(100% - 48px);
+    max-width: var(--max);
 
     min-height: var(--sel-header-height);
 
@@ -155,9 +149,10 @@
     align-items: center;
     justify-content: space-between;
 
-    gap: 20px;
+    gap: 28px;
 
-    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -170,24 +165,20 @@
 
     align-items: center;
 
-    flex: 0 1 auto;
+    flex-shrink: 1;
 
     min-width: 0;
-    max-width: 100%;
 
     gap: 10px;
 
     color: var(--sel-white);
 
     font-size: .92rem;
-
     line-height: 1;
 
     letter-spacing: -.025em;
 
     white-space: nowrap;
-
-    overflow: hidden;
 }
 
 
@@ -205,12 +196,8 @@
     display: inline-block;
 
     min-width: 0;
-    max-width: 100%;
 
     white-space: nowrap;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 
@@ -228,14 +215,9 @@
 
     align-items: center;
 
-    flex: 0 1 auto;
+    gap: 25px;
 
     min-width: 0;
-    max-width: 100%;
-
-    gap: 20px;
-
-    overflow: hidden;
 }
 
 
@@ -243,12 +225,6 @@
     display: inline-flex;
 
     align-items: center;
-    justify-content: center;
-
-    flex: 0 1 auto;
-
-    min-width: 0;
-    max-width: 100%;
 
     min-height: var(--sel-header-height);
 
@@ -266,8 +242,6 @@
     letter-spacing: .07em;
     text-transform: uppercase;
 
-    white-space: nowrap;
-
     transition:
         color var(--sel-transition),
         border-color var(--sel-transition);
@@ -277,7 +251,6 @@
 .site-nav a:hover,
 .site-nav a.active {
     color: var(--sel-accent);
-
     border-bottom-color: var(--sel-accent);
 }
 
@@ -287,8 +260,6 @@
    ========================================================= */
 
 .site-nav .nav-cta {
-    flex: 0 0 auto;
-
     min-height: auto;
 
     padding: 9px 12px;
@@ -301,19 +272,18 @@
 
 .site-nav .nav-cta:hover {
     border-color: var(--sel-accent);
-
     color: var(--sel-accent);
 }
 
 
 /* =========================================================
-   MOBILE MENU BUTTON
+   MOBILE MENU
    ========================================================= */
 
 .menu-toggle {
     display: none;
 
-    flex: 0 0 auto;
+    flex-shrink: 0;
 
     padding: 9px 12px;
 
@@ -332,7 +302,6 @@
 
 .menu-toggle:hover {
     border-color: var(--sel-accent);
-
     color: var(--sel-accent);
 }
 
@@ -345,15 +314,16 @@
     width: 100%;
     max-width: 100%;
 
+    margin: 0;
+    padding: 64px 0 22px;
+
     background: #07151B;
 
     color: var(--sel-text);
 
-    padding: 58px 0 22px;
-
     border: 0;
 
-    overflow: hidden;
+    overflow-x: clip;
 }
 
 
@@ -375,31 +345,24 @@
 }
 
 
-/* =========================================================
-   FOOTER IDENTITY
-   ========================================================= */
-
 .footer-identity {
     min-width: 0;
-    max-width: 100%;
 }
 
 
 .footer-brand-lockup {
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
 
     gap: 10px;
 
     min-width: 0;
-    max-width: 100%;
 
     white-space: nowrap;
 }
 
 
-.footer-logo,
 .footer-brand-lockup img {
     width: 30px;
     height: 30px;
@@ -412,8 +375,6 @@
 
 .footer-brand {
     display: inline-block;
-
-    min-width: 0;
 
     color: var(--sel-white);
 
@@ -439,7 +400,6 @@
     gap: 60px;
 
     min-width: 0;
-    max-width: 100%;
 }
 
 
@@ -460,13 +420,11 @@
     color: var(--sel-white);
 
     font-size: .64rem;
-
     font-weight: 850;
 
     line-height: 1.2;
 
     letter-spacing: .10em;
-
     text-transform: uppercase;
 }
 
@@ -477,8 +435,6 @@
     font-size: .72rem;
 
     line-height: 1.4;
-
-    white-space: nowrap;
 
     transition: color var(--sel-transition);
 }
@@ -501,20 +457,14 @@
 
     gap: 15px;
 
-    min-width: 0;
-    max-width: 100%;
-
-    margin-top: 52px;
-
-    padding-top: 17px;
+    margin-top: 55px;
+    padding-top: 18px;
 
     border-top: 1px solid rgba(255,255,255,.12);
 
     color: var(--sel-muted);
 
-    font-size: .66rem;
-
-    line-height: 1.4;
+    font-size: .67rem;
 }
 
 
@@ -522,24 +472,25 @@
    TABLET
    ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
     .site-nav {
-        gap: 14px;
-    }
-
-    .site-nav a {
-        font-size: .64rem;
-    }
-
-    .wordmark {
-        font-size: .86rem;
+        gap: 18px;
     }
 
 }
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 800px) {
+
+    .nav-wrap {
+        width: calc(100% - 32px);
+    }
+
 
     .menu-toggle {
         display: inline-flex;
@@ -549,15 +500,11 @@
     }
 
 
-    .nav-wrap {
-        overflow: visible;
-    }
-
-
     .site-nav {
         position: absolute;
 
         top: var(--sel-header-height);
+
         left: 0;
         right: 0;
 
@@ -573,17 +520,16 @@
 
         padding:
             8px
-            var(--shell-padding)
+            5%
             14px;
 
-        background: var(--sel-navy-3);
+        background: #102A32;
 
-        border: 0;
         border-bottom: 1px solid var(--sel-line);
 
         box-shadow: var(--sel-shadow-sm);
 
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
 
@@ -593,18 +539,11 @@
 
 
     .site-nav a {
-        width: 100%;
-        max-width: 100%;
-
         min-height: auto;
-
-        justify-content: flex-start;
 
         padding: 13px 0;
 
         border-bottom: 1px solid var(--sel-line);
-
-        white-space: normal;
     }
 
 
@@ -614,8 +553,6 @@
 
 
     .site-nav .nav-cta {
-        width: auto;
-
         margin-top: 8px;
 
         padding: 11px 12px;
@@ -626,12 +563,12 @@
 
     .footer-grid {
         grid-template-columns: 1fr;
-
-        gap: 32px;
     }
 
 
     .footer-links {
+        margin-top: 32px;
+
         gap: 45px;
     }
 
@@ -671,13 +608,6 @@
 
     .footer-links {
         gap: 32px;
-
-        flex-wrap: wrap;
-    }
-
-
-    .footer-brand {
-        font-size: .85rem;
     }
 
 }
