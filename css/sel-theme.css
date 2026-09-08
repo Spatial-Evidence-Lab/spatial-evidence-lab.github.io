@@ -1,13 +1,13 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB
    MASTER DESIGN SYSTEM
-   Shared across all pages
    ========================================================= */
 
 :root {
-    /* -----------------------------------------------------
+
+    /* =====================================================
        COLOUR SYSTEM
-    ----------------------------------------------------- */
+    ===================================================== */
 
     --sel-section: #0B1D25;
     --sel-box: #293735;
@@ -24,6 +24,7 @@
     --sel-navy-3: #102A32;
 
     --sel-white: #FFFFFF;
+
     --sel-paper: #0B1D25;
 
     --sel-text: #E8F0F1;
@@ -40,7 +41,11 @@
     --sel-positive: #55A878;
     --sel-negative: #D9485F;
 
-    /* Quality of Life colours */
+
+    /* =====================================================
+       QUALITY OF LIFE COLOURS
+    ===================================================== */
+
     --qol-economic: #C69214;
     --qol-education: #8B68C7;
     --qol-health: #D96878;
@@ -50,20 +55,41 @@
     --qol-social: #A25C9D;
     --qol-urban: #4E93AA;
 
-    /* -----------------------------------------------------
+
+    /* =====================================================
        LAYOUT
-    ----------------------------------------------------- */
+    ===================================================== */
 
     --max: 1200px;
     --content-width: 1200px;
+
+    --shell-padding: 24px;
 
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 12px;
 
-    /* -----------------------------------------------------
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    --sel-header-height: 72px;
+
+
+    /* =====================================================
+       TRANSITIONS / SHADOWS
+    ===================================================== */
+
+    --sel-transition: 180ms ease;
+
+    --sel-shadow-sm:
+        0 8px 24px rgba(0, 0, 0, 0.18);
+
+
+    /* =====================================================
        TYPOGRAPHY
-    ----------------------------------------------------- */
+    ===================================================== */
 
     --sans:
         Inter,
@@ -95,20 +121,15 @@
 }
 
 
-/*
-   IMPORTANT:
-   Prevents long words, grids, flex items or oversized
-   elements from creating horizontal page overflow.
-*/
-
 html {
     width: 100%;
     max-width: 100%;
+
     margin: 0;
     padding: 0;
 
     scroll-behavior: smooth;
-    scroll-padding-top: 84px;
+    scroll-padding-top: var(--sel-header-height);
 
     overflow-x: hidden;
 }
@@ -133,9 +154,9 @@ body {
 }
 
 
-/*
-   Prevent replaced elements from exceeding their parent.
-*/
+/* =========================================================
+   MEDIA
+   ========================================================= */
 
 img,
 svg,
@@ -143,14 +164,15 @@ video,
 canvas,
 iframe {
     display: block;
+
     max-width: 100%;
     height: auto;
 }
 
 
-/*
-   Long text / URLs should never force the page wider.
-*/
+/* =========================================================
+   TEXT SAFETY
+   ========================================================= */
 
 h1,
 h2,
@@ -163,8 +185,10 @@ a,
 span,
 strong,
 b {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+    word-break: normal;
 }
 
 
@@ -182,27 +206,39 @@ a {
    SHARED CONTAINER
    ========================================================= */
 
-.shell {
-    width: min(
-        calc(100% - 48px),
-        var(--max)
-    );
+/*
+   IMPORTANT:
 
+   The shell itself is always exactly 100% of its parent.
+   Padding creates the visual side margins.
+
+   This avoids the previous:
+       width: calc(100% - 48px)
+
+   calculation being combined with other width rules.
+*/
+
+.shell {
+    width: 100%;
     max-width: var(--max);
 
     margin-inline: auto;
 
+    padding-inline: var(--shell-padding);
+
     min-width: 0;
+
+    box-sizing: border-box;
 }
 
 
-/*
-   Every direct child of a shell must be able to shrink.
-   This is particularly important for flex/grid layouts.
-*/
+/* =========================================================
+   CHILD SAFETY
+   ========================================================= */
 
 .shell > * {
     min-width: 0;
+    max-width: 100%;
 }
 
 
@@ -232,6 +268,10 @@ a {
 }
 
 
+/* =========================================================
+   SCREEN READER ONLY
+   ========================================================= */
+
 .sr-only {
     position: absolute;
 
@@ -244,6 +284,7 @@ a {
     overflow: hidden;
 
     clip: rect(0, 0, 0, 0);
+
     white-space: nowrap;
 
     border: 0;
@@ -271,16 +312,45 @@ a {
 
 
 /* =========================================================
-   RESPONSIVE CONTAINER
+   GLOBAL LAYOUT PROTECTION
+   ========================================================= */
+
+main,
+section,
+article,
+header,
+footer {
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+main > *,
+section > *,
+article > *,
+header > *,
+footer > * {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
    ========================================================= */
 
 @media (max-width: 700px) {
 
-    .shell {
-        width: min(
-            calc(100% - 32px),
-            var(--max)
-        );
+    :root {
+        --shell-padding: 16px;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    :root {
+        --shell-padding: 14px;
     }
 
 }
