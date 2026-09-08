@@ -1,0 +1,65 @@
+[
+  {
+    "id": "SEL-001",
+    "title": "Ireland Quality of Life Index",
+    "domain": "Quality of Life",
+    "status": "Flagship",
+    "summary": "A small-area multidimensional index combining 35 indicators across seven quality-of-life themes for 18,919 Small Areas.",
+    "image": "/assets/projects/SEL-001.jpg",
+    "url": "/projects/sel-001-ireland-quality-of-life/"
+  },
+  {
+    "id": "SEL-002",
+    "title": "Bandon Public Transport Accessibility & Equity",
+    "domain": "Accessibility",
+    "status": "Production",
+    "summary": "Spatial assessment of public transport access, population vulnerability and equity in Bandon, County Cork.",
+    "image": "/assets/projects/SEL-002.jpg",
+    "url": "/projects/sel-002-bandon-public-transport/"
+  },
+  {
+    "id": "SEL-003",
+    "title": "West Cork Public Transport Accessibility",
+    "domain": "Accessibility",
+    "status": "Production",
+    "summary": "Small-area analysis of public transport accessibility across West Cork using spatial and network evidence.",
+    "image": "/assets/projects/SEL-003.jpg",
+    "url": "/projects/sel-003-west-cork-public-transport/"
+  },
+  {
+    "id": "SEL-004",
+    "title": "Ireland Forestry & Land Use Analysis",
+    "domain": "Environment",
+    "status": "Production",
+    "summary": "Spatial analysis of forestry, land use and environmental patterns across Ireland.",
+    "image": "/assets/projects/SEL-004.jpg",
+    "url": "/projects/sel-004-ireland-forestry-land-use/"
+  },
+  {
+    "id": "SEL-005",
+    "title": "Greater Athens Heat Risk & Environmental Quality",
+    "domain": "Climate",
+    "status": "Production",
+    "summary": "Spatial assessment of heat exposure, environmental conditions and population vulnerability across Greater Athens.",
+    "image": "/assets/projects/SEL-005.jpg",
+    "url": "/projects/sel-005-greater-athens-heat-risk/"
+  },
+  {
+    "id": "SEL-006",
+    "title": "County Wicklow Wind Energy Potential",
+    "domain": "Energy",
+    "status": "Production",
+    "summary": "Spatial suitability assessment for wind energy potential using environmental and planning constraints.",
+    "image": "/assets/projects/SEL-006.jpg",
+    "url": "/projects/sel-006-county-wicklow-wind-energy/"
+  },
+  {
+    "id": "SEL-007",
+    "title": "Rond\u00f4nia Deforestation & Forest Loss Analysis",
+    "domain": "Environment",
+    "status": "Production",
+    "summary": "Remote-sensing and spatial analysis of forest loss and deforestation change in Rond\u00f4nia, Brazil.",
+    "image": "/assets/projects/SEL-007.jpg",
+    "url": "/projects/sel-007-rondonia-deforestation/"
+  }
+]
