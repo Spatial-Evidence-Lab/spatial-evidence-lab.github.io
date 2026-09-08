@@ -1,2 +1,254 @@
-.site-footer{background:var(--ink);color:#d6e3df;padding:68px 0 24px}.footer-grid{display:flex;justify-content:space-between;gap:60px}.footer-brand{color:#fff}.footer-grid p{color:#9cb3b1;font-size:.8rem;margin:18px 0 0}.footer-links{display:flex;gap:80px}.footer-links div{display:flex;flex-direction:column;gap:8px;font-size:.76rem}.footer-links b{color:#fff;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}.footer-bottom{display:flex;justify-content:space-between;gap:15px;margin-top:70px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15);color:#8da7a4;font-size:.67rem}@media(max-width:600px){.footer-grid,.footer-bottom{display:block}.footer-links{margin-top:35px;gap:50px}.footer-bottom>*{display:block;margin-top:8px}}
-.image-dialog{border:0;padding:14px;background:#102f35;max-width:min(92vw,1100px)}.image-dialog::backdrop{background:#08262acc}.image-dialog img{max-height:85vh;max-width:88vw}.image-dialog button{position:absolute;right:4px;top:2px;border:0;background:none;color:#fff;font-size:2rem;cursor:pointer}
+/* =========================================================
+   SEL COMPONENTS
+   ========================================================= */
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  background: var(--sel-navy);
+
+  color: #D7E3EE;
+
+  padding: 68px 0 24px;
+}
+
+.footer-grid {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+.footer-brand {
+  color: #fff;
+}
+
+.footer-grid p {
+  color: #91A7BA;
+
+  font-size: .8rem;
+
+  margin: 18px 0 0;
+}
+
+.footer-links {
+  display: flex;
+
+  gap: 80px;
+}
+
+.footer-links div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  font-size: .76rem;
+}
+
+.footer-links b {
+  color: #fff;
+
+  font-size: .68rem;
+
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+
+  margin-bottom: 6px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 70px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255,255,255,.15);
+
+  color: #7F96AA;
+
+  font-size: .67rem;
+}
+
+
+/* =========================================================
+   IMAGE LIGHTBOX
+   ========================================================= */
+
+.image-dialog {
+  border: 0;
+
+  padding: 14px;
+
+  background: var(--sel-navy);
+
+  max-width: min(92vw,1100px);
+}
+
+.image-dialog::backdrop {
+  background: rgba(0,20,45,.86);
+}
+
+.image-dialog img {
+  max-height: 85vh;
+  max-width: 88vw;
+}
+
+.image-dialog button {
+  position: absolute;
+
+  right: 4px;
+  top: 2px;
+
+  border: 0;
+
+  background: none;
+
+  color: #fff;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MAP ID BADGES
+   ========================================================= */
+
+.map-id-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 48px;
+
+  padding: 6px 9px;
+
+  background: #004DA8;
+
+  color: #fff;
+
+  border-radius: 2px;
+
+  font-size: .65rem;
+
+  font-weight: 850;
+
+  letter-spacing: .08em;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   DOMAIN BADGES
+   ========================================================= */
+
+.domain-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 5px 9px;
+
+  font-size: .65rem;
+
+  font-weight: 800;
+
+  border-radius: 2px;
+}
+
+.domain-badge::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+.domain-economic {
+  color: var(--qol-economic);
+  background: var(--qol-economic-light);
+}
+
+.domain-education {
+  color: var(--qol-education);
+  background: var(--qol-education-light);
+}
+
+.domain-health {
+  color: var(--qol-health);
+  background: var(--qol-health-light);
+}
+
+.domain-housing {
+  color: var(--qol-housing);
+  background: var(--qol-housing-light);
+}
+
+.domain-environment {
+  color: var(--qol-environment);
+  background: var(--qol-environment-light);
+}
+
+.domain-accessibility {
+  color: var(--qol-accessibility);
+  background: var(--qol-accessibility-light);
+}
+
+.domain-social {
+  color: var(--qol-social);
+  background: var(--qol-social-light);
+}
+
+.domain-urban {
+  color: var(--qol-urban);
+  background: var(--qol-urban-light);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .footer-grid,
+  .footer-bottom {
+    display: block;
+  }
+
+  .footer-links {
+    margin-top: 35px;
+
+    gap: 50px;
+  }
+
+  .footer-bottom > * {
+    display: block;
+
+    margin-top: 8px;
+  }
+}

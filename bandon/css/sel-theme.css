@@ -1,806 +1,1841 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB
-   SEL-002 — BANDON
-   GLOBAL THEME
+   Shared SEL / QoLI Theme
+   ---------------------------------------------------------
+   Used by:
+   /bandon/
+   and other project microsites
+
+   Design principles:
+   - #004DA8 = primary SEL / QoLI blue
+   - Dark-screen optimised interface
+   - White typography on strong colour surfaces
+   - Seven QoLI domains retain semantic colours
+   - Neutral charcoal/navy UI prevents colour competition
+   - Accessible contrast and visible focus states
+   ========================================================= */
+
+
+/* =========================================================
+   1. ROOT DESIGN TOKENS
    ========================================================= */
 
 :root {
-    --bg: #071018;
-    --panel: #0d1d29;
-    --panel-2: #102532;
-    --panel-3: #09151d;
 
-    --line: #203845;
-    --line-light: #2b4a59;
+  /* -------------------------------------------------------
+     CORE SEL BRAND
+     ------------------------------------------------------- */
 
-    --text: #e8f0f3;
-    --soft: #cbd7dc;
-    --muted: #9baeb7;
-    --white: #ffffff;
+  --sel-blue: #004DA8;
+  --sel-blue-dark: #003B82;
+  --sel-blue-deep: #002B5C;
+  --sel-blue-light: #2D70C4;
+  --sel-blue-pale: #DCEBFA;
 
-    --cyan: #5bd6e8;
-    --green: #6bd39b;
-    --orange: #f3a35c;
-    --pink: #e98acb;
-    --yellow: #e7d56a;
+  --sel-white: #FFFFFF;
 
-    --radius: 8px;
-    --radius-lg: 11px;
 
-    --site-width: 1180px;
+  /* -------------------------------------------------------
+     DARK SCREEN / INTERFACE NEUTRALS
+     ------------------------------------------------------- */
+
+  --sel-black: #050A10;
+  --sel-bg: #07111C;
+  --sel-bg-soft: #0A1724;
+  --sel-bg-raised: #0E1C2A;
+
+  --sel-panel: #102233;
+  --sel-panel-hover: #142B3E;
+  --sel-panel-strong: #172F43;
+
+  --sel-border: #23394A;
+  --sel-border-soft: #1B3040;
+  --sel-border-strong: #345064;
+
+
+  /* -------------------------------------------------------
+     TYPOGRAPHY
+     ------------------------------------------------------- */
+
+  --sel-text: #F4F8FB;
+  --sel-text-strong: #FFFFFF;
+  --sel-text-soft: #D6E1E8;
+  --sel-muted: #9AAEBC;
+  --sel-muted-dark: #718695;
+
+  --sel-link: #72B7FF;
+  --sel-link-hover: #A8D4FF;
+
+
+  /* -------------------------------------------------------
+     ACCESSIBILITY / STATUS
+     ------------------------------------------------------- */
+
+  --sel-focus: #FFD166;
+
+  --sel-success: #4FC38A;
+  --sel-success-soft: #BCEFD6;
+
+  --sel-warning: #F2B84B;
+  --sel-warning-soft: #FFE4A8;
+
+  --sel-danger: #EF6A68;
+  --sel-danger-soft: #FFC5C3;
+
+  --sel-info: #65B5F6;
+  --sel-info-soft: #C8E7FF;
+
+
+  /* =======================================================
+     QUALITY OF LIFE INDEX
+     ======================================================= */
+
+  /* -------------------------------------------------------
+     MASTER INDEX
+     ------------------------------------------------------- */
+
+  --qoli-blue: #004DA8;
+  --qoli-blue-dark: #003B82;
+  --qoli-blue-light: #2D70C4;
+  --qoli-blue-pale: #DCEBFA;
+
+
+  /* -------------------------------------------------------
+     QOLI MASTER BLUE SEQUENTIAL
+     
+     Low  →  High
+     ------------------------------------------------------- */
+
+  --qoli-blue-100: #DCEBFA;
+  --qoli-blue-200: #B9D5F2;
+  --qoli-blue-300: #82B4E2;
+  --qoli-blue-400: #4D8FCA;
+  --qoli-blue-500: #176AB3;
+  --qoli-blue-600: #004DA8;
+  --qoli-blue-700: #003B82;
+
+
+  /* -------------------------------------------------------
+     QOLI DECILES
+     
+     D1 = lowest
+     D10 = highest
+     ------------------------------------------------------- */
+
+  --qoli-d01: #DCEBFA;
+  --qoli-d02: #C9DFF4;
+  --qoli-d03: #B5D3EE;
+  --qoli-d04: #9BC4E6;
+  --qoli-d05: #82B4DE;
+  --qoli-d06: #659FD1;
+  --qoli-d07: #4D8FC8;
+  --qoli-d08: #2F7ABD;
+  --qoli-d09: #176AB3;
+  --qoli-d10: #004DA8;
+
+
+  /* =======================================================
+     SEVEN QOLI DOMAINS
+     -------------------------------------------------------
+     These are the canonical domain colours.
+     Do not substitute project-specific colours.
+     ======================================================= */
+
+  /* 2.01 Economic & Material Wellbeing */
+  --qoli-economic: #C69214;
+  --qoli-economic-dark: #936D0D;
+  --qoli-economic-light: #E7C96A;
+  --qoli-economic-pale: #F7EED0;
+
+  /* 2.02 Education & Employment */
+  --qoli-education: #6F42C1;
+  --qoli-education-dark: #522E92;
+  --qoli-education-light: #9A76DD;
+  --qoli-education-pale: #E9E0F8;
+
+  /* 2.03 Health & Wellbeing */
+  --qoli-health: #D9485F;
+  --qoli-health-dark: #A52F42;
+  --qoli-health-light: #EA7C8D;
+  --qoli-health-pale: #F9DDE2;
+
+  /* 2.04 Housing & Affordability */
+  --qoli-housing: #E67E22;
+  --qoli-housing-dark: #AD5A13;
+  --qoli-housing-light: #F2A55D;
+  --qoli-housing-pale: #FCE8D5;
+
+  /* 2.05 Environmental Quality */
+  --qoli-environment: #2E8B57;
+  --qoli-environment-dark: #21663F;
+  --qoli-environment-light: #62B483;
+  --qoli-environment-pale: #DCEFE4;
+
+  /* 2.06 Accessibility & Services */
+  --qoli-accessibility: #0F8B8D;
+  --qoli-accessibility-dark: #096567;
+  --qoli-accessibility-light: #4BB6B7;
+  --qoli-accessibility-pale: #D9F0F0;
+
+  /* 2.07 Social & Community Wellbeing */
+  --qoli-social: #8E3B8A;
+  --qoli-social-dark: #672B64;
+  --qoli-social-light: #B86AB2;
+  --qoli-social-pale: #F0DDEF;
+
+  /* 2.08 Urban Vitality */
+  --qoli-urban: #267C9D;
+  --qoli-urban-dark: #1A5A72;
+  --qoli-urban-light: #5BA8C1;
+  --qoli-urban-pale: #DCECF2;
+
+
+  /* -------------------------------------------------------
+     ANALYTICAL CONTRAST COLOURS
+     ------------------------------------------------------- */
+
+  --analysis-positive: #2E8B57;
+  --analysis-negative: #D9485F;
+  --analysis-neutral: #7F95A4;
+
+  --analysis-east: #004DA8;
+  --analysis-west: #E67E22;
+
+  --analysis-highlight: #FFD166;
+
+
+  /* -------------------------------------------------------
+     MAP / CARTOGRAPHIC UI
+     ------------------------------------------------------- */
+
+  --map-water: #DCEFFD;
+  --map-land: #EEF2F4;
+  --map-land-dark: #D7E0E5;
+
+  --map-boundary: #FFFFFF;
+  --map-boundary-dark: #526979;
+
+  --map-label: #173042;
+  --map-label-light: #FFFFFF;
+
+  --map-shadow: rgba(0, 0, 0, .35);
+
+
+  /* -------------------------------------------------------
+     SURFACE OVERLAYS
+     ------------------------------------------------------- */
+
+  --overlay-blue: rgba(0, 77, 168, .14);
+  --overlay-blue-strong: rgba(0, 77, 168, .28);
+
+  --overlay-white: rgba(255, 255, 255, .06);
+  --overlay-white-strong: rgba(255, 255, 255, .12);
+
+  --overlay-black: rgba(0, 0, 0, .55);
+
+
+  /* -------------------------------------------------------
+     SPACING / STRUCTURE
+     ------------------------------------------------------- */
+
+  --sel-max: 1240px;
+
+  --sel-radius: 0px;
+  --sel-radius-sm: 2px;
+  --sel-radius-md: 4px;
+  --sel-radius-lg: 8px;
+
+  --sel-transition: 180ms ease;
+
 }
 
+
 /* =========================================================
-   RESET
+   2. GLOBAL RESET / BASE
    ========================================================= */
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    background: var(--bg);
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  min-height: 100vh;
 
-    background: var(--bg);
-    color: var(--text);
+  background: var(--sel-bg);
+  color: var(--sel-text);
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
-    font-size: 16px;
-    line-height: 1.6;
+  line-height: 1.65;
 
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 button,
 input,
-textarea,
-select {
-    font: inherit;
+select,
+textarea {
+  font: inherit;
 }
 
+button {
+  color: inherit;
+}
+
+
 /* =========================================================
-   GLOBAL CONTAINER
+   3. SELECTION
    ========================================================= */
 
-.container {
-    width: min(1180px, calc(100% - 48px));
-    margin-left: auto;
-    margin-right: auto;
+::selection {
+  background: var(--sel-blue);
+  color: var(--sel-white);
 }
 
+
 /* =========================================================
-   NAVIGATION
+   4. ACCESSIBILITY
    ========================================================= */
 
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    width: 100%;
-
-    background: rgba(7, 16, 24, 0.97);
-
-    border-bottom: 1px solid var(--line);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+:focus-visible {
+  outline: 3px solid var(--sel-focus);
+  outline-offset: 3px;
 }
 
-.nav-inner {
-    min-height: 64px;
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 12px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  z-index: 9999;
 
-    gap: 30px;
+  padding: 9px 14px;
+
+  background: var(--sel-focus);
+  color: var(--sel-black);
+
+  font-size: 12px;
+  font-weight: 800;
 }
 
-.brand {
-    flex: 0 0 auto;
-
-    color: var(--cyan);
-
-    font-size: 0.74rem;
-    font-weight: 700;
-
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-
-    white-space: nowrap;
+.skip-link:focus {
+  left: 12px;
 }
 
-.nav-links {
-    flex: 1 1 auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    gap: 20px;
-
-    color: var(--muted);
-
-    font-size: 0.67rem;
-}
-
-.nav-links a {
-    white-space: nowrap;
-
-    transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
-}
-
-.nav-links a:hover {
-    color: var(--white);
-}
 
 /* =========================================================
-   HOME BUTTON
-   ========================================================= */
-
-.home-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 34px;
-
-    padding: 6px 12px;
-
-    background: rgba(91, 214, 232, 0.08);
-
-    border: 1px solid rgba(91, 214, 232, 0.45);
-    border-radius: 5px;
-
-    color: var(--cyan) !important;
-
-    font-size: 0.61rem;
-    font-weight: 700;
-
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-
-    white-space: nowrap;
-}
-
-.home-link:hover {
-    background: var(--cyan);
-
-    border-color: var(--cyan);
-
-    color: #071018 !important;
-}
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero {
-    padding: 78px 0 60px;
-
-    border-bottom: 1px solid var(--line);
-}
-
-.eyebrow {
-    margin-bottom: 12px;
-
-    color: var(--cyan);
-
-    font-size: 0.65rem;
-    font-weight: 700;
-
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.hero h1 {
-    max-width: 900px;
-
-    margin: 0 0 18px;
-
-    color: var(--white);
-
-    font-size: clamp(2.5rem, 5vw, 4.4rem);
-    line-height: 1.02;
-
-    letter-spacing: -0.045em;
-}
-
-.hero-subtitle {
-    max-width: 820px;
-
-    margin: 0;
-
-    color: var(--muted);
-
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-/* =========================================================
-   KPI GRID
-   ========================================================= */
-
-.kpis {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-
-    gap: 12px;
-
-    margin-top: 38px;
-}
-
-.kpi {
-    min-width: 0;
-
-    padding: 18px;
-
-    background: var(--panel);
-
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-}
-
-.kpi strong {
-    display: block;
-
-    color: var(--white);
-
-    font-size: 1.25rem;
-    line-height: 1.2;
-}
-
-.kpi span {
-    display: block;
-
-    margin-top: 5px;
-
-    color: var(--muted);
-
-    font-size: 0.64rem;
-
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.kpi-cork,
-.kpi-cork strong,
-.kpi-cork span,
-.kpi-cork small {
-    color: var(--white);
-}
-
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-
-section {
-    padding: 70px 0;
-
-    border-bottom: 1px solid var(--line);
-}
-
-.section-heading {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-
-    gap: 35px;
-
-    margin-bottom: 30px;
-}
-
-.section-heading > div {
-    min-width: 0;
-}
-
-.section-heading h2 {
-    margin: 0;
-
-    color: var(--white);
-
-    font-size: 1.8rem;
-    line-height: 1.15;
-
-    letter-spacing: -0.025em;
-}
-
-.section-heading > p {
-    max-width: 580px;
-
-    margin: 0;
-
-    color: var(--muted);
-
-    font-size: 0.76rem;
-    line-height: 1.65;
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.link-row {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 9px;
-
-    margin-top: 20px;
-}
-
-.button-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 38px;
-
-    padding: 8px 14px;
-
-    background: var(--panel-2);
-
-    border: 1px solid var(--line);
-    border-radius: 6px;
-
-    color: var(--text);
-
-    font-size: 0.68rem;
-    font-weight: 700;
-
-    transition:
-        border-color 0.2s ease,
-        color 0.2s ease,
-        background 0.2s ease;
-}
-
-.button-link:hover {
-    background: #112b37;
-
-    border-color: var(--cyan);
-
-    color: var(--cyan);
-}
-
-/* =========================================================
-   FEATURE / HERO RESULT
-   ========================================================= */
-
-.hero-result {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(340px, 0.8fr);
-
-    overflow: hidden;
-
-    background: var(--panel);
-
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-}
-
-.hero-result > img {
-    width: 100%;
-    height: 390px;
-
-    object-fit: cover;
-}
-
-.hero-result .content {
-    min-width: 0;
-
-    padding: 26px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.star {
-    color: var(--cyan);
-
-    font-size: 0.66rem;
-    font-weight: 700;
-
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.hero-result h3 {
-    margin: 8px 0 11px;
-
-    color: var(--white);
-
-    font-size: 1.5rem;
-    line-height: 1.15;
-}
-
-.hero-result p {
-    margin: 0;
-
-    color: #d0dce2;
-
-    font-size: 0.78rem;
-    line-height: 1.65;
-}
-
-/* =========================================================
-   PRIORITY BOX
-   ========================================================= */
-
-.priority {
-    margin-top: 15px;
-    padding: 13px;
-
-    background: #211421;
-
-    border-left: 3px solid var(--pink);
-    border-radius: 5px;
-}
-
-.priority strong {
-    display: block;
-
-    margin-bottom: 3px;
-
-    color: var(--pink);
-
-    font-size: 0.66rem;
-
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.priority p {
-    margin: 0;
-
-    color: #d5dde1;
-
-    font-size: 0.7rem;
-}
-
-.priority + .priority {
-    margin-top: 9px;
-}
-
-/* =========================================================
-   WARNING
-   ========================================================= */
-
-.warning {
-    margin-top: 15px;
-    padding: 14px;
-
-    background: #211a17;
-
-    border-left: 3px solid var(--orange);
-    border-radius: 5px;
-
-    color: #d8e2e7;
-
-    font-size: 0.69rem;
-    line-height: 1.55;
-}
-
-.warning strong {
-    color: var(--orange);
-}
-
-/* =========================================================
-   GENERAL TYPOGRAPHY
+   5. TYPOGRAPHY
    ========================================================= */
 
 h1,
 h2,
 h3,
-p {
-    overflow-wrap: break-word;
+h4,
+h5,
+h6 {
+  color: var(--sel-text-strong);
 }
 
 h1,
 h2,
 h3 {
-    color: var(--white);
+  text-wrap: balance;
 }
+
+p {
+  text-wrap: pretty;
+}
+
+.kicker,
+.eyebrow,
+.section-number {
+  color: var(--sel-link);
+
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .15em;
+  line-height: 1.2;
+
+  text-transform: uppercase;
+}
+
+.serif,
+h1 em,
+h2 em,
+h3 em {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
 
 /* =========================================================
-   FOOTER
+   6. LINKS
    ========================================================= */
 
-footer {
-    padding: 45px 0;
+a {
+  transition:
+    color var(--sel-transition),
+    border-color var(--sel-transition),
+    background-color var(--sel-transition);
 }
 
-.footer-grid {
-    display: flex;
-    justify-content: space-between;
-
-    gap: 30px;
+a:hover {
+  color: var(--sel-link-hover);
 }
 
-.footer-title {
-    font-size: 0.8rem;
-    font-weight: 700;
+.text-link {
+  display: inline-flex;
+  width: fit-content;
+
+  margin-top: 22px;
+
+  color: var(--sel-link);
+
+  border-bottom: 1px solid currentColor;
+
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
 }
 
-.footer-text {
-    color: var(--muted);
-
-    font-size: 0.65rem;
+.text-link:hover {
+  color: var(--sel-white);
 }
 
-.footer-grid > div + div {
-    text-align: right;
-}
-
-.footer-navigation {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 25px;
-    padding-top: 22px;
-
-    border-top: 1px solid var(--line);
-}
-
-.footer-home {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 40px;
-
-    padding: 9px 16px;
-
-    background: var(--panel-2);
-
-    border: 1px solid var(--cyan);
-    border-radius: 6px;
-
-    color: var(--cyan);
-
-    font-size: 0.66rem;
-    font-weight: 700;
-
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
-}
-
-.footer-home:hover {
-    background: var(--cyan);
-
-    color: #071018;
-}
 
 /* =========================================================
-   TABLET
+   7. CONTAINER
    ========================================================= */
 
-@media (max-width: 1050px) {
+.container,
+.shell {
+  width: min(
+    var(--sel-max),
+    calc(100% - 48px)
+  );
 
-    .nav-links {
-        gap: 13px;
-    }
-
-    .framework {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .insights {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .workflow {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .qa-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  margin-inline: auto;
 }
+
 
 /* =========================================================
-   TABLET / SMALL LAPTOP
+   8. SITE HEADER
    ========================================================= */
 
-@media (max-width: 900px) {
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-    .container {
-        width: min(100% - 36px, 760px);
-    }
+  background:
+    rgba(5, 10, 16, .94);
 
-    .nav-inner {
-        align-items: flex-start;
+  border-bottom:
+    1px solid var(--sel-border);
 
-        padding: 12px 0;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-    }
-
-    .kpis {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .resource-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .hero-result {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-result > img {
-        height: 340px;
-    }
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
+
+.nav-wrap {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
 
 /* =========================================================
-   MOBILE
+   9. BRAND MARK
    ========================================================= */
 
-@media (max-width: 750px) {
+.brand-mark,
+.wordmark-mark {
+  display: grid;
+  place-items: center;
 
-    .container {
-        width: calc(100% - 32px);
-    }
+  width: 34px;
+  height: 34px;
 
-    nav {
-        position: relative;
-    }
+  background: var(--sel-blue);
 
-    .nav-inner {
-        min-height: auto;
+  border: 1px solid var(--sel-blue-light);
 
-        display: block;
+  color: var(--sel-white);
 
-        padding: 13px 0;
-    }
-
-    .brand {
-        display: block;
-
-        margin-bottom: 10px;
-    }
-
-    .nav-links {
-        display: flex;
-
-        justify-content: flex-start;
-
-        gap: 8px;
-    }
-
-    .nav-links a {
-        font-size: 0.6rem;
-    }
-
-    .hero {
-        padding: 52px 0 48px;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.25rem, 11vw, 3.2rem);
-    }
-
-    .section-heading {
-        display: block;
-    }
-
-    .section-heading > p {
-        margin-top: 10px;
-    }
-
-    section {
-        padding: 55px 0;
-    }
-
-    .questions,
-    .map-grid,
-    .typology,
-    .method-grid,
-    .resource-grid,
-    .qa-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .method-card.full {
-        grid-column: auto;
-    }
-
-    .insights {
-        grid-template-columns: 1fr;
-    }
-
-    .framework {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .workflow {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        display: block;
-    }
-
-    .footer-grid > div + div {
-        margin-top: 12px;
-        text-align: left;
-    }
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .04em;
 }
+
+.brand-mark:hover,
+.wordmark-mark:hover {
+  background: var(--sel-blue-light);
+}
+
 
 /* =========================================================
-   SMALL MOBILE
+   10. NAVIGATION
    ========================================================= */
 
-@media (max-width: 480px) {
-
-    .container {
-        width: calc(100% - 28px);
-    }
-
-    .kpis {
-        grid-template-columns: 1fr;
-    }
-
-    .framework {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-result > img {
-        height: 220px;
-    }
-
-    .hero-result .content {
-        padding: 20px;
-    }
-
-    .home-link {
-        font-size: 0.57rem;
-        padding: 6px 8px;
-    }
-
-    .footer-navigation {
-        display: block;
-    }
-
-    .footer-home {
-        width: 100%;
-    }
+.desktop-nav,
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
+
+.desktop-nav a,
+.site-nav a {
+  color: var(--sel-muted);
+
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: .04em;
+}
+
+.desktop-nav a:hover,
+.site-nav a:hover {
+  color: var(--sel-white);
+}
+
+.desktop-nav a.active,
+.site-nav a.active {
+  color: var(--sel-link);
+}
+
+
+/* Primary navigation button */
+
+.desktop-nav .nav-home,
+.site-nav .nav-cta {
+  padding: 8px 12px;
+
+  background: var(--sel-blue);
+
+  border: 1px solid var(--sel-blue);
+
+  color: var(--sel-white);
+}
+
+.desktop-nav .nav-home:hover,
+.site-nav .nav-cta:hover {
+  background: var(--sel-blue-light);
+  border-color: var(--sel-blue-light);
+  color: var(--sel-white);
+}
+
+
+/* =========================================================
+   11. BUTTONS
+   ========================================================= */
+
+.button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 9px 16px;
+
+  border: 1px solid var(--sel-border);
+
+  background: transparent;
+
+  color: var(--sel-text);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .05em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--sel-transition),
+    border-color var(--sel-transition),
+    color var(--sel-transition),
+    transform var(--sel-transition);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* Primary */
+
+.button-primary {
+  background: var(--sel-blue);
+  border-color: var(--sel-blue);
+
+  color: var(--sel-white);
+}
+
+.button-primary:hover {
+  background: var(--sel-blue-light);
+  border-color: var(--sel-blue-light);
+
+  color: var(--sel-white);
+}
+
+
+/* Secondary */
+
+.button-secondary {
+  background: transparent;
+  border-color: var(--sel-border-strong);
+
+  color: var(--sel-text);
+}
+
+.button-secondary:hover {
+  background: var(--overlay-blue);
+  border-color: var(--sel-blue-light);
+
+  color: var(--sel-link-hover);
+}
+
+
+/* Light button for blue backgrounds */
+
+.button-light {
+  background: var(--sel-white);
+  border-color: var(--sel-white);
+
+  color: var(--sel-blue);
+}
+
+.button-light:hover {
+  background: var(--sel-blue-pale);
+  border-color: var(--sel-blue-pale);
+
+  color: var(--sel-blue-dark);
+}
+
+
+/* =========================================================
+   12. HERO
+   ========================================================= */
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(0, 77, 168, .18),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      var(--sel-bg) 0%,
+      var(--sel-bg-soft) 100%
+    );
+}
+
+.hero h1 em {
+  color: var(--sel-link);
+}
+
+.hero-lead {
+  color: var(--sel-text-soft);
+}
+
+
+/* =========================================================
+   13. HERO STATISTICS
+   ========================================================= */
+
+.hero-stats {
+  background: var(--sel-border);
+  border-color: var(--sel-border);
+}
+
+.hero-stats div {
+  background: var(--sel-panel);
+}
+
+.hero-stats strong {
+  color: var(--sel-white);
+}
+
+.hero-stats strong b {
+  color: var(--sel-link);
+}
+
+.hero-stats span {
+  color: var(--sel-text);
+}
+
+.hero-stats small {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   14. MAP FRAME
+   ========================================================= */
+
+.map-frame,
+.map-large,
+.map-thumb,
+.equity-map {
+  background: var(--map-land);
+}
+
+.map-frame {
+  border-color: var(--sel-border-strong);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, .35);
+}
+
+.map-caption {
+  background: rgba(5, 10, 16, .94);
+  border-left-color: var(--sel-blue);
+}
+
+.map-caption span {
+  color: var(--sel-link);
+}
+
+.map-caption strong {
+  color: var(--sel-white);
+}
+
+
+/* =========================================================
+   15. KEY FINDING
+   ========================================================= */
+
+.key-finding {
+  background: var(--sel-bg);
+}
+
+.key-finding-panel {
+  background:
+    linear-gradient(
+      135deg,
+      #102A45 0%,
+      #0D1E2D 100%
+    );
+
+  border-color:
+    rgba(0, 77, 168, .55);
+
+  border-left-color: var(--sel-blue-light);
+}
+
+.finding-grid .eyebrow {
+  color: var(--sel-link);
+}
+
+.finding-grid > p {
+  color: var(--sel-text-soft);
+}
+
+.evidence-line {
+  border-top-color: var(--sel-border);
+}
+
+.evidence-line i {
+  color: var(--sel-muted);
+}
+
+.finding-note {
+  border-top-color: var(--sel-border);
+
+  color: var(--sel-muted);
+}
+
+.finding-note strong {
+  color: var(--sel-link);
+}
+
+
+/* =========================================================
+   16. GENERAL SECTIONS
+   ========================================================= */
+
+.section-dark {
+  background: var(--sel-bg-soft);
+}
+
+.section {
+  border-bottom: 0;
+}
+
+.section-intro > p {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   17. CARDS / GRIDS
+   ========================================================= */
+
+.question-grid,
+.chain,
+.method-flow,
+.planning-grid {
+  background: var(--sel-border);
+  border-color: var(--sel-border);
+}
+
+.question,
+.chain a,
+.method-flow > div,
+.planning-grid article,
+.resource-card,
+.method-card,
+.type-card,
+.principles article {
+  background: var(--sel-panel);
+}
+
+.question:hover,
+.chain a:hover,
+.resource-card:hover,
+.method-card:hover {
+  background: var(--sel-panel-hover);
+}
+
+.question span,
+.chain span,
+.method-flow span,
+.resource-card > span,
+.method-card > span,
+.type-card > span,
+.principles span,
+.planning-grid span {
+  color: var(--sel-link);
+}
+
+.question h3,
+.chain strong,
+.method-flow strong,
+.resource-card h3,
+.method-card h3,
+.type-card h3,
+.planning-grid h3 {
+  color: var(--sel-white);
+}
+
+.question p,
+.chain small,
+.resource-card p,
+.method-card p,
+.method-card li,
+.type-card p,
+.type-card li,
+.principles p,
+.planning-grid p {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   18. QOLI DOMAIN CARD SYSTEM
+   ========================================================= */
+
+/*
+   Add one of these classes to any domain card:
+
+   .domain-economic
+   .domain-education
+   .domain-health
+   .domain-housing
+   .domain-environment
+   .domain-accessibility
+   .domain-social
+   .domain-urban
+*/
+
+
+.domain-economic {
+  --domain: var(--qoli-economic);
+  --domain-light: var(--qoli-economic-light);
+  --domain-pale: var(--qoli-economic-pale);
+}
+
+.domain-education {
+  --domain: var(--qoli-education);
+  --domain-light: var(--qoli-education-light);
+  --domain-pale: var(--qoli-education-pale);
+}
+
+.domain-health {
+  --domain: var(--qoli-health);
+  --domain-light: var(--qoli-health-light);
+  --domain-pale: var(--qoli-health-pale);
+}
+
+.domain-housing {
+  --domain: var(--qoli-housing);
+  --domain-light: var(--qoli-housing-light);
+  --domain-pale: var(--qoli-housing-pale);
+}
+
+.domain-environment {
+  --domain: var(--qoli-environment);
+  --domain-light: var(--qoli-environment-light);
+  --domain-pale: var(--qoli-environment-pale);
+}
+
+.domain-accessibility {
+  --domain: var(--qoli-accessibility);
+  --domain-light: var(--qoli-accessibility-light);
+  --domain-pale: var(--qoli-accessibility-pale);
+}
+
+.domain-social {
+  --domain: var(--qoli-social);
+  --domain-light: var(--qoli-social-light);
+  --domain-pale: var(--qoli-social-pale);
+}
+
+.domain-urban {
+  --domain: var(--qoli-urban);
+  --domain-light: var(--qoli-urban-light);
+  --domain-pale: var(--qoli-urban-pale);
+}
+
+
+/* Domain accent */
+
+.domain-economic,
+.domain-education,
+.domain-health,
+.domain-housing,
+.domain-environment,
+.domain-accessibility,
+.domain-social,
+.domain-urban {
+  border-top-color: var(--domain);
+}
+
+.domain-economic .domain-label,
+.domain-education .domain-label,
+.domain-health .domain-label,
+.domain-housing .domain-label,
+.domain-environment .domain-label,
+.domain-accessibility .domain-label,
+.domain-social .domain-label,
+.domain-urban .domain-label {
+  color: var(--domain-light);
+}
+
+
+/* =========================================================
+   19. DOMAIN UTILITY CLASSES
+   ========================================================= */
+
+.qoli-economic {
+  color: var(--qoli-economic);
+}
+
+.qoli-education {
+  color: var(--qoli-education);
+}
+
+.qoli-health {
+  color: var(--qoli-health);
+}
+
+.qoli-housing {
+  color: var(--qoli-housing);
+}
+
+.qoli-environment {
+  color: var(--qoli-environment);
+}
+
+.qoli-accessibility {
+  color: var(--qoli-accessibility);
+}
+
+.qoli-social {
+  color: var(--qoli-social);
+}
+
+.qoli-urban {
+  color: var(--qoli-urban);
+}
+
+
+/* Domain background utilities */
+
+.bg-qoli-economic {
+  background: var(--qoli-economic);
+  color: var(--sel-white);
+}
+
+.bg-qoli-education {
+  background: var(--qoli-education);
+  color: var(--sel-white);
+}
+
+.bg-qoli-health {
+  background: var(--qoli-health);
+  color: var(--sel-white);
+}
+
+.bg-qoli-housing {
+  background: var(--qoli-housing);
+  color: var(--sel-white);
+}
+
+.bg-qoli-environment {
+  background: var(--qoli-environment);
+  color: var(--sel-white);
+}
+
+.bg-qoli-accessibility {
+  background: var(--qoli-accessibility);
+  color: var(--sel-white);
+}
+
+.bg-qoli-social {
+  background: var(--qoli-social);
+  color: var(--sel-white);
+}
+
+.bg-qoli-urban {
+  background: var(--qoli-urban);
+  color: var(--sel-white);
+}
+
+
+/* =========================================================
+   20. MAP EXPLORER
+   ========================================================= */
+
+.map-explorer {
+  border-color: var(--sel-border);
+  background: var(--sel-panel);
+}
+
+.map-tabs {
+  border-bottom-color: var(--sel-border);
+}
+
+.map-tab {
+  border-right-color: var(--sel-border);
+
+  background: transparent;
+  color: var(--sel-muted);
+}
+
+.map-tab:hover {
+  background: var(--sel-panel-hover);
+  color: var(--sel-link);
+}
+
+.map-tab.active {
+  background: var(--sel-blue);
+  color: var(--sel-white);
+}
+
+.map-tab-final {
+  color: var(--sel-link);
+}
+
+.map-description {
+  background: var(--sel-panel);
+}
+
+.map-description h3 {
+  color: var(--sel-white);
+}
+
+.map-description > p:not(.eyebrow) {
+  color: var(--sel-muted);
+}
+
+.map-explorer-note {
+  background: var(--sel-panel);
+
+  border-left-color: var(--sel-blue-light);
+}
+
+.map-explorer-note span {
+  color: var(--sel-link);
+}
+
+.map-explorer-note p {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   21. MAP CARD
+   ========================================================= */
+
+.map-card {
+  border-color: var(--sel-border);
+  background: var(--sel-panel);
+}
+
+.map-card:hover {
+  border-color: var(--sel-border-strong);
+}
+
+.map-card-emphasis {
+  border-color: var(--sel-blue);
+}
+
+.map-card-body > span {
+  color: var(--sel-link);
+}
+
+.map-card-body h3 {
+  color: var(--sel-white);
+}
+
+.map-card-body p {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   22. EQUITY / SPATIAL CONTRAST
+   ========================================================= */
+
+.equity-section {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(0, 77, 168, .13),
+      transparent 30%
+    ),
+    #08121D;
+}
+
+.equity-eyebrow {
+  color: var(--sel-link);
+}
+
+.equity-heading > div > p:last-child {
+  color: var(--sel-muted);
+}
+
+.equity-grid {
+  border-color: var(--sel-border);
+}
+
+.equity-insights {
+  background: var(--sel-panel);
+}
+
+.equity-point {
+  border-bottom-color: var(--sel-border);
+}
+
+.equity-point > span {
+  color: var(--sel-link);
+}
+
+.equity-point h3 {
+  color: var(--sel-white);
+}
+
+.equity-point p {
+  color: var(--sel-muted);
+}
+
+
+/* Spatial analytical contrast */
+
+.analysis-positive {
+  color: var(--analysis-positive);
+}
+
+.analysis-negative {
+  color: var(--analysis-negative);
+}
+
+.analysis-neutral {
+  color: var(--analysis-neutral);
+}
+
+.analysis-east {
+  color: var(--analysis-east);
+}
+
+.analysis-west {
+  color: var(--analysis-west);
+}
+
+
+/* =========================================================
+   23. CAVEATS / DATA LIMITATIONS
+   ========================================================= */
+
+.caveat {
+  background: rgba(242, 184, 75, .08);
+  border-left-color: var(--sel-warning);
+}
+
+.caveat strong {
+  color: var(--sel-warning);
+}
+
+.caveat p {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   24. EVIDENCE / INSIGHTS
+   ========================================================= */
+
+.insight-row {
+  border-bottom-color: var(--sel-border);
+}
+
+.insight-row > span {
+  color: var(--sel-link);
+}
+
+.insight-row h3 {
+  color: var(--sel-white);
+}
+
+.insight-tag {
+  color: var(--sel-link);
+}
+
+.insight-row > p:last-child {
+  color: var(--sel-muted);
+}
+
+.insight-final {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 77, 168, .08),
+      transparent
+    );
+}
+
+.evidence-summary {
+  color: var(--sel-muted);
+}
+
+.evidence-summary i {
+  color: var(--sel-link);
+}
+
+.evidence-summary strong {
+  color: var(--sel-white);
+}
+
+
+/* =========================================================
+   25. TYPOLOGY
+   ========================================================= */
+
+.type-card {
+  border-color: var(--sel-border);
+}
+
+.type-card:nth-child(2) {
+  border-top-color: var(--qoli-housing);
+}
+
+.type-card:nth-child(3) {
+  border-top-color: var(--qoli-social);
+}
+
+
+/* =========================================================
+   26. METHOD
+   ========================================================= */
+
+.method-flow > div {
+  border-top: 3px solid var(--sel-blue);
+}
+
+.method-flow > div:nth-child(2) {
+  border-top-color: var(--qoli-economic);
+}
+
+.method-flow > div:nth-child(3) {
+  border-top-color: var(--qoli-education);
+}
+
+.method-flow > div:nth-child(4) {
+  border-top-color: var(--qoli-housing);
+}
+
+.method-flow .method-final {
+  background: var(--sel-blue);
+  border-left-color: var(--sel-white);
+}
+
+.method-flow .method-final span {
+  color: var(--sel-white);
+}
+
+.method-flow small {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   27. FORMULA / TECHNICAL CONTENT
+   ========================================================= */
+
+.formula-card {
+  border-color: var(--sel-border);
+  background: var(--sel-panel-strong);
+}
+
+.formula-card > div > span,
+.formula > small {
+  color: var(--sel-link);
+}
+
+.formula-card h3 {
+  color: var(--sel-white);
+}
+
+.formula-card p {
+  color: var(--sel-muted);
+}
+
+.formula {
+  background: var(--sel-bg);
+  border-color: var(--sel-border);
+}
+
+.formula strong {
+  color: var(--sel-white);
+}
+
+.formula p {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   28. PRINCIPLES
+   ========================================================= */
+
+.principles article {
+  border-color: var(--sel-border);
+}
+
+.principles h3 {
+  color: var(--sel-white);
+}
+
+.principles p {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   29. DATA / RESOURCES
+   ========================================================= */
+
+.resource-card {
+  border-color: var(--sel-border);
+}
+
+.resource-card a,
+.map-card-body a {
+  color: var(--sel-link);
+}
+
+.resource-card a:hover,
+.map-card-body a:hover {
+  color: var(--sel-white);
+}
+
+
+/* =========================================================
+   30. PLANNING
+   ========================================================= */
+
+.planning-grid {
+  background: var(--sel-border);
+}
+
+.planning-grid article {
+  background: var(--sel-panel);
+}
+
+.planning-grid span {
+  color: var(--sel-link);
+}
+
+.planning-statement {
+  background:
+    linear-gradient(
+      135deg,
+      #102A45 0%,
+      #0D1E2D 100%
+    );
+
+  border-color:
+    rgba(0, 77, 168, .55);
+
+  border-left-color: var(--sel-blue-light);
+}
+
+.planning-statement .eyebrow {
+  color: var(--sel-link);
+}
+
+.planning-statement h3 {
+  color: var(--sel-white);
+}
+
+
+/* =========================================================
+   31. CONCLUSION
+   ========================================================= */
+
+.conclusion-section {
+  background: var(--sel-black);
+}
+
+.conclusion h2 {
+  color: var(--sel-white);
+}
+
+.conclusion > p:not(.eyebrow) {
+  color: var(--sel-text-soft);
+}
+
+.next-research {
+  background: var(--sel-panel);
+  border-left-color: var(--sel-blue-light);
+}
+
+.next-research span {
+  color: var(--sel-link);
+}
+
+.next-research p {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   32. FOOTER
+   ========================================================= */
+
+.site-footer {
+  background: #03070C;
+  color: var(--sel-text-soft);
+}
+
+.footer-grid strong {
+  color: var(--sel-white);
+}
+
+.footer-grid span {
+  color: var(--sel-muted);
+}
+
+.footer-grid a {
+  color: var(--sel-link);
+}
+
+.footer-grid a:hover {
+  color: var(--sel-white);
+}
+
+
+/* =========================================================
+   33. LIGHTBOX
+   ========================================================= */
+
+.image-dialog {
+  border: 1px solid var(--sel-border);
+
+  padding: 14px;
+
+  background: var(--sel-panel);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, .55);
+}
+
+.image-dialog::backdrop {
+  background: rgba(2, 7, 12, .88);
+}
+
+.image-dialog button {
+  color: var(--sel-white);
+}
+
+.image-dialog button:hover {
+  color: var(--sel-link);
+}
+
+
+/* =========================================================
+   34. QOLI MAP LEGEND
+   ========================================================= */
+
+.qoli-legend {
+  display: grid;
+  gap: 8px;
+}
+
+.qoli-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--sel-text-soft);
+
+  font-size: 10px;
+}
+
+.qoli-legend-swatch {
+  width: 14px;
+  height: 14px;
+
+  flex: 0 0 14px;
+
+  border-radius: 2px;
+}
+
+
+/* Master QoLI */
+
+.qoli-swatch-1 {
+  background: var(--qoli-blue-100);
+}
+
+.qoli-swatch-2 {
+  background: var(--qoli-blue-200);
+}
+
+.qoli-swatch-3 {
+  background: var(--qoli-blue-300);
+}
+
+.qoli-swatch-4 {
+  background: var(--qoli-blue-400);
+}
+
+.qoli-swatch-5 {
+  background: var(--qoli-blue-500);
+}
+
+.qoli-swatch-6 {
+  background: var(--qoli-blue-600);
+}
+
+.qoli-swatch-7 {
+  background: var(--qoli-blue-700);
+}
+
+
+/* =========================================================
+   35. QOLI DOMAIN LEGEND
+   ========================================================= */
+
+.legend-economic {
+  background: var(--qoli-economic);
+}
+
+.legend-education {
+  background: var(--qoli-education);
+}
+
+.legend-health {
+  background: var(--qoli-health);
+}
+
+.legend-housing {
+  background: var(--qoli-housing);
+}
+
+.legend-environment {
+  background: var(--qoli-environment);
+}
+
+.legend-accessibility {
+  background: var(--qoli-accessibility);
+}
+
+.legend-social {
+  background: var(--qoli-social);
+}
+
+.legend-urban {
+  background: var(--qoli-urban);
+}
+
+
+/* =========================================================
+   36. DOMAIN TAB STATES
+   ========================================================= */
+
+.map-tab[data-domain="economic"].active {
+  background: var(--qoli-economic);
+  color: var(--sel-white);
+}
+
+.map-tab[data-domain="education"].active {
+  background: var(--qoli-education);
+  color: var(--sel-white);
+}
+
+.map-tab[data-domain="health"].active {
+  background: var(--qoli-health);
+  color: var(--sel-white);
+}
+
+.map-tab[data-domain="housing"].active {
+  background: var(--qoli-housing);
+  color: var(--sel-white);
+}
+
+.map-tab[data-domain="environment"].active {
+  background: var(--qoli-environment);
+  color: var(--sel-white);
+}
+
+.map-tab[data-domain="accessibility"].active {
+  background: var(--qoli-accessibility);
+  color: var(--sel-white);
+}
+
+.map-tab[data-domain="social"].active {
+  background: var(--qoli-social);
+  color: var(--sel-white);
+}
+
+.map-tab[data-domain="urban"].active {
+  background: var(--qoli-urban);
+  color: var(--sel-white);
+}
+
+
+/* =========================================================
+   37. DATA STATUS
+   ========================================================= */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--sel-muted);
+
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .05em;
+}
+
+.status::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--sel-muted);
+}
+
+.status-success::before {
+  background: var(--sel-success);
+}
+
+.status-warning::before {
+  background: var(--sel-warning);
+}
+
+.status-danger::before {
+  background: var(--sel-danger);
+}
+
+.status-info::before {
+  background: var(--sel-info);
+}
+
+
+/* =========================================================
+   38. DATA LIMITATION / METHODOLOGY LABELS
+   ========================================================= */
+
+.data-note {
+  padding: 14px 16px;
+
+  background: rgba(0, 77, 168, .08);
+
+  border-left: 2px solid var(--sel-blue-light);
+
+  color: var(--sel-muted);
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.data-note strong {
+  color: var(--sel-link);
+
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   39. PRINT
+   ========================================================= */
+
+@media print {
+
+  :root {
+    --sel-bg: #FFFFFF;
+    --sel-bg-soft: #FFFFFF;
+    --sel-panel: #FFFFFF;
+    --sel-panel-hover: #FFFFFF;
+
+    --sel-text: #17212B;
+    --sel-text-strong: #000000;
+    --sel-muted: #4F5D68;
+
+    --sel-border: #CBD5DC;
+  }
+
+  body {
+    background: #FFFFFF;
+    color: #17212B;
+  }
+
+  .site-header {
+    position: static;
+
+    background: #FFFFFF;
+
+    border-bottom: 1px solid #CBD5DC;
+
+    backdrop-filter: none;
+  }
+
+  .hero,
+  .section-dark,
+  .equity-section,
+  .conclusion-section,
+  .site-footer {
+    background: #FFFFFF;
+    color: #17212B;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000;
+  }
+
+  .hero-lead,
+  .question p,
+  .resource-card p,
+  .method-card p,
+  .type-card p,
+  .planning-grid p,
+  .conclusion > p:not(.eyebrow) {
+    color: #333F48;
+  }
+
+  .button {
+    color: #000000;
+    border-color: #333F48;
+  }
+
+  .button-primary {
+    background: var(--sel-blue);
+    color: #FFFFFF;
+  }
+
+  .map-frame,
+  .map-large,
+  .map-thumb,
+  .equity-map {
+    box-shadow: none;
+  }
+}
+
+
+/* =========================================================
+   40. RESPONSIVE THEME ADJUSTMENTS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .site-header {
+    background: rgba(5, 10, 16, .97);
+  }
+
+  .desktop-nav,
+  .site-nav {
+    gap: 0;
+  }
+
+}
+
+
+@media (max-width: 620px) {
+
+  .container,
+  .shell {
+    width: min(
+      100% - 30px,
+      var(--sel-max)
+    );
+  }
+
+}
+
+
+/* =========================================================
+   END OF SEL THEME
+   ========================================================= */
