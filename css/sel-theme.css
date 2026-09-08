@@ -6,7 +6,7 @@
 :root {
 
     /* -----------------------------------------------------
-       COLOURS
+       COLOUR SYSTEM
     ----------------------------------------------------- */
 
     --sel-section: #0B1D25;
@@ -25,6 +25,8 @@
 
     --sel-white: #FFFFFF;
 
+    --sel-paper: #0B1D25;
+
     --sel-text: #E8F0F1;
     --sel-text-soft: #B8C9CC;
     --sel-muted: #8FA5A9;
@@ -39,9 +41,24 @@
     --sel-positive: #55A878;
     --sel-negative: #D9485F;
 
+
+    /* -----------------------------------------------------
+       QUALITY OF LIFE COLOURS
+       ----------------------------------------------------- */
+
+    --qol-economic: #C69214;
+    --qol-education: #8B68C7;
+    --qol-health: #D96878;
+    --qol-housing: #E69452;
+    --qol-environment: #55A878;
+    --qol-accessibility: #3C9B9B;
+    --qol-social: #A25C9D;
+    --qol-urban: #4E93AA;
+
+
     /* -----------------------------------------------------
        LAYOUT
-    ----------------------------------------------------- */
+       ----------------------------------------------------- */
 
     --max: 1200px;
     --content-width: 1200px;
@@ -50,16 +67,30 @@
     --radius-md: 8px;
     --radius-lg: 12px;
 
-    --sel-header-height: 72px;
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    --sel-header-height: 74px;
+
+
+    /* -----------------------------------------------------
+       EFFECTS
+       ----------------------------------------------------- */
 
     --sel-transition: .2s ease;
 
     --sel-shadow-sm:
-        0 8px 24px rgba(0,0,0,.18);
+        0 8px 24px rgba(0,0,0,.12);
+
+    --sel-shadow-md:
+        0 16px 40px rgba(0,0,0,.18);
+
 
     /* -----------------------------------------------------
        TYPOGRAPHY
-    ----------------------------------------------------- */
+       ----------------------------------------------------- */
 
     --sans:
         Inter,
@@ -91,71 +122,54 @@
 }
 
 
-/*
-   IMPORTANT
-   ---------------------------------------------------------
-   Never use 100vw for page-level elements.
-
-   100vw includes the browser scrollbar and can make the
-   document wider than the visible viewport.
-*/
-
 html {
-    width: 100%;
-    max-width: 100%;
-
     margin: 0;
     padding: 0;
 
-    background: var(--sel-section);
+    width: 100%;
 
     scroll-behavior: smooth;
     scroll-padding-top: 84px;
 
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 
 body {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
     margin: 0;
     padding: 0;
 
+    width: 100%;
+
+    min-width: 0;
+
     background: var(--sel-section);
+
     color: var(--sel-text);
 
     font-family: var(--sans);
     font-size: var(--body-size);
     line-height: var(--body-line);
 
-    overflow-x: hidden;
-}
-
-
-/*
-   Main page wrapper must never become wider than viewport.
-*/
-
-main {
-    display: block;
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    margin: 0;
-    padding: 0;
-
     overflow-x: clip;
 }
 
 
-/*
-   Prevent replaced elements from creating overflow.
-*/
+/* =========================================================
+   IMPORTANT WIDTH SAFETY
+   ========================================================= */
+
+main,
+header,
+footer,
+section,
+article,
+nav,
+div,
+aside {
+    min-width: 0;
+}
+
 
 img,
 svg,
@@ -165,13 +179,17 @@ iframe {
     display: block;
 
     max-width: 100%;
-    height: auto;
 }
 
 
-/*
-   Prevent long content from expanding grid/flex layouts.
-*/
+iframe {
+    width: 100%;
+}
+
+
+/* =========================================================
+   TEXT SAFETY
+   ========================================================= */
 
 h1,
 h2,
@@ -184,10 +202,9 @@ a,
 span,
 strong,
 b {
-    min-width: 0;
+    max-width: 100%;
 
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 
@@ -202,11 +219,12 @@ a {
 
 
 /* =========================================================
-   SHARED CONTAINER
+   SHELL
    ========================================================= */
 
 .shell {
     width: calc(100% - 48px);
+
     max-width: var(--max);
 
     margin-left: auto;
@@ -291,14 +309,13 @@ a {
 
 
 /* =========================================================
-   RESPONSIVE SHELL
+   MOBILE SHELL
    ========================================================= */
 
 @media (max-width: 700px) {
 
     .shell {
         width: calc(100% - 32px);
-        max-width: var(--max);
     }
 
 }
