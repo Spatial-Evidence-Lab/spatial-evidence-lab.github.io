@@ -1,51 +1,22 @@
 (function () {
 
-    "use strict";
-
-
     /* =====================================================
        MOBILE NAVIGATION
     ===================================================== */
 
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".site-nav");
-
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
 
     if (toggle && nav) {
 
-        toggle.addEventListener("click", function () {
+        toggle.addEventListener('click', function () {
 
-            const open = nav.classList.toggle("open");
+            const open = nav.classList.toggle('open');
 
             toggle.setAttribute(
-                "aria-expanded",
+                'aria-expanded',
                 String(open)
             );
-
-        });
-
-
-        /*
-           Close mobile navigation when a navigation link
-           is selected.
-        */
-
-        nav.querySelectorAll("a").forEach(function (link) {
-
-            link.addEventListener("click", function () {
-
-                if (window.innerWidth <= 800) {
-
-                    nav.classList.remove("open");
-
-                    toggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                }
-
-            });
 
         });
 
@@ -53,27 +24,21 @@
 
 
     /* =====================================================
-       SECTION TABLE OF CONTENTS
+       PROJECT SECTION TOC
     ===================================================== */
 
-    const sections = Array.from(
-        document.querySelectorAll(
-            ".project-section[id]"
-        )
-    );
+    const sections = [
+        ...document.querySelectorAll('.project-section[id]')
+    ];
 
-
-    const links = Array.from(
-        document.querySelectorAll(
-            '.project-toc a[href^="#"]'
-        )
-    );
-
+    const links = [
+        ...document.querySelectorAll('.project-toc a[href^="#"]')
+    ];
 
     if (
         sections.length &&
         links.length &&
-        "IntersectionObserver" in window
+        'IntersectionObserver' in window
     ) {
 
         const observer =
@@ -86,13 +51,12 @@
                             return;
                         }
 
-
                         links.forEach(function (link) {
 
                             link.classList.toggle(
-                                "active",
-                                link.getAttribute("href") ===
-                                "#" + entry.target.id
+                                'active',
+                                link.getAttribute('href') ===
+                                '#' + entry.target.id
                             );
 
                         });
@@ -101,7 +65,7 @@
 
                 },
                 {
-                    rootMargin: "-25% 0px -60% 0px",
+                    rootMargin: '-25% 0px -60% 0px',
                     threshold: 0
                 }
             );
@@ -119,7 +83,7 @@
     ===================================================== */
 
     document
-        .querySelectorAll("[data-year]")
+        .querySelectorAll('[data-year]')
         .forEach(function (element) {
 
             element.textContent =
@@ -127,6 +91,4 @@
 
         });
 
-
 })();
-
