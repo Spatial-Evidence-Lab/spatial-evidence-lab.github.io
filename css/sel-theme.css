@@ -2,1139 +2,357 @@
    SPATIAL EVIDENCE LAB
    MASTER DESIGN SYSTEM
    sel-theme.css
-   =========================================================
 
-   SYSTEM ARCHITECTURE
+   PURPOSE
+   ---------------------------------------------------------
+   Global design tokens, reset, typography, accessibility
+   and basic layout utilities.
 
-   SEL DARK UI
-   ├── backgrounds
-   ├── surfaces
-   ├── borders
-   └── typography
-
-   PUBLICATION / MAP ID
-   └── #004DA8 + white
-
-   QoLI INDEX
-   └── blue sequential
-
-   QoLI DOMAINS
-   ├── Economic & Material
-   ├── Education & Employment
-   ├── Health & Wellbeing
-   ├── Housing & Affordability
-   ├── Environmental Quality
-   ├── Accessibility & Services
-   ├── Social & Community
-   └── Urban Vitality
-
-   ANALYTICAL
-   ├── positive
-   ├── neutral
-   ├── attention
-   ├── warning
-   ├── high
-   ├── critical
-   └── selection
-
+   IMPORTANT
+   ---------------------------------------------------------
+   This file does NOT style homepage sections, cards,
+   header, footer or portfolio components.
+   Those belong to sel-components.css and portfolio.css.
    ========================================================= */
 
 
 /* =========================================================
-   01 — CORE TOKENS
-   ========================================================= */
+   01. DESIGN TOKENS
+========================================================= */
 
 :root {
 
-  /* -------------------------------------------------------
-     SEL — DARK INTERFACE FOUNDATION
-     Used across homepage and project pages
-     ------------------------------------------------------- */
-
-  --sel-bg-950:        #050E12;
-  --sel-bg-900:        #071318;
-  --sel-bg-850:        #09171D;
-  --sel-bg-800:        #0B1B22;
-
-  --sel-surface-700:   #10262D;
-  --sel-surface-650:   #122B32;
-  --sel-surface-600:   #163139;
-
-  --sel-border-500:    #29444A;
-  --sel-border-400:    #355157;
-  --sel-border-300:    #46666B;
-
-
-  /* -------------------------------------------------------
-     SEL — TYPOGRAPHY
-     ------------------------------------------------------- */
-
-  --sel-text-100:      #F1F6F5;
-  --sel-text-200:      #D6E2E1;
-  --sel-text-300:      #C2D1D0;
-  --sel-text-400:      #A7B8BA;
-  --sel-text-500:      #8FA4A7;
-  --sel-text-600:      #718589;
-  --sel-text-700:      #5D7276;
-
-
-  /* -------------------------------------------------------
-     SEL — INTERFACE ACCENTS
-     
-     These are UI colours.
-     They are NOT analytical map colours.
-     ------------------------------------------------------- */
-
-  --sel-teal:          #35C8C0;
-  --sel-teal-hover:    #54D5CE;
-  --sel-teal-dark:     #208F89;
-
-  --sel-cyan:          #54D5E5;
-  --sel-cyan-dark:     #269BAA;
-
-
-  /* -------------------------------------------------------
-     PUBLICATION / MAP ID BLUE
-     
-     RESERVED COLOUR.
-     
-     Do not use this as a generic interface blue.
-     ------------------------------------------------------- */
-
-  --map-id-blue:       #004DA8;
-  --map-id-blue-hover: #0759B8;
-  --map-id-blue-dark:  #003B82;
-  --map-id-text:       #FFFFFF;
-
-
-  /* -------------------------------------------------------
-     LEGACY COMPATIBILITY ALIASES
-     
-     These allow existing components to continue working
-     while the site is migrated to semantic variables.
-     ------------------------------------------------------- */
-
-  --sel-blue:          var(--map-id-blue);
-  --sel-blue-dark:     var(--map-id-blue-dark);
-  --sel-blue-deep:     #002F66;
-  --sel-blue-light:    #2E73C4;
-  --sel-blue-pale:     #E7F0FA;
-
-  --sel-navy:          var(--sel-bg-900);
-  --sel-navy-2:        var(--sel-bg-850);
-  --sel-navy-3:        var(--sel-surface-700);
-
-  --sel-white:         #FFFFFF;
-  --sel-paper:         var(--sel-bg-900);
-
-  --sel-text:          var(--sel-text-100);
-  --sel-text-soft:     var(--sel-text-400);
-  --sel-muted:         var(--sel-text-600);
-
-  --sel-line:          var(--sel-border-500);
-  --sel-line-dark:     var(--sel-border-400);
-
-  --sel-cyan-legacy:   var(--sel-cyan);
-
-  --sel-warning:       #D6A536;
-  --sel-positive:      #2D9C95;
-  --sel-negative:      #D95F5F;
-
-
-  /* =======================================================
-     02 — QoLI MASTER INDEX
-     
-     Overall Quality of Life Index maps use this scale.
-     ======================================================= */
-
-  --qoli-blue-050:     #F2F7FA;
-  --qoli-blue-100:     #E8F1F7;
-  --qoli-blue-200:     #C9DFEB;
-  --qoli-blue-300:     #9FC5D8;
-  --qoli-blue-400:     #6FA7C1;
-  --qoli-blue-500:     #4389AA;
-  --qoli-blue-600:     #176B91;
-  --qoli-blue-700:     #084F73;
+    /* -----------------------------------------------------
+       Brand
+    ----------------------------------------------------- */
+
+    --sel-blue: #004DA8;
+    --sel-blue-dark: #003B82;
+    --sel-blue-deep: #002F66;
+    --sel-blue-light: #2E73C4;
+    --sel-blue-pale: #E7F0FA;
+
+    /* -----------------------------------------------------
+       Dark colours
+    ----------------------------------------------------- */
+
+    --sel-navy: #07111F;
+    --sel-navy-2: #0B1828;
+    --sel-navy-3: #102338;
+
+    /* -----------------------------------------------------
+       Neutral colours
+    ----------------------------------------------------- */
+
+    --sel-white: #FFFFFF;
+    --sel-paper: #F5F8FB;
+    --sel-text: #172536;
+    --sel-text-soft: #40556A;
+    --sel-muted: #6D7F91;
+
+    --sel-line: #D6E0EA;
+    --sel-line-dark: #26394D;
+
+    /* -----------------------------------------------------
+       Accent colours
+    ----------------------------------------------------- */
+
+    --sel-cyan: #00D7E8;
+    --sel-teal-light: #8ED1D8;
+
+    --sel-warning: #C69214;
+    --sel-positive: #2E8B57;
+    --sel-negative: #D9485F;
+
+    /* -----------------------------------------------------
+       Quality-of-life colours
+    ----------------------------------------------------- */
+
+    --qol-economic: #C69214;
+    --qol-education: #6F42C1;
+    --qol-health: #D9485F;
+    --qol-housing: #E67E22;
+    --qol-environment: #2E8B57;
+    --qol-accessibility: #0F8B8D;
+    --qol-social: #8E3B8A;
+    --qol-urban: #267C9D;
+
+    /* -----------------------------------------------------
+       Layout
+    ----------------------------------------------------- */
+
+    --sel-max-width: 1200px;
+    --sel-content-width: 1100px;
+    --sel-reading-width: 850px;
+
+    --sel-gutter: 4%;
+
+    /* -----------------------------------------------------
+       Radius
+    ----------------------------------------------------- */
+
+    --sel-radius-sm: 4px;
+    --sel-radius-md: 8px;
+
+    /* -----------------------------------------------------
+       Shadows
+    ----------------------------------------------------- */
+
+    --sel-shadow-sm:
+        0 4px 14px rgba(7, 17, 31, 0.05);
+
+    --sel-shadow-md:
+        0 10px 30px rgba(7, 17, 31, 0.08);
+
+    /* -----------------------------------------------------
+       Typography
+    ----------------------------------------------------- */
+
+    --sel-sans:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --sel-serif:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    /* -----------------------------------------------------
+       Motion
+    ----------------------------------------------------- */
 
+    --sel-transition:
+        180ms ease;
 
-  /* -------------------------------------------------------
-     QoLI — NATIONAL DECILES
-     
-     D01 = lowest QoLI
-     D10 = highest QoLI
-     ------------------------------------------------------- */
+    /* -----------------------------------------------------
+       Header
+    ----------------------------------------------------- */
 
-  --qoli-d01:          #EEF5F8;
-  --qoli-d02:          #DCEBF1;
-  --qoli-d03:          #C8E0E9;
-  --qoli-d04:          #AED1DE;
-  --qoli-d05:          #91BFCE;
-  --qoli-d06:          #70A9BE;
-  --qoli-d07:          #4D94AD;
-  --qoli-d08:          #2F7F9E;
-  --qoli-d09:          #176B91;
-  --qoli-d10:          #084F73;
+    --sel-header-height: 78px;
 
-
-  /* =======================================================
-     03 — QoLI DOMAIN COLOURS
-     
-     These are the canonical domain identities.
-     They must remain consistent across the publication.
-     ======================================================= */
-
-  /* -------------------------------------------------------
-     Economic & Material Wellbeing
-     ------------------------------------------------------- */
-
-  --domain-economic:   #D6A536;
-
-  --economic-100:      #F4E8C5;
-  --economic-200:      #E8D18E;
-  --economic-300:      #D6B85A;
-  --economic-400:      #C59B32;
-  --economic-500:      #9C741C;
-
-
-  /* -------------------------------------------------------
-     Education & Employment
-     ------------------------------------------------------- */
-
-  --domain-education:  #8064A2;
-
-  --education-100:     #E7DFF0;
-  --education-200:     #CDB9DF;
-  --education-300:     #B095C9;
-  --education-400:     #9275B1;
-  --education-500:     #6D4E8C;
-
-
-  /* -------------------------------------------------------
-     Health & Wellbeing
-     ------------------------------------------------------- */
-
-  --domain-health:     #D95F5F;
-
-  --health-100:        #F4D4D4;
-  --health-200:        #E9AAAA;
-  --health-300:        #DF8585;
-  --health-400:        #D05F60;
-  --health-500:        #A94347;
-
-
-  /* -------------------------------------------------------
-     Housing & Affordability
-     ------------------------------------------------------- */
-
-  --domain-housing:    #E7833A;
-
-  --housing-100:       #F6DDC8;
-  --housing-200:       #EDB992;
-  --housing-300:       #E59A5C;
-  --housing-400:       #D97C35;
-  --housing-500:       #AD5822;
-
-
-  /* -------------------------------------------------------
-     Environmental Quality
-     ------------------------------------------------------- */
-
-  --domain-environment:#4E9F70;
-
-  --environment-100:   #D8ECDD;
-  --environment-200:   #B4D7BD;
-  --environment-300:   #8EC49F;
-  --environment-400:   #64AC7D;
-  --environment-500:   #39815A;
-
-
-  /* -------------------------------------------------------
-     Accessibility & Services
-     ------------------------------------------------------- */
-
-  --domain-access:     #2D9C95;
-
-  --access-100:         #D7ECEA;
-  --access-200:         #B2DAD6;
-  --access-300:         #82C3BC;
-  --access-400:         #55AAA2;
-  --access-500:         #287D77;
-
-
-  /* -------------------------------------------------------
-     Social & Community Wellbeing
-     ------------------------------------------------------- */
-
-  --domain-social:     #925070;
-
-  --social-100:        #EBD9E2;
-  --social-200:        #D5B2C3;
-  --social-300:        #BC8BA4;
-  --social-400:        #A26583;
-  --social-500:        #78435F;
-
-
-  /* -------------------------------------------------------
-     Urban Vitality
-     ------------------------------------------------------- */
-
-  --domain-urban:      #4F8A9A;
-
-  --urban-100:         #DCE8EA;
-  --urban-200:         #B8D1D5;
-  --urban-300:         #8FB8BE;
-  --urban-400:         #689BA4;
-  --urban-500:         #4F737B;
-
-
-  /* =======================================================
-     04 — ANALYTICAL / STATUS COLOURS
-     ======================================================= */
-
-  --analysis-positive:  #2D9C95;
-  --analysis-neutral:   #718589;
-  --analysis-attention: #D6A536;
-  --analysis-warning:   #E7833A;
-  --analysis-high:      #D95F5F;
-  --analysis-critical:  #A94347;
-
-
-  /* -------------------------------------------------------
-     Selection / interaction
-     ------------------------------------------------------- */
-
-  --selection:          #54D5E5;
-  --selection-bg:       #123D45;
-  --selection-border:   #35C8C0;
-
-
-  /* =======================================================
-     05 — REFERENCE GEOGRAPHIC COLOURS
-     ======================================================= */
-
-  --reference-land:     #263B40;
-  --reference-land-2:   #31484D;
-  --reference-road:     #718589;
-  --reference-boundary: #52676B;
-  --reference-water:    #092831;
-  --reference-label:    #D6E2E1;
-
-
-  /* =======================================================
-     06 — LAYOUT
-     ======================================================= */
-
-  --max:                1200px;
-  --max-wide:           1400px;
-  --max-text:           760px;
-
-  --gutter:             clamp(1rem, 3vw, 2rem);
-
-  --section-space:      clamp(4rem, 8vw, 8rem);
-  --section-space-sm:   clamp(3rem, 6vw, 5rem);
-
-  --radius-sm:          4px;
-  --radius-md:          8px;
-  --radius-lg:          12px;
-
-
-  /* =======================================================
-     07 — TYPOGRAPHY
-     ======================================================= */
-
-  --sans:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  --serif:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  --font-xs:             0.75rem;
-  --font-sm:             0.875rem;
-  --font-base:           1rem;
-  --font-lg:             1.125rem;
-  --font-xl:             1.25rem;
-
-  --leading-tight:       1.15;
-  --leading-heading:     1.2;
-  --leading-body:        1.7;
-
-
-  /* =======================================================
-     08 — MOTION
-     ======================================================= */
-
-  --ease-standard:
-    cubic-bezier(.2,.65,.3,1);
-
-  --ease-out:
-    cubic-bezier(.16,1,.3,1);
-
-  --transition-fast:
-    150ms var(--ease-standard);
-
-  --transition:
-    220ms var(--ease-standard);
-
-  --transition-slow:
-    350ms var(--ease-out);
-
-
-  /* =======================================================
-     09 — SHADOWS
-     
-     Keep shadows restrained on the dark interface.
-     ======================================================= */
-
-  --shadow-sm:
-    0 2px 8px rgba(0,0,0,.16);
-
-  --shadow-md:
-    0 8px 24px rgba(0,0,0,.22);
-
-  --shadow-lg:
-    0 18px 50px rgba(0,0,0,.28);
-
-
-  /* =======================================================
-     10 — Z-INDEX
-     ======================================================= */
-
-  --z-base:             1;
-  --z-header:           100;
-  --z-overlay:          150;
-  --z-modal:            200;
 }
 
 
 /* =========================================================
-   11 — GLOBAL RESET
+   02. RESET
 ========================================================= */
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--sel-header-height);
 }
 
+
 body {
-  margin: 0;
-  background: var(--sel-bg-900);
-  color: var(--sel-text-100);
-  font-family: var(--sans);
-  font-size: var(--font-base);
-  line-height: var(--leading-body);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 0;
+
+    background: var(--sel-paper);
+    color: var(--sel-text);
+
+    font-family: var(--sel-sans);
+    font-size: 16px;
+    line-height: 1.7;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
+
 
 body,
 button,
 input,
 textarea,
 select {
-  font-family: var(--sans);
+    font-family: var(--sel-sans);
 }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+
+img,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+
+img {
+    height: auto;
+}
+
 
 button,
 input,
 textarea,
 select {
-  font-size: inherit;
+    font: inherit;
 }
+
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
-img,
-svg,
-video {
-  display: block;
-  max-width: 100%;
-}
 
-img {
-  height: auto;
-}
-
-figure,
-blockquote {
-  margin: 0;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--sel-text-100);
-  line-height: var(--leading-heading);
-}
-
-p {
-  color: var(--sel-text-400);
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--sel-cyan);
+    outline-offset: 3px;
 }
 
 
 /* =========================================================
-   12 — ACCESSIBILITY
+   03. SELECTION
 ========================================================= */
 
-:focus-visible {
-  outline: 2px solid var(--sel-cyan);
-  outline-offset: 4px;
-}
-
 ::selection {
-  background: var(--selection);
-  color: var(--sel-bg-950);
-}
-
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 10px;
-
-  background: var(--map-id-blue);
-  color: #fff;
-
-  padding: 8px 14px;
-
-  z-index: var(--z-modal);
-}
-
-.skip-link:focus {
-  left: 10px;
-}
-
-.sr-only {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-
-  padding: 0;
-  margin: -1px;
-
-  overflow: hidden;
-
-  clip: rect(0,0,0,0);
-
-  white-space: nowrap;
-
-  border: 0;
+    background: var(--sel-blue);
+    color: var(--sel-white);
 }
 
 
 /* =========================================================
-   13 — GLOBAL LAYOUT
+   04. BASIC LAYOUT
 ========================================================= */
 
 .shell {
-  width: min(92%, var(--max));
-  margin-inline: auto;
+    width: min(
+        calc(100% - 8%),
+        var(--sel-max-width)
+    );
+
+    margin-inline: auto;
 }
 
-.shell-wide {
-  width: min(94%, var(--max-wide));
-  margin-inline: auto;
-}
 
-.text-width {
-  max-width: var(--max-text);
+@media (max-width: 600px) {
+
+    .shell {
+        width: min(
+            calc(100% - 10%),
+            var(--sel-max-width)
+        );
+    }
+
 }
 
 
 /* =========================================================
-   14 — SEMANTIC PAGE TOKENS
-     
-     Use these instead of raw colours in page CSS.
+   05. ACCESSIBILITY
 ========================================================= */
 
-.page,
-.sel-site {
-  --page-background: var(--sel-bg-900);
-  --page-section: var(--sel-bg-800);
-  --page-surface: var(--sel-surface-700);
-  --page-surface-raised: var(--sel-surface-600);
+.skip-link {
+    position: fixed;
 
-  --page-border: var(--sel-border-500);
-  --page-border-hover: var(--sel-border-400);
+    top: 10px;
+    left: -9999px;
 
-  --page-heading: var(--sel-text-100);
-  --page-text: var(--sel-text-400);
-  --page-muted: var(--sel-text-600);
+    z-index: 9999;
 
-  --page-accent: var(--sel-teal);
-  --page-accent-hover: var(--sel-teal-hover);
+    padding: 9px 14px;
 
-  background: var(--page-background);
-  color: var(--page-heading);
+    background: var(--sel-blue);
+    color: var(--sel-white);
+
+    font-size: .78rem;
+    font-weight: 800;
+}
+
+
+.skip-link:focus {
+    left: 10px;
+}
+
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    border: 0;
 }
 
 
 /* =========================================================
-   15 — STANDARD SECTION TOKENS
+   06. TYPOGRAPHIC UTILITIES
 ========================================================= */
 
-.section {
-  background: var(--sel-bg-800);
-  color: var(--sel-text-100);
-}
-
-.section.alt {
-  background: var(--sel-bg-900);
-}
-
-.section.dark {
-  background: var(--sel-bg-950);
+.serif {
+    font-family: var(--sel-serif);
+    font-weight: 400;
 }
 
 
-/* =========================================================
-   16 — STANDARD CARD TOKENS
-========================================================= */
-
-.card {
-  background: var(--sel-surface-700);
-  border: 1px solid var(--sel-border-500);
-  color: var(--sel-text-100);
-
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
+.text-blue {
+    color: var(--sel-blue);
 }
 
-.card:hover {
-  background: var(--sel-surface-600);
-  border-color: var(--sel-border-400);
+
+.text-muted {
+    color: var(--sel-muted);
 }
 
 
 /* =========================================================
-   17 — LINKS
-========================================================= */
-
-a:not(.button):not(.wordmark):not(.nav-cta) {
-  transition:
-    color var(--transition-fast),
-    border-color var(--transition-fast);
-}
-
-a:not(.button):not(.wordmark):not(.nav-cta):hover {
-  color: var(--sel-teal-hover);
-}
-
-
-/* =========================================================
-   18 — MAP ID
-     
-     THE PUBLICATION IDENTITY COMPONENT
-     
-     Example:
-       <span class="map-id">2.06</span>
-     
-     #004DA8 is reserved for this purpose.
-========================================================= */
-
-.map-id {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 3rem;
-
-  padding: 0.35rem 0.65rem;
-
-  background: var(--map-id-blue);
-  color: var(--map-id-text);
-
-  font-family: var(--sans);
-  font-size: var(--font-sm);
-  font-weight: 700;
-
-  line-height: 1;
-  letter-spacing: 0.04em;
-
-  border-radius: var(--radius-sm);
-
-  transition:
-    background var(--transition-fast),
-    transform var(--transition-fast);
-}
-
-.map-id:hover {
-  background: var(--map-id-blue-hover);
-}
-
-
-/* =========================================================
-   19 — MAP HEADER
-========================================================= */
-
-.map-header {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.map-domain {
-  color: var(--project-primary, var(--sel-teal));
-  font-size: var(--font-sm);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.map-title {
-  flex-basis: 100%;
-  margin: 0;
-
-  color: var(--sel-text-100);
-}
-
-
-/* =========================================================
-   20 — PROJECT PAGE TOKENS
-========================================================= */
-
-.project-page {
-  --project-background: var(--sel-bg-900);
-  --project-section: var(--sel-bg-800);
-
-  --project-surface: var(--sel-surface-700);
-  --project-surface-raised: var(--sel-surface-600);
-
-  --project-border: var(--sel-border-500);
-  --project-border-hover: var(--sel-border-400);
-
-  --project-text: var(--sel-text-100);
-  --project-body: var(--sel-text-400);
-  --project-muted: var(--sel-text-600);
-
-  --project-map-id: var(--map-id-blue);
-  --project-map-id-text: var(--map-id-text);
-
-  --project-primary: var(--sel-teal);
-  --project-primary-light: var(--sel-teal-hover);
-  --project-primary-dark: var(--sel-teal-dark);
-
-  background: var(--project-background);
-  color: var(--project-text);
-}
-
-
-/* =========================================================
-   21 — PROJECT DOMAIN THEMES
-     
-     Projects inherit the canonical domain colour.
-========================================================= */
-
-.project-accessibility {
-  --project-primary: var(--domain-access);
-  --project-primary-light: var(--access-300);
-  --project-primary-dark: var(--access-500);
-}
-
-.project-economic {
-  --project-primary: var(--domain-economic);
-  --project-primary-light: var(--economic-200);
-  --project-primary-dark: var(--economic-500);
-}
-
-.project-education {
-  --project-primary: var(--domain-education);
-  --project-primary-light: var(--education-200);
-  --project-primary-dark: var(--education-500);
-}
-
-.project-health {
-  --project-primary: var(--domain-health);
-  --project-primary-light: var(--health-200);
-  --project-primary-dark: var(--health-500);
-}
-
-.project-housing {
-  --project-primary: var(--domain-housing);
-  --project-primary-light: var(--housing-200);
-  --project-primary-dark: var(--housing-500);
-}
-
-.project-environment {
-  --project-primary: var(--domain-environment);
-  --project-primary-light: var(--environment-200);
-  --project-primary-dark: var(--environment-500);
-}
-
-.project-social {
-  --project-primary: var(--domain-social);
-  --project-primary-light: var(--social-200);
-  --project-primary-dark: var(--social-500);
-}
-
-.project-urban {
-  --project-primary: var(--domain-urban);
-  --project-primary-light: var(--urban-200);
-  --project-primary-dark: var(--urban-500);
-}
-
-
-/* =========================================================
-   22 — QoLI MAP
-     
-     Overall QoLI maps should always be recognisable
-     through the blue sequential system.
-========================================================= */
-
-.qoli-map {
-  --map-low:  var(--qoli-blue-100);
-  --map-2:    var(--qoli-blue-200);
-  --map-3:    var(--qoli-blue-300);
-  --map-4:    var(--qoli-blue-400);
-  --map-5:    var(--qoli-blue-500);
-  --map-6:    var(--qoli-blue-600);
-  --map-high: var(--qoli-blue-700);
-}
-
-
-/* =========================================================
-   23 — QoLI NATIONAL DECILES
-========================================================= */
-
-.qoli-deciles {
-  --d01: var(--qoli-d01);
-  --d02: var(--qoli-d02);
-  --d03: var(--qoli-d03);
-  --d04: var(--qoli-d04);
-  --d05: var(--qoli-d05);
-  --d06: var(--qoli-d06);
-  --d07: var(--qoli-d07);
-  --d08: var(--qoli-d08);
-  --d09: var(--qoli-d09);
-  --d10: var(--qoli-d10);
-}
-
-
-/* =========================================================
-   24 — DOMAIN MAP FAMILIES
-========================================================= */
-
-.domain-economic {
-  --map-100: var(--economic-100);
-  --map-200: var(--economic-200);
-  --map-300: var(--economic-300);
-  --map-400: var(--economic-400);
-  --map-500: var(--economic-500);
-}
-
-.domain-education {
-  --map-100: var(--education-100);
-  --map-200: var(--education-200);
-  --map-300: var(--education-300);
-  --map-400: var(--education-400);
-  --map-500: var(--education-500);
-}
-
-.domain-health {
-  --map-100: var(--health-100);
-  --map-200: var(--health-200);
-  --map-300: var(--health-300);
-  --map-400: var(--health-400);
-  --map-500: var(--health-500);
-}
-
-.domain-housing {
-  --map-100: var(--housing-100);
-  --map-200: var(--housing-200);
-  --map-300: var(--housing-300);
-  --map-400: var(--housing-400);
-  --map-500: var(--housing-500);
-}
-
-.domain-environment {
-  --map-100: var(--environment-100);
-  --map-200: var(--environment-200);
-  --map-300: var(--environment-300);
-  --map-400: var(--environment-400);
-  --map-500: var(--environment-500);
-}
-
-.domain-accessibility {
-  --map-100: var(--access-100);
-  --map-200: var(--access-200);
-  --map-300: var(--access-300);
-  --map-400: var(--access-400);
-  --map-500: var(--access-500);
-}
-
-.domain-social {
-  --map-100: var(--social-100);
-  --map-200: var(--social-200);
-  --map-300: var(--social-300);
-  --map-400: var(--social-400);
-  --map-500: var(--social-500);
-}
-
-.domain-urban {
-  --map-100: var(--urban-100);
-  --map-200: var(--urban-200);
-  --map-300: var(--urban-300);
-  --map-400: var(--urban-400);
-  --map-500: var(--urban-500);
-}
-
-
-/* =========================================================
-   25 — ANALYTICAL MAPS
-========================================================= */
-
-
-/* ---------------------------------------------------------
-   Diverging spatial analysis
-   Lower ←────────→ Higher
---------------------------------------------------------- */
-
-.diverging-map {
-  --diverging-low-3:  #7F3F5F;
-  --diverging-low-2:  #B8758E;
-  --diverging-low-1:  #D8B4C2;
-
-  --diverging-mid:    #E8E5DF;
-
-  --diverging-high-1: #B9D8D3;
-  --diverging-high-2: #66AAA2;
-  --diverging-high-3: #287D77;
-}
-
-
-/* ---------------------------------------------------------
-   Top 100
---------------------------------------------------------- */
-
-.top-100 {
-  --analysis-background: #1C3036;
-  --analysis-highlight: #35C8C0;
-  --analysis-outline:   #54D5E5;
-}
-
-
-/* ---------------------------------------------------------
-   Bottom 100
---------------------------------------------------------- */
-
-.bottom-100 {
-  --analysis-background: #1C3036;
-  --analysis-highlight: #D95F5F;
-  --analysis-outline:   #FF9A8C;
-}
-
-
-/* =========================================================
-   26 — REFERENCE MAP
-========================================================= */
-
-.reference-map {
-  --water:      var(--reference-water);
-  --land:       var(--reference-land);
-  --land-alt:   var(--reference-land-2);
-  --roads:      var(--reference-road);
-  --boundaries: var(--reference-boundary);
-  --labels:     var(--reference-label);
-  --highlight:  var(--sel-teal);
-}
-
-
-/* =========================================================
-   27 — MAP UI
-     
-     Shared controls across every interactive map.
-========================================================= */
-
-.map-ui {
-  background: rgba(7, 19, 24, 0.94);
-  color: var(--sel-text-100);
-
-  border: 1px solid var(--sel-border-500);
-
-  box-shadow: var(--shadow-md);
-}
-
-.map-ui-button {
-  background: var(--sel-surface-700);
-  color: var(--sel-text-200);
-
-  border: 1px solid var(--sel-border-500);
-
-  transition:
-    background var(--transition-fast),
-    color var(--transition-fast),
-    border-color var(--transition-fast);
-}
-
-.map-ui-button:hover {
-  background: var(--sel-surface-600);
-  color: var(--sel-text-100);
-  border-color: var(--sel-border-400);
-}
-
-.map-ui-button.active {
-  background: var(--map-id-blue);
-  color: #fff;
-  border-color: var(--map-id-blue);
-}
-
-
-/* =========================================================
-   28 — LEGENDS
-     
-     Legend colours must come from the analytical map.
-     They should never automatically inherit SEL teal.
-========================================================= */
-
-.legend {
-  background: rgba(7, 19, 24, 0.96);
-  color: var(--sel-text-100);
-
-  border: 1px solid var(--sel-border-500);
-
-  box-shadow: var(--shadow-md);
-}
-
-.legend-title {
-  color: var(--sel-text-200);
-  font-weight: 700;
-}
-
-.legend-label {
-  color: var(--sel-text-400);
-}
-
-.legend-note {
-  color: var(--sel-text-600);
-}
-
-
-/* =========================================================
-   29 — RESPONSIVE TYPOGRAPHY
-========================================================= */
-
-h1 {
-  font-size: clamp(2.75rem, 7vw, 6.5rem);
-  letter-spacing: -0.045em;
-}
-
-h2 {
-  font-size: clamp(2rem, 4vw, 4rem);
-  letter-spacing: -0.035em;
-}
-
-h3 {
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-  letter-spacing: -0.015em;
-}
-
-h4 {
-  font-size: 1.125rem;
-}
-
-em {
-  font-family: var(--serif);
-  font-weight: 400;
-}
-
-
-/* =========================================================
-   30 — REDUCED MOTION
+   07. REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-  html {
-    scroll-behavior: auto;
-  }
+    html {
+        scroll-behavior: auto;
+    }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 
-
-/* =========================================================
-   31 — PRINT
-========================================================= */
-
-@media print {
-
-  :root {
-    --sel-bg-950: #fff;
-    --sel-bg-900: #fff;
-    --sel-bg-850: #fff;
-    --sel-bg-800: #fff;
-
-    --sel-surface-700: #fff;
-    --sel-surface-650: #fff;
-    --sel-surface-600: #fff;
-
-    --sel-text-100: #111;
-    --sel-text-200: #222;
-    --sel-text-300: #333;
-    --sel-text-400: #444;
-    --sel-text-500: #555;
-    --sel-text-600: #666;
-    --sel-text-700: #777;
-
-    --sel-border-500: #ccc;
-    --sel-border-400: #aaa;
-  }
-
-  body {
-    background: #fff;
-    color: #111;
-  }
-
-  .map-ui,
-  .legend {
-    box-shadow: none;
-  }
-
-  a {
-    color: inherit;
-  }
 }
