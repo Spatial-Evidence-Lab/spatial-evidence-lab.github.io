@@ -1,1030 +1,386 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB
-   SHARED COMPONENT SYSTEM
-   v3
-   ========================================================= */
-
-
-/* =========================================================
-   01 — BUTTONS
-   ========================================================= */
+   SHARED COMPONENTS
+========================================================= */
 
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .55rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
 
-  min-height: 44px;
-  padding: .72rem 1rem;
+    min-height: 44px;
+    padding: 11px 17px;
 
-  border: 1px solid var(--sel-border-400);
-  border-radius: var(--radius-sm);
+    border: 1px solid var(--sel-border-400);
 
-  background: transparent;
-  color: var(--sel-text-100);
+    color: var(--sel-text-100);
 
-  font-size: .7rem;
-  font-weight: 850;
-  line-height: 1.2;
-  letter-spacing: .07em;
-  text-transform: uppercase;
+    font-size: .7rem;
+    font-weight: 850;
+    letter-spacing: .07em;
+    line-height: 1;
+    text-transform: uppercase;
 
-  cursor: pointer;
-
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    color var(--transition),
-    transform var(--transition);
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
 }
 
 .button:hover {
-  transform: translateY(-1px);
+    transform: translateY(-1px);
 }
 
 
-/* Primary UI action */
+/* Primary */
 
 .button-primary {
-  background: var(--sel-teal);
-  border-color: var(--sel-teal);
-  color: var(--sel-bg-950);
+    background: var(--sel-teal);
+    border-color: var(--sel-teal);
+    color: var(--sel-bg-950);
 }
 
 .button-primary:hover {
-  background: var(--sel-teal-hover);
-  border-color: var(--sel-teal-hover);
-  color: var(--sel-bg-950);
+    background: var(--sel-teal-hover);
+    border-color: var(--sel-teal-hover);
 }
 
 
-/* Dark publication action */
-
-.button-dark {
-  background: var(--map-id-blue);
-  border-color: var(--map-id-blue);
-  color: #fff;
-}
-
-.button-dark:hover {
-  background: var(--map-id-blue-hover);
-  border-color: var(--map-id-blue-hover);
-  color: #fff;
-}
-
-
-/* Light button on dark hero */
+/* Light button — used on dark hero */
 
 .button-light {
-  background: var(--sel-text-100);
-  border-color: var(--sel-text-100);
-  color: var(--sel-bg-950);
+    background: var(--sel-text-100);
+    border-color: var(--sel-text-100);
+    color: var(--sel-bg-950);
 }
 
 .button-light:hover {
-  background: #fff;
-  border-color: #fff;
+    background: var(--sel-teal);
+    border-color: var(--sel-teal);
 }
 
 
-/* Ghost button on dark background */
+/* Ghost on dark */
 
 .button-ghost-dark {
-  border-color: var(--sel-border-400);
-  color: var(--sel-text-200);
+    background: transparent;
+    border-color: var(--sel-border-400);
+    color: var(--sel-text-100);
 }
 
 .button-ghost-dark:hover {
-  border-color: var(--sel-teal);
-  color: var(--sel-teal);
+    border-color: var(--sel-teal);
+    color: var(--sel-teal);
 }
 
 
-/* Ghost button on dark section */
+/* Dark button */
+
+.button-dark {
+    background: var(--sel-surface-700);
+    border-color: var(--sel-border-400);
+    color: var(--sel-text-100);
+}
+
+.button-dark:hover {
+    background: var(--sel-surface-600);
+    border-color: var(--sel-teal);
+    color: var(--sel-teal);
+}
+
+
+/* Ghost on light / neutral surface */
 
 .button-ghost {
-  border-color: var(--sel-border-500);
-  color: var(--sel-text-300);
+    background: transparent;
+    border-color: var(--sel-border-500);
+    color: var(--sel-text-200);
 }
 
 .button-ghost:hover {
-  border-color: var(--sel-teal);
-  color: var(--sel-teal);
+    border-color: var(--sel-teal);
+    color: var(--sel-teal);
 }
 
 
 /* =========================================================
-   02 — SECTION LABELS
-   ========================================================= */
+   SECTION TYPOGRAPHY
+========================================================= */
 
-.section-kicker,
-.research-eyebrow,
-.project-kicker {
-  margin: 0;
+.section-kicker {
+    margin: 0;
 
-  color: var(--sel-teal);
+    color: var(--sel-teal);
 
-  font-size: .66rem;
-  font-weight: 850;
-  line-height: 1.3;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+    font-size: .67rem;
+    font-weight: 850;
+    letter-spacing: .14em;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
-
-
-/* Numbered research sections */
-
-.project-number {
-  margin: 0 0 .8rem;
-
-  color: var(--sel-teal);
-
-  font-size: .66rem;
-  font-weight: 850;
-  line-height: 1.3;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-
-/* =========================================================
-   03 — HEADINGS
-   ========================================================= */
 
 .section-title {
-  margin: .5rem 0 0;
+    margin: 8px 0 0;
 
-  color: var(--sel-text-100);
+    color: var(--sel-text-100);
 
-  font-size: clamp(2rem, 4.4vw, 3.6rem);
-  font-weight: 750;
-  line-height: .98;
-  letter-spacing: -.05em;
+    font-size: clamp(2rem, 4.4vw, 3.6rem);
+    line-height: 1;
+    letter-spacing: -.05em;
 }
 
 .section-title em {
-  font-family: var(--serif);
-  font-weight: 400;
+    font-family: var(--serif);
+    font-weight: 400;
 }
 
 
 /* =========================================================
-   04 — HEADER
-   ========================================================= */
+   HEADER
+========================================================= */
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
-  background: rgba(5, 14, 18, .94);
+    background: rgba(7, 19, 24, .94);
+    border-bottom: 1px solid var(--sel-border-500);
 
-  border-bottom: 1px solid var(--sel-border-500);
-
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
 }
 
 .nav-wrap {
-  min-height: 78px;
+    min-height: 78px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  gap: 25px;
+    gap: 25px;
 }
-
-
-/* =========================================================
-   WORDMARK
-   ========================================================= */
 
 .wordmark {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  color: var(--sel-text-100);
-
-  font-size: .92rem;
-  font-weight: 500;
-  letter-spacing: -.025em;
+    color: var(--sel-text-100);
 }
 
-.wordmark b {
-  font-weight: 800;
+.wordmark-text {
+    font-size: .92rem;
+    letter-spacing: -.025em;
 }
 
-.wordmark-mark {
-  width: 32px;
-  height: 32px;
+.wordmark-text b {
+    font-weight: 800;
+}
 
-  display: grid;
-  place-items: center;
-
-  border-radius: var(--radius-sm);
-
-  background: var(--map-id-blue);
-  color: #fff;
-
-  font: 800 .62rem var(--sans);
-  letter-spacing: -.06em;
+.wordmark-logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
 }
 
 
-/* =========================================================
-   PRIMARY NAVIGATION
-   ========================================================= */
+/* Navigation */
 
 .site-nav {
-  display: flex;
-  align-items: center;
-  gap: 26px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
 }
 
 .site-nav a {
-  position: relative;
+    padding: 29px 0;
 
-  padding: 29px 0;
+    border-bottom: 2px solid transparent;
 
-  border-bottom: 2px solid transparent;
+    color: var(--sel-text-400);
 
-  color: var(--sel-text-400);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
 
-  font-size: .68rem;
-  font-weight: 800;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-
-  transition:
-    color var(--transition-fast),
-    border-color var(--transition-fast);
+    transition:
+        color .2s ease,
+        border-color .2s ease;
 }
 
 .site-nav a:hover,
 .site-nav a.active {
-  color: var(--sel-text-100);
-  border-color: var(--sel-teal);
+    color: var(--sel-teal);
+    border-color: var(--sel-teal);
 }
 
-
-/* GitHub / external CTA */
-
 .site-nav .nav-cta {
-  padding: 8px 12px;
+    padding: 9px 12px;
 
-  border: 1px solid var(--sel-border-400);
-  border-bottom-color: var(--sel-border-400);
-
-  color: var(--sel-text-200);
+    border: 1px solid var(--sel-border-500);
 }
 
 .site-nav .nav-cta:hover {
-  border-color: var(--sel-teal);
-  color: var(--sel-teal);
+    border-color: var(--sel-teal);
 }
 
 
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
+/* Mobile navigation */
 
 .menu-toggle {
-  display: none;
+    display: none;
 
-  padding: 9px 12px;
+    background: transparent;
+    border: 1px solid var(--sel-border-500);
 
-  border: 1px solid var(--sel-border-400);
-  border-radius: var(--radius-sm);
+    padding: 9px 12px;
 
-  background: transparent;
-  color: var(--sel-text-200);
+    color: var(--sel-text-200);
 
-  font-size: .7rem;
-  font-weight: 800;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-
-  cursor: pointer;
-}
-
-.menu-toggle:hover {
-  border-color: var(--sel-teal);
-  color: var(--sel-teal);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
-   05 — MAP ID
-     
-   Core publication component.
-     
-   IMPORTANT:
-   #004DA8 is reserved for publication/map identity.
-   ========================================================= */
-
-.map-id {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 2.5rem;
-
-  padding: .35rem .65rem;
-
-  border-radius: var(--radius-sm);
-
-  background: var(--map-id-blue);
-  color: var(--map-id-text);
-
-  font-size: .68rem;
-  font-weight: 850;
-  line-height: 1;
-  letter-spacing: .04em;
-}
-
-.map-id:hover {
-  background: var(--map-id-blue-hover);
-}
-
-
-/* =========================================================
-   06 — MAP HEADER
-   ========================================================= */
-
-.map-header {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-
-  gap: .75rem;
-}
-
-.map-domain {
-  color: var(--project-primary, var(--sel-teal));
-
-  font-size: .66rem;
-  font-weight: 850;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.map-title {
-  flex-basis: 100%;
-
-  margin: .35rem 0 0;
-
-  color: var(--sel-text-100);
-
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  line-height: 1.05;
-  letter-spacing: -.035em;
-}
-
-
-/* =========================================================
-   07 — DOMAIN MARKER
-   ========================================================= */
-
-.domain-marker {
-  width: .55rem;
-  height: .55rem;
-
-  display: inline-block;
-
-  border-radius: 50%;
-
-  background: var(--domain-colour, var(--sel-teal));
-}
-
-
-/* =========================================================
-   08 — DOMAIN CARD
-   ========================================================= */
-
-.domain-card {
-  --domain-colour: var(--sel-teal);
-
-  display: flex;
-  flex-direction: column;
-
-  min-height: 270px;
-
-  padding: 1.4rem;
-
-  background: var(--sel-surface-700);
-
-  border: 1px solid var(--sel-border-500);
-
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    transform var(--transition);
-}
-
-.domain-card:hover {
-  background: var(--sel-surface-600);
-  border-color: var(--domain-colour);
-  transform: translateY(-2px);
-}
-
-.domain-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.domain-number {
-  color: var(--sel-text-600);
-
-  font-size: .65rem;
-  font-weight: 850;
-  letter-spacing: .1em;
-}
-
-.domain-arrow {
-  color: var(--domain-colour);
-
-  font-size: 1rem;
-
-  transition: transform var(--transition-fast);
-}
-
-.domain-card:hover .domain-arrow {
-  transform: translateX(4px);
-}
-
-.domain-card-body {
-  margin-top: 2.8rem;
-}
-
-.domain-card h3 {
-  margin: 0 0 .7rem;
-
-  color: var(--sel-text-100);
-
-  font-size: 1.25rem;
-  line-height: 1.15;
-  letter-spacing: -.025em;
-}
-
-.domain-question {
-  margin: 0;
-
-  color: var(--sel-text-400);
-
-  font-size: .9rem;
-  line-height: 1.6;
-}
-
-.domain-card-footer {
-  margin-top: auto;
-  padding-top: 1.5rem;
-
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-
-  border-top: 1px solid var(--sel-border-500);
-
-  color: var(--sel-text-600);
-
-  font-size: .64rem;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-
-.domain-card-footer span:last-child {
-  color: var(--domain-colour);
-}
-
-
-/* =========================================================
-   DOMAIN CARD COLOURS
-   ========================================================= */
-
-.domain-card:nth-child(1) {
-  --domain-colour: var(--domain-economic);
-}
-
-.domain-card:nth-child(2) {
-  --domain-colour: var(--domain-access);
-}
-
-.domain-card:nth-child(3) {
-  --domain-colour: var(--domain-urban);
-}
-
-.domain-card:nth-child(4) {
-  --domain-colour: var(--domain-housing);
-}
-
-.domain-card:nth-child(5) {
-  --domain-colour: var(--domain-urban);
-}
-
-.domain-card:nth-child(6) {
-  --domain-colour: var(--domain-environment);
-}
-
-.domain-card:nth-child(7) {
-  --domain-colour: var(--domain-economic);
-}
-
-
-/* =========================================================
-   09 — RESEARCH PRINCIPLES
-   ========================================================= */
-
-.research-principle {
-  display: grid;
-  grid-template-columns: 42px 1fr;
-
-  gap: 1.2rem;
-
-  padding: 1.5rem 0;
-
-  border-top: 1px solid var(--sel-border-500);
-}
-
-.research-principle:last-child {
-  border-bottom: 1px solid var(--sel-border-500);
-}
-
-.research-principle > span {
-  color: var(--sel-teal);
-
-  font-size: .65rem;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-.research-principle h3 {
-  margin: 0 0 .35rem;
-
-  font-size: 1.25rem;
-  line-height: 1.1;
-}
-
-.research-principle p {
-  margin: 0;
-
-  color: var(--sel-text-400);
-
-  font-size: .88rem;
-}
-
-
-/* =========================================================
-   10 — PROJECT CARDS
-   ========================================================= */
-
-.project-card {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 1.4rem;
-
-  background: var(--sel-surface-700);
-  border: 1px solid var(--sel-border-500);
-
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    transform var(--transition);
-}
-
-.project-card:hover {
-  background: var(--sel-surface-600);
-  border-color: var(--project-primary, var(--sel-teal));
-  transform: translateY(-2px);
-}
-
-.project-card .map-id {
-  align-self: flex-start;
-}
-
-.project-card h3 {
-  margin: 1.4rem 0 .6rem;
-
-  color: var(--sel-text-100);
-
-  font-size: 1.25rem;
-  line-height: 1.15;
-  letter-spacing: -.025em;
-}
-
-.project-card p {
-  margin: 0;
-
-  color: var(--sel-text-400);
-
-  font-size: .86rem;
-}
-
-
-/* =========================================================
-   11 — WORKFLOW
-   ========================================================= */
-
-.workflow {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-
-  border-top: 1px solid var(--sel-border-500);
-  border-bottom: 1px solid var(--sel-border-500);
-}
-
-.workflow-step {
-  min-height: 170px;
-
-  padding: 1.25rem;
-
-  border-right: 1px solid var(--sel-border-500);
-}
-
-.workflow-step:last-child {
-  border-right: 0;
-}
-
-.workflow-step b {
-  display: block;
-
-  margin-bottom: 2.2rem;
-
-  color: var(--sel-teal);
-
-  font-size: .65rem;
-  letter-spacing: .08em;
-}
-
-.workflow-step strong {
-  display: block;
-
-  color: var(--sel-text-100);
-
-  font-size: .82rem;
-  line-height: 1.25;
-}
-
-.workflow-step span {
-  display: block;
-
-  margin-top: .45rem;
-
-  color: var(--sel-text-600);
-
-  font-size: .7rem;
-  line-height: 1.45;
-}
-
-
-/* =========================================================
-   12 — MAP UI
-   ========================================================= */
-
-.map-ui {
-  background: rgba(7, 19, 24, .94);
-  color: var(--sel-text-100);
-
-  border: 1px solid var(--sel-border-500);
-
-  backdrop-filter: blur(12px);
-}
-
-.map-ui-button {
-  padding: .55rem .7rem;
-
-  background: var(--sel-surface-700);
-  color: var(--sel-text-200);
-
-  border: 0;
-
-  cursor: pointer;
-}
-
-.map-ui-button:hover {
-  background: var(--sel-surface-600);
-  color: var(--sel-text-100);
-}
-
-.map-ui-button.active {
-  background: var(--map-id-blue);
-  color: #fff;
-}
-
-
-/* =========================================================
-   13 — LEGENDS
-   ========================================================= */
-
-.legend {
-  background: rgba(7, 19, 24, .96);
-
-  color: var(--sel-text-100);
-
-  border: 1px solid var(--sel-border-500);
-
-  padding: .8rem;
-
-  font-size: .72rem;
-}
-
-.legend-title {
-  margin-bottom: .55rem;
-
-  color: var(--sel-text-200);
-
-  font-size: .68rem;
-  font-weight: 800;
-}
-
-.legend-label {
-  color: var(--sel-text-400);
-}
-
-
-/* =========================================================
-   14 — QoLI MAP
-   ========================================================= */
-
-.qoli-map {
-  --map-low: var(--qoli-blue-100);
-  --map-2: var(--qoli-blue-200);
-  --map-3: var(--qoli-blue-300);
-  --map-4: var(--qoli-blue-400);
-  --map-5: var(--qoli-blue-500);
-  --map-6: var(--qoli-blue-600);
-  --map-high: var(--qoli-blue-700);
-}
-
-
-/* =========================================================
-   15 — QoLI DECILE MAP
-   ========================================================= */
-
-.qoli-decile-map {
-  --map-d01: var(--qoli-d01);
-  --map-d02: var(--qoli-d02);
-  --map-d03: var(--qoli-d03);
-  --map-d04: var(--qoli-d04);
-  --map-d05: var(--qoli-d05);
-  --map-d06: var(--qoli-d06);
-  --map-d07: var(--qoli-d07);
-  --map-d08: var(--qoli-d08);
-  --map-d09: var(--qoli-d09);
-  --map-d10: var(--qoli-d10);
-}
-
-
-/* =========================================================
-   16 — DOMAIN MAP THEMES
-   ========================================================= */
-
-.domain-economic {
-  --domain-colour: var(--domain-economic);
-}
-
-.domain-education {
-  --domain-colour: var(--domain-education);
-}
-
-.domain-health {
-  --domain-colour: var(--domain-health);
-}
-
-.domain-housing {
-  --domain-colour: var(--domain-housing);
-}
-
-.domain-environment {
-  --domain-colour: var(--domain-environment);
-}
-
-.domain-accessibility {
-  --domain-colour: var(--domain-access);
-}
-
-.domain-social {
-  --domain-colour: var(--domain-social);
-}
-
-.domain-urban {
-  --domain-colour: var(--domain-urban);
-}
-
-
-/* =========================================================
-   17 — REFERENCE MAP
-   ========================================================= */
-
-.reference-map {
-  --water: var(--reference-water);
-  --land: var(--reference-land);
-  --land-alt: var(--reference-land-2);
-  --roads: var(--reference-road);
-  --boundaries: var(--reference-boundary);
-  --labels: var(--reference-label);
-  --highlight: var(--sel-teal);
-}
-
-
-/* =========================================================
-   18 — FOOTER
-   ========================================================= */
+   FOOTER
+========================================================= */
 
 .site-footer {
-  background: var(--sel-bg-950);
-  color: var(--sel-text-300);
+    background: var(--sel-bg-950);
+    color: var(--sel-text-300);
 
-  padding: 65px 0 22px;
+    padding: 70px 0 22px;
 
-  border-top: 1px solid var(--sel-border-500);
+    border-top: 1px solid var(--sel-border-500);
 }
 
 .footer-grid {
-  display: flex;
-  justify-content: space-between;
-
-  gap: 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
 }
 
 .footer-brand {
-  color: var(--sel-text-100);
+    color: var(--sel-text-100);
 }
 
 .footer-grid p {
-  max-width: 520px;
+    max-width: 420px;
 
-  margin: 14px 0 0;
+    margin: 14px 0 0;
 
-  color: var(--sel-text-600);
+    color: var(--sel-text-600);
 
-  font-size: .78rem;
+    font-size: .78rem;
 }
 
 .footer-links {
-  display: flex;
-  gap: 65px;
+    display: flex;
+    gap: 65px;
 }
 
 .footer-links div {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 
-  gap: 8px;
-
-  font-size: .72rem;
+    font-size: .72rem;
 }
 
 .footer-links b {
-  margin-bottom: 4px;
+    margin-bottom: 4px;
 
-  color: var(--sel-text-100);
+    color: var(--sel-text-100);
 
-  font-size: .65rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+    font-size: .65rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
 }
 
 .footer-links a {
-  color: var(--sel-text-500);
-
-  transition: color var(--transition-fast);
+    color: var(--sel-text-500);
 }
 
 .footer-links a:hover {
-  color: var(--sel-teal);
+    color: var(--sel-teal);
 }
 
 .footer-bottom {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
 
-  gap: 15px;
+    margin-top: 60px;
+    padding-top: 18px;
 
-  margin-top: 60px;
-  padding-top: 18px;
+    border-top: 1px solid var(--sel-border-500);
 
-  border-top: 1px solid var(--sel-border-500);
+    color: var(--sel-text-600);
 
-  color: var(--sel-text-600);
-
-  font-size: .67rem;
+    font-size: .67rem;
 }
 
 
 /* =========================================================
-   19 — RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  .workflow {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .workflow-step:nth-child(3) {
-    border-right: 0;
-  }
-
-  .workflow-step:nth-child(n + 4) {
-    border-top: 1px solid var(--sel-border-500);
-  }
-
-}
-
+   MOBILE
+========================================================= */
 
 @media (max-width: 800px) {
 
-  .menu-toggle {
-    display: block;
-  }
+    .menu-toggle {
+        display: block;
+    }
 
-  .site-nav {
-    display: none;
+    .site-nav {
+        display: none;
 
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 78px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 78px;
 
-    padding: 10px 4%;
+        padding: 10px 4%;
 
-    background: var(--sel-bg-900);
+        background: var(--sel-bg-900);
+        border-bottom: 1px solid var(--sel-border-500);
 
-    border-bottom: 1px solid var(--sel-border-500);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
 
-    flex-direction: column;
-    align-items: stretch;
+    .site-nav.open {
+        display: flex;
+    }
 
-    gap: 0;
-  }
+    .site-nav a {
+        padding: 13px 0;
+    }
 
-  .site-nav.open {
-    display: flex;
-  }
+    .site-nav .nav-cta {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
 
-  .site-nav a {
-    padding: 13px 0;
+    .footer-grid {
+        display: block;
+    }
 
-    border-bottom: 1px solid var(--sel-border-500);
-  }
+    .footer-links {
+        margin-top: 30px;
+        gap: 40px;
+    }
 
-  .site-nav .nav-cta {
-    margin: 10px 0;
-    padding: 10px 12px;
-  }
+    .footer-bottom {
+        display: block;
+    }
 
-  .footer-grid {
-    display: block;
-  }
-
-  .footer-links {
-    margin-top: 30px;
-    gap: 40px;
-  }
-
-  .footer-bottom {
-    display: block;
-  }
-
-  .footer-bottom > * {
-    display: block;
-    margin-top: 7px;
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  .workflow {
-    display: block;
-  }
-
-  .workflow-step {
-    min-height: auto;
-
-    border-right: 0;
-    border-bottom: 1px solid var(--sel-border-500);
-  }
-
-  .workflow-step:last-child {
-    border-bottom: 0;
-  }
-
-  .workflow-step b {
-    margin-bottom: .8rem;
-  }
-
-  .domain-card {
-    min-height: 230px;
-  }
+    .footer-bottom > * {
+        display: block;
+        margin-top: 7px;
+    }
 
 }
