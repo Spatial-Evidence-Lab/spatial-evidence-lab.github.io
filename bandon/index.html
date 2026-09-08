@@ -51,11 +51,10 @@
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">SEL-002 · Spatial Accessibility Analysis</p>
-        <h1>Bandon Public Transport <em>Accessibility &amp; Equity</em></h1>
-        <p class="hero-lead">
-          A small-area spatial assessment of walking access, scheduled public transport
-          service, population vulnerability and potential transport disadvantage in
+        <div class="hero-project-id">SEL-002 · BANDON PUBLIC TRANSPORT ACCESSIBILITY</div>
+        <h1>Public Transport Accessibility Analysis</h1>
+        <p class="hero-subtitle">
+          A multidimensional accessibility, vulnerability and hotspot screening study for
           Bandon, County Cork, Ireland.
         </p>
 
@@ -64,11 +63,11 @@
           <a class="button button-secondary" href="#maps">Explore maps</a>
         </div>
 
-        <div class="hero-stats" aria-label="Project context">
-          <div><strong>8,196</strong><span>Residents</span><small>Census 2022</small></div>
-          <div class="kpi-cork"><strong>30 <b>km</b></strong><span>To Cork City</span><small>Commuter &amp; gateway node</small></div>
-          <div><strong>4</strong><span>Principal bus stops</span><small>Regional network modelled</small></div>
-          <div><strong>60 / 40</strong><span>Weighting</span><small>Vulnerability / access deficit</small></div>
+        <div class="hero-metrics" aria-label="Project context">
+          <div class="metric-card"><span class="metric-value">8,196</span><span class="metric-label">Residents</span><small>Census 2022</small></div>
+          <div class="metric-card"><span class="metric-value">30 km</span><span class="metric-label">To Cork City</span><small>Commuter &amp; gateway node</small></div>
+          <div class="metric-card"><span class="metric-value">4</span><span class="metric-label">Principal bus stops</span><small>Regional network modelled</small></div>
+          <div class="metric-card"><span class="metric-value">60 / 40</span><span class="metric-label">Weighting</span><small>Vulnerability / access deficit</small></div>
         </div>
       </div>
 
@@ -389,23 +388,16 @@
         </article>
       </div>
 
-      <div class="formula-card">
-        <div>
-          <span>ANALYTICAL INTEGRATION</span>
-          <h3>Composite accessibility &amp; equity screening</h3>
+      <section class="formula-section">
+        <div class="formula-card">
+          <span class="formula-label">HOTSPOT SCREENING MODEL</span>
+          <h2>Hotspot Score = 0.60 × VUL<sub>norm</sub> + 0.40 × Access Deficit</h2>
           <p>
-            Walking accessibility and scheduled service frequency are combined to
-            produce the Composite Accessibility Index. The result is used to derive
-            an accessibility deficit, which is combined with normalised vulnerability
-            for the final equity-focused hotspot screening.
+            Higher values indicate greater combined screening priority across Bandon's
+            Small Areas, combining population vulnerability with public transport access deficits.
           </p>
         </div>
-        <div class="formula">
-          <small>HOTSPOT SCREENING MODEL</small>
-          <strong>Hotspot Score = 0.40 × Access Deficit + 0.60 × VUL<sub>norm</sub></strong>
-          <p>Higher values indicate greater combined screening priority.</p>
-        </div>
-      </div>
+      </section>
 
       <div class="principles">
         <article><span>Interpretation principle</span><h3>Accessibility is multidimensional</h3><p>Proximity to a public transport stop is not treated as a complete measure of accessibility. Walking connectivity and scheduled service both contribute to effective access.</p></article>
@@ -533,14 +525,9 @@
 
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <strong>Spatial Evidence Lab</strong>
-      <span>SEL-002 · Bandon Public Transport Accessibility &amp; Equity</span>
-    </div>
-    <a href="../index.html">← Return to Spatial Evidence Lab</a>
-  </div>
+<footer class="footer">
+  <div class="footer-brand">SEL-002 · BANDON PUBLIC TRANSPORT ACCESSIBILITY</div>
+  <div class="footer-copy">Spatial Evidence Lab Ireland • Independent Geospatial Research &amp; Spatial Analytics</div>
 </footer>
 
 <script>

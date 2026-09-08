@@ -13,6 +13,8 @@ name="description"
 content="Spatial Evidence Lab — independent geospatial research, spatial analytics and geographic data engineering."
 >
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
 
 /* =========================================================
@@ -574,6 +576,122 @@ color:#fff;
 height:1.35rem;
 }
 
+.methodology-pipeline{
+margin:34px 0 24px;
+padding:24px 0;
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+}
+
+.methodology-pipeline .section-header{
+display:grid;
+grid-template-columns:auto 1fr;
+column-gap:12px;
+align-items:baseline;
+margin-bottom:20px;
+}
+
+.methodology-pipeline .section-number{
+color:var(--cyan);
+font-size:.7rem;
+font-weight:800;
+letter-spacing:.12em;
+}
+
+.methodology-pipeline h2{
+margin:0;
+color:var(--white);
+font-size:1.1rem;
+}
+
+.methodology-pipeline .section-header p{
+grid-column:2;
+margin:3px 0 0;
+color:#D0DCE2;
+font-size:.78rem;
+}
+
+.pipeline-grid{
+display:grid;
+grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);
+gap:10px;
+align-items:stretch;
+}
+
+.pipeline-step{
+min-width:0;
+padding:18px 14px;
+background:var(--navy-2);
+border-top:3px solid var(--teal);
+text-align:center;
+}
+
+.pipeline-step:nth-of-type(3){
+border-top-color:var(--orange);
+}
+
+.pipeline-step h3{
+margin:12px 0 7px;
+color:var(--white);
+font-size:.82rem;
+line-height:1.2;
+}
+
+.pipeline-step p{
+margin:0;
+color:#B8C9D2;
+font-size:.68rem;
+line-height:1.45;
+}
+
+.pipeline-icon{
+display:grid;
+place-items:center;
+width:40px;
+height:40px;
+margin:0 auto;
+border:1px solid currentColor;
+border-radius:50%;
+font-size:1rem;
+}
+
+.pipeline-icon.census{color:var(--cyan)}
+.pipeline-icon.indicators{color:#6BD39B}
+.pipeline-icon.normalisation{color:var(--yellow)}
+.pipeline-icon.uraf{color:var(--orange)}
+.pipeline-icon.qoli{color:var(--pink)}
+
+.pipeline-arrow{
+display:grid;
+place-items:center;
+color:var(--cyan);
+font-size:.85rem;
+}
+
+@media(max-width:900px){
+.pipeline-grid{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.pipeline-arrow{
+display:none;
+}
+}
+
+@media(max-width:600px){
+.methodology-pipeline .section-header{
+display:block;
+}
+
+.methodology-pipeline .section-header p{
+margin-top:6px;
+}
+
+.pipeline-grid{
+grid-template-columns:1fr;
+}
+}
+
 
 /* =========================================================
   PILLS
@@ -883,6 +1001,46 @@ flex-direction:column;
 flex:1;
 }
 
+.project-image{
+width:100%;
+height:220px;
+overflow:hidden;
+background:#E8ECEF;
+}
+
+.project-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
+display:block;
+}
+
+.project-content{
+padding:13px;
+display:flex;
+flex-direction:column;
+height:100%;
+}
+
+.project-content h3{
+margin:8px 0;
+font-size:.9rem;
+line-height:1.2;
+}
+
+.project-content p{
+color:#B8C9D2;
+font-size:.72rem;
+}
+
+.project-link{
+margin-top:auto;
+color:var(--cyan);
+font-size:.72rem;
+font-weight:800;
+}
+
 .project-id{
 color:var(--cyan);
 
@@ -1000,6 +1158,105 @@ margin-bottom:5px;
 font-size:.72rem;
 
 color:var(--muted);
+}
+
+.engineering-workflow{
+margin:34px auto 24px;
+width:min(1180px,calc(100% - 48px));
+padding:24px 0;
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+}
+
+.engineering-workflow .section-header{
+display:grid;
+grid-template-columns:auto 1fr;
+column-gap:12px;
+align-items:baseline;
+margin-bottom:20px;
+}
+
+.engineering-workflow .section-number{
+color:var(--cyan);
+font-size:.7rem;
+font-weight:800;
+letter-spacing:.12em;
+}
+
+.engineering-workflow .section-header h2{
+margin:0;
+color:var(--white);
+font-size:1.1rem;
+}
+
+.engineering-workflow .section-header p{
+grid-column:2;
+margin:3px 0 0;
+color:#D0DCE2;
+font-size:.78rem;
+}
+
+.workflow-grid{
+display:grid;
+grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);
+gap:10px;
+align-items:stretch;
+}
+
+.workflow-item{
+min-width:0;
+padding:18px 14px;
+background:var(--navy-2);
+border-top:3px solid var(--teal);
+text-align:center;
+}
+
+.workflow-item:nth-of-type(3){
+border-top-color:var(--orange);
+}
+
+.workflow-icon{
+display:block;
+margin:0 auto 12px;
+color:var(--cyan);
+font-size:1.35rem;
+}
+
+.workflow-item:nth-of-type(3) .workflow-icon{color:var(--orange)}
+.workflow-item:nth-of-type(5) .workflow-icon{color:var(--teal-light)}
+.workflow-item:nth-of-type(7) .workflow-icon{color:var(--yellow)}
+
+.workflow-item h4{
+margin:0 0 7px;
+color:var(--white);
+font-size:.82rem;
+line-height:1.2;
+}
+
+.workflow-item p{
+margin:0;
+color:#B8C9D2;
+font-size:.68rem;
+line-height:1.45;
+}
+
+.workflow-arrow{
+display:grid;
+place-items:center;
+color:var(--cyan);
+font-size:.85rem;
+}
+
+@media(max-width:900px){
+.workflow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.workflow-arrow{display:none}
+}
+
+@media(max-width:600px){
+.engineering-workflow{width:min(92%,1180px)}
+.engineering-workflow .section-header{display:block}
+.engineering-workflow .section-header p{margin-top:6px}
+.workflow-grid{grid-template-columns:1fr}
 }
 
 
@@ -1722,78 +1979,74 @@ measures and Urban–Rural Adjustment Functions (URAF).
 </p>
 
 
-<div class="pipeline">
+<!-- ========================================================= -->
+<!-- METHODOLOGY PIPELINE -->
+<!-- ========================================================= -->
+<section class="methodology-pipeline section">
+    <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Methodology Pipeline</h2>
+        <p>Spatial Evidence Lab Quality of Life Index production workflow.</p>
+    </div>
 
-<div class="pipeline-title">
-Methodology pipeline
-</div>
+    <div class="pipeline-grid">
+        <div class="pipeline-step">
+            <div class="pipeline-icon census">
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+            </div>
+            <h3>Census &amp; Spatial Data</h3>
+            <p>CSO Census 2022, OSM, GTFS, HSE, EPA, OPW and national geospatial datasets.</p>
+        </div>
 
+        <div class="pipeline-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
 
-<div class="pipeline-row">
+        <div class="pipeline-step">
+            <div class="pipeline-icon indicators">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+            </div>
+            <h3>53 Indicators</h3>
+            <p>Accessibility, Health, Environment, Education, Community and Urban Vitality.</p>
+        </div>
 
-<div class="step">
-                <div class="step-icon">
-                  ▤
-                </div>
+        <div class="pipeline-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
 
-Census Data
+        <div class="pipeline-step">
+            <div class="pipeline-icon normalisation">
+                <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+            </div>
+            <h3>Normalisation</h3>
+            <p>Indicator transformation onto a comparable 0–100 spatial scale.</p>
+        </div>
 
-</div>
+        <div class="pipeline-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
 
-              <div class="step">
-                →
-              </div>
+        <div class="pipeline-step">
+            <div class="pipeline-icon uraf">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+            <h3>URAF Adjustment</h3>
+            <p>Urban–Rural Adjustment Framework applied across all Small Areas.</p>
+        </div>
 
-<div class="step">
-                <div class="step-icon">
-                  ▥
-                </div>
+        <div class="pipeline-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
 
-Indicators
-
-</div>
-
-              <div class="step">
-                →
-              </div>
-
-<div class="step">
-                <div class="step-icon">
-                </div>
-
-Normalisation
-
-</div>
-
-              <div class="step">
-                →
-              </div>
-
-<div class="step">
-                <div class="step-icon">
-                  ♧
-                </div>
-
-URAF
-
-</div>
-
-              <div class="step">
-                →
-              </div>
-
-<div class="step">
-                <div class="step-icon">
-                  ◎
-                </div>
-
-Index
-
-</div>
-
-</div>
-
-</div>
+        <div class="pipeline-step">
+            <div class="pipeline-icon qoli">
+                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+            </div>
+            <h3>Quality of Life Index</h3>
+            <p>National QoLI scores and deciles for 18,919 Small Areas.</p>
+        </div>
+    </div>
+</section>
 
 
 <div class="pills">
@@ -2236,46 +2489,25 @@ Research Domain →
            SEL-002 — ACCESSIBILITY
            ================================================= -->
 
-<a
-href="/bandon/"
-class="project-card"
-id="project-sel-002"
-aria-label="Open SEL-002 Bandon Public Transport Accessibility Analysis"
->
-
-<img
-src="/project-bandon.jpg"
-alt="SEL-002 — Bandon Public Transport Accessibility Analysis"
-loading="lazy"
->
-
-<div class="project-body">
-
-<div class="project-id">
-SEL-002
-</div>
-
-<h3>
-Bandon PT Accessibility
-</h3>
-
-<p>
-Spatial assessment of public transport accessibility in Bandon,
-combining walking access, service frequency and population
-vulnerability.
-</p>
-
-<span class="badge">
-ACCESSIBILITY
-</span>
-
-<span class="project-domain-link">
-Open Bandon Research →
-</span>
-
-</div>
-
-</a>
+<article class="project-card" id="project-sel-002">
+    <div class="project-image">
+        <img src="/project-bandon.jpg"
+             alt="Bandon Public Transport Accessibility"
+             loading="lazy">
+    </div>
+    <div class="project-content">
+        <span class="project-id">SEL-002</span>
+        <h3>BANDON PUBLIC TRANSPORT ACCESSIBILITY</h3>
+        <p>
+            Multi-dimensional accessibility and vulnerability analysis for Bandon,
+            County Cork using GTFS public transport networks, walking accessibility,
+            population vulnerability and hotspot screening methodology.
+        </p>
+        <a href="https://spatial-evidence-lab.github.io/bandon/" class="project-link">
+            View Project →
+        </a>
+    </div>
+</article>
 
 
       <!-- SEL-005 -->
@@ -2513,97 +2745,58 @@ style="height:1px"
     METHODS & SPATIAL DATA ENGINEERING
     ========================================================= -->
 
+<section class="engineering-workflow section">
+
+    <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>Methods &amp; Spatial Data Engineering</h2>
+        <p>End-to-end spatial data engineering workflow used across Spatial Evidence Lab projects.</p>
+    </div>
+
+    <div class="workflow-grid">
+
+        <div class="workflow-item">
+            <i class="fa-solid fa-database workflow-icon" aria-hidden="true"></i>
+            <h4>Spatial Data Engineering</h4>
+            <p>ETL • PostgreSQL • PostGIS • Metadata • QA/QC</p>
+        </div>
+
+        <div class="workflow-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div class="workflow-item">
+            <i class="fa-solid fa-gears workflow-icon" aria-hidden="true"></i>
+            <h4>Indicator Production</h4>
+            <p>Network analysis • Raster processing • Spatial joins</p>
+        </div>
+
+        <div class="workflow-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div class="workflow-item">
+            <i class="fa-solid fa-map workflow-icon" aria-hidden="true"></i>
+            <h4>Spatial Analysis</h4>
+            <p>Accessibility • Hotspots • Vulnerability • Deciles</p>
+        </div>
+
+        <div class="workflow-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div class="workflow-item">
+            <i class="fa-solid fa-chart-column workflow-icon" aria-hidden="true"></i>
+            <h4>Policy Outputs</h4>
+            <p>Maps • Reports • Dashboards • Planning Evidence</p>
+        </div>
+
+    </div>
+
+</section>
+
 <section id="methods">
-
 <div class="container engineering">
-
-
-    <!-- METHODS PANEL -->
-
-<div class="panel">
-
-<h2>
-METHODS &amp; SPATIAL DATA ENGINEERING
-</h2>
-
-<p>
-Building structured spatial data pipelines that transform datasets
-into reproducible evidence.
-</p>
-
-
-<div class="pipeline-large">
-
-<div class="pipe-step">
-
-          <strong>
-            ▤
-          </strong>
-
-SOURCE
-
-</div>
-
-        <div>→</div>
-        <div>
-          →
-        </div>
-
-<div class="pipe-step">
-
-          <strong>
-            ▦
-          </strong>
-
-STAGING
-
-</div>
-
-        <div>→</div>
-        <div>
-          →
-        </div>
-
-<div class="pipe-step">
-
-          <strong aria-hidden="true"></strong>
-
-SPATIAL ANALYSIS
-
-</div>
-
-        <div>→</div>
-        <div>
-          →
-        </div>
-
-<div class="pipe-step">
-
-          <strong>
-            ◎
-          </strong>
-
-EVIDENCE
-
-</div>
-
-</div>
-
-
-<div class="tech">
-
-        <span>Postgres</span>
-        <span>PostGIS</span>
-        <span>DBeaver</span>
-        <span>Python</span>
-        <span>ArcGIS</span>
-        <span>QGIS</span>
-
-</div>
-
-</div>
-
-
 <!-- DATA PANEL -->
 
 <div
