@@ -18,8 +18,6 @@
 
     min-height: 44px;
 
-    max-width: 100%;
-
     padding: 11px 17px;
 
     border: 1px solid var(--sel-line);
@@ -36,8 +34,7 @@
         background-color var(--sel-transition),
         border-color var(--sel-transition),
         color var(--sel-transition),
-        transform var(--sel-transition),
-        box-shadow var(--sel-transition);
+        transform var(--sel-transition);
 }
 
 
@@ -48,7 +45,9 @@
 
 .button-primary {
     background: var(--sel-blue);
+
     border-color: var(--sel-blue);
+
     color: var(--sel-white);
 }
 
@@ -61,7 +60,9 @@
 
 .button-light {
     background: var(--sel-white);
+
     border-color: var(--sel-white);
+
     color: var(--sel-navy);
 }
 
@@ -74,7 +75,9 @@
 
 .button-dark {
     background: var(--sel-blue);
+
     border-color: var(--sel-blue);
+
     color: var(--sel-white);
 }
 
@@ -87,20 +90,24 @@
 
 .button-ghost {
     background: transparent;
+
     border-color: var(--sel-line);
+
     color: var(--sel-text);
 }
 
 
 .button-ghost:hover {
-    border-color: var(--sel-accent);
-    color: var(--sel-accent);
+    border-color: var(--sel-blue);
+    color: var(--sel-blue);
 }
 
 
 .button-ghost-dark {
     background: transparent;
+
     border-color: rgba(255,255,255,.32);
+
     color: var(--sel-white);
 }
 
@@ -116,6 +123,7 @@
    ========================================================= */
 
 .site-header {
+
     position: sticky;
 
     top: 0;
@@ -123,7 +131,6 @@
     z-index: 1000;
 
     width: 100%;
-    max-width: 100%;
 
     min-height: var(--sel-header-height);
 
@@ -133,26 +140,22 @@
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-
-    overflow-x: clip;
 }
 
 
 .nav-wrap {
-    width: calc(100% - 48px);
-    max-width: var(--max);
 
     min-height: var(--sel-header-height);
 
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 28px;
 
-    margin-left: auto;
-    margin-right: auto;
+    min-width: 0;
 }
 
 
@@ -161,19 +164,21 @@
    ========================================================= */
 
 .wordmark {
+
     display: inline-flex;
 
     align-items: center;
 
-    flex-shrink: 1;
+    gap: 10px;
+
+    flex: 0 0 auto;
 
     min-width: 0;
-
-    gap: 10px;
 
     color: var(--sel-white);
 
     font-size: .92rem;
+
     line-height: 1;
 
     letter-spacing: -.025em;
@@ -183,6 +188,7 @@
 
 
 .wordmark-logo {
+
     width: 34px;
     height: 34px;
 
@@ -193,9 +199,8 @@
 
 
 .wordmark-name {
-    display: inline-block;
 
-    min-width: 0;
+    display: inline-block;
 
     white-space: nowrap;
 }
@@ -207,10 +212,11 @@
 
 
 /* =========================================================
-   PRIMARY NAVIGATION
+   NAVIGATION
    ========================================================= */
 
 .site-nav {
+
     display: flex;
 
     align-items: center;
@@ -222,6 +228,7 @@
 
 
 .site-nav a {
+
     display: inline-flex;
 
     align-items: center;
@@ -235,12 +242,16 @@
     color: var(--sel-text-soft);
 
     font-size: .69rem;
+
     font-weight: 800;
 
     line-height: 1;
 
     letter-spacing: .07em;
+
     text-transform: uppercase;
+
+    white-space: nowrap;
 
     transition:
         color var(--sel-transition),
@@ -250,7 +261,9 @@
 
 .site-nav a:hover,
 .site-nav a.active {
+
     color: var(--sel-accent);
+
     border-bottom-color: var(--sel-accent);
 }
 
@@ -260,6 +273,7 @@
    ========================================================= */
 
 .site-nav .nav-cta {
+
     min-height: auto;
 
     padding: 9px 12px;
@@ -271,7 +285,9 @@
 
 
 .site-nav .nav-cta:hover {
+
     border-color: var(--sel-accent);
+
     color: var(--sel-accent);
 }
 
@@ -281,9 +297,11 @@
    ========================================================= */
 
 .menu-toggle {
+
     display: none;
 
-    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
 
     padding: 9px 12px;
 
@@ -294,6 +312,7 @@
     color: var(--sel-text);
 
     font-size: .72rem;
+
     font-weight: 800;
 
     line-height: 1;
@@ -301,7 +320,9 @@
 
 
 .menu-toggle:hover {
+
     border-color: var(--sel-accent);
+
     color: var(--sel-accent);
 }
 
@@ -311,30 +332,27 @@
    ========================================================= */
 
 .site-footer {
-    width: 100%;
-    max-width: 100%;
 
-    margin: 0;
-    padding: 64px 0 22px;
+    width: 100%;
 
     background: #07151B;
 
     color: var(--sel-text);
 
+    padding: 64px 0 22px;
+
     border: 0;
 
-    overflow-x: clip;
+    overflow: hidden;
 }
 
 
 .footer-grid {
-    width: 100%;
-    max-width: 100%;
 
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1fr)
+        minmax(0,1fr)
         auto;
 
     gap: 60px;
@@ -346,16 +364,20 @@
 
 
 .footer-identity {
+
     min-width: 0;
 }
 
 
 .footer-brand-lockup {
-    display: flex;
+
+    display: inline-flex;
 
     align-items: center;
 
     gap: 10px;
+
+    max-width: 100%;
 
     min-width: 0;
 
@@ -364,6 +386,7 @@
 
 
 .footer-brand-lockup img {
+
     width: 30px;
     height: 30px;
 
@@ -374,13 +397,14 @@
 
 
 .footer-brand {
+
     display: inline-block;
 
     color: var(--sel-white);
 
-    font-size: .92rem;
+    font-size: .95rem;
 
-    line-height: 1;
+    line-height: 1.2;
 
     font-weight: 800;
 
@@ -393,6 +417,7 @@
    ========================================================= */
 
 .footer-links {
+
     display: flex;
 
     align-items: flex-start;
@@ -404,6 +429,7 @@
 
 
 .footer-links > div {
+
     display: flex;
 
     flex-direction: column;
@@ -415,32 +441,33 @@
 
 
 .footer-links b {
+
     margin-bottom: 4px;
 
     color: var(--sel-white);
 
-    font-size: .64rem;
+    font-size: .65rem;
+
     font-weight: 850;
 
-    line-height: 1.2;
-
     letter-spacing: .10em;
+
     text-transform: uppercase;
 }
 
 
 .footer-links a {
+
     color: var(--sel-text-soft);
 
     font-size: .72rem;
 
     line-height: 1.4;
-
-    transition: color var(--sel-transition);
 }
 
 
 .footer-links a:hover {
+
     color: var(--sel-accent);
 }
 
@@ -450,14 +477,17 @@
    ========================================================= */
 
 .footer-bottom {
+
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 15px;
 
     margin-top: 55px;
+
     padding-top: 18px;
 
     border-top: 1px solid rgba(255,255,255,.12);
@@ -465,6 +495,8 @@
     color: var(--sel-muted);
 
     font-size: .67rem;
+
+    min-width: 0;
 }
 
 
@@ -481,26 +513,18 @@
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
 @media (max-width: 800px) {
 
-    .nav-wrap {
-        width: calc(100% - 32px);
-    }
-
-
     .menu-toggle {
+
         display: inline-flex;
 
-        align-items: center;
-        justify-content: center;
+        flex: 0 0 auto;
     }
 
 
     .site-nav {
+
         position: absolute;
 
         top: var(--sel-header-height);
@@ -508,28 +532,22 @@
         left: 0;
         right: 0;
 
-        width: 100%;
-        max-width: 100%;
-
         display: none;
 
         flex-direction: column;
+
         align-items: stretch;
 
         gap: 0;
 
         padding:
-            8px
-            5%
-            14px;
+            8px 5% 14px;
 
         background: #102A32;
 
         border-bottom: 1px solid var(--sel-line);
 
         box-shadow: var(--sel-shadow-sm);
-
-        overflow-x: hidden;
     }
 
 
@@ -539,6 +557,7 @@
 
 
     .site-nav a {
+
         min-height: auto;
 
         padding: 13px 0;
@@ -553,6 +572,7 @@
 
 
     .site-nav .nav-cta {
+
         margin-top: 8px;
 
         padding: 11px 12px;
@@ -562,11 +582,14 @@
 
 
     .footer-grid {
+
         grid-template-columns: 1fr;
+
     }
 
 
     .footer-links {
+
         margin-top: 32px;
 
         gap: 45px;
@@ -574,11 +597,13 @@
 
 
     .footer-bottom {
+
         display: block;
     }
 
 
     .footer-bottom > * {
+
         display: block;
 
         margin-top: 7px;
@@ -586,10 +611,6 @@
 
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
 
 @media (max-width: 480px) {
 
@@ -599,6 +620,7 @@
 
 
     .wordmark-logo {
+
         width: 31px;
         height: 31px;
 
