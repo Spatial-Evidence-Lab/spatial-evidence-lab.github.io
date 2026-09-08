@@ -1,168 +1,221 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB
-   PORTFOLIO / HOMEPAGE SYSTEM
+   PORTFOLIO / RESEARCH PAGE LAYOUT
    ========================================================= */
 
 
 /* =========================================================
-   GLOBAL SECTION RESET
-========================================================= */
+   GLOBAL SECTION SAFETY
+   ========================================================= */
 
-.portfolio-hero,
+main,
+section,
+article,
+header,
+footer,
+div {
+    min-width: 0;
+}
+
+
+/*
+   Sections themselves occupy the viewport width.
+   Content is constrained by .shell.
+*/
+
 .project-section,
-.research-introduction,
-.research-domains,
-.geographic-scope,
-.research-workflow {
-    border-top: 0 !important;
-    border-bottom: 0 !important;
+.portfolio-hero,
+.site-footer {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow-x: hidden;
 }
 
 
 /* =========================================================
    HERO
-========================================================= */
+   ========================================================= */
 
 .portfolio-hero {
-    background: var(--sel-hero) !important;
-    color: var(--sel-text);
+    background: var(--sel-hero);
+    color: var(--sel-white);
 
-    padding: 92px 0 96px;
+    padding: 72px 0 82px;
 
-    border: 0 !important;
-}
-
-
-.portfolio-hero .shell {
     position: relative;
 }
 
 
-/* =========================================================
-   HERO EYEBROW
-========================================================= */
+/*
+   The hero background belongs to the section, not .shell.
+
+   This prevents the coloured background from extending
+   beyond the content boundaries.
+*/
+
+.portfolio-hero .shell {
+    width: min(
+        calc(100% - 48px),
+        var(--max)
+    );
+
+    max-width: var(--max);
+
+    margin-inline: auto;
+
+    min-width: 0;
+}
+
+
+/* Hero eyebrow */
 
 .research-eyebrow {
-    margin: 0 0 22px;
+    margin: 0 0 28px;
 
-    color: var(--sel-cyan-soft);
+    color: var(--sel-cyan);
 
-    font-size: .72rem;
-    font-weight: 850;
-    letter-spacing: .10em;
-    line-height: 1.4;
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+
+    line-height: 1.4;
 }
 
 
-/* =========================================================
-   HERO TITLE
-========================================================= */
+/* Hero title */
 
 .hero-title {
-    max-width: 1180px;
+    max-width: 1100px;
 
     margin: 0;
 
     color: #FFFFFF;
 
-    font-size: clamp(2.25rem, 5vw, 4.25rem);
-    font-weight: 750;
-    line-height: 1.05;
-    letter-spacing: -.055em;
+    font-size: clamp(
+        2rem,
+        4vw,
+        3.2rem
+    );
+
+    line-height: 1.08;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 800;
 }
 
 
-/* =========================================================
-   HERO COPY
-========================================================= */
+/* Hero copy */
 
 .hero-copy {
-    max-width: 980px;
+    max-width: 920px;
 
     margin-top: 28px;
+
+    min-width: 0;
 }
 
 
-.hero-copy p {
+.hero-lead {
     margin: 0;
 
-    color: #D0DDE1;
+    color: rgba(255, 255, 255, 0.92);
 
     font-size: 1rem;
-    line-height: 1.7;
-}
 
-
-.hero-copy .hero-lead {
-    color: #FFFFFF;
-
-    font-size: 1.05rem;
     line-height: 1.65;
 }
 
 
-/* =========================================================
-   HERO ACTIONS
-========================================================= */
+/* Hero buttons */
 
 .portfolio-hero .project-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-
-    margin-top: 34px;
+    margin-top: 32px;
 }
 
 
 /* =========================================================
-   STANDARD PROJECT SECTION
-========================================================= */
+   SHARED PROJECT SECTIONS
+   ========================================================= */
 
 .project-section {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 88px 0;
+
+    background: var(--sel-section);
+
+    color: var(--sel-text);
+
+    border: 0;
+
     position: relative;
 
-    background: var(--sel-section) !important;
-    color: var(--sel-text);
-
-    padding: 96px 0;
-
-    border: 0 !important;
+    overflow-x: hidden;
 }
 
 
-/* =========================================================
-   REMOVE OLD ALT / DARK BACKGROUNDS
-========================================================= */
+/*
+   IMPORTANT:
+
+   Explicitly remove borders/backgrounds that may have been
+   inherited from older versions of the stylesheet.
+*/
+
+.project-section::before,
+.project-section::after {
+    display: none;
+}
+
 
 .project-section.alt,
-.project-section.dark,
-.research-introduction,
-.research-domains,
-.geographic-scope,
-.research-workflow {
-    background: var(--sel-section) !important;
-    color: var(--sel-text);
+.project-section.dark {
+    background: var(--sel-section);
 
-    border-top: 0 !important;
-    border-bottom: 0 !important;
+    border-top: 0;
+    border-bottom: 0;
 }
 
 
 /* =========================================================
-   SECTION 01
-========================================================= */
+   SECTION HEADINGS
+   ========================================================= */
 
-.research-introduction {
-    padding-top: 100px;
-    padding-bottom: 105px;
+.project-section-head {
+    width: 100%;
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 64px;
+
+    align-items: start;
+
+    margin-bottom: 52px;
+}
+
+
+.project-section-head > * {
+    min-width: 0;
 }
 
 
 .programme-heading {
-    max-width: 1100px;
+    width: 100%;
+    max-width: 100%;
 
-    margin-bottom: 42px;
+    margin-bottom: 52px;
+
+    min-width: 0;
 }
 
 
@@ -171,383 +224,400 @@
 
     color: #FFFFFF;
 
-    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    font-size: clamp(
+        1.35rem,
+        2.2vw,
+        1.8rem
+    );
 
-    font-weight: 900;
-    line-height: 1.15;
+    line-height: 1.2;
 
-    letter-spacing: -.035em;
+    letter-spacing: -0.025em;
+
+    font-weight: 800;
 }
 
 
-.research-introduction .section-lead {
-    max-width: 900px;
+.project-number {
+    margin: 0 0 12px;
 
-    margin: 22px 0 0;
+    color: var(--sel-accent);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+.section-lead,
+.project-intro {
+    margin: 0;
+
+    max-width: 720px;
 
     color: var(--sel-text-soft);
 
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 0.95rem;
+
+    line-height: 1.65;
 }
 
 
 /* =========================================================
-   RESEARCH PRINCIPLES
-========================================================= */
+   RESEARCH PROGRAMME
+   ========================================================= */
+
+.research-introduction {
+    background: var(--sel-section);
+
+    padding-top: 92px;
+    padding-bottom: 92px;
+
+    border: 0;
+}
+
 
 .research-principles {
+    width: 100%;
+    max-width: 100%;
+
     display: grid;
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     gap: 18px;
 
-    max-width: 1050px;
+    min-width: 0;
 }
 
 
 .research-principle {
-    background: var(--sel-box);
-
-    border: 1px solid rgba(255,255,255,.12);
-
-    padding: 26px 28px;
-
     min-width: 0;
 
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 28px 26px;
+
     transition:
-        border-color .2s ease,
-        background-color .2s ease,
-        transform .2s ease;
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
 }
 
 
 .research-principle:hover {
-    background: #30423F;
-
-    border-color: rgba(0,215,232,.28);
-
     transform: translateY(-2px);
+
+    border-color: rgba(0, 215, 232, 0.28);
+
+    background: #30413E;
 }
 
 
-.research-principle-content h3 {
+.research-principle-content {
+    min-width: 0;
+}
+
+
+.research-principle h3 {
     margin: 0 0 10px;
 
     color: #FFFFFF;
 
-    font-size: 1.15rem;
-    font-weight: 850;
-    line-height: 1.2;
+    font-size: 1.05rem;
+
+    line-height: 1.25;
+
+    font-weight: 800;
 }
 
 
-.research-principle-content p {
+.research-principle p {
     margin: 0;
 
-    color: #B8C8CA;
+    color: var(--sel-text-soft);
 
-    font-size: .9rem;
+    font-size: 0.84rem;
+
     line-height: 1.6;
 }
 
 
 /* =========================================================
-   SECTION 02 — RESEARCH DOMAINS
-========================================================= */
+   RESEARCH DOMAINS
+   ========================================================= */
 
 .research-domains {
-    padding-top: 105px;
-    padding-bottom: 105px;
-}
+    background: var(--sel-section);
 
+    padding-top: 92px;
+    padding-bottom: 92px;
 
-.project-section-head {
-    display: grid;
-
-    grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr);
-
-    gap: 70px;
-
-    align-items: start;
-
-    margin-bottom: 48px;
+    border: 0;
 }
 
 
 .domain-heading {
-    margin-bottom: 44px;
+    margin-bottom: 46px;
 }
 
 
-.project-intro {
-    max-width: 650px;
+/*
+   TWO-COLUMN GRID
 
-    margin: 0;
-
-    color: var(--sel-text-soft);
-
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   DOMAIN GRID
-   Two columns
-========================================================= */
+   minmax(0, 1fr) is critical.
+   It prevents grid children from forcing the grid
+   beyond its available width.
+*/
 
 .domain-grid {
+    width: 100%;
+    max-width: 100%;
+
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 16px;
 
-    width: 100%;
+    min-width: 0;
 }
 
 
-/* =========================================================
-   DOMAIN CARD
-========================================================= */
-
 .domain-card {
+    min-width: 0;
+    max-width: 100%;
+
     display: flex;
     flex-direction: column;
 
-    min-width: 0;
-
-    min-height: 205px;
-
     background: var(--sel-box);
 
-    border: 1px solid rgba(255,255,255,.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
-    padding: 24px 26px;
+    border-radius: var(--radius-md);
+
+    padding: 22px 24px;
 
     color: var(--sel-text);
 
     transition:
-        background-color .2s ease,
-        border-color .2s ease,
-        transform .2s ease;
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
 .domain-card:hover {
-    background: #30423F;
-
-    border-color: rgba(0,215,232,.35);
-
     transform: translateY(-2px);
+
+    background: #30413E;
+
+    border-color: rgba(0, 215, 232, 0.28);
 }
 
 
 .domain-card-body {
-    flex: 1;
+    min-width: 0;
 }
 
 
 .domain-card h3 {
-    margin: 0 0 13px;
+    margin: 0;
 
     color: #FFFFFF;
 
-    font-size: 1.05rem;
+    font-size: 0.98rem;
+
+    line-height: 1.35;
+
     font-weight: 800;
-    line-height: 1.3;
 }
 
 
 .domain-question {
-    margin: 0;
+    margin: 10px 0 0;
 
-    color: #B8C8CA;
+    color: var(--sel-text-soft);
 
-    font-size: .88rem;
+    font-size: 0.8rem;
+
     line-height: 1.55;
 }
 
 
 .domain-card-footer {
     display: flex;
-    align-items: center;
+
     justify-content: space-between;
+    align-items: center;
 
-    gap: 12px;
+    gap: 15px;
 
-    margin-top: 25px;
+    margin-top: 22px;
     padding-top: 14px;
 
-    border-top: 1px solid rgba(255,255,255,.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-    color: #91A7AA;
+    color: var(--sel-muted);
 
-    font-size: .68rem;
-    font-weight: 750;
-    letter-spacing: .03em;
+    font-size: 0.65rem;
+
+    line-height: 1.4;
 }
 
 
 .domain-card-footer span:last-child {
     color: var(--sel-accent);
+
+    white-space: nowrap;
 }
 
-
-/* =========================================================
-   DOMAIN CTA
-========================================================= */
 
 .domain-cta {
-    margin-top: 30px;
+    margin-top: 32px;
 }
 
 
 /* =========================================================
-   SECTION 03 — GEOGRAPHIC SCOPE
-========================================================= */
+   GEOGRAPHIC SCOPE
+   ========================================================= */
 
 .geographic-scope {
-    padding-top: 105px;
-    padding-bottom: 105px;
+    background: var(--sel-section);
+
+    padding-top: 92px;
+    padding-bottom: 92px;
+
+    border: 0;
 }
 
 
-/* =========================================================
-   SCOPE GRID
-========================================================= */
-
 .scope-grid {
+    width: 100%;
+    max-width: 100%;
+
     display: grid;
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-    gap: 18px;
+    gap: 16px;
 
-    margin-top: 10px;
+    min-width: 0;
 }
 
 
 .scope-item {
+    min-width: 0;
+    max-width: 100%;
+
     background: var(--sel-box);
 
-    border: 1px solid rgba(255,255,255,.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
-    padding: 24px 26px;
+    border-radius: var(--radius-md);
 
-    min-width: 0;
+    padding: 24px;
 
-    transition:
-        background-color .2s ease,
-        border-color .2s ease;
-}
-
-
-.scope-item:hover {
-    background: #30423F;
-
-    border-color: rgba(0,215,232,.28);
+    color: var(--sel-text);
 }
 
 
 .scope-item h3 {
-    margin: 0 0 10px;
+    margin: 0 0 9px;
 
     color: #FFFFFF;
 
-    font-size: 1.05rem;
+    font-size: 0.98rem;
+
+    line-height: 1.3;
+
     font-weight: 800;
-    line-height: 1.25;
 }
 
 
 .scope-item p {
     margin: 0;
 
-    color: #B8C8CA;
+    color: var(--sel-text-soft);
 
-    font-size: .86rem;
+    font-size: 0.8rem;
+
     line-height: 1.55;
 }
 
 
 /* =========================================================
-   SECTION 04 — RESEARCH APPROACH
-========================================================= */
+   RESEARCH WORKFLOW
+   ========================================================= */
 
 .research-workflow {
-    padding-top: 105px;
-    padding-bottom: 110px;
+    background: var(--sel-section);
 
-    border-top: 0 !important;
-    border-bottom: 0 !important;
+    padding-top: 92px;
+    padding-bottom: 92px;
+
+    border: 0;
 }
 
 
-/* =========================================================
-   WORKFLOW GRID
-========================================================= */
-
 .workflow {
+    width: 100%;
+    max-width: 100%;
+
     display: grid;
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     gap: 16px;
 
-    margin-top: 12px;
+    min-width: 0;
 }
 
 
-/* =========================================================
-   WORKFLOW CARD
-========================================================= */
-
 .workflow-step {
-    display: flex;
-    flex-direction: column;
-
     min-width: 0;
-    min-height: 190px;
+    max-width: 100%;
 
     background: var(--sel-box);
 
-    border: 1px solid rgba(255,255,255,.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
-    padding: 26px 28px;
+    border-radius: var(--radius-md);
 
-    transition:
-        background-color .2s ease,
-        border-color .2s ease,
-        transform .2s ease;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
 }
 
-
-.workflow-step:hover {
-    background: #30423F;
-
-    border-color: rgba(0,215,232,.28);
-
-    transform: translateY(-2px);
-}
-
-
-/* Large sequence numbers */
 
 .workflow-step b {
     display: block;
 
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 
-    color: var(--sel-cyan-soft);
+    color: var(--sel-accent);
 
-    font-size: 2.2rem;
-    font-weight: 900;
+    font-size: 1.65rem;
+
     line-height: 1;
 
-    letter-spacing: -.04em;
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
 }
 
 
@@ -556,78 +626,186 @@
 
     color: #FFFFFF;
 
-    font-size: .98rem;
-    font-weight: 850;
+    font-size: 0.9rem;
+
     line-height: 1.3;
+
+    font-weight: 800;
 }
 
 
 .workflow-step span {
     display: block;
 
-    margin-top: 8px;
+    color: var(--sel-text-soft);
 
-    color: #B8C8CA;
+    font-size: 0.76rem;
 
-    font-size: .82rem;
     line-height: 1.5;
 }
 
 
 /* =========================================================
-   WORKFLOW ACTIONS
-========================================================= */
+   BUTTON AREA
+   ========================================================= */
 
-.research-workflow .project-actions {
+.project-actions {
     display: flex;
+
     flex-wrap: wrap;
+
+    align-items: center;
 
     gap: 12px;
 
-    margin-top: 32px;
+    min-width: 0;
 }
 
 
 /* =========================================================
-   HERO / SECTION ACCENTS
-========================================================= */
+   FOOTER
+   ========================================================= */
 
-.project-number,
-.research-eyebrow {
-    color: var(--sel-accent);
-}
-
-
-.domain-arrow,
-.scope-number {
-    color: var(--sel-accent);
-}
-
-
-/* =========================================================
-   PREVENT HORIZONTAL OVERFLOW
-========================================================= */
-
-html,
-body {
+.site-footer {
+    width: 100%;
     max-width: 100%;
+
+    background: #07151B;
+
+    color: var(--sel-text);
+
+    padding: 64px 0 22px;
+
+    border: 0;
+
     overflow-x: hidden;
 }
 
 
-.project-section > .shell,
-.portfolio-hero > .shell {
-    width: min(92%, var(--max));
-
+.footer-grid {
+    width: 100%;
     max-width: 100%;
 
-    margin-inline: auto;
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    gap: 60px;
+
+    align-items: start;
+
+    min-width: 0;
+}
+
+
+.footer-identity {
+    min-width: 0;
+}
+
+
+.footer-brand-lockup {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+
+.footer-brand-lockup img {
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    object-fit: contain;
+}
+
+
+.footer-brand {
+    color: #FFFFFF;
+
+    font-size: 0.95rem;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+.footer-links {
+    display: flex;
+
+    gap: 60px;
+
+    min-width: 0;
+}
+
+
+.footer-links div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+
+.footer-links b {
+    margin-bottom: 4px;
+
+    color: #FFFFFF;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+.footer-links a {
+    color: var(--sel-text-soft);
+
+    font-size: 0.72rem;
+
+    line-height: 1.4;
+}
+
+
+.footer-links a:hover {
+    color: var(--sel-accent);
+}
+
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 55px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: var(--sel-muted);
+
+    font-size: 0.67rem;
 }
 
 
 /* =========================================================
-   MOBILE
-========================================================= */
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
 
@@ -635,6 +813,8 @@ body {
         grid-template-columns: 1fr;
 
         gap: 24px;
+
+        margin-bottom: 38px;
     }
 
 
@@ -644,99 +824,68 @@ body {
 
 
     .scope-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
 
     .workflow {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
 
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
     .portfolio-hero {
-        padding: 70px 0 76px;
+        padding: 54px 0 62px;
     }
 
 
     .hero-title {
-        font-size: clamp(2rem, 9vw, 3rem);
-        line-height: 1.08;
+        font-size: 1.75rem;
+
+        line-height: 1.12;
     }
 
 
-    .project-section {
-        padding: 72px 0;
+    .research-eyebrow {
+        margin-bottom: 20px;
+
+        font-size: 0.62rem;
     }
 
 
+    .project-section,
     .research-introduction,
     .research-domains,
     .geographic-scope,
     .research-workflow {
-        padding-top: 75px;
-        padding-bottom: 78px;
+        padding-top: 64px;
+        padding-bottom: 64px;
     }
 
 
     .programme-title {
-        font-size: 1.65rem;
+        font-size: 1.3rem;
     }
 
 
-    .domain-grid {
-        grid-template-columns: 1fr;
-    }
-
-
+    .domain-grid,
+    .scope-grid,
     .workflow {
         grid-template-columns: 1fr;
-    }
-
-
-    .domain-card {
-        min-height: 0;
-    }
-
-
-    .workflow-step {
-        min-height: 0;
-    }
-
-
-    .workflow-step b {
-        margin-bottom: 20px;
-    }
-}
-
-
-@media (max-width: 480px) {
-
-    .research-eyebrow {
-        font-size: .65rem;
-    }
-
-
-    .hero-title {
-        font-size: 1.9rem;
-    }
-
-
-    .hero-copy .hero-lead {
-        font-size: .95rem;
-    }
-
-
-    .button {
-        width: 100%;
-    }
-
-
-    .portfolio-hero .project-actions,
-    .research-workflow .project-actions {
-        flex-direction: column;
     }
 
 
@@ -744,6 +893,70 @@ body {
     .scope-item,
     .workflow-step,
     .research-principle {
-        padding: 22px;
+        width: 100%;
+        max-width: 100%;
     }
+
+
+    .footer-links {
+        gap: 35px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .footer-bottom {
+        display: block;
+    }
+
+
+    .footer-bottom > * {
+        display: block;
+
+        margin-top: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .shell {
+        width: calc(100% - 28px);
+    }
+
+
+    .hero-title {
+        font-size: 1.55rem;
+    }
+
+
+    .domain-card,
+    .scope-item,
+    .workflow-step,
+    .research-principle {
+        padding: 20px;
+    }
+
+
+    .project-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .project-actions .button {
+        width: 100%;
+    }
+
+
+    .footer-brand {
+        font-size: 0.85rem;
+    }
+
 }
