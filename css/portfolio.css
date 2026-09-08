@@ -1,4 +1,923 @@
 /* =========================================================
+   SPATIAL EVIDENCE LAB
+   HOMEPAGE / RESEARCH PORTFOLIO
+   portfolio.css
+
+   PURPOSE
+   ---------------------------------------------------------
+   This stylesheet controls ONLY the homepage research
+   programme:
+
+       HERO
+       01 · RESEARCH PROGRAMME
+       02 · RESEARCH DOMAINS
+       03 · GEOGRAPHIC SCOPE
+       04 · RESEARCH APPROACH
+
+   IMPORTANT
+   ---------------------------------------------------------
+   Sections 01–04 intentionally share EXACTLY the same
+   background colour.
+
+   There are NO .dark or .alt section styles in this file.
+
+   There are NO horizontal section framing lines.
+
+   This prevents the previous CSS conflicts.
+   ========================================================= */
+
+
+/* =========================================================
+   01. HOMEPAGE BASE
+========================================================= */
+
+#main-content {
+    background: var(--sel-paper);
+}
+
+
+/* =========================================================
+   02. HERO
+========================================================= */
+
+.portfolio-hero {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #07111F 0%,
+            #0B1828 58%,
+            #102338 100%
+        );
+
+    color: var(--sel-white);
+
+    padding:
+        74px
+        0
+        82px;
+
+    overflow: hidden;
+}
+
+
+/* subtle map-like background detail */
+
+.portfolio-hero::after {
+    content: "";
+
+    position: absolute;
+
+    right: -120px;
+    top: -180px;
+
+    width: 520px;
+    height: 520px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.055);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.portfolio-hero .shell {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   03. HERO EYEBROW
+========================================================= */
+
+.research-eyebrow {
+    margin: 0 0 24px;
+
+    color: #8ED1D8;
+
+    font-size: .68rem;
+    font-weight: 850;
+
+    line-height: 1.4;
+
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   04. HERO TITLE
+========================================================= */
+
+.hero-title {
+    max-width: 1100px;
+
+    margin: 0;
+
+    color: var(--sel-white);
+
+    font-size:
+        clamp(
+            1.55rem,
+            2.8vw,
+            2.15rem
+        );
+
+    font-weight: 850;
+
+    line-height: 1.12;
+
+    letter-spacing: -.035em;
+}
+
+
+/* =========================================================
+   05. HERO COPY
+========================================================= */
+
+.hero-copy {
+    max-width: 940px;
+
+    margin-top: 24px;
+}
+
+
+.hero-copy p {
+    margin: 0;
+
+    color: #D7E3EE;
+
+    font-size: .95rem;
+
+    line-height: 1.65;
+}
+
+
+.hero-lead {
+    max-width: 900px;
+}
+
+
+/* =========================================================
+   06. HERO ACTIONS
+========================================================= */
+
+.portfolio-hero .project-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 11px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   07. SHARED SECTION SYSTEM
+========================================================= */
+
+/*
+   CRITICAL:
+
+   All four homepage sections use the same background.
+
+   Do NOT add .dark or .alt variants here.
+*/
+
+.research-introduction,
+.research-domains,
+.geographic-scope,
+.research-workflow {
+
+    background: var(--sel-paper);
+
+    color: var(--sel-text);
+
+    border: 0;
+    border-top: 0;
+    border-bottom: 0;
+
+    box-shadow: none;
+
+    padding:
+        100px
+        0;
+}
+
+
+/* prevent pseudo-element rules from creating lines */
+
+.research-introduction::before,
+.research-introduction::after,
+.research-domains::before,
+.research-domains::after,
+.geographic-scope::before,
+.geographic-scope::after,
+.research-workflow::before,
+.research-workflow::after {
+    display: none;
+    content: none;
+}
+
+
+/* =========================================================
+   08. SHARED SECTION HEADINGS
+========================================================= */
+
+.programme-heading {
+    max-width: 900px;
+
+    margin-bottom: 45px;
+}
+
+
+.programme-title {
+    margin: 0;
+
+    color: var(--sel-text);
+
+    font-size:
+        clamp(
+            1.45rem,
+            2.15vw,
+            2rem
+        );
+
+    font-weight: 900;
+
+    line-height: 1.15;
+
+    letter-spacing: -.025em;
+}
+
+
+/* Introductory text under section headings */
+
+.section-lead,
+.project-intro {
+    max-width: 850px;
+
+    margin:
+        22px
+        0
+        0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .94rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   09. SECTION 01
+   RESEARCH PROGRAMME
+========================================================= */
+
+.research-principles {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+
+    max-width: 1100px;
+}
+
+
+.research-principle {
+    display: flex;
+
+    align-items: flex-start;
+
+    min-height: 145px;
+
+    padding: 25px 27px;
+
+    background: var(--sel-white);
+
+    border: 1px solid var(--sel-line);
+
+    box-shadow: none;
+}
+
+
+.research-principle-content {
+    width: 100%;
+}
+
+
+.research-principle-content h3 {
+    margin: 0 0 8px;
+
+    color: var(--sel-blue);
+
+    font-size: 1.08rem;
+    font-weight: 850;
+
+    line-height: 1.25;
+}
+
+
+.research-principle-content p {
+    margin: 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .82rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   10. SECTION 02
+   RESEARCH DOMAINS
+========================================================= */
+
+.domain-heading {
+    margin-bottom: 0;
+}
+
+
+/*
+   Two-column layout.
+
+   Seven cards naturally produce:
+
+       4 cards
+       3 cards
+*/
+
+.domain-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+
+/* ---------------------------------------------------------
+   Domain cards
+--------------------------------------------------------- */
+
+.domain-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 185px;
+
+    background: var(--sel-white);
+
+    border: 1px solid var(--sel-line);
+
+    color: var(--sel-text);
+
+    transition:
+        transform var(--sel-transition),
+        border-color var(--sel-transition),
+        box-shadow var(--sel-transition);
+}
+
+
+.domain-card:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--sel-blue);
+
+    box-shadow: var(--sel-shadow-sm);
+}
+
+
+/* ---------------------------------------------------------
+   Domain card body
+--------------------------------------------------------- */
+
+.domain-card-body {
+    flex: 1;
+
+    padding:
+        23px
+        25px
+        19px;
+}
+
+
+.domain-card-body h3 {
+    margin: 0;
+
+    color: var(--sel-text);
+
+    font-size: .98rem;
+
+    font-weight: 850;
+
+    line-height: 1.3;
+}
+
+
+.domain-question {
+    margin: 10px 0 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .80rem;
+
+    line-height: 1.5;
+}
+
+
+/* ---------------------------------------------------------
+   Domain footer
+--------------------------------------------------------- */
+
+.domain-card-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding:
+        11px
+        25px;
+
+    border-top: 1px solid var(--sel-line);
+
+    color: var(--sel-muted);
+
+    font-size: .65rem;
+    font-weight: 750;
+
+    line-height: 1.3;
+}
+
+
+.domain-card-footer span:last-child {
+    color: var(--sel-blue);
+}
+
+
+/* ---------------------------------------------------------
+   Domain CTA
+--------------------------------------------------------- */
+
+.domain-cta {
+    margin-top: 32px;
+}
+
+
+/* =========================================================
+   11. SECTION 03
+   GEOGRAPHIC SCOPE
+========================================================= */
+
+/*
+   Deliberately identical background to sections 01, 02, 04.
+*/
+
+.scope-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+
+/* ---------------------------------------------------------
+   Scope cards
+--------------------------------------------------------- */
+
+.scope-item {
+    min-height: 0;
+
+    height: auto;
+
+    padding:
+        23px
+        25px;
+
+    background: var(--sel-white);
+
+    border: 1px solid var(--sel-line);
+
+    color: var(--sel-text);
+}
+
+
+.scope-item h3 {
+    margin: 0 0 8px;
+
+    color: var(--sel-text);
+
+    font-size: .98rem;
+
+    font-weight: 850;
+
+    line-height: 1.3;
+}
+
+
+.scope-item p {
+    margin: 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .80rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   12. SECTION 04
+   RESEARCH APPROACH
+========================================================= */
+
+/*
+   Same background as sections 01–03.
+
+   No grey background.
+   No top line.
+   No bottom line.
+*/
+
+.workflow {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+
+/* ---------------------------------------------------------
+   Workflow cards
+--------------------------------------------------------- */
+
+.workflow-step {
+    min-height: 165px;
+
+    padding:
+        25px
+        27px;
+
+    background: var(--sel-white);
+
+    border: 1px solid var(--sel-line);
+
+    color: var(--sel-text);
+}
+
+
+/* ---------------------------------------------------------
+   Large numbers
+--------------------------------------------------------- */
+
+.workflow-step b {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: var(--sel-blue);
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -.045em;
+}
+
+
+/* ---------------------------------------------------------
+   Workflow title
+--------------------------------------------------------- */
+
+.workflow-step strong {
+    display: block;
+
+    color: var(--sel-text);
+
+    font-size: .90rem;
+
+    font-weight: 850;
+
+    line-height: 1.3;
+}
+
+
+/* ---------------------------------------------------------
+   Workflow description
+--------------------------------------------------------- */
+
+.workflow-step span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--sel-text-soft);
+
+    font-size: .78rem;
+
+    line-height: 1.5;
+}
+
+
+/* ---------------------------------------------------------
+   Section 04 actions
+--------------------------------------------------------- */
+
+.research-workflow .project-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 11px;
+
+    margin-top: 32px;
+}
+
+
+/* =========================================================
+   13. DOMAIN COLOUR ACCENTS
+========================================================= */
+
+/*
+   These colours are intentionally subtle.
+   They do not change the section background.
+*/
+
+.domain-qoli {
+    border-top: 3px solid var(--qol-economic);
+}
+
+
+.domain-access {
+    border-top: 3px solid var(--qol-accessibility);
+}
+
+
+.domain-population {
+    border-top: 3px solid var(--qol-social);
+}
+
+
+.domain-housing {
+    border-top: 3px solid var(--qol-housing);
+}
+
+
+.domain-land {
+    border-top: 3px solid var(--qol-urban);
+}
+
+
+.domain-environment {
+    border-top: 3px solid var(--qol-environment);
+}
+
+
+.domain-energy {
+    border-top: 3px solid var(--sel-blue);
+}
+
+
+/* =========================================================
+   14. RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .portfolio-hero {
+        padding:
+            62px
+            0
+            68px;
+    }
+
+
+    .research-introduction,
+    .research-domains,
+    .geographic-scope,
+    .research-workflow {
+        padding:
+            78px
+            0;
+    }
+
+
+    .research-principles,
+    .scope-grid,
+    .workflow {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   15. RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .portfolio-hero {
+        padding:
+            50px
+            0
+            58px;
+    }
+
+
+    .research-eyebrow {
+        margin-bottom: 19px;
+
+        font-size: .61rem;
+
+        line-height: 1.5;
+    }
+
+
+    .hero-title {
+        max-width: 100%;
+
+        font-size: 1.45rem;
+
+        line-height: 1.18;
+    }
+
+
+    .hero-copy {
+        margin-top: 19px;
+    }
+
+
+    .hero-copy p {
+        font-size: .87rem;
+    }
+
+
+    .portfolio-hero .project-actions,
+    .research-workflow .project-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        max-width: 260px;
+    }
+
+
+    .portfolio-hero .button,
+    .research-workflow .button {
+        width: 100%;
+    }
+
+
+    .research-introduction,
+    .research-domains,
+    .geographic-scope,
+    .research-workflow {
+        padding:
+            62px
+            0;
+    }
+
+
+    .programme-title {
+        font-size: 1.45rem;
+    }
+
+
+    .section-lead,
+    .project-intro {
+        font-size: .86rem;
+    }
+
+
+    .programme-heading {
+        margin-bottom: 32px;
+    }
+
+
+    .research-principles,
+    .domain-grid,
+    .scope-grid,
+    .workflow {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .domain-grid,
+    .scope-grid,
+    .workflow {
+        margin-top: 30px;
+    }
+
+
+    .research-principle,
+    .domain-card,
+    .scope-item,
+    .workflow-step {
+        min-height: 0;
+    }
+
+
+    .research-principle {
+        padding: 21px 22px;
+    }
+
+
+    .domain-card-body {
+        padding:
+            20px
+            21px
+            17px;
+    }
+
+
+    .domain-card-footer {
+        padding:
+            10px
+            21px;
+    }
+
+
+    .scope-item {
+        padding:
+            20px
+            21px;
+    }
+
+
+    .workflow-step {
+        padding:
+            22px
+            23px;
+    }
+
+
+    .workflow-step b {
+        margin-bottom: 13px;
+
+        font-size: 1.8rem;
+    }
+
+}
+
+
+/* =========================================================
+   16. VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero-title {
+        font-size: 1.35rem;
+    }
+
+
+    .programme-title {
+        font-size: 1.35rem;
+    }
+
+
+    .research-introduction,
+    .research-domains,
+    .geographic-scope,
+    .research-workflow {
+        padding:
+            54px
+            0;
+    }
+
+}
+/* =========================================================
    SEL HOMEPAGE — SECTIONS 01–04
    All four research sections use the same background
    ========================================================= */
