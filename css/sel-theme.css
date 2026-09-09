@@ -80,8 +80,8 @@
     */
     --sel-content-max: none;
     --sel-gutter: clamp(14px, 2.5vw, 48px);
-    --max: var(--sel-content-max);
-    --content-width: var(--sel-content-max);
+    --max: none;
+    --content-width: none;
 
     --shell-gutter: var(--sel-gutter);
     --shell-gutter-tablet: 20px;
@@ -392,7 +392,7 @@ textarea {
 
     width: calc(100% - (var(--sel-gutter) * 2));
 
-    max-width: var(--sel-content-max);
+    max-width: none;
 
     margin-left: auto;
     margin-right: auto;
