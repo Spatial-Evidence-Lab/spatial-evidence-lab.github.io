@@ -89,16 +89,15 @@ main {
 
     position: relative;
 
-    width: calc(100% - (var(--shell-gutter) * 2));
+    width: calc(100% - (var(--sel-gutter) * 2));
 
-    max-width: var(--max);
+    max-width: var(--sel-content-max);
 
     margin-left: auto;
     margin-right: auto;
 
     min-width: 0;
 
-    overflow: hidden;
 }
 
 
@@ -260,9 +259,9 @@ main {
 
 .project-section > .shell {
 
-    width: calc(100% - (var(--shell-gutter) * 2));
+    width: calc(100% - (var(--sel-gutter) * 2));
 
-    max-width: var(--max);
+    max-width: var(--sel-content-max);
 
     margin-left: auto;
     margin-right: auto;
@@ -976,7 +975,7 @@ main {
     .portfolio-hero .shell,
     .project-section > .shell {
 
-        width: calc(100% - (var(--shell-gutter) * 2));
+        width: calc(100% - (var(--sel-gutter) * 2));
 
         max-width: 100%;
     }
@@ -1139,7 +1138,7 @@ main {
     .portfolio-hero .shell,
     .project-section > .shell {
 
-        width: calc(100% - 24px);
+        width: calc(100% - (var(--sel-gutter) * 2));
     }
 
 

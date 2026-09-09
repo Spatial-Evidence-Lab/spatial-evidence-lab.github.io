@@ -78,10 +78,12 @@
        Keep the normal desktop content width at 1200px, but let it grow
        with very wide CSS viewports (including browser zoom-out).
     */
-    --max: clamp(1200px, 62.5vw, 1800px);
-    --content-width: var(--max);
+    --sel-content-max: 1440px;
+    --sel-gutter: clamp(14px, 2.5vw, 48px);
+    --max: var(--sel-content-max);
+    --content-width: var(--sel-content-max);
 
-    --shell-gutter: 24px;
+    --shell-gutter: var(--sel-gutter);
     --shell-gutter-tablet: 20px;
     --shell-gutter-mobile: 16px;
     --shell-gutter-small: 14px;
@@ -190,16 +192,8 @@ html,
 body {
     width: 100%;
     max-width: 100%;
-    max-inline-size: 100%;
-
     margin: 0;
     padding: 0;
-
-    /*
-       Clip accidental horizontal expansion at the document boundary.
-       Layout components still own their internal scrolling where needed.
-    */
-    overflow-x: clip;
 }
 
 
@@ -257,8 +251,6 @@ body > header,
 body > main,
 body > footer {
     width: 100%;
-    max-inline-size: 100%;
-    overflow-x: clip;
 }
 
 
@@ -398,9 +390,9 @@ textarea {
 
 .shell {
 
-    width: min(92%, var(--max));
+    width: calc(100% - (var(--sel-gutter) * 2));
 
-    max-width: var(--max);
+    max-width: var(--sel-content-max);
 
     margin-left: auto;
     margin-right: auto;
