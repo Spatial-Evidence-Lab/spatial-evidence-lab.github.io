@@ -206,8 +206,6 @@
 
     border-bottom: 1px solid rgba(255,255,255,.10);
 
-    overflow-x: hidden;
-
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
@@ -221,8 +219,8 @@
 
     position: relative;
 
-    width: 100%;
-    max-width: var(--max);
+    width: calc(100% - (var(--sel-gutter) * 2));
+    max-width: var(--sel-content-max);
 
     min-width: 0;
 
