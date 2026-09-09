@@ -25,6 +25,8 @@ main {
 
     width: 100%;
     max-width: 100%;
+    inline-size: 100%;
+    max-inline-size: 100%;
 
     min-width: 0;
 
@@ -52,6 +54,8 @@ main {
 
     width: 100%;
     max-width: 100%;
+    inline-size: 100%;
+    max-inline-size: 100%;
 
     min-width: 0;
 
