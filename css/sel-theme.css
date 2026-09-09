@@ -74,8 +74,12 @@
        LAYOUT
        ----------------------------------------------------- */
 
-    --max: 1200px;
-    --content-width: 1200px;
+    /*
+       Keep the normal desktop content width at 1200px, but let it grow
+       with very wide CSS viewports (including browser zoom-out).
+    */
+    --max: clamp(1200px, 62.5vw, 1800px);
+    --content-width: var(--max);
 
     --shell-gutter: 24px;
     --shell-gutter-tablet: 20px;
