@@ -23,7 +23,7 @@
 
 .project-section{padding:90px 0;border-bottom:1px solid var(--sel-line)}
 .project-section.alt{background:#fff}.project-section.dark{background:var(--sel-navy);color:#fff;border-color:var(--sel-line-dark)}
-.project-section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:50px;align-items:start;margin-bottom:42px}
+.project-section-head{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:50px;align-items:start;margin-bottom:42px}
 .project-number{color:var(--sel-blue);font-size:.68rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
 .project-section.dark .project-number{color:var(--sel-cyan)}
 .project-section h2{margin:7px 0 0;font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.045em}
@@ -31,7 +31,7 @@
 .project-intro{max-width:720px;color:var(--sel-text-soft);font-size:1rem}.project-section.dark .project-intro{color:#AFC1CF}
 .project-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .project-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.project-card{padding:25px;background:#fff;border:1px solid var(--sel-line);border-top:3px solid var(--sel-blue);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.project-card{min-width:0;padding:25px;background:#fff;border:1px solid var(--sel-line);border-top:3px solid var(--sel-blue);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 a.project-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(7,17,31,.08);border-color:#B9CADB}
 .project-section.dark .project-card{background:#0E1D2D;border-color:#26394D;color:#fff}
 .project-card-num{display:block;color:var(--sel-blue);font-size:.65rem;font-weight:900;letter-spacing:.12em}.project-section.dark .project-card-num{color:var(--sel-cyan)}
