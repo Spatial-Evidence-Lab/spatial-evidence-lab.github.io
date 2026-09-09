@@ -249,13 +249,9 @@ fieldset {
 }
 
 
-main,
-header,
-footer,
-section,
-article,
-aside,
-nav {
+body > header,
+body > main,
+body > footer {
     width: 100%;
     max-inline-size: 100%;
     overflow-x: clip;
