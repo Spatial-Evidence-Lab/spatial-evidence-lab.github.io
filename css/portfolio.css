@@ -1,3 +1,1160 @@
-/* Organisation and project catalogue styles. */
-.portfolio-hero{padding:82px 0 70px;background:var(--sel-navy);color:#fff}.portfolio-hero h1{font-size:clamp(2.8rem,7vw,6rem);line-height:.94;letter-spacing:-.06em;margin:10px 0 20px}.portfolio-hero h1 em{font-family:var(--serif);font-weight:400;color:var(--sel-teal-light)}.portfolio-hero p{max-width:720px;color:#B9C9D5;font-size:1.05rem}.filter-bar{display:flex;flex-wrap:wrap;gap:8px;padding:28px 0}.filter-button{border:1px solid var(--sel-line);background:#fff;color:var(--sel-text-soft);padding:9px 12px;font-size:.66rem;font-weight:850;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}.filter-button:hover,.filter-button.active{background:var(--sel-blue);border-color:var(--sel-blue);color:#fff}.catalogue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:90px}.catalogue-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--sel-line);transition:.2s ease}.catalogue-card:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(7,17,31,.08)}.catalogue-image{aspect-ratio:16/9;overflow:hidden;background:#e9eef3}.catalogue-image img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}.catalogue-card:hover img{transform:scale(1.025)}.catalogue-body{padding:20px}.catalogue-meta{display:flex;justify-content:space-between;gap:12px;color:var(--sel-blue);font-size:.63rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.catalogue-body h2{margin:8px 0 7px;font-size:1.25rem;line-height:1.15;letter-spacing:-.025em}.catalogue-body p{margin:0;color:var(--sel-text-soft);font-size:.83rem;line-height:1.6}.catalogue-link{display:inline-block;margin-top:18px;color:var(--sel-blue);font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.empty-state{display:none;padding:30px;border:1px dashed var(--sel-line);color:var(--sel-muted);grid-column:1/-1}.catalogue-card.hidden{display:none}@media(max-width:900px){.catalogue-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.portfolio-hero{padding:58px 0}.catalogue-grid{grid-template-columns:1fr}}
-.section{padding:0}
+/* =========================================================
+   SPATIAL EVIDENCE LAB
+   PORTFOLIO / RESEARCH PAGE
+   =========================================================
+   Version: 2.0
+
+   Design principles:
+   - No viewport-width hacks
+   - No horizontal overflow
+   - Shared SEL shell
+   - Consistent spacing
+   - Responsive CSS Grid
+   - Safe flex/grid children
+   - Consistent card language
+   ========================================================= */
+
+
+/* =========================================================
+   01. HARD WIDTH RESET
+   ========================================================= */
+
+main {
+
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+
+/*
+   Never use width:100vw.
+
+   100vw includes the browser scrollbar and can introduce
+   horizontal overflow on desktop browsers.
+*/
+
+
+.project-section,
+.portfolio-hero {
+
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    margin: 0;
+
+    border: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   02. PORTFOLIO HERO
+   ========================================================= */
+
+.portfolio-hero {
+
+    background: var(--sel-hero);
+
+    color: var(--sel-white);
+
+    padding: 72px 0 82px;
+}
+
+
+/* =========================================================
+   03. HERO SHELL
+   ========================================================= */
+
+.portfolio-hero .shell {
+
+    position: relative;
+
+    width: calc(100% - (var(--shell-gutter) * 2));
+
+    max-width: var(--max);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   04. HERO EYEBROW
+   ========================================================= */
+
+.research-eyebrow {
+
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 0 24px;
+
+    color: var(--sel-accent);
+
+    font-size: .68rem;
+
+    font-weight: 800;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   05. HERO TITLE
+   ========================================================= */
+
+.hero-title {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0;
+
+    color: var(--sel-white);
+
+    font-size:
+        clamp(1.65rem, 2.7vw, 2.2rem);
+
+    line-height: 1.12;
+
+    letter-spacing: -.035em;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   06. HERO COPY
+   ========================================================= */
+
+.hero-copy {
+
+    width: 100%;
+
+    max-width: 920px;
+
+    margin-top: 24px;
+
+    min-width: 0;
+}
+
+
+.hero-lead {
+
+    margin: 0;
+
+    color: rgba(255,255,255,.90);
+
+    font-size: .96rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   07. HERO ACTIONS
+   ========================================================= */
+
+.portfolio-hero .project-actions {
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   08. SHARED PROJECT SECTION
+   ========================================================= */
+
+.project-section {
+
+    background: var(--sel-section);
+
+    color: var(--sel-text);
+
+    padding: 88px 0;
+
+    border: 0 !important;
+
+    border-top: 0 !important;
+
+    border-bottom: 0 !important;
+
+    box-shadow: none !important;
+
+    outline: 0 !important;
+}
+
+
+/* =========================================================
+   09. LEGACY SECTION NORMALISATION
+   ========================================================= */
+
+.project-section.alt,
+.project-section.dark,
+.project-section.research-introduction,
+.project-section.research-domains,
+.project-section.geographic-scope,
+.project-section.research-workflow {
+
+    background: var(--sel-section);
+
+    border: 0 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   10. REMOVE DECORATIVE LEGACY ELEMENTS
+   ========================================================= */
+
+.project-section::before,
+.project-section::after {
+
+    content: none !important;
+
+    display: none !important;
+
+    border: 0 !important;
+}
+
+
+/* =========================================================
+   11. SECTION SHELL
+   ========================================================= */
+
+.project-section > .shell {
+
+    width: calc(100% - (var(--shell-gutter) * 2));
+
+    max-width: var(--max);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   12. SECTION HEADER
+   ========================================================= */
+
+.project-section-head {
+
+    width: 100%;
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0,.9fr)
+        minmax(0,1.1fr);
+
+    gap: 64px;
+
+    align-items: start;
+
+    margin-bottom: 52px;
+
+    min-width: 0;
+}
+
+
+.project-section-head > * {
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   13. PROGRAMME HEADING
+   ========================================================= */
+
+.programme-heading {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-bottom: 52px;
+
+    min-width: 0;
+}
+
+
+.programme-title {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    color: var(--sel-white);
+
+    font-size:
+        clamp(1.3rem,1.9vw,1.6rem);
+
+    line-height: 1.2;
+
+    letter-spacing: -.025em;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   14. SECTION LEAD / INTRO
+   ========================================================= */
+
+.section-lead,
+.project-intro {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    margin: 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .95rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   15. RESEARCH INTRODUCTION
+   ========================================================= */
+
+.research-introduction {
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
+}
+
+
+/* =========================================================
+   16. RESEARCH PRINCIPLES
+   ========================================================= */
+
+.research-principles {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 18px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   17. RESEARCH PRINCIPLE CARD
+   ========================================================= */
+
+.research-principle {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    transition:
+        transform var(--motion-standard),
+        border-color var(--motion-standard),
+        background-color var(--motion-standard);
+}
+
+
+.research-principle:hover {
+
+    transform: translateY(-2px);
+
+    background: #30413E;
+
+    border-color: rgba(0,215,232,.28);
+}
+
+
+.research-principle-content {
+
+    width: 100%;
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   18. PRINCIPLE CARD TYPOGRAPHY
+   ========================================================= */
+
+.research-principle h3 {
+
+    margin: 0 0 9px;
+
+    color: var(--sel-white);
+
+    font-size: 1.05rem;
+
+    line-height: 1.25;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+.research-principle p {
+
+    margin: 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .84rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   19. RESEARCH DOMAINS
+   ========================================================= */
+
+.research-domains {
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
+}
+
+
+.domain-heading {
+
+    margin-bottom: 46px;
+}
+
+
+/* =========================================================
+   20. DOMAIN GRID
+   ========================================================= */
+
+.domain-grid {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   21. DOMAIN CARD
+   ========================================================= */
+
+.domain-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 22px 24px;
+
+    color: var(--sel-text);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--motion-standard),
+        background-color var(--motion-standard),
+        border-color var(--motion-standard);
+}
+
+
+.domain-card:hover {
+
+    transform: translateY(-2px);
+
+    background: #30413E;
+
+    border-color: rgba(0,215,232,.28);
+}
+
+
+/* =========================================================
+   22. DOMAIN BODY
+   ========================================================= */
+
+.domain-card-body {
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+.domain-card h3 {
+
+    margin: 0;
+
+    color: var(--sel-white);
+
+    font-size: .98rem;
+
+    line-height: 1.35;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+.domain-question {
+
+    margin: 10px 0 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .8rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   23. DOMAIN FOOTER
+   ========================================================= */
+
+.domain-card-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid rgba(255,255,255,.10);
+
+    color: var(--sel-muted);
+
+    font-size: .65rem;
+
+    line-height: 1.4;
+
+    min-width: 0;
+}
+
+
+.domain-card-footer span {
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+.domain-card-footer span:last-child {
+
+    color: var(--sel-accent);
+
+    white-space: nowrap;
+}
+
+
+.domain-cta {
+
+    margin-top: 32px;
+}
+
+
+/* =========================================================
+   24. GEOGRAPHIC SCOPE
+   ========================================================= */
+
+.geographic-scope {
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
+}
+
+
+/* =========================================================
+   25. SCOPE GRID
+   ========================================================= */
+
+.scope-grid {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   26. SCOPE ITEM
+   ========================================================= */
+
+.scope-item {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 22px;
+
+    overflow: hidden;
+}
+
+
+.scope-item h3 {
+
+    margin: 0 0 9px;
+
+    color: var(--sel-white);
+
+    font-size: .98rem;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+.scope-item p {
+
+    margin: 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .8rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   27. RESEARCH WORKFLOW
+   ========================================================= */
+
+.research-workflow {
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
+}
+
+
+/* =========================================================
+   28. WORKFLOW GRID
+   ========================================================= */
+
+.workflow {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   29. WORKFLOW STEP
+   ========================================================= */
+
+.workflow-step {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    overflow: hidden;
+}
+
+
+.workflow-step b {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--sel-accent);
+
+    font-size: 1.45rem;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -.04em;
+}
+
+
+.workflow-step strong {
+
+    display: block;
+
+    color: var(--sel-white);
+
+    font-size: .9rem;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+.workflow-step span {
+
+    display: block;
+
+    color: var(--sel-text-soft);
+
+    font-size: .76rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   30. PROJECT ACTIONS
+   ========================================================= */
+
+.project-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+}
+
+
+.project-actions > * {
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   31. SITE FOOTER SAFETY
+   ========================================================= */
+
+.site-footer {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   32. LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .project-section-head {
+
+        gap: 40px;
+    }
+
+
+    .research-principles {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .scope-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .workflow {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+
+/* =========================================================
+   33. TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .project-section-head {
+
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+
+        margin-bottom: 38px;
+    }
+
+
+    .research-principles {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .scope-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .workflow {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+
+/* =========================================================
+   34. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .portfolio-hero {
+
+        padding: 54px 0 62px;
+    }
+
+
+    .portfolio-hero .shell,
+    .project-section > .shell {
+
+        width: calc(100% - (var(--shell-gutter) * 2));
+
+        max-width: 100%;
+    }
+
+
+    .hero-title {
+
+        font-size: 1.65rem;
+
+        line-height: 1.12;
+    }
+
+
+    .research-eyebrow {
+
+        margin-bottom: 20px;
+
+        font-size: .62rem;
+    }
+
+
+    .hero-copy {
+
+        margin-top: 20px;
+    }
+
+
+    .hero-lead {
+
+        font-size: .90rem;
+
+        line-height: 1.6;
+    }
+
+
+    .project-section {
+
+        padding-top: 64px;
+
+        padding-bottom: 64px;
+    }
+
+
+    .research-introduction,
+    .research-domains,
+    .geographic-scope,
+    .research-workflow {
+
+        padding-top: 64px;
+
+        padding-bottom: 64px;
+    }
+
+
+    .programme-heading {
+
+        margin-bottom: 34px;
+    }
+
+
+    .programme-title {
+
+        font-size: 1.3rem;
+    }
+
+
+    .research-principles,
+    .domain-grid,
+    .scope-grid,
+    .workflow {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .research-principle,
+    .domain-card,
+    .scope-item,
+    .workflow-step {
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    .project-actions {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .project-actions .button {
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   35. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .portfolio-hero {
+
+        padding: 48px 0 56px;
+    }
+
+
+    .hero-title {
+
+        font-size: 1.55rem;
+    }
+
+
+    .hero-lead {
+
+        font-size: .88rem;
+    }
+
+
+    .research-principle,
+    .domain-card,
+    .scope-item,
+    .workflow-step {
+
+        padding: 20px;
+    }
+
+
+    .domain-card-footer {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .domain-card-footer span:last-child {
+
+        white-space: normal;
+    }
+}
+
+
+/* =========================================================
+   36. VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .portfolio-hero .shell,
+    .project-section > .shell {
+
+        width: calc(100% - 24px);
+    }
+
+
+    .hero-title {
+
+        font-size: 1.45rem;
+    }
+
+
+    .research-principle,
+    .domain-card,
+    .scope-item,
+    .workflow-step {
+
+        padding: 18px;
+    }
+}
+
+
+/* =========================================================
+   END OF SEL PORTFOLIO
+   ========================================================= */
