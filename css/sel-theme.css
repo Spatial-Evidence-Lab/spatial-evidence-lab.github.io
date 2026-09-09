@@ -394,10 +394,9 @@ textarea {
 
 .shell {
 
-    width: calc(100% - (var(--shell-gutter) * 2));
+    width: min(92%, var(--max));
 
     max-width: var(--max);
-    max-inline-size: calc(100% - (var(--shell-gutter) * 2));
 
     margin-left: auto;
     margin-right: auto;
