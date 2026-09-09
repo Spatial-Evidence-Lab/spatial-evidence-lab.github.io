@@ -78,7 +78,7 @@
        Keep the normal desktop content width at 1200px, but let it grow
        with very wide CSS viewports (including browser zoom-out).
     */
-    --sel-content-max: 1440px;
+    --sel-content-max: 1800px;
     --sel-gutter: clamp(14px, 2.5vw, 48px);
     --max: var(--sel-content-max);
     --content-width: var(--sel-content-max);
