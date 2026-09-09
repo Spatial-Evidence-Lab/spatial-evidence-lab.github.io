@@ -220,7 +220,7 @@
     position: relative;
 
     width: calc(100% - (var(--sel-gutter) * 2));
-    max-width: var(--sel-content-max);
+    max-width: none;
 
     min-width: 0;
 

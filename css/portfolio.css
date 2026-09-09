@@ -91,7 +91,7 @@ main {
 
     width: calc(100% - (var(--sel-gutter) * 2));
 
-    max-width: var(--sel-content-max);
+    max-width: none;
 
     margin-left: auto;
     margin-right: auto;
@@ -261,7 +261,7 @@ main {
 
     width: calc(100% - (var(--sel-gutter) * 2));
 
-    max-width: var(--sel-content-max);
+    max-width: none;
 
     margin-left: auto;
     margin-right: auto;
