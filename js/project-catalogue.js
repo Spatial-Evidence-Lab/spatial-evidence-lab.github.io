@@ -1,55 +1,20 @@
 (function () {
   'use strict';
 
-  /*
-   * Spatial Evidence Lab
-   * Project Catalogue
-   *
-   * Reads project metadata from:
-   *   /projects.json
-   *
-   * Expected taxonomy structure:
-   *   project.researchDomain.code
-   *   project.researchDomain.name
-   *   project.researchDomain.key
-   *
-   * Also supports:
-   *   project.theme
-   *   project.subTheme
-   *   project.geographicScope
-   *   project.geographicLevel
-   *   project.status
-   *   project.portfolioRole
-   */
-
   const grid = document.querySelector('[data-project-grid]');
 
-  // Do nothing on pages without the project catalogue.
-  if (!grid) return;
+  if (!grid) {
+    return;
+  }
 
-  /*
-   * Resolve the projects.json path.
-   *
-   * The catalogue page is normally:
-   *   /projects/
-   *
-   * Therefore ../projects.json resolves to:
-   *   /projects.json
-   */
   const PROJECTS_URL = '../projects.json';
+  const TAXONOMY_URL = '../taxonomy.json';
 
-  /*
-   * Basic HTML escaping.
-   *
-   * Project metadata comes from JSON. Escaping prevents characters
-   * such as &, < and > from being interpreted as HTML.
+  /**
+   * Safely escape text before inserting it into HTML.
    */
   function escapeHTML(value) {
-    if (value === null || value === undefined) {
-      return '';
-    }
-
-    return String(value)
+    return String(value ?? '')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
@@ -57,170 +22,150 @@
       .replace(/'/g, '&#039;');
   }
 
-  /*
-   * Convert an array into readable text.
-   *
-   * Example:
-   * ["National", "County", "Small Area"]
-   *
-   * becomes:
-   * "National · County · Small Area"
+  /**
+   * Validate that a project has the expected taxonomy structure.
    */
-  function formatArray(value) {
-    if (!Array.isArray(value)) {
-      return '';
+  function validateProject(project, taxonomy) {
+    const errors = [];
+
+    if (!project || typeof project !== 'object') {
+      return ['Project is not an object.'];
     }
 
-    return value
-      .filter(Boolean)
-      .map(escapeHTML)
-      .join(' · ');
-  }
-
-  /*
-   * Create a safe URL.
-   *
-   * The current project catalogue uses relative or root-relative URLs.
-   */
-  function getProjectURL(project) {
-    if (!project || !project.url) {
-      return '#';
+    if (!project.id) {
+      errors.push('Missing project id.');
     }
 
-    return project.url;
+    if (!project.title) {
+      errors.push('Missing project title.');
+    }
+
+    if (!project.researchDomain) {
+      errors.push('Missing researchDomain.');
+    } else {
+      if (!project.researchDomain.code) {
+        errors.push('Missing researchDomain.code.');
+      }
+
+      if (!project.researchDomain.name) {
+        errors.push('Missing researchDomain.name.');
+      }
+
+      if (!project.researchDomain.key) {
+        errors.push('Missing researchDomain.key.');
+      }
+
+      if (taxonomy && Array.isArray(taxonomy.researchDomains)) {
+        const domainExists = taxonomy.researchDomains.some(
+          domain =>
+            domain.code === project.researchDomain.code &&
+            domain.key === project.researchDomain.key
+        );
+
+        if (!domainExists) {
+          errors.push(
+            `researchDomain "${project.researchDomain.code}" does not exist in taxonomy.json.`
+          );
+        }
+      }
+    }
+
+    if (!project.theme) {
+      errors.push('Missing theme.');
+    }
+
+    if (!project.subTheme) {
+      errors.push('Missing subTheme.');
+    }
+
+    if (!project.geographicScope) {
+      errors.push('Missing geographicScope.');
+    }
+
+    if (!project.geographicLevel) {
+      errors.push('Missing geographicLevel.');
+    } else if (!Array.isArray(project.geographicLevel)) {
+      errors.push('geographicLevel must be an array.');
+    }
+
+    if (!project.status) {
+      errors.push('Missing status.');
+    }
+
+    if (!project.portfolioRole) {
+      errors.push('Missing portfolioRole.');
+    }
+
+    if (!project.summary) {
+      errors.push('Missing summary.');
+    }
+
+    if (!project.image) {
+      errors.push('Missing image.');
+    }
+
+    if (!project.url) {
+      errors.push('Missing url.');
+    }
+
+    return errors;
   }
 
-  /*
-   * Create one catalogue card.
+  /**
+   * Build a project card.
    */
-  function createProjectCard(project) {
-    const researchDomain = project.researchDomain || {};
-    const theme = project.theme || {};
-    const subTheme = project.subTheme || {};
-    const geographicScope = project.geographicScope || {};
+  function renderProject(project) {
+    const domainKey = project.researchDomain
+      ? project.researchDomain.key
+      : '';
 
-    const domainKey = researchDomain.key || '';
-    const domainName = researchDomain.name || 'Research';
-
-    const themeName = theme.name || '';
-    const subThemeName = subTheme.name || '';
-
-    const geographyLevel = formatArray(project.geographicLevel);
-
-    const image = project.image || '';
-    const title = project.title || 'Untitled project';
-    const summary = project.summary || '';
-
-    const status = project.status || '';
-    const portfolioRole = project.portfolioRole || '';
-
-    const geography = project.geography || '';
-    const geographyType = project.geographyType || '';
-
-    const taxonomyLine = [
-      themeName,
-      subThemeName
-    ]
-      .filter(Boolean)
-      .map(escapeHTML)
-      .join(' · ');
-
-    const geographyLine = [
-      geography,
-      geographyType
-    ]
-      .filter(Boolean)
-      .map(escapeHTML)
-      .join(' · ');
+    const domainName = project.researchDomain
+      ? project.researchDomain.name
+      : '';
 
     return `
       <a
         class="catalogue-card"
-        href="${escapeHTML(getProjectURL(project))}"
+        href="${escapeHTML(project.url)}"
         data-domain="${escapeHTML(domainKey)}"
-        data-domain-name="${escapeHTML(domainName)}"
-        data-theme="${escapeHTML(theme.key || '')}"
-        data-subtheme="${escapeHTML(subTheme.key || '')}"
-        data-status="${escapeHTML(status)}"
-        data-portfolio-role="${escapeHTML(project.portfolioRole || '')}"
+        data-research-domain="${escapeHTML(domainKey)}"
       >
-
         <div class="catalogue-image">
-          ${
-            image
-              ? `
-                <img
-                  src="${escapeHTML(image)}"
-                  alt="${escapeHTML(title)}"
-                  loading="lazy"
-                >
-              `
-              : ''
-          }
+          <img
+            src="${escapeHTML(project.image)}"
+            alt="${escapeHTML(project.title)}"
+            loading="lazy"
+          >
         </div>
 
         <div class="catalogue-body">
 
           <div class="catalogue-meta">
-            <span>${escapeHTML(project.id || '')}</span>
-            ${
-              status
-                ? `<span>${escapeHTML(status)}</span>`
-                : ''
-            }
+            <span>${escapeHTML(project.id)}</span>
+            <span>${escapeHTML(project.status)}</span>
           </div>
 
           <div class="catalogue-domain">
             ${escapeHTML(domainName)}
           </div>
 
-          <h2>${escapeHTML(title)}</h2>
+          <h2>${escapeHTML(project.title)}</h2>
 
-          ${
-            taxonomyLine
-              ? `
-                <div class="catalogue-taxonomy">
-                  ${taxonomyLine}
-                </div>
-              `
-              : ''
-          }
+          <p>${escapeHTML(project.summary)}</p>
 
-          ${
-            summary
-              ? `<p>${escapeHTML(summary)}</p>`
-              : ''
-          }
+          <div class="catalogue-taxonomy">
+            ${
+              project.theme
+                ? `<span>${escapeHTML(project.theme.name)}</span>`
+                : ''
+            }
 
-          ${
-            geographyLine
-              ? `
-                <div class="catalogue-geography">
-                  ${geographyLine}
-                </div>
-              `
-              : ''
-          }
-
-          ${
-            geographyLevel
-              ? `
-                <div class="catalogue-level">
-                  ${geographyLevel}
-                </div>
-              `
-              : ''
-          }
-
-          ${
-            portfolioRole
-              ? `
-                <div class="catalogue-role">
-                  ${escapeHTML(portfolioRole)}
-                </div>
-              `
-              : ''
-          }
+            ${
+              project.subTheme
+                ? `<span>${escapeHTML(project.subTheme.name)}</span>`
+                : ''
+            }
+          </div>
 
           <span class="catalogue-link">
             View project →
@@ -231,40 +176,69 @@
     `;
   }
 
-  /*
-   * Render the complete catalogue.
+  /**
+   * Display an error message inside the catalogue.
    */
-  function renderProjects(projects) {
-    if (!Array.isArray(projects) || projects.length === 0) {
-      grid.innerHTML = `
-        <div class="empty-state" style="display:block">
-          No projects are currently available.
-        </div>
-      `;
+  function showError(message) {
+    grid.innerHTML = `
+      <div
+        class="empty-state"
+        style="display:block"
+        role="alert"
+      >
+        ${escapeHTML(message)}
+      </div>
+    `;
+  }
 
+  /**
+   * Create filter buttons from taxonomy research domains.
+   *
+   * This does not redesign the filters yet.
+   * It simply makes the existing filter system work
+   * with researchDomain.key.
+   */
+  function buildFilters(taxonomy) {
+    const filterContainer = document.querySelector('[data-project-filters]');
+
+    if (!filterContainer) {
       return;
     }
 
-    grid.innerHTML = projects
-      .map(createProjectCard)
-      .join('');
+    if (
+      !taxonomy ||
+      !Array.isArray(taxonomy.researchDomains)
+    ) {
+      return;
+    }
+
+    const domains = [...taxonomy.researchDomains]
+      .sort((a, b) => {
+        return (a.displayOrder || 999) - (b.displayOrder || 999);
+      });
+
+    filterContainer.innerHTML = `
+      <button
+        type="button"
+        class="active"
+        data-filter="all"
+      >
+        All research
+      </button>
+
+      ${domains.map(domain => `
+        <button
+          type="button"
+          data-filter="${escapeHTML(domain.key)}"
+        >
+          ${escapeHTML(domain.name)}
+        </button>
+      `).join('')}
+    `;
   }
 
-  /*
-   * Build the research-domain filters.
-   *
-   * Existing HTML filter buttons are supported.
-   *
-   * Example:
-   *
-   * <button data-filter="all">All</button>
-   * <button data-filter="people-quality-of-life">
-   *   People & Quality of Life
-   * </button>
-   *
-   * The value of data-filter must match:
-   *
-   * project.researchDomain.key
+  /**
+   * Initialise filtering.
    */
   function initialiseFilters() {
     const buttons = [
@@ -275,247 +249,65 @@
       ...grid.querySelectorAll('.catalogue-card')
     ];
 
-    if (!buttons.length || !cards.length) {
-      return;
-    }
-
-    buttons.forEach(function (button) {
+    buttons.forEach(button => {
       button.addEventListener('click', function () {
-
-        // Remove active state from every filter.
-        buttons.forEach(function (item) {
-          item.classList.remove('active');
-          item.setAttribute('aria-pressed', 'false');
+        buttons.forEach(btn => {
+          btn.classList.remove('active');
         });
 
-        // Activate selected filter.
-        button.classList.add('active');
-        button.setAttribute('aria-pressed', 'true');
+        this.classList.add('active');
 
-        const filter = button.dataset.filter || 'all';
+        const filter = this.dataset.filter;
 
-        cards.forEach(function (card) {
+        cards.forEach(card => {
+          const domain = card.dataset.domain;
 
-          const cardDomain = card.dataset.domain || '';
-
-          const shouldShow =
-            filter === 'all' ||
-            cardDomain === filter;
+          const shouldHide =
+            filter !== 'all' &&
+            domain !== filter;
 
           card.classList.toggle(
             'hidden',
-            !shouldShow
-          );
-
-          /*
-           * Keep accessibility state consistent with visual state.
-           */
-          card.setAttribute(
-            'aria-hidden',
-            shouldShow ? 'false' : 'true'
+            shouldHide
           );
         });
       });
     });
   }
 
-  /*
-   * Automatically create research-domain filters if the page
-   * contains a filter container.
-   *
-   * Expected HTML:
-   *
-   * <div data-project-filters></div>
-   *
-   * This is optional.
-   *
-   * If you already have filter buttons in projects/index.html,
-   * the script will use those instead.
+  /**
+   * Load projects and taxonomy together.
    */
-  function createDomainFilters(projects) {
-    const container = document.querySelector(
-      '[data-project-filters]'
-    );
+  Promise.all([
+    fetch(PROJECTS_URL),
+    fetch(TAXONOMY_URL)
+  ])
+    .then(async ([projectsResponse, taxonomyResponse]) => {
 
-    if (!container || !Array.isArray(projects)) {
-      return;
-    }
-
-    /*
-     * Collect unique research domains.
-     */
-    const domains = [];
-
-    projects.forEach(function (project) {
-      const domain = project.researchDomain;
-
-      if (!domain || !domain.key) {
-        return;
-      }
-
-      const exists = domains.some(function (item) {
-        return item.key === domain.key;
-      });
-
-      if (!exists) {
-        domains.push({
-          code: domain.code || '',
-          name: domain.name || domain.key,
-          key: domain.key
-        });
-      }
-    });
-
-    /*
-     * Sort alphabetically by display name.
-     */
-    domains.sort(function (a, b) {
-      return a.name.localeCompare(b.name);
-    });
-
-    /*
-     * Always provide an All Projects button.
-     */
-    container.innerHTML = `
-      <button
-        type="button"
-        class="filter-button active"
-        data-filter="all"
-        aria-pressed="true"
-      >
-        All Projects
-      </button>
-
-      ${domains
-        .map(function (domain) {
-          return `
-            <button
-              type="button"
-              class="filter-button"
-              data-filter="${escapeHTML(domain.key)}"
-              aria-pressed="false"
-            >
-              ${escapeHTML(domain.name)}
-            </button>
-          `;
-        })
-        .join('')}
-    `;
-  }
-
-  /*
-   * Create optional taxonomy summary information.
-   *
-   * This allows the page to show how many projects belong
-   * to each research domain.
-   *
-   * Expected HTML:
-   *
-   * <div data-domain-counts></div>
-   *
-   * This section is optional.
-   */
-  function renderDomainCounts(projects) {
-    const container = document.querySelector(
-      '[data-domain-counts]'
-    );
-
-    if (!container || !Array.isArray(projects)) {
-      return;
-    }
-
-    const counts = {};
-
-    projects.forEach(function (project) {
-      const domain = project.researchDomain;
-
-      if (!domain || !domain.key) {
-        return;
-      }
-
-      if (!counts[domain.key]) {
-        counts[domain.key] = {
-          name: domain.name || domain.key,
-          count: 0
-        };
-      }
-
-      counts[domain.key].count += 1;
-    });
-
-    const entries = Object.keys(counts)
-      .map(function (key) {
-        return {
-          key: key,
-          name: counts[key].name,
-          count: counts[key].count
-        };
-      })
-      .sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-      });
-
-    container.innerHTML = entries
-      .map(function (item) {
-        return `
-          <div
-            class="domain-count"
-            data-domain="${escapeHTML(item.key)}"
-          >
-            <span class="domain-count-name">
-              ${escapeHTML(item.name)}
-            </span>
-
-            <span class="domain-count-number">
-              ${item.count}
-            </span>
-          </div>
-        `;
-      })
-      .join('');
-  }
-
-  /*
-   * Add project count if an element exists.
-   *
-   * Expected HTML:
-   *
-   * <span data-project-count></span>
-   */
-  function renderProjectCount(projects) {
-    const counter = document.querySelector(
-      '[data-project-count]'
-    );
-
-    if (!counter || !Array.isArray(projects)) {
-      return;
-    }
-
-    counter.textContent = projects.length;
-  }
-
-  /*
-   * Main catalogue initialisation.
-   */
-  fetch(PROJECTS_URL, {
-    cache: 'no-cache'
-  })
-    .then(function (response) {
-
-      if (!response.ok) {
+      if (!projectsResponse.ok) {
         throw new Error(
-          'Unable to load projects.json: ' +
-          response.status
+          `Could not load projects.json (${projectsResponse.status}).`
         );
       }
 
-      return response.json();
-    })
+      if (!taxonomyResponse.ok) {
+        throw new Error(
+          `Could not load taxonomy.json (${taxonomyResponse.status}).`
+        );
+      }
 
-    .then(function (projects) {
+      const projects = await projectsResponse.json();
+      const taxonomy = await taxonomyResponse.json();
+
+      return {
+        projects,
+        taxonomy
+      };
+    })
+    .then(({ projects, taxonomy }) => {
 
       /*
-       * Basic validation.
+       * Basic JSON structure validation.
        */
       if (!Array.isArray(projects)) {
         throw new Error(
@@ -523,59 +315,95 @@
         );
       }
 
+      if (
+        !taxonomy ||
+        !Array.isArray(taxonomy.researchDomains)
+      ) {
+        throw new Error(
+          'taxonomy.json must contain a researchDomains array.'
+        );
+      }
+
       /*
-       * Remove invalid/null project records.
+       * Validate every project.
        */
-      projects = projects.filter(function (project) {
-        return project &&
-          typeof project === 'object' &&
-          project.id &&
-          project.title;
+      const validationErrors = [];
+
+      projects.forEach(project => {
+        const errors = validateProject(
+          project,
+          taxonomy
+        );
+
+        if (errors.length) {
+          validationErrors.push({
+            id: project && project.id
+              ? project.id
+              : 'UNKNOWN',
+            errors
+          });
+        }
       });
+
+      /*
+       * Log validation information.
+       */
+      if (validationErrors.length) {
+
+        console.group(
+          'Spatial Evidence Lab — Project Catalogue Validation'
+        );
+
+        validationErrors.forEach(item => {
+          console.group(`❌ ${item.id}`);
+
+          item.errors.forEach(error => {
+            console.error(error);
+          });
+
+          console.groupEnd();
+        });
+
+        console.groupEnd();
+
+        showError(
+          'The project catalogue contains validation errors. Open the browser console for details.'
+        );
+
+        return;
+      }
+
+      console.info(
+        `Spatial Evidence Lab: ${projects.length} projects validated successfully.`
+      );
+
+      /*
+       * Build taxonomy-driven filters.
+       */
+      buildFilters(taxonomy);
 
       /*
        * Render catalogue.
        */
-      renderProjects(projects);
+      grid.innerHTML = projects
+        .map(renderProject)
+        .join('');
 
       /*
-       * Optional automatically generated filters.
-       */
-      createDomainFilters(projects);
-
-      /*
-       * Initialise filters after cards exist.
+       * Initialise filters after rendering.
        */
       initialiseFilters();
-
-      /*
-       * Optional domain counts.
-       */
-      renderDomainCounts(projects);
-
-      /*
-       * Optional total project count.
-       */
-      renderProjectCount(projects);
     })
-
-    .catch(function (error) {
+    .catch(error => {
 
       console.error(
         'Spatial Evidence Lab project catalogue error:',
         error
       );
 
-      grid.innerHTML = `
-        <div
-          class="empty-state"
-          style="display:block"
-          role="alert"
-        >
-          Project catalogue could not be loaded.
-          Please refresh the page.
-        </div>
-      `;
+      showError(
+        'Project catalogue could not be loaded. Please refresh the page or check the browser console.'
+      );
     });
 
 })();
