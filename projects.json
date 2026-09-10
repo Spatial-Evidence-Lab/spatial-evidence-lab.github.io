@@ -2,168 +2,640 @@
   {
     "id": "SEL-001",
     "title": "Ireland Quality of Life Index",
-    "domain": "People & Quality of Life",
-    "domainKey": "people-quality-of-life",
-    "status": "Flagship",
+
+    "researchDomain": {
+      "code": "RD01",
+      "name": "People & Quality of Life",
+      "key": "people-quality-of-life"
+    },
+
+    "theme": {
+      "code": "TH01",
+      "name": "Quality of Life & Wellbeing",
+      "key": "quality-of-life-wellbeing"
+    },
+
+    "subTheme": {
+      "code": "ST01",
+      "name": "Quality of Life",
+      "key": "quality-of-life"
+    },
+
+    "geographicScope": {
+      "code": "GS01",
+      "name": "Ireland",
+      "key": "ireland"
+    },
+
+    "geographicLevel": [
+      "National",
+      "County",
+      "Local Authority",
+      "Small Area"
+    ],
+
+    "status": "Report Published",
+    "portfolioRole": "Core Research",
+
     "summary": "Small-area spatial analysis of quality of life across Ireland using Census 2022 indicators, composite measures and geographic evidence.",
+
     "geography": "Ireland",
     "geographyType": "National",
+
+    "analyticalFramework": "Small-Area Quality of Life Index",
+    "frameworkKey": "sa-qoli",
+
     "image": "/assets/projects/SEL-001.jpg",
-    "url": "/projects/sel-001-ireland-quality-of-life/"
+    "url": "/projects/sel-001-ireland-quality-of-life/",
+
+    "outputs": {
+      "report": true,
+      "maps": false,
+      "tables": true,
+      "data": false
+    }
   },
+
   {
     "id": "SEL-002",
     "title": "Bandon Public Transport Accessibility Analysis",
-    "domain": "Accessibility, Mobility & Transport",
-    "domainKey": "accessibility-mobility-transport",
+
+    "researchDomain": {
+      "code": "RD02",
+      "name": "Accessibility, Mobility & Transport",
+      "key": "accessibility-mobility-transport"
+    },
+
+    "theme": {
+      "code": "TH02",
+      "name": "Transport",
+      "key": "transport"
+    },
+
+    "subTheme": {
+      "code": "ST02",
+      "name": "Public Transport Accessibility",
+      "key": "public-transport-accessibility"
+    },
+
+    "geographicScope": {
+      "code": "GS02",
+      "name": "Local Places",
+      "key": "local-places"
+    },
+
+    "geographicLevel": [
+      "Town",
+      "Local Area"
+    ],
+
     "status": "Production",
+    "portfolioRole": "Core Research",
+
     "summary": "Spatial assessment of public transport accessibility in Bandon, combining walking access, service frequency and population vulnerability.",
+
     "geography": "Bandon, County Cork",
     "geographyType": "Local",
+
     "image": "/assets/projects/SEL-002.jpg",
     "url": "/projects/sel-002-bandon-public-transport/"
   },
+
   {
     "id": "SEL-003",
     "title": "West Cork Public Transport Accessibility Level Analysis",
-    "domain": "Accessibility, Mobility & Transport",
-    "domainKey": "accessibility-mobility-transport",
+
+    "researchDomain": {
+      "code": "RD02",
+      "name": "Accessibility, Mobility & Transport",
+      "key": "accessibility-mobility-transport"
+    },
+
+    "theme": {
+      "code": "TH02",
+      "name": "Transport",
+      "key": "transport"
+    },
+
+    "subTheme": {
+      "code": "ST02",
+      "name": "Public Transport Accessibility",
+      "key": "public-transport-accessibility"
+    },
+
+    "geographicScope": {
+      "code": "GS01",
+      "name": "Ireland",
+      "key": "ireland"
+    },
+
+    "geographicLevel": [
+      "Regional"
+    ],
+
     "status": "Production",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Regional assessment of Public Transport Accessibility Levels, examining spatial variation in access to public transport across West Cork.",
+
     "geography": "West Cork, Ireland",
     "geographyType": "Regional",
+
     "image": "/assets/projects/SEL-003.jpg",
     "url": "/projects/sel-003-west-cork-public-transport/"
   },
+
   {
     "id": "SEL-004",
     "title": "Ireland Forestry and Land Use Analysis",
-    "domain": "Cities, Regions & Land Use",
-    "domainKey": "cities-regions-land-use",
+
+    "researchDomain": {
+      "code": "RD06",
+      "name": "Cities, Regions & Land Use",
+      "key": "cities-regions-land-use"
+    },
+
+    "theme": {
+      "code": "TH06",
+      "name": "Land Use",
+      "key": "land-use"
+    },
+
+    "subTheme": {
+      "code": "ST04",
+      "name": "Forestry & Land Use",
+      "key": "forestry-land-use"
+    },
+
+    "geographicScope": {
+      "code": "GS01",
+      "name": "Ireland",
+      "key": "ireland"
+    },
+
+    "geographicLevel": [
+      "National",
+      "Regional",
+      "County"
+    ],
+
     "status": "Production",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "GIS-based assessment of forestry and land-use patterns across Ireland, exploring their spatial distribution and environmental context.",
+
     "geography": "Ireland",
     "geographyType": "National",
+
     "image": "/assets/projects/SEL-004.jpg",
     "url": "/projects/sel-004-ireland-forestry-land-use/"
   },
+
   {
     "id": "SEL-005",
     "title": "Greater Athens Heat Risk and Environmental Quality Assessment",
-    "domain": "Environment, Climate & Natural Hazards",
-    "domainKey": "environment-climate-natural-hazards",
+
+    "researchDomain": {
+      "code": "RD03",
+      "name": "Environment, Climate & Natural Hazards",
+      "key": "environment-climate-natural-hazards"
+    },
+
+    "theme": {
+      "code": "TH03",
+      "name": "Climate Change",
+      "key": "climate-change"
+    },
+
+    "subTheme": {
+      "code": "ST05",
+      "name": "Heat Risk",
+      "key": "heat-risk"
+    },
+
+    "geographicScope": {
+      "code": "GS03",
+      "name": "International Case Studies",
+      "key": "international-case-studies"
+    },
+
+    "geographicLevel": [
+      "Metropolitan",
+      "Urban Area"
+    ],
+
     "status": "Production",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Spatial modelling of heat risk and environmental quality to identify areas experiencing elevated environmental exposure and vulnerability.",
+
     "geography": "Greater Athens, Greece",
     "geographyType": "International",
+
     "image": "/assets/projects/SEL-005.jpg",
     "url": "/projects/sel-005-greater-athens-heat-risk/"
   },
+
   {
     "id": "SEL-006",
     "title": "County Wicklow Wind Energy Potential Assessment",
-    "domain": "Energy & Infrastructure",
-    "domainKey": "energy-infrastructure",
+
+    "researchDomain": {
+      "code": "RD04",
+      "name": "Energy & Infrastructure",
+      "key": "energy-infrastructure"
+    },
+
+    "theme": {
+      "code": "TH04",
+      "name": "Renewable Energy",
+      "key": "renewable-energy"
+    },
+
+    "subTheme": {
+      "code": "ST06",
+      "name": "Wind Energy",
+      "key": "wind-energy"
+    },
+
+    "geographicScope": {
+      "code": "GS01",
+      "name": "Ireland",
+      "key": "ireland"
+    },
+
+    "geographicLevel": [
+      "County"
+    ],
+
     "status": "Production",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Spatial multi-criteria assessment of wind energy potential, combining geographic suitability factors to support renewable energy planning.",
+
     "geography": "County Wicklow, Ireland",
     "geographyType": "County",
+
     "image": "/assets/projects/SEL-006.jpg",
     "url": "/projects/sel-006-county-wicklow-wind-energy/"
   },
+
   {
     "id": "SEL-007",
     "title": "Rondônia Deforestation and Forest Loss Analysis",
-    "domain": "Environment, Climate & Natural Hazards",
-    "domainKey": "environment-climate-natural-hazards",
+
+    "researchDomain": {
+      "code": "RD03",
+      "name": "Environment, Climate & Natural Hazards",
+      "key": "environment-climate-natural-hazards"
+    },
+
+    "theme": {
+      "code": "TH03",
+      "name": "Forests & Land Cover",
+      "key": "forests-land-cover"
+    },
+
+    "subTheme": {
+      "code": "ST07",
+      "name": "Deforestation & Forest Loss",
+      "key": "deforestation-forest-loss"
+    },
+
+    "geographicScope": {
+      "code": "GS03",
+      "name": "International Case Studies",
+      "key": "international-case-studies"
+    },
+
+    "geographicLevel": [
+      "Regional"
+    ],
+
     "status": "Production",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Spatial analysis of deforestation in Rondônia, examining patterns of forest loss and land-use change using geographic and temporal evidence.",
+
     "geography": "Rondônia, Brazil",
     "geographyType": "International",
+
     "image": "/assets/projects/SEL-007.jpg",
     "url": "/projects/sel-007-rondonia-deforestation/"
   },
+
   {
     "id": "SEL-008",
     "title": "Deforestation Change Analysis, 2017–2025",
-    "domain": "Environment, Climate & Natural Hazards",
-    "domainKey": "environment-climate-natural-hazards",
+
+    "researchDomain": {
+      "code": "RD03",
+      "name": "Environment, Climate & Natural Hazards",
+      "key": "environment-climate-natural-hazards"
+    },
+
+    "theme": {
+      "code": "TH03",
+      "name": "Forests & Land Cover",
+      "key": "forests-land-cover"
+    },
+
+    "subTheme": {
+      "code": "ST08",
+      "name": "Forest Change",
+      "key": "forest-change"
+    },
+
+    "geographicScope": {
+      "code": "GS03",
+      "name": "International Case Studies",
+      "key": "international-case-studies"
+    },
+
+    "geographicLevel": [
+      "Regional"
+    ],
+
     "status": "Research",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Time-series assessment of deforestation and forest-cover change between 2017 and 2025, supporting visualisation of spatial and temporal trends.",
+
     "geography": "Rondônia, Brazil",
     "geographyType": "International",
+
     "image": "/project-deforestation-timelapse.jpg",
     "url": "/projects/"
   },
+
   {
     "id": "SEL-009",
     "title": "Glover, Vermont Solar Energy Potential Assessment",
-    "domain": "Energy & Infrastructure",
-    "domainKey": "energy-infrastructure",
+
+    "researchDomain": {
+      "code": "RD04",
+      "name": "Energy & Infrastructure",
+      "key": "energy-infrastructure"
+    },
+
+    "theme": {
+      "code": "TH04",
+      "name": "Renewable Energy",
+      "key": "renewable-energy"
+    },
+
+    "subTheme": {
+      "code": "ST09",
+      "name": "Solar Energy",
+      "key": "solar-energy"
+    },
+
+    "geographicScope": {
+      "code": "GS03",
+      "name": "International Case Studies",
+      "key": "international-case-studies"
+    },
+
+    "geographicLevel": [
+      "Local",
+      "Town"
+    ],
+
     "status": "Research",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Spatial assessment of solar energy potential in Glover, Vermont, combining geographic and environmental suitability factors for renewable energy planning.",
+
     "geography": "Glover, Vermont, USA",
     "geographyType": "International",
+
     "image": "/project-solar.jpg",
     "url": "/projects/"
   },
+
   {
     "id": "SEL-010",
     "title": "Miami Sea Level Rise Impact Assessment",
-    "domain": "Environment, Climate & Natural Hazards",
-    "domainKey": "environment-climate-natural-hazards",
+
+    "researchDomain": {
+      "code": "RD03",
+      "name": "Environment, Climate & Natural Hazards",
+      "key": "environment-climate-natural-hazards"
+    },
+
+    "theme": {
+      "code": "TH03",
+      "name": "Natural Hazards",
+      "key": "natural-hazards"
+    },
+
+    "subTheme": {
+      "code": "ST10",
+      "name": "Coastal Inundation",
+      "key": "coastal-inundation"
+    },
+
+    "geographicScope": {
+      "code": "GS03",
+      "name": "International Case Studies",
+      "key": "international-case-studies"
+    },
+
+    "geographicLevel": [
+      "Metropolitan",
+      "Urban Area"
+    ],
+
     "status": "Research",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Spatial assessment of potential sea level rise impacts in Miami, examining exposure of land, infrastructure and communities to coastal inundation.",
+
     "geography": "Miami, Florida, USA",
     "geographyType": "International",
+
     "image": "/project-sealevel.jpg",
     "url": "/projects/"
   },
+
   {
     "id": "SEL-011",
     "title": "Renewable Energy Potential for Private Housing in Ireland",
-    "domain": "Energy & Infrastructure",
-    "domainKey": "energy-infrastructure",
+
+    "researchDomain": {
+      "code": "RD05",
+      "name": "Housing & Socioeconomic Conditions",
+      "key": "housing-socioeconomic-conditions"
+    },
+
+    "theme": {
+      "code": "TH05",
+      "name": "Housing",
+      "key": "housing"
+    },
+
+    "subTheme": {
+      "code": "ST11",
+      "name": "Household Renewable Energy",
+      "key": "household-renewable-energy"
+    },
+
+    "geographicScope": {
+      "code": "GS01",
+      "name": "Ireland",
+      "key": "ireland"
+    },
+
+    "geographicLevel": [
+      "National",
+      "Residential"
+    ],
+
     "status": "Research",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Spatial study of renewable energy opportunities for private housing in Ireland, exploring the potential contribution of renewable technologies to residential energy needs.",
+
     "geography": "Ireland",
     "geographyType": "National",
+
     "image": "/project-residential-energy.jpg",
     "url": "/projects/"
   },
+
   {
     "id": "SEL-012",
     "title": "California Wildfire Impact Assessment",
-    "domain": "Environment, Climate & Natural Hazards",
-    "domainKey": "environment-climate-natural-hazards",
+
+    "researchDomain": {
+      "code": "RD03",
+      "name": "Environment, Climate & Natural Hazards",
+      "key": "environment-climate-natural-hazards"
+    },
+
+    "theme": {
+      "code": "TH03",
+      "name": "Natural Hazards",
+      "key": "natural-hazards"
+    },
+
+    "subTheme": {
+      "code": "ST12",
+      "name": "Wildfire",
+      "key": "wildfire"
+    },
+
+    "geographicScope": {
+      "code": "GS03",
+      "name": "International Case Studies",
+      "key": "international-case-studies"
+    },
+
+    "geographicLevel": [
+      "State",
+      "Regional"
+    ],
+
     "status": "Research",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Spatial assessment of areas affected by wildfire in California, examining the geographic distribution and potential impacts of wildfire events.",
+
     "geography": "California, USA",
     "geographyType": "International",
+
     "image": "/project-wildfire.jpg",
     "url": "/projects/"
   },
+
   {
     "id": "SEL-013",
     "title": "Dublin Footfall and Urban Activity Analysis",
-    "domain": "Accessibility, Mobility & Transport",
-    "domainKey": "accessibility-mobility-transport",
+
+    "researchDomain": {
+      "code": "RD06",
+      "name": "Cities, Regions & Land Use",
+      "key": "cities-regions-land-use"
+    },
+
+    "theme": {
+      "code": "TH06",
+      "name": "Urban Systems",
+      "key": "urban-systems"
+    },
+
+    "subTheme": {
+      "code": "ST13",
+      "name": "Urban Activity",
+      "key": "urban-activity"
+    },
+
+    "geographicScope": {
+      "code": "GS01",
+      "name": "Ireland",
+      "key": "ireland"
+    },
+
+    "geographicLevel": [
+      "Urban Area",
+      "Local Area"
+    ],
+
     "status": "Research",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Spatial analysis of pedestrian footfall patterns in Dublin, examining geographic variation in activity and potential relationships with urban characteristics.",
+
     "geography": "Dublin, Ireland",
     "geographyType": "Urban",
+
     "image": "/project-footfall.jpg",
     "url": "/projects/"
   },
+
   {
     "id": "SEL-014",
     "title": "Ireland Population Spatial Analysis",
-    "domain": "Population & Demography",
-    "domainKey": "population-demography",
+
+    "researchDomain": {
+      "code": "RD07",
+      "name": "Population & Demography",
+      "key": "population-demography"
+    },
+
+    "theme": {
+      "code": "TH07",
+      "name": "Population",
+      "key": "population"
+    },
+
+    "subTheme": {
+      "code": "ST14",
+      "name": "Population Distribution",
+      "key": "population-distribution"
+    },
+
+    "geographicScope": {
+      "code": "GS01",
+      "name": "Ireland",
+      "key": "ireland"
+    },
+
+    "geographicLevel": [
+      "National",
+      "Regional",
+      "County",
+      "Small Area"
+    ],
+
     "status": "Research",
+    "portfolioRole": "Exploratory Research",
+
     "summary": "Spatial analysis of population distribution across Ireland, examining geographic patterns, concentration and variation using demographic data.",
+
     "geography": "Ireland",
     "geographyType": "National",
+
     "image": "/project-population.jpg",
     "url": "/projects/"
   }
