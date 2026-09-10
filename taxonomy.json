@@ -1,6 +1,26 @@
 {
-  "taxonomyVersion": "1.0",
+  "taxonomyVersion": "1.1",
   "lastUpdated": "2026-09-10",
+
+  "schema": {
+    "name": "Spatial Evidence Lab Research Taxonomy",
+    "description": "Controlled vocabulary for classifying Spatial Evidence Lab research projects, geographic scope, publication status, outputs and analytical frameworks.",
+    "hierarchy": [
+      "researchDomain",
+      "theme",
+      "subTheme"
+    ],
+    "projectClassificationFields": [
+      "researchDomain",
+      "theme",
+      "subTheme",
+      "geographicScope",
+      "geographicLevel",
+      "status",
+      "portfolioRole",
+      "analyticalFramework"
+    ]
+  },
 
   "researchDomains": [
     {
@@ -49,6 +69,7 @@
             }
           ]
         },
+
         {
           "code": "TH02",
           "name": "Living Conditions",
@@ -80,6 +101,7 @@
             }
           ]
         },
+
         {
           "code": "TH03",
           "name": "Social Conditions",
@@ -153,6 +175,7 @@
             }
           ]
         },
+
         {
           "code": "TH05",
           "name": "Accessibility",
@@ -184,6 +207,7 @@
             }
           ]
         },
+
         {
           "code": "TH06",
           "name": "Mobility",
@@ -257,6 +281,7 @@
             }
           ]
         },
+
         {
           "code": "TH08",
           "name": "Climate Change",
@@ -288,6 +313,7 @@
             }
           ]
         },
+
         {
           "code": "TH09",
           "name": "Natural Hazards",
@@ -326,6 +352,7 @@
             }
           ]
         },
+
         {
           "code": "TH10",
           "name": "Forests & Land Cover",
@@ -399,6 +426,7 @@
             }
           ]
         },
+
         {
           "code": "TH12",
           "name": "Energy & Housing",
@@ -423,6 +451,7 @@
             }
           ]
         },
+
         {
           "code": "TH13",
           "name": "Infrastructure Planning",
@@ -489,6 +518,7 @@
             }
           ]
         },
+
         {
           "code": "TH15",
           "name": "Socioeconomic Conditions",
@@ -527,6 +557,7 @@
             }
           ]
         },
+
         {
           "code": "TH16",
           "name": "Household Conditions",
@@ -586,20 +617,14 @@
             },
             {
               "code": "ST51",
-              "name": "Land-Cover Change",
-              "key": "land-cover-change",
-              "description": "Spatial and temporal analysis of changes in land cover.",
-              "displayOrder": 2
-            },
-            {
-              "code": "ST52",
               "name": "Forestry & Land Use",
               "key": "forestry-land-use",
               "description": "Spatial relationships between forestry and broader land-use patterns.",
-              "displayOrder": 3
+              "displayOrder": 2
             }
           ]
         },
+
         {
           "code": "TH18",
           "name": "Urban Systems",
@@ -609,21 +634,21 @@
 
           "subThemes": [
             {
-              "code": "ST53",
+              "code": "ST52",
               "name": "Urban Activity",
               "key": "urban-activity",
               "description": "Spatial patterns of activity and movement within urban areas.",
               "displayOrder": 1
             },
             {
-              "code": "ST54",
+              "code": "ST53",
               "name": "Urban Vitality",
               "key": "urban-vitality",
               "description": "Spatial indicators of urban vitality, activity and place performance.",
               "displayOrder": 2
             },
             {
-              "code": "ST55",
+              "code": "ST54",
               "name": "Urban Structure",
               "key": "urban-structure",
               "description": "Spatial structure, density and organisation of urban areas.",
@@ -631,6 +656,7 @@
             }
           ]
         },
+
         {
           "code": "TH19",
           "name": "Regional Analysis",
@@ -640,21 +666,21 @@
 
           "subThemes": [
             {
-              "code": "ST56",
+              "code": "ST55",
               "name": "Regional Patterns",
               "key": "regional-patterns",
               "description": "Geographic variation and spatial patterns across regions.",
               "displayOrder": 1
             },
             {
-              "code": "ST57",
+              "code": "ST56",
               "name": "Spatial Inequality",
               "key": "spatial-inequality",
               "description": "Regional and geographic differences in socioeconomic and environmental conditions.",
               "displayOrder": 2
             },
             {
-              "code": "ST58",
+              "code": "ST57",
               "name": "Rural–Urban Differences",
               "key": "rural-urban-differences",
               "description": "Spatial differences between urban, suburban, town and rural contexts.",
@@ -662,6 +688,7 @@
             }
           ]
         },
+
         {
           "code": "TH20",
           "name": "Environmental Land Change",
@@ -671,21 +698,21 @@
 
           "subThemes": [
             {
-              "code": "ST59",
+              "code": "ST58",
               "name": "Deforestation",
               "key": "deforestation",
               "description": "Spatial analysis of forest clearance and deforestation.",
               "displayOrder": 1
             },
             {
-              "code": "ST60",
+              "code": "ST59",
               "name": "Forest Change",
               "key": "forest-change",
               "description": "Temporal analysis of changes in forest extent and condition.",
               "displayOrder": 2
             },
             {
-              "code": "ST61",
+              "code": "ST60",
               "name": "Landscape Change",
               "key": "landscape-change",
               "description": "Spatial and temporal analysis of landscape transformation.",
@@ -713,21 +740,21 @@
 
           "subThemes": [
             {
-              "code": "ST62",
+              "code": "ST61",
               "name": "Population Distribution",
               "key": "population-distribution",
               "description": "Spatial distribution and concentration of population.",
               "displayOrder": 1
             },
             {
-              "code": "ST63",
+              "code": "ST62",
               "name": "Population Density",
               "key": "population-density",
               "description": "Spatial variation in population density.",
               "displayOrder": 2
             },
             {
-              "code": "ST64",
+              "code": "ST63",
               "name": "Population Change",
               "key": "population-change",
               "description": "Spatial and temporal patterns of population growth and decline.",
@@ -735,6 +762,7 @@
             }
           ]
         },
+
         {
           "code": "TH22",
           "name": "Demography",
@@ -744,21 +772,21 @@
 
           "subThemes": [
             {
-              "code": "ST65",
+              "code": "ST64",
               "name": "Demographic Structure",
               "key": "demographic-structure",
               "description": "Spatial distribution of demographic characteristics.",
               "displayOrder": 1
             },
             {
-              "code": "ST66",
+              "code": "ST65",
               "name": "Age Structure",
               "key": "age-structure",
               "description": "Spatial variation in population age composition.",
               "displayOrder": 2
             },
             {
-              "code": "ST67",
+              "code": "ST66",
               "name": "Dependency",
               "key": "dependency",
               "description": "Spatial patterns of demographic dependency.",
@@ -766,6 +794,7 @@
             }
           ]
         },
+
         {
           "code": "TH23",
           "name": "Population Vulnerability",
@@ -775,14 +804,14 @@
 
           "subThemes": [
             {
-              "code": "ST68",
+              "code": "ST67",
               "name": "Population Vulnerability",
               "key": "population-vulnerability",
               "description": "Spatial patterns of population vulnerability.",
               "displayOrder": 1
             },
             {
-              "code": "ST69",
+              "code": "ST68",
               "name": "Demographic Inequality",
               "key": "demographic-inequality",
               "description": "Spatial differences in demographic conditions and outcomes.",
@@ -799,138 +828,95 @@
       "code": "GS01",
       "name": "Ireland",
       "key": "ireland",
-      "description": "Research undertaken within Ireland, including national, regional, county, local authority and small-area analysis.",
-      "displayOrder": 1,
-
-      "geographicLevels": [
-        {
-          "code": "GL01",
-          "name": "National",
-          "key": "national"
-        },
-        {
-          "code": "GL02",
-          "name": "Regional",
-          "key": "regional"
-        },
-        {
-          "code": "GL03",
-          "name": "County",
-          "key": "county"
-        },
-        {
-          "code": "GL04",
-          "name": "Local Authority",
-          "key": "local-authority"
-        },
-        {
-          "code": "GL05",
-          "name": "Small Area",
-          "key": "small-area"
-        },
-        {
-          "code": "GL06",
-          "name": "Town",
-          "key": "town"
-        },
-        {
-          "code": "GL07",
-          "name": "Urban Area",
-          "key": "urban-area"
-        },
-        {
-          "code": "GL08",
-          "name": "Local Area",
-          "key": "local-area"
-        },
-        {
-          "code": "GL09",
-          "name": "Residential",
-          "key": "residential"
-        }
-      ]
+      "description": "Research undertaken within Ireland.",
+      "displayOrder": 1
     },
-
     {
       "code": "GS02",
       "name": "Local Places",
       "key": "local-places",
-      "description": "Detailed studies of towns, communities, neighbourhoods and urban areas.",
-      "displayOrder": 2,
-
-      "geographicLevels": [
-        {
-          "code": "GL10",
-          "name": "Town",
-          "key": "town"
-        },
-        {
-          "code": "GL11",
-          "name": "Community",
-          "key": "community"
-        },
-        {
-          "code": "GL12",
-          "name": "Neighbourhood",
-          "key": "neighbourhood"
-        },
-        {
-          "code": "GL13",
-          "name": "Urban Area",
-          "key": "urban-area"
-        },
-        {
-          "code": "GL14",
-          "name": "Local Area",
-          "key": "local-area"
-        }
-      ]
+      "description": "Detailed studies of towns, communities, neighbourhoods and local urban areas.",
+      "displayOrder": 2
     },
-
     {
       "code": "GS03",
       "name": "International Case Studies",
       "key": "international-case-studies",
-      "description": "Research examining environmental, geographic, energy and spatial questions across places outside Ireland.",
-      "displayOrder": 3,
+      "description": "Research examining geographic and spatial questions outside Ireland.",
+      "displayOrder": 3
+    }
+  ],
 
-      "geographicLevels": [
-        {
-          "code": "GL15",
-          "name": "National",
-          "key": "national"
-        },
-        {
-          "code": "GL16",
-          "name": "Regional",
-          "key": "regional"
-        },
-        {
-          "code": "GL17",
-          "name": "State / Province",
-          "key": "state-province"
-        },
-        {
-          "code": "GL18",
-          "name": "Metropolitan",
-          "key": "metropolitan"
-        },
-        {
-          "code": "GL19",
-          "name": "Urban Area",
-          "key": "urban-area"
-        },
-        {
-          "code": "GL20",
-          "name": "Local",
-          "key": "local"
-        },
-        {
-          "code": "GL21",
-          "name": "Town",
-          "key": "town"
-        }
-      ]
+  "geographicLevels": [
+    {
+      "code": "GL01",
+      "name": "National",
+      "key": "national"
+    },
+    {
+      "code": "GL02",
+      "name": "Regional",
+      "key": "regional"
+    },
+    {
+      "code": "GL03",
+      "name": "County",
+      "key": "county"
+    },
+    {
+      "code": "GL04",
+      "name": "Local Authority",
+      "key": "local-authority"
+    },
+    {
+      "code": "GL05",
+      "name": "Small Area",
+      "key": "small-area"
+    },
+    {
+      "code": "GL06",
+      "name": "Town",
+      "key": "town"
+    },
+    {
+      "code": "GL07",
+      "name": "Urban Area",
+      "key": "urban-area"
+    },
+    {
+      "code": "GL08",
+      "name": "Local Area",
+      "key": "local-area"
+    },
+    {
+      "code": "GL09",
+      "name": "Community",
+      "key": "community"
+    },
+    {
+      "code": "GL10",
+      "name": "Neighbourhood",
+      "key": "neighbourhood"
+    },
+    {
+      "code": "GL11",
+      "name": "Residential",
+      "key": "residential"
+    },
+    {
+      "code": "GL12",
+      "name": "Metropolitan",
+      "key": "metropolitan"
+    },
+    {
+      "code": "GL13",
+      "name": "State / Province",
+      "key": "state-province"
+    },
+    {
+      "code": "GL14",
+      "name": "Local",
+      "key": "local"
     }
   ],
 
@@ -1190,5 +1176,25 @@
       "name": "Urban Vitality",
       "key": "urban-vitality"
     }
-  ]
+  ],
+
+  "classificationRules": {
+    "primaryHierarchy": [
+      "researchDomain",
+      "theme",
+      "subTheme"
+    ],
+    "geographyHierarchy": [
+      "geographicScope",
+      "geographicLevel"
+    ],
+    "statusMustMatchControlledVocabulary": true,
+    "portfolioRoleMustMatchControlledVocabulary": true,
+    "analyticalFrameworkMustMatchControlledVocabulary": true,
+    "unknownFutureTermsAllowed": false,
+    "multipleGeographicLevelsAllowed": true,
+    "onePrimaryResearchDomainPerProject": true,
+    "onePrimaryThemePerProject": true,
+    "onePrimarySubThemePerProject": true
+  }
 }
