@@ -1,19 +1,14 @@
-# README – Standalone qgis2web Export
+PACKAGE 3 — Interactive OpenLayers Web Map
+Standalone qgis2web export retained and wrapped with a custom Spatial Evidence Lab interface.
 
-This export is completely "self-contained".
+Open webmap/index.html in a web server or GitHub Pages deployment.
+The package retains the supplied QGIS-generated layers, styles and resources and adds:
+- custom sidebar
+- layer groups
+- Small Area / Electoral Division search
+- custom legend
+- distance and area measurement
+- metadata panel
+- SEL-styled popup enhancement
 
-To view the map, simply open "index.html" by double-clicking it.
-No web server or additional software is required.
-
-The map works because all the required JavaScript libraries are included
-in the export. The application loads the GeoJSON layer data and their styles
-directly from the local files.
-
-## Publishing on a Website
-
-If you upload the entire folder to a web server, the map will work 
-immediately by opening the "index.html" file.
-
-Example:
-
-"https://www.example.com/my-map/index.html"
+No external mapping library is required beyond the basemap URL already present in the supplied qgis2web export.

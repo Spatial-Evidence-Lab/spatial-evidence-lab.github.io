@@ -1,47 +1,88 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="./resources/ol.css">
-	<link rel="stylesheet" href="resources/fontawesome-all.min.css">
-	<link href="resources/photon-geocoder-autocomplete.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="./resources/ol-layerswitcher.css">
-	<link rel="stylesheet" href="./resources/qgis2web.css">
-
-	<!-- Spatial Evidence Lab map styling -->
-	<link rel="stylesheet" href="./resources/sel-qgis2web.css">
-        
-        <style>
-        html, body, #map {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        </style>
-        <title>Bandon Public Transport Accessibility Analysis</title>
-    </head>
-    <body>
-        <div id="map">
-            <div id="popup" class="ol-popup">
-                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                <div id="popup-content"></div>
-            </div>
-        </div>
-        <script src="resources/qgis2web_expressions.js"></script>
-        <script src="./resources/functions.js"></script>
-        <script src="./resources/ol.js"></script>
-        <script src="./resources/ol-layerswitcher.js"></script>
-        <script src="resources/photon-geocoder-autocomplete.min.js"></script>
-        <script src="resources/olms.js"></script>
-        <script src="layers/InterventionPriority_1.js"></script><script src="layers/BandonPublicTransportAccessibilityAnalysis_2.js"></script><script src="layers/Study_boundary_3.js"></script><script src="layers/Busstop_4.js"></script>
-        <script src="styles/InterventionPriority_1_style.js"></script><script src="styles/BandonPublicTransportAccessibilityAnalysis_2_style.js"></script><script src="styles/Study_boundary_3_style.js"></script><script src="styles/Busstop_4_style.js"></script>
-        <script src="./layers/layers.js" type="text/javascript"></script> 
-        <script src="./resources/Autolinker.min.js"></script>
-        <script src="./resources/qgis2web.js"></script>        
-    </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SEL-002 Bandon Public Transport Accessibility Analysis interactive map.">
+<title>SEL-002 · Bandon Public Transport Accessibility Analysis</title>
+<link rel="stylesheet" href="./resources/ol.css">
+<link rel="stylesheet" href="./resources/fontawesome-all.min.css">
+<link rel="stylesheet" href="./resources/photon-geocoder-autocomplete.min.css">
+<link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+<link rel="stylesheet" href="./resources/qgis2web.css">
+<link rel="stylesheet" href="./resources/sel-qgis2web.css">
+<link rel="stylesheet" href="./webmap.css">
+</head>
+<body>
+<header class="map-header">
+  <a href="/projects/sel-002-bandon-public-transport/" class="map-brand" aria-label="Return to SEL-002 publication">
+    <span class="map-brand-mark">SE</span><span>Spatial Evidence <b>Lab</b></span>
+  </a>
+  <div class="map-title"><span>SEL-002</span><strong>Bandon Public Transport Accessibility Analysis</strong></div>
+  <a class="map-report" href="/projects/sel-002-bandon-public-transport/">Publication ↗</a>
+</header>
+<aside id="map-sidebar" class="map-sidebar" aria-label="Map controls">
+  <div class="sidebar-head"><div><span>INTERACTIVE EVIDENCE</span><h1>Map explorer</h1></div><button id="sidebar-close" type="button" aria-label="Close map sidebar">×</button></div>
+  <section class="sidebar-section">
+    <label class="control-label" for="layer-search">Search Small Area / ED</label>
+    <div class="search-row"><input id="layer-search" type="search" placeholder="e.g. A047033001 or Ballymodan" autocomplete="off"><button id="layer-search-btn" type="button">Find</button></div>
+    <p id="search-status" class="control-help" aria-live="polite">Search the accessibility layer by Small Area ID or Electoral Division.</p>
+  </section>
+  <section class="sidebar-section">
+    <h2>Evidence layers</h2>
+    <div id="layer-controls" class="layer-controls"></div>
+  </section>
+  <section class="sidebar-section">
+    <h2>Legend</h2>
+    <div id="custom-legend" class="custom-legend"></div>
+  </section>
+  <section class="sidebar-section tools-section">
+    <h2>Tools</h2>
+    <div class="tool-grid">
+      <button type="button" data-tool="distance">Measure distance</button>
+      <button type="button" data-tool="area">Measure area</button>
+      <button type="button" data-tool="clear">Clear measurement</button>
+    </div>
+    <output id="measure-output" class="measure-output" aria-live="polite">No measurement</output>
+  </section>
+  <section class="sidebar-section">
+    <h2>Metadata</h2>
+    <dl id="metadata-panel" class="metadata-panel">
+      <div><dt>Project</dt><dd>SEL-002</dd></div>
+      <div><dt>Geography</dt><dd>CSO Small Areas</dd></div>
+      <div><dt>Population reference</dt><dd>Census 2022</dd></div>
+      <div><dt>Transport evidence</dt><dd>Public transport / GTFS</dd></div>
+      <div><dt>Network</dt><dd>Walking accessibility</dd></div>
+      <div><dt>Map engine</dt><dd>OpenLayers + qgis2web</dd></div>
+    </dl>
+  </section>
+  <div class="sidebar-foot"><a href="/projects/sel-002-bandon-public-transport/">← Publication</a><a href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">GitHub ↗</a></div>
+</aside>
+<button id="sidebar-open" class="sidebar-open" type="button" aria-label="Open map controls">☰ Controls</button>
+<main id="map" aria-label="Interactive Bandon map">
+  <div id="popup" class="ol-popup">
+    <a href="#" id="popup-closer" class="ol-popup-closer" aria-label="Close popup"></a>
+    <div id="popup-content"></div>
+  </div>
+</main>
+<script src="./resources/qgis2web_expressions.js"></script>
+<script src="./resources/functions.js"></script>
+<script src="./resources/ol.js"></script>
+<script src="./resources/ol-layerswitcher.js"></script>
+<script src="./resources/photon-geocoder-autocomplete.min.js"></script>
+<script src="./resources/olms.js"></script>
+<script src="./layers/InterventionPriority_1.js"></script>
+<script src="./layers/BandonPublicTransportAccessibilityAnalysis_2.js"></script>
+<script src="./layers/Study_boundary_3.js"></script>
+<script src="./layers/Busstop_4.js"></script>
+<script src="./styles/InterventionPriority_1_style.js"></script>
+<script src="./styles/BandonPublicTransportAccessibilityAnalysis_2_style.js"></script>
+<script src="./styles/Study_boundary_3_style.js"></script>
+<script src="./styles/Busstop_4_style.js"></script>
+<script src="./layers/layers.js"></script>
+<script src="./resources/Autolinker.min.js"></script>
+<script src="./resources/qgis2web.js"></script>
+<script src="./map-config.js"></script>
+<script src="./map-ui.js"></script>
+</body>
 </html>
