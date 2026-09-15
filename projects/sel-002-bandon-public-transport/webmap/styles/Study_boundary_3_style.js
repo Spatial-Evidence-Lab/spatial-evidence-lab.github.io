@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_Busstop_4 = function(feature, resolution){
+var style_Study_boundary_3 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -23,15 +23,7 @@ var style_Busstop_4 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        image: new ol.style.Icon({
-                  imgSize: [579.997, 579.997],
-                  scale: 0.037931230678779376,
-                  anchor: [289.9985, 289.9985],
-                  anchorXUnits: "pixels",
-                  anchorYUnits: "pixels",
-                  rotation: 0.0,
-                  src: "styles/highway=bus_stop.svg"
-            }),
+        stroke: new ol.style.Stroke({color: 'rgba(15,44,51,1.0)', lineDash: null, lineCap: 'round', lineJoin: 'round', width: 1.3299999999999998}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth, textAlign, offsetX, offsetY, overflow, repeat)
