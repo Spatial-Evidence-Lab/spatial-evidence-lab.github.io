@@ -1,0 +1,550 @@
+/* ============================================================
+   SPATIAL EVIDENCE LAB
+   SEL-002 — BANDON PUBLIC TRANSPORT ACCESSIBILITY ANALYSIS
+
+   QGIS2WEB / OPENLAYERS
+   SEL MAP INTERFACE
+   ============================================================ */
+
+
+/* ============================================================
+   SEL DESIGN TOKENS
+   ============================================================ */
+
+:root {
+
+    /* Current Spatial Evidence Lab identity */
+    --sel-ink: #07111F;
+    --sel-navy: #0B1828;
+    --sel-card: #102338;
+
+    /* Accent system */
+    --sel-teal: #1F7A8C;
+    --sel-cyan: #5EDBE5;
+    --sel-orange: #E58F65;
+
+    /* Typography */
+    --sel-white: #FFFFFF;
+    --sel-text: #F5F3EE;
+    --sel-muted: #AEBCC2;
+
+    /* Analytical colours */
+    --sel-green: #43C59E;
+    --sel-amber: #F2C14E;
+    --sel-red: #E76F51;
+
+    /* Popup */
+    --popup-width: 380px;
+    --popup-radius: 14px;
+
+    --popup-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.38),
+        0 4px 12px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ============================================================
+   MAP
+   ============================================================ */
+
+html,
+body,
+#map {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* ============================================================
+   MAP CONTROLS
+   ============================================================ */
+
+.ol-control {
+    background: rgba(7, 17, 31, 0.12) !important;
+    padding: 3px !important;
+    border-radius: 9px !important;
+}
+
+.ol-control > * {
+    background: var(--sel-navy) !important;
+    color: var(--sel-text) !important;
+
+    border: 1px solid rgba(31, 122, 140, 0.65) !important;
+
+    border-radius: 7px !important;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.20);
+
+    font-family:
+        "Liberation Sans",
+        Arial,
+        sans-serif;
+}
+
+.ol-control > *:hover,
+.ol-control > *:focus {
+    background: var(--sel-card) !important;
+    color: var(--sel-cyan) !important;
+}
+
+
+/* ============================================================
+   POPUP — MAIN CONTAINER
+   ============================================================ */
+
+.ol-popup {
+
+    display: block;
+
+    position: absolute;
+
+    width: var(--popup-width);
+
+    max-width: calc(100vw - 32px);
+
+    padding: 0 !important;
+
+    background: var(--sel-navy) !important;
+
+    color: var(--sel-text) !important;
+
+    border:
+        1px solid
+        rgba(31, 122, 140, 0.75);
+
+    border-radius:
+        var(--popup-radius);
+
+    box-shadow:
+        var(--popup-shadow);
+
+    overflow: hidden;
+
+    font-family:
+        "Liberation Sans",
+        Arial,
+        sans-serif;
+
+    z-index: 1000;
+}
+
+
+/* ============================================================
+   POPUP ARROW
+   ============================================================ */
+
+.ol-popup:after,
+.ol-popup:before {
+    top: 100%;
+}
+
+.ol-popup:after {
+    border-top-color:
+        var(--sel-navy) !important;
+}
+
+.ol-popup:before {
+    border-top-color:
+        rgba(31, 122, 140, 0.75) !important;
+}
+
+
+/* ============================================================
+   CLOSE BUTTON
+   ============================================================ */
+
+.ol-popup-closer {
+
+    position: absolute;
+
+    top: 9px;
+    right: 9px;
+
+    width: 30px;
+    height: 30px;
+
+    z-index: 50;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    text-decoration: none !important;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+.ol-popup-closer:after {
+
+    content: "×";
+
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    line-height: 28px;
+
+    text-align: center;
+
+    color: var(--sel-text);
+
+    font-size: 22px;
+
+    font-weight: 300;
+}
+
+.ol-popup-closer:hover {
+    background:
+        rgba(94,219,229,0.15);
+}
+
+.ol-popup-closer:hover:after {
+    color:
+        var(--sel-cyan);
+}
+
+
+/* ============================================================
+   POPUP CONTENT
+   ============================================================ */
+
+#popup-content {
+
+    width: 100%;
+
+    max-width: none !important;
+
+    max-height: 72vh;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    color: var(--sel-text);
+
+    font-size: 13px;
+
+    line-height: 1.35;
+}
+
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+#popup-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+#popup-content::-webkit-scrollbar-track {
+    background:
+        var(--sel-ink);
+}
+
+#popup-content::-webkit-scrollbar-thumb {
+    background:
+        var(--sel-teal);
+
+    border-radius: 10px;
+}
+
+#popup-content::-webkit-scrollbar-thumb:hover {
+    background:
+        var(--sel-cyan);
+}
+
+
+/* ============================================================
+   REMOVE GENERIC QGIS2WEB LIST SPACING
+   ============================================================ */
+
+#popup-content ul {
+
+    list-style: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#popup-content li {
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* ============================================================
+   POPUP HEADER
+   qgis2web generates:
+
+   <table>
+       <a><b>Layer title</b></a>
+       ...
+   </table>
+   ============================================================ */
+
+#popup-content > ul > li > table > a {
+
+    display: block;
+
+    margin: 0 !important;
+
+    padding:
+        15px 52px 13px 18px !important;
+
+    background:
+        var(--sel-ink);
+
+    color:
+        var(--sel-white) !important;
+
+    border-bottom:
+        1px solid
+        rgba(94,219,229,0.20);
+
+    border-left:
+        3px solid
+        var(--sel-orange);
+
+    text-decoration: none !important;
+
+    font-size: 15px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
+
+    letter-spacing: -0.01em;
+}
+
+#popup-content > ul > li > table > a b {
+
+    color:
+        var(--sel-white);
+
+    font-weight:
+        600;
+}
+
+
+/* ============================================================
+   ATTRIBUTE TABLE
+   ============================================================ */
+
+#popup-content table {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+
+    background: var(--sel-navy) !important;
+    color: var(--sel-text) !important;
+
+    font-size: 13px !important;
+}
+
+#popup-content table tr {
+    background: transparent !important;
+    border: none !important;
+}
+
+
+/* LABEL */
+
+#popup-content table th {
+
+    width: 48% !important;
+
+    padding:
+        9px 8px 9px 18px !important;
+
+    background: transparent !important;
+
+    color: var(--sel-cyan) !important;
+
+    border: none !important;
+
+    border-bottom:
+        1px solid
+        rgba(245,243,238,0.075) !important;
+
+    font-size: 12px !important;
+
+    line-height: 1.3 !important;
+
+    font-weight: 600 !important;
+
+    text-align: left !important;
+
+    vertical-align: middle !important;
+}
+
+
+/* VALUE */
+
+#popup-content table td {
+
+    width: 52% !important;
+
+    padding:
+        9px 18px 9px 8px !important;
+
+    background: transparent !important;
+
+    color: var(--sel-text) !important;
+
+    border: none !important;
+
+    border-bottom:
+        1px solid
+        rgba(245,243,238,0.075) !important;
+
+    font-size: 13px !important;
+
+    line-height: 1.3 !important;
+
+    font-weight: 500 !important;
+
+    text-align: right !important;
+
+    vertical-align: middle !important;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* HOVER */
+
+#popup-content table tr:hover {
+    background:
+        rgba(94,219,229,0.035) !important;
+}
+
+
+/* FINAL ANALYTICAL RESULTS */
+
+#popup-content table tr:nth-last-child(2) th,
+#popup-content table tr:last-child th {
+
+    color: var(--sel-orange) !important;
+}
+
+#popup-content table tr:nth-last-child(2) td,
+#popup-content table tr:last-child td {
+
+    font-weight: 600 !important;
+}
+
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+#popup-content a {
+
+    color:
+        var(--sel-cyan);
+
+    text-decoration:
+        none;
+}
+
+#popup-content a:hover {
+    color:
+        var(--sel-white);
+
+    text-decoration:
+        underline;
+}
+
+
+/* ============================================================
+   NULL / EMPTY VALUES
+   ============================================================ */
+
+#popup-content td:empty {
+    color:
+        var(--sel-muted);
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    .ol-popup {
+
+        width:
+            calc(100vw - 24px);
+
+        max-width:
+            calc(100vw - 24px);
+
+        border-radius:
+            12px;
+    }
+
+    #popup-content {
+
+        max-height:
+            68vh;
+
+        font-size:
+            12px;
+    }
+
+    #popup-content > ul > li > table > a {
+
+        padding:
+            14px 46px 12px 15px !important;
+
+        font-size:
+            14px;
+    }
+
+    #popup-content table td {
+
+        padding:
+            8px 13px !important;
+
+        font-size:
+            12px !important;
+    }
+
+    #popup-content table td strong {
+
+        width:
+            47%;
+
+        font-size:
+            11px;
+    }
+}
+
+
+/* ============================================================
+   VERY SMALL SCREENS
+   ============================================================ */
+
+@media (max-width: 400px) {
+
+    #popup-content table td strong {
+
+        width:
+            44%;
+    }
+}
