@@ -1,0 +1,26 @@
+[
+  {
+    "id": "DATA-001",
+    "name": "CSO Census 2022",
+    "geography": "CSO Small Areas",
+    "reference": "2022",
+    "role": "Population and vulnerability evidence",
+    "status": "documented"
+  },
+  {
+    "id": "DATA-002",
+    "name": "Public transport / GTFS",
+    "geography": "Bandon transport network",
+    "reference": "project analysis period",
+    "role": "Stops, routes and scheduled service evidence",
+    "status": "documented"
+  },
+  {
+    "id": "DATA-003",
+    "name": "OpenStreetMap / walking network",
+    "geography": "Bandon walking network",
+    "reference": "project analysis period",
+    "role": "Network-based walking accessibility",
+    "status": "documented"
+  }
+]

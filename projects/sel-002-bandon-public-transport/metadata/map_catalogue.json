@@ -1,0 +1,58 @@
+[
+  {
+    "id": "01.00",
+    "title": "Study Area & Network",
+    "subtitle": "Geographic context",
+    "question": "What geographic and transport-network context shapes access in Bandon?",
+    "key_takeaway": "Built-up areas, principal stops and the road network establish the spatial frame for every later finding.",
+    "image": "/projects/sel-002-bandon-public-transport/maps/01.00.png"
+  },
+  {
+    "id": "01.01",
+    "title": "Walking Catchments",
+    "subtitle": "5, 10 and 15-minute network catchments",
+    "question": "How far can people really walk to reach public transport?",
+    "key_takeaway": "Network-based catchments reveal true physical reach beyond simple straight-line buffers.",
+    "image": "/projects/sel-002-bandon-public-transport/maps/01.01.png"
+  },
+  {
+    "id": "01.02",
+    "title": "Walking Accessibility",
+    "subtitle": "Relative walking-distance score",
+    "question": "Where does walking access to public transport become weaker?",
+    "key_takeaway": "Accessibility follows a sharp core–periphery gradient, dropping towards outer residential areas.",
+    "image": "/projects/sel-002-bandon-public-transport/maps/01.02.png"
+  },
+  {
+    "id": "01.03",
+    "title": "Service Accessibility",
+    "subtitle": "Scheduled peak-time frequency",
+    "question": "Does proximity to a bus stop actually mean good service?",
+    "key_takeaway": "Stop proximity alone does not capture differences in service availability for daily commuters.",
+    "image": "/projects/sel-002-bandon-public-transport/maps/01.03.png"
+  },
+  {
+    "id": "01.04",
+    "title": "Population Vulnerability",
+    "subtitle": "Census 2022 vulnerability classes",
+    "question": "Which populations may be more dependent on public transport?",
+    "key_takeaway": "Vulnerability is spatially differentiated and often highest where transport supply is weakest.",
+    "image": "/projects/sel-002-bandon-public-transport/maps/01.04.png"
+  },
+  {
+    "id": "01.05",
+    "title": "Composite Accessibility",
+    "subtitle": "Walking access and service frequency",
+    "question": "How does physical access combine with scheduled service?",
+    "key_takeaway": "The Composite Accessibility Index integrates walking distance and service frequency into five relative tiers.",
+    "image": "/projects/sel-002-bandon-public-transport/maps/01.05.png"
+  },
+  {
+    "id": "01.06",
+    "title": "Equity Hotspots",
+    "subtitle": "Access deficit and vulnerability · priority classes: Critical, High, Moderate, Low, Well Served",
+    "question": "Where may transport disadvantage be greatest?",
+    "key_takeaway": "Priority areas emerge where lower accessibility overlaps with higher population vulnerability.",
+    "image": "/projects/sel-002-bandon-public-transport/maps/01.06.png"
+  }
+]
