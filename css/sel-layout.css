@@ -1,2 +1,1 @@
-/* Layout */
-.container{max-width:var(--container);margin:auto;padding:0 32px}.section{padding:96px 0}.section-sm{padding:64px 0}.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px}.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}.hero{padding:140px 0;background:linear-gradient(135deg,var(--navy-dark),var(--navy));color:white}.hero p{color:#D0D7E2;max-width:760px;}@media(max-width:768px){.section{padding:64px 0}.container{padding:0 20px}}
+
