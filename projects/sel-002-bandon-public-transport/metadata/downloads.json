@@ -3,56 +3,56 @@
     "id": "DL-001",
     "label": "SEL-002 Research Report",
     "format": "PDF",
-    "path": "assets/SEL-002_Report.pdf",
+    "path": "../downloads/SEL-002 - Bandon Public Transport Accessibility Analysis.pdf",
     "description": "Bandon public transport accessibility analysis report."
   },
   {
     "id": "DL-002",
     "label": "Map 01.00 · Study Area & Network",
     "format": "PNG",
-    "path": "assets/maps/01.00.png",
+    "path": "../assets/maps/01.00.png",
     "description": "Geographic context"
   },
   {
     "id": "DL-003",
     "label": "Map 01.01 · Walking Catchments",
     "format": "PNG",
-    "path": "assets/maps/01.01.png",
+    "path": "../assets/maps/01.01.png",
     "description": "5, 10 and 15-minute network catchments"
   },
   {
     "id": "DL-004",
     "label": "Map 01.02 · Walking Accessibility",
     "format": "PNG",
-    "path": "assets/maps/01.02.png",
+    "path": "../assets/maps/01.02.png",
     "description": "Relative walking-distance score"
   },
   {
     "id": "DL-005",
     "label": "Map 01.03 · Service Accessibility",
     "format": "PNG",
-    "path": "assets/maps/01.03.png",
+    "path": "../assets/maps/01.03.png",
     "description": "Scheduled peak-time frequency"
   },
   {
     "id": "DL-006",
     "label": "Map 01.04 · Population Vulnerability",
     "format": "PNG",
-    "path": "assets/maps/01.04.png",
+    "path": "../assets/maps/01.04.png",
     "description": "Census 2022 vulnerability classes"
   },
   {
     "id": "DL-007",
     "label": "Map 01.05 · Composite Accessibility",
     "format": "PNG",
-    "path": "assets/maps/01.05.png",
+    "path": "../assets/maps/01.05.png",
     "description": "Walking access and service frequency"
   },
   {
     "id": "DL-008",
     "label": "Map 01.06 · Equity Hotspots",
     "format": "PNG",
-    "path": "assets/maps/01.06.png",
+    "path": "../assets/maps/01.06.png",
     "description": "Access deficit and vulnerability · priority classes: Critical, High, Moderate, Low, Well Served"
   }
 ]
