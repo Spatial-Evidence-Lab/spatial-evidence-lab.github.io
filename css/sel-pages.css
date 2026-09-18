@@ -683,3 +683,31 @@
         min-height: 320px;
     }
 }
+
+/* Project theme/tag assignments */
+.project-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 2px 0 2px;
+}
+
+.project-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 4px 8px;
+    border: 1px solid var(--sel-line);
+    border-radius: 999px;
+    background: var(--sel-section);
+    color: var(--sel-secondary);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+    .project-card-tags {
+        gap: 5px;
+    }
+}

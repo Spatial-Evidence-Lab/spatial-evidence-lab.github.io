@@ -1,7 +1,6 @@
 {
   "taxonomyVersion": "1.1",
   "lastUpdated": "2026-09-10",
-
   "schema": {
     "name": "Spatial Evidence Lab Research Taxonomy",
     "description": "Controlled vocabulary for classifying Spatial Evidence Lab research projects, geographic scope, publication status, outputs and analytical frameworks.",
@@ -21,7 +20,6 @@
       "analyticalFramework"
     ]
   },
-
   "researchDomains": [
     {
       "code": "RD01",
@@ -29,7 +27,6 @@
       "key": "people-quality-of-life",
       "description": "Research examining quality of life, wellbeing, living conditions, social conditions and place-based inequalities.",
       "displayOrder": 1,
-
       "themes": [
         {
           "code": "TH01",
@@ -37,7 +34,6 @@
           "key": "quality-of-life-wellbeing",
           "description": "Multidimensional assessment of quality of life and wellbeing across places.",
           "displayOrder": 1,
-
           "subThemes": [
             {
               "code": "ST01",
@@ -69,14 +65,12 @@
             }
           ]
         },
-
         {
           "code": "TH02",
           "name": "Living Conditions",
           "key": "living-conditions",
           "description": "Material and spatial conditions affecting everyday life.",
           "displayOrder": 2,
-
           "subThemes": [
             {
               "code": "ST05",
@@ -101,14 +95,12 @@
             }
           ]
         },
-
         {
           "code": "TH03",
           "name": "Social Conditions",
           "key": "social-conditions",
           "description": "Social inclusion, community resources and social vulnerability.",
           "displayOrder": 3,
-
           "subThemes": [
             {
               "code": "ST08",
@@ -135,14 +127,12 @@
         }
       ]
     },
-
     {
       "code": "RD02",
       "name": "Accessibility, Mobility & Transport",
       "key": "accessibility-mobility-transport",
       "description": "Research examining transport systems, accessibility, mobility, connectivity and movement.",
       "displayOrder": 2,
-
       "themes": [
         {
           "code": "TH04",
@@ -150,7 +140,6 @@
           "key": "transport",
           "description": "Spatial analysis of transport networks, services and accessibility.",
           "displayOrder": 1,
-
           "subThemes": [
             {
               "code": "ST11",
@@ -175,14 +164,12 @@
             }
           ]
         },
-
         {
           "code": "TH05",
           "name": "Accessibility",
           "key": "accessibility",
           "description": "Spatial access to services, opportunities and destinations.",
           "displayOrder": 2,
-
           "subThemes": [
             {
               "code": "ST14",
@@ -207,14 +194,12 @@
             }
           ]
         },
-
         {
           "code": "TH06",
           "name": "Mobility",
           "key": "mobility",
           "description": "Movement, travel behaviour and spatial mobility.",
           "displayOrder": 3,
-
           "subThemes": [
             {
               "code": "ST17",
@@ -241,14 +226,12 @@
         }
       ]
     },
-
     {
       "code": "RD03",
       "name": "Environment, Climate & Natural Hazards",
       "key": "environment-climate-natural-hazards",
       "description": "Research examining environmental quality, climate change, natural hazards, forests and environmental exposure.",
       "displayOrder": 3,
-
       "themes": [
         {
           "code": "TH07",
@@ -256,7 +239,6 @@
           "key": "environmental-quality",
           "description": "Spatial conditions and environmental characteristics affecting places and populations.",
           "displayOrder": 1,
-
           "subThemes": [
             {
               "code": "ST20",
@@ -281,14 +263,12 @@
             }
           ]
         },
-
         {
           "code": "TH08",
           "name": "Climate Change",
           "key": "climate-change",
           "description": "Spatial assessment of climate-related exposure, impacts and adaptation.",
           "displayOrder": 2,
-
           "subThemes": [
             {
               "code": "ST23",
@@ -313,14 +293,12 @@
             }
           ]
         },
-
         {
           "code": "TH09",
           "name": "Natural Hazards",
           "key": "natural-hazards",
           "description": "Spatial analysis of natural hazards, exposure, vulnerability and impacts.",
           "displayOrder": 3,
-
           "subThemes": [
             {
               "code": "ST26",
@@ -352,14 +330,12 @@
             }
           ]
         },
-
         {
           "code": "TH10",
           "name": "Forests & Land Cover",
           "key": "forests-land-cover",
           "description": "Spatial analysis of forests, land cover and environmental land change.",
           "displayOrder": 4,
-
           "subThemes": [
             {
               "code": "ST30",
@@ -386,14 +362,12 @@
         }
       ]
     },
-
     {
       "code": "RD04",
       "name": "Energy & Infrastructure",
       "key": "energy-infrastructure",
       "description": "Research examining renewable energy resources, energy suitability and spatial infrastructure planning.",
       "displayOrder": 4,
-
       "themes": [
         {
           "code": "TH11",
@@ -401,7 +375,6 @@
           "key": "renewable-energy",
           "description": "Spatial assessment of renewable energy resources and potential.",
           "displayOrder": 1,
-
           "subThemes": [
             {
               "code": "ST33",
@@ -426,14 +399,12 @@
             }
           ]
         },
-
         {
           "code": "TH12",
           "name": "Energy & Housing",
           "key": "energy-housing",
           "description": "Spatial relationships between residential conditions and energy systems.",
           "displayOrder": 2,
-
           "subThemes": [
             {
               "code": "ST36",
@@ -451,14 +422,12 @@
             }
           ]
         },
-
         {
           "code": "TH13",
           "name": "Infrastructure Planning",
           "key": "infrastructure-planning",
           "description": "Spatial suitability and planning analysis for infrastructure.",
           "displayOrder": 3,
-
           "subThemes": [
             {
               "code": "ST38",
@@ -478,14 +447,12 @@
         }
       ]
     },
-
     {
       "code": "RD05",
       "name": "Housing & Socioeconomic Conditions",
       "key": "housing-socioeconomic-conditions",
       "description": "Research examining housing conditions, affordability, household characteristics and socioeconomic inequality.",
       "displayOrder": 5,
-
       "themes": [
         {
           "code": "TH14",
@@ -493,7 +460,6 @@
           "key": "housing",
           "description": "Spatial analysis of housing conditions, affordability and residential characteristics.",
           "displayOrder": 1,
-
           "subThemes": [
             {
               "code": "ST40",
@@ -518,14 +484,12 @@
             }
           ]
         },
-
         {
           "code": "TH15",
           "name": "Socioeconomic Conditions",
           "key": "socioeconomic-conditions",
           "description": "Spatial analysis of income, employment, education, deprivation and inequality.",
           "displayOrder": 2,
-
           "subThemes": [
             {
               "code": "ST43",
@@ -557,14 +521,12 @@
             }
           ]
         },
-
         {
           "code": "TH16",
           "name": "Household Conditions",
           "key": "household-conditions",
           "description": "Spatial analysis of household structure, vulnerability and living conditions.",
           "displayOrder": 3,
-
           "subThemes": [
             {
               "code": "ST47",
@@ -591,14 +553,12 @@
         }
       ]
     },
-
     {
       "code": "RD06",
       "name": "Cities, Regions & Land Use",
       "key": "cities-regions-land-use",
       "description": "Research examining urban systems, regional patterns, land use, land-cover change and spatial structure.",
       "displayOrder": 6,
-
       "themes": [
         {
           "code": "TH17",
@@ -606,7 +566,6 @@
           "key": "land-use",
           "description": "Spatial analysis of land-use patterns and land-use change.",
           "displayOrder": 1,
-
           "subThemes": [
             {
               "code": "ST50",
@@ -624,14 +583,12 @@
             }
           ]
         },
-
         {
           "code": "TH18",
           "name": "Urban Systems",
           "key": "urban-systems",
           "description": "Spatial analysis of urban activity, structure, vitality and functioning.",
           "displayOrder": 2,
-
           "subThemes": [
             {
               "code": "ST52",
@@ -656,14 +613,12 @@
             }
           ]
         },
-
         {
           "code": "TH19",
           "name": "Regional Analysis",
           "key": "regional-analysis",
           "description": "Spatial analysis of regional variation, patterns and relationships.",
           "displayOrder": 3,
-
           "subThemes": [
             {
               "code": "ST55",
@@ -688,14 +643,12 @@
             }
           ]
         },
-
         {
           "code": "TH20",
           "name": "Environmental Land Change",
           "key": "environmental-land-change",
           "description": "Spatial analysis of environmental transformation and landscape change.",
           "displayOrder": 4,
-
           "subThemes": [
             {
               "code": "ST58",
@@ -722,14 +675,12 @@
         }
       ]
     },
-
     {
       "code": "RD07",
       "name": "Population & Demography",
       "key": "population-demography",
       "description": "Research examining population distribution, demographic structure, population change and demographic vulnerability.",
       "displayOrder": 7,
-
       "themes": [
         {
           "code": "TH21",
@@ -737,7 +688,6 @@
           "key": "population",
           "description": "Spatial analysis of population distribution, density and change.",
           "displayOrder": 1,
-
           "subThemes": [
             {
               "code": "ST61",
@@ -762,14 +712,12 @@
             }
           ]
         },
-
         {
           "code": "TH22",
           "name": "Demography",
           "key": "demography",
           "description": "Spatial analysis of demographic structure and characteristics.",
           "displayOrder": 2,
-
           "subThemes": [
             {
               "code": "ST64",
@@ -794,14 +742,12 @@
             }
           ]
         },
-
         {
           "code": "TH23",
           "name": "Population Vulnerability",
           "key": "population-vulnerability",
           "description": "Spatial analysis of demographic vulnerability and population exposure.",
           "displayOrder": 3,
-
           "subThemes": [
             {
               "code": "ST67",
@@ -822,7 +768,6 @@
       ]
     }
   ],
-
   "geographicScopes": [
     {
       "code": "GS01",
@@ -846,7 +791,6 @@
       "displayOrder": 3
     }
   ],
-
   "geographicLevels": [
     {
       "code": "GL01",
@@ -919,7 +863,6 @@
       "key": "local"
     }
   ],
-
   "portfolioRoles": [
     {
       "code": "PR01",
@@ -946,7 +889,6 @@
       "description": "Place-specific research used to investigate or demonstrate a spatial analytical question."
     }
   ],
-
   "publicationStatuses": [
     {
       "code": "PS01",
@@ -991,7 +933,6 @@
       "description": "Project is retained for research history but is no longer actively developed."
     }
   ],
-
   "outputTypes": [
     {
       "code": "OT01",
@@ -1034,7 +975,6 @@
       "key": "publication"
     }
   ],
-
   "analyticalFrameworks": [
     {
       "code": "AF01",
@@ -1079,7 +1019,6 @@
       "description": "Spatial analysis of population distribution, concentration and demographic characteristics."
     }
   ],
-
   "qolFrameworks": [
     {
       "code": "QF01",
@@ -1087,7 +1026,6 @@
       "title": "Small-Area Quality of Life Index",
       "description": "Multidimensional spatial framework used by the Ireland Quality of Life Index.",
       "status": "Current",
-
       "dimensions": [
         {
           "code": "QD01",
@@ -1134,7 +1072,6 @@
       ]
     }
   ],
-
   "qualityOfLifeDomainsFuture": [
     {
       "code": "QFUT01",
@@ -1177,7 +1114,6 @@
       "key": "urban-vitality"
     }
   ],
-
   "classificationRules": {
     "primaryHierarchy": [
       "researchDomain",
@@ -1196,5 +1132,83 @@
     "onePrimaryResearchDomainPerProject": true,
     "onePrimaryThemePerProject": true,
     "onePrimarySubThemePerProject": true
-  }
+  },
+  "projectTags": [
+    {
+      "name": "Accessibility",
+      "key": "accessibility"
+    },
+    {
+      "name": "Climate Change",
+      "key": "climate-change"
+    },
+    {
+      "name": "Demography",
+      "key": "demography"
+    },
+    {
+      "name": "Energy & Housing",
+      "key": "energy-and-housing"
+    },
+    {
+      "name": "Environmental Land Change",
+      "key": "environmental-land-change"
+    },
+    {
+      "name": "Environmental Quality",
+      "key": "environmental-quality"
+    },
+    {
+      "name": "Forests & Land Cover",
+      "key": "forests-and-land-cover"
+    },
+    {
+      "name": "Household Conditions",
+      "key": "household-conditions"
+    },
+    {
+      "name": "Housing",
+      "key": "housing"
+    },
+    {
+      "name": "Infrastructure Planning",
+      "key": "infrastructure-planning"
+    },
+    {
+      "name": "Land Use",
+      "key": "land-use"
+    },
+    {
+      "name": "Living Conditions",
+      "key": "living-conditions"
+    },
+    {
+      "name": "Mobility",
+      "key": "mobility"
+    },
+    {
+      "name": "Natural Hazards",
+      "key": "natural-hazards"
+    },
+    {
+      "name": "Population",
+      "key": "population"
+    },
+    {
+      "name": "Population Vulnerability",
+      "key": "population-vulnerability"
+    },
+    {
+      "name": "Quality of Life & Wellbeing",
+      "key": "quality-of-life-and-wellbeing"
+    },
+    {
+      "name": "Regional Analysis",
+      "key": "regional-analysis"
+    },
+    {
+      "name": "Renewable Energy",
+      "key": "renewable-energy"
+    }
+  ]
 }

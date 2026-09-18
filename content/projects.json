@@ -47,7 +47,12 @@
       "name": "Ireland",
       "latitude": 53.4129,
       "longitude": -8.2439
-    }
+    },
+    "tags": [
+      "Quality of Life & Wellbeing",
+      "Population Vulnerability",
+      "Living Conditions"
+    ]
   },
   {
     "id": "SEL-002",
@@ -87,7 +92,12 @@
       "name": "Bandon, Ireland",
       "latitude": 51.746,
       "longitude": -8.742
-    }
+    },
+    "tags": [
+      "Accessibility",
+      "Mobility",
+      "Population Vulnerability"
+    ]
   },
   {
     "id": "SEL-003",
@@ -126,7 +136,12 @@
       "name": "West Cork, Ireland",
       "latitude": 51.7,
       "longitude": -9.1
-    }
+    },
+    "tags": [
+      "Accessibility",
+      "Mobility",
+      "Regional Analysis"
+    ]
   },
   {
     "id": "SEL-004",
@@ -167,7 +182,12 @@
       "name": "Ireland",
       "latitude": 53.4129,
       "longitude": -8.2439
-    }
+    },
+    "tags": [
+      "Forests & Land Cover",
+      "Land Use",
+      "Environmental Quality"
+    ]
   },
   {
     "id": "SEL-005",
@@ -207,7 +227,12 @@
       "name": "Athens, Greece",
       "latitude": 38.0,
       "longitude": 23.72
-    }
+    },
+    "tags": [
+      "Environmental Quality",
+      "Natural Hazards",
+      "Population Vulnerability"
+    ]
   },
   {
     "id": "SEL-006",
@@ -246,7 +271,12 @@
       "name": "County Wicklow, Ireland",
       "latitude": 52.98,
       "longitude": -6.05
-    }
+    },
+    "tags": [
+      "Renewable Energy",
+      "Infrastructure Planning",
+      "Land Use"
+    ]
   },
   {
     "id": "SEL-007",
@@ -285,7 +315,12 @@
       "name": "Rondônia, Brazil",
       "latitude": -10.83,
       "longitude": -63.9
-    }
+    },
+    "tags": [
+      "Forests & Land Cover",
+      "Environmental Land Change",
+      "Land Use"
+    ]
   },
   {
     "id": "SEL-008",
@@ -324,7 +359,12 @@
       "name": "Rondônia, Brazil",
       "latitude": -10.83,
       "longitude": -63.9
-    }
+    },
+    "tags": [
+      "Environmental Land Change",
+      "Forests & Land Cover",
+      "Land Use"
+    ]
   },
   {
     "id": "SEL-009",
@@ -364,7 +404,12 @@
       "name": "Glover, Vermont, USA",
       "latitude": 44.7,
       "longitude": -72.28
-    }
+    },
+    "tags": [
+      "Renewable Energy",
+      "Land Use",
+      "Environmental Quality"
+    ]
   },
   {
     "id": "SEL-010",
@@ -404,7 +449,12 @@
       "name": "Miami, Florida, USA",
       "latitude": 25.76,
       "longitude": -80.19
-    }
+    },
+    "tags": [
+      "Natural Hazards",
+      "Infrastructure Planning",
+      "Population Vulnerability"
+    ]
   },
   {
     "id": "SEL-011",
@@ -444,7 +494,12 @@
       "name": "Ireland",
       "latitude": 53.41,
       "longitude": -8.24
-    }
+    },
+    "tags": [
+      "Renewable Energy",
+      "Housing",
+      "Living Conditions"
+    ]
   },
   {
     "id": "SEL-012",
@@ -484,7 +539,12 @@
       "name": "California, USA",
       "latitude": 36.78,
       "longitude": -119.42
-    }
+    },
+    "tags": [
+      "Natural Hazards",
+      "Environmental Quality",
+      "Forests & Land Cover"
+    ]
   },
   {
     "id": "SEL-013",
@@ -524,7 +584,12 @@
       "name": "Dublin, Ireland",
       "latitude": 53.35,
       "longitude": -6.26
-    }
+    },
+    "tags": [
+      "Mobility",
+      "Accessibility",
+      "Regional Analysis"
+    ]
   },
   {
     "id": "SEL-014",
@@ -566,6 +631,10 @@
       "name": "Ireland",
       "latitude": 53.41,
       "longitude": -8.24
-    }
+    },
+    "tags": [
+      "Population",
+      "Population Vulnerability"
+    ]
   }
 ]

@@ -65,29 +65,14 @@
         const select = els.filters.querySelector('[data-filter="theme"]');
         if (!select) return;
 
-        const domainKey = state.filters.domain;
-        let themes = [];
-
-        if (domainKey) {
-            const domain = (state.taxonomy?.researchDomains || []).find((item) => item.key === domainKey);
-            themes = domain?.themes || [];
-        } else {
-            themes = (state.taxonomy?.researchDomains || []).flatMap((domain) => domain.themes || []);
-        }
-
-        const seen = new Set();
-        themes = themes.filter((theme) => {
-            if (seen.has(theme.key)) return false;
-            seen.add(theme.key);
-            return true;
-        }).sort((a, b) => a.name.localeCompare(b.name));
-
+        const themes = (state.taxonomy?.projectTags || []).slice();
         const current = state.filters.theme;
+
         select.innerHTML = '<option value="">All themes</option>' + themes.map((theme) =>
-            `<option value="${esc(theme.key)}">${esc(theme.name)}</option>`
+            `<option value="${esc(theme.name)}">${esc(theme.name)}</option>`
         ).join('');
 
-        if (themes.some((theme) => theme.key === current)) {
+        if (themes.some((theme) => theme.name === current)) {
             select.value = current;
         } else {
             state.filters.theme = '';
@@ -117,11 +102,11 @@
 
     function projectMatches(project) {
         const domainKey = project.researchDomain?.key;
-        const themeKey = project.theme?.key;
+        const projectTags = Array.isArray(project.tags) ? project.tags : [];
         const place = project.location?.name || project.geography;
 
         return (!state.filters.domain || domainKey === state.filters.domain)
-            && (!state.filters.theme || themeKey === state.filters.theme)
+            && (!state.filters.theme || projectTags.includes(state.filters.theme))
             && (!state.filters.place || place === state.filters.place)
             && (!state.filters.status || project.status === state.filters.status);
     }
@@ -142,8 +127,11 @@
                     <div class="project-card-domain">${esc(project.researchDomain?.name || '')}</div>
                     <h3><a href="${esc(project.url || '/projects/')}">${esc(project.title)}</a></h3>
                     <p class="project-card-description">${esc(project.summary || '')}</p>
+                    <div class="project-card-tags" aria-label="Project themes">
+                        ${(project.tags || []).map((tag) => `<span class="project-tag">${esc(tag)}</span>`).join('')}
+                    </div>
                     <div class="project-card-bottom">
-                        <span class="project-card-location">${esc(project.subTheme?.name || project.theme?.name || '')} · ${esc(project.geography || '')}</span>
+                        <span class="project-card-location">${esc(project.geography || '')}</span>
                         <a class="project-card-link" href="${esc(project.url || '/projects/')}">View project →</a>
                     </div>
                 </div>
