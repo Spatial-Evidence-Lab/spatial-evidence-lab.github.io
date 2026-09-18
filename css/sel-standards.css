@@ -1,27 +1,18 @@
-/* Spatial Evidence Lab shared visual standards. */
+/* =========================================================
+   SPATIAL EVIDENCE LAB
+   SHARED VISUAL STANDARDS
+   =========================================================
+   Colour tokens are owned by sel-theme.css.
 
-:root {
-    --sel-navy: #172A3A;
-    --sel-teal: #1F7A8C;
-    --sel-cyan: #00D7E8;
-    --sel-orange: #E58F65;
-    --sel-cream: #F5F3EE;
+   This file defines shared component standards and semantic
+   usage of the master SEL dark UI palette. It intentionally
+   does not redefine the colour system.
+   ========================================================= */
 
-    /* Legacy aliases retain a single palette across existing pages. */
-    --sel-section: var(--sel-navy);
-    --sel-box: var(--sel-teal);
-    --sel-hero: var(--sel-navy);
-    --sel-accent: var(--sel-cyan);
-    --sel-blue: var(--sel-teal);
-    --sel-blue-dark: var(--sel-navy);
-    --sel-blue-light: var(--sel-cyan);
-    --sel-blue-pale: var(--sel-cream);
-    --sel-paper: var(--sel-cream);
-    --sel-warning: var(--sel-orange);
-    --sel-text: var(--sel-cream);
-    --sel-text-soft: #C9D6DA;
-    --sel-muted: #AABBC1;
-}
+
+/* =========================================================
+   01. TYPOGRAPHY
+   ========================================================= */
 
 body {
     font-weight: 400;
@@ -80,7 +71,27 @@ h3,
     font-variant-caps: all-small-caps;
 }
 
-/* The site uses exactly four button treatments. */
+
+/* =========================================================
+   02. BUTTON STANDARDS
+   =========================================================
+   The site uses four functional button treatments.
+
+   Primary:
+       SEL functional teal
+
+   Dark:
+       Deep SEL brand blue
+
+   Map:
+       Deep brand teal
+       This is a UI treatment only; map/cartographic colours
+       remain independent.
+
+   Download:
+       Restrained logo-derived warm orange.
+   ========================================================= */
+
 .button,
 .sel-button {
     min-height: 44px;
@@ -89,14 +100,40 @@ h3,
     font-weight: 600;
 }
 
-.button-primary,
+
+/* Primary action */
+
+.button-primary {
+    background: var(--sel-accent);
+    border-color: var(--sel-accent);
+    color: var(--sel-white);
+}
+
+.button-primary:hover {
+    background: var(--sel-accent-dark);
+    border-color: var(--sel-accent-dark);
+}
+
+
+/* Dark / brand action */
+
 .button-dark,
 .sel-button-dark,
 .button--navy {
-    background: var(--sel-navy);
-    border-color: var(--sel-navy);
+    background: var(--sel-brand-blue);
+    border-color: var(--sel-brand-blue);
     color: var(--sel-white);
 }
+
+.button-dark:hover,
+.sel-button-dark:hover,
+.button--navy:hover {
+    background: var(--sel-accent-dark);
+    border-color: var(--sel-accent-dark);
+}
+
+
+/* Light / outline actions */
 
 .button-light,
 .button-ghost,
@@ -104,32 +141,8 @@ h3,
 .sel-button-outline-light,
 .button--outline {
     background: transparent;
-    border-color: var(--sel-white);
-    color: var(--sel-white);
-}
-
-.button-map,
-.sel-button-map,
-.button--map {
-    background: var(--sel-teal);
-    border-color: var(--sel-teal);
-    color: var(--sel-white);
-}
-
-.button-download,
-.sel-button-download,
-.button--download {
-    background: var(--sel-orange);
-    border-color: var(--sel-orange);
-    color: var(--sel-navy);
-}
-
-.button-primary:hover,
-.button-dark:hover,
-.sel-button-dark:hover,
-.button--navy:hover {
-    background: #0F1D29;
-    border-color: #0F1D29;
+    border-color: var(--sel-border);
+    color: var(--sel-text-soft);
 }
 
 .button-light:hover,
@@ -137,24 +150,52 @@ h3,
 .button-ghost-dark:hover,
 .sel-button-outline-light:hover,
 .button--outline:hover {
-    background: var(--sel-white);
-    border-color: var(--sel-white);
-    color: var(--sel-navy);
+    background: var(--sel-surface);
+    border-color: var(--sel-accent);
+    color: var(--sel-text);
+}
+
+
+/* Map action
+   Do not confuse this with the fixed cartographic Map ID colour. */
+
+.button-map,
+.sel-button-map,
+.button--map {
+    background: var(--sel-brand-teal);
+    border-color: var(--sel-brand-teal);
+    color: var(--sel-white);
 }
 
 .button-map:hover,
 .sel-button-map:hover,
 .button--map:hover {
-    background: #155563;
-    border-color: #155563;
+    background: var(--sel-accent-dark);
+    border-color: var(--sel-accent-dark);
+}
+
+
+/* Download / publication output */
+
+.button-download,
+.sel-button-download,
+.button--download {
+    background: var(--sel-warm);
+    border-color: var(--sel-warm);
+    color: var(--sel-bg);
 }
 
 .button-download:hover,
 .sel-button-download:hover,
 .button--download:hover {
-    background: #D27B54;
-    border-color: #D27B54;
+    background: #D47750;
+    border-color: #D47750;
 }
+
+
+/* =========================================================
+   03. BACK-TO-TOP
+   ========================================================= */
 
 .back-to-top {
     position: fixed;
@@ -167,11 +208,11 @@ h3,
     min-width: 44px;
     min-height: 44px;
     padding: 10px 14px;
-    background: var(--sel-navy);
-    border: 1px solid var(--sel-white);
+    background: var(--sel-brand-blue);
+    border: 1px solid var(--sel-border);
     border-radius: var(--radius-sm);
     box-shadow: var(--sel-shadow-sm);
-    color: var(--sel-white);
+    color: var(--sel-text);
     font-family: var(--sans);
     font-size: .7rem;
     font-weight: 600;
@@ -181,7 +222,11 @@ h3,
     opacity: 0;
     pointer-events: none;
     transform: translateY(12px);
-    transition: opacity var(--sel-transition), transform var(--sel-transition), background-color var(--sel-transition);
+    transition:
+        opacity var(--sel-transition),
+        transform var(--sel-transition),
+        background-color var(--sel-transition),
+        border-color var(--sel-transition);
 }
 
 .back-to-top.is-visible {
@@ -191,8 +236,30 @@ h3,
 }
 
 .back-to-top:hover {
-    background: var(--sel-teal);
+    background: var(--sel-accent-dark);
+    border-color: var(--sel-accent);
 }
+
+
+/* =========================================================
+   04. ACCESSIBILITY / FOCUS
+   =========================================================
+   Focus visibility is controlled globally by sel-theme.css.
+   Component-specific focus states should use the same semantic
+   accent rather than reintroducing cyan or unrelated colours.
+   ========================================================= */
+
+.button:focus-visible,
+.sel-button:focus-visible,
+.back-to-top:focus-visible {
+    outline: 2px solid var(--sel-accent-soft);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   05. REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
     .back-to-top {

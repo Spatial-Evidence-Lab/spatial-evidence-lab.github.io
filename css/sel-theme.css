@@ -21,53 +21,72 @@
 
     /* -----------------------------------------------------
        COLOUR SYSTEM
+       -----------------------------------------------------
+       SEL DARK UI — logo-derived, restrained, publication-led.
+       Website UI colours are intentionally separate from
+       cartographic/map colours.
        ----------------------------------------------------- */
 
-    --sel-section: #0B1D25;
-    --sel-box: #293735;
-    --sel-hero: #174451;
-    --sel-accent: #00D7E8;
+    /* Foundation */
+    --sel-bg: #071318;
+    --sel-section: #0B1B22;
+    --sel-surface: #10262D;
+    --sel-raised: #163139;
+    --sel-border: #29444A;
 
-    --sel-blue: #3A9BB5;
-    --sel-blue-dark: #287B91;
-    --sel-blue-light: #63B7C9;
-    --sel-blue-pale: #DDEFF3;
+    /* Brand */
+    --sel-brand-blue: #142433;
+    --sel-brand-teal: #146B7F;
+    --sel-warm: #E48458;
 
-    --sel-navy: #07151B;
-    --sel-navy-2: #0B1D25;
-    --sel-navy-3: #102A32;
+    /* Functional UI */
+    --sel-accent: #3A97A0;
+    --sel-accent-dark: #146B7F;
+    --sel-accent-soft: #5AAEB3;
 
-    --sel-white: #FFFFFF;
+    /* Text */
+    --sel-white: #F1F6F5;
+    --sel-text: #F1F6F5;
+    --sel-text-soft: #D6E2E1;
+    --sel-body: #A7B8BA;
+    --sel-muted: #718589;
 
-    --sel-paper: #0B1D25;
+    /* Lines */
+    --sel-line: #29444A;
+    --sel-line-soft: rgba(255,255,255,.08);
+    --sel-line-dark: #29444A;
 
-    --sel-text: #E8F0F1;
-    --sel-text-soft: #B8C9CC;
-    --sel-muted: #8FA5A9;
+    /* Status */
+    --sel-warning: #C18D45;
+    --sel-positive: #5F9478;
+    --sel-negative: #B86B70;
 
-    --sel-line: rgba(255,255,255,.14);
-    --sel-line-dark: rgba(255,255,255,.18);
+    /* Backwards-compatible aliases for existing components.
+       New code should use the semantic tokens above. */
+    --sel-box: #10262D;
+    --sel-hero: #142F39;
+    --sel-blue: #3A97A0;
+    --sel-blue-dark: #146B7F;
+    --sel-blue-light: #5AAEB3;
+    --sel-blue-pale: #163139;
+    --sel-navy: #071318;
+    --sel-navy-2: #0B1B22;
+    --sel-navy-3: #10262D;
+    --sel-paper: #071318;
+    --sel-cyan: #3A97A0;
+    --sel-teal-light: #5AAEB3;
 
-    --sel-cyan: #00D7E8;
-    --sel-teal-light: #8ED1D8;
-
-    --sel-warning: #C69214;
-    --sel-positive: #55A878;
-    --sel-negative: #D9485F;
-
-
-    /* -----------------------------------------------------
-       QUALITY OF LIFE COLOURS
-       ----------------------------------------------------- */
-
-    --qol-economic: #C69214;
-    --qol-education: #8B68C7;
-    --qol-health: #D96878;
-    --qol-housing: #E69452;
-    --qol-environment: #55A878;
-    --qol-accessibility: #3C9B9B;
-    --qol-social: #A25C9D;
-    --qol-urban: #4E93AA;
+    /* Quality of life / research-domain colours.
+       These are deliberately muted so they do not compete
+       with the SEL brand accent. */
+    --qol-economic: #B88A4A;
+    --qol-education: #806B9F;
+    --qol-health: #B86F7A;
+    --qol-housing: #C58A5B;
+    --qol-environment: #5F9277;
+    --qol-accessibility: #4C8E8D;
+    --qol-social: #8A6887;
+    --qol-urban: #5C8190;
 
 
     /* -----------------------------------------------------
@@ -208,7 +227,7 @@ html {
 body {
     min-width: 0;
 
-    background: var(--sel-section);
+    background: var(--sel-bg);
 
     color: var(--sel-text);
 
@@ -447,7 +466,7 @@ textarea {
 
     background: var(--sel-accent);
 
-    color: #00171C;
+    color: var(--sel-bg);
 
     font-weight: 800;
 }
@@ -499,7 +518,7 @@ textarea {
 ::selection {
     background: var(--sel-accent);
 
-    color: #00171C;
+    color: var(--sel-bg);
 }
 
 

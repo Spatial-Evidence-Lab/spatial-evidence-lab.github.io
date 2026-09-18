@@ -77,9 +77,9 @@
 
 .button-primary {
 
-    background: var(--sel-blue);
+    background: var(--sel-accent);
 
-    border-color: var(--sel-blue);
+    border-color: var(--sel-accent);
 
     color: var(--sel-white);
 }
@@ -87,9 +87,9 @@
 
 .button-primary:hover {
 
-    background: var(--sel-blue-dark);
+    background: var(--sel-accent-dark);
 
-    border-color: var(--sel-blue-dark);
+    border-color: var(--sel-accent-dark);
 }
 
 
@@ -109,9 +109,9 @@
 
 .button-light:hover {
 
-    background: var(--sel-blue-pale);
+    background: var(--sel-raised);
 
-    border-color: var(--sel-blue-pale);
+    border-color: var(--sel-raised);
 }
 
 
@@ -121,9 +121,9 @@
 
 .button-dark {
 
-    background: var(--sel-blue);
+    background: var(--sel-accent);
 
-    border-color: var(--sel-blue);
+    border-color: var(--sel-accent);
 
     color: var(--sel-white);
 }
@@ -131,9 +131,9 @@
 
 .button-dark:hover {
 
-    background: var(--sel-blue-dark);
+    background: var(--sel-accent-dark);
 
-    border-color: var(--sel-blue-dark);
+    border-color: var(--sel-accent-dark);
 }
 
 
@@ -153,9 +153,9 @@
 
 .button-ghost:hover {
 
-    border-color: var(--sel-blue);
+    border-color: var(--sel-accent);
 
-    color: var(--sel-blue);
+    color: var(--sel-accent);
 }
 
 
@@ -202,7 +202,7 @@
 
     min-height: var(--sel-header-height);
 
-    background: rgba(16,42,50,.97);
+    background: rgba(16,38,45,.97);
 
     border-bottom: 1px solid rgba(255,255,255,.10);
 
@@ -451,7 +451,7 @@
 .site-footer {
 
     background: var(--sel-navy);
-    color: #D7E3EE;
+    color: var(--sel-text-soft);
     padding: 65px 0 22px;
 }
 
@@ -687,7 +687,7 @@
 
         padding: 12px 5% 18px;
 
-        background: #102A32;
+        background: var(--sel-surface);
 
         border-bottom: 1px solid var(--sel-line);
 
