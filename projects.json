@@ -19,9 +19,9 @@
         "key": "population-vulnerability"
       },
       {
-        "code": "TH12",
-        "name": "Living Conditions",
-        "key": "living-conditions"
+        "code": "TH08",
+        "name": "Household Conditions",
+        "key": "household-conditions"
       }
     ],
     "subTheme": {
@@ -63,7 +63,7 @@
     "tags": [
       "Quality of Life & Wellbeing",
       "Population Vulnerability",
-      "Living Conditions"
+      "Household Conditions"
     ]
   },
   {
@@ -272,15 +272,15 @@
       "longitude": 23.72
     },
     "tags": [
-      "Environmental Quality",
+      "Climate Change",
       "Natural Hazards",
       "Population Vulnerability"
     ],
     "themes": [
       {
-        "code": "TH06",
-        "name": "Environmental Quality",
-        "key": "environmental-quality"
+        "code": "TH02",
+        "name": "Climate Change",
+        "key": "climate-change"
       },
       {
         "code": "TH14",
@@ -611,15 +611,15 @@
       "longitude": -8.24
     },
     "tags": [
-      "Renewable Energy",
+      "Energy & Housing",
       "Housing",
       "Living Conditions"
     ],
     "themes": [
       {
-        "code": "TH19",
-        "name": "Renewable Energy",
-        "key": "renewable-energy"
+        "code": "TH04",
+        "name": "Energy & Housing",
+        "key": "energy-housing"
       },
       {
         "code": "TH09",
