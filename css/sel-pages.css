@@ -16,16 +16,14 @@
     color: var(--sel-text);
 }
 
-.projects-page .shell {
-    width: calc(100% - (var(--sel-gutter) * 2));
-    max-width: none;
-    margin-inline: auto;
-}
+/* .shell width/max-width is defined once, globally, in
+   css/sel-layout.css. Do not override it here — the Projects
+   page must use the same container width as every other page. */
 
 .projects-hero {
     background: var(--sel-brand-blue);
     border-bottom: 1px solid var(--sel-border);
-    padding: 72px 0 82px;
+    padding: clamp(56px, 7vw, 88px) 0 clamp(60px, 7vw, 88px);
 }
 
 .projects-hero-inner {
@@ -37,8 +35,8 @@
 .projects-eyebrow,
 .section-label {
     margin: 0;
-    color: var(--sel-accent);
-    font-size: .68rem;
+    color: var(--sel-accent-soft);
+    font-size: .72rem;
     font-weight: 600;
     letter-spacing: .12em;
     line-height: 1.4;
@@ -51,23 +49,23 @@
     max-width: 1100px;
     margin: 0 0 24px;
     color: var(--sel-white);
-    font-size: clamp(1.65rem, 2.7vw, 2.2rem);
-    font-weight: 700;
-    letter-spacing: -.035em;
-    line-height: 1.12;
+    font-size: clamp(2.35rem, 5vw, 4.5rem);
+    font-weight: 750;
+    letter-spacing: -.045em;
+    line-height: 1.02;
     overflow-wrap: anywhere;
 }
 
 .projects-hero h1 span {
-    color: var(--sel-white);
+    color: var(--sel-accent-soft);
 }
 
 .projects-intro {
     max-width: 920px;
-    margin: 0;
-    color: rgba(255,255,255,.90);
-    font-size: .96rem;
-    line-height: 1.65;
+    margin: 24px 0 0;
+    color: var(--sel-text-soft);
+    font-size: clamp(.98rem, 1.5vw, 1.08rem);
+    line-height: 1.7;
 }
 
 .projects-section {
@@ -230,10 +228,10 @@
 .projects-place-heading h2 {
     margin: 8px 0 0;
     color: var(--sel-white);
-    font-size: clamp(28px, 3vw, 38px);
-    font-weight: 700;
-    letter-spacing: -.035em;
-    line-height: 1.05;
+    font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+    font-weight: 600;
+    letter-spacing: -.025em;
+    line-height: 1.2;
 }
 
 .project-count,
@@ -573,10 +571,6 @@
 }
 
 @media (max-width: 1050px) {
-    .projects-page .shell {
-        width: min(100% - 48px, 1240px);
-    }
-
     .project-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -591,16 +585,12 @@
 }
 
 @media (max-width: 760px) {
-    .projects-page .shell {
-        width: calc(100% - 40px);
-    }
-
     .projects-hero {
-        padding: 52px 0 58px;
+        padding: 54px 0 62px;
     }
 
     .projects-hero h1 {
-        font-size: clamp(40px, 11vw, 52px);
+        font-size: clamp(2.1rem, 12vw, 3.2rem);
     }
 
     .projects-intro {
@@ -674,14 +664,6 @@
 }
 
 @media (max-width: 420px) {
-    .projects-page .shell {
-        width: calc(100% - 32px);
-    }
-
-    .projects-hero h1 {
-        font-size: 40px;
-    }
-
     .project-card-body {
         padding: 19px;
     }
