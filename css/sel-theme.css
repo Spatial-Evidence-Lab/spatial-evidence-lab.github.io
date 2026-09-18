@@ -13,6 +13,14 @@
    ========================================================= */
 
 
+/* Shared page-container/shell width rules and global overflow
+   safeguards live in sel-layout.css. Importing here means every
+   page that loads sel-theme.css (i.e. every page on the site)
+   gets the same container behaviour without needing its own
+   <link> tag or per-page overrides. */
+@import url("sel-layout.css");
+
+
 /* =========================================================
    01. DESIGN TOKENS
    ========================================================= */
@@ -407,23 +415,12 @@ textarea {
 /* =========================================================
    09. SHELL
    ========================================================= */
-
-.shell {
-
-    width: calc(100% - (var(--sel-gutter) * 2));
-
-    max-width: none;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    min-width: 0;
-}
-
-
-.shell > * {
-    min-width: 0;
-}
+/*
+   The canonical `.shell` container rule (and related overflow
+   safeguards) is defined once in css/sel-layout.css, which is
+   imported at the top of this file. Do not redefine `.shell`
+   width/max-width here or in any page-specific stylesheet.
+   ========================================================= */
 
 
 /* =========================================================

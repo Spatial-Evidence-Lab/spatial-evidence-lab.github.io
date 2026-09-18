@@ -16,11 +16,9 @@
     color: var(--sel-text);
 }
 
-.projects-page .shell {
-    width: min(1240px, calc(100% - 80px));
-    max-width: 1240px;
-    margin-inline: auto;
-}
+/* .shell width/max-width is defined once, globally, in
+   css/sel-layout.css. Do not override it here — the Projects
+   page must use the same container width as every other page. */
 
 .projects-hero {
     background: var(--sel-brand-blue);
@@ -566,10 +564,6 @@
 }
 
 @media (max-width: 1050px) {
-    .projects-page .shell {
-        width: min(100% - 48px, 1240px);
-    }
-
     .project-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -584,10 +578,6 @@
 }
 
 @media (max-width: 760px) {
-    .projects-page .shell {
-        width: calc(100% - 40px);
-    }
-
     .projects-hero {
         padding: 52px 0 58px;
     }
@@ -667,10 +657,6 @@
 }
 
 @media (max-width: 420px) {
-    .projects-page .shell {
-        width: calc(100% - 32px);
-    }
-
     .projects-hero h1 {
         font-size: 40px;
     }
