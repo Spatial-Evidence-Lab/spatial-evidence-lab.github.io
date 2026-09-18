@@ -465,14 +465,14 @@
     "status": "Research",
     "portfolioRole": "Exploratory Research",
     "summary": "Time-series assessment of deforestation and forest-cover change between 2017 and 2025, supporting visualisation of spatial and temporal trends.",
-    "geography": "Rondônia, Brazil",
+    "geography": "Europe",
     "geographyType": "International",
     "image": "/assets/projects/SEL-008.jpg",
     "url": "/projects/",
     "location": {
-      "name": "Rondônia, Brazil",
-      "latitude": -10.83,
-      "longitude": -63.9
+      "name": "Europe",
+      "latitude": 54.5,
+      "longitude": 15.0
     },
     "tags": [
       "Environmental Land Change",

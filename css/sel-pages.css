@@ -16,50 +16,58 @@
     color: var(--sel-text);
 }
 
-/* .shell width/max-width is defined once, globally, in
-   css/sel-layout.css. Do not override it here — the Projects
-   page must use the same container width as every other page. */
+.projects-page .shell {
+    width: calc(100% - (var(--sel-gutter) * 2));
+    max-width: none;
+    margin-inline: auto;
+}
 
 .projects-hero {
     background: var(--sel-brand-blue);
     border-bottom: 1px solid var(--sel-border);
-    padding: 76px 0 82px;
+    padding: 72px 0 82px;
 }
 
 .projects-hero-inner {
-    max-width: 900px !important;
+    max-width: 1100px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
 }
 
 .projects-eyebrow,
 .section-label {
     margin: 0;
-    color: var(--sel-accent-soft);
-    font-size: 12px;
-    font-weight: 800;
+    color: var(--sel-accent);
+    font-size: .68rem;
+    font-weight: 600;
     letter-spacing: .12em;
     line-height: 1.4;
     text-transform: uppercase;
 }
 
 .projects-hero h1 {
-    margin: 18px 0 24px;
-    color: var(--sel-text);
-    font-size: clamp(48px, 5vw, 68px);
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 0 24px;
+    color: var(--sel-white);
+    font-size: clamp(1.65rem, 2.7vw, 2.2rem);
     font-weight: 700;
-    letter-spacing: -.045em;
-    line-height: .98;
+    letter-spacing: -.035em;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
 }
 
 .projects-hero h1 span {
-    color: var(--sel-accent-soft);
+    color: var(--sel-white);
 }
 
 .projects-intro {
-    max-width: 760px;
+    max-width: 920px;
     margin: 0;
-    color: var(--sel-text-soft);
-    font-size: 18px;
-    line-height: 1.6;
+    color: rgba(255,255,255,.90);
+    font-size: .96rem;
+    line-height: 1.65;
 }
 
 .projects-section {
@@ -181,10 +189,10 @@
 
 .featured-project-description {
     max-width: 680px;
-    margin: 12px 0 18px;
+    margin: 10px 0 14px;
     color: var(--sel-text-soft);
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 .featured-project-link,
@@ -295,8 +303,9 @@
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1500px;
 }
 
 .project-card {
@@ -316,7 +325,7 @@
 }
 
 .project-card-image-wrap {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--sel-brand-blue);
 }
@@ -336,7 +345,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 22px;
+    padding: 18px;
 }
 
 .project-card-meta-top {
@@ -348,9 +357,9 @@
 }
 
 .project-card-domain {
-    margin: 13px 0 9px;
+    margin: 11px 0 7px;
     color: var(--sel-accent-soft);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     line-height: 1.4;
 }
@@ -358,7 +367,7 @@
 .project-card h3 {
     margin: 0;
     color: var(--sel-white);
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 650;
     letter-spacing: -.02em;
     line-height: 1.15;
@@ -366,11 +375,11 @@
 
 .project-card-description {
     display: -webkit-box;
-    margin: 12px 0 18px;
+    margin: 10px 0 14px;
     overflow: hidden;
     color: var(--sel-body);
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 13px;
+    line-height: 1.5;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
 }
@@ -387,7 +396,7 @@
 
 .project-card-location {
     color: var(--sel-muted);
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.4;
 }
 
@@ -420,27 +429,24 @@
     background: #0A1820;
 }
 
-.project-map-base,
-.project-map-graticule {
+.project-map-base {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
 }
 
-.project-map-base {
-    display: block;
-    object-fit: fill;
-}
-
-.project-map-graticule {
-    pointer-events: none;
-}
-
-.project-map-graticule path {
+.map-graticule path {
     fill: none;
     stroke: rgba(90,174,179,.10);
     stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+
+.map-land path {
+    fill: #163139;
+    stroke: #29444A;
+    stroke-width: 1.2;
     vector-effect: non-scaling-stroke;
 }
 
@@ -564,8 +570,12 @@
 }
 
 @media (max-width: 1050px) {
+    .projects-page .shell {
+        width: min(100% - 48px, 1240px);
+    }
+
     .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .project-filters {
@@ -578,6 +588,10 @@
 }
 
 @media (max-width: 760px) {
+    .projects-page .shell {
+        width: calc(100% - 40px);
+    }
+
     .projects-hero {
         padding: 52px 0 58px;
     }
@@ -657,6 +671,10 @@
 }
 
 @media (max-width: 420px) {
+    .projects-page .shell {
+        width: calc(100% - 32px);
+    }
+
     .projects-hero h1 {
         font-size: 40px;
     }
@@ -667,33 +685,5 @@
 
     .project-map {
         min-height: 320px;
-    }
-}
-
-/* Project theme/tag assignments */
-.project-card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin: 2px 0 2px;
-}
-
-.project-tag {
-    display: inline-flex;
-    align-items: center;
-    min-height: 24px;
-    padding: 4px 8px;
-    border: 1px solid var(--sel-line);
-    border-radius: 999px;
-    background: var(--sel-section);
-    color: var(--sel-secondary);
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-@media (max-width: 640px) {
-    .project-card-tags {
-        gap: 5px;
     }
 }
