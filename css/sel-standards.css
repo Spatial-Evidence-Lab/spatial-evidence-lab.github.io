@@ -1,0 +1,201 @@
+/* Spatial Evidence Lab shared visual standards. */
+
+:root {
+    --sel-navy: #172A3A;
+    --sel-teal: #1F7A8C;
+    --sel-cyan: #00D7E8;
+    --sel-orange: #E58F65;
+    --sel-cream: #F5F3EE;
+
+    /* Legacy aliases retain a single palette across existing pages. */
+    --sel-section: var(--sel-navy);
+    --sel-box: var(--sel-teal);
+    --sel-hero: var(--sel-navy);
+    --sel-accent: var(--sel-cyan);
+    --sel-blue: var(--sel-teal);
+    --sel-blue-dark: var(--sel-navy);
+    --sel-blue-light: var(--sel-cyan);
+    --sel-blue-pale: var(--sel-cream);
+    --sel-paper: var(--sel-cream);
+    --sel-warning: var(--sel-orange);
+    --sel-text: var(--sel-cream);
+    --sel-text-soft: #C9D6DA;
+    --sel-muted: #AABBC1;
+}
+
+body {
+    font-weight: 400;
+}
+
+.wordmark,
+.wordmark-name,
+.sel-wordmark,
+.footer-brand {
+    font-weight: 500;
+}
+
+.wordmark-name b,
+.sel-wordmark strong {
+    font-weight: inherit;
+}
+
+h1,
+.project-hero h1,
+.publication-hero h1 {
+    font-weight: 700;
+}
+
+h2,
+h3,
+.project-section h2,
+.publication-section h2 {
+    font-weight: 600;
+}
+
+.research-eyebrow,
+.project-kicker,
+.publication-kicker,
+.eyebrow,
+.overline {
+    font-weight: 600;
+}
+
+.project-number,
+.publication-number,
+.section-number,
+.project-card-num,
+.card-index,
+.map-id,
+.map-sequence {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.project-meta span,
+.publication-meta span,
+.metadata,
+.type-meta,
+.footer-links b {
+    font-weight: 500;
+    font-variant-caps: all-small-caps;
+}
+
+/* The site uses exactly four button treatments. */
+.button,
+.sel-button {
+    min-height: 44px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+}
+
+.button-primary,
+.button-dark,
+.sel-button-dark,
+.button--navy {
+    background: var(--sel-navy);
+    border-color: var(--sel-navy);
+    color: var(--sel-white);
+}
+
+.button-light,
+.button-ghost,
+.button-ghost-dark,
+.sel-button-outline-light,
+.button--outline {
+    background: transparent;
+    border-color: var(--sel-white);
+    color: var(--sel-white);
+}
+
+.button-map,
+.sel-button-map,
+.button--map {
+    background: var(--sel-teal);
+    border-color: var(--sel-teal);
+    color: var(--sel-white);
+}
+
+.button-download,
+.sel-button-download,
+.button--download {
+    background: var(--sel-orange);
+    border-color: var(--sel-orange);
+    color: var(--sel-navy);
+}
+
+.button-primary:hover,
+.button-dark:hover,
+.sel-button-dark:hover,
+.button--navy:hover {
+    background: #0F1D29;
+    border-color: #0F1D29;
+}
+
+.button-light:hover,
+.button-ghost:hover,
+.button-ghost-dark:hover,
+.sel-button-outline-light:hover,
+.button--outline:hover {
+    background: var(--sel-white);
+    border-color: var(--sel-white);
+    color: var(--sel-navy);
+}
+
+.button-map:hover,
+.sel-button-map:hover,
+.button--map:hover {
+    background: #155563;
+    border-color: #155563;
+}
+
+.button-download:hover,
+.sel-button-download:hover,
+.button--download:hover {
+    background: #D27B54;
+    border-color: #D27B54;
+}
+
+.back-to-top {
+    position: fixed;
+    right: clamp(16px, 3vw, 40px);
+    bottom: clamp(16px, 3vw, 40px);
+    z-index: 900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px 14px;
+    background: var(--sel-navy);
+    border: 1px solid var(--sel-white);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--sel-shadow-sm);
+    color: var(--sel-white);
+    font-family: var(--sans);
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .065em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity var(--sel-transition), transform var(--sel-transition), background-color var(--sel-transition);
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--sel-teal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+        transition: none;
+    }
+}
