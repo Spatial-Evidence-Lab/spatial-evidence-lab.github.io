@@ -890,3 +890,134 @@
 /* =========================================================
    END OF SEL COMPONENTS
    ========================================================= */
+
+
+/* =========================================================
+   18. LEGACY SHELL COMPATIBILITY
+   =========================================================
+   Older pages used sel-* shell classes. The HTML update script
+   converts those pages to the canonical classes; these aliases
+   provide a safe visual bridge during deployment and for any
+   remaining legacy page.
+   ========================================================= */
+
+.sel-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-width: 0;
+    min-height: var(--sel-header-height);
+    background: rgba(16,38,45,.97);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.sel-header .sel-nav-wrap,
+.sel-header .nav-wrap {
+    position: relative;
+    width: calc(100% - (var(--sel-gutter) * 2));
+    min-height: var(--sel-header-height);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.sel-wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sel-white);
+}
+
+.sel-wordmark img,
+.sel-wordmark-logo {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.sel-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 42px;
+    padding: 9px 12px;
+    background: transparent;
+    border: 1px solid var(--sel-line);
+    border-radius: var(--radius-sm);
+    color: var(--sel-text);
+    font: 800 .72rem/1 var(--sans);
+    text-transform: uppercase;
+}
+
+.sel-site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.sel-site-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--sel-header-height);
+    color: var(--sel-text-soft);
+    border-bottom: 2px solid transparent;
+    font-size: .69rem;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.sel-site-nav a:hover,
+.sel-site-nav a.active {
+    color: var(--sel-accent);
+    border-bottom-color: var(--sel-accent);
+}
+
+.sel-footer {
+    background: var(--sel-bg);
+    color: var(--sel-text-soft);
+    padding: 65px 0 22px;
+}
+
+.sel-footer .sel-footer-grid,
+.sel-footer .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+@media (max-width: 700px) {
+    .sel-menu-toggle {
+        display: inline-flex;
+    }
+
+    .sel-site-nav {
+        display: none;
+    }
+
+    .sel-site-nav.open {
+        display: flex;
+        position: absolute;
+        top: var(--sel-header-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px var(--sel-gutter) 14px;
+        background: var(--sel-surface);
+        border-top: 1px solid var(--sel-border);
+        border-bottom: 1px solid var(--sel-border);
+    }
+
+    .sel-site-nav.open a {
+        min-height: 44px;
+    }
+}
