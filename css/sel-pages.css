@@ -1,27 +1,8 @@
-/* =========================================================
-   SEL v3.0 — Homepage Harmonisation
-   No structural/layout redesign.
-   ========================================================= */
-.site-name, .brand, .logo-text {
-  font-family:var(--sel-font-sans);
-  font-weight:var(--sel-site-name-weight);
-  color:inherit;
+.hero{
+    background:
+        linear-gradient(rgba(14,28,39,.72), rgba(14,28,39,.82)),
+        url("../media/homepage/hero-map.jpg");
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
 }
-.eyebrow, .section-eyebrow, .kicker {
-  font-family:var(--sel-font-sans);
-  font-weight:var(--sel-eyebrow-weight);
-  letter-spacing:.06em;
-  text-transform:uppercase;
-}
-.hero h1, .hero-title, .page-hero h1 {
-  font-family:var(--sel-font-sans);
-  font-weight:var(--sel-hero-weight);
-}
-.section-number {
-  color:var(--sel-teal);
-  font-weight:600;
-}
-.section-title { color:var(--sel-navy); font-weight:700; }
-.metadata, .meta { color:var(--sel-text-muted); }
-a { color:var(--sel-teal); }
-a:hover { color:var(--sel-navy); }

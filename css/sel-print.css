@@ -1,27 +1,2 @@
-/* =========================================================
-   SEL v3.0 — Publication Print Styles
-   A4 reports + A3 atlas layouts
-   ========================================================= */
-@page { size:A4; margin:16mm; }
-@media print {
-  *, *::before, *::after { box-shadow:none !important; text-shadow:none !important; }
-  body { background:#fff !important; color:#000 !important; font-size:10pt; }
-  a { color:inherit !important; text-decoration:none !important; }
-  .no-print, nav, .site-nav, .back-to-top, .toc { display:none !important; }
-  .sel-container, .container { width:100% !important; max-width:none !important; }
-  .sel-grid { gap:6mm; }
-  .sel-card, .card, .kpi-card, .project-card, .domain-card,
-  .dataset-card, .download-card, .map-card {
-    break-inside:avoid; border:1px solid #999;
-  }
-  figure, table { break-inside:avoid; }
-  img { max-width:100% !important; }
-  .sel-table th, table.publication-table th {
-    background:#ddd !important; color:#000 !important;
-  }
-}
-@page atlas { size:A3 landscape; margin:10mm; }
-.print-atlas { page:atlas; }
-@media print {
-  .a3-atlas, .atlas-page { page:atlas; }
-}
+/* Print */
+@media print{body{background:white;color:black}nav,.btn,.back-to-top{display:none!important}.section{padding:20px 0}.card{box-shadow:none;border:1px solid #999}}
