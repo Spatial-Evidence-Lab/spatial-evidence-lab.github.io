@@ -7,11 +7,23 @@
       "name": "People & Quality of Life",
       "key": "people-quality-of-life"
     },
-    "theme": {
-      "code": "TH01",
-      "name": "Quality of Life & Wellbeing",
-      "key": "quality-of-life-wellbeing"
-    },
+    "themes": [
+      {
+        "code": "TH01",
+        "name": "Quality of Life & Wellbeing",
+        "key": "quality-of-life-wellbeing"
+      },
+      {
+        "code": "TH17",
+        "name": "Population Vulnerability",
+        "key": "population-vulnerability"
+      },
+      {
+        "code": "TH13",
+        "name": "Living Conditions",
+        "key": "living-conditions"
+      }
+    ],
     "subTheme": {
       "code": "ST01",
       "name": "Quality of Life",
@@ -62,11 +74,6 @@
       "name": "Accessibility, Mobility & Transport",
       "key": "accessibility-mobility-transport"
     },
-    "theme": {
-      "code": "TH02",
-      "name": "Transport",
-      "key": "transport"
-    },
     "subTheme": {
       "code": "ST02",
       "name": "Public Transport Accessibility",
@@ -97,6 +104,23 @@
       "Accessibility",
       "Mobility",
       "Population Vulnerability"
+    ],
+    "themes": [
+      {
+        "code": "TH02",
+        "name": "Accessibility",
+        "key": "accessibility"
+      },
+      {
+        "code": "TH14",
+        "name": "Mobility",
+        "key": "mobility"
+      },
+      {
+        "code": "TH17",
+        "name": "Population Vulnerability",
+        "key": "population-vulnerability"
+      }
     ]
   },
   {
@@ -106,11 +130,6 @@
       "code": "RD02",
       "name": "Accessibility, Mobility & Transport",
       "key": "accessibility-mobility-transport"
-    },
-    "theme": {
-      "code": "TH02",
-      "name": "Transport",
-      "key": "transport"
     },
     "subTheme": {
       "code": "ST02",
@@ -141,6 +160,23 @@
       "Accessibility",
       "Mobility",
       "Regional Analysis"
+    ],
+    "themes": [
+      {
+        "code": "TH02",
+        "name": "Accessibility",
+        "key": "accessibility"
+      },
+      {
+        "code": "TH14",
+        "name": "Mobility",
+        "key": "mobility"
+      },
+      {
+        "code": "TH18",
+        "name": "Regional Analysis",
+        "key": "regional-analysis"
+      }
     ]
   },
   {
@@ -150,11 +186,6 @@
       "code": "RD06",
       "name": "Cities, Regions & Land Use",
       "key": "cities-regions-land-use"
-    },
-    "theme": {
-      "code": "TH06",
-      "name": "Land Use",
-      "key": "land-use"
     },
     "subTheme": {
       "code": "ST04",
@@ -187,6 +218,23 @@
       "Forests & Land Cover",
       "Land Use",
       "Environmental Quality"
+    ],
+    "themes": [
+      {
+        "code": "TH08",
+        "name": "Forests & Land Cover",
+        "key": "forests-land-cover"
+      },
+      {
+        "code": "TH12",
+        "name": "Land Use",
+        "key": "land-use"
+      },
+      {
+        "code": "TH07",
+        "name": "Environmental Quality",
+        "key": "environmental-quality"
+      }
     ]
   },
   {
@@ -196,11 +244,6 @@
       "code": "RD03",
       "name": "Environment, Climate & Natural Hazards",
       "key": "environment-climate-natural-hazards"
-    },
-    "theme": {
-      "code": "TH03",
-      "name": "Climate Change",
-      "key": "climate-change"
     },
     "subTheme": {
       "code": "ST05",
@@ -232,6 +275,23 @@
       "Environmental Quality",
       "Natural Hazards",
       "Population Vulnerability"
+    ],
+    "themes": [
+      {
+        "code": "TH07",
+        "name": "Environmental Quality",
+        "key": "environmental-quality"
+      },
+      {
+        "code": "TH15",
+        "name": "Natural Hazards",
+        "key": "natural-hazards"
+      },
+      {
+        "code": "TH17",
+        "name": "Population Vulnerability",
+        "key": "population-vulnerability"
+      }
     ]
   },
   {
@@ -241,11 +301,6 @@
       "code": "RD04",
       "name": "Energy & Infrastructure",
       "key": "energy-infrastructure"
-    },
-    "theme": {
-      "code": "TH04",
-      "name": "Renewable Energy",
-      "key": "renewable-energy"
     },
     "subTheme": {
       "code": "ST06",
@@ -276,6 +331,23 @@
       "Renewable Energy",
       "Infrastructure Planning",
       "Land Use"
+    ],
+    "themes": [
+      {
+        "code": "TH19",
+        "name": "Renewable Energy",
+        "key": "renewable-energy"
+      },
+      {
+        "code": "TH11",
+        "name": "Infrastructure Planning",
+        "key": "infrastructure-planning"
+      },
+      {
+        "code": "TH12",
+        "name": "Land Use",
+        "key": "land-use"
+      }
     ]
   },
   {
@@ -285,11 +357,6 @@
       "code": "RD03",
       "name": "Environment, Climate & Natural Hazards",
       "key": "environment-climate-natural-hazards"
-    },
-    "theme": {
-      "code": "TH03",
-      "name": "Forests & Land Cover",
-      "key": "forests-land-cover"
     },
     "subTheme": {
       "code": "ST07",
@@ -320,6 +387,23 @@
       "Forests & Land Cover",
       "Environmental Land Change",
       "Land Use"
+    ],
+    "themes": [
+      {
+        "code": "TH08",
+        "name": "Forests & Land Cover",
+        "key": "forests-land-cover"
+      },
+      {
+        "code": "TH06",
+        "name": "Environmental Land Change",
+        "key": "environmental-land-change"
+      },
+      {
+        "code": "TH12",
+        "name": "Land Use",
+        "key": "land-use"
+      }
     ]
   },
   {
@@ -329,11 +413,6 @@
       "code": "RD03",
       "name": "Environment, Climate & Natural Hazards",
       "key": "environment-climate-natural-hazards"
-    },
-    "theme": {
-      "code": "TH03",
-      "name": "Forests & Land Cover",
-      "key": "forests-land-cover"
     },
     "subTheme": {
       "code": "ST08",
@@ -364,6 +443,23 @@
       "Environmental Land Change",
       "Forests & Land Cover",
       "Land Use"
+    ],
+    "themes": [
+      {
+        "code": "TH06",
+        "name": "Environmental Land Change",
+        "key": "environmental-land-change"
+      },
+      {
+        "code": "TH08",
+        "name": "Forests & Land Cover",
+        "key": "forests-land-cover"
+      },
+      {
+        "code": "TH12",
+        "name": "Land Use",
+        "key": "land-use"
+      }
     ]
   },
   {
@@ -373,11 +469,6 @@
       "code": "RD04",
       "name": "Energy & Infrastructure",
       "key": "energy-infrastructure"
-    },
-    "theme": {
-      "code": "TH04",
-      "name": "Renewable Energy",
-      "key": "renewable-energy"
     },
     "subTheme": {
       "code": "ST09",
@@ -409,6 +500,23 @@
       "Renewable Energy",
       "Land Use",
       "Environmental Quality"
+    ],
+    "themes": [
+      {
+        "code": "TH19",
+        "name": "Renewable Energy",
+        "key": "renewable-energy"
+      },
+      {
+        "code": "TH12",
+        "name": "Land Use",
+        "key": "land-use"
+      },
+      {
+        "code": "TH07",
+        "name": "Environmental Quality",
+        "key": "environmental-quality"
+      }
     ]
   },
   {
@@ -418,11 +526,6 @@
       "code": "RD03",
       "name": "Environment, Climate & Natural Hazards",
       "key": "environment-climate-natural-hazards"
-    },
-    "theme": {
-      "code": "TH03",
-      "name": "Natural Hazards",
-      "key": "natural-hazards"
     },
     "subTheme": {
       "code": "ST10",
@@ -454,6 +557,23 @@
       "Natural Hazards",
       "Infrastructure Planning",
       "Population Vulnerability"
+    ],
+    "themes": [
+      {
+        "code": "TH15",
+        "name": "Natural Hazards",
+        "key": "natural-hazards"
+      },
+      {
+        "code": "TH11",
+        "name": "Infrastructure Planning",
+        "key": "infrastructure-planning"
+      },
+      {
+        "code": "TH17",
+        "name": "Population Vulnerability",
+        "key": "population-vulnerability"
+      }
     ]
   },
   {
@@ -463,11 +583,6 @@
       "code": "RD05",
       "name": "Housing & Socioeconomic Conditions",
       "key": "housing-socioeconomic-conditions"
-    },
-    "theme": {
-      "code": "TH05",
-      "name": "Housing",
-      "key": "housing"
     },
     "subTheme": {
       "code": "ST11",
@@ -499,6 +614,23 @@
       "Renewable Energy",
       "Housing",
       "Living Conditions"
+    ],
+    "themes": [
+      {
+        "code": "TH19",
+        "name": "Renewable Energy",
+        "key": "renewable-energy"
+      },
+      {
+        "code": "TH10",
+        "name": "Housing",
+        "key": "housing"
+      },
+      {
+        "code": "TH13",
+        "name": "Living Conditions",
+        "key": "living-conditions"
+      }
     ]
   },
   {
@@ -508,11 +640,6 @@
       "code": "RD03",
       "name": "Environment, Climate & Natural Hazards",
       "key": "environment-climate-natural-hazards"
-    },
-    "theme": {
-      "code": "TH03",
-      "name": "Natural Hazards",
-      "key": "natural-hazards"
     },
     "subTheme": {
       "code": "ST12",
@@ -544,6 +671,23 @@
       "Natural Hazards",
       "Environmental Quality",
       "Forests & Land Cover"
+    ],
+    "themes": [
+      {
+        "code": "TH15",
+        "name": "Natural Hazards",
+        "key": "natural-hazards"
+      },
+      {
+        "code": "TH07",
+        "name": "Environmental Quality",
+        "key": "environmental-quality"
+      },
+      {
+        "code": "TH08",
+        "name": "Forests & Land Cover",
+        "key": "forests-land-cover"
+      }
     ]
   },
   {
@@ -553,11 +697,6 @@
       "code": "RD06",
       "name": "Cities, Regions & Land Use",
       "key": "cities-regions-land-use"
-    },
-    "theme": {
-      "code": "TH06",
-      "name": "Urban Systems",
-      "key": "urban-systems"
     },
     "subTheme": {
       "code": "ST13",
@@ -589,6 +728,23 @@
       "Mobility",
       "Accessibility",
       "Regional Analysis"
+    ],
+    "themes": [
+      {
+        "code": "TH14",
+        "name": "Mobility",
+        "key": "mobility"
+      },
+      {
+        "code": "TH02",
+        "name": "Accessibility",
+        "key": "accessibility"
+      },
+      {
+        "code": "TH18",
+        "name": "Regional Analysis",
+        "key": "regional-analysis"
+      }
     ]
   },
   {
@@ -598,11 +754,6 @@
       "code": "RD07",
       "name": "Population & Demography",
       "key": "population-demography"
-    },
-    "theme": {
-      "code": "TH07",
-      "name": "Population",
-      "key": "population"
     },
     "subTheme": {
       "code": "ST14",
@@ -634,7 +785,25 @@
     },
     "tags": [
       "Population",
-      "Population Vulnerability"
+      "Population Vulnerability",
+      "Demography"
+    ],
+    "themes": [
+      {
+        "code": "TH16",
+        "name": "Population",
+        "key": "population"
+      },
+      {
+        "code": "TH17",
+        "name": "Population Vulnerability",
+        "key": "population-vulnerability"
+      },
+      {
+        "code": "TH04",
+        "name": "Demography",
+        "key": "demography"
+      }
     ]
   }
 ]
