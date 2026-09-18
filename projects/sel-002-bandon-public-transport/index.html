@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/css/sel-theme.css">
 <link rel="stylesheet" href="/css/sel-components.css">
 <link rel="stylesheet" href="project.css">
+<link rel="stylesheet" href="/css/sel-standards.css">
 </head>
 <body class="sel-publication sel-002-publication">
 <a class="sel-skip-link" href="#main-content">Skip to content</a>
@@ -57,8 +58,8 @@
         <span>Ireland</span><span>County Cork</span><span>Bandon</span><span>Small Areas</span><span>Census 2022</span><span>Completed</span>
       </div>
       <div class="publication-actions">
-        <a class="sel-button sel-button-light" href="#map-atlas">Explore map atlas ↓</a>
-        <a class="sel-button sel-button-outline-light" href="./downloads/SEL-002 - Bandon Public Transport Accessibility Analysis.pdf">Download report ↗</a>
+        <a class="sel-button sel-button-dark" href="#map-atlas">Explore map atlas ↓</a>
+        <a class="sel-button sel-button-download" href="./downloads/SEL-002 - Bandon Public Transport Accessibility Analysis.pdf">Download report ↗</a>
       </div>
     </div>
     <figure class="publication-hero-media">
@@ -216,7 +217,7 @@
       <p class="publication-intro">The interactive map exposes the analytical layers used in the publication. Use the sidebar to switch evidence layers, search mapped Small Areas, measure distance or area, and inspect feature metadata.</p>
     </div>
 <div class="webmap-launch">
-  <div class="webmap-launch-copy"><span class="eyebrow">OPENLAYERS · QGIS2WEB</span><h3>Bandon Public Transport Accessibility Analysis</h3><p>A patched QGIS 4.2.2 qgis2web export with Spatial Evidence Lab interface controls.</p><div class="webmap-features"><span>Layer groups</span><span>Search</span><span>Legend</span><span>Measurement</span><span>Metadata</span><span>Styled popups</span></div><a class="sel-button sel-button-dark" href="./webmap/index.html">Launch interactive web map ↗</a></div>
+  <div class="webmap-launch-copy"><span class="eyebrow">OPENLAYERS · QGIS2WEB</span><h3>Bandon Public Transport Accessibility Analysis</h3><p>A patched QGIS 4.2.2 qgis2web export with Spatial Evidence Lab interface controls.</p><div class="webmap-features"><span>Layer groups</span><span>Search</span><span>Legend</span><span>Measurement</span><span>Metadata</span><span>Styled popups</span></div><a class="sel-button sel-button-map" href="./webmap/index.html">Launch interactive web map ↗</a></div>
   <div class="webmap-preview"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.06.png" alt="Equity hotspots preview"></div>
 </div>
 </div></section>
@@ -329,6 +330,7 @@ const menu=document.querySelector('.sel-menu-toggle');
 const nav=document.querySelector('#sel-site-nav');
 if(menu&&nav){menu.addEventListener('click',function(){const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});}
 </script>
+<script src="/js/sel-site.js"></script>
 </body>
 <!-- SEL-002 implementation note 0001: publication hierarchy and semantic landmarks; keep the publication evidence chain explicit and avoid implying unsupported causal claims. -->
 <!-- SEL-002 implementation note 0002: keyboard navigation and focus order; keep the publication evidence chain explicit and avoid implying unsupported causal claims. -->

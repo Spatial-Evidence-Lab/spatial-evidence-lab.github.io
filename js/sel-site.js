@@ -88,7 +88,48 @@
 
             element.textContent =
                 new Date().getFullYear();
+        });
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    if (!document.querySelector('.back-to-top')) {
+
+        const backToTop = document.createElement('a');
+
+        backToTop.className = 'back-to-top';
+        backToTop.href = '#top';
+        backToTop.textContent = 'Back to Top';
+        backToTop.setAttribute('aria-label', 'Back to top');
+
+        document.body.appendChild(backToTop);
+
+        backToTop.addEventListener('click', function (event) {
+
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
 
         });
+
+        const updateBackToTopVisibility = function () {
+
+            backToTop.classList.toggle(
+                'is-visible',
+                window.scrollY > window.innerHeight / 2
+            );
+
+        };
+
+        window.addEventListener(
+            'scroll',
+            updateBackToTopVisibility,
+            { passive: true }
+        );
+
+        updateBackToTopVisibility();
+
+    }
+
 
 })();
