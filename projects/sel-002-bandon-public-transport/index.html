@@ -13,27 +13,45 @@
 <link rel="stylesheet" href="/css/sel-standards.css">
 </head>
 <body class="sel-publication sel-002-publication">
-<a class="sel-skip-link" href="#main-content">Skip to content</a>
-<header class="sel-header" id="top">
-  <div class="sel-shell sel-nav-wrap">
-    <a class="sel-wordmark" href="/" aria-label="Spatial Evidence Lab home">
-      <span class="sel-wordmark-mark" aria-hidden="true">SE</span>
-      <span>Spatial Evidence <strong>Lab</strong></span>
-    </a>
-    <button class="sel-menu-toggle" type="button" aria-expanded="false" aria-controls="sel-site-nav">Menu</button>
-    <nav id="sel-site-nav" class="sel-site-nav" aria-label="Primary navigation">
-      <a href="/">Research</a>
-      <a class="active" href="/projects/">Projects</a>
-      <a href="/methods/">Methods</a>
-      <a href="/data/">Data</a>
-      <a href="/resources/">Resources</a>
-      <a href="/about/">About</a>
-      <a class="sel-nav-cta" href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">GitHub ↗</a>
-    </nav>
-  </div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" id="top">
+    <div class="shell nav-wrap">
+        <a class="wordmark" href="/" aria-label="Spatial Evidence Lab home">
+            <img src="/media/branding/logo.png" alt="" class="wordmark-logo">
+            <span class="wordmark-name">Spatial Evidence Lab</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Menu
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+            <a class="" href="/">
+                Research
+            </a>
+            <a class="active" href="/projects/">
+                Projects
+            </a>
+            <a class="" href="/methods/">
+                Methods
+            </a>
+            <a class="" href="/data/">
+                Data
+            </a>
+            <a class="" href="/resources/">
+                Resources
+            </a>
+            <a class="" href="/about/">
+                About
+            </a>
+            <a class="nav-cta" href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">
+                GitHub ↗
+            </a>
+        </nav>
+    </div>
 </header>
 <nav class="publication-toc" aria-label="Publication table of contents">
-  <div class="sel-shell publication-toc-inner">
+  <div class="shell publication-toc-inner">
     <a href="#overview">01 <span>Overview</span></a>
     <a href="#study-area">02 <span>Study area</span></a>
     <a href="#data-infrastructure">03 <span>Data infrastructure</span></a>
@@ -308,28 +326,38 @@
 <div class="publication-closing"><p class="publication-kicker">SPATIAL EVIDENCE LAB</p><h3>Evidence that can be inspected,<br><em>revisited and extended.</em></h3><a href="/projects/" class="sel-button sel-button-dark">Explore all projects ↗</a></div>
 </div></section>
 </main>
-<footer class="sel-footer">
-  <div class="sel-shell sel-footer-grid">
-    <div>
-      <strong class="sel-footer-brand">Spatial Evidence Lab</strong>
-      <p>Independent geospatial research · Spatial analytics · Evidence-based planning</p>
+<footer class="site-footer">
+    <div class="shell footer-grid">
+        <div class="footer-identity">
+            <div class="footer-brand-lockup">
+                <img src="/media/branding/logo.png" alt="" class="footer-logo">
+                <strong class="footer-brand">Spatial Evidence Lab</strong>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <div>
+                <b>Explore</b>
+                <a href="/projects/">Projects</a>
+                <a href="/methods/">Methods</a>
+                <a href="/data/">Data</a>
+                <a href="/resources/">Resources</a>
+                <a href="/about/">About</a>
+            </div>
+
+            <div>
+                <b>Connect</b>
+                <a href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+        </div>
     </div>
-    <div class="sel-footer-links">
-      <div><b>Explore</b><a href="/projects/">Projects</a><a href="/methods/">Methods</a><a href="/about/">About</a></div>
-      <div><b>Connect</b><a href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">GitHub ↗</a></div>
+
+    <div class="shell footer-bottom">
+        <span>© <span data-year></span> Spatial Evidence Lab</span>
+        <span>Research programme</span>
     </div>
-  </div>
-  <div class="sel-shell sel-footer-bottom">
-    <span>© <span data-year></span> Spatial Evidence Lab</span>
-    <a href="#top">Back to top ↑</a>
-  </div>
 </footer>
-<script>
-document.querySelectorAll('[data-year]').forEach(function(el){el.textContent=new Date().getFullYear();});
-const menu=document.querySelector('.sel-menu-toggle');
-const nav=document.querySelector('#sel-site-nav');
-if(menu&&nav){menu.addEventListener('click',function(){const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});}
-</script>
+
 <script src="/js/sel-site.js"></script>
 </body>
 <!-- SEL-002 implementation note 0001: publication hierarchy and semantic landmarks; keep the publication evidence chain explicit and avoid implying unsupported causal claims. -->

@@ -202,7 +202,7 @@
 
     min-height: var(--sel-header-height);
 
-    background: rgba(16,38,45,.97);
+    background: var(--sel-header-bg);
 
     border-bottom: 1px solid rgba(255,255,255,.10);
 
@@ -908,7 +908,7 @@
     width: 100%;
     min-width: 0;
     min-height: var(--sel-header-height);
-    background: rgba(16,38,45,.97);
+    background: var(--sel-header-bg);
     border-bottom: 1px solid rgba(255,255,255,.10);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);

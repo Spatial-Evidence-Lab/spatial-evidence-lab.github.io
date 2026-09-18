@@ -429,9 +429,9 @@ main {
 
     transform: translateY(-2px);
 
-    background: #30413E;
+    background: var(--sel-raised);
 
-    border-color: rgba(0,215,232,.28);
+    border-color: var(--sel-accent);
 }
 
 
@@ -553,9 +553,9 @@ main {
 
     transform: translateY(-2px);
 
-    background: #30413E;
+    background: var(--sel-raised);
 
-    border-color: rgba(0,215,232,.28);
+    border-color: var(--sel-accent);
 }
 
 

@@ -33,6 +33,7 @@
     --sel-surface: #10262D;
     --sel-raised: #163139;
     --sel-border: #29444A;
+    --sel-header-bg: #10262D;
 
     /* Brand */
     --sel-brand-blue: #142433;
@@ -75,6 +76,7 @@
     --sel-paper: #071318;
     --sel-cyan: #3A97A0;
     --sel-teal-light: #5AAEB3;
+    --sel-ink: #071318;
 
     /* Quality of life / research-domain colours.
        These are deliberately muted so they do not compete

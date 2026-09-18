@@ -266,3 +266,61 @@ h3,
         transition: none;
     }
 }
+
+
+/* =========================================================
+   04. PUBLICATION TOC — DARK SITE SHELL
+   =========================================================
+   Publication navigation remains structurally separate from
+   the global site header, but uses the same SEL dark UI tokens.
+   Cartographic/map colours are not used here.
+   ========================================================= */
+
+.publication-toc {
+    background: rgba(16, 38, 45, .97);
+    border-bottom: 1px solid var(--sel-border);
+    color: var(--sel-text-soft);
+}
+
+.publication-toc a {
+    color: var(--sel-muted);
+    border-bottom-color: transparent;
+}
+
+.publication-toc a:hover,
+.publication-toc a:focus-visible,
+.publication-toc a.is-active {
+    color: var(--sel-accent);
+    border-bottom-color: var(--sel-accent);
+}
+
+.publication-toc .shell {
+    background: transparent;
+}
+
+
+/* =========================================================
+   05. SHARED FOCUS
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--sel-accent-soft);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   06. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
