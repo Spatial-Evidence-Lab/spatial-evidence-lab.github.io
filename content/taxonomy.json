@@ -1,17 +1,18 @@
 {
-  "taxonomyVersion": "1.1",
-  "lastUpdated": "2026-09-10",
+  "taxonomyVersion": "1.2",
+  "lastUpdated": "2026-09-18",
   "schema": {
     "name": "Spatial Evidence Lab Research Taxonomy",
     "description": "Controlled vocabulary for classifying Spatial Evidence Lab research projects, geographic scope, publication status, outputs and analytical frameworks.",
     "hierarchy": [
       "researchDomain",
-      "theme",
+      "themes",
       "subTheme"
     ],
     "projectClassificationFields": [
       "researchDomain",
-      "theme",
+      "themes",
+      "tags",
       "subTheme",
       "geographicScope",
       "geographicLevel",
@@ -29,7 +30,7 @@
       "displayOrder": 1,
       "themes": [
         {
-          "code": "TH01",
+          "code": "TH17",
           "name": "Quality of Life & Wellbeing",
           "key": "quality-of-life-wellbeing",
           "description": "Multidimensional assessment of quality of life and wellbeing across places.",
@@ -66,11 +67,34 @@
           ]
         },
         {
-          "code": "TH02",
+          "code": "TH16",
+          "name": "Population Vulnerability",
+          "key": "population-vulnerability",
+          "description": "Spatial analysis of demographic vulnerability and population exposure.",
+          "displayOrder": 2,
+          "subThemes": [
+            {
+              "code": "ST67",
+              "name": "Population Vulnerability",
+              "key": "population-vulnerability",
+              "description": "Spatial patterns of population vulnerability.",
+              "displayOrder": 1
+            },
+            {
+              "code": "ST68",
+              "name": "Demographic Inequality",
+              "key": "demographic-inequality",
+              "description": "Spatial differences in demographic conditions and outcomes.",
+              "displayOrder": 2
+            }
+          ]
+        },
+        {
+          "code": "TH12",
           "name": "Living Conditions",
           "key": "living-conditions",
           "description": "Material and spatial conditions affecting everyday life.",
-          "displayOrder": 2,
+          "displayOrder": 3,
           "subThemes": [
             {
               "code": "ST05",
@@ -94,36 +118,6 @@
               "displayOrder": 3
             }
           ]
-        },
-        {
-          "code": "TH03",
-          "name": "Social Conditions",
-          "key": "social-conditions",
-          "description": "Social inclusion, community resources and social vulnerability.",
-          "displayOrder": 3,
-          "subThemes": [
-            {
-              "code": "ST08",
-              "name": "Social Inclusion",
-              "key": "social-inclusion",
-              "description": "Spatial conditions associated with inclusion, participation and social opportunity.",
-              "displayOrder": 1
-            },
-            {
-              "code": "ST09",
-              "name": "Community Assets",
-              "key": "community-assets",
-              "description": "Spatial distribution and accessibility of community resources and assets.",
-              "displayOrder": 2
-            },
-            {
-              "code": "ST10",
-              "name": "Social Vulnerability",
-              "key": "social-vulnerability",
-              "description": "Spatial patterns of social vulnerability and population disadvantage.",
-              "displayOrder": 3
-            }
-          ]
         }
       ]
     },
@@ -135,41 +129,11 @@
       "displayOrder": 2,
       "themes": [
         {
-          "code": "TH04",
-          "name": "Transport",
-          "key": "transport",
-          "description": "Spatial analysis of transport networks, services and accessibility.",
-          "displayOrder": 1,
-          "subThemes": [
-            {
-              "code": "ST11",
-              "name": "Public Transport Accessibility",
-              "key": "public-transport-accessibility",
-              "description": "Accessibility to public transport services and stops.",
-              "displayOrder": 1
-            },
-            {
-              "code": "ST12",
-              "name": "Transport Service Levels",
-              "key": "transport-service-levels",
-              "description": "Spatial variation in transport service provision, frequency and coverage.",
-              "displayOrder": 2
-            },
-            {
-              "code": "ST13",
-              "name": "Passenger Mobility",
-              "key": "passenger-mobility",
-              "description": "Patterns of passenger movement, travel and mobility.",
-              "displayOrder": 3
-            }
-          ]
-        },
-        {
-          "code": "TH05",
+          "code": "TH01",
           "name": "Accessibility",
           "key": "accessibility",
           "description": "Spatial access to services, opportunities and destinations.",
-          "displayOrder": 2,
+          "displayOrder": 1,
           "subThemes": [
             {
               "code": "ST14",
@@ -195,11 +159,11 @@
           ]
         },
         {
-          "code": "TH06",
+          "code": "TH13",
           "name": "Mobility",
           "key": "mobility",
           "description": "Movement, travel behaviour and spatial mobility.",
-          "displayOrder": 3,
+          "displayOrder": 2,
           "subThemes": [
             {
               "code": "ST17",
@@ -223,6 +187,36 @@
               "displayOrder": 3
             }
           ]
+        },
+        {
+          "code": "TH18",
+          "name": "Regional Analysis",
+          "key": "regional-analysis",
+          "description": "Spatial analysis of regional variation, patterns and relationships.",
+          "displayOrder": 3,
+          "subThemes": [
+            {
+              "code": "ST55",
+              "name": "Regional Patterns",
+              "key": "regional-patterns",
+              "description": "Geographic variation and spatial patterns across regions.",
+              "displayOrder": 1
+            },
+            {
+              "code": "ST56",
+              "name": "Spatial Inequality",
+              "key": "spatial-inequality",
+              "description": "Regional and geographic differences in socioeconomic and environmental conditions.",
+              "displayOrder": 2
+            },
+            {
+              "code": "ST57",
+              "name": "Rural–Urban Differences",
+              "key": "rural-urban-differences",
+              "description": "Spatial differences between urban, suburban, town and rural contexts.",
+              "displayOrder": 3
+            }
+          ]
         }
       ]
     },
@@ -234,41 +228,11 @@
       "displayOrder": 3,
       "themes": [
         {
-          "code": "TH07",
-          "name": "Environmental Quality",
-          "key": "environmental-quality",
-          "description": "Spatial conditions and environmental characteristics affecting places and populations.",
-          "displayOrder": 1,
-          "subThemes": [
-            {
-              "code": "ST20",
-              "name": "Environmental Exposure",
-              "key": "environmental-exposure",
-              "description": "Exposure of populations and places to environmental pressures.",
-              "displayOrder": 1
-            },
-            {
-              "code": "ST21",
-              "name": "Environmental Quality",
-              "key": "environmental-quality",
-              "description": "Spatial assessment of environmental quality and conditions.",
-              "displayOrder": 2
-            },
-            {
-              "code": "ST22",
-              "name": "Green & Blue Infrastructure",
-              "key": "green-blue-infrastructure",
-              "description": "Spatial distribution and accessibility of green and blue environmental assets.",
-              "displayOrder": 3
-            }
-          ]
-        },
-        {
-          "code": "TH08",
+          "code": "TH02",
           "name": "Climate Change",
           "key": "climate-change",
           "description": "Spatial assessment of climate-related exposure, impacts and adaptation.",
-          "displayOrder": 2,
+          "displayOrder": 1,
           "subThemes": [
             {
               "code": "ST23",
@@ -294,7 +258,37 @@
           ]
         },
         {
-          "code": "TH09",
+          "code": "TH06",
+          "name": "Environmental Quality",
+          "key": "environmental-quality",
+          "description": "Spatial conditions and environmental characteristics affecting places and populations.",
+          "displayOrder": 2,
+          "subThemes": [
+            {
+              "code": "ST20",
+              "name": "Environmental Exposure",
+              "key": "environmental-exposure",
+              "description": "Exposure of populations and places to environmental pressures.",
+              "displayOrder": 1
+            },
+            {
+              "code": "ST21",
+              "name": "Environmental Quality",
+              "key": "environmental-quality",
+              "description": "Spatial assessment of environmental quality and conditions.",
+              "displayOrder": 2
+            },
+            {
+              "code": "ST22",
+              "name": "Green & Blue Infrastructure",
+              "key": "green-blue-infrastructure",
+              "description": "Spatial distribution and accessibility of green and blue environmental assets.",
+              "displayOrder": 3
+            }
+          ]
+        },
+        {
+          "code": "TH14",
           "name": "Natural Hazards",
           "key": "natural-hazards",
           "description": "Spatial analysis of natural hazards, exposure, vulnerability and impacts.",
@@ -329,36 +323,6 @@
               "displayOrder": 4
             }
           ]
-        },
-        {
-          "code": "TH10",
-          "name": "Forests & Land Cover",
-          "key": "forests-land-cover",
-          "description": "Spatial analysis of forests, land cover and environmental land change.",
-          "displayOrder": 4,
-          "subThemes": [
-            {
-              "code": "ST30",
-              "name": "Forest Loss",
-              "key": "forest-loss",
-              "description": "Spatial and temporal analysis of forest loss.",
-              "displayOrder": 1
-            },
-            {
-              "code": "ST31",
-              "name": "Deforestation",
-              "key": "deforestation",
-              "description": "Spatial analysis of deforestation and associated land-use change.",
-              "displayOrder": 2
-            },
-            {
-              "code": "ST32",
-              "name": "Land-Cover Change",
-              "key": "land-cover-change",
-              "description": "Temporal and spatial analysis of changes in land cover.",
-              "displayOrder": 3
-            }
-          ]
         }
       ]
     },
@@ -370,7 +334,7 @@
       "displayOrder": 4,
       "themes": [
         {
-          "code": "TH11",
+          "code": "TH19",
           "name": "Renewable Energy",
           "key": "renewable-energy",
           "description": "Spatial assessment of renewable energy resources and potential.",
@@ -400,7 +364,7 @@
           ]
         },
         {
-          "code": "TH12",
+          "code": "TH04",
           "name": "Energy & Housing",
           "key": "energy-housing",
           "description": "Spatial relationships between residential conditions and energy systems.",
@@ -423,7 +387,7 @@
           ]
         },
         {
-          "code": "TH13",
+          "code": "TH10",
           "name": "Infrastructure Planning",
           "key": "infrastructure-planning",
           "description": "Spatial suitability and planning analysis for infrastructure.",
@@ -455,7 +419,7 @@
       "displayOrder": 5,
       "themes": [
         {
-          "code": "TH14",
+          "code": "TH09",
           "name": "Housing",
           "key": "housing",
           "description": "Spatial analysis of housing conditions, affordability and residential characteristics.",
@@ -485,48 +449,11 @@
           ]
         },
         {
-          "code": "TH15",
-          "name": "Socioeconomic Conditions",
-          "key": "socioeconomic-conditions",
-          "description": "Spatial analysis of income, employment, education, deprivation and inequality.",
-          "displayOrder": 2,
-          "subThemes": [
-            {
-              "code": "ST43",
-              "name": "Income",
-              "key": "income",
-              "description": "Spatial distribution and variation in household and population income.",
-              "displayOrder": 1
-            },
-            {
-              "code": "ST44",
-              "name": "Employment",
-              "key": "employment",
-              "description": "Spatial patterns of employment, unemployment and labour-market conditions.",
-              "displayOrder": 2
-            },
-            {
-              "code": "ST45",
-              "name": "Deprivation",
-              "key": "deprivation",
-              "description": "Spatial patterns of socioeconomic deprivation and disadvantage.",
-              "displayOrder": 3
-            },
-            {
-              "code": "ST46",
-              "name": "Socioeconomic Inequality",
-              "key": "socioeconomic-inequality",
-              "description": "Geographic differences and inequalities in socioeconomic conditions.",
-              "displayOrder": 4
-            }
-          ]
-        },
-        {
-          "code": "TH16",
+          "code": "TH08",
           "name": "Household Conditions",
           "key": "household-conditions",
           "description": "Spatial analysis of household structure, vulnerability and living conditions.",
-          "displayOrder": 3,
+          "displayOrder": 2,
           "subThemes": [
             {
               "code": "ST47",
@@ -550,6 +477,36 @@
               "displayOrder": 3
             }
           ]
+        },
+        {
+          "code": "TH12",
+          "name": "Living Conditions",
+          "key": "living-conditions",
+          "description": "Material and spatial conditions affecting everyday life.",
+          "displayOrder": 3,
+          "subThemes": [
+            {
+              "code": "ST05",
+              "name": "Living Standards",
+              "key": "living-standards",
+              "description": "Material and socioeconomic conditions associated with living standards.",
+              "displayOrder": 1
+            },
+            {
+              "code": "ST06",
+              "name": "Community Conditions",
+              "key": "community-conditions",
+              "description": "Local facilities, amenities and conditions supporting everyday community life.",
+              "displayOrder": 2
+            },
+            {
+              "code": "ST07",
+              "name": "Local Opportunity",
+              "key": "local-opportunity",
+              "description": "Spatial distribution of opportunities and resources available to communities.",
+              "displayOrder": 3
+            }
+          ]
         }
       ]
     },
@@ -561,7 +518,7 @@
       "displayOrder": 6,
       "themes": [
         {
-          "code": "TH17",
+          "code": "TH11",
           "name": "Land Use",
           "key": "land-use",
           "description": "Spatial analysis of land-use patterns and land-use change.",
@@ -584,71 +541,41 @@
           ]
         },
         {
-          "code": "TH18",
-          "name": "Urban Systems",
-          "key": "urban-systems",
-          "description": "Spatial analysis of urban activity, structure, vitality and functioning.",
+          "code": "TH07",
+          "name": "Forests & Land Cover",
+          "key": "forests-land-cover",
+          "description": "Spatial analysis of forests, land cover and environmental land change.",
           "displayOrder": 2,
           "subThemes": [
             {
-              "code": "ST52",
-              "name": "Urban Activity",
-              "key": "urban-activity",
-              "description": "Spatial patterns of activity and movement within urban areas.",
+              "code": "ST30",
+              "name": "Forest Loss",
+              "key": "forest-loss",
+              "description": "Spatial and temporal analysis of forest loss.",
               "displayOrder": 1
             },
             {
-              "code": "ST53",
-              "name": "Urban Vitality",
-              "key": "urban-vitality",
-              "description": "Spatial indicators of urban vitality, activity and place performance.",
+              "code": "ST31",
+              "name": "Deforestation",
+              "key": "deforestation",
+              "description": "Spatial analysis of deforestation and associated land-use change.",
               "displayOrder": 2
             },
             {
-              "code": "ST54",
-              "name": "Urban Structure",
-              "key": "urban-structure",
-              "description": "Spatial structure, density and organisation of urban areas.",
+              "code": "ST32",
+              "name": "Land-Cover Change",
+              "key": "land-cover-change",
+              "description": "Temporal and spatial analysis of changes in land cover.",
               "displayOrder": 3
             }
           ]
         },
         {
-          "code": "TH19",
-          "name": "Regional Analysis",
-          "key": "regional-analysis",
-          "description": "Spatial analysis of regional variation, patterns and relationships.",
-          "displayOrder": 3,
-          "subThemes": [
-            {
-              "code": "ST55",
-              "name": "Regional Patterns",
-              "key": "regional-patterns",
-              "description": "Geographic variation and spatial patterns across regions.",
-              "displayOrder": 1
-            },
-            {
-              "code": "ST56",
-              "name": "Spatial Inequality",
-              "key": "spatial-inequality",
-              "description": "Regional and geographic differences in socioeconomic and environmental conditions.",
-              "displayOrder": 2
-            },
-            {
-              "code": "ST57",
-              "name": "Rural–Urban Differences",
-              "key": "rural-urban-differences",
-              "description": "Spatial differences between urban, suburban, town and rural contexts.",
-              "displayOrder": 3
-            }
-          ]
-        },
-        {
-          "code": "TH20",
+          "code": "TH05",
           "name": "Environmental Land Change",
           "key": "environmental-land-change",
           "description": "Spatial analysis of environmental transformation and landscape change.",
-          "displayOrder": 4,
+          "displayOrder": 3,
           "subThemes": [
             {
               "code": "ST58",
@@ -683,7 +610,7 @@
       "displayOrder": 7,
       "themes": [
         {
-          "code": "TH21",
+          "code": "TH15",
           "name": "Population",
           "key": "population",
           "description": "Spatial analysis of population distribution, density and change.",
@@ -713,7 +640,7 @@
           ]
         },
         {
-          "code": "TH22",
+          "code": "TH03",
           "name": "Demography",
           "key": "demography",
           "description": "Spatial analysis of demographic structure and characteristics.",
@@ -743,7 +670,7 @@
           ]
         },
         {
-          "code": "TH23",
+          "code": "TH16",
           "name": "Population Vulnerability",
           "key": "population-vulnerability",
           "description": "Spatial analysis of demographic vulnerability and population exposure.",
@@ -1133,82 +1060,41 @@
     "onePrimaryThemePerProject": true,
     "onePrimarySubThemePerProject": true
   },
-  "projectTags": [
-    {
-      "name": "Accessibility",
-      "key": "accessibility"
-    },
-    {
-      "name": "Climate Change",
-      "key": "climate-change"
-    },
-    {
-      "name": "Demography",
-      "key": "demography"
-    },
-    {
-      "name": "Energy & Housing",
-      "key": "energy-and-housing"
-    },
-    {
-      "name": "Environmental Land Change",
-      "key": "environmental-land-change"
-    },
-    {
-      "name": "Environmental Quality",
-      "key": "environmental-quality"
-    },
-    {
-      "name": "Forests & Land Cover",
-      "key": "forests-and-land-cover"
-    },
-    {
-      "name": "Household Conditions",
-      "key": "household-conditions"
-    },
-    {
-      "name": "Housing",
-      "key": "housing"
-    },
-    {
-      "name": "Infrastructure Planning",
-      "key": "infrastructure-planning"
-    },
-    {
-      "name": "Land Use",
-      "key": "land-use"
-    },
-    {
-      "name": "Living Conditions",
-      "key": "living-conditions"
-    },
-    {
-      "name": "Mobility",
-      "key": "mobility"
-    },
-    {
-      "name": "Natural Hazards",
-      "key": "natural-hazards"
-    },
-    {
-      "name": "Population",
-      "key": "population"
-    },
-    {
-      "name": "Population Vulnerability",
-      "key": "population-vulnerability"
-    },
-    {
-      "name": "Quality of Life & Wellbeing",
-      "key": "quality-of-life-and-wellbeing"
-    },
-    {
-      "name": "Regional Analysis",
-      "key": "regional-analysis"
-    },
-    {
-      "name": "Renewable Energy",
-      "key": "renewable-energy"
-    }
-  ]
+  "domainThemeMap": {
+    "RD01": [
+      "TH17",
+      "TH16",
+      "TH12"
+    ],
+    "RD02": [
+      "TH01",
+      "TH13",
+      "TH18"
+    ],
+    "RD03": [
+      "TH02",
+      "TH06",
+      "TH14"
+    ],
+    "RD04": [
+      "TH19",
+      "TH04",
+      "TH10"
+    ],
+    "RD05": [
+      "TH09",
+      "TH08",
+      "TH12"
+    ],
+    "RD06": [
+      "TH11",
+      "TH07",
+      "TH05"
+    ],
+    "RD07": [
+      "TH15",
+      "TH03",
+      "TH16"
+    ]
+  }
 }

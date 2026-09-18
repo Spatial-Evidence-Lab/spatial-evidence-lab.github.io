@@ -64,7 +64,12 @@
       "Quality of Life & Wellbeing",
       "Population Vulnerability",
       "Household Conditions"
-    ]
+    ],
+    "theme": {
+      "code": "TH17",
+      "name": "Quality of Life & Wellbeing",
+      "key": "quality-of-life-wellbeing"
+    }
   },
   {
     "id": "SEL-002",
@@ -121,7 +126,12 @@
         "name": "Population Vulnerability",
         "key": "population-vulnerability"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH01",
+      "name": "Accessibility",
+      "key": "accessibility"
+    }
   },
   {
     "id": "SEL-003",
@@ -177,7 +187,12 @@
         "name": "Regional Analysis",
         "key": "regional-analysis"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH01",
+      "name": "Accessibility",
+      "key": "accessibility"
+    }
   },
   {
     "id": "SEL-004",
@@ -235,7 +250,12 @@
         "name": "Environmental Quality",
         "key": "environmental-quality"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH07",
+      "name": "Forests & Land Cover",
+      "key": "forests-land-cover"
+    }
   },
   {
     "id": "SEL-005",
@@ -292,7 +312,12 @@
         "name": "Population Vulnerability",
         "key": "population-vulnerability"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH02",
+      "name": "Climate Change",
+      "key": "climate-change"
+    }
   },
   {
     "id": "SEL-006",
@@ -348,7 +373,12 @@
         "name": "Land Use",
         "key": "land-use"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH19",
+      "name": "Renewable Energy",
+      "key": "renewable-energy"
+    }
   },
   {
     "id": "SEL-007",
@@ -404,7 +434,12 @@
         "name": "Land Use",
         "key": "land-use"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH07",
+      "name": "Forests & Land Cover",
+      "key": "forests-land-cover"
+    }
   },
   {
     "id": "SEL-008",
@@ -460,7 +495,12 @@
         "name": "Land Use",
         "key": "land-use"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH05",
+      "name": "Environmental Land Change",
+      "key": "environmental-land-change"
+    }
   },
   {
     "id": "SEL-009",
@@ -517,7 +557,12 @@
         "name": "Environmental Quality",
         "key": "environmental-quality"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH19",
+      "name": "Renewable Energy",
+      "key": "renewable-energy"
+    }
   },
   {
     "id": "SEL-010",
@@ -574,7 +619,12 @@
         "name": "Population Vulnerability",
         "key": "population-vulnerability"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH14",
+      "name": "Natural Hazards",
+      "key": "natural-hazards"
+    }
   },
   {
     "id": "SEL-011",
@@ -631,7 +681,12 @@
         "name": "Living Conditions",
         "key": "living-conditions"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH04",
+      "name": "Energy & Housing",
+      "key": "energy-housing"
+    }
   },
   {
     "id": "SEL-012",
@@ -688,7 +743,12 @@
         "name": "Forests & Land Cover",
         "key": "forests-land-cover"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH14",
+      "name": "Natural Hazards",
+      "key": "natural-hazards"
+    }
   },
   {
     "id": "SEL-013",
@@ -745,7 +805,12 @@
         "name": "Regional Analysis",
         "key": "regional-analysis"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH13",
+      "name": "Mobility",
+      "key": "mobility"
+    }
   },
   {
     "id": "SEL-014",
@@ -804,6 +869,11 @@
         "name": "Demography",
         "key": "demography"
       }
-    ]
+    ],
+    "theme": {
+      "code": "TH15",
+      "name": "Population",
+      "key": "population"
+    }
   }
 ]
