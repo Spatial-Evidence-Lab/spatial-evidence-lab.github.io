@@ -200,8 +200,10 @@
         grouped.forEach((projects) => {
             projects.forEach((project, index) => {
                 const { latitude, longitude } = project.location;
+                // The base map uses a full-world equirectangular projection:
+                // longitude -180..180 maps to x 0..100%, latitude 90..-90 maps to y 0..100%.
                 const baseX = ((longitude + 180) / 360) * 100;
-                const baseY = ((90 - latitude) / 180) * 100;
+                const baseY = ((90 - latitude) / 150) * 100;
                 const angle = projects.length > 1 ? (index / projects.length) * Math.PI * 2 : 0;
                 const radius = projects.length > 1 ? 1.1 : 0;
                 const x = baseX + Math.cos(angle) * radius;
