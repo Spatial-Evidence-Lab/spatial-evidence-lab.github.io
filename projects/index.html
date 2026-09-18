@@ -1,11 +1,22 @@
-<!doctype html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>Projects | Spatial Evidence Lab</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects | Spatial Evidence Lab</title>
+    <meta name="description" content="Current and completed Spatial Evidence Lab research across quality of life, accessibility, environment, climate, energy, housing and population.">
 
-<meta
-name="description"
-content="Spatial Evidence Lab research project catalogue.">
+    <link rel="stylesheet" href="/css/sel-theme.css">
+    <link rel="stylesheet" href="/css/sel-components.css">
+    <link rel="stylesheet" href="/css/sel-layout.css">
+    <link rel="stylesheet" href="/css/sel-pages.css">
+    <link rel="stylesheet" href="/css/sel-standards.css">
+</head>
+<body class="projects-page">
 
-<link rel="stylesheet" href="../css/sel-theme.css"> <link rel="stylesheet" href="../css/sel-components.css"> <link rel="stylesheet" href="../css/legacy/portfolio.css"> <link rel="stylesheet" href="/css/sel-standards.css">
-</head> <body> <a class="skip-link" href="#main-content"> Skip to content </a> <header class="site-header" id="top">
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header" id="top">
     <div class="shell nav-wrap">
         <a class="wordmark" href="/" aria-label="Spatial Evidence Lab home">
             <img src="/media/branding/logo.png" alt="" class="wordmark-logo">
@@ -17,81 +28,128 @@ content="Spatial Evidence Lab research project catalogue.">
         </button>
 
         <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-            <a class="" href="/">
-                Research
-            </a>
-            <a class="active" href="/projects/">
-                Projects
-            </a>
-            <a class="" href="/methods/">
-                Methods
-            </a>
-            <a class="" href="/data/">
-                Data
-            </a>
-            <a class="" href="/resources/">
-                Resources
-            </a>
-            <a class="" href="/about/">
-                About
-            </a>
-            <a class="nav-cta" href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">
-                GitHub ↗
-            </a>
+            <a href="/">Research</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/methods/">Methods</a>
+            <a href="/data/">Data</a>
+            <a href="/resources/">Resources</a>
+            <a href="/about/">About</a>
+            <a class="nav-cta" href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">GitHub ↗</a>
         </nav>
     </div>
-</header> <main id="main-content">
+</header>
 
-<section class="portfolio-hero">
-  <div class="shell">
+<main id="main-content">
 
-    <p class="project-kicker">
-      Research catalogue
-    </p>
+    <section class="projects-hero">
+        <div class="shell projects-hero-inner">
+            <p class="projects-eyebrow">Research catalogue</p>
+            <h1>Projects<br><span>across place.</span></h1>
+            <p class="projects-intro">Current and completed research across quality of life, accessibility, environment, climate, energy, housing and population.</p>
+        </div>
+    </section>
 
-    <h1>
-      Projects<br>
-      <em>across place.</em>
-    </h1>
+    <section class="projects-section projects-featured-section" aria-labelledby="featured-title">
+        <div class="shell">
+            <div class="projects-section-heading">
+                <p class="section-label">Featured projects</p>
+                <h2 id="featured-title" class="sr-only">Featured projects</h2>
+            </div>
+            <div class="featured-grid" data-featured-projects></div>
+        </div>
+    </section>
 
-    <p>
-      Current and completed research across quality of life,
-      accessibility, environment, climate, energy, housing
-      and population.
-    </p>
+    <section class="projects-section projects-catalogue-section" aria-labelledby="all-projects-title">
+        <div class="shell">
+            <div class="catalogue-heading-row">
+                <div>
+                    <p class="section-label">All projects</p>
+                    <h2 id="all-projects-title">Research catalogue</h2>
+                </div>
+                <p class="project-count" data-project-count>14 projects</p>
+            </div>
 
-  </div>
-</section>
+            <form class="project-filters" data-project-filters aria-label="Filter projects">
+                <label>
+                    <span>Domain</span>
+                    <select data-filter="domain" aria-label="Filter by domain">
+                        <option value="">All domains</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Theme</span>
+                    <select data-filter="theme" aria-label="Filter by theme">
+                        <option value="">All themes</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Place</span>
+                    <select data-filter="place" aria-label="Filter by place">
+                        <option value="">All places</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Status</span>
+                    <select data-filter="status" aria-label="Filter by status">
+                        <option value="">All statuses</option>
+                    </select>
+                </label>
+                <button class="filter-reset" type="button" data-reset-filters hidden>Clear filters</button>
+            </form>
 
-<section class="section">
-  <div class="shell">
+            <div class="project-grid" data-project-grid aria-live="polite"></div>
+            <p class="projects-empty" data-project-empty hidden>No projects match the selected filters.</p>
+        </div>
+    </section>
 
-    <!--
-      Filters are generated by project-catalogue.js
-      from taxonomy.json.
+    <section class="projects-section projects-place-section" aria-labelledby="place-title">
+        <div class="shell">
+            <div class="projects-section-heading projects-place-heading">
+                <div>
+                    <p class="section-label">Browse by place</p>
+                    <h2 id="place-title">Explore research geographically.</h2>
+                </div>
+                <p class="map-project-count" data-map-count>14 project locations</p>
+            </div>
 
-      Do not add individual filter buttons here.
-    -->
-   <div
-    class="filter-bar"
-    data-project-filters
-    aria-label="Filter projects">
-   </div>
+            <div class="project-map" data-project-map>
+                <svg class="project-map-base" viewBox="0 0 1000 500" role="img" aria-label="World map showing Spatial Evidence Lab project locations" preserveAspectRatio="none">
+                    <rect width="1000" height="500" fill="none"></rect>
+                    <g class="map-graticule" aria-hidden="true">
+                        <path d="M0 125H1000M0 250H1000M0 375H1000M250 0V500M500 0V500M750 0V500"></path>
+                    </g>
+                    <g class="map-land" aria-hidden="true">
+                        <path d="M82 104l34-31 58-9 45 21 34 38-13 33-37 6-17 29-35-7-27-30-37-9z"></path>
+                        <path d="M197 211l42 15 22 34-12 42-24 29-11 52-22 54-25-16-7-55-19-33 17-31 5-39z"></path>
+                        <path d="M454 94l34-17 30 7 12 19 38 3 27 20 38-8 49 17 43 29 40 2 29 27 51 5 28 27 20 35-27 25-41 0-27 23-42-6-32 23-42-12-24 15-38-19-32 8-31-22-29 5-21-28 20-31 24-18-10-28z"></path>
+                        <path d="M481 224l35-4 32 20 14 35-9 37-20 34-22 48-28 32-21-12-7-42-20-33 8-38 20-23-10-31z"></path>
+                        <path d="M718 349l48 3 42 21 29 30-17 20-45-4-38-20-26-22z"></path>
+                        <path d="M846 90l22-8 18 14-3 21-22 11-20-15z"></path>
+                    </g>
+                </svg>
+                <div class="project-map-dots" data-map-dots></div>
+                <div class="map-tooltip" data-map-tooltip hidden></div>
+            </div>
 
+            <div class="map-footer">
+                <span><i aria-hidden="true"></i> Project location</span>
+                <span>Click a location to explore a project</span>
+            </div>
+        </div>
+    </section>
 
-    <!--
-      Projects are generated by project-catalogue.js
-      from projects.json.
-    -->
-    <div
-      class="catalogue-grid"
-      data-project-grid
-    ></div>
+    <section class="projects-explore" aria-label="Explore Spatial Evidence Lab">
+        <div class="shell">
+            <a href="/">Research</a>
+            <a href="/methods/">Methods</a>
+            <a href="/data/">Data</a>
+            <a href="/resources/">Resources</a>
+        </div>
+    </section>
 
-  </div>
-</section>
+</main>
 
-</main> <footer class="site-footer">
+<footer class="site-footer">
     <div class="shell footer-grid">
         <div class="footer-identity">
             <div class="footer-brand-lockup">
@@ -99,7 +157,6 @@ content="Spatial Evidence Lab research project catalogue.">
                 <strong class="footer-brand">Spatial Evidence Lab</strong>
             </div>
         </div>
-
         <div class="footer-links">
             <div>
                 <b>Explore</b>
@@ -109,16 +166,19 @@ content="Spatial Evidence Lab research project catalogue.">
                 <a href="/resources/">Resources</a>
                 <a href="/about/">About</a>
             </div>
-
             <div>
                 <b>Connect</b>
                 <a href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
         </div>
     </div>
-
     <div class="shell footer-bottom">
         <span>© <span data-year></span> Spatial Evidence Lab</span>
         <span>Research programme</span>
     </div>
-</footer> <script src="../js/sel-site.js"></script> <script src="../js/legacy/project-catalogue.js"></script> </body> </html>
+</footer>
+
+<script src="/js/sel-site.js"></script>
+<script src="/js/sel-projects.js"></script>
+</body>
+</html>
