@@ -1217,6 +1217,7 @@
     width: 100%;
     background: var(--sel-brand-blue);
     padding: clamp(56px, 7vw, 88px) 0 clamp(60px, 7vw, 88px);
+    border-bottom: 1px solid var(--sel-border);
     overflow: hidden;
 }
 
@@ -1227,12 +1228,27 @@
     box-sizing: border-box;
 }
 
-.projects-eyebrow,
 .section-label {
     margin: 0;
     color: var(--sel-accent-soft);
     font-size: .72rem;
     font-weight: 600;
+    letter-spacing: .12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+/* Matches .research-eyebrow on the homepage hero exactly, so the
+   projects-page hero eyebrow lines up in size, weight, colour and
+   spacing with the homepage hero. */
+.projects-eyebrow {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 24px;
+    color: var(--sel-accent);
+    font-size: .68rem;
+    font-weight: 800;
     letter-spacing: .12em;
     line-height: 1.4;
     text-transform: uppercase;
