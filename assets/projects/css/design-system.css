@@ -1,0 +1,145 @@
+/* ==========================================
+   SPATIAL EVIDENCE LAB
+   DESIGN SYSTEM
+   Release 3.1 — Global Design System
+   ========================================== */
+
+@import url("../../css/sel-theme.css");
+
+:root{
+  --navy:#172A3A;
+  --navy-dark:#0E1C27;
+  --teal:#1F7A8C;
+  --cyan:#00D7E8;
+  --orange:#E58F65;
+  --cream:#F5F3EE;
+  --white:#FFFFFF;
+
+  --grey-100:#F8F9FA;
+  --grey-200:#E9ECEF;
+  --grey-300:#DEE2E6;
+  --grey-400:#ADB5BD;
+  --grey-500:#6C757D;
+  --grey-600:#495057;
+  --grey-700:#343A40;
+  --grey-800:#212529;
+
+  --font-primary:'Inter',sans-serif;
+
+  --text-xs:0.75rem;
+  --text-sm:0.875rem;
+  --text-base:1rem;
+  --text-lg:1.125rem;
+  --text-xl:1.375rem;
+  --text-2xl:1.75rem;
+  --text-3xl:2.5rem;
+  --text-4xl:3.5rem;
+  --text-5xl:4rem;
+
+  --space-1:0.5rem;
+  --space-2:1rem;
+  --space-3:1.5rem;
+  --space-4:2rem;
+  --space-5:3rem;
+  --space-6:4rem;
+  --space-7:6rem;
+
+  --radius-sm:12px;
+  --radius-md:18px;
+  --radius-lg:24px;
+
+  --shadow-card:0 10px 30px rgba(0,0,0,.08);
+  --shadow-hover:0 20px 40px rgba(0,0,0,.12);
+
+  --container:1180px;
+  --container-wide:1440px;
+
+  --transition:all .3s ease;
+
+  /* v3.0 compatibility aliases */
+  --sel-bg:var(--cream);
+  --sel-section:var(--white);
+  --sel-surface:var(--white);
+  --sel-raised:var(--grey-100);
+  --sel-border:var(--grey-300);
+  --sel-header-bg:var(--white);
+
+  --sel-brand-blue:var(--navy);
+  --sel-brand-teal:var(--teal);
+  --sel-warm:var(--orange);
+  --sel-accent:var(--teal);
+  --sel-accent-dark:var(--navy);
+  --sel-accent-soft:var(--cyan);
+
+  --sel-white:var(--white);
+  --sel-text:var(--grey-800);
+  --sel-text-soft:var(--grey-600);
+  --sel-body:var(--grey-700);
+  --sel-muted:var(--grey-500);
+
+  --sel-line:var(--grey-300);
+  --sel-line-soft:rgba(23,42,58,.12);
+  --sel-line-dark:var(--grey-400);
+
+  --sel-warning:var(--orange);
+  --sel-positive:var(--teal);
+  --sel-negative:#B86B70;
+
+  --sel-box:var(--white);
+  --sel-hero:var(--navy);
+  --sel-blue:var(--teal);
+  --sel-blue-dark:var(--navy);
+  --sel-blue-light:var(--cyan);
+  --sel-blue-pale:var(--grey-100);
+  --sel-navy:var(--navy-dark);
+  --sel-navy-2:var(--navy);
+  --sel-navy-3:var(--white);
+  --sel-paper:var(--cream);
+  --sel-cyan:var(--cyan);
+  --sel-teal-light:var(--cyan);
+
+  --font-sans:var(--font-primary);
+  --font-display:var(--font-primary);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+  font-family:var(--font-primary);
+  color:var(--grey-700);
+  background:#fff;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+img,svg,video,canvas,iframe{ max-width:100%; }
+
+button,input,textarea,select{ font:inherit; }
+
+h1,h2,h3,h4{
+  color:var(--navy);
+  line-height:1.15;
+  font-weight:700;
+}
+
+h1{ font-size:clamp(3rem,6vw,4.5rem); }
+h2{ font-size:clamp(2rem,4vw,3rem); }
+h3{ font-size:1.5rem; }
+
+p{ margin-bottom:1rem; }
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+:focus-visible{
+  outline:3px solid var(--cyan);
+  outline-offset:3px;
+}

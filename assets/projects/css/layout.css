@@ -1,0 +1,42 @@
+/* ==========================================
+   SPATIAL EVIDENCE LAB
+   GLOBAL LAYOUT SYSTEM
+   Release 3.1
+========================================== */
+
+@import url("../../css/sel-layout.css");
+
+.container{
+  width:min(100% - 2rem,var(--container));
+  margin-inline:auto;
+}
+
+.container-wide{
+  width:min(100% - 2rem,var(--container-wide));
+  margin-inline:auto;
+}
+
+/* Existing v3.0 pages use .shell; retain it as a canonical alias. */
+.shell{
+  width:min(100% - 2rem,var(--container-wide));
+  margin-inline:auto;
+  box-sizing:border-box;
+  min-width:0;
+}
+
+.section{ padding:6rem 0; }
+.section-sm{ padding:4rem 0; }
+.section-lg{ padding:8rem 0; }
+
+.grid{
+  display:grid;
+  gap:2rem;
+}
+
+.grid-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+.grid-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+.grid-4{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+
+@media(max-width:900px){
+  .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr; }
+}
