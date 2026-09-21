@@ -57,8 +57,8 @@
     },
     "location": {
       "name": "Ireland",
-      "latitude": 53.4129,
-      "longitude": -8.2439
+      "latitude": 53.4495,
+      "longitude": -7.5030
     },
     "tags": [
       "Quality of Life & Wellbeing",
@@ -102,8 +102,8 @@
     "url": "/projects/sel-002-bandon-public-transport/",
     "location": {
       "name": "Bandon, Ireland",
-      "latitude": 51.746,
-      "longitude": -8.742
+      "latitude": 51.747,
+      "longitude": -8.725
     },
     "tags": [
       "Accessibility",
@@ -163,8 +163,8 @@
     "url": "/projects/sel-003-west-cork-public-transport/",
     "location": {
       "name": "West Cork, Ireland",
-      "latitude": 51.7,
-      "longitude": -9.1
+      "latitude": 51.65,
+      "longitude": -8.80
     },
     "tags": [
       "Accessibility",
@@ -226,8 +226,8 @@
     "url": "/projects/sel-004-ireland-forestry-land-use/",
     "location": {
       "name": "Ireland",
-      "latitude": 53.4129,
-      "longitude": -8.2439
+      "latitude": 53.4495,
+      "longitude": -7.5030
     },
     "tags": [
       "Forests & Land Cover",
@@ -288,8 +288,8 @@
     "url": "/projects/sel-005-greater-athens-heat-risk/",
     "location": {
       "name": "Athens, Greece",
-      "latitude": 38.0,
-      "longitude": 23.72
+      "latitude": 37.98,
+      "longitude": 23.73
     },
     "tags": [
       "Climate Change",
@@ -349,8 +349,8 @@
     "url": "/projects/sel-006-county-wicklow-wind-energy/",
     "location": {
       "name": "County Wicklow, Ireland",
-      "latitude": 52.98,
-      "longitude": -6.05
+      "latitude": 52.96,
+      "longitude": -6.40
     },
     "tags": [
       "Renewable Energy",
@@ -410,8 +410,8 @@
     "url": "/projects/sel-007-rondonia-deforestation/",
     "location": {
       "name": "Rondônia, Brazil",
-      "latitude": -10.83,
-      "longitude": -63.9
+      "latitude": -11.50,
+      "longitude": -63.58
     },
     "tags": [
       "Forests & Land Cover",
@@ -471,8 +471,8 @@
     "url": "/projects/",
     "location": {
       "name": "Europe",
-      "latitude": 54.5,
-      "longitude": 15.0
+      "latitude": 54.90,
+      "longitude": 25.32
     },
     "tags": [
       "Environmental Land Change",
@@ -534,7 +534,7 @@
     "location": {
       "name": "Glover, Vermont, USA",
       "latitude": 44.7,
-      "longitude": -72.28
+      "longitude": -72.18
     },
     "tags": [
       "Renewable Energy",
@@ -657,8 +657,8 @@
     "url": "/projects/",
     "location": {
       "name": "Ireland",
-      "latitude": 53.41,
-      "longitude": -8.24
+      "latitude": 53.44,
+      "longitude": -7.50
     },
     "tags": [
       "Energy & Housing",
@@ -719,8 +719,8 @@
     "url": "/projects/",
     "location": {
       "name": "California, USA",
-      "latitude": 36.78,
-      "longitude": -119.42
+      "latitude": 37.16,
+      "longitude": -119.44
     },
     "tags": [
       "Natural Hazards",
@@ -845,8 +845,8 @@
     "url": "/projects/",
     "location": {
       "name": "Ireland",
-      "latitude": 53.41,
-      "longitude": -8.24
+      "latitude": 53.44,
+      "longitude": -7.50
     },
     "tags": [
       "Population",
