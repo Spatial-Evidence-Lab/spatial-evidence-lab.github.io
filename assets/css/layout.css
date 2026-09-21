@@ -1,112 +1,28 @@
-/* =========================================================
-   SPATIAL EVIDENCE LAB
-   SHARED PAGE CONTAINER / LAYOUT SAFEGUARDS
-   =========================================================
-   This is the single, global definition of the site's
-   width-constrained content container ("the shell").
+/* SEL CANONICAL LAYOUT SYSTEM */
+:root { --sel-content-max: 1200px; --sel-gutter: clamp(16px, 2vw, 32px); }
 
-   It is imported by css/sel-theme.css, which every page
-   loads, so every page automatically gets the same
-   container behaviour as the Research (home) page.
-
-   Do NOT redefine `.shell` width/max-width per page or per
-   section. If a page needs a narrower reading column, use
-   the existing `.content-wide` / `.content-medium` /
-   `.content-narrow` helpers (see css/sel-theme.css) on an
-   element nested inside `.shell`, rather than overriding
-   `.shell` itself.
-   ========================================================= */
-
-
-/* =========================================================
-   01. SHELL (canonical shared container)
-   ========================================================= */
-
-.shell {
-
-    width: calc(100% - (var(--sel-gutter) * 2));
-
-    max-width: var(--sel-content-max, none);
-
-    margin-inline: auto;
-
-    box-sizing: border-box;
-
-    min-width: 0;
+.shell, .container, .container-wide, .sel-shell {
+  width: min(calc(100% - (2 * var(--sel-gutter))), var(--sel-content-max));
+  max-width: var(--sel-content-max);
+  margin-inline: auto;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
+.shell > *, .container > *, .container-wide > *, .sel-shell > * { min-width: 0; }
 
-.shell > * {
-    min-width: 0;
+main, section, article, header, footer { min-width: 0; max-width: 100%; }
+img, svg, video, canvas, iframe, table { max-width: 100%; }
+
+.section { padding: 6rem 0; }
+.section-sm { padding: 4rem 0; }
+.section-lg { padding: 8rem 0; }
+
+.grid { display: grid; gap: 2rem; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+
+@media (max-width: 900px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 }
-
-
-/* =========================================================
-   02. OVERFLOW SAFEGUARD
-   ========================================================= */
-/*
-   Belt-and-braces protection against any element that
-   ignores the width rules above and pushes the page wider
-   than the viewport. This never hides intentional vertical
-   scrolling because only the horizontal axis is clipped.
-*/
-
-html,
-body {
-    overflow-x: hidden;
-}
-
-
-/* =========================================================
-   03. GRID / FLEX CHILD SHRINK SAFETY
-   ========================================================= */
-/*
-   Grid and flex items default to a content-based automatic
-   minimum size, which can force a track wider than its
-   column and overflow the shell. Letting card/tile/link
-   children shrink lets the grid/flex tracks do the sizing
-   instead of the content forcing an overflow.
-   ========================================================= */
-
-.shell *,
-main *,
-section * {
-    min-width: 0;
-}
-
-
-/* =========================================================
-   04. MEDIA / TABLE SAFETY WITHIN CONTAINERS
-   ========================================================= */
-
-.shell img,
-.shell svg,
-.shell video,
-.shell canvas,
-.shell iframe {
-    max-width: 100%;
-}
-
-
-.shell table {
-    max-width: 100%;
-}
-
-/* Canonical layout utilities */
-.container,.shell{
-  width:min(calc(100% - (var(--sel-gutter) * 2)), var(--sel-content-max));
-  max-width:var(--sel-content-max);
-  margin-inline:auto;
-  box-sizing:border-box;
-  min-width:0;
-}
-.container-wide{width:min(calc(100% - (var(--sel-gutter) * 2)),1440px);margin-inline:auto;min-width:0;}
-.section{padding:var(--space-15) 0;}
-.section-sm{padding:var(--space-11) 0;}
-.section-lg{padding:var(--space-16) 0;}
-.grid{display:grid;gap:var(--space-6);}
-.grid-2{grid-template-columns:repeat(2,minmax(0,1fr));}
-.grid-3{grid-template-columns:repeat(3,minmax(0,1fr));}
-.grid-4{grid-template-columns:repeat(4,minmax(0,1fr));}
-@media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,minmax(0,1fr));}}
-@media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}

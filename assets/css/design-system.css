@@ -1,3 +1,4 @@
+/* SEL canonical design system — no legacy CSS imports */
 /* =========================================================
    SPATIAL EVIDENCE LAB
    MASTER DESIGN SYSTEM
@@ -13,11 +14,6 @@
    ========================================================= */
 
 
-/* Shared page-container/shell width rules and global overflow
-   safeguards live in sel-layout.css. Importing here means every
-   page that loads sel-theme.css (i.e. every page on the site)
-   gets the same container behaviour without needing its own
-   <link> tag or per-page overrides. */
 /* =========================================================
    01. DESIGN TOKENS
    ========================================================= */
@@ -103,8 +99,8 @@
        Keep the normal desktop content width at 1200px, but let it grow
        with very wide CSS viewports (including browser zoom-out).
     */
-    --sel-content-max: 1180px;
-    --sel-gutter: clamp(16px, 3vw, 40px);
+    --sel-content-max: 1200px;
+    --sel-gutter: clamp(16px, 2vw, 32px);
     --max: none;
     --content-width: none;
 
@@ -463,7 +459,7 @@ textarea {
 
     color: var(--sel-bg);
 
-    font-weight:600;
+    font-weight: 800;
 }
 
 
@@ -578,27 +574,15 @@ textarea {
    END OF SEL THEME
    ========================================================= */
 
+
 /* =========================================================
-   SEL CANONICAL TYPOGRAPHY CONTRACT
+   CANONICAL DESIGN-SYSTEM TYPOGRAPHY CONTRACT
    ========================================================= */
-:root{
-  --sel-weight-body:400;
-  --sel-weight-site-name:500;
-  --sel-weight-eyebrow:600;
-  --sel-weight-section-number:600;
-  --sel-weight-section-title:600;
-  --sel-weight-hero-title:700;
-  --sel-weight-metadata:500;
-}
-body{font-family:var(--sans);font-weight:var(--sel-weight-body);}
-.wordmark-name{font-weight:var(--sel-weight-site-name);}
-.research-eyebrow,.projects-eyebrow,.project-kicker,.section-label,.project-number{
-  font-weight:var(--sel-weight-eyebrow);
-}
-.hero-title,.portfolio-hero h1,.projects-hero h1{font-weight:var(--sel-weight-hero-title);}
-.project-section h2,.projects-section h2{font-weight:var(--sel-weight-section-title);}
-.project-card-id,.featured-project-id,.project-card-status,.featured-project-status,
-.project-count,.map-project-count,.project-card-domain,.featured-project-domain,
-.project-filters label>span,.project-kicker,.project-number{
-  font-weight:var(--sel-weight-metadata);
-}
+h1,h2,h3,h4,h5,h6 { font-family: var(--sans); font-weight: 700; }
+.site-name, .wordmark-name, .footer-brand { font-weight: 500; }
+.hero-eyebrow, .projects-eyebrow, .section-label, .project-kicker, .project-number { font-weight: 600; }
+.metadata, .project-meta, .project-card-id, .project-card-status, .map-id { font-weight: 500; }
+
+/* Never allow a child component to create a wider page than the canonical frame. */
+html, body { max-width: 100%; overflow-x: hidden; }
+main, header, footer, section, article, aside, nav, div, figure, form { min-width: 0; max-width: 100%; }
