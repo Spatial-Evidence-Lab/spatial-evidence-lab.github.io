@@ -1,78 +1,348 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Data | Spatial Evidence Lab</title><meta name="description" content="The datasets, geographic frameworks and metadata behind SEL research.">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Spatial data used by Spatial Evidence Lab to investigate how places differ, change and interact.">
+    <title>Data | Spatial Evidence Lab</title>
 
+    <link rel="stylesheet" href="../css/sel-theme.css">
+    <link rel="stylesheet" href="../css/sel-components.css">
+    <link rel="stylesheet" href="../css/sel-standards.css">
+    <link rel="stylesheet" href="../css/sel-data.css">
+</head>
 
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/design-system.css">
-<link rel="stylesheet" href="/assets/css/layout.css">
-<link rel="stylesheet" href="/assets/css/components.css">
-<link rel="stylesheet" href="/assets/css/navigation.css">
-<link rel="stylesheet" href="/assets/css/footer.css">
-</head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header" id="top">
+<header class="site-header">
     <div class="shell nav-wrap">
         <a class="wordmark" href="/" aria-label="Spatial Evidence Lab home">
-            <img src="/media/branding/logo.png" alt="" class="wordmark-logo">
-            <span class="wordmark-name">Spatial Evidence Lab</span>
+            <span class="wordmark-mark">SE</span>
+            <span>Spatial Evidence <b>Lab</b></span>
         </a>
 
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <button class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="site-nav">
             Menu
         </button>
 
         <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-            <a class="" href="/">
-                Research
-            </a>
-            <a class="" href="/projects/">
-                Projects
-            </a>
-            <a class="" href="/methods/">
-                Methods
-            </a>
-            <a class="active" href="/data/">
-                Data
-            </a>
-            <a class="" href="/resources/">
-                Resources
-            </a>
-            <a class="" href="/about/">
-                About
-            </a>
-            <a class="nav-cta" href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">
-                GitHub ↗
-            </a>
+            <a href="/">Research</a>
+            <a href="/projects/">Projects</a>
+            <a href="/methods/">Methods</a>
+            <a class="active" href="/data/" aria-current="page">Data</a>
+            <a href="/resources/">Resources</a>
+            <a href="/about/">About</a>
+            <a class="nav-cta" href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </nav>
     </div>
-</header><main id="main-content"><section class="portfolio-hero"><div class="shell"><p class="project-kicker">Data practice</p><h1>Data<br><em>for spatial evidence.</em></h1><p>The datasets, geographic frameworks and metadata behind SEL research.</p></div></section><section class="project-section alt"><div class="shell"><div class="project-section-head"><div><p class="project-number">01 · Framework</p><h2>Designed to be<br><em>inspectable.</em></h2></div><p class="project-intro">Projects document source datasets, geographic reference, temporal coverage, processing steps and output lineage. The data catalogue is designed to grow alongside the project portfolio.</p></div><div class="project-grid-3"><article class="project-card"><span class="project-card-num">01</span><h3>Source provenance</h3><p>Structured as part of the SEL research and evidence system.</p></article><article class="project-card"><span class="project-card-num">02</span><h3>Geographic frameworks</h3><p>Structured as part of the SEL research and evidence system.</p></article><article class="project-card"><span class="project-card-num">03</span><h3>Indicator metadata</h3><p>Structured as part of the SEL research and evidence system.</p></article><article class="project-card"><span class="project-card-num">04</span><h3>Processing lineage</h3><p>Structured as part of the SEL research and evidence system.</p></article><article class="project-card"><span class="project-card-num">05</span><h3>Quality checks</h3><p>Structured as part of the SEL research and evidence system.</p></article><article class="project-card"><span class="project-card-num">06</span><h3>Output datasets</h3><p>Structured as part of the SEL research and evidence system.</p></article></div></div></section><section class="project-section"><div class="shell"><div class="project-section-head"><div><p class="project-number">02 · Workflow</p><h2>From source<br><em>to output.</em></h2></div><p class="project-intro">Each project page links its research question to the geography, data, method, evidence maps, findings and outputs.</p></div><div class="workflow"><div class="workflow-step"><b>01</b><strong>Question</strong></div><div class="workflow-step"><b>02</b><strong>Geography</strong></div><div class="workflow-step"><b>03</b><strong>Data</strong></div><div class="workflow-step"><b>04</b><strong>Method</strong></div><div class="workflow-step"><b>05</b><strong>Evidence</strong></div><div class="workflow-step"><b>06</b><strong>Output</strong></div></div></div></section></main><footer class="site-footer">
-    <div class="shell footer-grid">
-        <div class="footer-identity">
-            <div class="footer-brand-lockup">
-                <img src="/media/branding/logo.png" alt="" class="footer-logo">
-                <strong class="footer-brand">Spatial Evidence Lab</strong>
+</header>
+
+<main id="main-content">
+
+    <!-- HERO -->
+    <section class="data-hero">
+        <div class="shell data-hero-grid">
+            <div class="data-hero-copy">
+                <p class="data-eyebrow">Spatial data</p>
+                <h1>Data</h1>
+                <p class="data-display">The evidence behind the analysis.</p>
+                <p class="data-lead">
+                    Our research brings together geographic, environmental, demographic,
+                    socioeconomic and infrastructure data to understand how places differ,
+                    change and interact.
+                </p>
+            </div>
+
+            <div class="data-hero-graphic" aria-hidden="true">
+                <div class="data-grid-lines"></div>
+                <div class="data-map-shape">
+                    <span class="data-map-line line-a"></span>
+                    <span class="data-map-line line-b"></span>
+                    <span class="data-map-line line-c"></span>
+                    <span class="data-map-line line-d"></span>
+                    <span class="data-node node-a"></span>
+                    <span class="data-node node-b"></span>
+                    <span class="data-node node-c"></span>
+                    <span class="data-node node-d"></span>
+                    <span class="data-node node-e"></span>
+                    <span class="data-node node-f"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 01 DATA ACROSS PLACE -->
+    <section class="data-section data-context" id="data-across-place">
+        <div class="shell">
+            <div class="data-section-head">
+                <div class="data-section-label">
+                    <span class="data-section-number">01</span>
+                    <span>Data across place</span>
+                </div>
+
+                <div class="data-section-heading">
+                    <h2>Context matters<br><em>across space.</em></h2>
+                </div>
+
+                <div class="data-section-intro">
+                    <p>
+                        Spatial evidence is only meaningful when its geographic and
+                        temporal context is understood.
+                    </p>
+                    <p>
+                        We therefore consider where data comes from, what area it covers,
+                        the period it represents, its spatial resolution and the limitations
+                        that may affect interpretation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="data-types">
+                <div class="data-types-intro">
+                    <span class="data-types-kicker">Our datasets may include</span>
+                    <p>
+                        Different questions require different forms of geographic evidence.
+                        Dataset selection is guided by the research question, geography,
+                        analytical scale and available evidence.
+                    </p>
+                </div>
+
+                <ul class="data-types-list">
+                    <li><span>01</span>Population and demographic data</li>
+                    <li><span>02</span>Quality-of-life indicators</li>
+                    <li><span>03</span>Transport and accessibility data</li>
+                    <li><span>04</span>Land-use and land-cover data</li>
+                    <li><span>05</span>Environmental and climate data</li>
+                    <li><span>06</span>Natural-hazard data</li>
+                    <li><span>07</span>Housing and socioeconomic data</li>
+                    <li><span>08</span>Renewable-energy and infrastructure data</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 DATA SOURCES -->
+    <section class="data-section data-sources" id="data-sources">
+        <div class="shell">
+            <div class="data-section-head data-section-head-light">
+                <div class="data-section-label">
+                    <span class="data-section-number">02</span>
+                    <span>Data sources</span>
+                </div>
+
+                <div class="data-section-heading">
+                    <h2>Know the source<br><em>behind the data.</em></h2>
+                </div>
+
+                <div class="data-section-intro">
+                    <p>
+                        Research projects draw on data from a range of authoritative
+                        and specialist sources.
+                    </p>
+                    <p>
+                        For each dataset, where information is available, we aim to
+                        document its provenance, geographic and temporal context,
+                        resolution, format, licence and project use.
+                    </p>
+                </div>
+            </div>
+
+            <div class="data-source-grid">
+                <article class="data-source-card">
+                    <span>01</span>
+                    <h3>Source</h3>
+                    <p>The organisation or provider responsible for the data.</p>
+                </article>
+
+                <article class="data-source-card">
+                    <span>02</span>
+                    <h3>Geographic coverage</h3>
+                    <p>The countries, regions or locations represented.</p>
+                </article>
+
+                <article class="data-source-card">
+                    <span>03</span>
+                    <h3>Temporal coverage</h3>
+                    <p>The period or reference date represented by the data.</p>
+                </article>
+
+                <article class="data-source-card">
+                    <span>04</span>
+                    <h3>Spatial resolution</h3>
+                    <p>The geographic level or spatial detail of the dataset.</p>
+                </article>
+
+                <article class="data-source-card">
+                    <span>05</span>
+                    <h3>Format</h3>
+                    <p>The format in which the data is provided or analysed.</p>
+                </article>
+
+                <article class="data-source-card">
+                    <span>06</span>
+                    <h3>Licence</h3>
+                    <p>The applicable terms governing use and redistribution.</p>
+                </article>
+
+                <article class="data-source-card data-source-card-wide">
+                    <span>07</span>
+                    <div>
+                        <h3>Project use</h3>
+                        <p>The Spatial Evidence Lab research in which the dataset is applied.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 DATA QUALITY -->
+    <section class="data-section data-quality" id="data-quality">
+        <div class="shell">
+            <div class="data-section-head">
+                <div class="data-section-label">
+                    <span class="data-section-number">03</span>
+                    <span>Data &amp; research quality</span>
+                </div>
+
+                <div class="data-section-heading">
+                    <h2>Evidence requires<br><em>critical context.</em></h2>
+                </div>
+
+                <div class="data-section-intro">
+                    <p>
+                        Data quality is an important part of spatial analysis.
+                    </p>
+                    <p>
+                        We consider differences in geographic boundaries, resolution,
+                        temporal coverage, definitions and measurement when combining datasets.
+                    </p>
+                </div>
+            </div>
+
+            <div class="data-quality-statement">
+                <div class="data-quality-rule" aria-hidden="true"></div>
+                <p>
+                    Where limitations or uncertainties may affect interpretation,
+                    they are documented as part of the research process.
+                </p>
+                <blockquote>
+                    A map is only as reliable as the evidence, assumptions and
+                    geographic context behind it.
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 OPEN DATA -->
+    <section class="data-section data-open" id="open-data">
+        <div class="shell">
+            <div class="data-section-head data-section-head-light">
+                <div class="data-section-label">
+                    <span class="data-section-number">04</span>
+                    <span>Open data &amp; reproducibility</span>
+                </div>
+
+                <div class="data-section-heading">
+                    <h2>Evidence that can<br><em>be understood and reused.</em></h2>
+                </div>
+
+                <div class="data-section-intro">
+                    <p>
+                        Where licensing and source conditions permit, we aim to make
+                        datasets, derived outputs and supporting documentation available
+                        for reuse.
+                    </p>
+                    <p>
+                        Project pages provide further information about the data used
+                        in individual analyses.
+                    </p>
+                </div>
+            </div>
+
+            <div class="data-open-points">
+                <div>
+                    <span>DATA</span>
+                    <p>Datasets and derived spatial outputs where permitted.</p>
+                </div>
+                <div>
+                    <span>DOCUMENTATION</span>
+                    <p>Source, coverage, resolution, licence and project-use information.</p>
+                </div>
+                <div>
+                    <span>RESEARCH</span>
+                    <p>Project pages connecting data to methods, analysis and results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTINUE -->
+    <section class="data-continue">
+        <div class="shell">
+            <div class="data-continue-head">
+                <p class="data-eyebrow">Continue the research</p>
+                <h2>Explore the evidence.</h2>
+            </div>
+
+            <div class="data-continue-grid">
+                <a class="data-continue-link" href="/projects/">
+                    <span>Projects</span>
+                    <strong>Browse the research catalogue <b aria-hidden="true">→</b></strong>
+                </a>
+
+                <a class="data-continue-link" href="/methods/">
+                    <span>Methods</span>
+                    <strong>See how spatial evidence is analysed <b aria-hidden="true">→</b></strong>
+                </a>
+
+                <a class="data-continue-link" href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener noreferrer">
+                    <span>Code</span>
+                    <strong>View the research repository <b aria-hidden="true">↗</b></strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="shell">
+        <div class="footer-grid">
+            <div class="footer-identity">
+                <a class="footer-brand-lockup" href="/" aria-label="Spatial Evidence Lab home">
+                    <span class="wordmark-mark">SE</span>
+                    <span class="footer-brand">Spatial Evidence Lab</span>
+                </a>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <b>Explore</b>
+                    <a href="/">Research</a>
+                    <a href="/projects/">Projects</a>
+                    <a href="/methods/">Methods</a>
+                    <a href="/data/">Data</a>
+                    <a href="/resources/">Resources</a>
+                    <a href="/about/">About</a>
+                </div>
+                <div>
+                    <b>Connect</b>
+                    <a href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </div>
             </div>
         </div>
 
-        <div class="footer-links">
-            <div>
-                <b>Explore</b>
-                <a href="/projects/">Projects</a>
-                <a href="/methods/">Methods</a>
-                <a href="/data/">Data</a>
-                <a href="/resources/">Resources</a>
-                <a href="/about/">About</a>
-            </div>
-
-            <div>
-                <b>Connect</b>
-                <a href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
+        <div class="footer-bottom">
+            <span>© <span data-year></span> Spatial Evidence Lab</span>
+            <a href="/projects/">Research catalogue →</a>
         </div>
     </div>
+</footer>
 
-    <div class="shell footer-bottom">
-        <span>© <span data-year></span> Spatial Evidence Lab</span>
-        <span>Research programme</span>
-    </div>
-</footer><script src="../js/sel-site.js"></script></body></html>
+<script src="../js/sel-site.js"></script>
+</body>
+</html>
