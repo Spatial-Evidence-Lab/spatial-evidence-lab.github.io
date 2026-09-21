@@ -1,1 +1,3375 @@
-/* UI Components */
+/* SEL CANONICAL COMPONENT SYSTEM
+   Existing page components are consolidated here so pages inherit one component layer.
+*/
+
+/* =========================================================
+   SPATIAL EVIDENCE LAB
+   SHARED COMPONENTS
+   =========================================================
+   Version: 2.0
+   Components:
+   - Buttons
+   - Header
+   - Navigation
+   - Wordmark
+   - Mobile menu
+   - Footer
+   ========================================================= */
+
+
+/* =========================================================
+   01. BUTTON BASE
+   ========================================================= */
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-width: 0;
+    min-height: 44px;
+
+    padding: 11px 17px;
+
+    border: 1px solid var(--sel-line);
+
+    border-radius: var(--radius-sm);
+
+    font-family: var(--sans);
+
+    font-size: .70rem;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    letter-spacing: .065em;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+
+    transition:
+        background-color var(--sel-transition),
+        border-color var(--sel-transition),
+        color var(--sel-transition),
+        transform var(--sel-transition);
+}
+
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+
+.button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   02. PRIMARY BUTTON
+   ========================================================= */
+
+.button-primary {
+
+    background: var(--sel-accent);
+
+    border-color: var(--sel-accent);
+
+    color: var(--sel-white);
+}
+
+
+.button-primary:hover {
+
+    background: var(--sel-accent-dark);
+
+    border-color: var(--sel-accent-dark);
+}
+
+
+/* =========================================================
+   03. LIGHT BUTTON
+   ========================================================= */
+
+.button-light {
+
+    background: var(--sel-white);
+
+    border-color: var(--sel-white);
+
+    color: var(--sel-navy);
+}
+
+
+.button-light:hover {
+
+    background: var(--sel-raised);
+
+    border-color: var(--sel-raised);
+}
+
+
+/* =========================================================
+   04. DARK BUTTON
+   ========================================================= */
+
+.button-dark {
+
+    background: var(--sel-accent);
+
+    border-color: var(--sel-accent);
+
+    color: var(--sel-white);
+}
+
+
+.button-dark:hover {
+
+    background: var(--sel-accent-dark);
+
+    border-color: var(--sel-accent-dark);
+}
+
+
+/* =========================================================
+   05. GHOST BUTTON
+   ========================================================= */
+
+.button-ghost {
+
+    background: transparent;
+
+    border-color: var(--sel-line);
+
+    color: var(--sel-text);
+}
+
+
+.button-ghost:hover {
+
+    border-color: var(--sel-accent);
+
+    color: var(--sel-accent);
+}
+
+
+/* =========================================================
+   06. DARK GHOST BUTTON
+   ========================================================= */
+
+.button-ghost-dark {
+
+    background: transparent;
+
+    border-color: rgba(255,255,255,.32);
+
+    color: var(--sel-white);
+}
+
+
+.button-ghost-dark:hover {
+
+    border-color: var(--sel-accent);
+
+    color: var(--sel-accent);
+}
+
+
+/* =========================================================
+   07. SITE HEADER
+   ========================================================= */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+    max-width: 100%;
+    inline-size: 100%;
+    max-inline-size: 100%;
+
+    min-width: 0;
+
+    min-height: var(--sel-header-height);
+
+    background: var(--sel-header-bg);
+
+    border-bottom: 1px solid rgba(255,255,255,.10);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* =========================================================
+   08. NAVIGATION WRAPPER
+   ========================================================= */
+
+.nav-wrap {
+
+    position: relative;
+
+    width: calc(100% - (var(--sel-gutter) * 2));
+    max-width: none;
+
+    min-width: 0;
+
+    min-height: var(--sel-header-height);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   09. WORDMARK
+   ========================================================= */
+
+.wordmark {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex: 0 0 auto;
+
+    min-width: 0;
+    max-width: none;
+
+    color: var(--sel-white);
+
+    font-size: .92rem;
+
+    line-height: 1;
+
+    letter-spacing: -.025em;
+
+    white-space: nowrap;
+
+    overflow: visible;
+}
+
+
+.wordmark-logo {
+
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    object-fit: contain;
+}
+
+
+.wordmark-name {
+
+    display: block;
+
+    min-width: 0;
+    max-width: none;
+
+    white-space: nowrap;
+}
+
+
+.wordmark-name b {
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   10. SITE NAV
+   ========================================================= */
+
+.site-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 25px;
+
+    flex: 0 1 auto;
+
+    min-width: 0;
+    max-width: none;
+
+    overflow: visible;
+}
+
+
+.site-nav a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    min-width: 0;
+    min-height: var(--sel-header-height);
+
+    padding: 0;
+
+    border-bottom: 2px solid transparent;
+
+    color: var(--sel-text-soft);
+
+    font-size: .69rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: .07em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--sel-transition),
+        border-color var(--sel-transition);
+}
+
+
+.site-nav a:hover,
+.site-nav a.active {
+
+    color: var(--sel-accent);
+
+    border-bottom-color: var(--sel-accent);
+}
+
+
+/* =========================================================
+   11. NAVIGATION CTA
+   ========================================================= */
+
+.site-nav .nav-cta {
+
+    flex: 0 0 auto;
+
+    min-height: auto;
+
+    padding: 9px 12px;
+
+    border: 1px solid var(--sel-line);
+
+    color: var(--sel-text);
+
+    white-space: nowrap;
+}
+
+
+.site-nav .nav-cta:hover {
+
+    border-color: var(--sel-accent);
+
+    color: var(--sel-accent);
+}
+
+
+/* =========================================================
+   12. MOBILE MENU TOGGLE
+   ========================================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    min-width: 44px;
+    min-height: 42px;
+
+    padding: 9px 12px;
+
+    background: transparent;
+
+    border: 1px solid var(--sel-line);
+
+    border-radius: var(--radius-sm);
+
+    color: var(--sel-text);
+
+    font-family: var(--sans);
+
+    font-size: .72rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.menu-toggle:hover {
+
+    border-color: var(--sel-accent);
+
+    color: var(--sel-accent);
+}
+
+
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+
+.site-footer {
+
+    background: var(--sel-navy);
+    color: var(--sel-text-soft);
+    padding: 65px 0 22px;
+}
+
+
+/* =========================================================
+   14. FOOTER GRID
+   ========================================================= */
+
+.footer-grid {
+
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+
+.footer-identity {
+
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   15. FOOTER BRAND
+   ========================================================= */
+
+.footer-brand-lockup {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+}
+
+
+.footer-brand-lockup img {
+
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    object-fit: contain;
+}
+
+
+.footer-brand {
+
+    display: block;
+
+    min-width: 0;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    color: var(--sel-white);
+
+    font-size: .95rem;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   16. FOOTER LINKS
+   ========================================================= */
+
+.footer-links {
+
+    display: flex;
+    gap: 65px;
+}
+
+
+.footer-links > div {
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: .72rem;
+}
+
+
+.footer-links b {
+
+    margin-bottom: 4px;
+
+    color: var(--sel-white);
+
+    font-size: .65rem;
+
+    font-weight: 600;
+
+    letter-spacing: .10em;
+
+    text-transform: uppercase;
+}
+
+
+.footer-links a {
+
+    color: var(--sel-text-soft);
+
+    font-size: .72rem;
+
+    line-height: 1.4;
+}
+
+
+.footer-links a:hover {
+
+    color: var(--sel-accent);
+}
+
+
+/* =========================================================
+   17. FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 55px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    color: var(--sel-muted);
+
+    font-size: .67rem;
+
+    line-height: 1.5;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   18. SHARED SECTION HEADING (h2 inside .project-section-head)
+   =========================================================
+   Methods, Data, Resources and About all use the plain
+   `.project-section-head` wrapper (see css/legacy/portfolio.css)
+   with an unstyled `<h2>` inside it. This gives the same
+   type scale/weight already used for section headings on the
+   Research (home) page (`.programme-title`, also defined
+   against the same shell/heading pattern), so every page's
+   section headings share one visual hierarchy.
+   ========================================================= */
+
+.project-section-head h2 {
+
+    margin: 0;
+
+    color: var(--sel-white);
+
+    font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+
+    line-height: 1.2;
+
+    letter-spacing: -.025em;
+
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   19. SHARED CONTENT GRID + CARD (.project-grid-3)
+   =========================================================
+   Methods, Data, Resources and About render a 3-up list of
+   `.project-card` items inside `.project-grid-3`, but neither
+   class had a grid/panel definition anywhere in the codebase
+   (it rendered as stacked, unstyled blocks). This gives it the
+   same panel/grid treatment as the Research page's
+   `.research-principle` / `.domain-card` cards, applied once
+   here so it updates every page that uses the pattern.
+   ========================================================= */
+
+.project-grid-3 {
+
+    width: 100%;
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+.project-grid-3 .project-card {
+
+    min-width: 0;
+    max-width: 100%;
+
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 22px;
+
+    color: var(--sel-text);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--motion-standard),
+        background-color var(--motion-standard),
+        border-color var(--motion-standard);
+}
+
+
+.project-grid-3 .project-card:hover {
+
+    transform: translateY(-2px);
+
+    background: var(--sel-raised);
+
+    border-color: var(--sel-accent);
+}
+
+
+.project-grid-3 .project-card-num {
+
+    display: block;
+
+    margin: 0 0 9px;
+
+    color: var(--sel-accent-soft);
+
+    font-size: .68rem;
+
+    letter-spacing: .09em;
+}
+
+
+.project-grid-3 .project-card h3 {
+
+    margin: 0;
+
+    color: var(--sel-white);
+
+    font-size: .98rem;
+
+    line-height: 1.35;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+.project-grid-3 .project-card p {
+
+    margin: 10px 0 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .8rem;
+
+    line-height: 1.55;
+}
+
+
+@media (max-width: 1000px) {
+
+    .project-grid-3 {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .project-grid-3 {
+
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid-3 .project-card {
+
+        padding: 20px;
+    }
+}
+
+
+.footer-bottom > * {
+
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   18. DESKTOP NAVIGATION
+   ========================================================= */
+
+@media (min-width: 1201px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .site-nav {
+        display: flex;
+    }
+}
+
+
+/* =========================================================
+   19. COLLAPSED NAVIGATION
+   =========================================================
+   IMPORTANT:
+   Navigation collapses at 1200px.
+   This prevents the logo + six links + CTA from
+   forcing the viewport wider than the browser.
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .nav-wrap {
+
+        gap: 16px;
+
+        overflow: visible;
+    }
+
+
+    .menu-toggle {
+
+        display: inline-flex;
+    }
+
+
+    .site-nav {
+
+        position: absolute;
+
+        top: var(--sel-header-height);
+
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        width: 100%;
+        max-width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 0;
+
+        padding: 12px 5% 18px;
+
+        background: var(--sel-surface);
+
+        border-bottom: 1px solid var(--sel-line);
+
+        box-shadow: var(--sel-shadow-sm);
+
+        overflow: hidden;
+    }
+
+
+    .site-nav.open {
+
+        display: flex;
+    }
+
+
+    .site-nav a {
+
+        display: flex;
+
+        width: 100%;
+        max-width: 100%;
+
+        min-height: auto;
+
+        justify-content: flex-start;
+
+        padding: 14px 0;
+
+        border-bottom: 1px solid var(--sel-line);
+
+        white-space: normal;
+    }
+
+
+    .site-nav a:last-child {
+
+        border-bottom: none;
+    }
+
+
+    .site-nav .nav-cta {
+
+        width: auto;
+
+        align-self: flex-start;
+
+        margin-top: 10px;
+
+        padding: 11px 14px;
+
+        border: 1px solid var(--sel-line);
+    }
+}
+
+
+/* =========================================================
+   20. TABLET FOOTER
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-grid {
+
+        display: block;
+    }
+
+
+    .footer-links {
+
+        justify-content: flex-start;
+
+        margin-top: 32px;
+
+        gap: 40px;
+    }
+
+
+    .footer-bottom {
+
+        display: block;
+    }
+
+
+    .footer-bottom > * {
+
+        display: block;
+
+        margin-top: 7px;
+    }
+}
+
+
+/* =========================================================
+   21. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+
+        min-height: 68px;
+    }
+
+
+    .nav-wrap {
+
+        min-height: 68px;
+
+        gap: 12px;
+    }
+
+
+    .wordmark {
+
+        font-size: .86rem;
+
+        gap: 8px;
+    }
+
+
+    .wordmark-logo {
+
+        width: 31px;
+        height: 31px;
+
+        flex-basis: 31px;
+    }
+
+
+    .site-nav {
+
+        top: 68px;
+    }
+
+
+    .site-footer {
+
+        padding-top: 52px;
+    }
+
+
+    .footer-links {
+
+        gap: 28px;
+    }
+
+
+    .footer-links > div {
+
+        max-width: 160px;
+    }
+}
+
+
+/* =========================================================
+   22. VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .wordmark {
+
+        font-size: .80rem;
+    }
+
+
+    .wordmark-logo {
+
+        width: 29px;
+        height: 29px;
+
+        flex-basis: 29px;
+    }
+
+
+    .menu-toggle {
+
+        min-width: 42px;
+
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+
+    .footer-links {
+
+        flex-direction: column;
+
+        gap: 24px;
+    }
+
+
+    .footer-links > div {
+
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   END OF SEL COMPONENTS
+   ========================================================= */
+
+
+/* =========================================================
+   18. LEGACY SHELL COMPATIBILITY
+   =========================================================
+   Older pages used sel-* shell classes. The HTML update script
+   converts those pages to the canonical classes; these aliases
+   provide a safe visual bridge during deployment and for any
+   remaining legacy page.
+   ========================================================= */
+
+.sel-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-width: 0;
+    min-height: var(--sel-header-height);
+    background: var(--sel-header-bg);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.sel-header .sel-nav-wrap,
+.sel-header .nav-wrap {
+    position: relative;
+    width: calc(100% - (var(--sel-gutter) * 2));
+    min-height: var(--sel-header-height);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.sel-wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sel-white);
+}
+
+.sel-wordmark img,
+.sel-wordmark-logo {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.sel-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 42px;
+    padding: 9px 12px;
+    background: transparent;
+    border: 1px solid var(--sel-line);
+    border-radius: var(--radius-sm);
+    color: var(--sel-text);
+    font: 800 .72rem/1 var(--sans);
+    text-transform: uppercase;
+}
+
+.sel-site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.sel-site-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--sel-header-height);
+    color: var(--sel-text-soft);
+    border-bottom: 2px solid transparent;
+    font-size: .69rem;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.sel-site-nav a:hover,
+.sel-site-nav a.active {
+    color: var(--sel-accent);
+    border-bottom-color: var(--sel-accent);
+}
+
+.sel-footer {
+    background: var(--sel-bg);
+    color: var(--sel-text-soft);
+    padding: 65px 0 22px;
+}
+
+.sel-footer .sel-footer-grid,
+.sel-footer .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+@media (max-width: 700px) {
+    .sel-menu-toggle {
+        display: inline-flex;
+    }
+
+    .sel-site-nav {
+        display: none;
+    }
+
+    .sel-site-nav.open {
+        display: flex;
+        position: absolute;
+        top: var(--sel-header-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px var(--sel-gutter) 14px;
+        background: var(--sel-surface);
+        border-top: 1px solid var(--sel-border);
+        border-bottom: 1px solid var(--sel-border);
+    }
+
+    .sel-site-nav.open a {
+        min-height: 44px;
+    }
+}
+
+
+/* PAGE COMPONENTS */
+.hero{
+    background:
+        linear-gradient(rgba(7,19,24,.78), rgba(7,19,24,.88)),
+        url("../media/homepage/hero-map.jpg");
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+/* =========================================================
+   PROJECTS LANDING PAGE — CATALOGUE SYSTEM
+   ========================================================= */
+
+.projects-page {
+    background: var(--sel-bg);
+    color: var(--sel-text);
+}
+
+/*
+   Projects hero is full-bleed, like the homepage .hero: the
+   background spans the viewport and only the inner content
+   (.projects-hero-inner) is constrained to the shared shell
+   width. It must NOT cap or border the section itself — doing
+   so turns the hero into a boxed card instead of a full-width
+   band. Zoom-out overflow is handled globally by layout.css
+   (html, body { overflow-x: clip }), not by shrinking this
+   section's width.
+*/
+
+.projects-hero {
+    width: 100%;
+    background: var(--sel-brand-blue);
+    padding: clamp(56px, 7vw, 88px) 0 clamp(60px, 7vw, 88px);
+    border-bottom: 1px solid var(--sel-border);
+    overflow: hidden;
+}
+
+.projects-hero-inner {
+    width: 100%;
+    margin-inline: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section-label {
+    margin: 0;
+    color: var(--sel-accent-soft);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+/* Matches .research-eyebrow on the homepage hero exactly, so the
+   projects-page hero eyebrow lines up in size, weight, colour and
+   spacing with the homepage hero. */
+.projects-eyebrow {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 24px;
+    color: var(--sel-accent);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.projects-hero h1 {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 24px;
+    color: var(--sel-white);
+    font-size: clamp(2.35rem, 5vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -.045em;
+    line-height: 1.02;
+    overflow-wrap: anywhere;
+}
+
+.projects-hero h1 span {
+    color: var(--sel-accent-soft);
+}
+
+.projects-intro {
+    max-width: 760px;
+    margin: 24px 0 0;
+    color: var(--sel-text-soft);
+    font-size: clamp(.98rem, 1.5vw, 1.08rem);
+    line-height: 1.7;
+}
+
+.projects-section {
+    width: calc(100% - (2 * var(--sel-gutter)));
+    max-width: none;
+    margin-inline: auto;
+    box-sizing: border-box;
+    padding: 80px var(--sel-gutter);
+    background: var(--sel-bg);
+    overflow: hidden;
+}
+
+.projects-featured-section {
+    padding-bottom: 72px;
+}
+
+.projects-section-heading {
+    margin-bottom: 28px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 24px;
+}
+
+.featured-project {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--sel-border);
+    background: var(--sel-surface);
+    color: var(--sel-text);
+    text-decoration: none;
+    isolation: isolate;
+}
+
+.featured-project--primary {
+    min-height: 520px;
+}
+
+.featured-project--secondary {
+    min-height: 248px;
+}
+
+.featured-secondary-column {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    min-width: 0;
+}
+
+.featured-project-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.featured-project::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(7,19,24,.05) 15%, rgba(7,19,24,.78) 62%, rgba(7,19,24,.98) 100%);
+}
+
+.featured-project--secondary::after {
+    background: linear-gradient(180deg, rgba(7,19,24,.12), rgba(7,19,24,.94));
+}
+
+.featured-project-body {
+    align-self: end;
+    width: 100%;
+    padding: 34px;
+}
+
+.featured-project--secondary .featured-project-body {
+    padding: 24px;
+}
+
+.project-card-id,
+.featured-project-id {
+    color: var(--sel-accent-soft);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.project-card-status,
+.featured-project-status {
+    margin-left: 10px;
+    color: var(--sel-positive);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.featured-project-domain {
+    margin: 12px 0 8px;
+    color: var(--sel-accent-soft);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.featured-project h3 {
+    margin: 0;
+    max-width: 700px;
+    color: var(--sel-white);
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
+    letter-spacing: -.035em;
+    line-height: 1.05;
+}
+
+.featured-project--secondary h3 {
+    font-size: 22px;
+}
+
+.featured-project-description {
+    max-width: 680px;
+    margin: 10px 0 14px;
+    color: var(--sel-text-soft);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.featured-project-link,
+.project-card-link {
+    color: var(--sel-accent-soft);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.featured-project:hover,
+.featured-project:focus-visible {
+    border-color: var(--sel-accent);
+}
+
+.featured-project:hover .featured-project-link,
+.featured-project:focus-visible .featured-project-link {
+    color: var(--sel-white);
+}
+
+.projects-catalogue-section {
+    background: var(--sel-section);
+    border-top: 1px solid var(--sel-border);
+    border-bottom: 1px solid var(--sel-border);
+}
+
+.catalogue-heading-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.catalogue-heading-row h2,
+.projects-place-heading h2 {
+    margin: 8px 0 0;
+    color: var(--sel-white);
+    font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+    font-weight: 600;
+    letter-spacing: -.025em;
+    line-height: 1.2;
+}
+
+.project-count,
+.map-project-count {
+    margin: 0;
+    color: var(--sel-muted);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.project-filters {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 32px;
+}
+
+.project-filters label {
+    display: grid;
+    gap: 7px;
+    min-width: 0;
+}
+
+.project-filters label > span {
+    color: var(--sel-muted);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.project-filters select {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 36px 0 13px;
+    border: 1px solid var(--sel-border);
+    border-radius: 3px;
+    background: var(--sel-surface);
+    color: var(--sel-text-soft);
+    font-size: 14px;
+    outline: none;
+}
+
+.project-filters select:hover,
+.project-filters select:focus {
+    border-color: var(--sel-accent);
+}
+
+.filter-reset {
+    min-height: 46px;
+    padding: 0 13px;
+    border: 1px solid var(--sel-border);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--sel-muted);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.filter-reset:hover {
+    border-color: var(--sel-accent);
+    color: var(--sel-accent-soft);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: none;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--sel-border);
+    background: var(--sel-surface);
+    transition: border-color var(--sel-transition), transform var(--sel-transition), background-color var(--sel-transition);
+}
+
+.project-card:hover {
+    border-color: var(--sel-accent);
+    transform: translateY(-2px);
+    background: var(--sel-raised);
+}
+
+.project-card-image-wrap {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--sel-brand-blue);
+}
+
+.project-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.project-card:hover .project-card-image {
+    transform: scale(1.025);
+}
+
+.project-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 18px;
+}
+
+.project-card-meta-top {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+    min-height: 18px;
+}
+
+.project-card-domain {
+    margin: 11px 0 7px;
+    color: var(--sel-accent-soft);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.project-card h3 {
+    margin: 0;
+    color: var(--sel-white);
+    font-size: 18px;
+    font-weight: 650;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+}
+
+.project-card-description {
+    display: -webkit-box;
+    margin: 10px 0 14px;
+    overflow: hidden;
+    color: var(--sel-body);
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+.project-card-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 12px;
+    align-items: end;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.project-card-location {
+    color: var(--sel-muted);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.projects-empty {
+    margin: 48px 0 0;
+    padding: 32px;
+    border: 1px dashed var(--sel-border);
+    color: var(--sel-muted);
+    text-align: center;
+}
+
+.projects-place-section {
+    background: var(--sel-bg);
+}
+
+.projects-place-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.project-map {
+    position: relative;
+    aspect-ratio: 2 / 1;
+    min-height: 440px;
+    margin-top: 28px;
+    overflow: hidden;
+    border: 1px solid var(--sel-border);
+    background: #0A1820;
+}
+
+.project-map-base {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.92;
+    filter: brightness(.9) saturate(.95);
+}
+
+.map-graticule path {
+    fill: none;
+    stroke: rgba(90,174,179,.10);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+
+.map-land path {
+    fill: #163139;
+    stroke: #29444A;
+    stroke-width: 1.2;
+    vector-effect: non-scaling-stroke;
+}
+
+.project-map-dots {
+    position: absolute;
+    inset: 0;
+}
+
+.project-map-dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    border: 2px solid var(--sel-bg);
+    border-radius: 50%;
+    background: #004DA8;
+    box-shadow: 0 0 0 4px rgba(0,77,168,.18);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.project-map-dot:hover,
+.project-map-dot:focus-visible {
+    width: 17px;
+    height: 17px;
+    background: #004DA8;
+    box-shadow: 0 0 0 6px rgba(0,77,168,.22);
+    outline: none;
+}
+
+.map-tooltip {
+    position: absolute;
+    z-index: 5;
+    width: min(300px, calc(100% - 32px));
+    padding: 16px;
+    border: 1px solid var(--sel-border);
+    background: rgba(16,38,45,.98);
+    box-shadow: var(--sel-shadow-md);
+    pointer-events: auto;
+}
+
+.map-tooltip-id {
+    color: var(--sel-accent-soft);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.map-tooltip h3 {
+    margin: 7px 0 6px;
+    color: var(--sel-white);
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+.map-tooltip p {
+    margin: 0 0 10px;
+    color: var(--sel-body);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.map-tooltip a {
+    color: var(--sel-accent-soft);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.map-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 14px;
+    color: var(--sel-muted);
+    font-size: 12px;
+}
+
+.map-footer span:first-child {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-footer i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #004DA8;
+}
+
+.projects-explore {
+    border-top: 1px solid var(--sel-border);
+    border-bottom: 1px solid var(--sel-border);
+    background: var(--sel-section);
+}
+
+.projects-explore .shell {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projects-explore a {
+    padding: 28px 18px;
+    border-right: 1px solid var(--sel-border);
+    color: var(--sel-text-soft);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.projects-explore a:first-child {
+    border-left: 1px solid var(--sel-border);
+}
+
+.projects-explore a:hover {
+    background: var(--sel-raised);
+    color: var(--sel-accent-soft);
+}
+
+@media (max-width: 1050px) {
+    .project-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .project-filters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .filter-reset {
+        justify-self: start;
+    }
+}
+
+@media (max-width: 760px) {
+    .projects-hero {
+        padding: 54px 0 62px;
+    }
+
+    .projects-hero h1 {
+        font-size: clamp(2.1rem, 12vw, 3.2rem);
+    }
+
+    .projects-intro {
+        font-size: 16px;
+    }
+
+    .projects-section {
+        padding: 60px var(--sel-gutter);
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project--primary {
+        min-height: 390px;
+    }
+
+    .featured-secondary-column {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 220px);
+    }
+
+    .featured-project-body {
+        padding: 24px;
+    }
+
+    .featured-project h3 {
+        font-size: 28px;
+    }
+
+    .catalogue-heading-row,
+    .projects-place-heading {
+        display: block;
+    }
+
+    .project-count,
+    .map-project-count {
+        margin-top: 12px;
+    }
+
+    .project-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-map {
+        aspect-ratio: 1.25 / 1;
+        min-height: 360px;
+    }
+
+    .map-footer {
+        display: block;
+    }
+
+    .map-footer span + span {
+        display: block;
+        margin-top: 8px;
+    }
+
+    .projects-explore .shell {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .projects-explore a {
+        border-bottom: 1px solid var(--sel-border);
+    }
+}
+
+@media (max-width: 420px) {
+    .project-card-body {
+        padding: 19px;
+    }
+
+    .project-map {
+        min-height: 320px;
+    }
+}
+
+
+/* RESEARCH / PORTFOLIO COMPONENTS */
+/* =========================================================
+   SPATIAL EVIDENCE LAB
+   PORTFOLIO / RESEARCH PAGE
+   =========================================================
+   Version: 2.0
+
+   Design principles:
+   - No viewport-width hacks
+   - No horizontal overflow
+   - Shared SEL shell
+   - Consistent spacing
+   - Responsive CSS Grid
+   - Safe flex/grid children
+   - Consistent card language
+   ========================================================= */
+
+
+/* =========================================================
+   01. HARD WIDTH RESET
+   ========================================================= */
+
+main {
+
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    inline-size: 100%;
+    max-inline-size: 100%;
+
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+
+/*
+   Never use width:100vw.
+
+   100vw includes the browser scrollbar and can introduce
+   horizontal overflow on desktop browsers.
+*/
+
+
+.project-section,
+.portfolio-hero {
+
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    inline-size: 100%;
+    max-inline-size: 100%;
+
+    min-width: 0;
+
+    margin: 0;
+
+    border: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   02. PORTFOLIO HERO
+   ========================================================= */
+
+.portfolio-hero {
+
+    background: var(--sel-hero);
+
+    color: var(--sel-white);
+
+    padding: 72px 0 82px;
+}
+
+
+/* =========================================================
+   03. HERO SHELL
+   ========================================================= */
+
+.portfolio-hero .shell {
+    position: relative;
+    width: calc(100% - (2 * var(--sel-gutter)));
+    max-width: none;
+    margin-inline: auto;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   04. HERO EYEBROW
+   ========================================================= */
+
+.research-eyebrow {
+
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 0 24px;
+
+    color: var(--sel-accent);
+
+    font-size: .68rem;
+
+    font-weight: 800;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   05. HERO TITLE
+   ========================================================= */
+
+.hero-title {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0;
+
+    color: var(--sel-white);
+
+    font-size:
+        clamp(1.65rem, 2.7vw, 2.2rem);
+
+    line-height: 1.12;
+
+    letter-spacing: -.035em;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   06. HERO COPY
+   ========================================================= */
+
+.hero-copy {
+
+    width: 100%;
+
+    max-width: 920px;
+
+    margin-top: 24px;
+
+    min-width: 0;
+}
+
+
+.hero-lead {
+
+    margin: 0;
+
+    color: rgba(255,255,255,.90);
+
+    font-size: .96rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   07. HERO ACTIONS
+   ========================================================= */
+
+.portfolio-hero .project-actions {
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   08. SHARED PROJECT SECTION
+   ========================================================= */
+
+.project-section {
+
+    background: var(--sel-section);
+
+    color: var(--sel-text);
+
+    padding: 88px 0;
+
+    border: 0 !important;
+
+    border-top: 0 !important;
+
+    border-bottom: 0 !important;
+
+    box-shadow: none !important;
+
+    outline: 0 !important;
+}
+
+
+/* =========================================================
+   09. LEGACY SECTION NORMALISATION
+   ========================================================= */
+
+.project-section.alt,
+.project-section.dark,
+.project-section.research-introduction,
+.project-section.research-domains,
+.project-section.geographic-scope,
+.project-section.research-workflow {
+
+    background: var(--sel-section);
+
+    border: 0 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   10. REMOVE DECORATIVE LEGACY ELEMENTS
+   ========================================================= */
+
+.project-section::before,
+.project-section::after {
+
+    content: none !important;
+
+    display: none !important;
+
+    border: 0 !important;
+}
+
+
+/* =========================================================
+   11. SECTION SHELL
+   ========================================================= */
+
+.project-section > .shell {
+    width: calc(100% - (2 * var(--sel-gutter)));
+    max-width: none;
+    margin-inline: auto;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   12. SECTION HEADER
+   ========================================================= */
+
+.project-section-head {
+
+    width: 100%;
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0,.9fr)
+        minmax(0,1.1fr);
+
+    gap: 64px;
+
+    align-items: start;
+
+    margin-bottom: 52px;
+
+    min-width: 0;
+}
+
+
+.project-section-head > * {
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   13. PROGRAMME HEADING
+   ========================================================= */
+
+.programme-heading {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-bottom: 52px;
+
+    min-width: 0;
+}
+
+
+.programme-title {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    color: var(--sel-white);
+
+    font-size:
+        clamp(1.3rem,1.9vw,1.6rem);
+
+    line-height: 1.2;
+
+    letter-spacing: -.025em;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   14. SECTION LEAD / INTRO
+   ========================================================= */
+
+.section-lead,
+.project-intro {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    margin: 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .95rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   15. RESEARCH INTRODUCTION
+   ========================================================= */
+
+.research-introduction {
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
+}
+
+
+/* =========================================================
+   16. RESEARCH PRINCIPLES
+   ========================================================= */
+
+.research-principles {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 18px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   17. RESEARCH PRINCIPLE CARD
+   ========================================================= */
+
+.research-principle {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    transition:
+        transform var(--motion-standard),
+        border-color var(--motion-standard),
+        background-color var(--motion-standard);
+}
+
+
+.research-principle:hover {
+
+    transform: translateY(-2px);
+
+    background: var(--sel-raised);
+
+    border-color: var(--sel-accent);
+}
+
+
+.research-principle-content {
+
+    width: 100%;
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   18. PRINCIPLE CARD TYPOGRAPHY
+   ========================================================= */
+
+.research-principle h3 {
+
+    margin: 0 0 9px;
+
+    color: var(--sel-white);
+
+    font-size: 1.05rem;
+
+    line-height: 1.25;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+.research-principle p {
+
+    margin: 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .84rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   19. RESEARCH DOMAINS
+   ========================================================= */
+
+.research-domains {
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
+}
+
+
+.domain-heading {
+
+    margin-bottom: 46px;
+}
+
+
+/* =========================================================
+   20. DOMAIN GRID
+   ========================================================= */
+
+.domain-grid {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   21. DOMAIN CARD
+   ========================================================= */
+
+.domain-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 22px 24px;
+
+    color: var(--sel-text);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--motion-standard),
+        background-color var(--motion-standard),
+        border-color var(--motion-standard);
+}
+
+
+.domain-card:hover {
+
+    transform: translateY(-2px);
+
+    background: var(--sel-raised);
+
+    border-color: var(--sel-accent);
+}
+
+
+/* =========================================================
+   22. DOMAIN BODY
+   ========================================================= */
+
+.domain-card-body {
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+.domain-card h3 {
+
+    margin: 0;
+
+    color: var(--sel-white);
+
+    font-size: .98rem;
+
+    line-height: 1.35;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+.domain-question {
+
+    margin: 10px 0 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .8rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   23. DOMAIN FOOTER
+   ========================================================= */
+
+.domain-card-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid rgba(255,255,255,.10);
+
+    color: var(--sel-muted);
+
+    font-size: .65rem;
+
+    line-height: 1.4;
+
+    min-width: 0;
+}
+
+
+.domain-card-footer span {
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+.domain-card-footer span:last-child {
+
+    color: var(--sel-accent);
+
+    white-space: nowrap;
+}
+
+
+.domain-cta {
+
+    margin-top: 32px;
+}
+
+
+/* =========================================================
+   24. GEOGRAPHIC SCOPE
+   ========================================================= */
+
+.geographic-scope {
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
+}
+
+
+/* =========================================================
+   25. SCOPE GRID
+   ========================================================= */
+
+.scope-grid {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   26. SCOPE ITEM
+   ========================================================= */
+
+.scope-item {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 22px;
+
+    overflow: hidden;
+}
+
+
+.scope-item h3 {
+
+    margin: 0 0 9px;
+
+    color: var(--sel-white);
+
+    font-size: .98rem;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+.scope-item p {
+
+    margin: 0;
+
+    color: var(--sel-text-soft);
+
+    font-size: .8rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   27. RESEARCH WORKFLOW
+   ========================================================= */
+
+.research-workflow {
+
+    padding-top: 88px;
+
+    padding-bottom: 88px;
+}
+
+
+/* =========================================================
+   28. WORKFLOW GRID
+   ========================================================= */
+
+.workflow {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   29. WORKFLOW STEP
+   ========================================================= */
+
+.workflow-step {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    background: var(--sel-box);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: var(--radius-md);
+
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    overflow: hidden;
+}
+
+
+.workflow-step b {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--sel-accent);
+
+    font-size: 1.45rem;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -.04em;
+}
+
+
+.workflow-step strong {
+
+    display: block;
+
+    color: var(--sel-white);
+
+    font-size: .9rem;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+.workflow-step span {
+
+    display: block;
+
+    color: var(--sel-text-soft);
+
+    font-size: .76rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   30. PROJECT ACTIONS
+   ========================================================= */
+
+.project-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+}
+
+
+.project-actions > * {
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   31. SITE FOOTER SAFETY
+   ========================================================= */
+
+.site-footer {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   32. LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .project-section-head {
+
+        gap: 40px;
+    }
+
+
+    .research-principles {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .scope-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .workflow {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+
+/* =========================================================
+   33. TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .project-section-head {
+
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+
+        margin-bottom: 38px;
+    }
+
+
+    .research-principles {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .scope-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .workflow {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+
+/* =========================================================
+   34. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .portfolio-hero {
+
+        padding: 54px 0 62px;
+    }
+
+
+    .portfolio-hero .shell,
+    .project-section > .shell {
+
+        width: calc(100% - (var(--sel-gutter) * 2));
+
+        max-width: 100%;
+    }
+
+
+    .hero-title {
+
+        font-size: 1.65rem;
+
+        line-height: 1.12;
+    }
+
+
+    .research-eyebrow {
+
+        margin-bottom: 20px;
+
+        font-size: .62rem;
+    }
+
+
+    .hero-copy {
+
+        margin-top: 20px;
+    }
+
+
+    .hero-lead {
+
+        font-size: .90rem;
+
+        line-height: 1.6;
+    }
+
+
+    .project-section {
+
+        padding-top: 64px;
+
+        padding-bottom: 64px;
+    }
+
+
+    .research-introduction,
+    .research-domains,
+    .geographic-scope,
+    .research-workflow {
+
+        padding-top: 64px;
+
+        padding-bottom: 64px;
+    }
+
+
+    .programme-heading {
+
+        margin-bottom: 34px;
+    }
+
+
+    .programme-title {
+
+        font-size: 1.3rem;
+    }
+
+
+    .research-principles,
+    .domain-grid,
+    .scope-grid,
+    .workflow {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .research-principle,
+    .domain-card,
+    .scope-item,
+    .workflow-step {
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    .project-actions {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .project-actions .button {
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   35. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .portfolio-hero {
+
+        padding: 48px 0 56px;
+    }
+
+
+    .hero-title {
+
+        font-size: 1.55rem;
+    }
+
+
+    .hero-lead {
+
+        font-size: .88rem;
+    }
+
+
+    .research-principle,
+    .domain-card,
+    .scope-item,
+    .workflow-step {
+
+        padding: 20px;
+    }
+
+
+    .domain-card-footer {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .domain-card-footer span:last-child {
+
+        white-space: normal;
+    }
+}
+
+
+/* =========================================================
+   36. VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .portfolio-hero .shell,
+    .project-section > .shell {
+
+        width: calc(100% - (var(--sel-gutter) * 2));
+    }
+
+
+    .hero-title {
+
+        font-size: 1.45rem;
+    }
+
+
+    .research-principle,
+    .domain-card,
+    .scope-item,
+    .workflow-step {
+
+        padding: 18px;
+    }
+}
+
+
+/* =========================================================
+   END OF SEL PORTFOLIO
+   ========================================================= */
+
+/* =========================================================
+   18. PROJECT CATALOGUE PAGE
+   =========================================================
+   The catalogue uses the same dark SEL UI tokens as the
+   global shell. No independent page palette is introduced.
+   ========================================================= */
+
+.portfolio-hero {
+    background: var(--sel-brand-blue);
+    color: var(--sel-text);
+    padding: clamp(56px, 7vw, 88px) 0 clamp(60px, 7vw, 88px);
+    border-bottom: 1px solid var(--sel-border);
+}
+
+.portfolio-hero .project-kicker {
+    margin: 0 0 16px;
+    color: var(--sel-accent-soft);
+    font-family: var(--sans);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.portfolio-hero h1 {
+    max-width: 900px;
+    margin: 0;
+    color: var(--sel-white);
+    font-family: var(--sans);
+    font-size: clamp(2.35rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+
+.portfolio-hero h1 em {
+    color: var(--sel-accent-soft);
+    font-style: normal;
+}
+
+.portfolio-hero p:not(.project-kicker) {
+    max-width: 760px;
+    margin: 24px 0 0;
+    color: var(--sel-text-soft);
+    font-family: var(--sans);
+    font-size: clamp(.98rem, 1.5vw, 1.08rem);
+    line-height: 1.7;
+}
+
+/* Catalogue section */
+
+main > .section {
+    background: var(--sel-bg);
+    color: var(--sel-text);
+    padding: clamp(48px, 6vw, 76px) 0 clamp(64px, 8vw, 96px);
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 32px;
+    padding: 0 0 20px;
+    border-bottom: 1px solid var(--sel-border);
+}
+
+.filter-button {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 8px 13px;
+    border: 1px solid var(--sel-border);
+    border-radius: var(--radius-sm);
+    background: var(--sel-surface);
+    color: var(--sel-text-soft);
+    font-family: var(--sans);
+    font-size: .68rem;
+    font-weight: 650;
+    letter-spacing: .055em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color var(--sel-transition), border-color var(--sel-transition), color var(--sel-transition), transform var(--sel-transition);
+}
+
+.filter-button:hover {
+    background: var(--sel-raised);
+    border-color: var(--sel-accent);
+    color: var(--sel-text);
+    transform: translateY(-1px);
+}
+
+.filter-button.active,
+.filter-button[aria-pressed="true"] {
+    background: var(--sel-accent);
+    border-color: var(--sel-accent);
+    color: var(--sel-bg);
+}
+
+.catalogue-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.catalogue-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--sel-surface);
+    border: 1px solid var(--sel-border);
+    border-radius: var(--radius-md);
+    color: var(--sel-text);
+    transition: transform var(--sel-transition), border-color var(--sel-transition), box-shadow var(--sel-transition);
+}
+
+.catalogue-card:hover,
+.catalogue-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--sel-accent);
+    box-shadow: var(--sel-shadow-sm);
+}
+
+.catalogue-image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--sel-raised);
+    border-bottom: 1px solid var(--sel-border);
+}
+
+.catalogue-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s ease;
+}
+
+.catalogue-card:hover .catalogue-image img {
+    transform: scale(1.025);
+}
+
+.catalogue-body {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    padding: 22px;
+}
+
+.catalogue-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--sel-muted);
+    font-family: var(--sans);
+    font-size: .64rem;
+    font-weight: 650;
+    letter-spacing: .09em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.catalogue-domain {
+    margin: 0 0 9px;
+    color: var(--sel-accent-soft);
+    font-family: var(--sans);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.catalogue-card h2 {
+    margin: 0 0 10px;
+    color: var(--sel-white);
+    font-family: var(--sans);
+    font-size: 1.22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02em;
+}
+
+.catalogue-card > .catalogue-body > p:not(.catalogue-domain) {
+    margin: 0;
+    color: var(--sel-body);
+    font-family: var(--sans);
+    font-size: .9rem;
+    line-height: 1.65;
+}
+
+.catalogue-context {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 18px;
+}
+
+.catalogue-context span {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid var(--sel-border);
+    border-radius: 3px;
+    color: var(--sel-muted);
+    font-family: var(--sans);
+    font-size: .62rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.catalogue-link {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 20px;
+    color: var(--sel-accent-soft);
+    font-family: var(--sans);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.catalogue-card:hover .catalogue-link,
+.catalogue-card:focus-visible .catalogue-link {
+    color: var(--sel-accent);
+}
+
+.empty-state {
+    padding: 28px;
+    background: var(--sel-surface);
+    border: 1px solid var(--sel-border);
+    color: var(--sel-body);
+    font-family: var(--sans);
+    font-size: .92rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 980px) {
+    .catalogue-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .portfolio-hero h1 {
+        font-size: clamp(2.1rem, 12vw, 3.2rem);
+    }
+
+    .catalogue-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-bar {
+        gap: 7px;
+    }
+}
+
+
+/* =========================================================
+   BACK-TO-TOP
+   Canonical rule for the .back-to-top link injected by
+   js/sel-site.js on every page. This must live here (the
+   stylesheet every page actually loads) — not only in the
+   legacy /css/sel-standards.css — or the link renders as a
+   plain unstyled, unpositioned anchor at the bottom-left of
+   the page instead of a fixed control that stays aligned
+   with the shell on every page.
+   ========================================================= */
+
+.back-to-top {
+    position: fixed;
+    right: clamp(16px, 3vw, 40px);
+    bottom: clamp(16px, 3vw, 40px);
+    z-index: 900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px 14px;
+    background: var(--sel-brand-blue);
+    border: 1px solid var(--sel-border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--sel-shadow-sm);
+    color: var(--sel-text);
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .065em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition:
+        opacity var(--sel-transition),
+        transform var(--sel-transition),
+        background-color var(--sel-transition),
+        border-color var(--sel-transition);
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--sel-accent-dark);
+    border-color: var(--sel-accent);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid var(--sel-accent-soft);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+        transition: none;
+    }
+}
+
