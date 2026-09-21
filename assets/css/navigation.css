@@ -6,8 +6,8 @@
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
 }
 .nav-wrap {
-  position: relative; width: min(calc(100% - (2 * var(--sel-gutter))), var(--sel-content-max));
-  max-width: var(--sel-content-max); min-width: 0; min-height: var(--sel-header-height);
+  position: relative; width: calc(100% - (2 * var(--sel-gutter)));
+  max-width: none; min-width: 0; min-height: var(--sel-header-height);
   margin-inline: auto; display: flex; align-items: center; justify-content: space-between;
   gap: 25px; overflow: visible;
 }

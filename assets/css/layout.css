@@ -1,9 +1,14 @@
 /* SEL CANONICAL LAYOUT SYSTEM */
+/* --sel-content-max is kept only for components that still opt into a
+   readable measure (e.g. paragraph max-widths). The shared shell/container
+   itself is intentionally full-width site-wide: it fills the viewport
+   minus the side gutter at any window size or zoom level, with no
+   max-width cap. */
 :root { --sel-content-max: 1200px; --sel-gutter: clamp(16px, 2vw, 32px); }
 
 .shell, .container, .container-wide, .sel-shell {
-  width: min(calc(100% - (2 * var(--sel-gutter))), var(--sel-content-max));
-  max-width: var(--sel-content-max);
+  width: calc(100% - (2 * var(--sel-gutter)));
+  max-width: none;
   margin-inline: auto;
   box-sizing: border-box;
   min-width: 0;
@@ -42,16 +47,4 @@ html, body {
   overflow-x: clip;
 }
 
-@media (min-width: 1201px) {
-  .shell, .container, .container-wide, .sel-shell {
-    width: var(--sel-content-max);
-    max-width: var(--sel-content-max);
-  }
-}
 
-@media (max-width: 1200px) {
-  .shell, .container, .container-wide, .sel-shell {
-    width: calc(100% - (2 * var(--sel-gutter)));
-    max-width: calc(100% - (2 * var(--sel-gutter)));
-  }
-}

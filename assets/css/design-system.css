@@ -96,8 +96,10 @@
        ----------------------------------------------------- */
 
     /*
-       Keep the normal desktop content width at 1200px, but let it grow
-       with very wide CSS viewports (including browser zoom-out).
+       Historical token, not used to cap .shell/.container width anymore
+       (see assets/css/layout.css) — the shared shell is full-width
+       site-wide. Kept only in case a future component wants an optional
+       reading-measure cap.
     */
     --sel-content-max: 1200px;
     --sel-gutter: clamp(16px, 2vw, 32px);
