@@ -47,4 +47,24 @@ html, body {
   overflow-x: clip;
 }
 
+/* =========================================================
+   PROJECTS HERO — PROJECT CATALOGUE LABEL
+   ========================================================= */
 
+.projects-page .project-catalogue-label {
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   PROJECTS HERO — WHITE TITLE
+   ========================================================= */
+
+.projects-page .page-hero h1 {
+    color: #ffffff;
+}
+
+.projects-page .page-hero h1 > span {
+    color: #ffffff !important;
+}
