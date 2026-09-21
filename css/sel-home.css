@@ -1,443 +1,318 @@
 /* =========================================================
    SPATIAL EVIDENCE LAB — HOMEPAGE PRESENTATION LAYER
-   Homepage-only overrides. Do not use this file on interior pages.
-   Legacy portfolio.css remains the compatibility layer for the site.
+   Scope: index.html only. Do not use for shared pages.
    ========================================================= */
 
-:root {
-  --sel-home-content: min(1440px, calc(100% - 2 * clamp(20px, 4vw, 64px)));
-  --sel-home-display: clamp(3.9rem, 6.2vw, 5.2rem);
-  --sel-home-h2: clamp(2rem, 3vw, 2.65rem);
-  --sel-home-line: rgba(255,255,255,.12);
+/* Full-width research canvas: prevents the homepage from becoming
+   a narrow centred column when the browser is zoomed out. */
+.portfolio-hero .shell,
+.project-section > .shell {
+    width: calc(100% - (2 * var(--sel-gutter)));
+    max-width: none;
 }
 
 /* ---------------------------------------------------------
-   Header: quiet research-institutional navigation
-   --------------------------------------------------------- */
-.site-header {
-  min-height: 76px;
-  border-bottom-color: rgba(255,255,255,.07);
-}
-
-.nav-wrap {
-  width: var(--sel-home-content);
-  min-height: 76px;
-}
-
-.wordmark-name {
-  font-size: .94rem;
-  letter-spacing: -.01em;
-}
-
-.site-nav { gap: 25px; }
-.site-nav a {
-  font-size: .75rem;
-  letter-spacing: .075em;
-  text-transform: uppercase;
-}
-.site-nav .nav-cta {
-  padding: 0 0 7px;
-  border: 0;
-  border-radius: 0;
-  color: var(--sel-text-soft);
-}
-.site-nav .nav-cta:hover {
-  background: transparent;
-  color: var(--sel-accent-soft);
-}
-.site-nav .nav-cta::after {
-  display: block;
-  width: 0;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  background: var(--sel-accent);
-}
-.site-nav .nav-cta:hover::after { width: 100%; }
-
-/* ---------------------------------------------------------
-   Hero: Ireland map becomes the dominant visual asset
+   HERO
    --------------------------------------------------------- */
 .portfolio-hero {
-  min-height: min(700px, calc(100vh - 76px));
-  display: flex;
-  align-items: center;
-  padding: clamp(76px, 9vw, 128px) 0 clamp(80px, 9vw, 120px);
-  isolation: isolate;
-  background:
-    linear-gradient(90deg,
-      rgba(7,19,24,.99) 0%,
-      rgba(7,19,24,.96) 38%,
-      rgba(7,19,24,.76) 57%,
-      rgba(7,19,24,.25) 100%),
-    url('/media/homepage/hero-map.jpg') right center / 56% 100% no-repeat,
-    var(--sel-bg);
+    min-height: 520px;
+    padding: 86px 0 92px;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(20,47,57,.98) 0%, rgba(20,47,57,.94) 42%, rgba(20,47,57,.55) 63%, rgba(20,47,57,.12) 100%),
+        url('/media/homepage/hero-map.jpg') right center / 54% 100% no-repeat,
+        var(--sel-hero);
 }
 
 .portfolio-hero .shell {
-  width: var(--sel-home-content);
-  max-width: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 340px;
+    padding-right: min(46vw, 720px);
 }
 
-.portfolio-hero .research-eyebrow {
-  max-width: 720px;
-  margin-bottom: 22px;
-  font-size: 12px;
-  letter-spacing: .12em;
-  color: var(--sel-accent-soft);
+.research-eyebrow {
+    margin-bottom: 20px;
+    font-size: .66rem;
+    letter-spacing: .11em;
 }
 
 .hero-title {
-  max-width: 700px;
-  font-size: var(--sel-home-display);
-  line-height: .98;
-  letter-spacing: -.055em;
-  font-weight: 700;
+    max-width: 700px;
+    font-size: clamp(2.35rem, 4.2vw, 4.4rem);
+    line-height: 1.02;
+    letter-spacing: -.045em;
 }
 
-.hero-title br { display: block; }
-.hero-copy { max-width: 690px; margin-top: 28px; }
-.hero-lead {
-  max-width: 680px;
-  font-size: clamp(1rem, 1.2vw, 1.12rem);
-  line-height: 1.65;
-  color: var(--sel-text-soft);
+.hero-copy {
+    max-width: 680px;
+    margin-top: 22px;
 }
-.portfolio-hero .project-actions { margin-top: 34px; }
+
+.hero-lead {
+    font-size: .91rem;
+    line-height: 1.62;
+}
+
+.portfolio-hero .project-actions {
+    margin-top: 28px;
+}
 
 /* ---------------------------------------------------------
-   Homepage section rhythm and section-number system
+   SECTION HEADINGS — reduce the oversized editorial text
    --------------------------------------------------------- */
-.project-section {
-  padding: clamp(76px, 8vw, 112px) 0;
-}
-.project-section > .shell,
-.site-footer > .shell {
-  width: var(--sel-home-content);
-}
-
 .programme-heading {
-  display: grid;
-  grid-template-columns: minmax(220px, .7fr) minmax(320px, 1.3fr);
-  align-items: end;
-  gap: 32px;
-  margin-bottom: 46px;
+    margin-bottom: 30px;
 }
 
 .programme-title {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin: 0;
-  line-height: 1;
+    font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+    line-height: 1.2;
+    letter-spacing: -.015em;
 }
-.section-index {
-  color: var(--sel-accent-soft);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  line-height: 1;
-}
-.section-label {
-  color: var(--sel-text);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .11em;
-  line-height: 1.2;
-}
-.programme-heading .section-lead {
-  max-width: 720px;
-  margin: 0;
-  font-size: clamp(1.45rem, 2.2vw, 2rem);
-  line-height: 1.2;
-  color: var(--sel-text-soft);
+
+.section-lead {
+    max-width: 620px;
+    margin-top: 8px;
+    font-size: .82rem;
+    line-height: 1.5;
+    color: var(--sel-text-soft);
 }
 
 /* ---------------------------------------------------------
-   01 Research Programme — three compact editorial columns
+   RESEARCH PROGRAMME
    --------------------------------------------------------- */
-.research-introduction { padding-top: clamp(72px, 7vw, 96px); }
+.research-introduction,
+.research-domains,
+.geographic-scope,
+.research-workflow {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
 .research-principles {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--sel-border);
-  border: 1px solid var(--sel-border);
+    gap: 14px;
 }
+
 .research-principle {
-  position: relative;
-  min-height: 205px;
-  padding: 30px 32px 34px;
-  background: var(--sel-surface);
-  border: 0;
+    min-height: 158px;
+    padding: 22px 24px;
+    border-radius: 4px;
 }
-.research-principle:not(:last-child)::after {
-  content: '→';
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  color: var(--sel-accent-soft);
-  font-size: 18px;
-}
-.research-principle-content { max-width: 360px; }
+
 .research-principle h3 {
-  margin: 0 0 18px;
-  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
-  line-height: 1.15;
-  color: var(--sel-white);
+    margin-bottom: 8px;
+    font-size: .95rem;
 }
+
 .research-principle p {
-  margin: 0;
-  color: var(--sel-body);
-  font-size: .95rem;
-  line-height: 1.65;
+    font-size: .77rem;
+    line-height: 1.55;
 }
 
 /* ---------------------------------------------------------
-   02 Research Domains — numbered research catalogue
-   2-column structure: 3 + 3 + final single row
+   RESEARCH DOMAINS — numbered 01–07 with safe inset padding
    --------------------------------------------------------- */
-.research-domains { background: var(--sel-bg); }
 .domain-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--sel-line);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    align-items: stretch;
 }
+
 .domain-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 210px;
-  padding: 28px 34px 28px 58px;
-  border: 0;
-  border-bottom: 1px solid var(--sel-line);
-  border-radius: 0;
-  background: transparent;
-  color: var(--sel-text);
-  box-shadow: none;
-  transition: background .2s ease, padding-left .2s ease;
+    position: relative;
+    min-height: 210px;
+    height: 100%;
+    padding: 30px 32px 24px;
+    border-radius: 4px;
 }
-.domain-card:nth-child(odd) { border-right: 1px solid var(--sel-line); }
-.domain-card:nth-child(7) {
-  grid-column: 1 / -1;
-  min-height: 175px;
-  border-right: 0;
-}
+
 .domain-card::before {
-  content: counter(domain-index, decimal-leading-zero);
-  counter-increment: domain-index;
-  position: absolute;
-  left: 0;
-  top: 31px;
-  color: var(--sel-accent-soft);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .08em;
+    display: block;
+    margin-bottom: 18px;
+    color: var(--sel-accent);
+    font-size: .78rem;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: .08em;
 }
-.domain-grid { counter-reset: domain-index; }
-.domain-card:hover {
-  padding-left: 64px;
-  background: rgba(58,151,160,.055);
+
+.domain-qoli::before { content: '01'; }
+.domain-access::before { content: '02'; }
+.domain-population::before { content: '03'; }
+.domain-housing::before { content: '04'; }
+.domain-land::before { content: '05'; }
+.domain-environment::before { content: '06'; }
+.domain-energy::before { content: '07'; }
+
+.domain-card-body {
+    padding: 0;
 }
-.domain-card-body h3 {
-  margin: 0 0 10px;
-  max-width: 620px;
-  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
-  line-height: 1.15;
-  color: var(--sel-white);
+
+.domain-card h3 {
+    font-size: .94rem;
+    line-height: 1.3;
 }
+
 .domain-question {
-  max-width: 620px;
-  margin: 0;
-  color: var(--sel-body);
-  line-height: 1.55;
+    margin-top: 8px;
+    font-size: .76rem;
+    line-height: 1.5;
 }
+
 .domain-card-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 26px;
-  color: var(--sel-muted);
-  font-size: .75rem;
-  line-height: 1.5;
+    margin-top: auto;
+    padding-top: 12px;
+    font-size: .61rem;
 }
+
+/* Keep the seventh card exactly the same footprint as the others. */
+.domain-card.domain-energy {
+    min-height: 210px;
+}
+
+/* The domain CTA remains the only domain-wide action. */
 .domain-card-footer span:last-child {
-  color: var(--sel-accent-soft);
-  white-space: nowrap;
+    color: var(--sel-accent);
 }
-.domain-cta { margin-top: 34px; }
 
 /* ---------------------------------------------------------
-   03 Geographic Scope — prominent place cards
+   GEOGRAPHIC SCOPE — informational cards, no arrows
    --------------------------------------------------------- */
-.geographic-scope {
-  background: var(--sel-section);
-  border-top: 1px solid var(--sel-line-soft) !important;
-  border-bottom: 1px solid var(--sel-line-soft) !important;
-}
 .scope-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+    gap: 14px;
 }
+
 .scope-item {
-  position: relative;
-  min-height: 190px;
-  padding: 28px 30px 34px;
-  border: 1px solid var(--sel-border);
-  border-radius: 3px;
-  background: var(--sel-surface);
-  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    min-height: 150px;
+    padding: 24px 26px;
+    border-radius: 4px;
 }
-.scope-item::after {
-  content: '→';
-  position: absolute;
-  right: 24px;
-  bottom: 18px;
-  color: var(--sel-accent-soft);
-  font-size: 20px;
-}
-.scope-item:hover {
-  transform: translateY(-2px);
-  border-color: var(--sel-accent);
-  background: var(--sel-raised);
-}
+
 .scope-item h3 {
-  margin: 0 0 12px;
-  font-size: clamp(1.3rem, 2vw, 1.65rem);
-  line-height: 1.1;
-  color: var(--sel-white);
+    margin-bottom: 8px;
+    font-size: .94rem;
 }
+
 .scope-item p {
-  max-width: 300px;
-  margin: 0;
-  color: var(--sel-body);
-  line-height: 1.55;
+    font-size: .76rem;
+    line-height: 1.5;
+}
+
+.scope-item::after,
+.scope-item a::after {
+    display: none !important;
+    content: none !important;
 }
 
 /* ---------------------------------------------------------
-   04 Research Approach — six-stage workflow
+   RESEARCH APPROACH — sequence supplied by numbers alone
    --------------------------------------------------------- */
-.research-workflow { background: var(--sel-bg); }
 .workflow {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  border-top: 1px solid var(--sel-line);
-  border-bottom: 1px solid var(--sel-line);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
 }
+
 .workflow-step {
-  position: relative;
-  min-height: 190px;
-  padding: 25px 25px 28px;
-  border-right: 1px solid var(--sel-line);
+    position: relative;
+    min-height: 160px;
+    padding: 22px 24px;
+    border-radius: 4px;
 }
-.workflow-step:last-child { border-right: 0; }
-.workflow-step::after {
-  content: '→';
-  position: absolute;
-  right: -8px;
-  top: 28px;
-  z-index: 2;
-  padding: 0 4px;
-  background: var(--sel-bg);
-  color: var(--sel-accent-soft);
-  font-size: 16px;
+
+.workflow-step:not(:last-child)::after {
+    display: none !important;
+    content: none !important;
 }
-.workflow-step:nth-child(3)::after { content: '↓'; top: auto; right: 20px; bottom: -9px; }
-.workflow-step:nth-child(n+4)::after { content: '←'; }
-.workflow-step:last-child::after { display: none; }
+
 .workflow-step b {
-  display: block;
-  margin-bottom: 18px;
-  color: var(--sel-accent-soft);
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 600;
-  line-height: .9;
-  letter-spacing: -.04em;
+    margin-bottom: 10px;
+    font-size: 1.7rem;
 }
+
 .workflow-step strong {
-  display: block;
-  margin-bottom: 10px;
-  color: var(--sel-white);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: .02em;
-  text-transform: uppercase;
+    font-size: .88rem;
 }
+
 .workflow-step span {
-  display: block;
-  color: var(--sel-body);
-  font-size: .82rem;
-  line-height: 1.55;
-}
-.research-workflow .project-actions { margin-top: 34px; }
-
-/* ---------------------------------------------------------
-   Footer — restrained publication-style finish
-   --------------------------------------------------------- */
-.site-footer {
-  border-top: 1px solid var(--sel-line);
+    font-size: .73rem;
+    line-height: 1.5;
 }
 
 /* ---------------------------------------------------------
-   Responsive behaviour
+   SHARED HEADER / FOOTER LOGO STABILITY
    --------------------------------------------------------- */
-@media (max-width: 1100px) {
-  .portfolio-hero {
-    min-height: 0;
-    background-size: 58% 100%;
-  }
-  .programme-heading { grid-template-columns: 1fr; gap: 18px; }
-  .workflow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .workflow-step:nth-child(3)::after { content: '↓'; }
-  .workflow-step:nth-child(4)::after { content: '←'; }
-  .workflow-step:nth-child(6)::after { display: none; }
+.wordmark-logo,
+.footer-logo {
+    display: block;
+    flex: 0 0 auto;
+    object-fit: contain;
 }
 
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
 @media (max-width: 900px) {
-  .portfolio-hero {
-    background:
-      linear-gradient(180deg, rgba(7,19,24,.95), rgba(7,19,24,.98)),
-      url('/media/homepage/hero-map.jpg') center / cover no-repeat;
-  }
-  .hero-title { max-width: 650px; }
-  .research-principles { grid-template-columns: 1fr; }
-  .research-principle { min-height: 165px; }
-  .research-principle:not(:last-child)::after { display: none; }
-  .domain-card:nth-child(odd) { border-right: 0; }
-  .scope-grid { grid-template-columns: 1fr; }
-  .scope-item { min-height: 150px; }
-  .workflow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .workflow-step:nth-child(3)::after { content: '→'; top: 28px; right: -8px; bottom: auto; }
-  .workflow-step:nth-child(4)::after { content: '←'; }
-  .workflow-step:nth-child(5)::after { content: '→'; }
-  .workflow-step:nth-child(6)::after { display: none; }
+    .portfolio-hero {
+        min-height: 0;
+        background:
+            linear-gradient(180deg, rgba(20,47,57,.97) 0%, rgba(20,47,57,.90) 62%, rgba(20,47,57,.72) 100%),
+            url('/media/homepage/hero-map.jpg') center bottom / cover no-repeat,
+            var(--sel-hero);
+    }
+
+    .portfolio-hero .shell {
+        min-height: 430px;
+        padding-right: 0;
+    }
+
+    .hero-title {
+        max-width: 760px;
+        font-size: clamp(2.2rem, 7vw, 3.6rem);
+    }
+
+    .research-principles,
+    .scope-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .domain-grid,
+    .workflow {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-@media (max-width: 640px) {
-  .nav-wrap { min-height: 68px; }
-  .portfolio-hero { padding: 70px 0 78px; }
-  .hero-title { font-size: clamp(3.1rem, 15vw, 4.2rem); }
-  .project-section { padding: 64px 0; }
-  .programme-heading { margin-bottom: 30px; }
-  .domain-grid { grid-template-columns: 1fr; }
-  .domain-card,
-  .domain-card:nth-child(7) { grid-column: auto; min-height: 185px; }
-  .domain-card { padding-left: 48px; }
-  .domain-card:hover { padding-left: 52px; }
-  .domain-card-footer { flex-direction: column; gap: 10px; }
-  .workflow { grid-template-columns: 1fr; }
-  .workflow-step { min-height: 150px; border-right: 0; border-bottom: 1px solid var(--sel-line); }
-  .workflow-step:last-child { border-bottom: 0; }
-  .workflow-step::after,
-  .workflow-step:nth-child(3)::after,
-  .workflow-step:nth-child(n+4)::after { content: '↓'; top: auto; right: 24px; bottom: -10px; }
-  .workflow-step:last-child::after { display: none; }
-}
+@media (max-width: 620px) {
+    .portfolio-hero,
+    .research-introduction,
+    .research-domains,
+    .geographic-scope,
+    .research-workflow {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-  .domain-card,
-  .scope-item { transition: none; }
+    .portfolio-hero .shell,
+    .project-section > .shell {
+        width: calc(100% - (2 * var(--shell-gutter-mobile)));
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 11vw, 3rem);
+    }
+
+    .section-lead {
+        font-size: .78rem;
+    }
+
+    .domain-grid,
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+
+    .domain-card,
+    .domain-card.domain-energy {
+        min-height: 0;
+    }
 }
