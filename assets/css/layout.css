@@ -26,3 +26,32 @@ img, svg, video, canvas, iframe, table { max-width: 100%; }
 @media (max-width: 900px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 }
+
+
+/* Canonical page-frame protection.
+   At extreme browser zoom-out the CSS viewport becomes very wide;
+   the frame remains capped rather than expanding with the viewport. */
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+#main-content {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@media (min-width: 1201px) {
+  .shell, .container, .container-wide, .sel-shell {
+    width: var(--sel-content-max);
+    max-width: var(--sel-content-max);
+  }
+}
+
+@media (max-width: 1200px) {
+  .shell, .container, .container-wide, .sel-shell {
+    width: calc(100% - (2 * var(--sel-gutter)));
+    max-width: calc(100% - (2 * var(--sel-gutter)));
+  }
+}
