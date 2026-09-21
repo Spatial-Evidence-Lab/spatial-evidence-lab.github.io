@@ -2,9 +2,6 @@
    SEL-002 · Bandon publication stylesheet
    Inherits the Spatial Evidence Lab design system.
    ========================================================================== */
-@import url("/css/sel-theme.css");
-@import url("/css/sel-components.css");
-
 :root {
   --sel-ink: #07111F;
   --sel-ink-2: #0B1828;
@@ -16,8 +13,8 @@
   --sel-muted: #647181;
   --sel-line: rgba(7,17,31,.14);
   --sel-radius: 18px;
-  --sel-max: 1240px;
-  --sel-gutter: clamp(18px,4vw,56px);
+  --sel-max: var(--sel-content-max);
+  --sel-gutter: var(--sel-gutter);
   --sel-section-space: clamp(72px,9vw,140px);
   --sel-shadow: 0 18px 55px rgba(7,17,31,.10);
   --sel-display: clamp(2.8rem,7vw,7.2rem);
@@ -40,7 +37,8 @@ body.sel-publication {
 }
 
 .sel-shell {
-  width: min(calc(100% - (2 * var(--sel-gutter))), var(--sel-max));
+  width: min(calc(100% - (2 * var(--sel-gutter))), var(--sel-content-max));
+  max-width: var(--sel-content-max);
   margin-inline: auto;
 }
 
