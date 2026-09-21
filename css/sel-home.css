@@ -1,0 +1,394 @@
+/* =========================================================
+   SPATIAL EVIDENCE LAB — HOMEPAGE PRESENTATION
+   Homepage-only overrides. Do not move shared rules here.
+   The legacy portfolio.css remains the compatibility layer
+   for the other site pages.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   01. HERO — MAP-LED PRESENTATION
+   --------------------------------------------------------- */
+.portfolio-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 560px;
+    padding: 96px 0 104px;
+    background:
+        linear-gradient(90deg,
+            rgba(4, 20, 28, .96) 0%,
+            rgba(4, 20, 28, .88) 43%,
+            rgba(4, 20, 28, .52) 72%,
+            rgba(4, 20, 28, .28) 100%),
+        url("../media/homepage/hero-map.jpg") center center / cover no-repeat;
+}
+
+.portfolio-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(4,20,28,.06), rgba(4,20,28,.26));
+    pointer-events: none;
+}
+
+.portfolio-hero .shell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 360px;
+}
+
+.hero-title {
+    max-width: 860px;
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+    line-height: .98;
+    letter-spacing: -.045em;
+}
+
+.hero-copy {
+    max-width: 760px;
+    margin-top: 28px;
+}
+
+.hero-lead {
+    max-width: 720px;
+    font-size: 1rem;
+    line-height: 1.72;
+}
+
+.portfolio-hero .project-actions {
+    margin-top: 34px;
+}
+
+/* ---------------------------------------------------------
+   02. SHARED SECTION HEADINGS
+   --------------------------------------------------------- */
+.programme-heading {
+    display: grid;
+    grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 34px;
+}
+
+.programme-title {
+    font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+    letter-spacing: .02em;
+}
+
+.section-lead {
+    max-width: 620px;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+/* ---------------------------------------------------------
+   03. RESEARCH PROGRAMME — COMPACT HORIZONTAL CARDS
+   --------------------------------------------------------- */
+.research-introduction {
+    padding-top: 72px;
+    padding-bottom: 76px;
+}
+
+.research-principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.research-principle {
+    position: relative;
+    min-height: 190px;
+    padding: 25px 27px 24px;
+    border-radius: 14px;
+    display: flex;
+    align-items: stretch;
+}
+
+.research-principle::after {
+    content: "→";
+    position: absolute;
+    right: 23px;
+    bottom: 18px;
+    color: var(--sel-accent);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.research-principle-content {
+    padding-right: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.research-principle h3 {
+    margin-bottom: 15px;
+    font-size: 1.12rem;
+}
+
+.research-principle p {
+    max-width: 32ch;
+    font-size: .82rem;
+    line-height: 1.58;
+}
+
+/* ---------------------------------------------------------
+   04. RESEARCH DOMAINS
+   --------------------------------------------------------- */
+.research-domains {
+    padding-top: 76px;
+    padding-bottom: 80px;
+}
+
+.domain-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.domain-card {
+    min-height: 178px;
+    padding: 23px 25px;
+    border-radius: 14px;
+}
+
+/* Keep the two-column structure while making the final domain
+   a deliberate full-width closing card rather than an orphan. */
+.domain-card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 7px);
+}
+
+.domain-card h3 {
+    font-size: 1rem;
+}
+
+.domain-question {
+    max-width: 62ch;
+    font-size: .81rem;
+}
+
+.domain-card-footer {
+    margin-top: auto;
+}
+
+/* ---------------------------------------------------------
+   05. GEOGRAPHIC SCOPE — MORE PROMINENT PLACE CARDS
+   --------------------------------------------------------- */
+.geographic-scope {
+    padding-top: 82px;
+    padding-bottom: 86px;
+    background: var(--sel-section);
+}
+
+.geographic-scope .programme-heading {
+    margin-bottom: 38px;
+}
+
+.scope-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.scope-item {
+    position: relative;
+    min-height: 205px;
+    padding: 28px 28px 26px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--sel-box);
+    transition: transform var(--motion-standard), border-color var(--motion-standard), background-color var(--motion-standard);
+}
+
+.scope-item::after {
+    content: "→";
+    align-self: flex-end;
+    color: var(--sel-accent);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.scope-item:hover {
+    transform: translateY(-2px);
+    background: var(--sel-raised);
+    border-color: var(--sel-accent);
+}
+
+.scope-item h3 {
+    margin-bottom: 12px;
+    font-size: 1.22rem;
+}
+
+.scope-item p {
+    max-width: 26ch;
+    font-size: .84rem;
+    line-height: 1.6;
+}
+
+/* ---------------------------------------------------------
+   06. RESEARCH APPROACH — WORKFLOW
+   --------------------------------------------------------- */
+.research-workflow {
+    padding-top: 80px;
+    padding-bottom: 88px;
+}
+
+.workflow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,.10);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.workflow-step {
+    position: relative;
+    min-height: 190px;
+    padding: 26px 34px 27px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.workflow-step:not(:nth-child(3n + 1)) {
+    padding-left: 34px;
+    border-left: 1px solid rgba(255,255,255,.10);
+}
+
+.workflow-step:not(:nth-child(3n))::after {
+    content: "→";
+    position: absolute;
+    top: 27px;
+    right: -9px;
+    z-index: 2;
+    color: var(--sel-accent);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.workflow-step b {
+    margin-bottom: 18px;
+    color: var(--sel-accent);
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+    line-height: .9;
+}
+
+.workflow-step strong {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.workflow-step span {
+    margin-top: 8px;
+    max-width: 34ch;
+    font-size: .76rem;
+}
+
+/* ---------------------------------------------------------
+   07. RESPONSIVE HOMEPAGE
+   --------------------------------------------------------- */
+@media (max-width: 1000px) {
+    .portfolio-hero {
+        min-height: 500px;
+        padding: 80px 0 88px;
+    }
+
+    .programme-heading {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        align-items: start;
+    }
+
+    .research-principles,
+    .scope-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .domain-card:last-child {
+        max-width: none;
+    }
+
+    .workflow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .workflow-step:not(:nth-child(3n + 1)) {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .workflow-step:nth-child(even) {
+        padding-left: 28px;
+        border-left: 1px solid rgba(255,255,255,.10);
+    }
+
+    .workflow-step:not(:nth-child(3n))::after {
+        display: none;
+    }
+
+    .workflow-step:nth-child(odd)::after {
+        display: block;
+        right: -9px;
+    }
+}
+
+@media (max-width: 700px) {
+    .portfolio-hero {
+        min-height: auto;
+        padding: 62px 0 70px;
+        background:
+            linear-gradient(180deg, rgba(4,20,28,.88), rgba(4,20,28,.96)),
+            url("../media/homepage/hero-map.jpg") center / cover no-repeat;
+    }
+
+    .portfolio-hero .shell {
+        min-height: 0;
+    }
+
+    .hero-title {
+        font-size: clamp(2.25rem, 12vw, 3.25rem);
+    }
+
+    .hero-lead {
+        font-size: .92rem;
+    }
+
+    .research-principles,
+    .scope-grid,
+    .workflow,
+    .domain-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .research-principle,
+    .scope-item {
+        min-height: 0;
+    }
+
+    .domain-card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .workflow-step,
+    .workflow-step:nth-child(even) {
+        min-height: 0;
+        padding: 24px 0;
+        border-left: 0;
+        border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+
+    .workflow-step:last-child {
+        border-bottom: 0;
+    }
+
+    .workflow-step:nth-child(odd)::after,
+    .workflow-step:not(:nth-child(3n))::after {
+        display: none;
+    }
+
+    .workflow-step b {
+        font-size: 2.5rem;
+    }
+}
