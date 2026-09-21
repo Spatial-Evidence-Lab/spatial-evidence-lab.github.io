@@ -1,0 +1,81 @@
+/* ==========================================
+   SPATIAL EVIDENCE LAB
+   GLOBAL COMPONENT SYSTEM
+   Release 3.1
+========================================== */
+
+/*
+ Transitional compatibility layer. Existing v3.0 page/project
+ components are imported here so Release 3.1 changes the global
+ framework without removing current page content.
+*/
+@import url("../../css/sel-components.css");
+@import url("../../css/legacy/portfolio.css");
+@import url("../../css/sel-pages.css");
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:.8rem;
+  color:var(--teal);
+  font-weight:700;
+  margin-bottom:1rem;
+}
+
+.hero{
+  padding:8rem 0;
+  background:var(--navy-dark);
+  color:#fff;
+}
+
+.hero h1{
+  color:#fff;
+  max-width:900px;
+}
+
+.hero p{
+  max-width:760px;
+  font-size:1.25rem;
+}
+
+.card{
+  background:#fff;
+  border-radius:var(--radius-lg);
+  padding:2rem;
+  box-shadow:var(--shadow-card);
+  transition:var(--transition);
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-hover);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:1rem 1.5rem;
+  border-radius:999px;
+  transition:.3s ease;
+  font-weight:600;
+}
+
+.btn-primary{
+  background:var(--teal);
+  color:#fff;
+}
+
+.btn-primary:hover{ background:var(--navy); }
+
+.btn-secondary{ border:1px solid var(--grey-300); }
+
+.metric{ text-align:center; }
+
+.metric-number{
+  font-size:3rem;
+  color:var(--teal);
+  font-weight:700;
+}
+
+.metric-label{ color:var(--grey-500); }

@@ -1,0 +1,69 @@
+/* ==========================================
+   SPATIAL EVIDENCE LAB
+   GLOBAL FOOTER
+   Release 3.1
+========================================== */
+
+.site-footer{
+  background:var(--navy-dark);
+  color:#fff;
+  padding:5rem 0;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:2rem;
+}
+
+.site-footer h4{ color:#fff; }
+
+.site-footer a{ color:#ccc; }
+
+.site-footer a:hover{ color:var(--cyan); }
+
+/* Existing footer markup uses two top-level content columns. */
+.site-footer .footer-links{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:2rem;
+}
+
+.site-footer .footer-links > div{
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+}
+
+.site-footer .footer-links b{
+  color:#fff;
+  margin-bottom:.35rem;
+}
+
+.site-footer .footer-brand,
+.site-footer .footer-identity{ color:#fff; }
+
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  margin-top:3rem;
+  padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,.14);
+  color:#adb5bd;
+  font-size:.875rem;
+}
+
+@media(max-width:900px){
+  .footer-grid{ grid-template-columns:1fr; }
+
+  .site-footer .footer-links{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-bottom{ flex-direction:column; }
+}
+
+@media(max-width:560px){
+  .site-footer .footer-links{ grid-template-columns:1fr; }
+}
