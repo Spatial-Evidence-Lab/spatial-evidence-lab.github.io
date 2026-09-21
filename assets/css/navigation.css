@@ -1,139 +1,53 @@
-/* ==========================================
-   SPATIAL EVIDENCE LAB
-   GLOBAL NAVIGATION
-   Release 3.1
-========================================== */
-
-/* Supports the v3.1 .container/.nav pattern and the
-   already-normalised v3.0 .shell/.nav-wrap markup. */
-
+/* =========================================================
+   SPATIAL EVIDENCE LAB — CANONICAL NAVIGATION
+   ========================================================= */
 .site-header{
-  position:sticky;
-  top:0;
-  z-index:999;
-  width:100%;
-  background:#fff;
-  border-bottom:1px solid var(--grey-200);
+  position:sticky;top:0;z-index:1000;width:100%;
+  background:var(--sel-header-bg);
+  border-bottom:1px solid var(--sel-line-soft);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
 }
-
-.nav,.nav-wrap{
-  min-height:80px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:2rem;
+.nav-wrap{
+  position:relative;display:flex;align-items:center;justify-content:space-between;
+  gap:25px;min-height:74px;overflow:visible;
 }
-
-.logo,.wordmark{
-  display:inline-flex;
-  align-items:center;
-  gap:.65rem;
-  color:var(--navy);
-  font-weight:700;
+.wordmark{
+  display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;
+  color:var(--sel-text);font-size:.92rem;line-height:1;letter-spacing:-.025em;
   white-space:nowrap;
 }
-
-.wordmark-logo{
-  width:34px;
-  height:34px;
-  object-fit:contain;
+.wordmark-logo{width:34px;height:34px;flex:0 0 34px;object-fit:contain;}
+.wordmark-name{font-weight:500;}
+.site-nav{
+  display:flex;align-items:center;justify-content:flex-end;gap:25px;
+  flex:0 1 auto;min-width:0;overflow:visible;
 }
-
-.nav-menu,.site-nav{
-  display:flex;
-  align-items:center;
-  gap:2rem;
-  list-style:none;
+.site-nav a{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:74px;padding:0;border-bottom:2px solid transparent;
+  color:var(--sel-text-soft);font-size:.69rem;font-weight:500;line-height:1;
+  letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;
+  transition:color .2s ease,border-color .2s ease;
 }
-
-.nav-menu a,.site-nav a{
-  position:relative;
-  font-weight:600;
-  color:var(--navy);
-}
-
-.nav-menu a:hover,.nav-menu a.active,
-.site-nav a:hover,.site-nav a.active{
-  color:var(--teal);
-}
-
-.nav-menu a::after,.site-nav a::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:2px;
-  background:var(--teal);
-  transition:.3s;
-}
-
-.nav-menu a:hover::after,.nav-menu a.active::after,
-.site-nav a:hover::after,.site-nav a.active::after{
-  width:100%;
-}
-
+.site-nav a:hover,.site-nav a.active{color:var(--sel-accent-soft);border-bottom-color:var(--sel-accent);}
 .site-nav .nav-cta{
-  padding:.65rem 1rem;
-  border:1px solid var(--teal);
-  border-radius:999px;
-  color:var(--teal);
+  min-height:auto;padding:9px 12px;border:1px solid var(--sel-line);
+  color:var(--sel-text);white-space:nowrap;
 }
-
-.site-nav .nav-cta::after{ display:none; }
-
-.site-nav .nav-cta:hover{
-  background:var(--teal);
-  color:#fff;
-}
-
+.site-nav .nav-cta:hover{border-color:var(--sel-accent);color:var(--sel-accent-soft);}
 .menu-toggle{
-  display:none;
-  border:1px solid var(--grey-300);
-  background:#fff;
-  color:var(--navy);
-  border-radius:999px;
-  padding:.55rem .9rem;
-  cursor:pointer;
-  font-weight:600;
+  display:none;align-items:center;justify-content:center;min-width:44px;min-height:42px;
+  padding:9px 12px;background:transparent;border:1px solid var(--sel-line);
+  border-radius:var(--radius-sm);color:var(--sel-text);font-size:.72rem;font-weight:500;
+  line-height:1;text-transform:uppercase;cursor:pointer;
 }
-
-@media(max-width:900px){
-  .nav,.nav-wrap{ min-height:72px; }
-
-  .menu-toggle{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .nav-menu,.site-nav{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:1rem;
-    right:1rem;
-    flex-direction:column;
-    align-items:stretch;
-    gap:0;
-    padding:.75rem;
-    background:#fff;
-    border:1px solid var(--grey-200);
-    border-radius:var(--radius-md);
-    box-shadow:var(--shadow-hover);
-  }
-
-  .nav-menu.open,.site-nav.open{ display:flex; }
-
-  .nav-menu a,.site-nav a{
-    display:block;
-    padding:.8rem 1rem;
-  }
-
-  .nav-menu a::after,.site-nav a::after{ display:none; }
-
-  .site-nav .nav-cta{
-    text-align:center;
-    margin-top:.35rem;
-  }
+@media(max-width:1200px){
+  .site-nav{display:none;position:absolute;top:100%;left:var(--sel-gutter);right:var(--sel-gutter);
+    flex-direction:column;align-items:stretch;gap:0;padding:8px;
+    background:var(--sel-header-bg);border:1px solid var(--sel-line);border-radius:var(--radius-md);
+    box-shadow:var(--sel-shadow-md);}
+  .site-nav.open{display:flex;}
+  .site-nav a{display:flex;justify-content:flex-start;min-height:44px;padding:0 12px;border:0;}
+  .site-nav .nav-cta{justify-content:center;margin-top:6px;}
+  .menu-toggle{display:inline-flex;}
 }
