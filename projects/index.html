@@ -17,7 +17,6 @@
 <link rel="stylesheet" href="/assets/css/components.css">
 <link rel="stylesheet" href="/assets/css/navigation.css">
 <link rel="stylesheet" href="/assets/css/footer.css">
-<link rel="stylesheet" href="/assets/css/project.css">
 </head>
 <body class="projects-page">
 
@@ -48,29 +47,55 @@
 
 <main id="main-content">
 
-    <section class="projects-hero">
-        <div class="shell projects-hero-inner">
-            <p class="projects-eyebrow">PROJECT CATALOGUE</p>
-            <h1>Projects<br><span>across place.</span></h1>
-            <p class="projects-intro">Current and completed research across quality of life, accessibility, environment, climate, energy, housing and population.</p>
-        </div>
-    </section>
+    <section class="page-hero projects-hero">
+    <div class="shell page-hero-inner">
+        <p class="page-eyebrow">Research programme · Project catalogue</p>
 
-    <section class="projects-section projects-featured-section" aria-labelledby="featured-title">
+        <h1>
+            Projects<br>
+            <span>across place.</span>
+        </h1>
+
+        <p class="page-intro">
+            Current and completed research across quality of life,
+            accessibility, environment, climate, energy, housing and population.
+        </p>
+
+        <div class="page-actions">
+            <a class="button button-primary" href="#featured-projects">
+                Explore featured projects →
+            </a>
+            <a class="button button-secondary" href="#project-catalogue">
+                Browse catalogue
+            </a>
+        </div>
+    </div>
+</section>
+
+    <section
+    class="projects-section projects-featured-section"
+    id="featured-projects"
+    aria-labelledby="featured-title">
         <div class="shell">
             <div class="projects-section-heading">
-                <p class="section-label">Featured projects</p>
-                <h2 id="featured-title" class="sr-only">Featured projects</h2>
+                <p class="section-label">01 · FEATURED RESEARCH</p>
+               <div class="projects-section-heading">
+    <p class="section-label">01 · FEATURED RESEARCH</p>
+    <h2 id="featured-title">Featured projects</h2>
+</div>
             </div>
             <div class="featured-grid" data-featured-projects></div>
         </div>
     </section>
 
-    <section class="projects-section projects-catalogue-section" aria-labelledby="all-projects-title">
+   <section
+    class="projects-section projects-catalogue-section"
+    id="project-catalogue"
+    aria-labelledby="all-projects-title">
         <div class="shell">
             <div class="catalogue-heading-row">
                 <div>
-                    <p class="section-label">All projects</p>
+                    <p class="section-label">02 · PROJECT CATALOGUE</p>
                     <h2 id="all-projects-title">PROJECT CATALOGUE</h2>
                 </div>
                 <p class="project-count" data-project-count>14 projects</p>
