@@ -1,0 +1,146 @@
+/* Spatial Evidence Lab — About page
+   Page-specific layout only. Global colour, type and shell tokens remain in sel-theme.css. */
+
+.about-hero {
+  border-bottom: 1px solid var(--sel-line);
+  padding: clamp(72px, 9vw, 128px) 0 clamp(64px, 8vw, 112px);
+}
+
+.about-hero-inner { max-width: 1180px; }
+.about-eyebrow,
+.about-section-number {
+  margin: 0 0 20px;
+  color: var(--sel-accent-soft);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.about-hero h1 {
+  margin: 0;
+  font-size: clamp(52px, 7vw, 104px);
+  line-height: .94;
+  letter-spacing: var(--tracking-tight);
+  font-weight: 800;
+}
+
+.about-hero-title {
+  max-width: 820px;
+  margin: 28px 0 18px;
+  font-size: clamp(30px, 4vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  font-weight: 700;
+}
+
+.about-hero-title em,
+.about-section h2 em { font-family: var(--serif); font-weight: 400; }
+
+.about-hero-copy {
+  max-width: 760px;
+  margin: 0;
+  color: var(--sel-text-soft);
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.65;
+}
+
+.about-section { padding: clamp(64px, 8vw, 112px) 0; border-bottom: 1px solid var(--sel-line); }
+.about-section-alt { background: var(--sel-section); }
+.about-section-dark { background: var(--sel-section); }
+
+.about-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(36px, 7vw, 120px);
+  align-items: start;
+}
+.about-section-head-stack { margin-bottom: 48px; }
+
+.about-section h2 {
+  margin: 0;
+  font-size: clamp(38px, 5vw, 72px);
+  line-height: .98;
+  letter-spacing: var(--tracking-tight);
+  font-weight: 800;
+}
+
+.about-intro { color: var(--sel-body); font-size: 17px; line-height: 1.75; }
+.about-intro p + p { margin-top: 18px; }
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--sel-line);
+  border: 1px solid var(--sel-line);
+}
+.domain-card {
+  min-height: 210px;
+  padding: 28px;
+  background: var(--sel-bg);
+}
+.domain-card:last-child { grid-column: 1 / -1; }
+.domain-number,
+.principle-card > span {
+  display: block;
+  margin-bottom: 28px;
+  color: var(--sel-muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.domain-card h3,
+.principle-card h3 { margin: 0 0 10px; font-size: 21px; line-height: 1.2; font-weight: 800; }
+.domain-card p,
+.principle-card p { margin: 0; color: var(--sel-body); line-height: 1.65; }
+
+.about-link-row { margin-top: 30px; }
+.about-link,
+.about-explore-links a {
+  color: var(--sel-text);
+  font-weight: 800;
+}
+.about-link span,
+.about-explore-links span { margin-left: 8px; color: var(--sel-accent-soft); }
+.about-link:hover,
+.about-explore-links a:hover { color: var(--sel-accent-soft); }
+
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--sel-line);
+  border: 1px solid var(--sel-line);
+}
+.principle-card { min-height: 260px; padding: 26px; background: var(--sel-bg); }
+.principle-card > span { color: var(--sel-accent-soft); }
+
+.about-open-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(36px, 7vw, 120px);
+}
+.about-open-copy { max-width: 720px; color: var(--sel-body); font-size: 17px; line-height: 1.75; }
+.about-open-copy p + p { margin-top: 18px; }
+.about-explore-label { margin-top: 36px !important; color: var(--sel-text); font-weight: 800; }
+.about-explore-links { display: flex; flex-wrap: wrap; gap: 14px 30px; margin-top: 10px; }
+
+@media (max-width: 900px) {
+  .about-section-head,
+  .about-open-grid { grid-template-columns: 1fr; gap: 30px; }
+  .principle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .principle-card:last-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .domain-grid,
+  .principle-grid { grid-template-columns: 1fr; }
+  .domain-card:last-child,
+  .principle-card:last-child { grid-column: auto; }
+  .domain-card,
+  .principle-card { min-height: 0; }
+  .about-hero-title { font-size: 31px; }
+  .about-explore-links { display: grid; gap: 12px; }
+}
