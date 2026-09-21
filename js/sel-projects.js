@@ -249,6 +249,22 @@
         els.reset.hidden = !active;
     }
 
+    function initialiseURLFilter() {
+        const params = new URLSearchParams(window.location.search);
+        const requestedDomain = params.get('domain');
+        if (!requestedDomain) return;
+
+        const domainKey = String(requestedDomain).trim();
+        const exists = (state.taxonomy?.researchDomains || [])
+            .some((domain) => domain.key === domainKey);
+
+        if (!exists) return;
+
+        state.filters.domain = domainKey;
+        const domainSelect = els.filters.querySelector('[data-filter="domain"]');
+        if (domainSelect) domainSelect.value = domainKey;
+    }
+
     function bindFilters() {
         els.filters.querySelectorAll('[data-filter]').forEach((select) => {
             select.addEventListener('change', () => {
@@ -281,6 +297,7 @@
         try {
             await loadData();
             populateDomains();
+            initialiseURLFilter();
             populateThemes();
             populatePlaces();
             populateStatuses();
