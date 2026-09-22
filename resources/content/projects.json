@@ -57,8 +57,8 @@
     },
     "location": {
       "name": "Ireland",
-      "latitude": 53.4129,
-      "longitude": -8.2439
+      "latitude": 53.449476,
+      "longitude": -7.502979
     },
     "tags": [
       "Quality of Life & Wellbeing",
@@ -102,8 +102,8 @@
     "url": "/projects/sel-002-bandon-public-transport/",
     "location": {
       "name": "Bandon, Ireland",
-      "latitude": 51.746,
-      "longitude": -8.742
+      "latitude": 51.746000,
+      "longitude": -8.735600
     },
     "tags": [
       "Accessibility",
@@ -163,8 +163,8 @@
     "url": "/projects/sel-003-west-cork-public-transport/",
     "location": {
       "name": "West Cork, Ireland",
-      "latitude": 51.7,
-      "longitude": -9.1
+      "latitude": 51.688433,
+      "longitude": -9.143392
     },
     "tags": [
       "Accessibility",
@@ -226,8 +226,8 @@
     "url": "/projects/sel-004-ireland-forestry-land-use/",
     "location": {
       "name": "Ireland",
-      "latitude": 53.4129,
-      "longitude": -8.2439
+      "latitude": 53.449476,
+      "longitude": -7.502979
     },
     "tags": [
       "Forests & Land Cover",
@@ -288,8 +288,8 @@
     "url": "/projects/sel-005-greater-athens-heat-risk/",
     "location": {
       "name": "Athens, Greece",
-      "latitude": 38.0,
-      "longitude": 23.72
+      "latitude": 37.984306,
+      "longitude": 23.726694
     },
     "tags": [
       "Climate Change",
@@ -349,8 +349,8 @@
     "url": "/projects/sel-006-county-wicklow-wind-energy/",
     "location": {
       "name": "County Wicklow, Ireland",
-      "latitude": 52.98,
-      "longitude": -6.05
+      "latitude": 53.204400,
+      "longitude": -6.109200
     },
     "tags": [
       "Renewable Energy",
@@ -410,8 +410,8 @@
     "url": "/projects/sel-007-rondonia-deforestation/",
     "location": {
       "name": "Rondônia, Brazil",
-      "latitude": -10.83,
-      "longitude": -63.9
+      "latitude": -11.000000,
+      "longitude": -63.000000
     },
     "tags": [
       "Forests & Land Cover",
@@ -468,11 +468,11 @@
     "geography": "Europe",
     "geographyType": "International",
     "image": "/assets/projects/SEL-008.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-008-deforestation-change/",
     "location": {
       "name": "Europe",
-      "latitude": 54.5,
-      "longitude": 15.0
+      "latitude": 48.915000,
+      "longitude": 15.446000
     },
     "tags": [
       "Environmental Land Change",
@@ -530,11 +530,11 @@
     "geography": "Glover, Vermont, USA",
     "geographyType": "International",
     "image": "/assets/projects/SEL-009.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-009-glover-vermont-solar/",
     "location": {
       "name": "Glover, Vermont, USA",
-      "latitude": 44.7,
-      "longitude": -72.28
+      "latitude": 44.707090,
+      "longitude": -72.187010
     },
     "tags": [
       "Renewable Energy",
@@ -592,11 +592,11 @@
     "geography": "Miami, Florida, USA",
     "geographyType": "International",
     "image": "/assets/projects/SEL-010.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-010-miami-sea-level-rise/",
     "location": {
       "name": "Miami, Florida, USA",
-      "latitude": 25.76,
-      "longitude": -80.19
+      "latitude": 25.774500,
+      "longitude": -80.192000
     },
     "tags": [
       "Natural Hazards",
@@ -654,11 +654,11 @@
     "geography": "Ireland",
     "geographyType": "National",
     "image": "/assets/projects/SEL-011.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-011-ireland-private-housing-renewable-energy/",
     "location": {
       "name": "Ireland",
-      "latitude": 53.41,
-      "longitude": -8.24
+      "latitude": 53.449476,
+      "longitude": -7.502979
     },
     "tags": [
       "Energy & Housing",
@@ -716,11 +716,11 @@
     "geography": "California, USA",
     "geographyType": "International",
     "image": "/assets/projects/SEL-012.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-012-california-wildfire/",
     "location": {
       "name": "California, USA",
-      "latitude": 36.78,
-      "longitude": -119.42
+      "latitude": 37.166110,
+      "longitude": -119.449440
     },
     "tags": [
       "Natural Hazards",
@@ -778,11 +778,11 @@
     "geography": "Dublin, Ireland",
     "geographyType": "Urban",
     "image": "/assets/projects/SEL-013.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-013-dublin-footfall-urban-activity/",
     "location": {
       "name": "Dublin, Ireland",
-      "latitude": 53.35,
-      "longitude": -6.26
+      "latitude": 53.352184,
+      "longitude": -6.260846
     },
     "tags": [
       "Mobility",
@@ -842,11 +842,11 @@
     "geography": "Ireland",
     "geographyType": "National",
     "image": "/assets/projects/SEL-014.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-014-ireland-population-spatial-analysis/",
     "location": {
       "name": "Ireland",
-      "latitude": 53.41,
-      "longitude": -8.24
+      "latitude": 53.449476,
+      "longitude": -7.502979
     },
     "tags": [
       "Population",
