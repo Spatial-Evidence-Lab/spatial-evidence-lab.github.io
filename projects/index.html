@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="/assets/css/components.css">
 <link rel="stylesheet" href="/assets/css/navigation.css">
 <link rel="stylesheet" href="/assets/css/footer.css">
+<link rel="stylesheet" href="/assets/css/projects.css">
 </head>
 <body class="projects-page">
 
@@ -93,33 +94,44 @@
                 <p class="project-count" data-project-count>14 projects</p>
             </div>
 
-            <form class="project-filters" data-project-filters aria-label="Filter projects">
-                <label>
-                    <span>Domain</span>
-                    <select data-filter="domain" aria-label="Filter by domain">
-                        <option value="">All domains</option>
-                    </select>
-                </label>
-                <label>
-                    <span>Theme</span>
-                    <select data-filter="theme" aria-label="Filter by theme">
-                        <option value="">All themes</option>
-                    </select>
-                </label>
-                <label>
-                    <span>Place</span>
-                    <select data-filter="place" aria-label="Filter by place">
-                        <option value="">All places</option>
-                    </select>
-                </label>
-                <label>
-                    <span>Status</span>
-                    <select data-filter="status" aria-label="Filter by status">
-                        <option value="">All statuses</option>
-                    </select>
-                </label>
-                <button class="filter-reset" type="button" data-reset-filters hidden>Clear filters</button>
-            </form>
+            <div class="catalogue-controls" data-catalogue-controls>
+
+                <div class="catalogue-search-row">
+                    <label class="catalogue-search">
+                        <span class="sr-only">Search projects</span>
+                        <span class="catalogue-search-icon" aria-hidden="true"></span>
+                        <input
+                            class="catalogue-search-input"
+                            type="search"
+                            data-project-search
+                            autocomplete="off"
+                            placeholder="Search projects, locations, methods, datasets…"
+                            aria-label="Search projects, locations, methods and datasets"
+                        >
+                    </label>
+
+                    <button
+                        class="catalogue-mobile-toggle"
+                        type="button"
+                        data-mobile-filter-toggle
+                        aria-expanded="false"
+                        aria-controls="project-filter-toolbar"
+                    >
+                        Filters
+                        <span class="catalogue-mobile-toggle-count" data-active-filter-count>0</span>
+                    </button>
+                </div>
+
+                <div class="active-filters" data-active-filters hidden></div>
+
+                <div
+                    class="filter-toolbar"
+                    id="project-filter-toolbar"
+                    data-filter-toolbar
+                    aria-label="Project filters"
+                ></div>
+
+            </div>
 
             <div class="project-grid" data-project-grid aria-live="polite"></div>
             <p class="projects-empty" data-project-empty hidden>No projects match the selected filters.</p>
