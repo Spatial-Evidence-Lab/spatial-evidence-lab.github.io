@@ -102,8 +102,8 @@
     "url": "/projects/sel-002-bandon-public-transport/",
     "location": {
       "name": "Bandon, Ireland",
-      "latitude": 51.746000,
-      "longitude": -8.735600
+      "latitude": 51.746,
+      "longitude": -8.7356
     },
     "tags": [
       "Accessibility",
@@ -349,8 +349,8 @@
     "url": "/projects/sel-006-county-wicklow-wind-energy/",
     "location": {
       "name": "County Wicklow, Ireland",
-      "latitude": 53.204400,
-      "longitude": -6.109200
+      "latitude": 53.2044,
+      "longitude": -6.1092
     },
     "tags": [
       "Renewable Energy",
@@ -410,8 +410,8 @@
     "url": "/projects/sel-007-rondonia-deforestation/",
     "location": {
       "name": "Rondônia, Brazil",
-      "latitude": -11.000000,
-      "longitude": -63.000000
+      "latitude": -11.0,
+      "longitude": -63.0
     },
     "tags": [
       "Forests & Land Cover",
@@ -468,11 +468,11 @@
     "geography": "Europe",
     "geographyType": "International",
     "image": "/assets/projects/SEL-008.jpg",
-    "url": "/projects/sel-008-deforestation-change/",
+    "url": "/projects/",
     "location": {
       "name": "Europe",
-      "latitude": 48.915000,
-      "longitude": 15.446000
+      "latitude": 48.915,
+      "longitude": 15.446
     },
     "tags": [
       "Environmental Land Change",
@@ -530,11 +530,11 @@
     "geography": "Glover, Vermont, USA",
     "geographyType": "International",
     "image": "/assets/projects/SEL-009.jpg",
-    "url": "/projects/sel-009-glover-vermont-solar/",
+    "url": "/projects/",
     "location": {
       "name": "Glover, Vermont, USA",
-      "latitude": 44.707090,
-      "longitude": -72.187010
+      "latitude": 44.70709,
+      "longitude": -72.18701
     },
     "tags": [
       "Renewable Energy",
@@ -592,11 +592,11 @@
     "geography": "Miami, Florida, USA",
     "geographyType": "International",
     "image": "/assets/projects/SEL-010.jpg",
-    "url": "/projects/sel-010-miami-sea-level-rise/",
+    "url": "/projects/",
     "location": {
       "name": "Miami, Florida, USA",
-      "latitude": 25.774500,
-      "longitude": -80.192000
+      "latitude": 25.7745,
+      "longitude": -80.192
     },
     "tags": [
       "Natural Hazards",
@@ -654,7 +654,7 @@
     "geography": "Ireland",
     "geographyType": "National",
     "image": "/assets/projects/SEL-011.jpg",
-    "url": "/projects/sel-011-ireland-private-housing-renewable-energy/",
+    "url": "/projects/",
     "location": {
       "name": "Ireland",
       "latitude": 53.449476,
@@ -716,11 +716,11 @@
     "geography": "California, USA",
     "geographyType": "International",
     "image": "/assets/projects/SEL-012.jpg",
-    "url": "/projects/sel-012-california-wildfire/",
+    "url": "/projects/",
     "location": {
       "name": "California, USA",
-      "latitude": 37.166110,
-      "longitude": -119.449440
+      "latitude": 37.16611,
+      "longitude": -119.44944
     },
     "tags": [
       "Natural Hazards",
@@ -778,7 +778,7 @@
     "geography": "Dublin, Ireland",
     "geographyType": "Urban",
     "image": "/assets/projects/SEL-013.jpg",
-    "url": "/projects/sel-013-dublin-footfall-urban-activity/",
+    "url": "/projects/",
     "location": {
       "name": "Dublin, Ireland",
       "latitude": 53.352184,
@@ -842,7 +842,7 @@
     "geography": "Ireland",
     "geographyType": "National",
     "image": "/assets/projects/SEL-014.jpg",
-    "url": "/projects/sel-014-ireland-population-spatial-analysis/",
+    "url": "/projects/",
     "location": {
       "name": "Ireland",
       "latitude": 53.449476,
