@@ -1,101 +1,213 @@
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
+/* =========================================================
+   SEL CANONICAL FOOTER
+   ========================================================= */
 
-<footer class="site-footer">
-
-  <div class="footer-grid">
-
-    <!-- BRAND -->
-    <div>
-
-      <div class="footer-brand-lockup">
-
-        <img
-          src="/media/branding/logo.png"
-          alt=""
-          class="footer-logo"
-        >
-
-        <span class="footer-brand">
-          Spatial Evidence Lab
-        </span>
-
-      </div>
-
-    </div>
+.site-footer {
+  background: var(--sel-navy);
+  color: var(--sel-text);
+  padding: 64px 0 28px;
+  border-top: 1px solid var(--sel-border);
+}
 
 
-    <!-- LINKS -->
-    <div class="footer-links">
+/* =========================================================
+   FOOTER GRID
+   ========================================================= */
 
-      <div>
+.footer-grid {
+  width: calc(100% - (2 * var(--sel-gutter)));
+  max-width: none;
+  margin-inline: auto;
 
-        <b>Site</b>
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(0, 1fr);
 
-        <a href="/projects/">Projects</a>
-        <a href="/methods/">Methods</a>
-        <a href="/data/">Data</a>
-        <a href="/about/">About</a>
-
-      </div>
-
-
-      <div>
-
-        <b>Research &amp; Connect</b>
-
-        <a
-          href="https://github.com/Spatial-Evidence-Lab"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub ↗
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/jose-f-ireland/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn ↗
-        </a>
-
-        <a
-          href="https://zenodo.org/records/20753309"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Zenodo ↗
-        </a>
-
-        <a
-          href="https://explore.openaire.eu/search/result?pid=10.5281%2Fzenodo.20753309"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          OpenAIRE ↗
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
+  gap: 48px;
+}
 
 
-  <!-- FOOTER BOTTOM -->
-  <div class="footer-bottom">
+/* =========================================================
+   BRAND
+   ========================================================= */
 
-    <span>
-      © 2026 Spatial Evidence Lab
-    </span> 
-      
-  </div>
+.footer-brand-column {
+  min-width: 0;
+}
 
-</footer>
+.footer-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  object-fit: contain;
+}
+
+.footer-brand {
+  color: var(--sel-text);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.footer-description {
+  max-width: 520px;
+  margin: 14px 0 0;
+
+  color: var(--sel-body);
+  font-size: .84rem;
+  line-height: 1.7;
+}
 
 
-<script src="js/sel-site.js"></script>
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
 
-</footer>
+.footer-links {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 32px;
+}
+
+.footer-link-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.footer-link-group b {
+  margin-bottom: 5px;
+
+  color: var(--sel-text);
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.site-footer a {
+  color: var(--sel-text-soft);
+  text-decoration: none;
+
+  transition:
+    color .2s ease,
+    opacity .2s ease;
+}
+
+.site-footer a:hover {
+  color: var(--sel-accent-soft);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+  width: calc(100% - (2 * var(--sel-gutter)));
+  max-width: none;
+  margin: 36px auto 0;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--sel-line);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: var(--sel-muted);
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+.footer-top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--sel-text-soft);
+
+  font-size: .78rem;
+  font-weight: 500;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
+
+.footer-top-link:hover {
+  color: var(--sel-accent-soft);
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FOOTER COPYRIGHT / TAGLINE
+   ========================================================= */
+
+.footer-copyright,
+.footer-tagline {
+  color: var(--sel-muted);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .footer-grid {
+    width: calc(100% - (2 * var(--sel-gutter)));
+
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    width: calc(100% - (2 * var(--sel-gutter)));
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .site-footer {
+    padding-top: 48px;
+  }
+
+}
