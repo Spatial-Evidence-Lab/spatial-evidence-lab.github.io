@@ -8,8 +8,8 @@
    Expected files:
 
        /projects/index.html
-       /projects.json
-       /taxonomy.json
+       /content/projects.json
+       /content/taxonomy.json
 
    Expected HTML:
 
@@ -31,8 +31,8 @@
        CONFIGURATION
        ===================================================== */
 
-    const PROJECTS_URL = "../projects.json";
-    const TAXONOMY_URL = "../taxonomy.json";
+    const PROJECTS_URL = "../content/projects.json";
+    const TAXONOMY_URL = "../content/taxonomy.json";
 
 
     /* =====================================================
