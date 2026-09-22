@@ -90,46 +90,39 @@
                 new Date().getFullYear();
         });
 
-    /* =====================================================
-       BACK TO TOP
-    ===================================================== */
+  /* =====================================================
+   BACK TO TOP
+===================================================== */
 
-    if (!document.querySelector('.back-to-top')) {
+const backToTopLinks = document.querySelectorAll(
+    '.footer-top-link'
+);
 
-        const backToTop = document.createElement('a');
+backToTopLinks.forEach(function (link) {
 
-        backToTop.className = 'back-to-top';
-        backToTop.href = '#top';
-        backToTop.textContent = 'Back to Top';
-        backToTop.setAttribute('aria-label', 'Back to top');
+    link.addEventListener('click', function (event) {
 
-        document.body.appendChild(backToTop);
+        event.preventDefault();
 
-        backToTop.addEventListener('click', function (event) {
-
-            event.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
 
-        const updateBackToTopVisibility = function () {
-
-            backToTop.classList.toggle(
-                'is-visible',
-                window.scrollY > window.innerHeight / 2
+        /*
+         * Keep the address bar clean.
+         * The footer action is a scroll action,
+         * not a meaningful document section.
+         */
+        if (window.location.hash === '#top') {
+            history.replaceState(
+                null,
+                '',
+                window.location.pathname +
+                window.location.search
             );
+        }
 
-        };
+    });
 
-        window.addEventListener(
-            'scroll',
-            updateBackToTopVisibility,
-            { passive: true }
-        );
-
-        updateBackToTopVisibility();
-
-    }
-
-
-})();
+});
