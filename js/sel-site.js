@@ -98,31 +98,19 @@ const backToTopLinks = document.querySelectorAll(
     '.footer-top-link'
 );
 
-backToTopLinks.forEach(function (link) {
+    backToTopLinks.forEach(function (link) {
 
-    link.addEventListener('click', function (event) {
+        link.addEventListener('click', function (event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
         });
-
-        /*
-         * Keep the address bar clean.
-         * The footer action is a scroll action,
-         * not a meaningful document section.
-         */
-        if (window.location.hash === '#top') {
-            history.replaceState(
-                null,
-                '',
-                window.location.pathname +
-                window.location.search
-            );
-        }
 
     });
 
-});
+})();
