@@ -1,14 +1,105 @@
-/* SEL CANONICAL FOOTER */
-.site-footer { background:var(--sel-navy); color:var(--sel-text); padding:64px 0 28px; border-top:1px solid var(--sel-border); }
-.footer-grid { width:calc(100% - (2 * var(--sel-gutter))); max-width:none; margin-inline:auto; display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:48px; }
-.footer-brand-lockup { display:flex; align-items:center; gap:10px; }
-.footer-logo { width:34px; height:34px; object-fit:contain; }
-.footer-brand { font-weight:500; }
-.footer-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; }
-.footer-links > div { display:flex; flex-direction:column; gap:7px; }
-.footer-links b { color:var(--sel-text); font-weight:600; margin-bottom:5px; }
-.site-footer a { color:var(--sel-text-soft); }
-.site-footer a:hover { color:var(--sel-accent-soft); }
-.footer-bottom { width:calc(100% - (2 * var(--sel-gutter))); max-width:none; margin:36px auto 0; padding-top:18px; border-top:1px solid var(--sel-line); display:flex; justify-content:space-between; gap:20px; color:var(--sel-muted); font-size:.78rem; }
-@media(max-width:700px){ .footer-grid,.footer-bottom{width:calc(100% - (2 * var(--sel-gutter)));} .footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column}.footer-links{grid-template-columns:1fr 1fr;} }
-@media(max-width:480px){.footer-links{grid-template-columns:1fr;}}
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site-footer">
+
+  <div class="footer-grid">
+
+    <!-- BRAND -->
+    <div>
+
+      <div class="footer-brand-lockup">
+
+        <img
+          src="/media/branding/logo.png"
+          alt=""
+          class="footer-logo"
+        >
+
+        <span class="footer-brand">
+          Spatial Evidence Lab
+        </span>
+
+      </div>
+
+      <p>
+        Geospatial research, spatial analytics and geographic evidence
+        for understanding places and the people who live in them.
+      </p>
+
+    </div>
+
+
+    <!-- LINKS -->
+    <div class="footer-links">
+
+      <div>
+
+        <b>Site</b>
+
+        <a href="/projects/">Projects</a>
+        <a href="/methods/">Methods</a>
+        <a href="/data/">Data</a>
+        <a href="/about/">About</a>
+
+      </div>
+
+
+      <div>
+
+        <b>Research &amp; Connect</b>
+
+        <a
+          href="https://github.com/Spatial-Evidence-Lab"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/jose-f-ireland/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn ↗
+        </a>
+
+        <a
+          href="https://zenodo.org/records/20753309"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Zenodo ↗
+        </a>
+
+        <a
+          href="https://explore.openaire.eu/search/result?pid=10.5281%2Fzenodo.20753309"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OpenAIRE ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 Spatial Evidence Lab
+    </span>
+
+    <span>
+      Independent geospatial research
+    </span>
+
+  </div>
+
+</footer>
