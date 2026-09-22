@@ -39,8 +39,8 @@
 
     async function loadData() {
         const [projectsResponse, taxonomyResponse] = await Promise.all([
-            fetch('/projects.json', { cache: 'no-cache' }),
-            fetch('/taxonomy.json', { cache: 'no-cache' })
+            fetch('/content/projects.json', { cache: 'no-cache' }),
+            fetch('/content/taxonomy.json', { cache: 'no-cache' })
         ]);
 
         if (!projectsResponse.ok || !taxonomyResponse.ok) {

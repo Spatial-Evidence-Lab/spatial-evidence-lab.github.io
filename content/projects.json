@@ -468,7 +468,7 @@
     "geography": "Europe",
     "geographyType": "International",
     "image": "/assets/projects/SEL-008.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-008-deforestation-change/",
     "location": {
       "name": "Europe",
       "latitude": 54.5,
@@ -530,7 +530,7 @@
     "geography": "Glover, Vermont, USA",
     "geographyType": "International",
     "image": "/assets/projects/SEL-009.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-009-glover-vermont-solar/",
     "location": {
       "name": "Glover, Vermont, USA",
       "latitude": 44.7,
@@ -592,7 +592,7 @@
     "geography": "Miami, Florida, USA",
     "geographyType": "International",
     "image": "/assets/projects/SEL-010.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-010-miami-sea-level-rise/",
     "location": {
       "name": "Miami, Florida, USA",
       "latitude": 25.76,
@@ -654,7 +654,7 @@
     "geography": "Ireland",
     "geographyType": "National",
     "image": "/assets/projects/SEL-011.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-011-ireland-private-housing-renewable-energy/",
     "location": {
       "name": "Ireland",
       "latitude": 53.41,
@@ -716,7 +716,7 @@
     "geography": "California, USA",
     "geographyType": "International",
     "image": "/assets/projects/SEL-012.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-012-california-wildfire/",
     "location": {
       "name": "California, USA",
       "latitude": 36.78,
@@ -778,7 +778,7 @@
     "geography": "Dublin, Ireland",
     "geographyType": "Urban",
     "image": "/assets/projects/SEL-013.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-013-dublin-footfall-urban-activity/",
     "location": {
       "name": "Dublin, Ireland",
       "latitude": 53.35,
@@ -842,7 +842,7 @@
     "geography": "Ireland",
     "geographyType": "National",
     "image": "/assets/projects/SEL-014.jpg",
-    "url": "/projects/",
+    "url": "/projects/sel-014-ireland-population-spatial-analysis/",
     "location": {
       "name": "Ireland",
       "latitude": 53.41,
