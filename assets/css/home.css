@@ -1,10 +1,10 @@
 /* =========================================================
-   SPATIAL EVIDENCE LAB — HOMEPAGE PRESENTATION LAYER
-   Scope: index.html only. Do not use for shared pages.
+   SPATIAL EVIDENCE LAB — HOME PAGE
+   Page-specific presentation only.
+   Global shell, typography, navigation and footer remain in
+   design-system.css / layout.css / components.css / navigation.css / footer.css.
    ========================================================= */
 
-/* Full-width research canvas: prevents the homepage from becoming
-   a narrow centred column when the browser is zoomed out. */
 .portfolio-hero .shell,
 .project-section > .shell {
     width: calc(100% - (2 * var(--sel-gutter)));
@@ -20,7 +20,7 @@
     overflow: hidden;
     background:
         linear-gradient(90deg, rgba(20,47,57,.98) 0%, rgba(20,47,57,.94) 42%, rgba(20,47,57,.55) 63%, rgba(20,47,57,.12) 100%),
-        url('/media/homepage/hero-map.jpg') right center / 54% 100% no-repeat,
+        url('/media/hero-map.jpg') right center / 54% 100% no-repeat,
         var(--sel-hero);
 }
 
@@ -32,14 +32,19 @@
     padding-right: min(46vw, 720px);
 }
 
-.research-eyebrow {
-    margin-bottom: 20px;
+.home-eyebrow {
+    margin: 0 0 20px;
+    color: var(--sel-accent-soft);
     font-size: .66rem;
+    font-weight: 700;
     letter-spacing: .11em;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .hero-title {
     max-width: 700px;
+    margin: 0;
     font-size: clamp(2.35rem, 4.2vw, 4.4rem);
     line-height: 1.02;
     letter-spacing: -.045em;
@@ -51,6 +56,7 @@
 }
 
 .hero-lead {
+    margin: 0;
     font-size: .91rem;
     line-height: 1.62;
 }
@@ -60,205 +66,414 @@
 }
 
 /* ---------------------------------------------------------
-   SECTION HEADINGS — reduce the oversized editorial text
+   SHARED SECTION HEADINGS / RHYTHM
    --------------------------------------------------------- */
+.research-domains,
+.geographic-scope,
+.research-workflow,
+.featured-research {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid var(--sel-border);
+}
+
+.research-domains,
+.research-workflow { background: var(--sel-bg); }
+.geographic-scope,
+.featured-research { background: var(--sel-section); }
+
 .programme-heading {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
 .programme-title {
+    margin: 0;
+    color: var(--sel-text);
     font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+    font-weight: 700;
     line-height: 1.2;
     letter-spacing: -.015em;
 }
 
 .section-lead {
-    max-width: 620px;
-    margin-top: 8px;
+    max-width: 760px;
+    margin: 8px 0 0;
+    color: var(--sel-text);
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.section-support {
+    max-width: 760px;
+    margin: 7px 0 0;
+    color: var(--sel-body);
     font-size: .82rem;
-    line-height: 1.5;
-    color: var(--sel-text-soft);
-}
-
-/* ---------------------------------------------------------
-   RESEARCH PROGRAMME
-   --------------------------------------------------------- */
-.research-introduction,
-.research-domains,
-.geographic-scope,
-.research-workflow {
-    padding-top: 64px;
-    padding-bottom: 64px;
-}
-
-.research-principles {
-    gap: 14px;
-}
-
-.research-principle {
-    min-height: 158px;
-    padding: 22px 24px;
-    border-radius: 4px;
-}
-
-.research-principle h3 {
-    margin-bottom: 8px;
-    font-size: .95rem;
-}
-
-.research-principle p {
-    font-size: .77rem;
     line-height: 1.55;
 }
 
 /* ---------------------------------------------------------
-   RESEARCH DOMAINS — numbered 01–07 with safe inset padding
+   RESEARCH DOMAINS
+   Exact 4 + 3 desktop arrangement and shared card footprint
+   based on the About domain-card system.
    --------------------------------------------------------- */
-.domain-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+.home-domain-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 360px;
+    gap: 20px;
     align-items: stretch;
 }
 
-.domain-card {
+.home-domain-grid .domain-card {
+    min-width: 0;
+    width: 100%;
+    height: 360px;
+    min-height: 360px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 122px 1fr;
+    padding: 0;
+    background: #18252A;
+    border: 1px solid var(--domain-color);
+    border-radius: 13px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.20);
+    transition: transform .2s ease, box-shadow .2s ease;
+    text-decoration: none;
+}
+
+.home-domain-grid .domain-card:hover,
+.home-domain-grid .domain-card:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 17px 34px rgba(0,0,0,.28);
+}
+
+.domain-card-head {
     position: relative;
-    min-height: 210px;
-    height: 100%;
-    padding: 30px 32px 24px;
-    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 18px 18px;
+    background: var(--domain-color);
+    color: #fff;
+    border-top: 10px solid rgba(0,0,0,.10);
 }
 
-.domain-card::before {
-    display: block;
-    margin-bottom: 18px;
-    color: var(--sel-accent);
-    font-size: .78rem;
-    line-height: 1;
-    font-weight: 800;
-    letter-spacing: .08em;
+.domain-card-head h3 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(1.02rem, 1.45vw, 1.27rem);
+    font-weight: 700;
+    letter-spacing: -.025em;
+    line-height: 1.02;
 }
 
-.domain-qoli::before { content: '01'; }
-.domain-access::before { content: '02'; }
-.domain-population::before { content: '03'; }
-.domain-housing::before { content: '04'; }
-.domain-land::before { content: '05'; }
-.domain-environment::before { content: '06'; }
-.domain-energy::before { content: '07'; }
+.domain-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+    background: rgba(255,255,255,.12);
+    color: #fff;
+}
+
+.domain-icon svg { width: 36px; height: 36px; }
 
 .domain-card-body {
-    padding: 0;
-}
-
-.domain-card h3 {
-    font-size: .94rem;
-    line-height: 1.3;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px 18px;
+    background: #18252A;
 }
 
 .domain-question {
-    margin-top: 8px;
-    font-size: .76rem;
-    line-height: 1.5;
-}
-
-.domain-card-footer {
-    margin-top: auto;
-    padding-top: 12px;
-    font-size: .61rem;
-}
-
-/* Keep the seventh card exactly the same footprint as the others. */
-.domain-card.domain-energy {
-    min-height: 210px;
-}
-
-/* The domain CTA remains the only domain-wide action. */
-.domain-card-footer span:last-child {
-    color: var(--sel-accent);
-}
-
-/* ---------------------------------------------------------
-   GEOGRAPHIC SCOPE — informational cards, no arrows
-   --------------------------------------------------------- */
-.scope-grid {
-    gap: 14px;
-}
-
-.scope-item {
-    min-height: 150px;
-    padding: 24px 26px;
-    border-radius: 4px;
-}
-
-.scope-item h3 {
-    margin-bottom: 8px;
-    font-size: .94rem;
-}
-
-.scope-item p {
-    font-size: .76rem;
-    line-height: 1.5;
-}
-
-.scope-item::after,
-.scope-item a::after {
-    display: none !important;
-    content: none !important;
-}
-
-/* ---------------------------------------------------------
-   RESEARCH APPROACH — sequence supplied by numbers alone
-   --------------------------------------------------------- */
-.workflow {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-}
-
-.workflow-step {
-    position: relative;
-    min-height: 160px;
-    padding: 22px 24px;
-    border-radius: 4px;
-}
-
-.workflow-step:not(:last-child)::after {
-    display: none !important;
-    content: none !important;
-}
-
-.workflow-step b {
-    margin-bottom: 10px;
-    font-size: 1.7rem;
-}
-
-.workflow-step strong {
+    margin: 0;
+    color: var(--sel-text);
     font-size: .88rem;
+    font-weight: 500;
+    line-height: 1.42;
 }
 
-.workflow-step span {
+.domain-focus {
+    margin: 12px 0 0;
+    color: #B7C5C6;
+    font-size: .72rem;
+    line-height: 1.5;
+}
+
+.domain-card-body a {
+    margin-top: auto;
+    color: #D9E7E6;
+    font-size: .86rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.domain-card-body a:hover { color: var(--domain-color); }
+.domain-card-body a span { margin-left: 3px; font-size: 1.1em; }
+
+.domain-project-link {
+    margin-top: 24px;
+}
+
+.domain-project-link a,
+.featured-research-cta a {
+    color: var(--sel-text-soft);
+    font-size: .86rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.domain-project-link a:hover,
+.featured-research-cta a:hover { color: var(--sel-accent-soft); }
+.domain-project-link span,
+.featured-research-cta span { margin-left: 5px; color: var(--sel-accent-soft); }
+
+/* ---------------------------------------------------------
+   GEOGRAPHIC SCOPE — three visual cards, one row
+   --------------------------------------------------------- */
+.scope-image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.scope-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--sel-surface);
+    border: 1px solid var(--sel-border);
+    border-radius: 10px;
+}
+
+.scope-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.scope-card-body {
+    padding: 18px 20px 21px;
+}
+
+.scope-card-body span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--sel-accent-soft);
+    font-size: .64rem;
+    font-weight: 700;
+    letter-spacing: .11em;
+}
+
+.scope-card-body h3 {
+    margin: 0;
+    color: var(--sel-text);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* ---------------------------------------------------------
+   RESEARCH APPROACH — six connected circular steps
+   --------------------------------------------------------- */
+.home-workflow {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0;
+    align-items: start;
+}
+
+.home-workflow .workflow-step {
+    position: relative;
+    min-height: 230px;
+    padding: 0 14px;
+    border-radius: 0;
+    background: transparent;
+    text-align: center;
+}
+
+.home-workflow .workflow-step:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 43px;
+    right: -8px;
+    z-index: 2;
+    color: var(--sel-accent-soft);
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.workflow-marker {
+    position: relative;
+    width: 86px;
+    height: 86px;
+    margin: 0 auto 20px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--sel-accent);
+    border-radius: 50%;
+    background: var(--sel-surface);
+}
+
+.workflow-marker b {
+    position: absolute;
+    top: -10px;
+    right: -4px;
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--sel-border);
+    border-radius: 50%;
+    background: var(--sel-bg);
+    color: var(--sel-accent-soft);
+    font-size: .56rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.workflow-icon {
+    color: var(--sel-text);
+    font-size: 1.65rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.home-workflow .workflow-step strong {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--sel-text);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.home-workflow .workflow-step > span:last-child {
+    display: block;
+    color: var(--sel-body);
     font-size: .73rem;
     line-height: 1.5;
 }
 
 /* ---------------------------------------------------------
-   SHARED HEADER / FOOTER LOGO STABILITY
+   FEATURED RESEARCH
    --------------------------------------------------------- */
-.wordmark-logo,
-.footer-logo {
+.featured-research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.featured-research-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--sel-surface);
+    border: 1px solid var(--sel-border);
+    border-radius: 10px;
+}
+
+.featured-research-image-link {
     display: block;
-    flex: 0 0 auto;
-    object-fit: contain;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--sel-raised);
+}
+
+.featured-research-image-link img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .25s ease;
+}
+
+.featured-research-card:hover .featured-research-image-link img,
+.featured-research-card:focus-within .featured-research-image-link img {
+    transform: scale(1.025);
+}
+
+.featured-research-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 22px 22px 24px;
+}
+
+.featured-research-id {
+    color: var(--sel-accent-soft);
+    font-size: .64rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+}
+
+.featured-research-domain {
+    margin-top: 7px;
+    color: var(--sel-muted);
+    font-size: .68rem;
+    line-height: 1.4;
+}
+
+.featured-research-body h3 {
+    margin: 11px 0 9px;
+    font-size: 1.05rem;
+    line-height: 1.25;
+}
+
+.featured-research-body h3 a {
+    color: var(--sel-text);
+    text-decoration: none;
+}
+
+.featured-research-body h3 a:hover { color: var(--sel-accent-soft); }
+
+.featured-research-body p {
+    margin: 0;
+    color: var(--sel-body);
+    font-size: .76rem;
+    line-height: 1.58;
+}
+
+.featured-research-link {
+    margin-top: auto;
+    padding-top: 18px;
+    color: var(--sel-text-soft);
+    font-size: .78rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.featured-research-link:hover { color: var(--sel-accent-soft); }
+.featured-research-link span { margin-left: 5px; }
+
+.featured-research-cta {
+    margin-top: 24px;
 }
 
 /* ---------------------------------------------------------
    RESPONSIVE
    --------------------------------------------------------- */
+@media (max-width: 1100px) {
+    .home-domain-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 360px; }
+    .scope-image-grid,
+    .featured-research-grid { grid-template-columns: 1fr 1fr; }
+    .home-workflow { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 42px; }
+    .home-workflow .workflow-step:nth-child(3)::after { display: none; }
+}
+
 @media (max-width: 900px) {
     .portfolio-hero {
         min-height: 0;
         background:
             linear-gradient(180deg, rgba(20,47,57,.97) 0%, rgba(20,47,57,.90) 62%, rgba(20,47,57,.72) 100%),
-            url('/media/homepage/hero-map.jpg') center bottom / cover no-repeat,
+            url('/media/hero-map.jpg') center bottom / cover no-repeat,
             var(--sel-hero);
     }
 
@@ -267,28 +482,23 @@
         padding-right: 0;
     }
 
-    .hero-title {
-        max-width: 760px;
-        font-size: clamp(2.2rem, 7vw, 3.6rem);
-    }
+    .home-workflow .workflow-step:nth-child(3)::after { display: block; }
+    .home-workflow .workflow-step:nth-child(6)::after { display: none; }
+}
 
-    .research-principles,
-    .scope-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .domain-grid,
-    .workflow {
-        grid-template-columns: 1fr 1fr;
-    }
+@media (max-width: 760px) {
+    .scope-image-grid,
+    .featured-research-grid { grid-template-columns: 1fr; }
+    .home-workflow { grid-template-columns: 1fr 1fr; row-gap: 34px; }
+    .home-workflow .workflow-step::after { display: none !important; }
 }
 
 @media (max-width: 620px) {
     .portfolio-hero,
-    .research-introduction,
     .research-domains,
     .geographic-scope,
-    .research-workflow {
+    .research-workflow,
+    .featured-research {
         padding-top: 48px;
         padding-bottom: 48px;
     }
@@ -298,21 +508,19 @@
         width: calc(100% - (2 * var(--shell-gutter-mobile)));
     }
 
-    .hero-title {
-        font-size: clamp(2rem, 11vw, 3rem);
-    }
+    .hero-title { font-size: clamp(2rem, 11vw, 3rem); }
+    .section-lead { font-size: .98rem; }
+    .section-support { font-size: .78rem; }
 
-    .section-lead {
-        font-size: .78rem;
-    }
-
-    .domain-grid,
-    .workflow {
+    .home-domain-grid {
         grid-template-columns: 1fr;
+        grid-auto-rows: 360px;
     }
 
-    .domain-card,
-    .domain-card.domain-energy {
-        min-height: 0;
+    .home-domain-grid .domain-card {
+        height: 360px;
+        min-height: 360px;
     }
+
+    .home-workflow { grid-template-columns: 1fr; }
 }
