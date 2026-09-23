@@ -545,41 +545,93 @@
 }
 
 
-/* =========================================================
-   STANDARD ORGANISATION HERO / SECTION HEADINGS
-   Shared visual system is defined in components.css.
-   ========================================================= */
+/* ---------------------------------------------------------
+   SHARED ORGANISATION SECTION HEADER — HOME 01 MODEL
+   --------------------------------------------------------- */
+.data-section-head {
+    display: block;
+    margin-bottom: 32px;
+}
 
+.data-section-label {
+    display: block;
+    margin: 0;
+    color: #E58F65;
+    font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+    font-weight: 700;
+    letter-spacing: -.015em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.data-section-number {
+    display: inline;
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+}
+
+.data-section-heading {
+    margin: 8px 0 0;
+}
+
+.data-section-heading h2 {
+    margin: 0;
+    color: var(--sel-text);
+    font-family: inherit;
+    font-size: 1.08rem;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.35;
+}
+
+.data-section-heading h2 em {
+    color: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+.data-section-intro {
+    max-width: 760px;
+    margin: 7px 0 0;
+    color: var(--sel-body);
+    font-size: .82rem;
+    line-height: 1.55;
+}
+
+.data-section-intro p + p {
+    margin-top: 7px;
+}
+
+/* ---------------------------------------------------------
+   HERO — MATCH PROJECTS PAGE
+   --------------------------------------------------------- */
 .data-hero {
-    min-height: 530px;
+    min-height: 430px;
+    box-sizing: border-box;
     padding: clamp(56px, 7vw, 88px) 0;
     background: var(--sel-brand-blue);
     border-bottom: 1px solid var(--sel-border);
+    overflow: hidden;
 }
 
 .data-hero-grid {
-    min-height: 278px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0;
+    min-height: 0;
+    display: block;
 }
 
 .data-hero-copy {
     max-width: 760px;
-}
-
-.data-eyebrow {
-    color: var(--sel-accent-soft);
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .12em;
-    line-height: 1.4;
+    margin: 0;
 }
 
 .data-hero h1 {
     max-width: none;
-    margin-bottom: 24px;
+    margin: 0 0 24px;
     color: var(--sel-white);
     font-size: clamp(2.35rem, 5vw, 4.5rem);
     font-weight: 700;
@@ -587,27 +639,33 @@
     line-height: 1.02;
 }
 
+.data-eyebrow {
+    margin: 0 0 24px;
+    color: var(--sel-accent);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
 .data-display {
     max-width: 760px;
-    margin: 0;
+    margin: 0 0 24px;
     color: var(--sel-text-soft);
     font-size: clamp(.98rem, 1.5vw, 1.08rem);
     font-weight: 500;
-    letter-spacing: -.02em;
-    line-height: 1.25;
+    line-height: 1.7;
 }
 
 .data-lead {
     max-width: 760px;
-    margin: 22px 0 0;
+    margin: 0;
     color: var(--sel-text-soft);
     font-size: clamp(.98rem, 1.5vw, 1.08rem);
     line-height: 1.7;
 }
 
-@media (max-width: 760px) {
-    .data-hero {
-        min-height: 470px;
-        padding: 54px 0 62px;
-    }
+.data-hero-mark {
+    display: none !important;
 }

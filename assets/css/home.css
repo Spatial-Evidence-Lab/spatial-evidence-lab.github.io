@@ -88,7 +88,7 @@
 
 .programme-title {
     margin: 0;
-    color: var(--sel-text);
+    color: #E58F65;
     font-size: clamp(1.05rem, 1.35vw, 1.28rem);
     font-weight: 700;
     line-height: 1.2;
@@ -100,6 +100,8 @@
     margin: 8px 0 0;
     color: var(--sel-text);
     font-size: 1.08rem;
+    font-family: inherit;
+    font-style: italic;
     font-weight: 500;
     line-height: 1.35;
 }

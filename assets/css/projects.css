@@ -476,3 +476,25 @@
         grid-column: auto;
     }
 }
+
+
+/* ---------------------------------------------------------
+   FINAL SHARED SECTION / HERO ADJUSTMENTS
+   --------------------------------------------------------- */
+.projects-hero h1 span {
+    color: var(--sel-white);
+}
+
+.projects-featured-section .section-label,
+.projects-catalogue-section #all-projects-title {
+    margin: 0;
+    color: #E58F65;
+    font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+    font-weight: 700;
+    letter-spacing: -.015em;
+    line-height: 1.2;
+}
+
+.projects-featured-section .projects-section-heading {
+    margin-bottom: 28px;
+}
