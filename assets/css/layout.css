@@ -68,3 +68,15 @@ html, body {
 .projects-page .page-hero h1 > span {
     color: #ffffff !important;
 }
+
+/* Global page frame */
+main {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+

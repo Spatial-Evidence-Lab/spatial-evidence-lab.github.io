@@ -1,10 +1,13 @@
-SEL project coordinate synchronization patch
+# Spatial Evidence Lab website
 
-Updated location.latitude / location.longitude for SEL-001 through SEL-014 to the coordinates supplied by the user.
-Files included:
-- content/projects.json (canonical)
-- projects.json (synchronized copy)
-- resources/projects.json (legacy copy)
-- resources/content/projects.json (legacy copy)
+Canonical organisation-site structure and data ownership:
 
-No other project metadata was intentionally changed.
+- `/` — Home
+- `/projects/` — project catalogue and project locations
+- `/methods/` — research methods and analytical workflow
+- `/data/` — data landscape, sources and provenance
+- `/about/` — SEL identity, domains and research principles
+- `/content/` — canonical project, taxonomy and research-domain data
+- `/assets/css/` — canonical CSS architecture
+
+The former root `/resources/` duplicate organisation-site tree is retired. See `docs/WEBSITE_ARCHITECTURE.md`.
