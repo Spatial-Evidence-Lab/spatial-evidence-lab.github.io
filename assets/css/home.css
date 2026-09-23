@@ -280,7 +280,7 @@
 }
 
 /* ---------------------------------------------------------
-   RESEARCH APPROACH — six connected circular steps
+   RESEARCH APPROACH — six image-led workflow stages
    --------------------------------------------------------- */
 .home-workflow {
     display: grid;
@@ -291,8 +291,9 @@
 
 .home-workflow .workflow-step {
     position: relative;
-    min-height: 230px;
-    padding: 0 14px;
+    min-width: 0;
+    min-height: 310px;
+    padding: 0 18px;
     border-radius: 0;
     background: transparent;
     text-align: center;
@@ -301,49 +302,30 @@
 .home-workflow .workflow-step:not(:last-child)::after {
     content: "→";
     position: absolute;
-    top: 43px;
-    right: -8px;
+    top: 73px;
+    right: -9px;
     z-index: 2;
     color: var(--sel-accent-soft);
-    font-size: 1.15rem;
+    font-size: 1.35rem;
     font-weight: 500;
     line-height: 1;
 }
 
-.workflow-marker {
-    position: relative;
-    width: 86px;
-    height: 86px;
-    margin: 0 auto 20px;
-    display: grid;
-    place-items: center;
-    border: 1px solid var(--sel-accent);
-    border-radius: 50%;
-    background: var(--sel-surface);
+.workflow-visual {
+    width: 104px;
+    height: 156px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.workflow-marker b {
-    position: absolute;
-    top: -10px;
-    right: -4px;
-    width: 25px;
-    height: 25px;
-    display: grid;
-    place-items: center;
-    border: 1px solid var(--sel-border);
-    border-radius: 50%;
-    background: var(--sel-bg);
-    color: var(--sel-accent-soft);
-    font-size: .56rem;
-    font-weight: 700;
-    letter-spacing: .04em;
-}
-
-.workflow-icon {
-    color: var(--sel-text);
-    font-size: 1.65rem;
-    font-weight: 400;
-    line-height: 1;
+.workflow-visual img {
+    display: block;
+    width: 104px;
+    height: 156px;
+    object-fit: cover;
+    border-radius: 50% / 34%;
 }
 
 .home-workflow .workflow-step strong {
@@ -353,10 +335,13 @@
     font-size: .72rem;
     font-weight: 700;
     letter-spacing: .08em;
+    line-height: 1.2;
 }
 
 .home-workflow .workflow-step > span:last-child {
     display: block;
+    max-width: 190px;
+    margin: 0 auto;
     color: var(--sel-body);
     font-size: .73rem;
     line-height: 1.5;
