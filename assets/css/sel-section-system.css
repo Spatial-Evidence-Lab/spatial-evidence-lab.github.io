@@ -1,0 +1,195 @@
+/* =========================================================
+   SPATIAL EVIDENCE LAB — SHARED TEXT HIERARCHY
+   Canonical section + hero typography.
+   Loaded after page-specific CSS so every page uses one
+   consistent title / subtitle / description treatment.
+   ========================================================= */
+
+:root {
+    --sel-section-title-size: clamp(1.05rem, 1.35vw, 1.28rem);
+    --sel-section-subtitle-size: 1.08rem;
+    --sel-section-description-size: .82rem;
+}
+
+/* ---------------------------------------------------------
+   SECTION HEAD
+   Title: bold
+   Subtitle: italic
+   Description: regular
+   --------------------------------------------------------- */
+
+.methods-section-head,
+.data-section-head,
+.about-section-head,
+.projects-section-heading,
+.project-section-head,
+.publication-section-head {
+    display: block;
+    margin-bottom: 32px;
+}
+
+.methods-section-label,
+.data-section-label,
+.about-section-label,
+.section-label,
+.project-number,
+.publication-number {
+    display: block;
+    margin: 0;
+    color: #E58F65;
+    font-size: var(--sel-section-title-size);
+    font-weight: 700;
+    letter-spacing: -.015em;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+.methods-section-number,
+.data-section-number,
+.about-section-number {
+    display: inline;
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+}
+
+.methods-section-heading,
+.data-section-heading,
+.about-section-heading {
+    margin: 8px 0 0;
+}
+
+.methods-section-heading h2,
+.data-section-heading h2,
+.about-section-heading h2,
+.project-section-head h2,
+.publication-section-head h2 {
+    margin: 0;
+    color: var(--sel-text);
+    font-family: inherit;
+    font-size: var(--sel-section-subtitle-size);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.35;
+}
+
+.methods-section-heading h2 em,
+.data-section-heading h2 em,
+.about-section-heading h2 em,
+.project-section-head h2 em,
+.publication-section-head h2 em {
+    color: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+.methods-section-intro,
+.data-section-intro,
+.about-section-intro,
+.project-intro,
+.publication-intro {
+    max-width: 760px;
+    margin: 7px 0 0;
+    color: var(--sel-body);
+    font-size: var(--sel-section-description-size);
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+.methods-section-intro p,
+.data-section-intro p,
+.about-section-intro p,
+.project-intro,
+.publication-intro {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+.methods-section-intro p + p,
+.data-section-intro p + p,
+.about-section-intro p + p {
+    margin-top: 7px;
+}
+
+/* ---------------------------------------------------------
+   HERO
+   Title: bold
+   Subtitle: italic
+   Description: regular
+   --------------------------------------------------------- */
+
+.methods-hero-copy,
+.data-hero-copy,
+.about-hero-copy,
+.project-hero-grid,
+.publication-hero-grid {
+    color: var(--sel-text);
+}
+
+.methods-hero h1,
+.data-hero h1,
+.about-hero h1,
+.project-hero h1,
+.publication-hero h1 {
+    color: var(--sel-white);
+    font-weight: 700;
+}
+
+.methods-display,
+.data-display,
+.about-display,
+.project-hero h1 em,
+.publication-hero h1 em {
+    color: var(--sel-text-soft);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.methods-lead,
+.data-lead,
+.about-lead,
+.project-lede,
+.publication-lede {
+    color: var(--sel-body);
+    font-weight: 400;
+}
+
+/* Project catalogue hero uses the same hierarchy without changing
+   its established display scale. */
+.projects-hero h1 span {
+    color: var(--sel-text-soft);
+    font-style: italic;
+    font-weight: 500;
+}
+.projects-hero .project-catalogue-label,
+.projects-hero .page-eyebrow {
+    color: #E58F65;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.projects-hero .page-intro {
+    color: var(--sel-body);
+    font-weight: 400;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+    .methods-section-head,
+    .data-section-head,
+    .about-section-head,
+    .projects-section-heading,
+    .project-section-head,
+    .publication-section-head {
+        margin-bottom: 24px;
+    }
+}

@@ -86,9 +86,6 @@
         mobileToggle: document.querySelector('[data-mobile-filter-toggle]'),
         count: document.querySelector('[data-project-count]'),
         empty: document.querySelector('[data-project-empty]'),
-        mapDots: document.querySelector('[data-map-dots]'),
-        mapTooltip: document.querySelector('[data-map-tooltip]'),
-        mapCount: document.querySelector('[data-map-count]')
     };
 
     if (!els.grid || !els.controls) return;
@@ -551,62 +548,6 @@
         els.empty.hidden = visible.length !== 0;
         els.count.textContent = `${visible.length} ${visible.length === 1 ? 'project' : 'projects'}`;
     }
-
-    function renderMap() {
-        if (!els.mapDots) return;
-
-        const visible = searchMatches().filter((project) => project.location);
-        els.mapDots.innerHTML = '';
-
-        const grouped = new Map();
-        visible.forEach((project) => {
-            const key = `${project.location.latitude}|${project.location.longitude}`;
-            if (!grouped.has(key)) grouped.set(key, []);
-            grouped.get(key).push(project);
-        });
-
-        grouped.forEach((projects) => {
-            projects.forEach((project, index) => {
-                const { latitude, longitude } = project.location;
-                const baseX = ((longitude + 180) / 360) * 100;
-                const baseY = ((90 - latitude) / 180) * 100;
-                const angle = projects.length > 1 ? (index / projects.length) * Math.PI * 2 : 0;
-                const radius = projects.length > 1 ? 1.1 : 0;
-                const x = baseX + Math.cos(angle) * radius;
-                const y = baseY + Math.sin(angle) * radius;
-
-                const button = document.createElement('button');
-                button.type = 'button';
-                button.className = 'project-map-dot';
-                button.style.left = `${x}%`;
-                button.style.top = `${y}%`;
-                button.setAttribute('aria-label', `${project.id}: ${project.title}`);
-                button.title = `${project.id} — ${project.title}`;
-                button.addEventListener('click', () => showMapTooltip(project, x, y));
-                els.mapDots.appendChild(button);
-            });
-        });
-
-        if (els.mapCount) {
-            els.mapCount.textContent = `${visible.length} ${visible.length === 1 ? 'project location' : 'project locations'}`;
-        }
-    }
-
-    function showMapTooltip(project, x, y) {
-        if (!els.mapTooltip) return;
-        els.mapTooltip.hidden = false;
-        els.mapTooltip.innerHTML = `
-            <div class="map-tooltip-id">${esc(project.id)} · ${esc(statusLabel(project.status))}</div>
-            <h3>${esc(project.title)}</h3>
-            <p>${esc(project.location?.name || project.geography || '')}</p>
-            <a href="${esc(project.url || '/projects/')}">View project →</a>`;
-
-        const left = Math.max(8, Math.min(72, x));
-        const top = Math.max(8, Math.min(66, y));
-        els.mapTooltip.style.left = `${left}%`;
-        els.mapTooltip.style.top = `${top}%`;
-    }
-
     function clearAll() {
         state.filters = { domain: [], theme: [], place: [], status: [] };
         state.search = '';
@@ -614,7 +555,6 @@
         if (els.search) els.search.value = '';
         renderControls();
         renderGrid();
-        renderMap();
     }
 
     function toggleValue(category, value) {
@@ -675,8 +615,7 @@
                 state.filters[category] = state.filters[category].filter((item) => item !== value);
                 renderControls();
                 renderGrid();
-                renderMap();
-                return;
+                        return;
             }
 
             if (event.target.closest('[data-remove-search]')) {
@@ -684,8 +623,7 @@
                 if (els.search) els.search.value = '';
                 renderActiveFilters();
                 renderGrid();
-                renderMap();
-                return;
+                        return;
             }
 
             if (event.target.closest('[data-clear-all]')) {
@@ -700,16 +638,14 @@
             toggleValue(checkbox.dataset.filterCategory, checkbox.dataset.filterValue);
             renderControls();
             renderGrid();
-            renderMap();
-        });
+            });
 
         if (els.search) {
             els.search.addEventListener('input', () => {
                 state.search = els.search.value;
                 renderActiveFilters();
                 renderGrid();
-                renderMap();
-            });
+                    });
         }
 
         if (els.mobileToggle) {
@@ -727,10 +663,6 @@
                     state.openPanel = null;
                     renderControls();
                 }
-            }
-
-            if (els.mapTooltip && !event.target.closest('.project-map-dot, .map-tooltip')) {
-                els.mapTooltip.hidden = true;
             }
         });
 
@@ -750,8 +682,7 @@
             if (els.search) els.search.value = state.search;
             renderFeatured();
             renderGrid();
-            renderMap();
-            bindEvents();
+                bindEvents();
         } catch (error) {
             console.error(error);
             els.grid.innerHTML = '<p class="projects-empty">The project catalogue could not be loaded.</p>';
