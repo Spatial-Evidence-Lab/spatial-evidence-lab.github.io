@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="/assets/css/footer.css">
 <link rel="stylesheet" href="/assets/css/projects.css">
 </head>
-<body class="projects-page">
+<body id="top" class="projects-page">
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -47,21 +47,21 @@
 
 <main id="main-content">
 
-    <section class="page-hero projects-hero">
-    <div class="shell page-hero-inner">
-        <p class="page-eyebrow project-catalogue-label">PROJECT CATALOGUE</p>
+    <section class="sel-page-hero projects-hero">
+    <div class="shell sel-page-hero-inner">
+        <p class="sel-page-hero-eyebrow project-catalogue-label">PROJECT CATALOGUE</p>
 
         <h1>
             Projects<br>
             <span>across place.</span>
         </h1>
 
-        <p class="page-intro">
+        <p class="sel-page-hero-intro">
             Current and completed research across quality of life,
             accessibility, environment, climate, energy, housing and population.
         </p>
 
-        <div class="page-actions">
+        <div class="sel-page-hero-actions">
             <a class="button button-primary" href="#featured-projects">
                 Explore featured projects →
             </a>
@@ -74,9 +74,12 @@
 
     <section class="projects-section projects-featured-section" id="featured-projects" aria-labelledby="featured-title">
         <div class="shell">
-            <div class="projects-section-heading">
-                <p class="section-label">01 · FEATURED PROJECTS</p>
-                <h2 id="featured-title" class="sr-only">Featured projects</h2>
+            <div class="sel-section-head">
+                <h2 id="featured-title" class="sel-section-title">01 · FEATURED PROJECTS</h2>
+                <p class="sel-section-subtitle">Selected research across place</p>
+                <div class="sel-section-description">
+                    <p>A selection of current and completed Spatial Evidence Lab projects.</p>
+                </div>
             </div>
             <div class="featured-grid" data-featured-projects></div>
         </div>
@@ -87,9 +90,11 @@
     id="project-catalogue"
     aria-labelledby="all-projects-title">
         <div class="shell">
-            <div class="catalogue-heading-row">
-                <div>
-                    <h2 id="all-projects-title">02 · PROJECT CATALOGUE</h2>
+            <div class="sel-section-head projects-catalogue-heading">
+                <h2 id="all-projects-title" class="sel-section-title">02 · PROJECT CATALOGUE</h2>
+                <p class="sel-section-subtitle">Current and completed research</p>
+                <div class="sel-section-description">
+                    <p>Browse the full project catalogue by domain, theme, place and status.</p>
                 </div>
                 <p class="project-count" data-project-count>14 projects</p>
             </div>
@@ -135,28 +140,6 @@
 
             <div class="project-grid" data-project-grid aria-live="polite"></div>
             <p class="projects-empty" data-project-empty hidden>No projects match the selected filters.</p>
-        </div>
-    </section>
-
-    <section class="projects-section projects-place-section" aria-labelledby="place-title">
-        <div class="shell">
-            <div class="projects-section-heading projects-place-heading">
-                <div>
-                    <h2 id="place-title">03 · GEOGRAPHIC SCOPE</h2>
-                </div>
-                <p class="map-project-count" data-map-count>14 project locations</p>
-            </div>
-
-            <div class="project-map" data-project-map>
-                <img class="project-map-base" src="/media/maps/world-map.svg" alt="World map showing Spatial Evidence Lab project locations">
-                <div class="project-map-dots" data-map-dots></div>
-                <div class="map-tooltip" data-map-tooltip hidden></div>
-            </div>
-
-            <div class="map-footer">
-                <span><i aria-hidden="true"></i> Project location</span>
-                <span>Click a location to explore a project</span>
-            </div>
         </div>
     </section>
 

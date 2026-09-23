@@ -3373,3 +3373,141 @@ main > .section {
     }
 }
 
+
+
+/* =========================================================
+   ORGANISATION PAGE STANDARD — HERO + SECTION HEADINGS
+   ========================================================= */
+
+.sel-page-hero {
+    width: 100%;
+    min-height: 530px;
+    box-sizing: border-box;
+    padding: clamp(56px, 7vw, 88px) 0;
+    overflow: hidden;
+    background: var(--sel-brand-blue);
+    border-bottom: 1px solid var(--sel-border);
+}
+
+.sel-page-hero-inner {
+    min-height: 278px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sel-page-hero-eyebrow {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 24px;
+    color: var(--sel-accent-soft);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.sel-page-hero h1 {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 24px;
+    color: var(--sel-white);
+    font-size: clamp(2.35rem, 5vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -.045em;
+    line-height: 1.02;
+}
+
+.sel-page-hero-display {
+    max-width: 760px;
+    margin: 0;
+    color: var(--sel-text-soft);
+    font-size: clamp(.98rem, 1.5vw, 1.08rem);
+    font-weight: 500;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+}
+
+.sel-page-hero-intro {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: var(--sel-text-soft);
+    font-size: clamp(.98rem, 1.5vw, 1.08rem);
+    line-height: 1.7;
+}
+
+.sel-page-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.sel-section-head {
+    margin-bottom: 32px;
+}
+
+.sel-section-title {
+    margin: 0;
+    color: #E58F65;
+    font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.015em;
+}
+
+.sel-section-subtitle {
+    max-width: 760px;
+    margin: 8px 0 0;
+    color: var(--sel-text);
+    font-size: 1.08rem;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.sel-section-description {
+    max-width: 760px;
+    margin: 7px 0 0;
+    color: var(--sel-body);
+    font-size: .82rem;
+    line-height: 1.55;
+}
+
+.sel-section-description p {
+    margin: 0;
+}
+
+.sel-section-description p + p {
+    margin-top: 10px;
+}
+
+.projects-catalogue-heading .project-count {
+    margin-top: 12px;
+}
+
+@media (max-width: 760px) {
+    .sel-page-hero {
+        min-height: 470px;
+        padding: 54px 0 62px;
+    }
+
+    .sel-page-hero h1 {
+        font-size: clamp(2.1rem, 12vw, 3.2rem);
+    }
+
+    .sel-page-hero-intro {
+        font-size: 16px;
+    }
+
+    .sel-section-subtitle {
+        font-size: .98rem;
+    }
+
+    .sel-section-description {
+        font-size: .78rem;
+    }
+}

@@ -729,7 +729,7 @@
                 }
             }
 
-            if (!event.target.closest('.project-map-dot, .map-tooltip')) {
+            if (els.mapTooltip && !event.target.closest('.project-map-dot, .map-tooltip')) {
                 els.mapTooltip.hidden = true;
             }
         });
