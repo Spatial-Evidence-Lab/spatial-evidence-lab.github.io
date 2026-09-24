@@ -89,6 +89,16 @@
     line-height: 1.7;
 }
 
+.projects-hero .page-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 30px;
+}
+
 .projects-section {
     width: calc(100% - (2 * var(--sel-gutter)));
     max-width: none;

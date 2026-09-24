@@ -160,8 +160,8 @@
 .publication-section-head,
 .programme-heading{
   display:grid;
-  grid-template-columns:minmax(150px,.55fr) minmax(260px,.95fr) minmax(300px,1.5fr);
-  gap:clamp(24px,4vw,64px);
+  grid-template-columns:minmax(0,1fr);
+  gap:10px;
   align-items:start;
   margin-bottom:32px;
 }

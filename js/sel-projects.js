@@ -517,13 +517,7 @@
             <a class="featured-project ${primary ? 'featured-project--primary' : 'featured-project--secondary'}" href="${esc(project.url || '/projects/')}">
                 <img class="featured-project-image" src="${esc(project.image)}" alt="" loading="lazy">
                 <div class="featured-project-body">
-                    <div>
-                        <span class="featured-project-id">${esc(project.id)}</span>
-                        <span class="featured-project-status">${esc(statusLabel(project.status))}</span>
-                    </div>
-                    <div class="featured-project-domain">${esc(project.researchDomain?.name || '')}</div>
                     <h3>${esc(project.title)}</h3>
-                    ${primary ? `<p class="featured-project-description">${esc(project.summary || '')}</p>` : ''}
                     <span class="featured-project-link">View project →</span>
                 </div>
             </a>`;
