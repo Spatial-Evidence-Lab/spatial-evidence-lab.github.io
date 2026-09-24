@@ -276,6 +276,14 @@
   font:inherit;
 }
 
+/* Preserve a word space where the source markup uses <br><em>.
+   The <br> is hidden to keep the subtitle on one line, so the
+   whitespace must be restored explicitly between the two text runs. */
+.project-section-head h2 br + em::before,
+.publication-section-head h2 br + em::before{
+  content:" ";
+}
+
 .project-section-head .project-intro,
 .publication-section-head .publication-intro{
   grid-column:auto;
