@@ -450,3 +450,25 @@
     }
 }
 
+
+
+/* =========================================================
+   CANONICAL COMPONENT TOKENS — 2026-09-24
+   One reusable vocabulary for all pages.
+   ========================================================= */
+
+:root{
+  --sel-site-name-weight:500;
+  --sel-hero-eyebrow-weight:600;
+  --sel-hero-title-weight:700;
+  --sel-section-weight:600;
+  --sel-body-weight:400;
+  --sel-metadata-weight:500;
+}
+.site-header .wordmark-name,.site-header .wordmark-name b{font-weight:var(--sel-site-name-weight);}
+.project-card,
+.evidence-card,
+.map-card,
+.research-question,
+.cta-card,
+.process-step{font-family:var(--sans);}

@@ -4,15 +4,15 @@
 
 The public site reads structured catalogue data only from:
 
-- `/content/projects.json` — 14 project records
-- `/content/taxonomy.json` — 7 research domains and the 19-theme vocabulary
-- `/content/research_domains.json` — explicit domain catalogue
+- `/content/projects.json` — 14 canonical project records.
+- `/content/taxonomy.json` — the controlled research domain, theme, geography and status vocabulary.
+- `/js/sel-projects.js` — catalogue filtering and rendering logic.
 
-`js/sel-projects.js` loads the project and taxonomy data from `/content/`.
+There are no compatibility copies of the project catalogue or taxonomy in the repository root. Retired duplicate CSS, JavaScript and catalogue files have been removed.
 
 ## Compatibility copies
 
-The root `projects.json` / `taxonomy.json` files and the copies under `/resources/` are retained only as synchronized compatibility copies during the transition. They are not the canonical source and public catalogue code must not read them.
+The root `content/projects.json` / `content/taxonomy.json` files and the copies under `/resources/` are retained only as synchronized compatibility copies during the transition. They are not the canonical source and public catalogue code must not read them.
 
 ## Project data contract
 

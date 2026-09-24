@@ -1,195 +1,387 @@
 /* =========================================================
-   SPATIAL EVIDENCE LAB — SHARED TEXT HIERARCHY
-   Canonical section + hero typography.
-   Loaded after page-specific CSS so every page uses one
-   consistent title / subtitle / description treatment.
+   SPATIAL EVIDENCE LAB — CANONICAL TEXT + PAGE HIERARCHY
+   Version 4.0 — 2026-09-24
+   Single source for HERO and SECTION heading hierarchy.
+   Methods/Data/About define the visual reference.
    ========================================================= */
 
-:root {
-    --sel-section-title-size: clamp(1.05rem, 1.35vw, 1.28rem);
-    --sel-section-subtitle-size: 1.08rem;
-    --sel-section-description-size: .82rem;
+:root{
+  --sel-eyebrow-weight:600;
+  --sel-hero-title-weight:700;
+  --sel-section-weight:600;
+  --sel-body-weight:400;
+  --sel-metadata-weight:500;
+
+  --sel-hero-title-size:clamp(2.35rem,4.2vw,4.4rem);
+  --sel-hero-subtitle-size:clamp(1.35rem,2.5vw,2rem);
+  --sel-hero-description-size:.91rem;
+
+  --sel-section-title-size:clamp(1.05rem,1.35vw,1.28rem);
+  --sel-section-subtitle-size:1.08rem;
+  --sel-section-description-size:.82rem;
 }
 
 /* ---------------------------------------------------------
-   SECTION HEAD
-   Title: bold
-   Subtitle: italic
-   Description: regular
+   UNIVERSAL HERO
+   Eyebrow → title → subtitle → description → metadata/CTA
    --------------------------------------------------------- */
 
-.methods-section-head,
-.data-section-head,
-.about-section-head,
-.projects-section-heading,
-.project-section-head,
-.publication-section-head {
-    display: block;
-    margin-bottom: 32px;
+.methods-hero,
+.data-hero,
+.about-hero,
+.portfolio-hero,
+.projects-hero,
+.project-hero,
+.publication-hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 48%,rgba(58,151,160,.13),transparent 30%),
+    linear-gradient(135deg,var(--sel-hero) 0%,var(--sel-brand-blue) 100%);
+  color:var(--sel-text);
 }
 
-.methods-section-label,
-.data-section-label,
-.about-section-label,
-.section-label,
-.project-number,
-.publication-number {
-    display: block;
-    margin: 0;
-    color: #E58F65;
-    font-size: var(--sel-section-title-size);
-    font-weight: 700;
-    letter-spacing: -.015em;
-    line-height: 1.2;
-    text-transform: none;
+.methods-hero,
+.data-hero,
+.about-hero{
+  min-height:520px;
+  padding:86px 0 92px;
 }
 
-.methods-section-number,
-.data-section-number,
-.about-section-number {
-    display: inline;
-    margin: 0;
-    color: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    letter-spacing: inherit;
+.portfolio-hero,
+.projects-hero{
+  min-height:520px;
+  padding:86px 0 92px;
 }
 
-.methods-section-heading,
-.data-section-heading,
-.about-section-heading {
-    margin: 8px 0 0;
+.project-hero,
+.publication-hero{
+  min-height:520px;
+  padding:86px 0 0;
 }
 
-.methods-section-heading h2,
-.data-section-heading h2,
-.about-section-heading h2,
-.project-section-head h2,
-.publication-section-head h2 {
-    margin: 0;
-    color: var(--sel-text);
-    font-family: inherit;
-    font-size: var(--sel-section-subtitle-size);
-    font-style: italic;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1.35;
-}
-
-.methods-section-heading h2 em,
-.data-section-heading h2 em,
-.about-section-heading h2 em,
-.project-section-head h2 em,
-.publication-section-head h2 em {
-    color: inherit;
-    font-family: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-}
-
-.methods-section-intro,
-.data-section-intro,
-.about-section-intro,
-.project-intro,
-.publication-intro {
-    max-width: 760px;
-    margin: 7px 0 0;
-    color: var(--sel-body);
-    font-size: var(--sel-section-description-size);
-    font-weight: 400;
-    line-height: 1.55;
-}
-
-.methods-section-intro p,
-.data-section-intro p,
-.about-section-intro p,
-.project-intro,
-.publication-intro {
-    color: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-}
-
-.methods-section-intro p + p,
-.data-section-intro p + p,
-.about-section-intro p + p {
-    margin-top: 7px;
-}
-
-/* ---------------------------------------------------------
-   HERO
-   Title: bold
-   Subtitle: italic
-   Description: regular
-   --------------------------------------------------------- */
-
-.methods-hero-copy,
-.data-hero-copy,
-.about-hero-copy,
-.project-hero-grid,
-.publication-hero-grid {
-    color: var(--sel-text);
+.methods-eyebrow,
+.data-eyebrow,
+.about-eyebrow,
+.home-eyebrow,
+.research-eyebrow,
+.projects-eyebrow,
+.project-kicker,
+.publication-kicker,
+.page-eyebrow{
+  margin:0 0 20px;
+  color:var(--sel-accent-soft);
+  font-size:.66rem;
+  font-weight:var(--sel-eyebrow-weight);
+  letter-spacing:.11em;
+  line-height:1.2;
+  text-transform:uppercase;
 }
 
 .methods-hero h1,
 .data-hero h1,
 .about-hero h1,
+.portfolio-hero .hero-title,
+.projects-hero h1,
 .project-hero h1,
-.publication-hero h1 {
-    color: var(--sel-white);
-    font-weight: 700;
+.publication-hero h1{
+  max-width:760px;
+  margin:0;
+  color:var(--sel-text);
+  font-family:var(--sans);
+  font-size:var(--sel-hero-title-size);
+  font-weight:var(--sel-hero-title-weight);
+  letter-spacing:-.045em;
+  line-height:1.02;
 }
 
 .methods-display,
 .data-display,
 .about-display,
-.project-hero h1 em,
-.publication-hero h1 em {
-    color: var(--sel-text-soft);
-    font-style: italic;
-    font-weight: 500;
+.hero-display,
+.project-hero-display,
+.publication-display,
+.projects-display{
+  max-width:680px;
+  margin:22px 0 0;
+  color:var(--sel-text-soft);
+  font-family:var(--sans);
+  font-size:var(--sel-hero-subtitle-size);
+  font-style:italic;
+  font-weight:500;
+  letter-spacing:-.03em;
+  line-height:1.08;
 }
 
 .methods-lead,
 .data-lead,
 .about-lead,
+.hero-lead,
+.projects-intro,
 .project-lede,
-.publication-lede {
-    color: var(--sel-body);
-    font-weight: 400;
+.publication-lede,
+.project-hero-description{
+  max-width:680px;
+  margin:22px 0 0;
+  color:var(--sel-body);
+  font-family:var(--sans);
+  font-size:var(--sel-hero-description-size);
+  font-style:normal;
+  font-weight:var(--sel-body-weight);
+  letter-spacing:0;
+  line-height:1.62;
 }
 
-/* Project catalogue hero uses the same hierarchy without changing
-   its established display scale. */
-.projects-hero h1 span {
-    color: var(--sel-text-soft);
-    font-style: italic;
-    font-weight: 500;
-}
-.projects-hero .project-catalogue-label,
-.projects-hero .page-eyebrow {
-    color: #E58F65;
-    font-weight: 700;
-    text-transform: none;
+/* Existing homepage hero uses .hero-copy wrapper. */
+.hero-copy{max-width:760px;margin-top:0;}
+.hero-copy .hero-lead{margin-top:22px;}
+
+/* Existing project hero emphasis must not create a second typography system. */
+.project-hero h1 em,
+.publication-hero h1 em{
+  color:inherit;
+  font-family:inherit;
+  font-size:inherit;
+  font-style:normal;
+  font-weight:inherit;
 }
 
-.projects-hero .page-intro {
-    color: var(--sel-body);
-    font-weight: 400;
+/* ---------------------------------------------------------
+   UNIVERSAL SECTION HEADING
+   Title → subtitle → description
+   --------------------------------------------------------- */
+
+.sel-section-head,
+.methods-section-head,
+.data-section-head,
+.about-section-head,
+.projects-section-heading,
+.project-section-head,
+.publication-section-head,
+.programme-heading{
+  display:grid;
+  grid-template-columns:minmax(150px,.55fr) minmax(260px,.95fr) minmax(300px,1.5fr);
+  gap:clamp(24px,4vw,64px);
+  align-items:start;
+  margin-bottom:32px;
+}
+
+.sel-section-title,
+.methods-section-label,
+.data-section-label,
+.about-section-label,
+.projects-section-heading .section-label,
+.project-number,
+.publication-number,
+.programme-title{
+  display:block;
+  margin:0;
+  color:#E58F65;
+  font-family:var(--sans);
+  font-size:var(--sel-section-title-size);
+  font-weight:var(--sel-section-weight);
+  letter-spacing:-.015em;
+  line-height:1.2;
+  text-transform:none;
+}
+
+.sel-section-subtitle,
+.methods-section-heading h2,
+.data-section-heading h2,
+.about-section-heading h2,
+.project-section-head h2,
+.publication-section-head h2,
+.programme-heading .section-lead{
+  margin:0;
+  color:var(--sel-text);
+  font-family:var(--sans);
+  font-size:var(--sel-section-subtitle-size);
+  font-style:italic;
+  font-weight:500;
+  letter-spacing:0;
+  line-height:1.35;
+}
+
+.sel-section-description,
+.methods-section-intro,
+.data-section-intro,
+.about-section-intro,
+.project-intro,
+.publication-intro,
+.programme-heading .section-support{
+  max-width:760px;
+  margin:0;
+  color:var(--sel-body);
+  font-family:var(--sans);
+  font-size:var(--sel-section-description-size);
+  font-style:normal;
+  font-weight:var(--sel-body-weight);
+  line-height:1.55;
+}
+
+.sel-section-description p,
+.methods-section-intro p,
+.data-section-intro p,
+.about-section-intro p,
+.project-intro,
+.publication-intro{
+  color:inherit;
+  font:inherit;
+  margin:0;
+}
+
+/* Project/publication section titles are already semantic headings. */
+.project-section-head > div,
+.publication-section-head > div{display:contents;}
+.project-section-head h2,
+.publication-section-head h2{grid-column:2;grid-row:1;}
+.project-section-head .project-intro,
+.publication-section-head .publication-intro{grid-column:3;grid-row:1;}
+
+/* ---------------------------------------------------------
+   STANDARD METADATA
+   --------------------------------------------------------- */
+
+.project-meta,
+.publication-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0;
+  margin-top:28px;
+}
+
+.project-meta span,
+.publication-meta span{
+  padding:8px 11px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.04);
+  color:var(--sel-text-soft);
+  font-size:.68rem;
+  font-weight:var(--sel-metadata-weight);
+  letter-spacing:.05em;
+  text-transform:none;
+}
+
+.project-metadata-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  margin-top:30px;
+  border-top:1px solid var(--sel-border);
+  border-left:1px solid var(--sel-border);
+}
+.project-metadata-item{
+  min-width:0;
+  padding:16px 18px;
+  border-right:1px solid var(--sel-border);
+  border-bottom:1px solid var(--sel-border);
+}
+.project-metadata-item span{
+  display:block;
+  margin-bottom:6px;
+  color:var(--sel-accent-soft);
+  font-size:.66rem;
+  font-weight:var(--sel-metadata-weight);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.project-metadata-item strong{
+  display:block;
+  color:var(--sel-text);
+  font-size:.88rem;
+  font-weight:var(--sel-metadata-weight);
+  line-height:1.4;
+}
+
+/* ---------------------------------------------------------
+   REUSABLE RESEARCH COMPONENTS
+   --------------------------------------------------------- */
+
+.research-question,
+.project-card,
+.evidence-card,
+.map-card,
+.cta-card,
+.process-step{
+  min-width:0;
+}
+
+.research-question{
+  padding:24px;
+  border:1px solid var(--sel-border);
+  background:var(--sel-surface);
+}
+.research-question .component-eyebrow,
+.project-card-num,
+.evidence-card .component-eyebrow,
+.map-card .component-eyebrow{
+  color:var(--sel-accent-soft);
+  font-size:.66rem;
+  font-weight:var(--sel-metadata-weight);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.research-question h3,
+.project-card h3,
+.evidence-card h3,
+.map-card h3{
+  color:var(--sel-text);
+  font-size:1rem;
+  font-weight:var(--sel-section-weight);
+  line-height:1.3;
+}
+.research-question p,
+.project-card p,
+.evidence-card p,
+.map-card p{
+  color:var(--sel-body);
+  font-size:.82rem;
+  font-weight:var(--sel-body-weight);
+  line-height:1.55;
+}
+.process-step{
+  padding:22px 0;
+  border-top:1px solid var(--sel-border);
+}
+.process-step-number{
+  color:var(--sel-accent-soft);
+  font-size:.72rem;
+  font-weight:var(--sel-section-weight);
+}
+.cta-card{
+  padding:28px;
+  border:1px solid var(--sel-border);
+  background:var(--sel-raised);
 }
 
 /* ---------------------------------------------------------
    RESPONSIVE
    --------------------------------------------------------- */
 
-@media (max-width: 700px) {
-    .methods-section-head,
-    .data-section-head,
-    .about-section-head,
-    .projects-section-heading,
-    .project-section-head,
-    .publication-section-head {
-        margin-bottom: 24px;
-    }
+@media (max-width:900px){
+  .sel-section-head,
+  .methods-section-head,
+  .data-section-head,
+  .about-section-head,
+  .projects-section-heading,
+  .project-section-head,
+  .publication-section-head,
+  .programme-heading{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .project-section-head h2,
+  .project-section-head .project-intro,
+  .publication-section-head h2,
+  .publication-section-head .publication-intro{
+    grid-column:auto;
+    grid-row:auto;
+  }
+  .project-metadata-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
+@media (max-width:640px){
+  .methods-hero,.data-hero,.about-hero,.portfolio-hero,.projects-hero{min-height:0;padding:64px 0 72px;}
+  .project-hero,.publication-hero{min-height:0;padding:64px 0 0;}
+  .project-metadata-grid{grid-template-columns:1fr;}
 }

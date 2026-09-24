@@ -1,7 +1,7 @@
 [
   {
     "id": "SEL-001",
-    "title": "Ireland Quality of Life Index",
+    "title": "Ireland Quality of Life Spatial Index",
     "researchDomain": {
       "code": "RD01",
       "name": "People & Quality of Life",
@@ -115,8 +115,7 @@
       "Local Authority",
       "Small Area"
     ],
-    "status": "Report Published",
-    "portfolioRole": "Core Research",
+    "status": "Published",
     "summary": "Small-area spatial analysis of quality of life across Ireland using Census 2022 indicators, composite measures and geographic evidence.",
     "geography": "Ireland",
     "geographyType": "National",
@@ -144,11 +143,21 @@
       "code": "TH17",
       "name": "Quality of Life & Wellbeing",
       "key": "quality-of-life-wellbeing"
+    },
+    "geographicType": "National",
+    "analyticalScale": "Small Area",
+    "metadata": {
+      "location": "Ireland",
+      "geographicType": "National",
+      "analyticalScale": "Small Area",
+      "researchDomain": "People & Quality of Life",
+      "subTheme": "Quality of Life",
+      "status": "Published"
     }
   },
   {
     "id": "SEL-002",
-    "title": "Bandon Public Transport Accessibility Analysis",
+    "title": "Bandon Public Transport Accessibility and Equity Analysis",
     "researchDomain": {
       "code": "RD02",
       "name": "Accessibility, Mobility & Transport",
@@ -168,15 +177,14 @@
       "Town",
       "Local Area"
     ],
-    "status": "Production",
-    "portfolioRole": "Core Research",
+    "status": "Published",
     "summary": "Spatial assessment of public transport accessibility in Bandon, combining walking access, service frequency and population vulnerability.",
     "geography": "Bandon, County Cork",
     "geographyType": "Local",
     "image": "/assets/projects/SEL-002.jpg",
     "url": "/projects/sel-002-bandon-public-transport/",
     "location": {
-      "name": "Bandon, Ireland",
+      "name": "Bandon, County Cork, Ireland",
       "latitude": 51.746,
       "longitude": -8.7356
     },
@@ -274,11 +282,21 @@
       "code": "TH01",
       "name": "Accessibility",
       "key": "accessibility"
+    },
+    "geographicType": "Town",
+    "analyticalScale": "Small Area",
+    "metadata": {
+      "location": "Bandon, County Cork, Ireland",
+      "geographicType": "Town",
+      "analyticalScale": "Small Area",
+      "researchDomain": "Accessibility, Mobility & Transport",
+      "subTheme": "Public Transport Accessibility",
+      "status": "Published"
     }
   },
   {
     "id": "SEL-003",
-    "title": "West Cork Public Transport Accessibility Level Analysis",
+    "title": "West Cork Public Transport Accessibility Analysis Analysis",
     "researchDomain": {
       "code": "RD02",
       "name": "Accessibility, Mobility & Transport",
@@ -297,8 +315,7 @@
     "geographicLevel": [
       "Regional"
     ],
-    "status": "Production",
-    "portfolioRole": "Exploratory Research",
+    "status": "In development",
     "summary": "Regional assessment of Public Transport Accessibility Levels, examining spatial variation in access to public transport across West Cork.",
     "geography": "West Cork, Ireland",
     "geographyType": "Regional",
@@ -410,11 +427,21 @@
       "code": "TH01",
       "name": "Accessibility",
       "key": "accessibility"
+    },
+    "geographicType": "Regional",
+    "analyticalScale": "Regional",
+    "metadata": {
+      "location": "West Cork, Ireland",
+      "geographicType": "Regional",
+      "analyticalScale": "Regional",
+      "researchDomain": "Accessibility, Mobility & Transport",
+      "subTheme": "Public Transport Accessibility",
+      "status": "In development"
     }
   },
   {
     "id": "SEL-004",
-    "title": "Ireland Forestry and Land Use Analysis",
+    "title": "Ireland Forestry and Land Use Spatial Analysis",
     "researchDomain": {
       "code": "RD06",
       "name": "Cities, Regions & Land Use",
@@ -435,8 +462,7 @@
       "Regional",
       "County"
     ],
-    "status": "Production",
-    "portfolioRole": "Exploratory Research",
+    "status": "In development",
     "summary": "GIS-based assessment of forestry and land-use patterns across Ireland, exploring their spatial distribution and environmental context.",
     "geography": "Ireland",
     "geographyType": "National",
@@ -541,6 +567,16 @@
       "code": "TH07",
       "name": "Forests & Land Cover",
       "key": "forests-land-cover"
+    },
+    "geographicType": "National",
+    "analyticalScale": "National · Regional · County",
+    "metadata": {
+      "location": "Ireland",
+      "geographicType": "National",
+      "analyticalScale": "National · Regional · County",
+      "researchDomain": "Cities, Regions & Land Use",
+      "subTheme": "Forestry & Land Use",
+      "status": "In development"
     }
   },
   {
@@ -565,15 +601,14 @@
       "Metropolitan",
       "Urban Area"
     ],
-    "status": "Production",
-    "portfolioRole": "Exploratory Research",
+    "status": "In development",
     "summary": "Spatial modelling of heat risk and environmental quality to identify areas experiencing elevated environmental exposure and vulnerability.",
     "geography": "Greater Athens, Greece",
     "geographyType": "International",
     "image": "/assets/projects/SEL-005.jpg",
     "url": "/projects/sel-005-greater-athens-heat-risk/",
     "location": {
-      "name": "Athens, Greece",
+      "name": "Greater Athens, Greece",
       "latitude": 37.984306,
       "longitude": 23.726694
     },
@@ -678,6 +713,16 @@
       "code": "TH02",
       "name": "Climate Change",
       "key": "climate-change"
+    },
+    "geographicType": "Metropolitan",
+    "analyticalScale": "Urban Area",
+    "metadata": {
+      "location": "Greater Athens, Greece",
+      "geographicType": "Metropolitan",
+      "analyticalScale": "Urban Area",
+      "researchDomain": "Environment, Climate & Natural Hazards",
+      "subTheme": "Heat Risk",
+      "status": "In development"
     }
   },
   {
@@ -701,8 +746,7 @@
     "geographicLevel": [
       "County"
     ],
-    "status": "Production",
-    "portfolioRole": "Exploratory Research",
+    "status": "In development",
     "summary": "Spatial multi-criteria assessment of wind energy potential, combining geographic suitability factors to support renewable energy planning.",
     "geography": "County Wicklow, Ireland",
     "geographyType": "County",
@@ -800,6 +844,16 @@
       "code": "TH19",
       "name": "Renewable Energy",
       "key": "renewable-energy"
+    },
+    "geographicType": "County",
+    "analyticalScale": "County",
+    "metadata": {
+      "location": "County Wicklow, Ireland",
+      "geographicType": "County",
+      "analyticalScale": "County",
+      "researchDomain": "Energy & Infrastructure",
+      "subTheme": "Wind Energy",
+      "status": "In development"
     }
   },
   {
@@ -823,8 +877,7 @@
     "geographicLevel": [
       "Regional"
     ],
-    "status": "Production",
-    "portfolioRole": "Exploratory Research",
+    "status": "In development",
     "summary": "Spatial analysis of deforestation in Rondônia, examining patterns of forest loss and land-use change using geographic and temporal evidence.",
     "geography": "Rondônia, Brazil",
     "geographyType": "International",
@@ -929,11 +982,21 @@
       "code": "TH07",
       "name": "Forests & Land Cover",
       "key": "forests-land-cover"
+    },
+    "geographicType": "Regional",
+    "analyticalScale": "Regional",
+    "metadata": {
+      "location": "Rondônia, Brazil",
+      "geographicType": "Regional",
+      "analyticalScale": "Regional",
+      "researchDomain": "Environment, Climate & Natural Hazards",
+      "subTheme": "Deforestation & Forest Loss",
+      "status": "In development"
     }
   },
   {
     "id": "SEL-008",
-    "title": "Deforestation Change Analysis, 2017–2025",
+    "title": "Europe Forest Change Analysis, 2017–2025",
     "researchDomain": {
       "code": "RD03",
       "name": "Environment, Climate & Natural Hazards",
@@ -952,8 +1015,7 @@
     "geographicLevel": [
       "Regional"
     ],
-    "status": "Research",
-    "portfolioRole": "Exploratory Research",
+    "status": "Exploratory",
     "summary": "Time-series assessment of deforestation and forest-cover change between 2017 and 2025, supporting visualisation of spatial and temporal trends.",
     "geography": "Europe",
     "geographyType": "International",
@@ -1058,6 +1120,16 @@
       "code": "TH05",
       "name": "Environmental Land Change",
       "key": "environmental-land-change"
+    },
+    "geographicType": "Regional",
+    "analyticalScale": "Regional",
+    "metadata": {
+      "location": "Europe",
+      "geographicType": "Regional",
+      "analyticalScale": "Regional",
+      "researchDomain": "Environment, Climate & Natural Hazards",
+      "subTheme": "Forest Change",
+      "status": "Exploratory"
     }
   },
   {
@@ -1082,8 +1154,7 @@
       "Local",
       "Town"
     ],
-    "status": "Research",
-    "portfolioRole": "Exploratory Research",
+    "status": "Exploratory",
     "summary": "Spatial assessment of solar energy potential in Glover, Vermont, combining geographic and environmental suitability factors for renewable energy planning.",
     "geography": "Glover, Vermont, USA",
     "geographyType": "International",
@@ -1188,11 +1259,21 @@
       "code": "TH19",
       "name": "Renewable Energy",
       "key": "renewable-energy"
+    },
+    "geographicType": "Town",
+    "analyticalScale": "Local · Town",
+    "metadata": {
+      "location": "Glover, Vermont, USA",
+      "geographicType": "Town",
+      "analyticalScale": "Local · Town",
+      "researchDomain": "Energy & Infrastructure",
+      "subTheme": "Solar Energy",
+      "status": "Exploratory"
     }
   },
   {
     "id": "SEL-010",
-    "title": "Miami Sea Level Rise Impact Assessment",
+    "title": "Miami Coastal Inundation Impact Assessment",
     "researchDomain": {
       "code": "RD03",
       "name": "Environment, Climate & Natural Hazards",
@@ -1212,8 +1293,7 @@
       "Metropolitan",
       "Urban Area"
     ],
-    "status": "Research",
-    "portfolioRole": "Exploratory Research",
+    "status": "Exploratory",
     "summary": "Spatial assessment of potential sea level rise impacts in Miami, examining exposure of land, infrastructure and communities to coastal inundation.",
     "geography": "Miami, Florida, USA",
     "geographyType": "International",
@@ -1318,11 +1398,21 @@
       "code": "TH14",
       "name": "Natural Hazards",
       "key": "natural-hazards"
+    },
+    "geographicType": "Metropolitan",
+    "analyticalScale": "Urban Area",
+    "metadata": {
+      "location": "Miami, Florida, USA",
+      "geographicType": "Metropolitan",
+      "analyticalScale": "Urban Area",
+      "researchDomain": "Environment, Climate & Natural Hazards",
+      "subTheme": "Coastal Inundation",
+      "status": "Exploratory"
     }
   },
   {
     "id": "SEL-011",
-    "title": "Renewable Energy Potential for Private Housing in Ireland",
+    "title": "Ireland Household Renewable Energy Potential Analysis",
     "researchDomain": {
       "code": "RD05",
       "name": "Housing & Socioeconomic Conditions",
@@ -1342,8 +1432,7 @@
       "National",
       "Residential"
     ],
-    "status": "Research",
-    "portfolioRole": "Exploratory Research",
+    "status": "Exploratory",
     "summary": "Spatial study of renewable energy opportunities for private housing in Ireland, exploring the potential contribution of renewable technologies to residential energy needs.",
     "geography": "Ireland",
     "geographyType": "National",
@@ -1455,6 +1544,16 @@
       "code": "TH04",
       "name": "Energy & Housing",
       "key": "energy-housing"
+    },
+    "geographicType": "National",
+    "analyticalScale": "Residential",
+    "metadata": {
+      "location": "Ireland",
+      "geographicType": "National",
+      "analyticalScale": "Residential",
+      "researchDomain": "Housing & Socioeconomic Conditions",
+      "subTheme": "Household Renewable Energy",
+      "status": "Exploratory"
     }
   },
   {
@@ -1479,8 +1578,7 @@
       "State",
       "Regional"
     ],
-    "status": "Research",
-    "portfolioRole": "Exploratory Research",
+    "status": "Exploratory",
     "summary": "Spatial assessment of areas affected by wildfire in California, examining the geographic distribution and potential impacts of wildfire events.",
     "geography": "California, USA",
     "geographyType": "International",
@@ -1599,11 +1697,21 @@
       "code": "TH14",
       "name": "Natural Hazards",
       "key": "natural-hazards"
+    },
+    "geographicType": "State",
+    "analyticalScale": "Regional",
+    "metadata": {
+      "location": "California, USA",
+      "geographicType": "State",
+      "analyticalScale": "Regional",
+      "researchDomain": "Environment, Climate & Natural Hazards",
+      "subTheme": "Wildfire",
+      "status": "Exploratory"
     }
   },
   {
     "id": "SEL-013",
-    "title": "Dublin Footfall and Urban Activity Analysis",
+    "title": "Dublin Urban Activity and Footfall Analysis",
     "researchDomain": {
       "code": "RD06",
       "name": "Cities, Regions & Land Use",
@@ -1623,8 +1731,7 @@
       "Urban Area",
       "Local Area"
     ],
-    "status": "Research",
-    "portfolioRole": "Exploratory Research",
+    "status": "Exploratory",
     "summary": "Spatial analysis of pedestrian footfall patterns in Dublin, examining geographic variation in activity and potential relationships with urban characteristics.",
     "geography": "Dublin, Ireland",
     "geographyType": "Urban",
@@ -1736,11 +1843,21 @@
       "code": "TH13",
       "name": "Mobility",
       "key": "mobility"
+    },
+    "geographicType": "Urban Area",
+    "analyticalScale": "Local Area",
+    "metadata": {
+      "location": "Dublin, Ireland",
+      "geographicType": "Urban Area",
+      "analyticalScale": "Local Area",
+      "researchDomain": "Cities, Regions & Land Use",
+      "subTheme": "Urban Activity",
+      "status": "Exploratory"
     }
   },
   {
     "id": "SEL-014",
-    "title": "Ireland Population Spatial Analysis",
+    "title": "Ireland Population Distribution Spatial Analysis",
     "researchDomain": {
       "code": "RD07",
       "name": "Population & Demography",
@@ -1762,8 +1879,7 @@
       "County",
       "Small Area"
     ],
-    "status": "Research",
-    "portfolioRole": "Exploratory Research",
+    "status": "Exploratory",
     "summary": "Spatial analysis of population distribution across Ireland, examining geographic patterns, concentration and variation using demographic data.",
     "geography": "Ireland",
     "geographyType": "National",
@@ -1868,6 +1984,16 @@
       "code": "TH15",
       "name": "Population",
       "key": "population"
+    },
+    "geographicType": "National",
+    "analyticalScale": "Small Area",
+    "metadata": {
+      "location": "Ireland",
+      "geographicType": "National",
+      "analyticalScale": "Small Area",
+      "researchDomain": "Population & Demography",
+      "subTheme": "Population Distribution",
+      "status": "Exploratory"
     }
   }
 ]

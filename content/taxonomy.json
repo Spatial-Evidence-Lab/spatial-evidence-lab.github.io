@@ -1,6 +1,6 @@
 {
-  "taxonomyVersion": "1.3",
-  "lastUpdated": "2026-09-22",
+  "taxonomyVersion": "2.0",
+  "lastUpdated": "2026-09-24",
   "schema": {
     "name": "Spatial Evidence Lab Research Taxonomy",
     "description": "Controlled vocabulary for classifying Spatial Evidence Lab research projects, geographic scope, publication status, outputs and analytical frameworks.",
@@ -14,11 +14,16 @@
       "themes",
       "tags",
       "subTheme",
-      "geographicScope",
-      "geographicLevel",
       "status",
-      "portfolioRole",
-      "analyticalFramework"
+      "analyticalFramework",
+      "geographicType",
+      "analyticalScale"
+    ],
+    "statusVocabulary": [
+      "Exploratory",
+      "In development",
+      "Published",
+      "Archived"
     ]
   },
   "researchDomains": [
@@ -790,76 +795,6 @@
       "key": "local"
     }
   ],
-  "portfolioRoles": [
-    {
-      "code": "PR01",
-      "name": "Core Research",
-      "key": "core-research",
-      "description": "Core Spatial Evidence Lab research forming part of the principal research portfolio."
-    },
-    {
-      "code": "PR02",
-      "name": "Exploratory Research",
-      "key": "exploratory-research",
-      "description": "Exploratory or developing research demonstrating analytical approaches or potential future research directions."
-    },
-    {
-      "code": "PR03",
-      "name": "Methods Development",
-      "key": "methods-development",
-      "description": "Research primarily focused on spatial methods, analytical frameworks or methodological development."
-    },
-    {
-      "code": "PR04",
-      "name": "Case Study",
-      "key": "case-study",
-      "description": "Place-specific research used to investigate or demonstrate a spatial analytical question."
-    }
-  ],
-  "publicationStatuses": [
-    {
-      "code": "PS01",
-      "name": "Research",
-      "key": "research",
-      "description": "Research is in development and has not yet produced a public research output."
-    },
-    {
-      "code": "PS02",
-      "name": "Report Published",
-      "key": "report-published",
-      "description": "The principal research report is publicly available."
-    },
-    {
-      "code": "PS03",
-      "name": "Maps Published",
-      "key": "maps-published",
-      "description": "Research maps or spatial visualisations have been publicly released."
-    },
-    {
-      "code": "PS04",
-      "name": "Data Published",
-      "key": "data-published",
-      "description": "Associated research data has been publicly released."
-    },
-    {
-      "code": "PS05",
-      "name": "Fully Published",
-      "key": "fully-published",
-      "description": "The principal report, maps and associated public research outputs are available."
-    },
-    {
-      "code": "PS06",
-      "name": "In Development",
-      "key": "in-development",
-      "description": "Project is actively being developed but is not yet ready for public publication."
-    },
-    {
-      "code": "PS07",
-      "name": "Archived",
-      "key": "archived",
-      "description": "Project is retained for research history but is no longer actively developed."
-    }
-  ],
   "outputTypes": [
     {
       "code": "OT01",
@@ -951,7 +886,7 @@
       "code": "QF01",
       "name": "SA-QoLI",
       "title": "Small-Area Quality of Life Index",
-      "description": "Multidimensional spatial framework used by the Ireland Quality of Life Index.",
+      "description": "Multidimensional spatial framework used by the Ireland Quality of Life Spatial Index.",
       "status": "Current",
       "dimensions": [
         {
@@ -1052,13 +987,17 @@
       "geographicLevel"
     ],
     "statusMustMatchControlledVocabulary": true,
-    "portfolioRoleMustMatchControlledVocabulary": true,
     "analyticalFrameworkMustMatchControlledVocabulary": true,
     "unknownFutureTermsAllowed": false,
     "multipleGeographicLevelsAllowed": true,
     "onePrimaryResearchDomainPerProject": true,
     "onePrimaryThemePerProject": true,
-    "onePrimarySubThemePerProject": true
+    "onePrimarySubThemePerProject": true,
+    "geographyFields": [
+      "location",
+      "geographicType",
+      "analyticalScale"
+    ]
   },
   "domainThemeMap": {
     "RD01": [
@@ -1655,5 +1594,31 @@
       ]
     }
   ],
-  "canonicalSource": "content/taxonomy.json"
+  "canonicalSource": "content/taxonomy.json",
+  "statusDefinitions": [
+    {
+      "code": "ST01",
+      "name": "Exploratory",
+      "key": "exploratory",
+      "description": "Initial spatial research record; detailed analysis and outputs are not yet published."
+    },
+    {
+      "code": "ST02",
+      "name": "In development",
+      "key": "in-development",
+      "description": "Research is actively being developed and documented."
+    },
+    {
+      "code": "ST03",
+      "name": "Published",
+      "key": "published",
+      "description": "Substantive research and associated public outputs are available."
+    },
+    {
+      "code": "ST04",
+      "name": "Archived",
+      "key": "archived",
+      "description": "Research is retained as part of the research record but is no longer active."
+    }
+  ]
 }

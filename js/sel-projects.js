@@ -55,10 +55,9 @@
     ];
 
     const STATUS_OPTIONS = [
-        { value: 'Production', label: 'Current' },
-        { value: 'Report Published', label: 'Report Published' },
-        { value: 'Research', label: 'Research in Progress' },
-        { value: 'Planned', label: 'Planned' },
+        { value: 'Exploratory', label: 'Exploratory' },
+        { value: 'In development', label: 'In development' },
+        { value: 'Published', label: 'Published' },
         { value: 'Archived', label: 'Archived' }
     ];
 
@@ -133,7 +132,6 @@
             project.theme?.name,
             ...themes,
             ...(project.tags || []),
-            project.portfolioRole,
             statusLabel(project.status)
         ].filter(Boolean).join(' '));
     }
