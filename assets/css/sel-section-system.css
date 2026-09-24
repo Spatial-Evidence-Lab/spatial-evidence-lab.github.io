@@ -149,6 +149,8 @@
 /* ---------------------------------------------------------
    UNIVERSAL SECTION HEADING
    Title → subtitle → description
+   One vertical line per level on all organisation and
+   individual project pages.
    --------------------------------------------------------- */
 
 .sel-section-head,
@@ -230,13 +232,28 @@
   margin:0;
 }
 
-/* Project/publication section titles are already semantic headings. */
+/* Project/publication section hierarchy:
+   Title
+   Subtitle
+   Description
+   Each level occupies its own line, matching the
+   Home / Projects / Methods / Data / About section system. */
 .project-section-head > div,
-.publication-section-head > div{display:contents;}
+.publication-section-head > div{
+  display:block;
+}
+
 .project-section-head h2,
-.publication-section-head h2{grid-column:2;grid-row:1;}
+.publication-section-head h2{
+  grid-column:auto;
+  grid-row:auto;
+}
+
 .project-section-head .project-intro,
-.publication-section-head .publication-intro{grid-column:3;grid-row:1;}
+.publication-section-head .publication-intro{
+  grid-column:auto;
+  grid-row:auto;
+}
 
 /* ---------------------------------------------------------
    STANDARD METADATA
