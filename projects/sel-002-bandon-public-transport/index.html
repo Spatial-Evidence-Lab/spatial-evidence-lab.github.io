@@ -186,40 +186,30 @@
     </div>
 
     <div class="method-timeline" aria-label="Seven-stage analytical workflow">
-      <div class="timeline-item"><span>01</span><h3>Census indicators</h3><p>Extract selected Census 2022 indicators for 34 Small Areas.</p></div>
-      <div class="timeline-item"><span>02</span><h3>Vulnerability domains</h3><p>Construct Elderly, Health, No-Car and Economic measures using min–max normalisation.</p></div>
-      <div class="timeline-item"><span>03</span><h3>Walking catchments</h3><p>Calculate network walking bands using ArcGIS Network Analyst at 5 km/h.</p></div>
-      <div class="timeline-item"><span>04</span><h3>Service availability</h3><p>Evaluate scheduled peak-period frequency and headway from GTFS.</p></div>
-      <div class="timeline-item"><span>05</span><h3>CAI</h3><p>Combine Pedestrian Accessibility and Service Availability using 50:50 weighting.</p></div>
-      <div class="timeline-item"><span>06</span><h3>Access Deficit</h3><p>Convert CAI_norm to relative access deficit using 1 − CAI_norm.</p></div>
-      <div class="timeline-item"><span>07</span><h3>Hotspot screening</h3><p>Combine Access Deficit and VUL_norm using 40:60 weighting.</p></div>
+      <div class="timeline-item"><span>01</span><h3>Census indicators</h3><p>Extract selected Census 2022 indicators across the study area.</p></div>
+      <div class="timeline-item"><span>02</span><h3>Normalised Population Vulnerability</h3><p>Construct Elderly, Health, No-Car and Economic indicators,and normalise using min–max normalisation.</p></div>
+      <div class="timeline-item"><span>03</span><h3>Pedestrian Accessibility</h3><p>Calculate network walking bands using ArcGIS Network Analyst along OpenStreetMap topology at 5 km/h.</p></div>
+      <div class="timeline-item"><span>04</span><h3>Service availability</h3><p>Extract scheduled peak-period departure frequencies and headways from GTFS feeds..</p></div>
+      <div class="timeline-item"><span>05</span><h3>Composite Accessibility Index (CAI)</h3><p>Combine Pedestrian Accessibility and Service Availability using 50:50 weighting.</p></div>
+      <div class="timeline-item"><span>06</span><h3>Access Deficit</h3><p>Convert normalized accessibility to relative access deficit: using AD = 1 − CAI_norm.</p></div>
+      <div class="timeline-item"><span>07</span><h3>Hotspot screening</h3><p>Combine Access Deficit and and Normalized Population Vulnerability using 40:60 weighting.</p></div>
     </div>
 
     <div class="overview-grid">
-      <article class="publication-card"><span class="card-index">POPULATION VULNERABILITY</span><h3>30 / 30 / 20 / 20</h3><p><strong>30%</strong> Elderly Population · <strong>30%</strong> Health &amp; Disability · <strong>20%</strong> No-Car Households · <strong>20%</strong> Economic Vulnerability.</p></article>
-      <article class="publication-card"><span class="card-index">COMPOSITE ACCESSIBILITY</span><h3>50 / 50</h3><p><strong>50%</strong> Pedestrian Accessibility + <strong>50%</strong> scheduled Service Availability. Population Vulnerability is not included in the CAI.</p></article>
-      <article class="publication-card"><span class="card-index">HOTSPOT SCORE</span><h3>40 / 60</h3><p><strong>40%</strong> Access Deficit + <strong>60%</strong> VUL_norm. The result is a spatial screening measure, not a direct investment decision.</p></article>
+	  <article class="publication-card"><span class="card-index">Population Vulnerability Index (VUL)</span><h3>30 / 30 / 20 / 20</h3><p><strong>30%</strong> Elderly Population · <strong>30%</strong> Health &amp; Disability · <strong>20%</strong> No-Car Households · <strong>20%</strong> Economic Vulnerability.</p></article>	
+      <article class="publication-card"><span class="card-index">Pedestrian Accessibility</span><h3>0 - 5 / 5 - 10 / 10 - 15 / >15 min</h3><p><strong>30%</strong> < 417 m · <strong>Score = 1.0</strong> >417 m to 833 m · <strong>Score = 0.6</strong> >833 m to 1,250 m · <strong>Score = 0.3</strong> >1,250 m · <strong>Score = 0</strong></p></article>
+      <article class="publication-card"><span class="card-index">Composite Accessibility Index (CAI)</span><h3>50 / 50</h3><p><strong>50%</strong> Pedestrian Accessibility + <strong>50%</strong> scheduled Service Availability. Population Vulnerability is not included in the CAI.</p></article>
+      <article class="publication-card"><span class="card-index">Final Hotspot Score (HS)</span><h3>40 / 60</h3><p><strong>40%</strong> Access Deficit + <strong>60%</strong> VUL_norm. The result is a spatial screening measure, not a direct investment decision.</p></article>
     </div>
 
-    <div class="definition-band">
-      <div><span>Walking accessibility scores</span><strong>1.0 · 0.6 · 0.3 · 0.0</strong></div>
-      <p>0–5 minutes = 1.0; 5–10 minutes = 0.6; 10–15 minutes = 0.3; greater than 15 minutes = 0.0. At 5 km/h these bands correspond approximately to 417 m, 833 m and 1,250 m network distances.</p>
-    </div>
-
-    <div class="technical-grid">
-      <article class="technical-card"><span class="card-index">FORMULA 01</span><h3>Population Vulnerability</h3><p>0.30 Elderly_norm + 0.30 Health_norm + 0.20 NoCar_norm + 0.20 Econ_norm.</p></article>
-      <article class="technical-card"><span class="card-index">FORMULA 02</span><h3>Composite Accessibility</h3><p>0.50 Pedestrian Accessibility + 0.50 Service Availability.</p></article>
-      <article class="technical-card"><span class="card-index">FORMULA 03</span><h3>Hotspot Score</h3><p>0.40 Access Deficit + 0.60 VUL_norm.</p></article>
-    </div>
-
-    <div class="caution-box"><strong>Methodological guardrail.</strong><p>The selected Census categories can overlap at individual level. Composite values therefore represent model-derived spatial concentrations and should not be interpreted as counts of unique vulnerable residents, direct measures of individual transport dependence or observed unmet demand.</p></div>
-  </div>
+    <div class="caution-box"><strong>Methodological guardrail.</strong><p>Selected Census categories may overlap at the individual level (e.g., an elderly resident who also reports a disability). Composite values represent model-derived spatial concentrations rather than unique counts of vulnerable individuals, direct measures of personal transport dependence, or observed unmet travel demand. The resulting Hotspot Score is a spatial screening tool to direct secondary investigation.</p></div>
+	</div>
 </section>
 
 <section id="map-atlas" class="publication-section" aria-labelledby="map-atlas-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">04 · Master map series</p><h2 id="map-atlas-title">Seven maps. One evidence chain.</h2></div>
+      <div><p class="publication-number">05 · Master map series</p><h2 id="map-atlas-title">Seven maps. One evidence chain.</h2></div>
       <p class="publication-intro">The map series moves from the physical transport baseline through walking accessibility, pedestrian context, scheduled service availability and population vulnerability to the integrated CAI and final accessibility–vulnerability screening.</p>
     </div>
 
@@ -243,7 +233,7 @@
 <section id="findings" class="publication-section" aria-labelledby="findings-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">05 · Results</p><h2 id="findings-title">What the seven maps show.</h2></div>
+      <div><p class="publication-number">06 · Results</p><h2 id="findings-title">What the seven maps show.</h2></div>
       <p class="publication-intro">The evidence progresses from the transport network to integrated spatial screening. The principal pattern is stronger network accessibility and scheduled service availability around the town centre, with weaker conditions in several peripheral residential areas.</p>
     </div>
 
@@ -271,7 +261,7 @@
 <section id="research-questions" class="publication-section" aria-labelledby="questions-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">06 · Research questions</p><h2 id="questions-title">What the evidence supports.</h2></div>
+      <div><p class="publication-number">07 · Research questions</p><h2 id="questions-title">What the evidence supports.</h2></div>
       <p class="publication-intro">The study answers the two research questions within the limits of the spatial data, modelling assumptions and Small Area geography.</p>
     </div>
 
@@ -311,7 +301,7 @@
 <section id="policy" class="publication-section" aria-labelledby="policy-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">07 · Policy &amp; planning implications</p><h2 id="policy-title">From screening evidence to further investigation.</h2></div>
+      <div><p class="publication-number">08 · Policy &amp; planning implications</p><h2 id="policy-title">From screening evidence to further investigation.</h2></div>
       <p class="publication-intro">Map 01.06 is designed to identify locations that warrant more detailed planning and feasibility assessment. Critical Hotspot and High Priority areas are candidate locations for investigation, not automatic investment decisions.</p>
     </div>
 
@@ -341,7 +331,7 @@
 <section id="limitations" class="publication-section" aria-labelledby="limitations-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">08 · Limitations &amp; future research</p><h2 id="limitations-title">Interpret the evidence within its limits.</h2></div>
+      <div><p class="publication-number">09 · Limitations &amp; future research</p><h2 id="limitations-title">Interpret the evidence within its limits.</h2></div>
       <p class="publication-intro">The findings are relative spatial measures produced from defined datasets, geographies, modelling assumptions and weighting choices. They are designed for screening and evidence development rather than as direct measurements of individual behaviour or investment need.</p>
     </div>
 
@@ -369,7 +359,7 @@
 <section id="conclusion" class="publication-section" aria-labelledby="conclusion-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">09 · Conclusion</p><h2 id="conclusion-title">A structured spatial framework for public transport accessibility.</h2></div>
+      <div><p class="publication-number">10 · Conclusion</p><h2 id="conclusion-title">A structured spatial framework for public transport accessibility.</h2></div>
       <p class="publication-intro">The Bandon analysis demonstrates how network walking accessibility, scheduled service availability and Census-based population vulnerability can be brought together in a transparent and reproducible GIS workflow.</p>
     </div>
 
