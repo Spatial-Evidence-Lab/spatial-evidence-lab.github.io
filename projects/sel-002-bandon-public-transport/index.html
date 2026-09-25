@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="/assets/css/navigation.css">
 <link rel="stylesheet" href="/assets/css/footer.css">
 <link rel="stylesheet" href="/assets/css/project.css">
-<link rel="stylesheet" href="/assets/css/sel-002-publication.css">
 <link rel="stylesheet" href="/assets/css/sel-section-system.css">
+<link rel="stylesheet" href="/assets/css/sel-002-publication.css">
 </head>
 <body id="top" class="sel-publication sel-002-publication">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -85,7 +85,7 @@
     <div><strong>34</strong><span>CSO Small Areas</span></div>
     <div><strong>8,196</strong><span>Built-up Area (BUA) population</span></div>
     <div><strong>64.7%</strong><span>Areas Exceeding 10-Min Walk</span></div>
-    <div><strong>23,5%</strong><span>Severe Access Deficit (CAI ≤ 0.25)</span></div>
+    <div><strong>23.5%</strong><span>Severe Access Deficit (CAI ≤ 0.25)</span></div>
     <div><strong>4</strong><span>Bus stops</span></div>
   </div>
 </section>
@@ -111,8 +111,8 @@
     </div>
 
     <div class="definition-band">
-      <div><span>Core distinction</span><strong>Accessibility ≠ proximity</strong></div>
-      <p>Physical proximity to a bus stop does not necessarily translate into effective public transport accessibility. A location may be geographically close to a stop yet have limited effective access where scheduled services are infrequent. By comparison, a longer walking distance may still correspond to stronger effective accessibility where service frequency and availability are greater.</p>
+      <div><span>Core Concept</span><strong>Accessibility ≠ Proximity</strong></div>
+      <p>Physical proximity to a bus stop does not guarantee effective transit access if scheduled service is infrequent or non-existent during peak operational windows. Conversely, a longer pedestrian journey to a primary corridor stop can yield significantly higher effective accessibility due to superior service frequency and regional route connectivity.</p>
     </div>
 
     <div class="technical-grid">
@@ -149,8 +149,8 @@
     </div>
 
     <div class="caution-box">
-      <strong>Geographic interpretation.</strong>
-      <p>Results are relative to the defined Bandon analytical population. The Small Area geography and BUA boundary are not coincident, so the two population figures should not be treated as alternative estimates of Bandon's population.</p>
+      <strong>Methodological Boundary Note</strong>
+      <p>The principal study population is 8,196 residents within the BUA boundary, while the aggregate 34 source Small Areas contain 9,863 residents. Small Area measures describe the complete statistical units and are not estimates of only the population falling inside the BUA. Consequently, these two figures represent distinct geographic extents rather than competing population estimates.</p>
     </div>
   </div>
 </section>
@@ -162,19 +162,12 @@
       <p class="publication-intro">The study integrates four distinct spatial datasets to evaluate public transport supply and demographic vulnerability. Each dataset fulfills a specific analytical function within the study:</p>
     </div>
 
-    <div class="data-architecture">
-      <div class="architecture-row"><span>01</span><strong>Study geography</strong><p>Built Up Area and Small Area geography establish the analytical population and reporting framework.</p></div>
-      <div class="architecture-row"><span>02</span><strong>Walking network</strong><p>OpenStreetMap provides pedestrian network geometry and street connectivity for network-based walking accessibility.</p></div>
-      <div class="architecture-row"><span>03</span><strong>Population evidence</strong><p>CSO Census 2022 Small Area data provide age, health, disability, economic-status and household car-availability indicators.</p></div>
-      <div class="architecture-row"><span>04</span><strong>Transport supply</strong><p>NTA / Bus Éireann GTFS stops, routes, trips and stop times provide public transport locations and scheduled service information.</p></div>
-  	</div>
-
-    <div class="dataset-grid">
-      <article class="metadata-card"><span class="card-index">01</span><h3>Study geography</h3><p><dl><dt>Dataset</dt><dd>Tailte Éireann/CSO</dd><dt>Geographic/Temporal Resolution</dt><dd>BUA boundary & Small Area polygons</dd><dt>Role</dt><dd>Spatial aggregation, masking, and reporting</dd></dl></article>
-      <article class="metadata-card"><span class="card-index">02</span><h3>Walking network</h3><p><dl><dt>Dataset</dt><dd>OpenStreetMap (OSM)</dd><dt>Geographic/Temporal Resolution</dt><dd>Street line topology & routable nodes</dd><dt>Role</dt><dd>True network walking catchments (5, 10, 15 min at 5 km/h)</dd></dl></article>
-	  <article class="metadata-card"><span class="card-index">03</span><h3>Population evidence</h3><p><dl><dt>Dataset</dt><dd>Central Statistics Office (CSO)</dd><dt>Geographic/Temporal Resolution</dt><dd>34 Small Areas Census 2022</dd><dt>Role</dt><dd>Construction of Population Vulnerability Index</dd></dl></article>
-	  <article class="metadata-card"><span class="card-index">04</span><h3>Transport supply</h3><p><dl><dt>Dataset</dt><dd>NTA / Bus Éireann</dd><dt>Geographic/Temporal Resolution</dt><dd>Timetable stop times & route shapes</dd><dt>Role</dt><dd>Peak-period service frequency & headway metrics</dd></dl></article>
-	</div>
+    <div class="dataset-grid evidence-card-grid">
+      <article class="metadata-card"><span class="card-index">01</span><h3>Study geography</h3><dl><dt>Dataset</dt><dd>Tailte Éireann/CSO</dd><dt>Geographic/Temporal Resolution</dt><dd>BUA boundary &amp; Small Area polygons</dd><dt>Role</dt><dd>Spatial aggregation, masking, and reporting</dd></dl></article>
+      <article class="metadata-card"><span class="card-index">02</span><h3>Walking network</h3><dl><dt>Dataset</dt><dd>OpenStreetMap (OSM)</dd><dt>Geographic/Temporal Resolution</dt><dd>Street line topology &amp; routable nodes</dd><dt>Role</dt><dd>True network walking catchments (5, 10, 15 min at 5 km/h)</dd></dl></article>
+      <article class="metadata-card"><span class="card-index">03</span><h3>Population evidence</h3><dl><dt>Dataset</dt><dd>Central Statistics Office (CSO)</dd><dt>Geographic/Temporal Resolution</dt><dd>34 Small Areas Census 2022</dd><dt>Role</dt><dd>Construction of Population Vulnerability Index</dd></dl></article>
+      <article class="metadata-card"><span class="card-index">04</span><h3>Transport supply</h3><dl><dt>Dataset</dt><dd>NTA / Bus Éireann</dd><dt>Geographic/Temporal Resolution</dt><dd>Timetable stop times &amp; route shapes</dd><dt>Role</dt><dd>Peak-period service frequency &amp; headway metrics</dd></dl></article>
+    </div>
 
     <div class="provenance-note"><strong>Reproducibility Protocol.</strong>GTFS timetables and OpenStreetMap street graphs are time-sensitive spatial inputs. To ensure complete scientific reproducibility, the production database logs dataset versioning, snapshot extraction timestamps, spatial transformations, filtering scripts, and classification breaks.</div>
   </div>
@@ -197,9 +190,9 @@
       <div class="timeline-item"><span>07</span><h3>Hotspot screening</h3><p>Combine Access Deficit and and Normalized Population Vulnerability using 40:60 weighting.</p></div>
     </div>
 
-    <div class="overview-grid">
-	  <article class="publication-card"><span class="card-index">Population Vulnerability Index (VUL)</span><h3>30 / 30 / 20 / 20</h3><p><strong>30%</strong> Elderly Population · <strong>30%</strong> Health &amp; Disability · <strong>20%</strong> No-Car Households · <strong>20%</strong> Economic Vulnerability.</p></article>	
-      <article class="publication-card"><span class="card-index">Pedestrian Accessibility</span><h3>0 - 5 / 5 - 10 / 10 - 15 / >15 min</h3><p><strong> < 417 m · <strong>Score = 1.0</strong> >417 m to 833 m · <strong>Score = 0.6</strong> >833 m to 1,250 m · <strong>Score = 0.3</strong> >1,250 m · <strong>Score = 0</strong></p></article>
+    <div class="overview-grid methodology-metrics-grid">
+      <article class="publication-card"><span class="card-index">Population Vulnerability Index (VUL)</span><h3>30 / 30 / 20 / 20</h3><p><strong>30%</strong> Elderly Population · <strong>30%</strong> Health &amp; Disability · <strong>20%</strong> No-Car Households · <strong>20%</strong> Economic Vulnerability.</p></article>
+      <article class="publication-card"><span class="card-index">Pedestrian Accessibility</span><h3>0–5 / 5–10 / 10–15 / &gt;15 min</h3><p><strong>&lt; 417 m</strong> · Score = 1.0 · <strong>&gt;417–833 m</strong> · Score = 0.6 · <strong>&gt;833–1,250 m</strong> · Score = 0.3 · <strong>&gt;1,250 m</strong> · Score = 0.</p></article>
       <article class="publication-card"><span class="card-index">Composite Accessibility Index (CAI)</span><h3>50 / 50</h3><p><strong>50%</strong> Pedestrian Accessibility + <strong>50%</strong> scheduled Service Availability. Population Vulnerability is not included in the CAI.</p></article>
       <article class="publication-card"><span class="card-index">Final Hotspot Score (HS)</span><h3>40 / 60</h3><p><strong>40%</strong> Access Deficit + <strong>60%</strong> VUL_norm. The result is a spatial screening measure, not a direct investment decision.</p></article>
     </div>
@@ -216,13 +209,13 @@
     </div>
 
     <div class="map-series-grid">
-      <figure><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.00.png" target="_blank" rel="noopener"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.00.png" alt="Map 01.00 Base Context and Transit Infrastructure"></a><figcaption>Map 01.00 · Base Context &amp; Transit Infrastructure - Bandon Built-Up Area and network baseline.</figcaption></figure>
-      <figure><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.01.png" target="_blank" rel="noopener"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.01.png" alt="Map 01.01 Physical Pedestrian Catchments"></a><figcaption><strong>01.01 · Physical Pedestrian Catchments</strong><span>Network-based isochronal walkability analysis.</span></figcaption></figure>
-      <figure><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.02.png" target="_blank" rel="noopener"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.02.png" alt="Map 01.02 Pedestrian Network Context"></a><figcaption><strong>01.02 · Pedestrian Network Context</strong><span>Footpath coverage and pedestrian crossing networks.</span></figcaption></figure>
-      <figure><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.03.png" target="_blank" rel="noopener"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.03.png" alt="Map 01.03 Headway and Operational Frequency"></a><figcaption><strong>01.03 · Headway &amp; Operational Frequency</strong><span>Peak-period transit service quality.</span></figcaption></figure>
-      <figure><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.04.png" target="_blank" rel="noopener"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.04.png" alt="Map 01.04 Demographic Vulnerability and Demand"></a><figcaption><strong>01.04 · Demographic Vulnerability &amp; Demand</strong><span>Spatial distribution of relative Population Vulnerability.</span></figcaption></figure>
-      <figure><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.05.png" target="_blank" rel="noopener"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.05.png" alt="Map 01.05 Composite Accessibility Index"></a><figcaption><strong>01.05 · Composite Accessibility Index (CAI)</strong><span>Combined Pedestrian Accessibility and scheduled Service Availability.</span></figcaption></figure>
-      <figure><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.06.png" target="_blank" rel="noopener"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.06.png" alt="Map 01.06 Accessibility Vulnerability Hotspot Framework"></a><figcaption><strong>01.06 · Accessibility–Vulnerability Hotspot Framework</strong><span>Spatial screening priorities for further investigation.</span></figcaption></figure>
+      <figure class="map-thumb"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.00.png" alt="Map 01.00 Base Context &amp; Transit Infrastructure"><figcaption><strong>01.00 · Base Context &amp; Transit Infrastructure</strong><span>Bandon Built-Up Area and network baseline.</span><div class="map-thumb-actions"><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.00.png" target="_blank" rel="noopener">Open map ↗</a><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.00.png" download>Download ↓</a></div></figcaption></figure>
+      <figure class="map-thumb"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.01.png" alt="Map 01.01 Physical Pedestrian Catchments"><figcaption><strong>01.01 · Physical Pedestrian Catchments</strong><span>Network-based isochronal walkability analysis.</span><div class="map-thumb-actions"><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.01.png" target="_blank" rel="noopener">Open map ↗</a><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.01.png" download>Download ↓</a></div></figcaption></figure>
+      <figure class="map-thumb"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.02.png" alt="Map 01.02 Pedestrian Network Context"><figcaption><strong>01.02 · Pedestrian Network Context</strong><span>Footpath coverage and pedestrian crossing networks.</span><div class="map-thumb-actions"><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.02.png" target="_blank" rel="noopener">Open map ↗</a><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.02.png" download>Download ↓</a></div></figcaption></figure>
+      <figure class="map-thumb"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.03.png" alt="Map 01.03 Headway &amp; Operational Frequency"><figcaption><strong>01.03 · Headway &amp; Operational Frequency</strong><span>Peak-period transit service quality.</span><div class="map-thumb-actions"><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.03.png" target="_blank" rel="noopener">Open map ↗</a><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.03.png" download>Download ↓</a></div></figcaption></figure>
+      <figure class="map-thumb"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.04.png" alt="Map 01.04 Demographic Vulnerability &amp; Demand"><figcaption><strong>01.04 · Demographic Vulnerability &amp; Demand</strong><span>Spatial distribution of relative Population Vulnerability.</span><div class="map-thumb-actions"><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.04.png" target="_blank" rel="noopener">Open map ↗</a><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.04.png" download>Download ↓</a></div></figcaption></figure>
+      <figure class="map-thumb"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.05.png" alt="Map 01.05 Composite Accessibility Index (CAI)"><figcaption><strong>01.05 · Composite Accessibility Index (CAI)</strong><span>Combined Pedestrian Accessibility and scheduled Service Availability.</span><div class="map-thumb-actions"><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.05.png" target="_blank" rel="noopener">Open map ↗</a><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.05.png" download>Download ↓</a></div></figcaption></figure>
+      <figure class="map-thumb"><img src="/projects/sel-002-bandon-public-transport/assets/maps/01.06.png" alt="Map 01.06 Accessibility–Vulnerability Hotspot Framework"><figcaption><strong>01.06 · Accessibility–Vulnerability Hotspot Framework</strong><span>Spatial screening priorities for further investigation.</span><div class="map-thumb-actions"><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.06.png" target="_blank" rel="noopener">Open map ↗</a><a href="/projects/sel-002-bandon-public-transport/assets/maps/01.06.png" download>Download ↓</a></div></figcaption></figure>
     </div>
 
     <div class="atlas-actions">
@@ -285,10 +278,10 @@
   </div>
 </section>
 
-<section id="outputs" class="publication-section dark-section" aria-labelledby="outputs-title">
+<section id="project-outputs" class="publication-section dark-section" aria-labelledby="outputs-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">Project outputs</p><h2 id="outputs-title">Explore the evidence package.</h2></div>
+      <div><p class="publication-number">08 · Project outputs</p><h2 id="outputs-title">Explore the evidence package.</h2></div>
       <p class="publication-intro">The project is published as a reproducible evidence package combining the report, map atlas, individual map outputs, metadata and an interactive OpenLayers web map.</p>
     </div>
     <div class="download-grid">
@@ -303,7 +296,7 @@
 <section id="policy" class="publication-section" aria-labelledby="policy-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">08 · Policy &amp; planning implications</p><h2 id="policy-title">From screening evidence to further investigation.</h2></div>
+      <div><p class="publication-number">09 · Policy &amp; planning implications</p><h2 id="policy-title">From screening evidence to further investigation.</h2></div>
       <p class="publication-intro">Map 01.06 is designed to identify locations that warrant more detailed planning and feasibility assessment. Critical Hotspot and High Priority areas are candidate locations for investigation, not automatic investment decisions.</p>
     </div>
 
@@ -333,7 +326,7 @@
 <section id="limitations" class="publication-section" aria-labelledby="limitations-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">09 · Limitations &amp; future research</p><h2 id="limitations-title">Interpret the evidence within its limits.</h2></div>
+      <div><p class="publication-number">10 · Limitations &amp; future research</p><h2 id="limitations-title">Interpret the evidence within its limits.</h2></div>
       <p class="publication-intro">The findings are relative spatial measures produced from defined datasets, geographies, modelling assumptions and weighting choices. They are designed for screening and evidence development rather than as direct measurements of individual behaviour or investment need.</p>
     </div>
 
@@ -361,7 +354,7 @@
 <section id="conclusion" class="publication-section" aria-labelledby="conclusion-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">10 · Conclusion</p><h2 id="conclusion-title">A structured spatial framework for public transport accessibility.</h2></div>
+      <div><p class="publication-number">11 · Conclusion</p><h2 id="conclusion-title">A structured spatial framework for public transport accessibility.</h2></div>
       <p class="publication-intro">The Bandon analysis demonstrates how network walking accessibility, scheduled service availability and Census-based population vulnerability can be brought together in a transparent and reproducible GIS workflow.</p>
     </div>
 
