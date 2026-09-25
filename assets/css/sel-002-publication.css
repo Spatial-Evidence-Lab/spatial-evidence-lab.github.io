@@ -2496,3 +2496,84 @@ summary:focus-visible {
 /* SEL-002 stylesheet note 1502: publication spacing; retain consistent spacing, readable contrast and evidence-first presentation. */
 /* SEL-002 stylesheet note 1503: typographic hierarchy; retain consistent spacing, readable contrast and evidence-first presentation. */
 /* SEL-002 stylesheet note 1504: keyboard focus; retain consistent spacing, readable contrast and evidence-first presentation. */
+
+
+/* =========================================================
+   SEL-002 — publication hierarchy refinement
+   Explicit hierarchy requested for the publication page.
+   ========================================================= */
+.sel-002-publication {
+  --sel-display: clamp(3rem, 4vw, 3.25rem);
+  --sel-h2: 2rem;
+  --sel-h3: 1.25rem;
+  --sel-body: 1rem;
+}
+.sel-002-publication .publication-kicker,
+.sel-002-publication .publication-number,
+.sel-002-publication .card-index,
+.sel-002-publication .map-id { font-size:12px; line-height:1.3; font-weight:600; letter-spacing:.10em; }
+.sel-002-publication .publication-hero h1 { font-size:clamp(3rem,4vw,3.25rem); line-height:1.02; letter-spacing:-.04em; font-weight:700; }
+.sel-002-publication .publication-lede { font-size:18px; line-height:1.55; font-weight:400; max-width:760px; }
+.sel-002-publication .publication-section h2 { font-size:32px; line-height:1.15; letter-spacing:-.025em; font-weight:600; }
+.sel-002-publication .publication-intro,
+.sel-002-publication .study-copy > p,
+.sel-002-publication .publication-card p,
+.sel-002-publication .metadata-card p,
+.sel-002-publication .interpretation-panel p,
+.sel-002-publication .technical-card p,
+.sel-002-publication .definition-band p,
+.sel-002-publication .caution-box p,
+.sel-002-publication .architecture-row p,
+.sel-002-publication .provenance-note,
+.sel-002-publication .policy-table td,
+.sel-002-publication .appendix-list p { font-size:16px; line-height:1.65; font-weight:400; }
+.sel-002-publication .publication-card h3,
+.sel-002-publication .metadata-card h3,
+.sel-002-publication .interpretation-panel h3,
+.sel-002-publication .technical-card h3 { font-size:20px; line-height:1.25; letter-spacing:-.015em; font-weight:600; }
+.sel-002-publication .publication-stats { grid-template-columns:repeat(5,minmax(0,1fr)); margin-top:48px; }
+.sel-002-publication .publication-stats > div,
+.sel-002-publication .publication-stats > div:not(:first-child) { padding:22px 16px 26px; text-align:center; }
+.sel-002-publication .publication-stats strong { font-size:32px; line-height:1.1; font-weight:700; letter-spacing:-.035em; }
+.sel-002-publication .publication-stats span { display:block; margin-top:8px; font-size:12px; line-height:1.35; letter-spacing:.06em; text-transform:uppercase; font-weight:500; }
+.sel-002-publication .project-metadata-item span,
+.sel-002-publication .metric-list span,
+.sel-002-publication .metadata-card dt { font-size:12px; line-height:1.35; font-weight:500; }
+.sel-002-publication .project-metadata-item strong,
+.sel-002-publication .metadata-card dd { font-size:13px; line-height:1.45; font-weight:500; }
+.sel-002-publication .metric-list { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:30px; }
+.sel-002-publication .metric-list > div { padding:20px 14px; text-align:center; }
+.sel-002-publication .metric-list strong { font-size:32px; line-height:1.1; font-weight:700; letter-spacing:-.035em; }
+.sel-002-publication .metric-list span { display:block; margin-top:8px; text-transform:none; letter-spacing:0; }
+.sel-002-publication .evidence-card-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.sel-002-publication .metadata-card dl { font-size:13px; line-height:1.45; }
+.sel-002-publication .methodology-metrics-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.sel-002-publication .methodology-metrics-grid .publication-card h3 { font-size:24px; }
+.sel-002-publication .map-series-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.sel-002-publication .map-thumb { margin:0; background:var(--sel-white); border:1px solid var(--sel-line); border-radius:14px; overflow:hidden; }
+.sel-002-publication .map-thumb img { display:block; width:100%; aspect-ratio:16/10; object-fit:contain; background:#e9e8e3; }
+.sel-002-publication .map-thumb figcaption { padding:14px 16px 16px; color:var(--sel-muted); font-size:13px; line-height:1.45; }
+.sel-002-publication .map-thumb figcaption strong { display:block; color:var(--sel-ink); font-size:14px; line-height:1.3; font-weight:600; }
+.sel-002-publication .map-thumb figcaption span { display:block; margin-top:5px; font-size:12px; line-height:1.4; }
+.sel-002-publication .map-thumb-actions { display:flex; gap:14px; margin-top:11px; }
+.sel-002-publication .map-thumb-actions a { color:var(--sel-ink); font-size:12px; font-weight:600; text-decoration:none; }
+.sel-002-publication .map-thumb-actions a:hover,
+.sel-002-publication .map-thumb-actions a:focus-visible { color:var(--sel-teal); text-decoration:underline; }
+@media (max-width:1050px) {
+  .sel-002-publication .evidence-card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .sel-002-publication .publication-stats { grid-template-columns:repeat(5,minmax(0,1fr)); }
+  .sel-002-publication .map-series-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:760px) {
+  .sel-002-publication .publication-stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .sel-002-publication .metric-list,
+  .sel-002-publication .evidence-card-grid,
+  .sel-002-publication .methodology-metrics-grid,
+  .sel-002-publication .map-series-grid { grid-template-columns:1fr; }
+  .sel-002-publication .publication-section h2 { font-size:28px; }
+  .sel-002-publication .publication-hero h1 { font-size:42px; }
+}
+@media (max-width:480px) {
+  .sel-002-publication .publication-stats { grid-template-columns:1fr 1fr; }
+  .sel-002-publication .publication-stats strong { font-size:30px; }
+}
