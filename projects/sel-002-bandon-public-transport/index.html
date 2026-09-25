@@ -157,31 +157,31 @@
   <div class="sel-shell">
     <div class="publication-section-head">
       <div><p class="publication-number">03 · Evidence base</p><h2 id="data-title">Four evidence streams, one reproducible workflow.</h2></div>
-      <p class="publication-intro">The study combines public transport supply, pedestrian-network structure, Census 2022 population evidence and the study geography. Each source has a defined analytical role.</p>
+      <p class="publication-intro">The study integrates four distinct spatial datasets to evaluate public transport supply and demographic vulnerability. Each dataset fulfills a specific analytical function within the study:</p>
     </div>
 
     <div class="data-architecture">
-      <div class="architecture-row"><span>01</span><strong>Public transport supply</strong><p>NTA / Bus Éireann GTFS stops, routes, trips and stop times provide scheduled public transport locations and service information.</p></div>
-      <div class="architecture-row"><span>02</span><strong>Pedestrian network</strong><p>OpenStreetMap provides pedestrian-network geometry and street connectivity for network-based walking analysis.</p></div>
+      <div class="architecture-row"><span>01</span><strong>Study geography</strong><p>Built Up Area and Small Area geography establish the analytical population and reporting framework.</p></div>
+      <div class="architecture-row"><span>02</span><strong>Walking network</strong><p>OpenStreetMap provides pedestrian network geometry and street connectivity for network-based walking accessibility.</p></div>
       <div class="architecture-row"><span>03</span><strong>Population evidence</strong><p>CSO Census 2022 Small Area data provide age, health, disability, economic-status and household car-availability indicators.</p></div>
-      <div class="architecture-row"><span>04</span><strong>Reporting geography</strong><p>Tailte Éireann / CSO geography and the Bandon BUA establish the spatial reporting framework.</p></div>
-    </div>
+      <div class="architecture-row"><span>04</span><strong>Transport supply</strong><p>NTA / Bus Éireann GTFS stops, routes, trips and stop times provide public transport locations and scheduled service information.</p></div>
+  	</div>
 
     <div class="dataset-grid">
-      <article class="metadata-card"><span class="card-index">DATA 01</span><h3>CSO Census 2022</h3><p>Population and socio-demographic evidence used to construct Population Vulnerability and provide contextual travel indicators.</p><dl><dt>Reference</dt><dd>2022</dd><dt>Geography</dt><dd>Small Area</dd><dt>Role</dt><dd>Population vulnerability</dd></dl></article>
-      <article class="metadata-card"><span class="card-index">DATA 02</span><h3>NTA / Bus Éireann GTFS</h3><p>Stops, routes and scheduled stop times used to evaluate peak-period service frequency and headway.</p><dl><dt>Role</dt><dd>Transport supply</dd><dt>Measures</dt><dd>Frequency / headway</dd></dl></article>
-      <article class="metadata-card"><span class="card-index">DATA 03</span><h3>OpenStreetMap</h3><p>Pedestrian-network routing and street context used to calculate walking accessibility rather than straight-line buffers.</p><dl><dt>Role</dt><dd>Network accessibility</dd><dt>Output</dt><dd>5 / 10 / 15 min bands</dd></dl></article>
-      <article class="metadata-card"><span class="card-index">DATA 04</span><h3>SEL PostGIS database</h3><p>Processed accessibility and vulnerability layers supporting spatial analysis, lineage and publication outputs.</p><dl><dt>Version</dt><dd>1.0</dd><dt>Role</dt><dd>Processed analytical layers</dd></dl></article>
-    </div>
+      <article class="metadata-card"><span class="card-index">01</span><h3>Study geography</h3><p><dl><dt>Dataset</dt><dd>Tailte Éireann/CSO</dd><dt>Geographic/Temporal Resolution</dt><dd>BUA boundary & Small Area polygons</dd><dt>Role</dt><dd>Spatial aggregation, masking, and reporting</dd></dl></article>
+      <article class="metadata-card"><span class="card-index">02</span><h3>Walking network</h3><p><dl><dt>Dataset</dt><dd>OpenStreetMap (OSM)</dd><dt>Geographic/Temporal Resolution</dt><dd>Street line topology & routable nodes</dd><dt>Role</dt><dd>True network walking catchments (5, 10, 15 min at 5 km/h)</dd></dl></article>
+	  <article class="metadata-card"><span class="card-index">03</span><h3>Population evidence</h3><p><dl><dt>Dataset</dt><dd>Central Statistics Office (CSO)</dd><dt>Geographic/Temporal Resolution</dt><dd>34 Small Areas Census 2022</dd><dt>Role</dt><dd>Construction of Population Vulnerability Index</dd></dl></article>
+	  <article class="metadata-card"><span class="card-index">04</span><h3>Transport supply</h3><p><dl><dt>Dataset</dt><dd>NTA / Bus Éireann</dd><dt>Geographic/Temporal Resolution</dt><dd>Timetable stop times & route shapes</dd><dt>Role</dt><dd>Peak-period service frequency & headway metrics</dd></dl></article>
+	</div>
 
-    <div class="provenance-note"><strong>Reproducibility register.</strong> The production record should retain dataset version, extraction date, source, spatial reference, processing date, filtering steps and classification thresholds. GTFS and OpenStreetMap extracts are time-sensitive inputs.</div>
+    <div class="provenance-note"><strong>Reproducibility Protocol.</strong>GTFS timetables and OpenStreetMap street graphs are time-sensitive spatial inputs. To ensure complete scientific reproducibility, the production database logs dataset versioning, snapshot extraction timestamps, spatial transformations, filtering scripts, and classification breaks.</div>
   </div>
 </section>
 
 <section id="methodology" class="publication-section dark-section" aria-labelledby="methodology-title">
   <div class="sel-shell">
     <div class="publication-section-head">
-      <div><p class="publication-number">03 · Methodology</p><h2 id="methodology-title">Separate the dimensions. Then examine the overlap.</h2></div>
+      <div><p class="publication-number">04 · Methodology</p><h2 id="methodology-title">Separate the dimensions. Then examine the overlap.</h2></div>
       <p class="publication-intro">The model deliberately separates transport-system performance from population need. Pedestrian Accessibility and Service Availability form the Composite Accessibility Index (CAI); Population Vulnerability is calculated independently and introduced only when constructing the final hotspot score.</p>
     </div>
 
