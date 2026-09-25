@@ -59,12 +59,12 @@
   <div class="sel-shell publication-hero-grid">
     <div class="publication-hero-copy">
       <p class="publication-kicker">SEL-002 · PUBLIC TRANSPORT ACCESSIBILITY &amp; VULNERABILITY</p>
-      <h1 id="publication-title">Bandon Public Transport Accessibility Analysis</h1>
-      <p class="publication-lede">A reproducible GIS-based spatial evidence study examining network walking accessibility, scheduled public transport service availability and population vulnerability across Bandon, County Cork, Republic of Ireland.</p>
+      <h1 id="publication-title">Bandon Public Transport Accessibility</h1>
+      <p class="publication-lede">A reproducible, GIS-based spatial evidence study that integrates network-based walking catchments and GTFS-scheduled service frequencies with multidimensional demographic vulnerability to identify priority areas for transit intervention across Bandon, Co. Cork.</p>
       <div class="project-metadata-grid" aria-label="Project metadata">
         <div class="project-metadata-item"><span>Location</span><strong>Bandon, County Cork, Republic of Ireland</strong></div>
         <div class="project-metadata-item"><span>Study boundary</span><strong>Bandon Built-Up Area (BUA)</strong></div>
-        <div class="project-metadata-item"><span>Reporting geography</span><strong>34 CSO Census 2022 Small Areas</strong></div>
+        <div class="project-metadata-item"><span>Reporting geography</span><strong>34 CSO 2022 Small Areas</strong></div>
         <div class="project-metadata-item"><span>Study population</span><strong>8,196 residents within the BUA</strong></div>
         <div class="project-metadata-item"><span>Analytical evidence</span><strong>GTFS · OpenStreetMap · Census 2022</strong></div>
         <div class="project-metadata-item"><span>Status</span><strong>Final revised report · September 2026</strong></div>
@@ -81,9 +81,10 @@
   </div>
   <div class="sel-shell publication-stats">
     <div><strong>34</strong><span>CSO Small Areas</span></div>
-    <div><strong>9,863</strong><span>Aggregate source-Small-Area population</span></div>
-    <div><strong>64.7%</strong><span>Areas requiring &gt;10 min walking access</span></div>
-    <div><strong>4</strong><span>Critical screening hotspots</span></div>
+    <div><strong>8,196</strong><span>Built-up Area (BUA) population</span></div>
+    <div><strong>64.7%</strong><span>Areas Exceeding 10-Min Walk</span></div>
+    <div><strong>23,5%</strong><span>Severe Access Deficit (CAI ≤ 0.25)</span></div>
+    <div><strong>4</strong><span>Bus stops</span></div>
   </div>
 </section>
 
@@ -91,19 +92,19 @@
   <div class="sel-shell">
     <div class="publication-section-head">
       <div><p class="publication-number">01 · Research overview</p><h2 id="overview-title">Accessibility as a spatial evidence problem.</h2></div>
-      <p class="publication-intro">The study examines the conditions under which residents can reach and use the Bandon–Cork public transport network. It separates physical network access from scheduled service availability, then introduces population vulnerability only at the final spatial-screening stage.</p>
+      <p class="publication-intro">Public transport planning in regional commuter towns frequently relies on radial distance buffers that can overlook pedestrian barriers, micro-topographic constraints, and limitations in scheduled service frequency. This study examines the spatial conditions under which residents of Bandon, Co. Cork, can access and make effective use of the regional public transport network. The geographic scope comprises 34 Census Small Areas (CSAs), with a total aggregated population of 9,863 residents, of whom 8,196 reside within the Bandon Urban Area (BUA). By separating physical network accessibility and GTFS-derived scheduled service availability from demographic need, the analysis first identifies objective transport deficits independently of population characteristics. Demographic vulnerability is then incorporated at the final spatial-screening stage to identify areas where transport deficits coincide with greater levels of population need.</p>
     </div>
 
     <div class="overview-grid">
       <article class="publication-card featured-card">
-        <span class="card-index">RQ01</span>
-        <h3>How does public transport accessibility for travel between Bandon and Cork City vary across the town?</h3>
-        <p>The analysis evaluates network-based walking access to principal public transport stops and scheduled peak-period service availability. It identifies spatial differences in access conditions rather than establishing whether public transport is universally viable or competitive with private-car travel.</p>
+        <span class="card-index">Question 1</span>
+        <h3>How does the spaƟal accessibility of public transport for travel between Bandon and Cork City vary across the town?</h3>
+        <p>The analysis models network-based walking times to principal stops alongside GTFS scheduled peak-period service frequencies. It maps intra-town spatial disparities in transit supply rather than determining absolute car competitiveness.</p>
       </article>
       <article class="publication-card">
-        <span class="card-index">RQ02</span>
-        <h3>Which areas are potentially most vulnerable to limited public transport accessibility?</h3>
-        <p>The analysis identifies where relatively weaker accessibility overlaps with higher relative concentrations of selected age, health, disability, economic-status and household car-availability characteristics.</p>
+        <span class="card-index">Question 2</span>
+        <h3> Which areas are potenƟally most vulnerable to limited public transport accessibility because of their demographic, health, employment, or household characteristics?</h3>
+        <p>The framework identifies geographic zones where severe accessibility deficits directly coincide with elevated concentrations of age, health, disability, economic status, and low household car availability proxies derived from Census 2022.</p>
       </article>
     </div>
 
@@ -113,9 +114,9 @@
     </div>
 
     <div class="technical-grid">
-      <article class="technical-card"><span class="card-index">TRANSPORT SYSTEM</span><h3>Accessibility</h3><p>Measured through pedestrian-network access to principal stops and scheduled peak-period service availability derived from GTFS.</p></article>
-      <article class="technical-card"><span class="card-index">POPULATION CONTEXT</span><h3>Vulnerability</h3><p>Measured as relative Small Area concentrations of selected demographic, health, economic-status and household characteristics.</p></article>
-      <article class="technical-card"><span class="card-index">FINAL SCREENING</span><h3>Hotspot</h3><p>The spatial overlap between relative access deficit and normalised Population Vulnerability.</p></article>
+      <article class="technical-card"><span class="card-index">TRANSPORT SYSTEM</span><h3>Supply</h3><p>Evaluates physical network accessibility to principal stops and scheduled GTFS peak-period frequency.</p></article>
+      <article class="technical-card"><span class="card-index">POPULATION CONTEXT</span><h3>Vulnerability</h3><p>Quantifies multi-indicator vulnerability using normalized Census 2022 Small Area Statistics.</p></article>
+      <article class="technical-card"><span class="card-index">FINAL SCREENING</span><h3>Hotspot</h3><p> Integrates relative Access Deficits and Population Vulnerability to prioritize target zones.</p></article>
     </div>
   </div>
 </section>
