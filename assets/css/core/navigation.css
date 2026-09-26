@@ -251,3 +251,10 @@ font-size:.92rem;
 }
 
 }
+
+/* Asset/layout repair: keep the brand mark bounded across every page. */
+.site-header .wordmark{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none;}
+.site-header .wordmark-logo{display:block;width:clamp(32px,3vw,42px);height:clamp(32px,3vw,42px);max-width:42px;object-fit:contain;flex:0 0 auto;}
+.site-header .wordmark-name{font-size:clamp(.95rem,1.1vw,1.08rem);line-height:1.15;white-space:nowrap;}
+.site-header .nav-wrap{display:flex;align-items:center;justify-content:space-between;min-height:var(--nav-height);gap:24px;}
+@media(max-width:720px){.site-header .wordmark-logo{width:34px;height:34px}.site-header .wordmark-name{font-size:.92rem}}
