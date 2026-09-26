@@ -450,7 +450,111 @@
     }
 }
 
+/* ===============================================================
+   EXECUTIVE DASHBOARD v4.1A
+   =============================================================== */
 
+.publication-dashboard{
+padding:72px 0;
+background:#F7FAFC;
+}
+
+.dashboard-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:32px;
+}
+
+.metric-card{
+background:white;
+border:1px solid #E4ECF2;
+border-radius:18px;
+padding:24px;
+}
+
+.metric-card span{
+display:block;
+font-size:.8rem;
+text-transform:uppercase;
+letter-spacing:.08em;
+color:#648193;
+margin-bottom:10px;
+}
+
+.metric-card strong{
+font-size:2rem;
+color:#102635;
+font-weight:800;
+}
+
+.metric-card.wide{
+grid-column:span 2;
+}
+
+/* CTA Cards */
+
+.action-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+padding:64px 0;
+}
+
+.action-card{
+display:flex;
+gap:20px;
+padding:28px;
+border-radius:22px;
+background:white;
+border:1px solid #DDE7EE;
+text-decoration:none;
+transition:.25s;
+}
+
+.action-card:hover{
+transform:translateY(-4px);
+box-shadow:0 16px 36px rgba(0,0,0,.12);
+}
+
+.action-card.primary{
+background:#17384A;
+color:white;
+}
+
+.action-card.primary p{
+color:#C9E8F0;
+}
+
+.action-icon{
+width:58px;
+height:58px;
+border-radius:14px;
+display:grid;
+place-items:center;
+background:rgba(0,215,232,.12);
+font-size:1.5rem;
+}
+
+@media(max-width:900px){
+.dashboard-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.action-grid{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:560px){
+.dashboard-grid{
+grid-template-columns:1fr;
+}
+
+.metric-card.wide{
+grid-column:auto;
+}
+}
 
 /* =========================================================
    CANONICAL COMPONENT TOKENS — 2026-09-24
