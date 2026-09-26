@@ -576,3 +576,28 @@ grid-column:auto;
 .research-question,
 .cta-card,
 .process-step{font-family:var(--sans);}
+
+/* ==========================================================
+   ACCESSIBILITY PATCH v4.1B
+   ========================================================== */
+
+.definition-band,
+.caution-box,
+.interpretation-panel{
+scroll-margin-top:120px;
+}
+
+button,
+a{
+touch-action:manipulation;
+}
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+scroll-behavior:auto!important;
+animation:none!important;
+transition:none!important;
+}
+
+}
