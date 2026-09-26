@@ -1,0 +1,306 @@
+/* SEL-002 Semantic Palette */
+:root {
+  --sel002-ink: #24343A;
+  --sel002-text: #4F5F63;
+  --sel002-muted: #7B898B;
+  --sel002-bg: #F5F3EE;
+  --sel002-surface: #FFFFFF;
+  --sel002-line: #D8DEDC;
+  --sel002-access: #4C8E8D;
+  --sel002-service: #B88A4A;
+  --sel002-vulnerability: #806B9F;
+  --sel002-hotspot: #B86F7A;
+  --sel002-green: #5F9277;
+  --sel002-blue: #426F8A;
+}
+
+/* Page Typography & Sections */
+.project-sel002 {
+  background-color: var(--sel002-bg);
+  color: var(--sel002-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.project-section-bg-alt {
+  background-color: var(--sel002-surface);
+}
+
+.project-section {
+  padding: 112px 0;
+}
+
+.project-section-lg {
+  padding: 128px 0;
+}
+
+.container-wide {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Sticky Project Navigation */
+.project-nav-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 50px;
+  background: rgba(245, 243, 238, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--sel002-line);
+  display: flex;
+  align-items: center;
+}
+
+.project-nav-list {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-nav-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sel002-text);
+  text-decoration: none;
+  padding: 14px 0;
+  border-bottom: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-nav-link.active,
+.project-nav-link:hover {
+  color: var(--sel002-access);
+  border-bottom-color: var(--sel002-access);
+}
+
+/* Hero Section */
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sel002-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--sel002-ink);
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--sel002-text);
+  margin-bottom: 32px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sel002-muted);
+  margin-bottom: 36px;
+  border-top: 1px solid var(--sel002-line);
+  padding-top: 16px;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.metric-card {
+  background: var(--sel002-surface);
+  border: 1px solid var(--sel002-line);
+  border-radius: 8px;
+  padding: 24px;
+  border-top: 4px solid var(--sel002-line);
+}
+
+.metric-card[data-accent="access"] { border-top-color: var(--sel002-access); }
+.metric-card[data-accent="service"] { border-top-color: var(--sel002-service); }
+.metric-card[data-accent="vulnerability"] { border-top-color: var(--sel002-vulnerability); }
+.metric-card[data-accent="hotspot"] { border-top-color: var(--sel002-hotspot); }
+
+.metric-number {
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--sel002-ink);
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--sel002-muted);
+  margin-bottom: 8px;
+}
+
+.metric-sub {
+  font-size: 14px;
+  color: var(--sel002-text);
+  line-height: 1.45;
+}
+
+/* Map Gallery Layout */
+.map-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.map-card {
+  background: var(--sel002-surface);
+  border: 1px solid var(--sel002-line);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.map-card:hover {
+  border-color: var(--sel002-access);
+  transform: translateY(-2px);
+}
+
+.map-card-large { grid-column: span 12; }
+.map-card-medium { grid-column: span 6; }
+.map-card-integrated { grid-column: span 6; background-color: #FAFAF8; }
+.map-card-hotspot { grid-column: span 6; background-color: #F2E7E8; }
+
+.map-thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-card-body {
+  padding: 20px;
+}
+
+.map-card-num {
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--sel002-muted);
+  text-transform: uppercase;
+}
+
+.map-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--sel002-ink);
+  margin: 4px 0 8px 0;
+}
+
+.map-card-desc {
+  font-size: 14px;
+  color: var(--sel002-text);
+  margin: 0;
+}
+
+/* Modal Lightbox Viewer */
+.map-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(36, 52, 58, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-modal.open { display: flex; }
+
+.map-modal-content {
+  background: var(--sel002-surface);
+  border-radius: 8px;
+  max-width: 1100px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.map-modal-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--sel002-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  text-align: center;
+  background: #1E272C;
+  padding: 16px;
+}
+
+.map-modal-img {
+  max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+}
+
+.map-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--sel002-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--sel002-bg);
+}
+
+/* Table styling for Hotspots */
+.hotspot-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+
+.hotspot-table th, .hotspot-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--sel002-line);
+}
+
+.hotspot-table th {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sel002-muted);
+  text-transform: uppercase;
+}
+
+.hotspot-score {
+  font-weight: 600;
+  color: var(--sel002-hotspot);
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 38px; }
+  .metrics-grid { grid-template-columns: 1fr; }
+  .map-card-medium, .map-card-integrated, .map-card-hotspot { grid-column: span 12; }
+}
