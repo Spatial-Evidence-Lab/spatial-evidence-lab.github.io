@@ -1,0 +1,14 @@
+{
+  "id":"SEL-002",
+  "title":"Bandon Public Transport Accessibility",
+  "subtitle":"Accessibility & Vulnerability Assessment",
+  "status":"Published",
+  "publication_date":"2026-09-24",
+  "authors":["Jose Freire"],
+  "study_area":"Bandon Built-Up Area",
+  "population":8196,
+  "maps":7,
+  "datasets":6,
+  "theme":"Accessibility",
+  "keywords":["GIS","GTFS","Transport Equity"]
+}
