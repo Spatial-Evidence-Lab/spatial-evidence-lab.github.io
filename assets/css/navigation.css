@@ -32,3 +32,39 @@
   .site-nav a::after { display:none; }
   .site-nav .nav-cta { text-align:center; margin-top:6px; }
 }
+
+/* ===============================================================
+   PUBLICATION NAVIGATION ACCESSIBILITY
+   =============================================================== */
+
+.publication-toc a{
+min-height:44px;
+padding:12px 18px;
+display:flex;
+align-items:center;
+border-radius:10px;
+color:#D8EEF4;
+transition:.2s;
+}
+
+.publication-toc a:hover{
+background:rgba(0,215,232,.12);
+color:white;
+}
+
+.publication-toc a.active{
+background:rgba(0,215,232,.18);
+color:#8DF3FF;
+font-weight:700;
+}
+
+.site-nav a{
+min-height:44px;
+padding:12px 14px;
+}
+
+.site-nav a:focus-visible,
+.publication-toc a:focus-visible{
+outline:3px solid var(--publication-cyan);
+outline-offset:3px;
+}
