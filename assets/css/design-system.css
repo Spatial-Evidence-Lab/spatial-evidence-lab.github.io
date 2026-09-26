@@ -588,3 +588,77 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--sans); font-weight: 700; }
 /* Never allow a child component to create a wider page than the canonical frame. */
 html, body { max-width: 100%; overflow-x: hidden; }
 main, header, footer, section, article, aside, nav, div, figure, form { min-width: 0; max-width: 100%; }
+
+/* ===============================================================
+   RELEASE V4.1A — PUBLICATION TYPOGRAPHY SYSTEM
+   =============================================================== */
+
+.display-xl{
+font-size:clamp(3rem,6vw,4.75rem);
+line-height:1;
+font-weight:800;
+letter-spacing:-.04em;
+}
+
+.display-lg{
+font-size:clamp(2.5rem,5vw,3.5rem);
+line-height:1.1;
+font-weight:800;
+}
+
+.heading-xl{
+font-size:2rem;
+font-weight:700;
+line-height:1.2;
+}
+
+.heading-lg{
+font-size:1.5rem;
+font-weight:700;
+}
+
+.text-large{
+font-size:1.125rem;
+line-height:1.8;
+}
+
+.caption-label{
+font-size:.82rem;
+text-transform:uppercase;
+letter-spacing:.14em;
+font-weight:700;
+color:var(--publication-cyan);
+}
+
+/* Accessible Focus States */
+
+:focus-visible{
+outline:3px solid var(--publication-cyan);
+outline-offset:4px;
+border-radius:10px;
+}
+
+/* Accessibility Improvements */
+
+a,
+button{
+min-height:44px;
+display:inline-flex;
+align-items:center;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+/* WCAG Typography */
+
+body{
+font-size:16px;
+line-height:1.65;
+}
+
+small{
+font-size:14px;
+}
