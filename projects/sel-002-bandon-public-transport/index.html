@@ -20,6 +20,9 @@
 <link rel="stylesheet" href="/assets/css/sel-002-publication.css">
 </head>
 <body id="top" class="sel-publication sel-002-publication">
+<div class="publication-progress" aria-hidden="true">
+<div class="publication-progress-bar"></div>
+</div>
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site-header">
@@ -40,23 +43,9 @@
   </div>
 </header>
 
-<nav class="publication-toc" aria-label="Project sections">
-  <div class="shell publication-toc-inner">
-    <a href="#overview">01 <span>OVERVIEW</span></a>
-    <a href="#study-area">02 <span>STUDY AREA</span></a>
-    <a href="#evidence">03 <span>EVIDENCE</span></a>
-	<a href="#methodology">04 <span>METHODOLOGY</span></a>
-    <a href="#map-atlas">05 <span>MAPS</span></a>
-    <a href="#findings">06 <span>RESULTS</span></a>
-    <a href="#research-questions">07 <span>QA</span></a>
-	<a href="#project-outputs">08 <span>OUTPUTS</span></a>
-    <a href="#policy">09 <span>PLANNING</span></a>
-    <a href="#limitations">10 <span>LIMITATIONS</span></a>
-    <a href="#conclusion">11 <span>CONCLUSION</span></a>
-  </div>
-</nav>
 
-<main id="main-content">
+
+<main id="main-content" class="publication-layout publication-shell">
 <section class="publication-hero">
 
 <div class="publication-shell publication-grid">
@@ -187,6 +176,36 @@ fetchpriority="high">
 
 </section>
 
+<div class="publication-layout-grid">
+
+<aside class="publication-toc-wrapper">
+
+<nav class="publication-toc" aria-label="Publication contents">
+
+<div class="publication-toc-title">
+Contents
+</div>
+
+<ul>
+<li><a href="#overview"><span>01</span>Overview</a></li>
+<li><a href="#study-area"><span>02</span>Study Area</a></li>
+<li><a href="#evidence"><span>03</span>Evidence Base</a></li>
+<li><a href="#methodology"><span>04</span>Methodology</a></li>
+<li><a href="#map-atlas"><span>05</span>Map Atlas</a></li>
+<li><a href="#findings"><span>06</span>Results</a></li>
+<li><a href="#research-questions"><span>07</span>Research Questions</a></li>
+<li><a href="#project-outputs"><span>08</span>Outputs</a></li>
+<li><a href="#policy"><span>09</span>Planning Implications</a></li>
+<li><a href="#limitations"><span>10</span>Limitations</a></li>
+<li><a href="#conclusion"><span>11</span>Conclusion</a></li>
+</ul>
+
+</nav>
+
+</aside>
+
+<div class="publication-main">
+
 <section class="publication-actions">
 
 <div class="publication-shell action-grid">
@@ -292,7 +311,7 @@ fetchpriority="high">
   </div>
 </section>
 
-<section id="data-infrastructure" class="publication-section" aria-labelledby="data-title">
+<section id="evidence" class="publication-section" aria-labelledby="data-title">
   <div class="sel-shell">
     <div class="publication-section-head">
       <div><p class="publication-number">03 · Evidence base</p><h2 id="data-title">Four evidence streams, one reproducible workflow.</h2></div>
@@ -521,6 +540,9 @@ fetchpriority="high">
     <div class="publication-closing"><p class="publication-kicker">SPATIAL EVIDENCE LAB · SEL-002</p><h3>Evidence that can be inspected,<br><em>revisited and extended.</em></h3><a href="/projects/" class="sel-button sel-button-dark">Explore all projects ↗</a></div>
   </div>
 </section>
+
+</div>
+</div>
 </main>
 
 <footer class="site-footer">
@@ -537,6 +559,30 @@ fetchpriority="high">
   <div class="footer-bottom"><span class="footer-copyright">© <span data-year></span> Spatial Evidence Lab</span><a class="footer-top-link" href="#top" aria-label="Back to top">Back to top ↑</a><span class="footer-tagline">Independent geospatial research</span></div>
 </footer>
 
+<button class="publication-mobile-button"
+aria-label="Publication Contents">
+☰
+</button>
+
+<div class="publication-mobile-panel">
+
+<h3>Publication Contents</h3>
+
+<a href="#overview">01 Overview</a>
+<a href="#study-area">02 Study Area</a>
+<a href="#evidence">03 Evidence Base</a>
+<a href="#methodology">04 Methodology</a>
+<a href="#map-atlas">05 Map Atlas</a>
+<a href="#findings">06 Results</a>
+<a href="#research-questions">07 Research Questions</a>
+<a href="#project-outputs">08 Outputs</a>
+<a href="#policy">09 Planning Implications</a>
+<a href="#limitations">10 Limitations</a>
+<a href="#conclusion">11 Conclusion</a>
+
+</div>
+
 <script src="/js/sel-site.js"></script>
 </body>
 </html>
+
