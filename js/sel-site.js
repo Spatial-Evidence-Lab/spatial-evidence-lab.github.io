@@ -1,116 +1,131 @@
-(function () {
+/* ==========================================================
+   SPATIAL EVIDENCE LAB
+   PUBLICATION ENGINE v4.1B
+   Scrollspy + Reading Progress + Mobile TOC
+   ========================================================== */
 
-    /* =====================================================
-       MOBILE NAVIGATION
-    ===================================================== */
+const progressBar=document.querySelector('.publication-progress-bar');
 
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.site-nav');
+function updateReadingProgress(){
 
-    if (toggle && nav) {
+const scrollTop=window.scrollY;
+const documentHeight=document.documentElement.scrollHeight-window.innerHeight;
+const progress=Math.min((scrollTop/documentHeight)*100,100);
 
-        toggle.addEventListener('click', function () {
+if(progressBar){
+progressBar.style.width=`${progress}%`;
+}
 
-            const open = nav.classList.toggle('open');
+}
 
-            toggle.setAttribute(
-                'aria-expanded',
-                String(open)
-            );
+window.addEventListener('scroll',updateReadingProgress,{passive:true});
+updateReadingProgress();
 
-        });
+/* =========================
+   SCROLLSPY
+   ========================= */
 
-    }
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.publication-toc a,.publication-mobile-panel a');
 
+const observer=new IntersectionObserver(entries=>{
 
-    /* =====================================================
-       PROJECT SECTION TOC
-    ===================================================== */
+entries.forEach(entry=>{
 
-    const sections = [
-        ...document.querySelectorAll('.project-section[id]')
-    ];
+if(entry.isIntersecting){
 
-    const links = [
-        ...document.querySelectorAll('.project-toc a[href^="#"]')
-    ];
+const id=entry.target.id;
 
-    if (
-        sections.length &&
-        links.length &&
-        'IntersectionObserver' in window
-    ) {
+navLinks.forEach(link=>{
 
-        const observer =
-            new IntersectionObserver(
-                function (entries) {
+link.classList.remove('active');
 
-                    entries.forEach(function (entry) {
+if(link.getAttribute('href')===`#${id}`){
+link.classList.add('active');
+}
 
-                        if (!entry.isIntersecting) {
-                            return;
-                        }
+});
 
-                        links.forEach(function (link) {
+}
 
-                            link.classList.toggle(
-                                'active',
-                                link.getAttribute('href') ===
-                                '#' + entry.target.id
-                            );
+});
 
-                        });
+},{
+rootMargin:'-40% 0px -50% 0px',
+threshold:.1
+});
 
-                    });
+sections.forEach(section=>observer.observe(section));
 
-                },
-                {
-                    rootMargin: '-25% 0px -60% 0px',
-                    threshold: 0
-                }
-            );
+/* =========================
+   SMOOTH SCROLL OFFSET
+   ========================= */
 
+navLinks.forEach(link=>{
 
-        sections.forEach(function (section) {
-            observer.observe(section);
-        });
+link.addEventListener('click',event=>{
 
-    }
+const href=link.getAttribute('href');
 
+if(!href.startsWith('#')) return;
 
-    /* =====================================================
-       CURRENT YEAR
-    ===================================================== */
+event.preventDefault();
 
-    document
-        .querySelectorAll('[data-year]')
-        .forEach(function (element) {
+const target=document.querySelector(href);
+if(!target) return;
 
-            element.textContent =
-                new Date().getFullYear();
-        });
+const offset=90;
 
-  /* =====================================================
-   BACK TO TOP
-===================================================== */
+const position=target.getBoundingClientRect().top+window.pageYOffset-offset;
 
-const backToTopLinks = document.querySelectorAll(
-    '.footer-top-link'
-);
+window.scrollTo({
+ top:position,
+ behavior:'smooth'
+});
 
-    backToTopLinks.forEach(function (link) {
+closePublicationMenu();
 
-        link.addEventListener('click', function (event) {
+});
 
-            event.preventDefault();
+});
 
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+/* =========================
+   MOBILE TOC
+   ========================= */
 
-        });
+const mobileButton=document.querySelector('.publication-mobile-button');
+const mobilePanel=document.querySelector('.publication-mobile-panel');
 
-    });
+function closePublicationMenu(){
+if(mobilePanel){
+mobilePanel.classList.remove('open');
+document.body.classList.remove('publication-lock');
+}
+}
 
-})();
+if(mobileButton){
+mobileButton.addEventListener('click',()=>{
+mobilePanel.classList.toggle('open');
+document.body.classList.toggle('publication-lock');
+});
+}
+
+/* ESC closes menu */
+
+document.addEventListener('keydown',event=>{
+if(event.key==='Escape') closePublicationMenu();
+});
+
+/* =========================
+   ACTIVE HEADER SHADOW
+   ========================= */
+
+const header=document.querySelector('.site-header');
+
+window.addEventListener('scroll',()=>{
+if(window.scrollY>40){
+header.classList.add('scrolled');
+}else{
+header.classList.remove('scrolled');
+}
+},{passive:true});
