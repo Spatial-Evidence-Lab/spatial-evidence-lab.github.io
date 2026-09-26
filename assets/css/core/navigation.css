@@ -258,3 +258,9 @@ font-size:.92rem;
 .site-header .wordmark-name{font-size:clamp(.95rem,1.1vw,1.08rem);line-height:1.15;white-space:nowrap;}
 .site-header .nav-wrap{display:flex;align-items:center;justify-content:space-between;min-height:var(--nav-height);gap:24px;}
 @media(max-width:720px){.site-header .wordmark-logo{width:34px;height:34px}.site-header .wordmark-name{font-size:.92rem}}
+
+
+/* Header navigation without the menu toggle. */
+.menu-toggle{display:none!important;}
+@media(max-width:800px){.site-header{height:auto;min-height:var(--nav-height)}.site-header .nav-wrap{height:auto;min-height:var(--nav-height);flex-wrap:wrap;padding-block:10px}.site-header .site-nav{display:flex!important;position:static;flex-wrap:wrap;justify-content:flex-end;gap:2px}.site-header .site-nav a{padding:8px 10px;font-size:.82rem;min-height:36px}}
+@media(max-width:520px){.site-header .nav-wrap{align-items:flex-start;gap:8px}.site-header .site-nav{width:100%;justify-content:flex-start}.site-header .site-nav a{padding:7px 9px;font-size:.78rem}}
