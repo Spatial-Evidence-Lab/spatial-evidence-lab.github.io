@@ -18,33 +18,33 @@
    ============================================================ */
 
 :root {
-  --sel002-ink: #17231F;
-  --sel002-text: #465C54;
-  --sel002-muted: #68716D;
+  --sel002-ink: #172A3A;
+  --sel002-text: #46575A;
+  --sel002-muted: #74817F;
 
-  --sel002-bg: #F7F7F3;
+  --sel002-bg: #F5F3EE;
   --sel002-surface: #FCFCF8;
-  --sel002-white: #FCFCF8;
-  --sel002-line: #D9DDD8;
+  --sel002-white: #FFFFFF;
+  --sel002-line: #D8DEDC;
 
   /* SEL identity */
   --sel002-green: #315C4B;
-  --sel002-green-light: #71947F;
+  --sel002-green-light: #8EB5A6;
   --sel002-green-pale: #E8EFEB;
 
   /* Evidence categories */
   --sel002-access: #5B8C78;
-  --sel002-service: #3E6F63;
-  --sel002-vulnerability: #B88A55;
-  --sel002-hotspot: #6D536A;
+  --sel002-service: #B88A4A;
+  --sel002-vulnerability: #806B9F;
+  --sel002-hotspot: #A96D62;
 
-  --sel002-blue: #9A6658;
+  --sel002-blue: #426F8A;
 
   /* Dark evidence section */
   --sel002-dark: #203F35;
-  --sel002-dark-deep: #17231F;
-  --sel002-dark-text: #FCFCF8;
-  --sel002-dark-muted: #D4E0D8;
+  --sel002-dark-deep: #172A3A;
+  --sel002-dark-text: #E8EFEB;
+  --sel002-dark-muted: #B9C8C3;
 
   --sel002-max: 1240px;
   --sel002-read: 760px;
@@ -1346,10 +1346,37 @@ body.sel-002-publication .atlas-caption p {
 }
 
 
-/* Hide old gallery if it remains temporarily in HTML */
-
+/* MAP ATLAS — restore the seven-map gallery as a visible responsive grid. */
 body.sel-002-publication .map-gallery-grid {
-  display: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+  width: 100%;
+  min-width: 0;
+}
+
+body.sel-002-publication .map-gallery-grid > .map-card {
+  grid-column: auto;
+  min-width: 0;
+}
+
+body.sel-002-publication .map-gallery-grid .map-card-large {
+  grid-column: auto;
+}
+
+@media (max-width: 980px) {
+  body.sel-002-publication .map-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 620px) {
+  body.sel-002-publication .map-gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
 }
 
 

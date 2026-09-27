@@ -1,13 +1,13 @@
-# Spatial Evidence Lab website
+# SEL-002 Atlas Visibility and Homepage Alignment Fix
 
-Canonical organisation-site structure and data ownership:
+Apply these two CSS files at the repository root, preserving their paths:
 
-- `/` — Home
-- `/projects/` — project catalogue and project locations
-- `/methods/` — research methods and analytical workflow
-- `/data/` — data landscape, sources and provenance
-- `/about/` — SEL identity, domains and research principles
-- `/content/` — canonical project, taxonomy and research-domain data
-- `/assets/css/` — canonical CSS architecture
+- `assets/css/pages/project-sel002.css`
+- `assets/css/pages/project-sel002-refinements.css`
 
-The former root `/resources/` duplicate organisation-site tree is retired. See `docs/WEBSITE_ARCHITECTURE.md`.
+Fixes:
+- Restores the hidden seven-map gallery and establishes responsive 3/2/1-column layouts.
+- Aligns header navigation, chapter navigation, hero, and footer containers to the same responsive gutter token as the homepage.
+- Applies consistent horizontal gutters to section content and preserves the section heading hierarchy.
+
+No HTML or map image assets are changed.
