@@ -466,9 +466,100 @@ body.sel-002-publication .map-evidence-chain{
   color:var(--p-muted);font-size:10px;font-weight:800;letter-spacing:.07em;
 }
 body.sel-002-publication .map-evidence-chain i{font-style:normal;color:var(--p-line);}
-body.sel-002-publication .map-gallery-grid{
-  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;
-}
+<div class="atlas-viewer" aria-label="Interactive map atlas">
+
+  <aside class="atlas-index" aria-label="Map atlas navigation">
+
+    <button class="atlas-item is-active"
+            type="button"
+            data-map-index="0">
+      <span>01</span>
+      <strong>Network baseline</strong>
+    </button>
+
+    <button class="atlas-item"
+            type="button"
+            data-map-index="1">
+      <span>02</span>
+      <strong>Service frequency</strong>
+    </button>
+
+    <button class="atlas-item"
+            type="button"
+            data-map-index="2">
+      <span>03</span>
+      <strong>Walking accessibility</strong>
+    </button>
+
+    <button class="atlas-item"
+            type="button"
+            data-map-index="3">
+      <span>04</span>
+      <strong>Population vulnerability</strong>
+    </button>
+
+    <button class="atlas-item"
+            type="button"
+            data-map-index="4">
+      <span>05</span>
+      <strong>Access deficit</strong>
+    </button>
+
+    <button class="atlas-item"
+            type="button"
+            data-map-index="5">
+      <span>06</span>
+      <strong>Composite accessibility</strong>
+    </button>
+
+    <button class="atlas-item"
+            type="button"
+            data-map-index="6">
+      <span>07</span>
+      <strong>Final screening</strong>
+    </button>
+
+  </aside>
+
+  <article class="atlas-stage">
+
+    <div class="atlas-image-wrap">
+      <img
+        id="atlas-image"
+        src="/assets/maps/sel-002-bandon/full/SEL002_Map00_NetworkBaseline.png"
+        alt="Network baseline map">
+    </div>
+
+    <div class="atlas-caption">
+
+      <div>
+        <p class="atlas-label" id="atlas-id">
+          01.00 · NETWORK BASELINE
+        </p>
+
+        <h3 id="atlas-title">
+          Network Baseline
+        </h3>
+
+        <p id="atlas-description">
+          Establishes the geographic and transport network baseline
+          for the analysis.
+        </p>
+      </div>
+
+      <button
+        class="sel-button sel-button-dark"
+        type="button"
+        id="atlas-open">
+        Open full map ↗
+      </button>
+
+    </div>
+
+  </article>
+
+</div>
+
 body.sel-002-publication .map-card{
   grid-column:span 6;overflow:hidden;background:#fff;
   border:1px solid var(--p-line);border-radius:7px;cursor:pointer;
