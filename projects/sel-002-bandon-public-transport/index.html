@@ -138,7 +138,7 @@
         margin-bottom: 12px;
       "
     >
-      The evidence at a glance.
+      Accessibility as a spatial evidence problem.
     </h2>
 
     <p
@@ -147,9 +147,13 @@
         line-height: 1.65;
       "
     >
-      The analysis examines how public transport accessibility varies
-      across Bandon and where weaker accessibility overlaps with higher
-      relative population vulnerability.
+      Public transport planning in regional commuter towns can overlook pedestrian barriers, local topographic 
+      constraints and differences in scheduled service frequency. This study examines public transport accessibility 
+      in Bandon, County Cork, across 34 Census Small Areas representing 9,863 residents, including 8,196 within the BUA.   
+      The analysis separates network-based walking accessibility and GTFS-derived scheduled service availability
+      from demographic vulnerability. Transport deficits are assessed first, independently of population characteristics,
+      with demographic vulnerability incorporated only at the final screening stage to identify areas where weaker 
+      transport accessibility coincides with greater population need.
     </p>
 
   </div>
@@ -252,11 +256,10 @@
         line-height: 1.65;
       "
     >
-      Public transport accessibility is spatially differentiated across
-      Bandon. The central corridor generally has stronger network walking
-      access and scheduled service availability, while several peripheral
-      residential areas experience longer walking journeys and/or weaker
-      scheduled service availability.
+      Public transport accessibility is spatially differentiated across Bandon. 
+      Central corridor: Shorter network walking access and stronger scheduled peak-period service availability.
+      Intermediate areas: Walking access and scheduled service availability vary by location.
+      Peripheral areas: Longer network walking journeys and/or lower scheduled service availability.
     </p>
 
     <div
@@ -269,7 +272,7 @@
       <strong>Scope Note:</strong>
       The analysis identifies spatial conditions for further investigation.
       It does not measure individual transport dependence, observed unmet
-      demand or the feasibility of a specific intervention.
+      demand, or the feasibility of a specific intervention.
     </div>
 
   </div>
@@ -554,7 +557,7 @@
         letter-spacing: 0.05em;
       "
     >
-      A Key Distinction: Accessibility is not the same as proximity
+      Reproducibility Protocol
     </h4>
 
     <p
@@ -564,11 +567,12 @@
         color: var(--sel002-text);
         line-height: 1.6;
       "
-    >
-      A location can be close to a bus stop while still having limited
-      effective access if scheduled services are infrequent. The Bandon
-      framework therefore separates network walking access from service
-      availability before combining the two.
+    > 
+      GTFS timetables and OpenStreetMap street graphs are time-sensitive
+      spatial inputs. To ensure complete scientific reproducibility, 
+      the production database logs dataset versioning, snapshot extraction
+      timestamps, spatial transformations, filtering scripts, and 
+      classification breaks.
     </p>
 
   </div>
@@ -1499,7 +1503,8 @@
             margin: 6px 0;
           "
         >
-          How does accessibility vary across Bandon?
+          How does the spatial accessibility of public transport for travel
+          between Bandon and Cork City vary across the town?
         </h4>
 
         <p
@@ -1510,10 +1515,10 @@
             margin: 0;
           "
         >
-          Accessibility is spatially differentiated, with generally
-          stronger walking access and scheduled service availability
-          around the central corridor and weaker conditions in several
-          peripheral residential areas.
+         The analysis models network-based walking times to principal
+         stops alongside GTFS scheduled peak-period service frequencies.
+         It maps intra-town spatial disparities in transit supply rather
+         than determining absolute car competitiveness.
         </p>
 
       </div>
@@ -1544,7 +1549,9 @@
             margin: 6px 0;
           "
         >
-          Which areas potentially experience greater exposure to limited accessibility?
+          Which areas are potentially most vulnerable to limited public 
+          transport accessibility because of their demographic, health,
+          employment, or household characteristics?
         </h4>
 
         <p
@@ -1555,9 +1562,10 @@
             margin: 0;
           "
         >
-          The final screening identifies locations where relatively
-          weaker accessibility overlaps with higher relative population
-          vulnerability.
+         The framework identifies geographic zones where severe accessibility
+         deficits directly coincide with elevated concentrations of age, health,
+         disability, economic status, and low household car availability proxies
+         derived from Census 2022.
         </p>
 
       </div>
@@ -1580,7 +1588,7 @@
 
     <strong>What the analysis does not establish:</strong>
     The study does not measure individual transport dependence,
-    realised trip behaviour, private-car competitiveness or observed
+    realised trip behaviour, private-car competitiveness, or observed
     unmet demand.
 
   </div>
