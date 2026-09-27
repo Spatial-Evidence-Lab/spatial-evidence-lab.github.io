@@ -732,440 +732,297 @@ body.sel-002-publication .footer-top-link:hover{color:#8EB5A6;}
   body.sel-002-publication .map-modal-footer{align-items:flex-start;flex-direction:column;}
 }
 
-/* =========================================================
-   SEL-002 DESKTOP / SITE-WIDE ALIGNMENT REFINEMENT
-   Keeps portrait/mobile behaviour intact while matching the
-   canonical Home page header, footer and desktop frame.
-   ========================================================= */
-body.sel-002-publication {
-  --p-max: none;
+/* ==========================================================
+   SEL-002 DESKTOP / HOME-CANONICAL REFINEMENT
+   ========================================================== */
+body.sel-002-publication,
+body.sel-002-publication .publication-shell,
+body.sel-002-publication .publication-main{
+  background:#F5F3EE !important;
+  color:#4F5F63;
+}
+body.sel-002-publication .publication-section-bg-alt{
+  background:#ECEBE6 !important;
 }
 body.sel-002-publication .shell,
 body.sel-002-publication .publication-hero .sel-shell,
-body.sel-002-publication .publication-layout-grid {
-  width: calc(100% - 64px);
-  max-width: none;
+body.sel-002-publication .publication-layout-grid{
+  width:min(1240px,calc(100% - 64px));
+}
+body.sel-002-publication .publication-layout-grid{
+  display:block;
+  margin-inline:auto;
+}
+body.sel-002-publication .publication-toc-wrapper{display:none!important;}
+body.sel-002-publication .publication-main{width:100%;min-width:0;}
+
+/* Header: match the Home page exactly in structure and spacing. */
+body.sel-002-publication .site-header{
+  min-height:68px;
+  background:#172A3A !important;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+body.sel-002-publication .nav-wrap{min-height:68px;}
+body.sel-002-publication .site-nav{gap:26px;}
+body.sel-002-publication .site-nav a{
+  min-height:68px;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:0;
+  text-transform:none;
+  border-bottom:0;
+}
+body.sel-002-publication .site-nav a.active{
+  background:rgba(0,215,232,.13);
+  border-radius:6px;
+  padding-inline:12px;
+}
+body.sel-002-publication .site-nav .nav-cta{
+  min-height:auto;padding:0;border:0;border-radius:0;
+}
+body.sel-002-publication .wordmark-name{font-weight:500;font-size:.92rem;}
+
+/* Top section links are the only contents navigation. */
+body.sel-002-publication .publication-toc{
+  top:68px;
+  background:#F5F3EE !important;
+  border-bottom:1px solid #D8DEDC;
+}
+body.sel-002-publication .publication-toc-inner{
+  min-height:42px;
+  width:min(1240px,calc(100% - 64px));
+  margin-inline:auto;
+  gap:24px;
+}
+body.sel-002-publication .publication-toc-inner a{
+  min-height:42px;font-size:10px;font-weight:700;
 }
 
-/* Canonical site header — match Home */
-body.sel-002-publication .site-header {
-  position: sticky;
-  top: 0;
-  height: 76px;
-  min-height: 76px;
-  background: rgba(23,42,58,.94);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+/* Hero: landscape project image and quieter metadata. */
+body.sel-002-publication .publication-hero{
+  padding:72px 0 56px;
+  background:#F5F3EE !important;
 }
-body.sel-002-publication .nav-wrap {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+body.sel-002-publication .publication-hero-grid{
+  grid-template-columns:minmax(0,1.02fr) minmax(480px,.98fr);
+  gap:56px;
 }
-body.sel-002-publication .wordmark {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
-  color: inherit;
-  text-decoration: none;
+body.sel-002-publication .publication-hero-media{
+  background:#fff;
+  border-radius:6px;
 }
-body.sel-002-publication .wordmark-logo {
-  display: block;
-  width: clamp(32px,3vw,42px);
-  height: clamp(32px,3vw,42px);
-  max-width: 42px;
-  object-fit: contain;
-  flex: 0 0 auto;
+body.sel-002-publication .publication-hero-media img{
+  aspect-ratio:16/9;
+  object-fit:cover;
 }
-body.sel-002-publication .wordmark-name {
-  color: #fff;
-  font-size: clamp(.95rem,1.1vw,1.08rem);
-  line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: normal;
-  white-space: nowrap;
+body.sel-002-publication .publication-meta{
+  gap:8px 22px;
+  margin-bottom:24px;
 }
-body.sel-002-publication .site-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+body.sel-002-publication .publication-stats{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:34px;
+  border:0;
 }
-body.sel-002-publication .site-nav a {
-  color: #EAF2F6;
-  text-decoration: none;
-  padding: 12px 18px;
-  border: 0;
-  border-radius: 10px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  font-size: inherit;
-  font-weight: 600;
-  letter-spacing: normal;
-  text-transform: none;
-  transition: .25s ease;
+body.sel-002-publication .publication-stats>div{
+  min-width:0;
+  padding:20px 16px;
+  background:#fff;
+  border:1px solid #D8DEDC;
+  border-radius:7px;
+  text-align:center;
 }
-body.sel-002-publication .site-nav a:hover {
-  background: rgba(0,215,232,.08);
-  color: #fff;
+body.sel-002-publication .publication-stats>div:last-child{border-right:1px solid #D8DEDC;}
+body.sel-002-publication .publication-stats strong{text-align:center;}
+body.sel-002-publication .publication-stats span{text-align:center;}
+
+/* Section headings: eyebrow/title first, explanatory copy underneath. */
+body.sel-002-publication .publication-section-head{
+  display:block;
+  margin-bottom:36px;
 }
-body.sel-002-publication .site-nav a.active {
-  background: rgba(0,215,232,.15);
-  color: #8DF3FF;
-  border-bottom: 0;
-}
-body.sel-002-publication .site-nav .nav-cta {
-  min-height: 44px;
-  margin-top: 0;
-  padding: 12px 18px;
-  border: 0;
-  border-radius: 10px;
+body.sel-002-publication .publication-section-head h2{margin-bottom:16px;}
+body.sel-002-publication .publication-intro{
+  max-width:860px;
+  margin:0;
 }
 
-/* Hero: landscape image + four individual KPI cards */
-body.sel-002-publication .publication-toc { top: 76px; }
-body.sel-002-publication .publication-hero {
-  padding: 76px 0 68px;
+/* Overview KPI cards. */
+body.sel-002-publication .metrics-grid{gap:14px;}
+body.sel-002-publication .metric-card{
+  min-height:150px;
+  padding:22px 20px;
+  background:#fff;
+  text-align:center;
 }
-body.sel-002-publication .publication-hero-grid {
-  grid-template-columns: minmax(0,1.05fr) minmax(520px,.95fr);
-  gap: 64px;
-}
-body.sel-002-publication .publication-hero h1 {
-  font-size: clamp(42px,3.4vw,52px);
-}
-body.sel-002-publication .publication-hero-media img {
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-body.sel-002-publication .publication-stats {
-  gap: 12px;
-  margin-top: 34px;
-  border: 0;
-}
-body.sel-002-publication .publication-stats > div {
-  min-width: 0;
-  padding: 22px 18px;
-  background: #fff;
-  border: 1px solid var(--p-line);
-  border-top: 3px solid var(--p-access);
-  border-radius: 7px;
-  text-align: center;
-}
-body.sel-002-publication .publication-stats > div:nth-child(2) { border-top-color: var(--p-service); }
-body.sel-002-publication .publication-stats > div:nth-child(3) { border-top-color: var(--p-vulnerability); }
-body.sel-002-publication .publication-stats > div:nth-child(4) { border-top-color: var(--p-hotspot); }
-body.sel-002-publication .publication-stats strong {
-  text-align: center;
-  font-size: 31px;
-}
-body.sel-002-publication .publication-stats span {
-  text-align: center;
-}
+body.sel-002-publication .metric-number,
+body.sel-002-publication .metric-label,
+body.sel-002-publication .metric-sub{text-align:center;}
 
-/* Section headings: title first, explanatory text below */
-body.sel-002-publication .publication-section-head {
-  display: block;
-  margin-bottom: 42px;
+/* Study area: metrics centred in two rows; landscape map. */
+body.sel-002-publication .study-grid{
+  display:flex;
+  flex-direction:column;
+  gap:38px;
 }
-body.sel-002-publication .publication-intro-below {
-  max-width: 860px;
-  margin-top: 16px;
+body.sel-002-publication .study-copy{width:100%;}
+body.sel-002-publication .study-copy>p{max-width:860px;}
+body.sel-002-publication .metric-list{
+  width:min(760px,100%);
+  margin:32px auto 0;
 }
-body.sel-002-publication .publication-intro-below p {
-  max-width: 860px;
-  margin: 0;
-}
-
-/* Study area: two rows of centred cards, then a landscape map */
-body.sel-002-publication .study-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 42px;
-}
-body.sel-002-publication .metric-list {
-  max-width: 760px;
-  margin: 28px auto 0;
-}
-body.sel-002-publication .metric-list > div {
-  text-align: center;
-  padding: 20px 18px;
-}
+body.sel-002-publication .metric-list>div{text-align:center;}
 body.sel-002-publication .metric-list strong,
-body.sel-002-publication .metric-list span {
-  text-align: center;
+body.sel-002-publication .metric-list span{text-align:center;}
+body.sel-002-publication .study-figure{
+  width:min(100%,1100px);
+  margin-inline:auto;
 }
-body.sel-002-publication .study-figure {
-  width: min(1100px,100%);
-  margin-inline: auto;
-}
-body.sel-002-publication .study-figure img {
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  background: #fff;
+body.sel-002-publication .study-figure img{
+  aspect-ratio:16/9;
+  object-fit:cover;
 }
 
-/* Findings: larger separation and linked evidence */
-body.sel-002-publication .findings-grid {
-  gap: 28px;
-}
-body.sel-002-publication .finding-card {
-  padding: 26px;
-}
-body.sel-002-publication .finding-map-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--p-blue);
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-body.sel-002-publication .finding-map-link:hover {
-  color: var(--p-access);
-  text-decoration: underline;
+/* Evidence cards and dataset cards stay on the muted grey page. */
+body.sel-002-publication .evidence-card,
+body.sel-002-publication .dataset-card,
+body.sel-002-publication .atlas-reading-guide>div,
+body.sel-002-publication .finding-card,
+body.sel-002-publication .method-card,
+body.sel-002-publication .output-card,
+body.sel-002-publication .boundary-grid>div,
+body.sel-002-publication .research-questions,
+body.sel-002-publication .contribution-section,
+body.sel-002-publication .future-research{
+  background:#fff;
 }
 
-/* Hotspot score values */
-body.sel-002-publication .hotspot-table tbody td:last-child {
-  color: #B3262E;
-  font-weight: 800;
+/* Atlas needs a clear separation before screening content. */
+body.sel-002-publication .map-atlas-actions{margin-top:36px;}
+body.sel-002-publication .findings-grid{gap:24px;}
+body.sel-002-publication #findings{padding-top:120px;}
+body.sel-002-publication .hotspot-table-wrap{margin-top:62px;}
+body.sel-002-publication .hotspot-table-wrap .subsection-heading{margin-bottom:24px;}
+body.sel-002-publication .hotspot-table td.hotspot-score{color:#C94C4C;font-weight:800;}
+body.sel-002-publication .hotspot-table tbody td:last-child{color:#C94C4C;font-weight:800;}
+
+/* Finding evidence links. */
+body.sel-002-publication .map-evidence-link{
+  display:inline-block;
+  margin-top:12px;
+  color:#426F8A;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+body.sel-002-publication .map-evidence-link:hover{color:#4C8E8D;text-decoration:underline;}
+
+/* Method workflow: four cards with arrows in one horizontal row. */
+body.sel-002-publication .method-flow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr);
+  gap:10px;
+  align-items:stretch;
+  margin:32px 0 42px;
+}
+body.sel-002-publication .method-flow>div{
+  min-width:0;
+  padding:20px 18px;
+  background:#fff;
+  border:1px solid #D8DEDC;
+  border-top:3px solid #4C8E8D;
+}
+body.sel-002-publication .method-flow>i{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#7B898B;
+  font-style:normal;
+  font-size:20px;
+}
+body.sel-002-publication .method-flow strong{font-size:14px;}
+
+/* Research contribution / further investigation. */
+body.sel-002-publication .contribution-section{background:transparent;border:0;padding:0;}
+body.sel-002-publication .investigation-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+}
+body.sel-002-publication .investigation-grid>article{
+  min-width:0;
+  padding:23px;
+  background:#fff;
+  border:1px solid #D8DEDC;
+  border-radius:7px;
+}
+body.sel-002-publication .investigation-grid>article>span{color:#4C8E8D;font-size:11px;font-weight:800;letter-spacing:.08em;}
+body.sel-002-publication .investigation-grid h3{color:#24343A;font-size:18px;line-height:1.25;margin:8px 0 10px;}
+body.sel-002-publication .investigation-grid p{font-size:13px;line-height:1.55;}
+body.sel-002-publication .investigation-grid .map-evidence-link{font-size:10px;}
+
+/* Evidence boundaries: exactly 3 + 3 + 2 on desktop. */
+body.sel-002-publication .boundary-grid{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:12px;
+}
+body.sel-002-publication .boundary-grid>div:nth-child(-n+6){grid-column:span 2;}
+body.sel-002-publication .boundary-grid>div:nth-child(n+7){grid-column:span 3;}
+
+/* Outputs: keep atlas content but make the requested atlas card explicit. */
+body.sel-002-publication #outputs{background:#ECEBE6 !important;}
+
+/* Footer: match the Home page footer. */
+body.sel-002-publication .site-footer{
+  background:#172A3A !important;
+  color:#C9D4D5;
+  padding:58px 0 20px;
+}
+body.sel-002-publication .site-footer .footer-grid,
+body.sel-002-publication .site-footer .footer-bottom{
+  width:min(1240px,calc(100% - 64px));
+  margin-inline:auto;
+}
+body.sel-002-publication .site-footer .footer-grid{
+  display:flex;
+  justify-content:space-between;
+  gap:60px;
+}
+body.sel-002-publication .site-footer .footer-links{display:flex;gap:65px;}
+body.sel-002-publication .site-footer .footer-link-group{display:flex;flex-direction:column;gap:8px;}
+body.sel-002-publication .site-footer .footer-link-group b{color:#fff;font-size:10px;letter-spacing:.1em;text-transform:uppercase;}
+body.sel-002-publication .site-footer .footer-link-group a{color:#C9D4D5;font-size:12px;text-decoration:none;}
+body.sel-002-publication .site-footer .footer-link-group a:hover{color:#8EB5A6;}
+body.sel-002-publication .site-footer .footer-bottom{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  margin-top:48px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);
+  color:#8F9DA0;font-size:11px;
 }
 
-/* Method flow: four cards + arrows on one desktop line */
-body.sel-002-publication .method-flow {
-  display: grid;
-  grid-template-columns: minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);
-  gap: 10px;
-  align-items: stretch;
+@media (max-width:1000px){
+  body.sel-002-publication .publication-hero-grid{grid-template-columns:1fr;}
+  body.sel-002-publication .publication-hero-media{max-width:none;}
+  body.sel-002-publication .investigation-grid{grid-template-columns:repeat(2,1fr);}
 }
-body.sel-002-publication .method-flow > div {
-  min-width: 0;
-}
-body.sel-002-publication .method-flow > i {
-  align-self: center;
-  color: var(--p-access);
-  font-style: normal;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-}
-
-/* Further investigation: four horizontal cards */
-body.sel-002-publication .investigation-grid {
-  display: grid;
-  grid-template-columns: repeat(4,minmax(0,1fr));
-  gap: 18px;
-}
-body.sel-002-publication .investigation-grid > article {
-  min-width: 0;
-  padding: 24px;
-  background: #fff;
-  border: 1px solid var(--p-line);
-  border-radius: 7px;
-}
-body.sel-002-publication .investigation-grid > article > span {
-  display: block;
-  color: var(--p-access);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .08em;
-}
-body.sel-002-publication .investigation-grid h3 {
-  margin: 8px 0 10px;
-  color: var(--p-ink);
-  font-size: 17px;
-  line-height: 1.25;
-}
-body.sel-002-publication .investigation-grid p {
-  font-size: 13px;
-  line-height: 1.55;
-}
-body.sel-002-publication .investigation-grid .finding-map-link {
-  margin-top: 8px;
-}
-
-/* Evidence boundaries: 3 + 3 + 2 */
-body.sel-002-publication .boundary-grid {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 16px;
-}
-body.sel-002-publication .boundary-grid > article {
-  min-width: 0;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid var(--p-line);
-  border-radius: 7px;
-}
-body.sel-002-publication .boundary-grid > article:nth-child(7) {
-  grid-column: 1;
-}
-
-/* Atlas links */
-body.sel-002-publication .map-atlas-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-  margin-top: 28px;
-}
-
-/* Canonical Home footer */
-body.sel-002-publication .site-footer {
-  margin-top: 0;
-  padding: 40px 0 28px;
-  background: #102635;
-  color: #fff;
-}
-body.sel-002-publication .site-footer .footer-grid {
-  width: calc(100% - 64px);
-  max-width: none;
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: minmax(0,1fr) auto;
-  gap: 24px;
-  align-items: start;
-}
-body.sel-002-publication .site-footer .footer-brand-lockup {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-body.sel-002-publication .site-footer .footer-logo {
-  width: clamp(32px,3vw,42px);
-  height: clamp(32px,3vw,42px);
-  max-width: 42px;
-  object-fit: contain;
-  flex: 0 0 auto;
-}
-body.sel-002-publication .site-footer .footer-brand {
-  color: #fff;
-  font-size: clamp(.95rem,1.1vw,1.08rem);
-  line-height: 1.15;
-  font-weight: 600;
-}
-body.sel-002-publication .site-footer .footer-links {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  gap: 14px;
-  justify-self: end;
-}
-body.sel-002-publication .site-footer .footer-links > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  font-size: .82rem;
-  line-height: 1.45;
-}
-body.sel-002-publication .site-footer .footer-links b {
-  color: #f1f6f5;
-  font-size: .84rem;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-body.sel-002-publication .site-footer .footer-links a {
-  color: #C9D8E0;
-  font-size: .82rem;
-  line-height: 1.35;
-  text-decoration: none;
-}
-body.sel-002-publication .site-footer .footer-links a:hover {
-  color: #fff;
-}
-body.sel-002-publication .site-footer .footer-bottom {
-  width: calc(100% - 64px);
-  max-width: none;
-  margin: 28px auto 0;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255,255,255,.08);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #A8C1CD;
-  font-size: .82rem;
-}
-body.sel-002-publication .site-footer .footer-top-link {
-  display: block;
-  margin-inline: auto;
-  color: #C9D8E0;
-  text-decoration: none;
-  font-size: .82rem;
-}
-
-/* Keep mobile/portrait layouts usable */
-@media (max-width: 1000px) {
+@media (max-width:760px){
   body.sel-002-publication .shell,
   body.sel-002-publication .publication-hero .sel-shell,
   body.sel-002-publication .publication-layout-grid,
+  body.sel-002-publication .publication-toc-inner,
   body.sel-002-publication .site-footer .footer-grid,
-  body.sel-002-publication .site-footer .footer-bottom {
-    width: calc(100% - 32px);
-  }
-  body.sel-002-publication .publication-hero-grid {
-    grid-template-columns: 1fr;
-  }
-  body.sel-002-publication .publication-hero-media {
-    max-width: 100%;
-  }
-  body.sel-002-publication .publication-stats {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-  body.sel-002-publication .study-grid {
-    grid-template-columns: 1fr;
-  }
-  body.sel-002-publication .investigation-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-  body.sel-002-publication .method-flow {
-    grid-template-columns: 1fr 1fr;
-  }
-  body.sel-002-publication .boundary-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-}
-@media (max-width: 760px) {
-  body.sel-002-publication .site-header {
-    height: auto;
-    min-height: 76px;
-  }
-  body.sel-002-publication .nav-wrap {
-    min-height: 76px;
-    flex-wrap: wrap;
-    padding-block: 10px;
-  }
-  body.sel-002-publication .site-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 2px;
-  }
-  body.sel-002-publication .site-nav a {
-    min-height: 36px;
-    padding: 8px 10px;
-    font-size: .82rem;
-  }
-  body.sel-002-publication .publication-stats,
-  body.sel-002-publication .investigation-grid,
-  body.sel-002-publication .boundary-grid {
-    grid-template-columns: 1fr;
-  }
-  body.sel-002-publication .method-flow {
-    grid-template-columns: 1fr;
-  }
-  body.sel-002-publication .site-footer .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-  body.sel-002-publication .site-footer .footer-links {
-    justify-self: start;
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
+  body.sel-002-publication .site-footer .footer-bottom{width:min(calc(100% - 32px),1240px);}
+  body.sel-002-publication .publication-stats{grid-template-columns:repeat(2,1fr);}
+  body.sel-002-publication .method-flow{grid-template-columns:1fr 1fr;}
+  body.sel-002-publication .method-flow>i{display:none;}
+  body.sel-002-publication .investigation-grid{grid-template-columns:1fr;}
+  body.sel-002-publication .boundary-grid{grid-template-columns:1fr;}
+  body.sel-002-publication .boundary-grid>div:nth-child(n){grid-column:auto;}
+  body.sel-002-publication .site-footer .footer-grid{flex-direction:column;gap:35px;}
+  body.sel-002-publication .site-footer .footer-links{gap:40px;}
 }
 
 </style>
@@ -1180,20 +1037,20 @@ body.sel-002-publication .site-footer .footer-top-link {
 </div>
 
 <header class="site-header" id="site-header">
-    <div class="shell nav-wrap">
-        <a class="wordmark" href="/" aria-label="Spatial Evidence Lab home">
-            <img src="/media/branding/logo.png" alt="" class="wordmark-logo">
-            <span class="wordmark-name">Spatial Evidence Lab</span>
-        </a>
-        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-            <a href="/">Home</a>
-            <a href="/projects/" class="active" aria-current="page">Projects</a>
-            <a href="/methods/">Methods</a>
-            <a href="/data/">Data</a>
-            <a href="/about/">About</a>
-            <a class="nav-cta" href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        </nav>
-    </div>
+  <div class="shell nav-wrap">
+    <a class="wordmark" href="/" aria-label="Spatial Evidence Lab home">
+      <img src="/media/branding/logo.png" alt="" class="wordmark-logo">
+      <span class="wordmark-name">Spatial Evidence Lab</span>
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a class="active" href="/projects/">Projects</a>
+      <a href="/methods/">Methods</a>
+      <a href="/data/">Data</a>
+      <a href="/about/">About</a>
+      <a class="nav-cta" href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </nav>
+  </div>
 </header>
 
 <nav class="publication-toc" aria-label="Project contents">
@@ -1241,13 +1098,12 @@ body.sel-002-publication .site-footer .footer-top-link {
 
         <figure class="publication-hero-media">
           <picture>
-            <source srcset="/assets/maps/sel-002-bandon/page/SEL002_Map06_InterventionPriority.webp" type="image/webp">
+            <source srcset="/assets/projects/SEL-002.jpg" type="image/webp">
             <img src="/assets/projects/SEL-002.jpg"
                  width="1600" height="900"
                  loading="eager" decoding="async"
-                 alt="Bandon Public Transport Accessibility project visual.">
+                 alt="Bandon public transport accessibility study.">
           </picture>
-          <figcaption>SEL-002 · Bandon Public Transport Accessibility.</figcaption>
         </figure>
       </div>
 
@@ -1261,19 +1117,6 @@ body.sel-002-publication .site-footer .footer-top-link {
   </section>
 
   <div class="publication-layout-grid">
-    <aside class="publication-toc-wrapper" aria-label="Section navigation">
-      <nav class="publication-toc publication-toc-side">
-        <p class="publication-toc-title">Contents</p>
-        <a href="#overview" class="is-active">01 · Overview</a>
-        <a href="#study-area">02 · Study area</a>
-        <a href="#evidence">03 · Evidence</a>
-        <a href="#maps">04 · Maps</a>
-        <a href="#findings">05 · Findings</a>
-        <a href="#method">06 · Method</a>
-        <a href="#outputs">07 · Outputs</a>
-      </nav>
-    </aside>
-
     <div class="publication-main">
 
       <!-- =======================================================
@@ -1285,9 +1128,12 @@ body.sel-002-publication .site-footer .footer-top-link {
             <p class="publication-number">01 · OVERVIEW</p>
             <h2 id="overview-title">Accessibility as a spatial evidence problem.</h2>
           </div>
-          <div class="publication-intro publication-intro-below">
-            <p>Public transport accessibility is not determined by proximity to a stop alone. This study separates network walking accessibility and scheduled service availability from population vulnerability, then examines their spatial overlap at Small Area level.</p>
-          </div>
+          <p class="publication-intro">
+            Public transport accessibility is not determined by proximity to a stop alone.
+            This study separates network walking accessibility and scheduled service
+            availability from population vulnerability, then examines their spatial overlap
+            at Small Area level.
+          </p>
         </div>
 
         <div class="metrics-grid">
@@ -1350,7 +1196,6 @@ body.sel-002-publication .site-footer .footer-top-link {
             <p class="publication-number">02 · STUDY AREA</p>
             <h2 id="study-area-title">Bandon, County Cork.</h2>
           </div>
-
         </div>
 
         <div class="study-grid">
@@ -1413,9 +1258,11 @@ body.sel-002-publication .site-footer .footer-top-link {
             <p class="publication-number">03 · EVIDENCE</p>
             <h2 id="evidence-title">Four dimensions of evidence.</h2>
           </div>
-          <div class="publication-intro publication-intro-below">
-            <p>Each evidence stream has a distinct analytical role. Transport-system accessibility and population vulnerability remain separate until the final screening stage.</p>
-          </div>
+          <p class="publication-intro">
+            Each evidence stream has a distinct analytical role. Transport-system
+            accessibility and population vulnerability remain separate until the
+            final screening stage.
+          </p>
         </div>
 
         <div class="evidence-grid">
@@ -1527,9 +1374,11 @@ body.sel-002-publication .site-footer .footer-top-link {
             <p class="publication-number">04 · MAP ATLAS</p>
             <h2 id="maps-title">Seven maps. One evidence chain.</h2>
           </div>
-          <div class="publication-intro publication-intro-below">
-            <p>The atlas moves from transport infrastructure and pedestrian access through service availability and population vulnerability to composite accessibility and final accessibility–vulnerability screening.</p>
-          </div>
+          <p class="publication-intro">
+            The atlas moves from transport infrastructure and pedestrian access through
+            service availability and population vulnerability to composite accessibility
+            and final accessibility–vulnerability screening.
+          </p>
         </div>
 
         <div class="atlas-reading-guide">
@@ -1562,7 +1411,7 @@ body.sel-002-publication .site-footer .footer-top-link {
 
         <div class="map-gallery-grid">
 
-          <article id="map-0100" class="map-card map-card-large"
+          <article class="map-card map-card-large"
                    data-map-index="0"
                    tabindex="0"
                    role="button"
@@ -1586,7 +1435,7 @@ body.sel-002-publication .site-footer .footer-top-link {
             </div>
           </article>
 
-          <article id="map-0101" class="map-card map-card-medium"
+          <article class="map-card map-card-medium"
                    data-map-index="1"
                    tabindex="0"
                    role="button"
@@ -1611,7 +1460,7 @@ body.sel-002-publication .site-footer .footer-top-link {
             </div>
           </article>
 
-          <article id="map-0102" class="map-card map-card-medium"
+          <article class="map-card map-card-medium"
                    data-map-index="2"
                    tabindex="0"
                    role="button"
@@ -1636,7 +1485,7 @@ body.sel-002-publication .site-footer .footer-top-link {
             </div>
           </article>
 
-          <article id="map-0103" class="map-card map-card-medium"
+          <article class="map-card map-card-medium"
                    data-map-index="3"
                    tabindex="0"
                    role="button"
@@ -1661,7 +1510,7 @@ body.sel-002-publication .site-footer .footer-top-link {
             </div>
           </article>
 
-          <article id="map-0104" class="map-card map-card-medium"
+          <article class="map-card map-card-medium"
                    data-map-index="4"
                    tabindex="0"
                    role="button"
@@ -1686,7 +1535,7 @@ body.sel-002-publication .site-footer .footer-top-link {
             </div>
           </article>
 
-          <article id="map-0105" class="map-card map-card-medium map-card-featured"
+          <article class="map-card map-card-medium map-card-featured"
                    data-map-index="5"
                    tabindex="0"
                    role="button"
@@ -1712,7 +1561,7 @@ body.sel-002-publication .site-footer .footer-top-link {
             </div>
           </article>
 
-          <article id="map-0106" class="map-card map-card-large map-card-featured"
+          <article class="map-card map-card-large map-card-featured"
                    data-map-index="6"
                    tabindex="0"
                    role="button"
@@ -1789,9 +1638,11 @@ body.sel-002-publication .site-footer .footer-top-link {
             <p class="publication-number">05 · FINDINGS</p>
             <h2 id="findings-title">What the evidence shows.</h2>
           </div>
-          <div class="publication-intro publication-intro-below">
-            <p>The results describe spatial differences in transport-system accessibility and the locations where relative accessibility deficits overlap with higher relative population vulnerability.</p>
-          </div>
+          <p class="publication-intro">
+            The results describe spatial differences in transport-system accessibility
+            and the locations where relative accessibility deficits overlap with
+            higher relative population vulnerability.
+          </p>
         </div>
 
         <div class="findings-grid">
@@ -1802,7 +1653,7 @@ body.sel-002-publication .site-footer .footer-top-link {
               22 of 34 Small Areas require more than 10 minutes of network walking access
               to a principal stop, while 11 fall completely outside the 15-minute threshold.
             </p>
-            <a class="finding-map-link" href="#map-0102">Evidence: Map 01.01 ↗</a>
+            <a class="map-evidence-link" href="#maps" data-map-index="1">Evidence: Map 01.01 →</a>
           </article>
 
           <article class="finding-card" data-accent="service">
@@ -1813,7 +1664,7 @@ body.sel-002-publication .site-footer .footer-top-link {
               availability, while some peripheral areas combine weaker walking access
               with lower scheduled service.
             </p>
-            <a class="finding-map-link" href="#map-0101">Evidence: Map 01.03 ↗</a>
+            <a class="map-evidence-link" href="#maps" data-map-index="3">Evidence: Map 01.03 →</a>
           </article>
 
           <article class="finding-card" data-accent="vulnerability">
@@ -1823,7 +1674,7 @@ body.sel-002-publication .site-footer .footer-top-link {
               Six Small Areas have VUL<sub>norm</sub> values above 0.75, indicating
               relatively high concentrations of the selected Census indicators.
             </p>
-            <a class="finding-map-link" href="#map-0103">Evidence: Map 01.04 ↗</a>
+            <a class="map-evidence-link" href="#maps" data-map-index="4">Evidence: Map 01.04 →</a>
           </article>
 
           <article class="finding-card" data-accent="service">
@@ -1833,7 +1684,7 @@ body.sel-002-publication .site-footer .footer-top-link {
               Eight Small Areas fall within the lowest quarter of the normalised
               Composite Accessibility Index.
             </p>
-            <a class="finding-map-link" href="#map-0104">Evidence: Map 01.05 ↗</a>
+            <a class="map-evidence-link" href="#maps" data-map-index="5">Evidence: Map 01.05 →</a>
           </article>
 
           <article class="finding-card finding-card-wide" data-accent="hotspot">
@@ -1844,7 +1695,7 @@ body.sel-002-publication .site-footer .footer-top-link {
               with Hotspot Scores ranging from 0.856 to 0.947. These are screening
               locations for further investigation, not automatic investment decisions.
             </p>
-            <a class="finding-map-link" href="#map-0106">Evidence: Map 01.06 ↗</a>
+            <a class="map-evidence-link" href="#maps" data-map-index="6">Evidence: Map 01.06 →</a>
           </article>
         </div>
 
@@ -1911,9 +1762,10 @@ body.sel-002-publication .site-footer .footer-top-link {
             <p class="publication-number">06 · METHOD</p>
             <h2 id="method-title">Separate the evidence. Then examine the overlap.</h2>
           </div>
-          <div class="publication-intro publication-intro-below">
-            <p>Transport-system performance and population need are modelled independently. Population vulnerability enters only when constructing the final screening measure.</p>
-          </div>
+          <p class="publication-intro">
+            Transport-system performance and population need are modelled independently.
+            Population vulnerability enters only when constructing the final screening measure.
+          </p>
         </div>
 
         <div class="method-flow" aria-label="Analytical workflow">
@@ -2009,9 +1861,11 @@ body.sel-002-publication .site-footer .footer-top-link {
             <p class="publication-number">RESEARCH CONTRIBUTION</p>
             <h2 id="contribution-title">Separate evidence before integration.</h2>
           </div>
-          <div class="publication-intro publication-intro-below">
-            <p>The value of the framework is not a single score. It is the transparent sequence linking source data, transport-system measures, population context and final spatial screening.</p>
-          </div>
+          <p class="publication-intro">
+            The value of the framework is not a single score. It is the transparent
+            sequence linking source data, transport-system measures, population context
+            and final spatial screening.
+          </p>
         </div>
 
         <div class="contribution-grid">
@@ -2042,9 +1896,10 @@ body.sel-002-publication .site-footer .footer-top-link {
             <p class="publication-number">FROM EVIDENCE TO FURTHER INVESTIGATION</p>
             <h2 id="investigation-title">What should happen next?</h2>
           </div>
-          <div class="publication-intro publication-intro-below">
-            <p>The analysis identifies conditions that warrant further investigation. It does not determine which interventions should be funded or implemented.</p>
-          </div>
+          <p class="publication-intro">
+            The analysis identifies conditions that warrant further investigation. It does
+            not determine which interventions should be funded or implemented.
+          </p>
         </div>
 
         <div class="investigation-grid">
@@ -2056,7 +1911,7 @@ body.sel-002-publication .site-footer .footer-top-link {
               and principal public transport stops, including local network continuity
               and site conditions.
             </p>
-            <a class="finding-map-link" href="#map-0102">Evidence: Maps 01.02 and 01.05 ↗</a>
+            <a class="map-evidence-link" href="#maps" data-map-index="2">Evidence: Maps 01.02 and 01.05 →</a>
           </article>
 
           <article>
@@ -2066,7 +1921,7 @@ body.sel-002-publication .site-footer .footer-top-link {
               Review scheduled frequency and headway where weaker walking accessibility
               coincides with lower scheduled service availability.
             </p>
-            <a class="finding-map-link" href="#map-0101">Evidence: Maps 01.03 and 01.05 ↗</a>
+            <a class="map-evidence-link" href="#maps" data-map-index="3">Evidence: Maps 01.03 and 01.05 →</a>
           </article>
 
           <article>
@@ -2076,7 +1931,7 @@ body.sel-002-publication .site-footer .footer-top-link {
               Use population vulnerability as contextual evidence when assessing areas
               with relatively weak transport-system accessibility.
             </p>
-            <a class="finding-map-link" href="#map-0103">Evidence: Maps 01.04 and 01.06 ↗</a>
+            <a class="map-evidence-link" href="#maps" data-map-index="4">Evidence: Maps 01.04 and 01.06 →</a>
           </article>
 
           <article>
@@ -2086,7 +1941,7 @@ body.sel-002-publication .site-footer .footer-top-link {
               Repeat the framework over time to monitor changes in network access,
               scheduled service and spatial equity.
             </p>
-            <small>Evidence: Composite Accessibility workflow</small>
+            <a class="map-evidence-link" href="#maps" data-map-index="5">Evidence: Composite Accessibility workflow →</a>
           </article>
         </div>
       </section>
@@ -2138,7 +1993,7 @@ body.sel-002-publication .site-footer .footer-top-link {
             <strong>Download atlas ↓</strong>
           </a>
 
-          <a class="output-card" id="interactive-map" href="./webmap/index.html" target="_blank" rel="noopener">
+          <a class="output-card" id="interactive-map" href="./webmap/index.html">
             <span>WEB MAP</span>
             <h3>Interactive spatial evidence</h3>
             <p>Explore analytical layers, search Small Areas and inspect mapped evidence.</p>
@@ -2201,101 +2056,37 @@ body.sel-002-publication .site-footer .footer-top-link {
 </main>
 
 <footer class="site-footer">
-
-    <div class="footer-grid">
-
-        <div class="footer-brand-column">
-
-            <div class="footer-brand-lockup">
-
-                <img
-                    src="/media/branding/logo.png"
-                    alt="Spatial Evidence Lab"
-                    class="footer-logo"
-                >
-
-                <span class="footer-brand">
-                    Spatial Evidence Lab
-                </span>
-
-            </div>
-</div>
-
-
-        <div class="footer-links">
-
-            <div class="footer-link-group">
-
-                <b>Site</b>
-
-                <a href="/projects/">Projects</a>
-                <a href="/methods/">Methods</a>
-                <a href="/data/">Data</a>
-                <a href="/about/">About</a>
-
-            </div>
-
-
-            <div class="footer-link-group">
-
-                <b>Research &amp; Connect</b>
-
-                <a
-                    href="https://github.com/Spatial-Evidence-Lab"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub ↗
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/jose-f-ireland/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    LinkedIn ↗
-                </a>
-
-                <a
-                    href="https://zenodo.org/records/20753309"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Zenodo ↗
-                </a>
-
-                <a
-                    href="https://explore.openaire.eu/search/result?pid=10.5281%2Fzenodo.20753309"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    OpenAIRE ↗
-                </a>
-
-            </div>
-
-        </div>
-
+  <div class="footer-grid">
+    <div class="footer-brand-column">
+      <div class="footer-brand-lockup">
+        <img src="/media/branding/logo.png" alt="Spatial Evidence Lab" class="footer-logo">
+        <span class="footer-brand">Spatial Evidence Lab</span>
+      </div>
     </div>
-
-
-    <div class="footer-bottom">
-Spatial Evidence Lab
-        </span>
-
-        <a
-            class="footer-top-link"
-            href="#top"
-            aria-label="Back to top"
-        >
-            Back to top ↑
-        </a>
-</div>
-
+    <div class="footer-links">
+      <div class="footer-link-group">
+        <b>Site</b>
+        <a href="/projects/">Projects</a>
+        <a href="/methods/">Methods</a>
+        <a href="/data/">Data</a>
+        <a href="/about/">About</a>
+      </div>
+      <div class="footer-link-group">
+        <b>Research &amp; Connect</b>
+        <a href="https://github.com/Spatial-Evidence-Lab" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/jose-f-ireland/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://zenodo.org/records/20753309" target="_blank" rel="noopener noreferrer">Zenodo ↗</a>
+        <a href="https://explore.openaire.eu/search/result?pid=10.5281%2Fzenodo.20753309" target="_blank" rel="noopener noreferrer">OpenAIRE ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Spatial Evidence Lab</span>
+    <a class="footer-top-link" href="#top" aria-label="Back to top">Back to top ↑</a>
+  </div>
 </footer>
 
-<script src="/js/navigation.js"></script>
-<script src="/js/core.js"></script>
+<script src="/assets/js/sel-site.js" defer></script>
 
 <script>
 (() => {
@@ -2409,7 +2200,10 @@ Spatial Evidence Lab
   }
 
   document.querySelectorAll("[data-map-index]").forEach(card => {
-    const open = () => openMap(Number(card.dataset.mapIndex), card);
+    const open = (event) => {
+      if (card.classList.contains("map-evidence-link")) event.preventDefault();
+      openMap(Number(card.dataset.mapIndex), card);
+    };
     card.addEventListener("click", open);
     card.addEventListener("keydown", event => {
       if (event.key === "Enter" || event.key === " ") {
