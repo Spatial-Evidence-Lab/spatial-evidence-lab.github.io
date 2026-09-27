@@ -3,43 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEL-002: Bandon Public Transport Accessibility | Spatial Evidence Lab</title>
-  <link rel="stylesheet" href="/assets/css/pages/project-sel002.css">
+
+  <title>
+    SEL-002: Bandon Public Transport Accessibility | Spatial Evidence Lab
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/pages/project-sel002.css"
+  >
 </head>
 
 <body class="project-sel002">
 
-  <!-- =========================================================
-       PROJECT PATHS
-       ========================================================= -->
-  <script>
-    const PROJECT_BASE = "https://spatial-evidence-lab.github.io";
 
-    const PATHS = {
-      mapsThumbs: `${PROJECT_BASE}/assets/maps/sel-002-bandon/thumbs`,
-      mapsWeb: `${PROJECT_BASE}/assets/maps/sel-002-bandon/web`,
+  <!-- ========================================================= -->
+  <!-- HERO SECTION                                             -->
+  <!-- ========================================================= -->
 
-      interactiveMap:
-        `${PROJECT_BASE}/projects/sel-002-bandon-public-transport/webmap/index.html`,
-
-      report:
-        `${PROJECT_BASE}/assets/outputs/sel-002-bandon/reports/SEL-002_%20Bandon%20Public%20Transport%20Accessibility%20Analysis.pdf`,
-
-      summary:
-        `${PROJECT_BASE}/assets/outputs/sel-002-bandon/reports/SEL-002_Executive%20Summary.pdf`,
-
-      indicators:
-        `${PROJECT_BASE}/assets/outputs/sel-002-bandon/reports/Indicators.csv`
-    };
-  </script>
-
-
-  <!-- =========================================================
-       HERO
-       ========================================================= -->
   <header class="project-section">
+
     <div class="container-wide">
-      <div class="container-narrow" style="margin: 0;">
+
+      <div
+        class="container-narrow"
+        style="margin: 0;"
+      >
 
         <div class="hero-eyebrow">
           SEL-002 · ACCESSIBILITY, MOBILITY & TRANSPORT
@@ -61,280 +50,699 @@
           <span>CENSUS 2022</span>
         </div>
 
-        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <div
+          style="
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+          "
+        >
 
           <a
-            href="https://spatial-evidence-lab.github.io/projects/sel-002-bandon-public-transport/webmap/index.html"
-            target="_blank"
-            rel="noopener"
+            href="#interactive-map"
             class="btn btn-primary"
-            style="background: var(--sel002-blue); color: #fff; padding: 12px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px;"
+            style="
+              background: var(--sel002-blue);
+              color: #fff;
+              padding: 12px 20px;
+              border-radius: 4px;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 14px;
+            "
           >
             EXPLORE INTERACTIVE MAP →
           </a>
 
           <a
-            href="https://spatial-evidence-lab.github.io/assets/outputs/sel-002-bandon/reports/SEL-002_%20Bandon%20Public%20Transport%20Accessibility%20Analysis.pdf"
+            href="/assets/outputs/sel-002-bandon/reports/SEL-002_%20Bandon%20Public%20Transport%20Accessibility%20Analysis.pdf"
             target="_blank"
             rel="noopener"
             class="btn btn-secondary"
-            style="border: 1px solid var(--sel002-line); color: var(--sel002-ink); padding: 12px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px;"
+            style="
+              border: 1px solid var(--sel002-line);
+              color: var(--sel002-ink);
+              padding: 12px 20px;
+              border-radius: 4px;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 14px;
+            "
           >
             DOWNLOAD REPORT ↓
           </a>
 
         </div>
+
       </div>
+
     </div>
+
   </header>
 
 
-  <!-- =========================================================
-       STICKY PROJECT NAVIGATION
-       ========================================================= -->
+  <!-- ========================================================= -->
+  <!-- STICKY PROJECT NAVIGATION                                -->
+  <!-- ========================================================= -->
+
   <nav class="project-nav-sticky">
-    <div class="container-wide" style="width: 100%;">
+
+    <div
+      class="container-wide"
+      style="width: 100%;"
+    >
+
       <ul class="project-nav-list">
-        <li><a href="#overview" class="project-nav-link active">01 OVERVIEW</a></li>
-        <li><a href="#evidence" class="project-nav-link">02 EVIDENCE</a></li>
-        <li><a href="#maps" class="project-nav-link">03 MAPS</a></li>
-        <li><a href="#findings" class="project-nav-link">04 FINDINGS</a></li>
-        <li><a href="#method" class="project-nav-link">05 METHOD</a></li>
-        <li><a href="#outputs" class="project-nav-link">06 OUTPUTS</a></li>
+
+        <li>
+          <a
+            href="#overview"
+            class="project-nav-link active"
+          >
+            01 OVERVIEW
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#evidence"
+            class="project-nav-link"
+          >
+            02 EVIDENCE
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#maps"
+            class="project-nav-link"
+          >
+            03 MAPS
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#findings"
+            class="project-nav-link"
+          >
+            04 FINDINGS
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#method"
+            class="project-nav-link"
+          >
+            05 METHOD
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#outputs"
+            class="project-nav-link"
+          >
+            06 OUTPUTS
+          </a>
+        </li>
+
       </ul>
+
     </div>
+
   </nav>
 
 
-  <!-- =========================================================
-       01 OVERVIEW
-       ========================================================= -->
-  <section id="overview" class="project-section project-section-bg-alt">
+  <!-- ========================================================= -->
+  <!-- 01 OVERVIEW                                              -->
+  <!-- ========================================================= -->
+
+  <section
+    id="overview"
+    class="project-section project-section-bg-alt"
+  >
+
     <div class="container-wide">
 
-      <div class="container-narrow" style="margin: 0 0 32px 0;">
-        <div class="hero-eyebrow">01 · OVERVIEW</div>
+      <div
+        class="container-narrow"
+        style="margin: 0 0 32px 0;"
+      >
 
-        <h2 style="font-size: 36px; color: var(--sel002-ink); margin-bottom: 12px;">
+        <div class="hero-eyebrow">
+          01 · OVERVIEW
+        </div>
+
+        <h2
+          style="
+            font-size: 36px;
+            color: var(--sel002-ink);
+            margin-bottom: 12px;
+          "
+        >
           The evidence at a glance.
         </h2>
 
-        <p style="font-size: 16px; line-height: 1.65;">
-          The analysis examines how public transport accessibility varies across
-          Bandon and where weaker accessibility overlaps with higher relative
-          population vulnerability.
+        <p
+          style="
+            font-size: 16px;
+            line-height: 1.65;
+          "
+        >
+          The analysis examines how public transport accessibility varies
+          across Bandon and where weaker accessibility overlaps with higher
+          relative population vulnerability.
         </p>
+
       </div>
 
 
       <div class="metrics-grid">
 
-        <div class="metric-card" data-accent="access">
-          <div class="metric-number">64.7%</div>
-          <div class="metric-label">22 of 34 Small Areas</div>
-          <div class="metric-sub">
-            require more than 10 minutes of network walking access to a principal stop.
+        <div
+          class="metric-card"
+          data-accent="access"
+        >
+
+          <div class="metric-number">
+            64.7%
           </div>
+
+          <div class="metric-label">
+            22 of 34 Small Areas
+          </div>
+
+          <div class="metric-sub">
+            require more than 10 minutes of network walking access
+            to a principal stop.
+          </div>
+
         </div>
 
-        <div class="metric-card" data-accent="access">
-          <div class="metric-number">32.4%</div>
-          <div class="metric-label">11 of 34 Small Areas</div>
+
+        <div
+          class="metric-card"
+          data-accent="access"
+        >
+
+          <div class="metric-number">
+            32.4%
+          </div>
+
+          <div class="metric-label">
+            11 of 34 Small Areas
+          </div>
+
           <div class="metric-sub">
             fall completely outside the 15-minute walking threshold.
           </div>
+
         </div>
 
-        <div class="metric-card" data-accent="service">
-          <div class="metric-number">23.5%</div>
-          <div class="metric-label">8 of 34 Small Areas</div>
-          <div class="metric-sub">
-            fall within the lowest quarter of the normalised Composite Accessibility Index.
+
+        <div
+          class="metric-card"
+          data-accent="service"
+        >
+
+          <div class="metric-number">
+            23.5%
           </div>
+
+          <div class="metric-label">
+            8 of 34 Small Areas
+          </div>
+
+          <div class="metric-sub">
+            fall within the lowest quarter of the normalised
+            Composite Accessibility Index.
+          </div>
+
         </div>
 
-        <div class="metric-card" data-accent="hotspot">
-          <div class="metric-number">4</div>
-          <div class="metric-label">Screening Hotspots</div>
-          <div class="metric-sub">
-            show both high relative access deficit and high relative population vulnerability.
+
+        <div
+          class="metric-card"
+          data-accent="hotspot"
+        >
+
+          <div class="metric-number">
+            4
           </div>
+
+          <div class="metric-label">
+            Screening Hotspots
+          </div>
+
+          <div class="metric-sub">
+            show both high relative access deficit and high relative
+            population vulnerability.
+          </div>
+
         </div>
 
       </div>
 
 
-      <div style="margin-top: 48px; background: var(--sel002-bg); border-left: 4px solid var(--sel002-ink); padding: 24px; border-radius: 0 8px 8px 0;">
+      <div
+        style="
+          margin-top: 48px;
+          background: var(--sel002-bg);
+          border-left: 4px solid var(--sel002-ink);
+          padding: 24px;
+          border-radius: 0 8px 8px 0;
+        "
+      >
 
-        <h3 style="font-size: 17px; margin-top: 0; color: var(--sel002-ink);">
+        <h3
+          style="
+            font-size: 17px;
+            margin-top: 0;
+            color: var(--sel002-ink);
+          "
+        >
           Principal Finding
         </h3>
 
-        <p style="font-size: 16px; margin-bottom: 16px; line-height: 1.65;">
-          Public transport accessibility is spatially differentiated across Bandon.
-          The central corridor generally has stronger network walking access and
-          scheduled service availability, while several peripheral residential
-          areas experience longer walking journeys and/or weaker scheduled service availability.
+        <p
+          style="
+            font-size: 16px;
+            margin-bottom: 16px;
+            line-height: 1.65;
+          "
+        >
+          Public transport accessibility is spatially differentiated across
+          Bandon. The central corridor generally has stronger network walking
+          access and scheduled service availability, while several peripheral
+          residential areas experience longer walking journeys and/or weaker
+          scheduled service availability.
         </p>
 
-        <div style="font-size: 14px; color: var(--sel002-muted); line-height: 1.55;">
+        <div
+          style="
+            font-size: 14px;
+            color: var(--sel002-muted);
+            line-height: 1.55;
+          "
+        >
+
           <strong>Scope Note:</strong>
           The analysis identifies spatial conditions for further investigation.
-          It does not measure individual transport dependence, observed unmet demand
-          or the feasibility of a specific intervention.
+          It does not measure individual transport dependence, observed unmet
+          demand or the feasibility of a specific intervention.
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 
-  <!-- =========================================================
-       02 EVIDENCE
-       ========================================================= -->
-  <section id="evidence" class="project-section">
+  <!-- ========================================================= -->
+  <!-- 02 EVIDENCE                                              -->
+  <!-- ========================================================= -->
+
+  <section
+    id="evidence"
+    class="project-section"
+  >
+
     <div class="container-wide">
 
-      <div class="container-narrow" style="margin: 0 0 40px 0;">
-        <div class="hero-eyebrow">02 · EVIDENCE</div>
-        <h2 style="font-size: 36px; color: var(--sel002-ink);">
+      <div
+        class="container-narrow"
+        style="margin: 0 0 40px 0;"
+      >
+
+        <div class="hero-eyebrow">
+          02 · EVIDENCE
+        </div>
+
+        <h2
+          style="
+            font-size: 36px;
+            color: var(--sel002-ink);
+          "
+        >
           Four dimensions of evidence
         </h2>
+
       </div>
 
 
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        "
+      >
 
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px; border-left: 4px solid var(--sel002-access);">
-          <div style="font-size: 12px; font-weight: 650; color: var(--sel002-muted);">
+        <!-- ACCESS -->
+
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+            border-left: 4px solid var(--sel002-access);
+          "
+        >
+
+          <div
+            style="
+              font-size: 12px;
+              font-weight: 650;
+              color: var(--sel002-muted);
+            "
+          >
             01 · ACCESS
           </div>
 
-          <h3 style="font-size: 17px; color: var(--sel002-ink); margin: 8px 0;">
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 8px 0;
+            "
+          >
             Walking accessibility
           </h3>
 
-          <p style="font-size: 14px; color: var(--sel002-text); line-height: 1.55;">
-            Network travel time from residential areas to principal public transport stops.
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              line-height: 1.55;
+            "
+          >
+            Network travel time from residential areas to principal
+            public transport stops.
           </p>
 
-          <div style="font-size: 13px; color: var(--sel002-muted); margin-top: 12px;">
-            <strong>Measured through:</strong> 5 / 10 / 15 minute network walking bands.
+          <div
+            style="
+              font-size: 13px;
+              color: var(--sel002-muted);
+              margin-top: 12px;
+            "
+          >
+            <strong>Measured through:</strong>
+            5 / 10 / 15 minute network walking bands.
           </div>
+
         </div>
 
 
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px; border-left: 4px solid var(--sel002-service);">
-          <div style="font-size: 12px; font-weight: 650; color: var(--sel002-muted);">
+        <!-- SERVICE -->
+
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+            border-left: 4px solid var(--sel002-service);
+          "
+        >
+
+          <div
+            style="
+              font-size: 12px;
+              font-weight: 650;
+              color: var(--sel002-muted);
+            "
+          >
             02 · SERVICE
           </div>
 
-          <h3 style="font-size: 17px; color: var(--sel002-ink); margin: 8px 0;">
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 8px 0;
+            "
+          >
             Scheduled service availability
           </h3>
 
-          <p style="font-size: 14px; color: var(--sel002-text); line-height: 1.55;">
-            Peak-period service frequency and headway derived from GTFS timetable data.
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              line-height: 1.55;
+            "
+          >
+            Peak-period service frequency and headway derived from
+            GTFS timetable data.
           </p>
 
-          <div style="font-size: 13px; color: var(--sel002-muted); margin-top: 12px;">
-            <strong>Measured through:</strong> scheduled departures and headway.
+          <div
+            style="
+              font-size: 13px;
+              color: var(--sel002-muted);
+              margin-top: 12px;
+            "
+          >
+            <strong>Measured through:</strong>
+            scheduled departures and headway.
           </div>
+
         </div>
 
 
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px; border-left: 4px solid var(--sel002-vulnerability);">
-          <div style="font-size: 12px; font-weight: 650; color: var(--sel002-muted);">
+        <!-- VULNERABILITY -->
+
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+            border-left: 4px solid var(--sel002-vulnerability);
+          "
+        >
+
+          <div
+            style="
+              font-size: 12px;
+              font-weight: 650;
+              color: var(--sel002-muted);
+            "
+          >
             03 · VULNERABILITY
           </div>
 
-          <h3 style="font-size: 17px; color: var(--sel002-ink); margin: 8px 0;">
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 8px 0;
+            "
+          >
             Population vulnerability
           </h3>
 
-          <p style="font-size: 14px; color: var(--sel002-text); line-height: 1.55;">
-            Relative spatial concentration of selected Census 2022 characteristics.
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              line-height: 1.55;
+            "
+          >
+            Relative spatial concentration of selected Census 2022
+            characteristics.
           </p>
 
-          <div style="font-size: 13px; color: var(--sel002-muted); margin-top: 12px;">
-            <strong>Includes:</strong> older age, health/disability, household car availability and economic indicators.
+          <div
+            style="
+              font-size: 13px;
+              color: var(--sel002-muted);
+              margin-top: 12px;
+            "
+          >
+            <strong>Includes:</strong>
+            older age, health/disability, household car availability
+            and economic indicators.
           </div>
+
         </div>
 
 
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px; border-left: 4px solid var(--sel002-hotspot);">
-          <div style="font-size: 12px; font-weight: 650; color: var(--sel002-muted);">
+        <!-- OVERLAP -->
+
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+            border-left: 4px solid var(--sel002-hotspot);
+          "
+        >
+
+          <div
+            style="
+              font-size: 12px;
+              font-weight: 650;
+              color: var(--sel002-muted);
+            "
+          >
             04 · OVERLAP
           </div>
 
-          <h3 style="font-size: 17px; color: var(--sel002-ink); margin: 8px 0;">
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 8px 0;
+            "
+          >
             Accessibility–vulnerability screening
           </h3>
 
-          <p style="font-size: 14px; color: var(--sel002-text); line-height: 1.55;">
-            Access Deficit and Population Vulnerability are combined only at the final stage.
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              line-height: 1.55;
+            "
+          >
+            Access Deficit and Population Vulnerability are combined
+            only at the final stage.
           </p>
 
-          <div style="font-size: 13px; color: var(--sel002-muted); margin-top: 12px;">
-            <strong>Output:</strong> Hotspot Score.
+          <div
+            style="
+              font-size: 13px;
+              color: var(--sel002-muted);
+              margin-top: 12px;
+            "
+          >
+            <strong>Output:</strong>
+            Hotspot Score.
           </div>
+
         </div>
 
       </div>
 
 
-      <div style="margin-top: 40px; background: var(--sel002-surface); border: 1px solid var(--sel002-line); padding: 24px; border-radius: 8px;">
+      <div
+        style="
+          margin-top: 40px;
+          background: var(--sel002-surface);
+          border: 1px solid var(--sel002-line);
+          padding: 24px;
+          border-radius: 8px;
+        "
+      >
 
-        <h4 style="margin: 0 0 8px 0; font-size: 14px; color: var(--sel002-ink); text-transform: uppercase; letter-spacing: 0.05em;">
+        <h4
+          style="
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: var(--sel002-ink);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+          "
+        >
           A Key Distinction: Accessibility is not the same as proximity
         </h4>
 
-        <p style="margin: 0; font-size: 15px; color: var(--sel002-text); line-height: 1.6;">
-          A location can be close to a bus stop while still having limited effective
-          access if scheduled services are infrequent. The Bandon framework therefore
-          separates network walking access from service availability before combining the two.
+        <p
+          style="
+            margin: 0;
+            font-size: 15px;
+            color: var(--sel002-text);
+            line-height: 1.6;
+          "
+        >
+          A location can be close to a bus stop while still having limited
+          effective access if scheduled services are infrequent. The Bandon
+          framework therefore separates network walking access from service
+          availability before combining the two.
         </p>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- =========================================================
-       03 MAPS
-       ========================================================= -->
-  <section id="maps" class="project-section project-section-bg-alt">
+  <!-- ========================================================= -->
+  <!-- 03 MAPS                                                  -->
+  <!-- ========================================================= -->
+
+  <section
+    id="maps"
+    class="project-section project-section-bg-alt"
+  >
 
     <div class="container-wide">
 
-      <div class="container-narrow" style="margin: 0 0 40px 0;">
+      <div
+        class="container-narrow"
+        style="margin: 0 0 40px 0;"
+      >
 
-        <div class="hero-eyebrow">03 · MAPS</div>
+        <div class="hero-eyebrow">
+          03 · MAPS
+        </div>
 
-        <h2 style="font-size: 36px; color: var(--sel002-ink); margin-bottom: 12px;">
+        <h2
+          style="
+            font-size: 36px;
+            color: var(--sel002-ink);
+            margin-bottom: 12px;
+          "
+        >
           Seven maps. One evidence chain.
         </h2>
 
-        <p style="font-size: 16px; color: var(--sel002-text);">
-          The map series moves from the physical transport network through walking
-          accessibility, service availability and population vulnerability to the
-          final accessibility–vulnerability screening.
+        <p
+          style="
+            font-size: 16px;
+            color: var(--sel002-text);
+          "
+        >
+          The map series moves from the physical transport network through
+          service frequency, walking accessibility, population vulnerability
+          and access deficit to the final composite accessibility and
+          intervention-priority screening.
         </p>
 
       </div>
 
+
+      <!-- ===================================================== -->
+      <!-- MAP GALLERY                                           -->
+      <!-- ===================================================== -->
 
       <div class="map-gallery-grid">
 
 
-        <!-- MAP 01.00 -->
-        <div class="map-card map-card-large" onclick="openMapModal(0)">
+        <!-- MAP 00 -->
+
+        <div
+          class="map-card map-card-large"
+          onclick="openMapModal(0)"
+          role="button"
+          tabindex="0"
+          onkeydown="handleMapKey(event, 0)"
+        >
 
           <img
-            src="https://spatial-evidence-lab.github.io/assets/maps/sel-002-bandon/thumbs/SEL002_Map00_NetworkBaseline.webp"
+            src="/assets/maps/sel-002-bandon/thumbs/SEL002_Map00_NetworkBaseline_thumb.webp"
             alt="Network Baseline Map"
             class="map-thumb"
+            loading="lazy"
           >
 
           <div class="map-card-body">
@@ -348,133 +756,186 @@
             </h3>
 
             <p class="map-card-desc">
-              Establishes the geographic and transport baseline for the analysis.
+              Establishes the geographic and transport network baseline
+              for the analysis.
             </p>
 
           </div>
+
         </div>
 
 
-        <!-- MAP 01.01 -->
-        <div class="map-card map-card-medium" onclick="openMapModal(1)">
+        <!-- MAP 01 -->
+
+        <div
+          class="map-card map-card-medium"
+          onclick="openMapModal(1)"
+          role="button"
+          tabindex="0"
+          onkeydown="handleMapKey(event, 1)"
+        >
 
           <img
-            src="https://spatial-evidence-lab.github.io/assets/maps/sel-002-bandon/thumbs/SEL002_Map01_WalkingAccess.webp"
+            src="/assets/maps/sel-002-bandon/thumbs/SEL002_Map01_ServiceFrequency_thumb.webp"
+            alt="Service Frequency Map"
+            class="map-thumb"
+            loading="lazy"
+          >
+
+          <div class="map-card-body">
+
+            <div class="map-card-num">
+              01.01 · SERVICE FREQUENCY
+            </div>
+
+            <h3 class="map-card-title">
+              Scheduled service availability
+            </h3>
+
+            <p class="map-card-desc">
+              Shows scheduled public transport service frequency and
+              headway across the study area.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MAP 02 -->
+
+        <div
+          class="map-card map-card-medium"
+          onclick="openMapModal(2)"
+          role="button"
+          tabindex="0"
+          onkeydown="handleMapKey(event, 2)"
+        >
+
+          <img
+            src="/assets/maps/sel-002-bandon/thumbs/SEL002_Map02_WalkingAccessibility_thumb.webp"
             alt="Walking Accessibility Map"
             class="map-thumb"
+            loading="lazy"
           >
 
           <div class="map-card-body">
 
             <div class="map-card-num">
-              01.01 · WALKING ACCESS
+              01.02 · WALKING ACCESSIBILITY
             </div>
 
             <h3 class="map-card-title">
-              Network-based pedestrian catchments
+              Network-based pedestrian accessibility
             </h3>
 
             <p class="map-card-desc">
-              22 of 34 Small Areas require more than 10 minutes to reach a principal stop.
+              Shows network walking accessibility from Small Areas to
+              principal public transport stops.
             </p>
 
           </div>
+
         </div>
 
 
-        <!-- MAP 01.02 -->
-        <div class="map-card map-card-medium" onclick="openMapModal(2)">
+        <!-- MAP 03 -->
+
+        <div
+          class="map-card map-card-medium"
+          onclick="openMapModal(3)"
+          role="button"
+          tabindex="0"
+          onkeydown="handleMapKey(event, 3)"
+        >
 
           <img
-            src="https://spatial-evidence-lab.github.io/assets/maps/sel-002-bandon/thumbs/SEL002_Map02_PedestrianContext.webp"
-            alt="Pedestrian Context Map"
-            class="map-thumb"
-          >
-
-          <div class="map-card-body">
-
-            <div class="map-card-num">
-              01.02 · PEDESTRIAN CONTEXT
-            </div>
-
-            <h3 class="map-card-title">
-              Footpaths and crossing network
-            </h3>
-
-            <p class="map-card-desc">
-              Provides local network context for interpreting walking accessibility.
-            </p>
-
-          </div>
-        </div>
-
-
-        <!-- MAP 01.03 -->
-        <div class="map-card map-card-medium" onclick="openMapModal(3)">
-
-          <img
-            src="https://spatial-evidence-lab.github.io/assets/maps/sel-002-bandon/thumbs/SEL002_Map03_ServiceAvailability.webp"
-            alt="Service Availability Map"
-            class="map-thumb"
-          >
-
-          <div class="map-card-body">
-
-            <div class="map-card-num">
-              01.03 · SERVICE AVAILABILITY
-            </div>
-
-            <h3 class="map-card-title">
-              Peak-period frequency and headway
-            </h3>
-
-            <p class="map-card-desc">
-              Scheduled service availability is generally stronger along the central corridor.
-            </p>
-
-          </div>
-        </div>
-
-
-        <!-- MAP 01.04 -->
-        <div class="map-card map-card-medium" onclick="openMapModal(4)">
-
-          <img
-            src="https://spatial-evidence-lab.github.io/assets/maps/sel-002-bandon/thumbs/SEL002_Map04_PopulationVulnerability.webp"
+            src="/assets/maps/sel-002-bandon/thumbs/SEL002_Map03_Vulnerability_thumb.webp"
             alt="Population Vulnerability Map"
             class="map-thumb"
+            loading="lazy"
           >
 
           <div class="map-card-body">
 
             <div class="map-card-num">
-              01.04 · POPULATION VULNERABILITY
+              01.03 · POPULATION VULNERABILITY
             </div>
 
             <h3 class="map-card-title">
-              Relative Census-based vulnerability
+              Relative population vulnerability
             </h3>
 
             <p class="map-card-desc">
-              Vulnerability varies substantially across the Small Area geography.
+              Shows the spatial distribution of the Census-based
+              population vulnerability indicator.
             </p>
 
           </div>
+
         </div>
 
 
-        <!-- MAP 01.05 -->
-        <div class="map-card map-card-integrated" onclick="openMapModal(5)">
+        <!-- MAP 04 -->
+
+        <div
+          class="map-card map-card-medium"
+          onclick="openMapModal(4)"
+          role="button"
+          tabindex="0"
+          onkeydown="handleMapKey(event, 4)"
+        >
 
           <img
-            src="https://spatial-evidence-lab.github.io/assets/maps/sel-002-bandon/thumbs/SEL002_Map05_CompositeAccessibility.webp"
-            alt="Composite Accessibility Map"
+            src="/assets/maps/sel-002-bandon/thumbs/SEL002_Map04_AccessDeficit_thumb.webp"
+            alt="Access Deficit Map"
             class="map-thumb"
+            loading="lazy"
           >
 
           <div class="map-card-body">
 
-            <div class="map-card-num" style="color: var(--sel002-blue);">
+            <div class="map-card-num">
+              01.04 · ACCESS DEFICIT
+            </div>
+
+            <h3 class="map-card-title">
+              Relative accessibility deficit
+            </h3>
+
+            <p class="map-card-desc">
+              Identifies areas with relatively weaker composite public
+              transport accessibility.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MAP 05 -->
+
+        <div
+          class="map-card map-card-integrated"
+          onclick="openMapModal(5)"
+          role="button"
+          tabindex="0"
+          onkeydown="handleMapKey(event, 5)"
+        >
+
+          <img
+            src="/assets/maps/sel-002-bandon/thumbs/SEL002_Map05_CompositeAccessibility_thumb.webp"
+            alt="Composite Accessibility Map"
+            class="map-thumb"
+            loading="lazy"
+          >
+
+          <div class="map-card-body">
+
+            <div
+              class="map-card-num"
+              style="color: var(--sel002-blue);"
+            >
               INTEGRATED RESULT · 01.05
             </div>
 
@@ -483,66 +944,112 @@
             </h3>
 
             <p class="map-card-desc">
-              The CAI combines pedestrian accessibility and service availability at 50:50.
+              Combines network walking accessibility and scheduled
+              service availability into the Composite Accessibility Index.
             </p>
 
           </div>
+
         </div>
 
 
-        <!-- MAP 01.06 -->
-        <div class="map-card map-card-hotspot" onclick="openMapModal(6)">
+        <!-- MAP 06 -->
+
+        <div
+          class="map-card map-card-hotspot"
+          onclick="openMapModal(6)"
+          role="button"
+          tabindex="0"
+          onkeydown="handleMapKey(event, 6)"
+        >
 
           <img
-            src="https://spatial-evidence-lab.github.io/assets/maps/sel-002-bandon/thumbs/SEL002_Map06_HotspotScreening.webp"
-            alt="Hotspot Screening Map"
+            src="/assets/maps/sel-002-bandon/thumbs/SEL002_Map06_InterventionPriority_thumb.webp"
+            alt="Intervention Priority Map"
             class="map-thumb"
+            loading="lazy"
           >
 
           <div class="map-card-body">
 
-            <div class="map-card-num" style="color: var(--sel002-hotspot);">
+            <div
+              class="map-card-num"
+              style="color: var(--sel002-hotspot);"
+            >
               FINAL SCREENING · 01.06
             </div>
 
             <h3 class="map-card-title">
-              Accessibility–Vulnerability Hotspots
+              Intervention Priority Screening
             </h3>
 
             <p class="map-card-desc">
-              Four Small Areas meet both high access-deficit and high-vulnerability thresholds.
+              Identifies areas where relative accessibility deficits
+              overlap with higher population vulnerability.
             </p>
 
           </div>
+
         </div>
 
       </div>
 
 
-      <!-- =====================================================
-           INTERACTIVE MAP
-           ===================================================== -->
+      <!-- ===================================================== -->
+      <!-- INTERACTIVE MAP CALLOUT                               -->
+      <!-- ===================================================== -->
+
       <div
         id="interactive-map"
-        style="margin-top: 64px; background: var(--sel002-bg); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 40px; text-align: center;"
+        style="
+          margin-top: 64px;
+          background: var(--sel002-bg);
+          border: 1px solid var(--sel002-line);
+          border-radius: 8px;
+          padding: 40px;
+          text-align: center;
+        "
       >
 
-        <h3 style="font-size: 24px; color: var(--sel002-ink); margin: 0 0 12px 0;">
+        <h3
+          style="
+            font-size: 24px;
+            color: var(--sel002-ink);
+            margin: 0 0 12px 0;
+          "
+        >
           Explore the spatial evidence
         </h3>
 
-        <p style="font-size: 16px; color: var(--sel002-text); max-width: 600px; margin: 0 auto 24px auto;">
-          Explore the Bandon accessibility layers interactively, including network
-          accessibility, service availability, population vulnerability and final
-          screening outputs.
+        <p
+          style="
+            font-size: 16px;
+            color: var(--sel002-text);
+            max-width: 600px;
+            margin: 0 auto 24px auto;
+          "
+        >
+          Explore the Bandon accessibility layers interactively, including
+          service frequency, walking accessibility, population vulnerability,
+          access deficit, composite accessibility and intervention-priority
+          screening.
         </p>
 
         <a
-          href="https://spatial-evidence-lab.github.io/projects/sel-002-bandon-public-transport/webmap/index.html"
+          href="/projects/sel-002-bandon-public-transport/webmap/index.html"
           target="_blank"
           rel="noopener"
           class="btn"
-          style="background: var(--sel002-blue); color: #fff; padding: 14px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 15px; display: inline-block;"
+          style="
+            background: var(--sel002-blue);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-block;
+          "
         >
           OPEN INTERACTIVE MAP ↗
         </a>
@@ -550,27 +1057,44 @@
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- =========================================================
-       MAP LIGHTBOX
-       ========================================================= -->
-  <div id="mapModal" class="map-modal">
+  <!-- ========================================================= -->
+  <!-- MAP LIGHTBOX                                             -->
+  <!-- ========================================================= -->
+
+  <div
+    id="mapModal"
+    class="map-modal"
+    aria-hidden="true"
+  >
 
     <div class="map-modal-content">
+
+      <!-- HEADER -->
 
       <div class="map-modal-header">
 
         <div
           id="modalNumTitle"
-          style="font-weight: 600; color: var(--sel002-ink);"
+          style="
+            font-weight: 600;
+            color: var(--sel002-ink);
+          "
         ></div>
 
         <button
           onclick="closeMapModal()"
           aria-label="Close map"
-          style="background: none; border: none; font-size: 24px; cursor: pointer; color: var(--sel002-muted);"
+          style="
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--sel002-muted);
+          "
         >
           &times;
         </button>
@@ -578,17 +1102,21 @@
       </div>
 
 
+      <!-- IMAGE -->
+
       <div class="map-modal-body">
 
         <img
           id="modalImg"
           src=""
-          alt="Map View"
+          alt=""
           class="map-modal-img"
         >
 
       </div>
 
+
+      <!-- FOOTER -->
 
       <div class="map-modal-footer">
 
@@ -596,39 +1124,75 @@
 
           <div
             id="modalSub"
-            style="font-size: 14px; font-weight: 600; color: var(--sel002-ink);"
+            style="
+              font-size: 14px;
+              font-weight: 600;
+              color: var(--sel002-ink);
+            "
           ></div>
 
           <div
             id="modalDesc"
-            style="font-size: 13px; color: var(--sel002-muted);"
+            style="
+              font-size: 13px;
+              color: var(--sel002-muted);
+            "
           ></div>
 
         </div>
 
 
-        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <div
+          style="
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+          "
+        >
 
           <a
-            id="downloadMap"
+            id="downloadPng"
             href="#"
-            download
+            target="_blank"
+            rel="noopener"
             class="btn"
-            style="font-size: 12px; border: 1px solid var(--sel002-line); padding: 8px 12px; text-decoration: none; color: var(--sel002-ink); border-radius: 4px;"
+            style="
+              font-size: 12px;
+              border: 1px solid var(--sel002-line);
+              padding: 8px 12px;
+              text-decoration: none;
+              color: var(--sel002-ink);
+              border-radius: 4px;
+            "
           >
-            DOWNLOAD MAP
+            OPEN FULL MAP
           </a>
+
 
           <button
             onclick="prevMap()"
-            style="padding: 8px 12px; border: 1px solid var(--sel002-line); background: #fff; border-radius: 4px; cursor: pointer;"
+            style="
+              padding: 8px 12px;
+              border: 1px solid var(--sel002-line);
+              background: #fff;
+              border-radius: 4px;
+              cursor: pointer;
+            "
           >
             ← PREVIOUS
           </button>
 
+
           <button
             onclick="nextMap()"
-            style="padding: 8px 12px; border: 1px solid var(--sel002-line); background: #fff; border-radius: 4px; cursor: pointer;"
+            style="
+              padding: 8px 12px;
+              border: 1px solid var(--sel002-line);
+              background: #fff;
+              border-radius: 4px;
+              cursor: pointer;
+            "
           >
             NEXT →
           </button>
@@ -638,136 +1202,331 @@
       </div>
 
     </div>
+
   </div>
 
 
-  <!-- =========================================================
-       04 FINDINGS
-       ========================================================= -->
-  <section id="findings" class="project-section">
+  <!-- ========================================================= -->
+  <!-- 04 FINDINGS                                              -->
+  <!-- ========================================================= -->
+
+  <section
+    id="findings"
+    class="project-section"
+  >
 
     <div class="container-wide">
 
-      <div class="container-narrow" style="margin: 0 0 40px 0;">
+      <div
+        class="container-narrow"
+        style="margin: 0 0 40px 0;"
+      >
 
-        <div class="hero-eyebrow">04 · FINDINGS</div>
+        <div class="hero-eyebrow">
+          04 · FINDINGS
+        </div>
 
-        <h2 style="font-size: 36px; color: var(--sel002-ink);">
+        <h2
+          style="
+            font-size: 36px;
+            color: var(--sel002-ink);
+          "
+        >
           What does the evidence show?
         </h2>
 
       </div>
 
 
-      <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        "
+      >
 
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
 
-          <div style="font-size: 12px; font-weight: 600; color: var(--sel002-muted);">
+        <!-- FINDING 01 -->
+
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <div
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-muted);
+            "
+          >
             01 · WALKING ACCESS
           </div>
 
-          <h3 style="font-size: 18px; color: var(--sel002-ink); margin: 4px 0 8px 0;">
+          <h3
+            style="
+              font-size: 18px;
+              color: var(--sel002-ink);
+              margin: 4px 0 8px 0;
+            "
+          >
             Access weakens beyond the central corridor.
           </h3>
 
-          <p style="font-size: 16px; color: var(--sel002-text); line-height: 1.65; margin: 0 0 12px 0;">
-            22 of 34 Small Areas require more than 10 minutes of network walking
-            access to a principal stop, while 11 are completely outside the
-            15-minute walking threshold.
+          <p
+            style="
+              font-size: 16px;
+              color: var(--sel002-text);
+              line-height: 1.65;
+              margin: 0 0 12px 0;
+            "
+          >
+            22 of 34 Small Areas require more than 10 minutes of
+            network walking access to a principal stop, while 11 are
+            completely outside the 15-minute walking threshold.
           </p>
 
-          <span style="font-size: 12px; font-weight: 600; color: var(--sel002-access);">
+          <span
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-access);
+            "
+          >
+            Evidence: Map 01.02
+          </span>
+
+        </div>
+
+
+        <!-- FINDING 02 -->
+
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <div
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-muted);
+            "
+          >
+            02 · SERVICE AVAILABILITY
+          </div>
+
+          <h3
+            style="
+              font-size: 18px;
+              color: var(--sel002-ink);
+              margin: 4px 0 8px 0;
+            "
+          >
+            Scheduled service is spatially differentiated.
+          </h3>
+
+          <p
+            style="
+              font-size: 16px;
+              color: var(--sel002-text);
+              line-height: 1.65;
+              margin: 0 0 12px 0;
+            "
+          >
+            The central corridor generally has stronger scheduled
+            peak-period service availability, while some peripheral
+            areas combine weaker walking access with lower service
+            availability.
+          </p>
+
+          <span
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-service);
+            "
+          >
             Evidence: Map 01.01
           </span>
 
         </div>
 
 
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
+        <!-- FINDING 03 -->
 
-          <div style="font-size: 12px; font-weight: 600; color: var(--sel002-muted);">
-            02 · SERVICE AVAILABILITY
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <div
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-muted);
+            "
+          >
+            03 · VULNERABILITY
           </div>
 
-          <h3 style="font-size: 18px; color: var(--sel002-ink); margin: 4px 0 8px 0;">
-            Scheduled service is spatially differentiated.
+          <h3
+            style="
+              font-size: 18px;
+              color: var(--sel002-ink);
+              margin: 4px 0 8px 0;
+            "
+          >
+            Population vulnerability is not distributed uniformly.
           </h3>
 
-          <p style="font-size: 16px; color: var(--sel002-text); line-height: 1.65; margin: 0 0 12px 0;">
-            The central corridor generally has stronger scheduled peak-period
-            service availability, while some peripheral areas combine weaker
-            walking access with lower service availability.
+          <p
+            style="
+              font-size: 16px;
+              color: var(--sel002-text);
+              line-height: 1.65;
+              margin: 0 0 12px 0;
+            "
+          >
+            Six Small Areas have normalised vulnerability values above
+            0.75, indicating relatively high concentrations of the
+            selected demographic, health, household and economic
+            indicators.
           </p>
 
-          <span style="font-size: 12px; font-weight: 600; color: var(--sel002-service);">
+          <span
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-vulnerability);
+            "
+          >
             Evidence: Map 01.03
           </span>
 
         </div>
 
 
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
+        <!-- FINDING 04 -->
 
-          <div style="font-size: 12px; font-weight: 600; color: var(--sel002-muted);">
-            03 · VULNERABILITY
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <div
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-muted);
+            "
+          >
+            04 · ACCESS DEFICIT
           </div>
 
-          <h3 style="font-size: 18px; color: var(--sel002-ink); margin: 4px 0 8px 0;">
-            Population vulnerability is not distributed uniformly.
-          </h3>
-
-          <p style="font-size: 16px; color: var(--sel002-text); line-height: 1.65; margin: 0 0 12px 0;">
-            Six Small Areas have normalised vulnerability values above 0.75,
-            indicating relatively high concentrations of the selected demographic,
-            health, household and economic indicators.
-          </p>
-
-          <span style="font-size: 12px; font-weight: 600; color: var(--sel002-vulnerability);">
-            Evidence: Map 01.04
-          </span>
-
-        </div>
-
-
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
-
-          <div style="font-size: 12px; font-weight: 600; color: var(--sel002-muted);">
-            04 · INTEGRATED ACCESSIBILITY
-          </div>
-
-          <h3 style="font-size: 18px; color: var(--sel002-ink); margin: 4px 0 8px 0;">
+          <h3
+            style="
+              font-size: 18px;
+              color: var(--sel002-ink);
+              margin: 4px 0 8px 0;
+            "
+          >
             Walking and service deficits can compound.
           </h3>
 
-          <p style="font-size: 16px; color: var(--sel002-text); line-height: 1.65; margin: 0 0 12px 0;">
-            Eight Small Areas fall within the lowest quarter of the normalised
-            Composite Accessibility Index.
+          <p
+            style="
+              font-size: 16px;
+              color: var(--sel002-text);
+              line-height: 1.65;
+              margin: 0 0 12px 0;
+            "
+          >
+            Eight Small Areas fall within the lowest quarter of the
+            normalised Composite Accessibility Index.
           </p>
 
-          <span style="font-size: 12px; font-weight: 600; color: var(--sel002-blue);">
-            Evidence: Map 01.05
+          <span
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-blue);
+            "
+          >
+            Evidence: Maps 01.04 and 01.05
           </span>
 
         </div>
 
 
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
+        <!-- FINDING 05 -->
 
-          <div style="font-size: 12px; font-weight: 600; color: var(--sel002-muted);">
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <div
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-muted);
+            "
+          >
             05 · SPATIAL OVERLAP
           </div>
 
-          <h3 style="font-size: 18px; color: var(--sel002-ink); margin: 4px 0 8px 0;">
+          <h3
+            style="
+              font-size: 18px;
+              color: var(--sel002-ink);
+              margin: 4px 0 8px 0;
+            "
+          >
             Four areas show simultaneous high access deficit and vulnerability.
           </h3>
 
-          <p style="font-size: 16px; color: var(--sel002-text); line-height: 1.65; margin: 0 0 12px 0;">
-            Four Small Areas have both Access Deficit &gt; 0.75 and VUL_norm &gt; 0.75,
-            with Hotspot Scores ranging from 0.856 to 0.947.
+          <p
+            style="
+              font-size: 16px;
+              color: var(--sel002-text);
+              line-height: 1.65;
+              margin: 0 0 12px 0;
+            "
+          >
+            Four Small Areas have both Access Deficit &gt; 0.75 and
+            VUL_norm &gt; 0.75, with Hotspot Scores ranging from
+            0.856 to 0.947.
           </p>
 
-          <span style="font-size: 12px; font-weight: 600; color: var(--sel002-hotspot);">
+          <span
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--sel002-hotspot);
+            "
+          >
             Evidence: Map 01.06
           </span>
 
@@ -777,24 +1536,42 @@
 
 
       <!-- HOTSPOT TABLE -->
-      <div style="margin-top: 48px; background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 32px;">
 
-        <h3 style="font-size: 20px; color: var(--sel002-ink); margin-top: 0;">
+      <div
+        style="
+          margin-top: 48px;
+          background: var(--sel002-surface);
+          border: 1px solid var(--sel002-line);
+          border-radius: 8px;
+          padding: 32px;
+        "
+      >
+
+        <h3
+          style="
+            font-size: 20px;
+            color: var(--sel002-ink);
+            margin-top: 0;
+          "
+        >
           Four screening hotspots
         </h3>
 
         <table class="hotspot-table">
 
           <thead>
+
             <tr>
               <th>Area</th>
               <th>Access deficit</th>
               <th>Vulnerability</th>
               <th>Hotspot Score</th>
             </tr>
+
           </thead>
 
           <tbody>
+
             <tr>
               <td>Gully</td>
               <td>0.892</td>
@@ -822,92 +1599,202 @@
               <td>0.790</td>
               <td class="hotspot-score">0.856</td>
             </tr>
+
           </tbody>
 
         </table>
+
       </div>
 
 
       <!-- RESEARCH QUESTIONS -->
+
       <div style="margin-top: 48px;">
 
-        <h3 style="font-size: 22px; color: var(--sel002-ink); margin-bottom: 20px;">
+        <h3
+          style="
+            font-size: 22px;
+            color: var(--sel002-ink);
+            margin-bottom: 20px;
+          "
+        >
           Research questions
         </h3>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+          "
+        >
 
-          <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 20px;">
+          <div
+            style="
+              background: var(--sel002-surface);
+              border: 1px solid var(--sel002-line);
+              border-radius: 8px;
+              padding: 20px;
+            "
+          >
 
-            <div style="font-size: 12px; font-weight: 600; color: var(--sel002-muted);">
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 600;
+                color: var(--sel002-muted);
+              "
+            >
               RQ01
             </div>
 
-            <h4 style="font-size: 16px; color: var(--sel002-ink); margin: 6px 0;">
+            <h4
+              style="
+                font-size: 16px;
+                color: var(--sel002-ink);
+                margin: 6px 0;
+              "
+            >
               How does accessibility vary across Bandon?
             </h4>
 
-            <p style="font-size: 14px; color: var(--sel002-text); line-height: 1.55; margin: 0;">
-              Accessibility is spatially differentiated, with generally stronger
-              walking access and scheduled service availability around the central
-              corridor and weaker conditions in several peripheral residential areas.
+            <p
+              style="
+                font-size: 14px;
+                color: var(--sel002-text);
+                line-height: 1.55;
+                margin: 0;
+              "
+            >
+              Accessibility is spatially differentiated, with generally
+              stronger walking access and scheduled service availability
+              around the central corridor and weaker conditions in several
+              peripheral residential areas.
             </p>
 
           </div>
 
 
-          <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 20px;">
+          <div
+            style="
+              background: var(--sel002-surface);
+              border: 1px solid var(--sel002-line);
+              border-radius: 8px;
+              padding: 20px;
+            "
+          >
 
-            <div style="font-size: 12px; font-weight: 600; color: var(--sel002-muted);">
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 600;
+                color: var(--sel002-muted);
+              "
+            >
               RQ02
             </div>
 
-            <h4 style="font-size: 16px; color: var(--sel002-ink); margin: 6px 0;">
+            <h4
+              style="
+                font-size: 16px;
+                color: var(--sel002-ink);
+                margin: 6px 0;
+              "
+            >
               Which areas potentially experience greater exposure to limited accessibility?
             </h4>
 
-            <p style="font-size: 14px; color: var(--sel002-text); line-height: 1.55; margin: 0;">
-              The final screening identifies locations where relatively weaker
-              accessibility overlaps with higher relative population vulnerability.
+            <p
+              style="
+                font-size: 14px;
+                color: var(--sel002-text);
+                line-height: 1.55;
+                margin: 0;
+              "
+            >
+              The final screening identifies locations where relatively
+              weaker accessibility overlaps with higher relative population
+              vulnerability.
             </p>
 
           </div>
 
         </div>
+
       </div>
 
 
-      <div style="margin-top: 32px; background: var(--sel002-bg); border: 1px solid var(--sel002-line); padding: 20px; border-radius: 8px; font-size: 14px; color: var(--sel002-text);">
+      <div
+        style="
+          margin-top: 32px;
+          background: var(--sel002-bg);
+          border: 1px solid var(--sel002-line);
+          padding: 20px;
+          border-radius: 8px;
+          font-size: 14px;
+          color: var(--sel002-text);
+        "
+      >
 
         <strong>What the analysis does not establish:</strong>
-        The study does not measure individual transport dependence, realised trip
-        behaviour, private-car competitiveness or observed unmet demand.
+        The study does not measure individual transport dependence,
+        realised trip behaviour, private-car competitiveness or observed
+        unmet demand.
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- =========================================================
-       05 METHOD
-       ========================================================= -->
-  <section id="method" class="project-section project-section-bg-alt">
+  <!-- ========================================================= -->
+  <!-- 05 METHOD                                                -->
+  <!-- ========================================================= -->
+
+  <section
+    id="method"
+    class="project-section project-section-bg-alt"
+  >
 
     <div class="container-wide">
 
-      <div class="container-narrow" style="margin: 0 0 40px 0;">
+      <div
+        class="container-narrow"
+        style="margin: 0 0 40px 0;"
+      >
 
-        <div class="hero-eyebrow">05 · METHOD</div>
+        <div class="hero-eyebrow">
+          05 · METHOD
+        </div>
 
-        <h2 style="font-size: 36px; color: var(--sel002-ink);">
+        <h2
+          style="
+            font-size: 36px;
+            color: var(--sel002-ink);
+          "
+        >
           How the model works
         </h2>
 
       </div>
 
 
-      <div style="background: var(--sel002-bg); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 32px; text-align: center; font-size: 13px; font-weight: 600; color: var(--sel002-ink); margin-bottom: 40px;">
+      <!-- FLOWCHART -->
+
+      <div
+        style="
+          background: var(--sel002-bg);
+          border: 1px solid var(--sel002-line);
+          border-radius: 8px;
+          padding: 32px;
+          text-align: center;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--sel002-ink);
+          margin-bottom: 40px;
+        "
+      >
 
         <div>
           CENSUS (30 / 30 / 20 / 20)
@@ -940,120 +1827,291 @@
       </div>
 
 
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <!-- METHOD CARDS -->
 
-        <div style="background: var(--sel002-bg); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 20px;">
-          <h4 style="margin: 0 0 8px 0; font-size: 15px; color: var(--sel002-ink);">
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+        "
+      >
+
+        <div
+          style="
+            background: var(--sel002-bg);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 20px;
+          "
+        >
+
+          <h4
+            style="
+              margin: 0 0 8px 0;
+              font-size: 15px;
+              color: var(--sel002-ink);
+            "
+          >
             Vulnerability
           </h4>
 
-          <ul style="margin: 0; padding-left: 16px; font-size: 13px; color: var(--sel002-text); line-height: 1.6;">
+          <ul
+            style="
+              margin: 0;
+              padding-left: 16px;
+              font-size: 13px;
+              color: var(--sel002-text);
+              line-height: 1.6;
+            "
+          >
             <li>30% Elderly</li>
-            <li>30% Health & Disability</li>
+            <li>30% Health &amp; Disability</li>
             <li>20% No-Car</li>
             <li>20% Economic</li>
           </ul>
+
         </div>
 
 
-        <div style="background: var(--sel002-bg); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 20px;">
-          <h4 style="margin: 0 0 8px 0; font-size: 15px; color: var(--sel002-ink);">
+        <div
+          style="
+            background: var(--sel002-bg);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 20px;
+          "
+        >
+
+          <h4
+            style="
+              margin: 0 0 8px 0;
+              font-size: 15px;
+              color: var(--sel002-ink);
+            "
+          >
             Walking
           </h4>
 
-          <ul style="margin: 0; padding-left: 16px; font-size: 13px; color: var(--sel002-text); line-height: 1.6;">
+          <ul
+            style="
+              margin: 0;
+              padding-left: 16px;
+              font-size: 13px;
+              color: var(--sel002-text);
+              line-height: 1.6;
+            "
+          >
             <li>0–5 min &rarr; 1.0</li>
             <li>5–10 min &rarr; 0.6</li>
             <li>10–15 min &rarr; 0.3</li>
             <li>&gt;15 min &rarr; 0</li>
           </ul>
+
         </div>
 
 
-        <div style="background: var(--sel002-bg); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 20px;">
-          <h4 style="margin: 0 0 8px 0; font-size: 15px; color: var(--sel002-ink);">
+        <div
+          style="
+            background: var(--sel002-bg);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 20px;
+          "
+        >
+
+          <h4
+            style="
+              margin: 0 0 8px 0;
+              font-size: 15px;
+              color: var(--sel002-ink);
+            "
+          >
             CAI
           </h4>
 
-          <ul style="margin: 0; padding-left: 16px; font-size: 13px; color: var(--sel002-text); line-height: 1.6;">
+          <ul
+            style="
+              margin: 0;
+              padding-left: 16px;
+              font-size: 13px;
+              color: var(--sel002-text);
+              line-height: 1.6;
+            "
+          >
             <li>50% Pedestrian Access</li>
             <li>50% Service Availability</li>
           </ul>
+
         </div>
 
 
-        <div style="background: var(--sel002-bg); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 20px;">
-          <h4 style="margin: 0 0 8px 0; font-size: 15px; color: var(--sel002-ink);">
+        <div
+          style="
+            background: var(--sel002-bg);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 20px;
+          "
+        >
+
+          <h4
+            style="
+              margin: 0 0 8px 0;
+              font-size: 15px;
+              color: var(--sel002-ink);
+            "
+          >
             Hotspot
           </h4>
 
-          <ul style="margin: 0; padding-left: 16px; font-size: 13px; color: var(--sel002-text); line-height: 1.6;">
+          <ul
+            style="
+              margin: 0;
+              padding-left: 16px;
+              font-size: 13px;
+              color: var(--sel002-text);
+              line-height: 1.6;
+            "
+          >
             <li>40% Access Deficit</li>
             <li>60% Vulnerability</li>
           </ul>
+
         </div>
 
       </div>
 
 
-      <div style="margin-top: 40px; background: var(--sel002-bg); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
+      <!-- INTERPRETATION BOUNDARY -->
 
-        <h4 style="margin: 0 0 8px 0; font-size: 14px; color: var(--sel002-ink); text-transform: uppercase;">
+      <div
+        style="
+          margin-top: 40px;
+          background: var(--sel002-bg);
+          border: 1px solid var(--sel002-line);
+          border-radius: 8px;
+          padding: 24px;
+        "
+      >
+
+        <h4
+          style="
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: var(--sel002-ink);
+            text-transform: uppercase;
+          "
+        >
           Interpretation Boundary
         </h4>
 
-        <p style="margin: 0; font-size: 14px; color: var(--sel002-text); line-height: 1.6;">
-          The indicators describe relative Small Area conditions rather than
-          individual-level characteristics. The Population Vulnerability Index
-          is a model-derived spatial proxy and is not a direct measure of transport
-          dependence or unmet demand. The Hotspot Score is a screening measure for
-          further investigation, not an automatic investment decision.
+        <p
+          style="
+            margin: 0;
+            font-size: 14px;
+            color: var(--sel002-text);
+            line-height: 1.6;
+          "
+        >
+          The indicators describe relative Small Area conditions rather
+          than individual-level characteristics. The Population Vulnerability
+          Index is a model-derived spatial proxy and is not a direct measure
+          of transport dependence or unmet demand. The Hotspot Score is a
+          screening measure for further investigation, not an automatic
+          investment decision.
         </p>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- =========================================================
-       06 OUTPUTS
-       ========================================================= -->
-  <section id="outputs" class="project-section">
+  <!-- ========================================================= -->
+  <!-- 06 OUTPUTS                                               -->
+  <!-- ========================================================= -->
+
+  <section
+    id="outputs"
+    class="project-section"
+  >
 
     <div class="container-wide">
 
-      <div class="container-narrow" style="margin: 0 0 40px 0;">
+      <div
+        class="container-narrow"
+        style="margin: 0 0 40px 0;"
+      >
 
-        <div class="hero-eyebrow">06 · OUTPUTS</div>
+        <div class="hero-eyebrow">
+          06 · OUTPUTS
+        </div>
 
-        <h2 style="font-size: 36px; color: var(--sel002-ink);">
+        <h2
+          style="
+            font-size: 36px;
+            color: var(--sel002-ink);
+          "
+        >
           Evidence package
         </h2>
 
       </div>
 
 
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        "
+      >
 
 
         <!-- REPORT -->
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
 
-          <h3 style="font-size: 17px; color: var(--sel002-ink); margin: 0 0 8px 0;">
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 0 0 8px 0;
+            "
+          >
             REPORT
           </h3>
 
-          <p style="font-size: 14px; color: var(--sel002-text); margin-bottom: 16px;">
-            Full publication documenting the analytical framework, results,
-            limitations and references.
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              margin-bottom: 16px;
+            "
+          >
+            Full publication documenting the analytical framework,
+            results, limitations and references.
           </p>
 
           <a
-            href="https://spatial-evidence-lab.github.io/assets/outputs/sel-002-bandon/reports/SEL-002_%20Bandon%20Public%20Transport%20Accessibility%20Analysis.pdf"
+            href="/assets/outputs/sel-002-bandon/reports/SEL-002_%20Bandon%20Public%20Transport%20Accessibility%20Analysis.pdf"
             target="_blank"
             rel="noopener"
-            style="font-size: 13px; font-weight: 600; color: var(--sel002-blue); text-decoration: none;"
+            style="
+              font-size: 13px;
+              font-weight: 600;
+              color: var(--sel002-blue);
+              text-decoration: none;
+            "
           >
             DOWNLOAD REPORT →
           </a>
@@ -1062,21 +2120,46 @@
 
 
         <!-- EXECUTIVE SUMMARY -->
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
 
-          <h3 style="font-size: 17px; color: var(--sel002-ink); margin: 0 0 8px 0;">
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 0 0 8px 0;
+            "
+          >
             EXECUTIVE SUMMARY
           </h3>
 
-          <p style="font-size: 14px; color: var(--sel002-text); margin-bottom: 16px;">
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              margin-bottom: 16px;
+            "
+          >
             Short-form version of the findings and analytical framework.
           </p>
 
           <a
-            href="https://spatial-evidence-lab.github.io/assets/outputs/sel-002-bandon/reports/SEL-002_Executive%20Summary.pdf"
+            href="/assets/outputs/sel-002-bandon/reports/SEL-002_Executive%20Summary.pdf"
             target="_blank"
             rel="noopener"
-            style="font-size: 13px; font-weight: 600; color: var(--sel002-blue); text-decoration: none;"
+            style="
+              font-size: 13px;
+              font-weight: 600;
+              color: var(--sel002-blue);
+              text-decoration: none;
+            "
           >
             DOWNLOAD SUMMARY →
           </a>
@@ -1085,20 +2168,47 @@
 
 
         <!-- INDICATOR DATA -->
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
 
-          <h3 style="font-size: 17px; color: var(--sel002-ink); margin: 0 0 8px 0;">
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 0 0 8px 0;
+            "
+          >
             INDICATOR DATA
           </h3>
 
-          <p style="font-size: 14px; color: var(--sel002-text); margin-bottom: 16px;">
-            CSV containing the underlying Small Area indicators and derived analytical measures.
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              margin-bottom: 16px;
+            "
+          >
+            CSV containing the underlying Small Area indicators and
+            derived analytical measures.
           </p>
 
           <a
-            href="https://spatial-evidence-lab.github.io/assets/outputs/sel-002-bandon/reports/Indicators.csv"
-            download
-            style="font-size: 13px; font-weight: 600; color: var(--sel002-blue); text-decoration: none;"
+            href="/assets/outputs/sel-002-bandon/reports/Indicators.csv"
+            target="_blank"
+            rel="noopener"
+            style="
+              font-size: 13px;
+              font-weight: 600;
+              color: var(--sel002-blue);
+              text-decoration: none;
+            "
           >
             DOWNLOAD INDICATOR DATA →
           </a>
@@ -1107,19 +2217,44 @@
 
 
         <!-- MAP FILES -->
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
 
-          <h3 style="font-size: 17px; color: var(--sel002-ink); margin: 0 0 8px 0;">
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 0 0 8px 0;
+            "
+          >
             MAP FILES
           </h3>
 
-          <p style="font-size: 14px; color: var(--sel002-text); margin-bottom: 16px;">
-            Individual web-ready map outputs used throughout the evidence package.
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              margin-bottom: 16px;
+            "
+          >
+            Individual high-resolution map outputs.
           </p>
 
           <a
             href="#maps"
-            style="font-size: 13px; font-weight: 600; color: var(--sel002-blue); text-decoration: none;"
+            style="
+              font-size: 13px;
+              font-weight: 600;
+              color: var(--sel002-blue);
+              text-decoration: none;
+            "
           >
             VIEW MAPS →
           </a>
@@ -1128,23 +2263,96 @@
 
 
         <!-- INTERACTIVE MAP -->
-        <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 8px; padding: 24px;">
 
-          <h3 style="font-size: 17px; color: var(--sel002-ink); margin: 0 0 8px 0;">
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 0 0 8px 0;
+            "
+          >
             INTERACTIVE MAP
           </h3>
 
-          <p style="font-size: 14px; color: var(--sel002-text); margin-bottom: 16px;">
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              margin-bottom: 16px;
+            "
+          >
             Explore the analytical layers spatially.
           </p>
 
           <a
-            href="https://spatial-evidence-lab.github.io/projects/sel-002-bandon-public-transport/webmap/index.html"
+            href="/projects/sel-002-bandon-public-transport/webmap/index.html"
             target="_blank"
             rel="noopener"
-            style="font-size: 13px; font-weight: 600; color: var(--sel002-blue); text-decoration: none;"
+            style="
+              font-size: 13px;
+              font-weight: 600;
+              color: var(--sel002-blue);
+              text-decoration: none;
+            "
           >
             OPEN WEB MAP →
+          </a>
+
+        </div>
+
+
+        <!-- MAP LEGENDS -->
+
+        <div
+          style="
+            background: var(--sel002-surface);
+            border: 1px solid var(--sel002-line);
+            border-radius: 8px;
+            padding: 24px;
+          "
+        >
+
+          <h3
+            style="
+              font-size: 17px;
+              color: var(--sel002-ink);
+              margin: 0 0 8px 0;
+            "
+          >
+            MAP LEGENDS
+          </h3>
+
+          <p
+            style="
+              font-size: 14px;
+              color: var(--sel002-text);
+              margin-bottom: 16px;
+            "
+          >
+            Supporting legend graphics for the map series.
+          </p>
+
+          <a
+            href="/assets/maps/sel-002-bandon/legends/map-series.svg"
+            target="_blank"
+            rel="noopener"
+            style="
+              font-size: 13px;
+              font-weight: 600;
+              color: var(--sel002-blue);
+              text-decoration: none;
+            "
+          >
+            VIEW MAP LEGEND →
           </a>
 
         </div>
@@ -1152,174 +2360,469 @@
       </div>
 
 
-      <!-- REPRODUCIBILITY -->
+      <!-- ===================================================== -->
+      <!-- REPRODUCIBILITY                                      -->
+      <!-- ===================================================== -->
+
       <div style="margin-top: 48px;">
 
-        <h3 style="font-size: 20px; color: var(--sel002-ink); margin-bottom: 12px;">
+        <h3
+          style="
+            font-size: 20px;
+            color: var(--sel002-ink);
+            margin-bottom: 12px;
+          "
+        >
           Reproducibility
         </h3>
 
-        <p style="font-size: 15px; color: var(--sel002-text); margin-bottom: 20px;">
-          The analysis combines Census 2022 Small Areas, GTFS timetable data,
-          OpenStreetMap network data and Tailte Éireann / CSO geography using
-          ArcGIS Pro, Network Analyst and PostGIS.
+        <p
+          style="
+            font-size: 15px;
+            color: var(--sel002-text);
+            margin-bottom: 20px;
+          "
+        >
+          The analysis combines Census 2022 Small Areas, GTFS timetable
+          data, OpenStreetMap network data and Tailte Éireann / CSO
+          geography using ArcGIS Pro, Network Analyst and PostGIS.
         </p>
 
-        <div style="display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; font-weight: 600; color: var(--sel002-muted); text-transform: uppercase;">
+        <div
+          style="
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sel002-muted);
+            text-transform: uppercase;
+          "
+        >
 
-          <span>DATA: Census 2022 · GTFS · OSM</span>
+          <span>
+            DATA: Census 2022 · GTFS · OSM
+          </span>
+
           <span>·</span>
-          <span>GEOGRAPHY: BUA · Small Areas</span>
+
+          <span>
+            GEOGRAPHY: BUA · Small Areas
+          </span>
+
           <span>·</span>
-          <span>ANALYSIS: ArcGIS Pro · Network Analyst</span>
+
+          <span>
+            ANALYSIS: ArcGIS Pro · Network Analyst
+          </span>
 
         </div>
 
       </div>
 
 
-      <!-- EVIDENCE BOUNDARIES -->
+      <!-- ===================================================== -->
+      <!-- EVIDENCE BOUNDARIES                                  -->
+      <!-- ===================================================== -->
+
       <div style="margin-top: 48px;">
 
-        <h3 style="font-size: 20px; color: var(--sel002-ink); margin-bottom: 20px;">
+        <h3
+          style="
+            font-size: 20px;
+            color: var(--sel002-ink);
+            margin-bottom: 20px;
+          "
+        >
           Evidence boundaries
         </h3>
 
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+          "
+        >
 
-          <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 6px; padding: 16px;">
-            <strong style="font-size: 14px; color: var(--sel002-ink);">
+
+          <div
+            style="
+              background: var(--sel002-surface);
+              border: 1px solid var(--sel002-line);
+              border-radius: 6px;
+              padding: 16px;
+            "
+          >
+
+            <strong
+              style="
+                font-size: 14px;
+                color: var(--sel002-ink);
+              "
+            >
               Walking assumptions
             </strong>
 
-            <p style="font-size: 13px; color: var(--sel002-text); margin: 4px 0 0 0;">
+            <p
+              style="
+                font-size: 13px;
+                color: var(--sel002-text);
+                margin: 4px 0 0 0;
+              "
+            >
               5 km/h; no individual ability, weather or safety modelling.
             </p>
+
           </div>
 
 
-          <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 6px; padding: 16px;">
-            <strong style="font-size: 14px; color: var(--sel002-ink);">
+          <div
+            style="
+              background: var(--sel002-surface);
+              border: 1px solid var(--sel002-line);
+              border-radius: 6px;
+              padding: 16px;
+            "
+          >
+
+            <strong
+              style="
+                font-size: 14px;
+                color: var(--sel002-ink);
+              "
+            >
               Network data
             </strong>
 
-            <p style="font-size: 13px; color: var(--sel002-text); margin: 4px 0 0 0;">
-              Mapped pedestrian connections and stops require local verification.
+            <p
+              style="
+                font-size: 13px;
+                color: var(--sel002-text);
+                margin: 4px 0 0 0;
+              "
+            >
+              Mapped pedestrian connections and stops require local
+              verification.
             </p>
+
           </div>
 
 
-          <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 6px; padding: 16px;">
-            <strong style="font-size: 14px; color: var(--sel002-ink);">
+          <div
+            style="
+              background: var(--sel002-surface);
+              border: 1px solid var(--sel002-line);
+              border-radius: 6px;
+              padding: 16px;
+            "
+          >
+
+            <strong
+              style="
+                font-size: 14px;
+                color: var(--sel002-ink);
+              "
+            >
               GTFS
             </strong>
 
-            <p style="font-size: 13px; color: var(--sel002-text); margin: 4px 0 0 0;">
+            <p
+              style="
+                font-size: 13px;
+                color: var(--sel002-text);
+                margin: 4px 0 0 0;
+              "
+            >
               Scheduled service does not represent real-time reliability.
             </p>
+
           </div>
 
 
-          <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 6px; padding: 16px;">
-            <strong style="font-size: 14px; color: var(--sel002-ink);">
+          <div
+            style="
+              background: var(--sel002-surface);
+              border: 1px solid var(--sel002-line);
+              border-radius: 6px;
+              padding: 16px;
+            "
+          >
+
+            <strong
+              style="
+                font-size: 14px;
+                color: var(--sel002-ink);
+              "
+            >
               Census geography
             </strong>
 
-            <p style="font-size: 13px; color: var(--sel002-text); margin: 4px 0 0 0;">
+            <p
+              style="
+                font-size: 13px;
+                color: var(--sel002-text);
+                margin: 4px 0 0 0;
+              "
+            >
               Small Areas do not perfectly coincide with the BUA.
             </p>
+
           </div>
 
 
-          <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 6px; padding: 16px;">
-            <strong style="font-size: 14px; color: var(--sel002-ink);">
+          <div
+            style="
+              background: var(--sel002-surface);
+              border: 1px solid var(--sel002-line);
+              border-radius: 6px;
+              padding: 16px;
+            "
+          >
+
+            <strong
+              style="
+                font-size: 14px;
+                color: var(--sel002-ink);
+              "
+            >
               Relative scores
             </strong>
 
-            <p style="font-size: 13px; color: var(--sel002-text); margin: 4px 0 0 0;">
-              Normalised values are relative to this Bandon analytical population.
+            <p
+              style="
+                font-size: 13px;
+                color: var(--sel002-text);
+                margin: 4px 0 0 0;
+              "
+            >
+              Normalised values are relative to this Bandon analytical
+              population.
             </p>
+
           </div>
 
 
-          <div style="background: var(--sel002-surface); border: 1px solid var(--sel002-line); border-radius: 6px; padding: 16px;">
-            <strong style="font-size: 14px; color: var(--sel002-ink);">
+          <div
+            style="
+              background: var(--sel002-surface);
+              border: 1px solid var(--sel002-line);
+              border-radius: 6px;
+              padding: 16px;
+            "
+          >
+
+            <strong
+              style="
+                font-size: 14px;
+                color: var(--sel002-ink);
+              "
+            >
               Model weights
             </strong>
 
-            <p style="font-size: 13px; color: var(--sel002-text); margin: 4px 0 0 0;">
-              Different weighting assumptions could produce different spatial results.
+            <p
+              style="
+                font-size: 13px;
+                color: var(--sel002-text);
+                margin: 4px 0 0 0;
+              "
+            >
+              Different weighting assumptions could produce different
+              spatial results.
             </p>
+
           </div>
 
         </div>
+
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- =========================================================
-       MAP LIGHTBOX SCRIPT
-       ========================================================= -->
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT                                               -->
+  <!-- ========================================================= -->
+
   <script>
+
+    /*
+     * =========================================================
+     * MAP CONFIGURATION
+     * =========================================================
+     *
+     * thumbs = thumbnails displayed on the page
+     * web    = WebP displayed inside the lightbox
+     * full   = original PNG opened from the lightbox
+     */
+
+    const MAP_BASE =
+      "/assets/maps/sel-002-bandon/";
+
 
     const mapData = [
 
       {
         num: "01.00 · NETWORK BASELINE",
-        title: "Transport network and principal stops",
-        desc: "Establishes the geographic and transport baseline for the analysis.",
-        thumb: `${PATHS.mapsThumbs}/SEL002_Map00_NetworkBaseline.webp`,
-        img: `${PATHS.mapsWeb}/SEL002_Map00_NetworkBaseline.webp`
+
+        title:
+          "Transport network and principal stops",
+
+        desc:
+          "Establishes the geographic and transport network baseline for the analysis.",
+
+        thumb:
+          MAP_BASE +
+          "thumbs/SEL002_Map00_NetworkBaseline_thumb.webp",
+
+        web:
+          MAP_BASE +
+          "web/SEL002_Map00_NetworkBaseline.webp",
+
+        full:
+          MAP_BASE +
+          "full/SEL002_Map00_NetworkBaseline.png"
       },
 
-      {
-        num: "01.01 · WALKING ACCESS",
-        title: "Network-based pedestrian catchments",
-        desc: "22 of 34 Small Areas require more than 10 minutes to reach a principal stop.",
-        thumb: `${PATHS.mapsThumbs}/SEL002_Map01_WalkingAccess.webp`,
-        img: `${PATHS.mapsWeb}/SEL002_Map01_WalkingAccess.webp`
-      },
 
       {
-        num: "01.02 · PEDESTRIAN CONTEXT",
-        title: "Footpaths and crossing network",
-        desc: "Provides local network context for interpreting walking accessibility.",
-        thumb: `${PATHS.mapsThumbs}/SEL002_Map02_PedestrianContext.webp`,
-        img: `${PATHS.mapsWeb}/SEL002_Map02_PedestrianContext.webp`
+        num: "01.01 · SERVICE FREQUENCY",
+
+        title:
+          "Scheduled service availability",
+
+        desc:
+          "Shows scheduled public transport service frequency and headway across the study area.",
+
+        thumb:
+          MAP_BASE +
+          "thumbs/SEL002_Map01_ServiceFrequency_thumb.webp",
+
+        web:
+          MAP_BASE +
+          "web/SEL002_Map01_ServiceFrequency.webp",
+
+        full:
+          MAP_BASE +
+          "full/SEL002_Map01_ServiceFrequency.png"
       },
 
-      {
-        num: "01.03 · SERVICE AVAILABILITY",
-        title: "Peak-period frequency and headway",
-        desc: "Scheduled service availability is generally stronger along the central corridor.",
-        thumb: `${PATHS.mapsThumbs}/SEL002_Map03_ServiceAvailability.webp`,
-        img: `${PATHS.mapsWeb}/SEL002_Map03_ServiceAvailability.webp`
-      },
 
       {
-        num: "01.04 · POPULATION VULNERABILITY",
-        title: "Relative Census-based vulnerability",
-        desc: "Vulnerability varies substantially across the Small Area geography.",
-        thumb: `${PATHS.mapsThumbs}/SEL002_Map04_PopulationVulnerability.webp`,
-        img: `${PATHS.mapsWeb}/SEL002_Map04_PopulationVulnerability.webp`
+        num: "01.02 · WALKING ACCESSIBILITY",
+
+        title:
+          "Network-based pedestrian accessibility",
+
+        desc:
+          "Shows network walking accessibility from Small Areas to principal public transport stops.",
+
+        thumb:
+          MAP_BASE +
+          "thumbs/SEL002_Map02_WalkingAccessibility_thumb.webp",
+
+        web:
+          MAP_BASE +
+          "web/SEL002_Map02_WalkingAccessibility.webp",
+
+        full:
+          MAP_BASE +
+          "full/SEL002_Map02_WalkingAccessibility.png"
       },
 
-      {
-        num: "INTEGRATED RESULT · 01.05",
-        title: "Composite Accessibility",
-        desc: "The CAI combines pedestrian accessibility and service availability at 50:50.",
-        thumb: `${PATHS.mapsThumbs}/SEL002_Map05_CompositeAccessibility.webp`,
-        img: `${PATHS.mapsWeb}/SEL002_Map05_CompositeAccessibility.webp`
-      },
 
       {
-        num: "FINAL SCREENING · 01.06",
-        title: "Accessibility–Vulnerability Hotspots",
-        desc: "Four Small Areas meet both high access-deficit and high-vulnerability thresholds.",
-        thumb: `${PATHS.mapsThumbs}/SEL002_Map06_HotspotScreening.webp`,
-        img: `${PATHS.mapsWeb}/SEL002_Map06_HotspotScreening.webp`
+        num: "01.03 · POPULATION VULNERABILITY",
+
+        title:
+          "Relative population vulnerability",
+
+        desc:
+          "Shows the spatial distribution of the Census-based population vulnerability indicator.",
+
+        thumb:
+          MAP_BASE +
+          "thumbs/SEL002_Map03_Vulnerability_thumb.webp",
+
+        web:
+          MAP_BASE +
+          "web/SEL002_Map03_Vulnerability.webp",
+
+        full:
+          MAP_BASE +
+          "full/SEL002_Map03_Vulnerability.png"
+      },
+
+
+      {
+        num: "01.04 · ACCESS DEFICIT",
+
+        title:
+          "Relative accessibility deficit",
+
+        desc:
+          "Identifies areas with relatively weaker composite public transport accessibility.",
+
+        thumb:
+          MAP_BASE +
+          "thumbs/SEL002_Map04_AccessDeficit_thumb.webp",
+
+        web:
+          MAP_BASE +
+          "web/SEL002_Map04_AccessDeficit.webp",
+
+        full:
+          MAP_BASE +
+          "full/SEL002_Map04_AccessDeficit.png"
+      },
+
+
+      {
+        num: "01.05 · COMPOSITE ACCESSIBILITY",
+
+        title:
+          "Composite Accessibility",
+
+        desc:
+          "Combines network walking accessibility and scheduled service availability into the Composite Accessibility Index.",
+
+        thumb:
+          MAP_BASE +
+          "thumbs/SEL002_Map05_CompositeAccessibility_thumb.webp",
+
+        web:
+          MAP_BASE +
+          "web/SEL002_Map05_CompositeAccessibility.webp",
+
+        full:
+          MAP_BASE +
+          "full/SEL002_Map05_CompositeAccessibility.png"
+      },
+
+
+      {
+        num: "01.06 · INTERVENTION PRIORITY",
+
+        title:
+          "Intervention Priority Screening",
+
+        desc:
+          "Identifies areas where relative accessibility deficits overlap with higher population vulnerability.",
+
+        thumb:
+          MAP_BASE +
+          "thumbs/SEL002_Map06_InterventionPriority_thumb.webp",
+
+        web:
+          MAP_BASE +
+          "web/SEL002_Map06_InterventionPriority.webp",
+
+        full:
+          MAP_BASE +
+          "full/SEL002_Map06_InterventionPriority.png"
       }
 
     ];
@@ -1328,109 +2831,281 @@
     let currentMapIdx = 0;
 
 
-    function openMapModal(idx) {
+    /*
+     * =========================================================
+     * OPEN MAP MODAL
+     * =========================================================
+     */
 
-      currentMapIdx = idx;
+    function openMapModal(index) {
 
-      updateModal();
-
-      document
-        .getElementById("mapModal")
-        .classList.add("open");
-
-      document.body.style.overflow = "hidden";
-    }
-
-
-    function closeMapModal() {
-
-      document
-        .getElementById("mapModal")
-        .classList.remove("open");
-
-      document.body.style.overflow = "";
-    }
-
-
-    function updateModal() {
-
-      const data = mapData[currentMapIdx];
-
-      document.getElementById("modalNumTitle").innerText = data.num;
-
-      document.getElementById("modalImg").src = data.img;
-
-      document.getElementById("modalImg").alt = data.title;
-
-      document.getElementById("modalSub").innerText = data.title;
-
-      document.getElementById("modalDesc").innerText = data.desc;
-
-      document.getElementById("downloadMap").href = data.img;
-
-      document.getElementById("downloadMap").download =
-        data.img.split("/").pop();
-
-    }
-
-
-    function prevMap() {
-
-      currentMapIdx =
-        (currentMapIdx - 1 + mapData.length) % mapData.length;
+      currentMapIdx = index;
 
       updateModal();
-    }
-
-
-    function nextMap() {
-
-      currentMapIdx =
-        (currentMapIdx + 1) % mapData.length;
-
-      updateModal();
-    }
-
-
-    /* Close when clicking outside the modal content */
-    document
-      .getElementById("mapModal")
-      .addEventListener("click", function(event) {
-
-        if (event.target === this) {
-          closeMapModal();
-        }
-
-      });
-
-
-    /* Keyboard controls */
-    document.addEventListener("keydown", function(event) {
 
       const modal =
         document.getElementById("mapModal");
 
-      if (!modal.classList.contains("open")) {
-        return;
+      modal.classList.add("open");
+
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "hidden";
+    }
+
+
+    /*
+     * =========================================================
+     * KEYBOARD OPEN
+     * =========================================================
+     */
+
+    function handleMapKey(event, index) {
+
+      if (
+        event.key === "Enter" ||
+        event.key === " "
+      ) {
+
+        event.preventDefault();
+
+        openMapModal(index);
+
       }
 
-      if (event.key === "Escape") {
-        closeMapModal();
-      }
+    }
 
-      if (event.key === "ArrowLeft") {
-        prevMap();
-      }
 
-      if (event.key === "ArrowRight") {
-        nextMap();
-      }
+    /*
+     * =========================================================
+     * CLOSE MODAL
+     * =========================================================
+     */
 
-    });
+    function closeMapModal() {
+
+      const modal =
+        document.getElementById("mapModal");
+
+      modal.classList.remove("open");
+
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.style.overflow =
+        "";
+    }
+
+
+    /*
+     * =========================================================
+     * UPDATE MODAL
+     * =========================================================
+     */
+
+    function updateModal() {
+
+      const data =
+        mapData[currentMapIdx];
+
+
+      const modalImage =
+        document.getElementById("modalImg");
+
+
+      document.getElementById(
+        "modalNumTitle"
+      ).innerText =
+        data.num;
+
+
+      document.getElementById(
+        "modalSub"
+      ).innerText =
+        data.title;
+
+
+      document.getElementById(
+        "modalDesc"
+      ).innerText =
+        data.desc;
+
+
+      /*
+       * Display WebP in the lightbox.
+       */
+
+      modalImage.src =
+        data.web;
+
+
+      modalImage.alt =
+        data.title;
+
+
+      /*
+       * Open the original full-resolution PNG.
+       */
+
+      document.getElementById(
+        "downloadPng"
+      ).href =
+        data.full;
+
+    }
+
+
+    /*
+     * =========================================================
+     * PREVIOUS MAP
+     * =========================================================
+     */
+
+    function prevMap() {
+
+      currentMapIdx =
+        (
+          currentMapIdx -
+          1 +
+          mapData.length
+        ) %
+        mapData.length;
+
+      updateModal();
+
+    }
+
+
+    /*
+     * =========================================================
+     * NEXT MAP
+     * =========================================================
+     */
+
+    function nextMap() {
+
+      currentMapIdx =
+        (
+          currentMapIdx +
+          1
+        ) %
+        mapData.length;
+
+      updateModal();
+
+    }
+
+
+    /*
+     * =========================================================
+     * CLICK OUTSIDE MODAL
+     * =========================================================
+     */
+
+    document
+      .getElementById("mapModal")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target === this
+          ) {
+
+            closeMapModal();
+
+          }
+
+        }
+      );
+
+
+    /*
+     * =========================================================
+     * KEYBOARD CONTROLS
+     * =========================================================
+     *
+     * ESC   = close
+     * LEFT  = previous
+     * RIGHT = next
+     */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        const modal =
+          document.getElementById("mapModal");
+
+
+        if (
+          !modal.classList.contains("open")
+        ) {
+
+          return;
+
+        }
+
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeMapModal();
+
+        }
+
+
+        if (
+          event.key === "ArrowLeft"
+        ) {
+
+          prevMap();
+
+        }
+
+
+        if (
+          event.key === "ArrowRight"
+        ) {
+
+          nextMap();
+
+        }
+
+      }
+    );
+
+
+    /*
+     * =========================================================
+     * IMAGE ERROR HANDLING
+     * =========================================================
+     *
+     * If a WebP fails to load, the user gets a clear message
+     * instead of a broken-image icon.
+     */
+
+    document
+      .getElementById("modalImg")
+      .addEventListener(
+        "error",
+        function() {
+
+          this.alt =
+            "Map image could not be loaded.";
+
+        }
+      );
 
   </script>
 
+
 </body>
 </html>
-
-
