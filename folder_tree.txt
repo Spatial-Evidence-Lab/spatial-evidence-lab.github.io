@@ -1,0 +1,346 @@
+Folder PATH listing for volume Windows
+Volume serial number is 542D-838E
+C:.
+|   DATA_ARCHITECTURE.md
+|   folder_tree.txt
+|   index.html
+|   README.md
+|   REPAIR_AUDIT.md
+|   
++---about
+|       index.html
+|       
++---assets
+|   +---branding
+|   +---css
+|   |   +---components
+|   |   |       callouts.css
+|   |   |       components.css
+|   |   |       figures.css
+|   |   |       
+|   |   +---core
+|   |   |       design-system.css
+|   |   |       footer.css
+|   |   |       layout.css
+|   |   |       navigation.css
+|   |   |       
+|   |   +---pages
+|   |   |       about.css
+|   |   |       data.css
+|   |   |       home.css
+|   |   |       methods.css
+|   |   |       project.css
+|   |   |       projects.css
+|   |   |       
+|   |   \---publication
+|   |           publication.css
+|   |           
+|   +---diagrams
+|   |   +---sel-001-qoli
+|   |   +---sel-002-bandon
+|   |   |       evidence-integration.svg
+|   |   |       methodology-pipeline.svg
+|   |   |       
+|   |   \---shared
+|   +---icons
+|   +---illustrations
+|   +---maps
+|   |   +---sel-001-qoli
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-002-bandon
+|   |   |   +---full
+|   |   |   |       SEL002_Map00_NetworkBaseline.png
+|   |   |   |       SEL002_Map01_ServiceFrequency.png
+|   |   |   |       SEL002_Map02_WalkingAccessibility.png
+|   |   |   |       SEL002_Map03_Vulnerability.png
+|   |   |   |       SEL002_Map04_AccessDeficit.png
+|   |   |   |       SEL002_Map05_CompositeAccessibility.png
+|   |   |   |       SEL002_Map06_InterventionPriority.png
+|   |   |   |       
+|   |   |   +---legends
+|   |   |   |       intervention-priority.svg
+|   |   |   |       map-series.svg
+|   |   |   |       
+|   |   |   +---thumbs
+|   |   |   |       SEL002_Map00_NetworkBaseline_thumb.webp
+|   |   |   |       SEL002_Map01_ServiceFrequency_thumb.webp
+|   |   |   |       SEL002_Map02_WalkingAccessibility_thumb.webp
+|   |   |   |       SEL002_Map03_Vulnerability_thumb.webp
+|   |   |   |       SEL002_Map04_AccessDeficit_thumb.webp
+|   |   |   |       SEL002_Map05_CompositeAccessibility_thumb.webp
+|   |   |   |       SEL002_Map06_InterventionPriority_thumb.webp
+|   |   |   |       
+|   |   |   \---web
+|   |   |           SEL002_Map00_NetworkBaseline.webp
+|   |   |           SEL002_Map01_ServiceFrequency.webp
+|   |   |           SEL002_Map02_WalkingAccessibility.webp
+|   |   |           SEL002_Map03_Vulnerability.webp
+|   |   |           SEL002_Map04_AccessDeficit.webp
+|   |   |           SEL002_Map05_CompositeAccessibility.webp
+|   |   |           SEL002_Map06_InterventionPriority.webp
+|   |   |           
+|   |   +---sel-003-west-cork
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-004-ireland-forestry
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-005-athens-heat-risk
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-006-wind-energy
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-007-rondonia-deforestation
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-008-deforestation-change
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-009-glover-solar
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-010-miami-sea-level
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-011-ireland-housing-energy
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-012-california-wildfire
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-013-dublin-football
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   +---sel-014-ireland-spatial
+|   |   |   +---full
+|   |   |   +---legends
+|   |   |   +---thumbs
+|   |   |   \---web
+|   |   \---shared
+|   |       +---basemaps
+|   |       \---legends
+|   +---projects
+|   |       SEL-001.jpg
+|   |       SEL-002.jpg
+|   |       SEL-003.jpg
+|   |       SEL-004.jpg
+|   |       SEL-005.jpg
+|   |       SEL-006.jpg
+|   |       SEL-007.jpg
+|   |       SEL-008.jpg
+|   |       SEL-009.jpg
+|   |       SEL-010.jpg
+|   |       SEL-011.jpg
+|   |       SEL-012.jpg
+|   |       SEL-013.jpg
+|   |       SEL-014.jpg
+|   |       
+|   \---shared
++---content
+|       .gitkeep
+|       projects.json
+|       taxonomy.json
+|       
++---data
+|       index.html
+|       
++---docs
+|   |   .gitkeep
+|   |   CHANGELOG.md
+|   |   MAP_STYLE_GUIDE.md
+|   |   
+|   \---release-v4
+|           CHANGELOG_v4.md
+|           IMPLEMENTATION_GUIDE_v4.md
+|           
++---js
+|   |   core.js
+|   |   gallery.js
+|   |   navigation.js
+|   |   publication.js
+|   |   sel-projects.js
+|   |   
+|   \---vendor
++---media
+|   |   .gitkeep
+|   |   hero-map.jpg
+|   |   
+|   +---branding
+|   |       logo.png
+|   |       
+|   +---homepage
+|   |   +---geographic
+|   |   |       international.jpg
+|   |   |       ireland.jpg
+|   |   |       local-communities.jpg
+|   |   |       
+|   |   \---research
+|   |           1.jpg
+|   |           2.jpg
+|   |           3.jpg
+|   |           4.jpg
+|   |           5.jpg
+|   |           6.jpg
+|   |           
+|   +---illustrations
+|   +---maps
+|   |       world-map.svg
+|   |       
+|   \---social
++---methods
+|       index.html
+|       
++---projects
+|   |   index.html
+|   |   
+|   +---sel-001-ireland-quality-of-life
+|   |   |   index.html
+|   |   |   
+|   |   \---metadata
+|   +---sel-002-bandon-public-transport
+|   |   |   index.html
+|   |   |   
+|   |   +---downloads
+|   |   |       SEL-002 - Bandon Public Transport Accessibility Analysis.pdf
+|   |   |       
+|   |   +---metadata
+|   |   |       datasets.json
+|   |   |       download-cards.html
+|   |   |       downloads.json
+|   |   |       map_catalogue.json
+|   |   |       methodology.json
+|   |   |       project.json
+|   |   |       
+|   |   +---publication
+|   |   |   +---atlas
+|   |   |   \---report
+|   |   \---webmap
+|   |       |   index.html
+|   |       |   map-config.js
+|   |       |   map-ui.js
+|   |       |   README.txt
+|   |       |   webmap.css
+|   |       |   
+|   |       +---layers
+|   |       |       BandonPublicTransportAccessibilityAnalysis_2.js
+|   |       |       Busstop_4.js
+|   |       |       InterventionPriority_1.js
+|   |       |       layers.js
+|   |       |       Study_boundary_3.js
+|   |       |       
+|   |       +---resources
+|   |       |       Autolinker.min.js
+|   |       |       Autolinker.min.js.map
+|   |       |       fontawesome-all.min.css
+|   |       |       functions.js
+|   |       |       horsey.min.css
+|   |       |       horsey.min.js
+|   |       |       ic_location_on_128_28437.png
+|   |       |       lds-roller.gif
+|   |       |       marker.png
+|   |       |       measure-control.png
+|   |       |       ol-layerswitcher.css
+|   |       |       ol-layerswitcher.js
+|   |       |       ol-search-layer.css
+|   |       |       ol-search-layer.js
+|   |       |       ol-search-layer.min.css
+|   |       |       ol.css
+|   |       |       ol.js
+|   |       |       olms.js
+|   |       |       photon-geocoder-autocomplete.min.css
+|   |       |       photon-geocoder-autocomplete.min.js
+|   |       |       proj4.js
+|   |       |       qgis2web.css
+|   |       |       qgis2web.js
+|   |       |       qgis2web_expressions.js
+|   |       |       sel-qgis2web.css
+|   |       |       
+|   |       +---styles
+|   |       |   |   BandonPublicTransportAccessibilityAnalysis_2_style.js
+|   |       |   |   Busstop_4_style.js
+|   |       |   |   highway=bus_stop.svg
+|   |       |   |   InterventionPriority_1_style.js
+|   |       |   |   Study_boundary_3_style.js
+|   |       |   |   
+|   |       |   \---legend
+|   |       |           BandonPublicTransportAccessibilityAnalysis_2.png
+|   |       |           Busstop_4.png
+|   |       |           InterventionPriority_1_0.png
+|   |       |           InterventionPriority_1_1.png
+|   |       |           InterventionPriority_1_2.png
+|   |       |           InterventionPriority_1_3.png
+|   |       |           InterventionPriority_1_4.png
+|   |       |           Study_boundary_3.png
+|   |       |           
+|   |       \---webfonts
+|   |               fa-solid-900.ttf
+|   |               fa-solid-900.woff2
+|   |               
+|   +---sel-003-west-cork-public-transport
+|   |       index.html
+|   |       
+|   +---sel-004-ireland-forestry-land-use
+|   |       index.html
+|   |       
+|   +---sel-005-greater-athens-heat-risk
+|   |       index.html
+|   |       
+|   +---sel-006-county-wicklow-wind-energy
+|   |       index.html
+|   |       
+|   +---sel-007-rondonia-deforestation
+|   |       index.html
+|   |       
+|   +---sel-008-deforestation-change
+|   |       index.html
+|   |       
+|   +---sel-009-glover-vermont-solar
+|   |       index.html
+|   |       
+|   +---sel-010-miami-sea-level-rise
+|   |       index.html
+|   |       
+|   +---sel-011-ireland-private-housing-renewable-energy
+|   |       index.html
+|   |       
+|   +---sel-012-california-wildfire
+|   |       index.html
+|   |       
+|   +---sel-013-dublin-footfall-urban-activity
+|   |       index.html
+|   |       
+|   +---sel-014-ireland-population-spatial-analysis
+|   |       index.html
+|   |       
+|   \---_template
+|           index.html
+|           
+\---research
+        .gitkeep
+        
