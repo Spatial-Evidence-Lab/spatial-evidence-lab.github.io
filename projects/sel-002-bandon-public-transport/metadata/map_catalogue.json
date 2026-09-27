@@ -1,58 +1,58 @@
 [
   {
     "id": "01.00",
-    "title": "Study Area & Network",
-    "subtitle": "Geographic context",
-    "question": "What geographic and transport-network context shapes access in Bandon?",
-    "key_takeaway": "Built-up areas, principal stops and the road network establish the spatial frame for every later finding.",
+    "title": "Base Context & Transit Infrastructure",
+    "subtitle": "Bandon Built-Up Areas (BUA) and Network Baseline",
+    "question": "What geographic and transport-network context frames the Bandon analysis?",
+    "key_takeaway": "Built-up areas and the network baseline establish the geographic frame for the subsequent evidence.",
     "image": "/assets/maps/sel-002-bandon/full/SEL002_Map00_NetworkBaseline.png"
   },
   {
     "id": "01.01",
-    "title": "Walking Catchments",
-    "subtitle": "5, 10 and 15-minute network catchments",
-    "question": "How far can people really walk to reach public transport?",
-    "key_takeaway": "Network-based catchments reveal true physical reach beyond simple straight-line buffers.",
+    "title": "Physical Pedestrian Catchments",
+    "subtitle": "Network-Based Isochronal Walkability Analysis",
+    "question": "How far can people walk through the pedestrian network to reach transit?",
+    "key_takeaway": "Network-based catchments describe pedestrian reach using travel-time thresholds.",
     "image": "/assets/maps/sel-002-bandon/full/SEL002_Map01_ServiceFrequency.png"
   },
   {
     "id": "01.02",
-    "title": "Walking Accessibility",
-    "subtitle": "Relative walking-distance score",
-    "question": "Where does walking access to public transport become weaker?",
-    "key_takeaway": "Accessibility follows a sharp core–periphery gradient, dropping towards outer residential areas.",
+    "title": "Pedestrian Network Context",
+    "subtitle": "Footpath Coverage and Pedestrian Crossing Networks",
+    "question": "What pedestrian infrastructure supports or constrains access?",
+    "key_takeaway": "Footpath and crossing coverage provides context for interpreting network-based walking access.",
     "image": "/assets/maps/sel-002-bandon/full/SEL002_Map02_WalkingAccessibility.png"
   },
   {
     "id": "01.03",
-    "title": "Service Accessibility",
-    "subtitle": "Scheduled peak-time frequency",
-    "question": "Does proximity to a bus stop actually mean good service?",
-    "key_takeaway": "Stop proximity alone does not capture differences in service availability for daily commuters.",
+    "title": "Headway & Operational Frequency",
+    "subtitle": "Peak-Period Transit Service Quality",
+    "question": "How does scheduled service availability vary across the study area?",
+    "key_takeaway": "Peak-period frequency and headway describe the scheduled transit service available at stops.",
     "image": "/assets/maps/sel-002-bandon/full/SEL002_Map03_Vulnerability.png"
   },
   {
     "id": "01.04",
-    "title": "Population Vulnerability",
-    "subtitle": "Census 2022 vulnerability classes",
-    "question": "Which populations may be more dependent on public transport?",
-    "key_takeaway": "Vulnerability is spatially differentiated and often highest where transport supply is weakest.",
+    "title": "Demographic Vulnerability & Demand",
+    "subtitle": "Spatial Distribution of Relative Population Vulnerability",
+    "question": "Where are relative population vulnerability and potential transport needs concentrated?",
+    "key_takeaway": "Census-based indicators describe the spatial distribution of relative population vulnerability.",
     "image": "/assets/maps/sel-002-bandon/full/SEL002_Map04_AccessDeficit.png"
   },
   {
     "id": "01.05",
-    "title": "Composite Accessibility",
-    "subtitle": "Walking access and service frequency",
-    "question": "How does physical access combine with scheduled service?",
-    "key_takeaway": "The Composite Accessibility Index integrates walking distance and service frequency into five relative tiers.",
+    "title": "Composite Accessibility Index (CAI)",
+    "subtitle": "Combined Pedestrian Accessibility and Scheduled Service Availability",
+    "question": "How do pedestrian access and scheduled service combine?",
+    "key_takeaway": "The CAI combines pedestrian accessibility and scheduled service availability into a composite measure.",
     "image": "/assets/maps/sel-002-bandon/full/SEL002_Map05_CompositeAccessibility.png"
   },
   {
     "id": "01.06",
-    "title": "Equity Hotspots",
-    "subtitle": "Access deficit and vulnerability · priority classes: Critical, High, Moderate, Low, Well Served",
-    "question": "Where may transport disadvantage be greatest?",
-    "key_takeaway": "Priority areas emerge where lower accessibility overlaps with higher population vulnerability.",
+    "title": "Targeted Intervention Framework",
+    "subtitle": "Spatial Screening Priorities for Further Investigation",
+    "question": "Where do relative access deficit and population vulnerability overlap?",
+    "key_takeaway": "The screening identifies locations for further investigation where accessibility and vulnerability evidence overlap.",
     "image": "/assets/maps/sel-002-bandon/full/SEL002_Map06_InterventionPriority.png"
   }
 ]

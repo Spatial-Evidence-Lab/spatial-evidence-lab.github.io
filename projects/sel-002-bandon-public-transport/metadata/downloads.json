@@ -8,51 +8,51 @@
   },
   {
     "id": "DL-002",
-    "label": "Map 01.00 · Study Area & Network",
+    "label": "Map 01.00 · Base Context & Transit Infrastructure",
     "format": "PNG",
     "path": "/../../assets/maps/sel-002-bandon/full/SEL002_Map00_NetworkBaseline.png",
-    "description": "Geographic context"
+    "description": "Bandon Built-Up Areas (BUA) and Network Baseline"
   },
   {
     "id": "DL-003",
-    "label": "Map 01.01 · Walking Catchments",
+    "label": "Map 01.01 · Physical Pedestrian Catchments",
     "format": "PNG",
     "path": "/../../assets/maps/sel-002-bandon/full/SEL002_Map01_ServiceFrequency.png",
-    "description": "5, 10 and 15-minute network catchments"
+    "description": "Network-Based Isochronal Walkability Analysis"
   },
   {
     "id": "DL-004",
-    "label": "Map 01.02 · Walking Accessibility",
+    "label": "Map 01.02 · Pedestrian Network Context",
     "format": "PNG",
     "path": "/../../assets/maps/sel-002-bandon/full/SEL002_Map02_WalkingAccessibility.png",
-    "description": "Relative walking-distance score"
+    "description": "Footpath Coverage and Pedestrian Crossing Networks"
   },
   {
     "id": "DL-005",
-    "label": "Map 01.03 · Service Accessibility",
+    "label": "Map 01.03 · Headway & Operational Frequency",
     "format": "PNG",
     "path": "/../../assets/maps/sel-002-bandon/full/SEL002_Map03_Vulnerability.png",
-    "description": "Scheduled peak-time frequency"
+    "description": "Peak-Period Transit Service Quality"
   },
   {
     "id": "DL-006",
-    "label": "Map 01.04 · Population Vulnerability",
+    "label": "Map 01.04 · Demographic Vulnerability & Demand",
     "format": "PNG",
     "path": "/../../assets/maps/sel-002-bandon/full/SEL002_Map04_AccessDeficit.png",
-    "description": "Census 2022 vulnerability classes"
+    "description": "Spatial Distribution of Relative Population Vulnerability"
   },
   {
     "id": "DL-007",
-    "label": "Map 01.05 · Composite Accessibility",
+    "label": "Map 01.05 · Composite Accessibility Index (CAI)",
     "format": "PNG",
     "path": "/../../assets/maps/sel-002-bandon/full/SEL002_Map05_CompositeAccessibility.png",
-    "description": "Walking access and service frequency"
+    "description": "Combined Pedestrian Accessibility and Scheduled Service Availability"
   },
   {
     "id": "DL-008",
-    "label": "Map 01.06 · Equity Hotspots",
+    "label": "Map 01.06 · Targeted Intervention Framework",
     "format": "PNG",
     "path": "/../../assets/maps/sel-002-bandon/full/SEL002_Map06_InterventionPriority.png",
-    "description": "Access deficit and vulnerability · priority classes: Critical, High, Moderate, Low, Well Served"
+    "description": "Spatial Screening Priorities for Further Investigation"
   }
 ]

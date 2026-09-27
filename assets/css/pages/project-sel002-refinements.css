@@ -1,0 +1,95 @@
+/* SEL-002 page refinements — shared homepage frame, section hierarchy and responsive gutters. */
+body.sel-002-publication {
+  --sel002-frame: calc(100% - var(--sel-gutter) - var(--sel-gutter));
+  --sel002-gutter: var(--sel-gutter);
+}
+
+/* Align the global header, chapter navigation and footer with the homepage shell. */
+body.sel-002-publication .site-header .nav-wrap,
+body.sel-002-publication .publication-toc-inner,
+body.sel-002-publication .site-footer .footer-grid,
+body.sel-002-publication .site-footer .footer-bottom {
+  width: var(--sel002-frame) !important;
+  max-width: none;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+body.sel-002-publication .site-header .nav-wrap { padding-inline: 0; }
+body.sel-002-publication .site-footer { padding-inline: 0; }
+body.sel-002-publication .site-footer .footer-bottom { justify-content: center; }
+
+/* Give every full-bleed chapter the same inset content frame as the Home page. */
+body.sel-002-publication .publication-section {
+  padding-inline: var(--sel002-gutter);
+  box-sizing: border-box;
+}
+body.sel-002-publication .publication-section > * { min-width: 0; }
+body.sel-002-publication .publication-section-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 0 36px;
+  max-width: 900px;
+}
+body.sel-002-publication .publication-section-head > div { display: contents; }
+body.sel-002-publication .publication-number {
+  order: 0;
+  margin: 0;
+  color: #E58F65;
+  font-family: var(--sans);
+  font-size: var(--sel-section-title-size, .78rem);
+  font-weight: var(--sel-section-weight, 700);
+  letter-spacing: -.015em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+body.sel-002-publication .publication-section-head h2 {
+  order: 1;
+  margin: 0;
+  color: var(--p-ink, #24343A);
+  font-family: var(--sans);
+  font-size: var(--sel-section-subtitle-size, clamp(1.45rem, 2.5vw, 2rem));
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+body.sel-002-publication .publication-section-head .publication-intro {
+  order: 2;
+  max-width: 760px;
+  margin: 0;
+  color: var(--p-text, #4F5F63);
+  font-family: var(--sans);
+  font-size: var(--sel-section-description-size, .95rem);
+  font-style: normal;
+  font-weight: var(--sel-body-weight, 400);
+  line-height: 1.55;
+}
+
+/* Keep the publication content aligned when nested grids or map components expand. */
+body.sel-002-publication .map-gallery-grid,
+body.sel-002-publication .atlas-reading-guide,
+body.sel-002-publication .map-evidence-chain,
+body.sel-002-publication .atlas-viewer,
+body.sel-002-publication .method-flow,
+body.sel-002-publication .outputs-grid {
+  max-width: 100%;
+}
+body.sel-002-publication .publication-hero .sel-shell {
+  width: var(--sel002-frame) !important;
+  max-width: none;
+}
+
+@media (max-width: 760px) {
+  body.sel-002-publication .publication-section {
+    padding-inline: var(--sel-gutter-mobile, 16px);
+  }
+  body.sel-002-publication .site-header .nav-wrap,
+  body.sel-002-publication .publication-toc-inner,
+  body.sel-002-publication .site-footer .footer-grid,
+  body.sel-002-publication .site-footer .footer-bottom {
+    width: calc(100% - 32px) !important;
+  }
+  body.sel-002-publication .publication-section-head { margin-bottom: 28px; }
+}
