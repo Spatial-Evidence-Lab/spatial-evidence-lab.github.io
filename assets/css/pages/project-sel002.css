@@ -1,2229 +1,420 @@
-/* ============================================================
-   SEL-002 · BANDON PUBLIC TRANSPORT ACCESSIBILITY
-   Consolidated publication stylesheet
-   Spatial Evidence Lab
+/* ==========================================================
+   SPATIAL EVIDENCE LAB
+   SEL-002 — BANDON PUBLIC TRANSPORT ACCESSIBILITY
+   PROJECT-SPECIFIC STYLES
+   ----------------------------------------------------------
+   PHASE 3 — GLOBAL LAYOUT SYSTEM
 
-   Replaces the previous three-file stack:
-     - project-sel002.css
-     - project-sel002-redesign.css
-     - project-sel002-refinements.css
+   HARD ARCHITECTURAL RULE:
+   This file must NOT redefine the global site shell.
 
-   Visual direction:
-   - SEL forest / navy identity
-   - warm paper background
-   - restrained analytical accents
-   - interactive map atlas (carousel)
-   - dark findings section
-   ============================================================ */
+   Global width is controlled exclusively by:
+     assets/css/core/layout.css
 
+   Canonical global shell:
+     .shell
+     .container
+     .container-wide
+     .sel-shell
 
-/* ============================================================
-   01 · TOKENS
-   ============================================================ */
+   Project-specific CSS may style:
+     - publication components
+     - project hero content
+     - evidence
+     - maps
+     - findings
+     - methodology
+     - dashboard
+     - project-specific spacing
+     - SEL-002-specific visual treatment
 
-:root {
-  --sel002-ink: #172A3A;
-  --sel002-text: #46575A;
-  --sel002-muted: #74817F;
+   It must NOT impose another site-wide max-width.
 
-  --sel002-bg: #F5F3EE;
-  --sel002-surface: #FCFCF8;
-  --sel002-white: #FFFFFF;
-  --sel002-line: #D8DEDC;
-
-  /* SEL identity */
-  --sel002-green: #315C4B;
-  --sel002-green-light: #8EB5A6;
-  --sel002-green-pale: #E8EFEB;
-
-  /* Evidence categories */
-  --sel002-access: #5B8C78;
-  --sel002-service: #B88A4A;
-  --sel002-vulnerability: #806B9F;
-  --sel002-hotspot: #A96D62;
-  --sel002-deficit: #9A6658;
-
-  --sel002-blue: #426F8A;
-
-  /* Dark evidence section */
-  --sel002-dark: #203F35;
-  --sel002-dark-deep: #172A3A;
-  --sel002-dark-text: #E8EFEB;
-  --sel002-dark-muted: #B9C8C3;
-
-  --sel002-max: 1240px;
-  --sel002-read: 760px;
-  /* Previous shell: width:min(1240px, calc(100% - 48px)) */
-  --sel002-gutter: 24px;
-  --sel002-frame: calc(100% - 48px);
-
-  /* Section eyebrow accent (previous orange) */
-  --sel002-accent: #E58F65;
-
-  /* Shared media aspect — previous hero (1600×1120) */
-  --sel002-media-ratio: 1600 / 1120;
-
-  --sel002-radius: 6px;
-  --sel002-radius-lg: 8px;
-
-  --sel002-shadow: 0 18px 48px rgba(23, 42, 58, .09);
-}
+   ========================================================== */
 
 
-/* ============================================================
-   02 · BASE
-   ============================================================ */
-
-html {
-  scroll-behavior: smooth;
-}
+/* ==========================================================
+   01. SEL-002 PROJECT VARIABLES
+   ========================================================== */
 
 body.sel-002-publication {
-  margin: 0;
-  background: var(--sel002-bg);
-  color: var(--sel002-text);
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
-}
 
-body.sel-002-publication *,
-body.sel-002-publication *::before,
-body.sel-002-publication *::after {
-  box-sizing: border-box;
-}
+  /*
+   * IMPORTANT:
+   * There is deliberately NO:
+   *
+   * --sel002-max: 1240px;
+   * --sel002-frame: calc(100% - 48px);
+   *
+   * The global layout system controls horizontal width.
+   */
 
-body.sel-002-publication img {
-  max-width: 100%;
-}
+  --sel002-reading-width: 760px;
 
-body.sel-002-publication h1,
-body.sel-002-publication h2,
-body.sel-002-publication h3,
-body.sel-002-publication h4,
-body.sel-002-publication p {
-  margin-top: 0;
-}
+  --sel002-section-spacing:
+    clamp(4rem, 7vw, 7rem);
 
-body.sel-002-publication a {
-  color: inherit;
-}
+  --sel002-block-spacing:
+    clamp(2rem, 4vw, 4rem);
 
-body.sel-002-publication button,
-body.sel-002-publication input,
-body.sel-002-publication textarea,
-body.sel-002-publication select {
-  font: inherit;
-}
-
-body.sel-002-publication.publication-lock {
-  overflow: hidden;
 }
 
 
-/* ============================================================
-   03 · GLOBAL SEL HEADER
-   ============================================================ */
+/* ==========================================================
+   02. GLOBAL SHELL — DO NOT OVERRIDE
+   ========================================================== */
 
-body.sel-002-publication .site-header {
-  min-height: 68px;
-  position: sticky;
-  top: 0;
-  z-index: 1200;
-  width: 100%;
-  background: rgba(23, 42, 58, .97);
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
-  transition: box-shadow .2s ease;
-}
-
-body.sel-002-publication .site-header.scrolled {
-  box-shadow: 0 5px 20px rgba(23, 42, 58, .16);
-}
-
-body.sel-002-publication .shell {
-  /* Previous page-safe formula */
-  width: min(var(--sel002-max), calc(100% - 48px));
-  margin-inline: auto;
-}
-
-body.sel-002-publication .nav-wrap {
-  min-height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-}
-
-body.sel-002-publication .wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-body.sel-002-publication .wordmark-logo {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-}
-
-body.sel-002-publication .wordmark-name {
-  font-size: .92rem;
-  line-height: 1;
-  font-weight: 750;
-  letter-spacing: -.02em;
-}
-
-body.sel-002-publication .site-nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 25px;
-}
-
-body.sel-002-publication .site-nav a {
-  min-height: 68px;
-  display: inline-flex;
-  align-items: center;
-  color: rgba(255, 255, 255, .76);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  font-size: .69rem;
-  font-weight: 800;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .site-nav a:hover,
-body.sel-002-publication .site-nav a.active {
-  color: #fff;
-  border-bottom-color: var(--sel002-green-light);
-}
-
-body.sel-002-publication .site-nav .nav-cta {
-  min-height: auto;
-  padding: 9px 12px;
-  border: 1px solid rgba(255, 255, 255, .22);
-  border-radius: 4px;
-}
-
-body.sel-002-publication .site-nav .nav-cta:hover {
-  border-color: var(--sel002-green-light);
-}
-
-body.sel-002-publication .menu-toggle {
-  display: none;
-  min-width: 44px;
-  min-height: 42px;
-  padding: 9px 12px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, .25);
-  border-radius: 4px;
-  color: #fff;
-  font-size: .72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
+/*
+ * DO NOT add width or max-width rules to:
+ *
+ * .shell
+ * .container
+ * .container-wide
+ * .sel-shell
+ *
+ * These classes are owned by:
+ *
+ * assets/css/core/layout.css
+ *
+ * The canonical rules are:
+ *
+ * .shell,
+ * .container,
+ * .container-wide,
+ * .sel-shell {
+ *   width: calc(100% - (2 * var(--sel-gutter)));
+ *   max-width: none;
+ *   margin-inline: auto;
+ * }
+ *
+ * SEL-002 inherits that system.
+ */
 
 
-/* ============================================================
-   04 · ACCESSIBILITY
-   ============================================================ */
+/* ==========================================================
+   03. PUBLICATION WRAPPER
+   ========================================================== */
 
-body.sel-002-publication .sel-skip-link,
-body.sel-002-publication .skip-link {
-  position: fixed !important;
-  left: 16px;
-  top: 10px;
-  z-index: 3000;
-  transform: translateY(-160%);
-  padding: 10px 14px;
-  background: #fff;
-  color: var(--sel002-ink);
-  border: 1px solid var(--sel002-line);
-  border-radius: 4px;
-}
-
-body.sel-002-publication .sel-skip-link:focus,
-body.sel-002-publication .skip-link:focus {
-  transform: none;
-}
-
-
-/* ============================================================
-   05 · READING PROGRESS
-   ============================================================ */
-
-body.sel-002-publication .publication-progress {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1600;
-  width: 100%;
-  height: 3px;
-  background: transparent;
-  pointer-events: none;
-}
-
-body.sel-002-publication .publication-progress-bar {
-  width: 0;
-  height: 100%;
-  background: var(--sel002-green-light);
-}
-
-
-/* ============================================================
-   06 · PUBLICATION NAVIGATION
-   ============================================================ */
-
-body.sel-002-publication .publication-toc {
-  position: sticky;
-  top: 68px;
-  z-index: 1100;
-  background: rgba(245, 243, 238, .96);
-  border-bottom: 1px solid var(--sel002-line);
-  backdrop-filter: blur(10px);
-}
-
-body.sel-002-publication .publication-toc-inner {
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  width: min(var(--sel002-max), calc(100% - 48px));
-  margin-inline: auto;
-}
-
-body.sel-002-publication .publication-toc-inner::-webkit-scrollbar {
-  display: none;
-}
-
-body.sel-002-publication .publication-toc-inner a {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 50px;
-  padding: 0;
-  border-bottom: 2px solid transparent;
-  color: var(--sel002-text);
-  text-decoration: none;
-  white-space: nowrap;
-  font-size: 12px;
-  font-weight: 750;
-  letter-spacing: .055em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .publication-toc-inner a span {
-  color: var(--sel002-muted);
-  font-variant-numeric: tabular-nums;
-}
-
-body.sel-002-publication .publication-toc-inner a:hover,
-body.sel-002-publication .publication-toc-inner a.is-active {
-  color: var(--sel002-green);
-  border-bottom-color: var(--sel002-green);
-}
-
-/* Side TOC intentionally removed */
-body.sel-002-publication .publication-layout-grid {
-  display: block;
+body.sel-002-publication .publication-layout {
   width: 100%;
 }
 
-body.sel-002-publication .publication-toc-wrapper,
-body.sel-002-publication .publication-toc-side {
-  display: none;
+body.sel-002-publication .publication-shell {
+  width: 100%;
 }
 
 
-/* ============================================================
-   07 · HERO
-   ============================================================ */
+/* ==========================================================
+   04. PUBLICATION MAIN
+   ========================================================== */
+
+/*
+ * The publication main area must use the available width
+ * supplied by the canonical global shell.
+ *
+ * Do NOT impose:
+ *
+ * max-width: 1240px;
+ * max-width: 1280px;
+ * max-width: 1400px;
+ * width: calc(100% - 48px);
+ *
+ * or any equivalent page-specific frame.
+ */
+
+body.sel-002-publication .publication-main {
+  width: 100%;
+  min-width: 0;
+  margin-inline: 0;
+}
+
+
+/* ==========================================================
+   05. PUBLICATION HERO
+   ========================================================== */
 
 body.sel-002-publication .publication-hero {
-  padding: 88px 0 74px;
-  background: var(--sel002-bg);
-  border-bottom: 1px solid var(--sel002-line);
+  width: 100%;
 }
 
 body.sel-002-publication .publication-hero .sel-shell {
-  width: min(var(--sel002-max), calc(100% - 48px));
-  margin-inline: auto;
+  /*
+   * Intentionally no width or max-width declaration.
+   *
+   * .sel-shell inherits the canonical global layout from
+   * assets/css/core/layout.css.
+   */
 }
 
-body.sel-002-publication .publication-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
-  gap: 64px;
-  align-items: center;
-}
-
-body.sel-002-publication .publication-kicker,
-body.sel-002-publication .eyebrow {
-  margin: 0 0 13px;
-  color: var(--sel002-muted);
-  font-size: 11px;
-  font-weight: 850;
-  line-height: 1.3;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .publication-number {
-  margin: 0 0 13px;
-  /* Previous orange section labels */
-  color: var(--sel002-accent);
-  font-size: 11px;
-  font-weight: 850;
-  line-height: 1.3;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .publication-hero h1 {
-  max-width: 700px;
-  margin: 0 0 22px;
-  color: var(--sel002-ink);
-  font-size: clamp(48px, 5.4vw, 72px);
-  font-weight: 650;
-  line-height: 1.02;
-  letter-spacing: -.045em;
-}
-
-body.sel-002-publication .publication-lede {
-  max-width: 610px;
-  margin: 0 0 28px;
-  color: var(--sel002-text);
-  font-size: 19px;
-  line-height: 1.5;
-}
-
-body.sel-002-publication .publication-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 22px;
-  padding-top: 17px;
-  margin-bottom: 28px;
-  border-top: 1px solid var(--sel002-line);
-  color: var(--sel002-muted);
-  font-size: 11px;
-  font-weight: 750;
-  letter-spacing: .03em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .publication-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-body.sel-002-publication .sel-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 11px 17px;
-  border: 1px solid var(--sel002-line);
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 850;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background .18s ease, color .18s ease, border-color .18s ease;
-}
-
-body.sel-002-publication .sel-button-dark {
-  background: var(--sel002-green);
-  border-color: var(--sel002-green);
-  color: #fff;
-}
-
-body.sel-002-publication .sel-button-dark:hover {
-  background: #264B3D;
-  border-color: #264B3D;
-}
-
-body.sel-002-publication .sel-button-download {
-  background: var(--sel002-white);
-  color: var(--sel002-ink);
-}
-
-body.sel-002-publication .sel-button-download:hover {
-  border-color: var(--sel002-green);
-  color: var(--sel002-green);
-}
-
-body.sel-002-publication .publication-hero-media {
-  margin: 0;
-  width: 100%;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 12px 34px rgba(36, 52, 58, .08);
-}
-
-body.sel-002-publication .publication-hero-media picture,
-body.sel-002-publication .publication-hero-media img {
-  display: block;
+body.sel-002-publication .publication-hero-inner {
   width: 100%;
 }
 
-body.sel-002-publication .publication-hero-media img {
-  /* Previous hero aspect: 1600×1120 */
-  aspect-ratio: var(--sel002-media-ratio);
-  object-fit: cover;
-}
-
-body.sel-002-publication .publication-hero-media figcaption {
-  padding: 11px 15px;
-  color: var(--sel002-muted);
-  font-size: 11px;
-  line-height: 1.4;
-  border-top: 1px solid var(--sel002-line);
+body.sel-002-publication .publication-hero-content {
+  width: 100%;
 }
 
 
-/* ============================================================
-   08 · HERO STAT STRIP
-   ============================================================ */
+/* ==========================================================
+   06. PUBLICATION TOC
+   ========================================================== */
 
-/* Previous-style full-width stats strip */
-body.sel-002-publication .publication-stats {
+body.sel-002-publication .publication-toc-wrapper {
+  width: 100%;
+}
+
+body.sel-002-publication .publication-toc-inner {
+  /*
+   * No page-specific max-width.
+   *
+   * The TOC follows the global shell.
+   */
+  width: 100%;
+}
+
+body.sel-002-publication .publication-toc {
+  width: 100%;
+}
+
+
+/* ==========================================================
+   07. PUBLICATION LAYOUT GRID
+   ========================================================== */
+
+body.sel-002-publication .publication-layout-grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 48px;
-  border-top: 1px solid var(--sel002-line);
-  border-bottom: 1px solid var(--sel002-line);
-  gap: 0;
-}
-
-body.sel-002-publication .publication-stats > div {
-  padding: 19px 20px;
-  background: transparent;
-  border: 0;
-  border-right: 1px solid var(--sel002-line);
-  border-radius: 0;
-  text-align: left;
-}
-
-body.sel-002-publication .publication-stats > div:last-child {
-  border-right: 0;
-}
-
-body.sel-002-publication .publication-stats strong {
-  display: block;
-  color: var(--sel002-ink);
-  font-size: 31px;
-  line-height: 1;
-  font-weight: 650;
-}
-
-body.sel-002-publication .publication-stats span {
-  display: block;
-  margin-top: 7px;
-  color: var(--sel002-muted);
-  font-size: 10px;
-  font-weight: 800;
-  line-height: 1.35;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-
-/* ============================================================
-   09 · SECTIONS
-   ============================================================ */
-
-body.sel-002-publication .publication-main {
-  min-width: 0;
-  width: min(var(--sel002-max), calc(100% - 48px));
-  margin-inline: auto;
-}
-
-body.sel-002-publication .publication-section {
-  padding: 108px 0;
-  scroll-margin-top: 128px;
-}
-
-body.sel-002-publication .publication-section-bg-alt {
-  background: var(--sel002-white);
-}
-
-body.sel-002-publication .publication-section-head {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  max-width: 900px;
-  margin: 0 0 36px;
-}
-
-body.sel-002-publication .publication-section-head > div {
-  display: contents;
-}
-
-body.sel-002-publication .publication-section-head .publication-number {
-  order: 0;
-  margin: 0;
-  color: var(--sel002-accent);
-  font-size: 11px;
-  font-weight: 850;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .publication-section-head h2 {
-  order: 1;
-  margin: 0;
-  color: var(--sel002-ink);
-  font-size: clamp(30px, 3.1vw, 38px);
-  line-height: 1.12;
-  letter-spacing: -.025em;
-  font-weight: 650;
-}
-
-body.sel-002-publication .publication-section-head .publication-intro {
-  order: 2;
-  max-width: 760px;
-  margin: 0;
-  color: var(--sel002-text);
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-body.sel-002-publication .publication-section p,
-body.sel-002-publication .study-copy p {
-  max-width: var(--sel002-read);
-}
-
-body.sel-002-publication .publication-section a.text-link {
-  color: var(--sel002-blue);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-body.sel-002-publication .publication-section a.text-link:hover {
-  color: var(--sel002-green);
-  text-decoration: underline;
-}
-
-
-/* ============================================================
-   10 · OVERVIEW / METRICS
-   ============================================================ */
-
-body.sel-002-publication .metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-body.sel-002-publication .metric-card {
-  padding: 21px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-top: 4px solid var(--sel002-line);
-  border-radius: 6px;
-}
-
-body.sel-002-publication .metric-card[data-accent="access"] {
-  border-top-color: var(--sel002-access);
-}
-
-body.sel-002-publication .metric-card[data-accent="service"] {
-  border-top-color: var(--sel002-service);
-}
-
-body.sel-002-publication .metric-card[data-accent="vulnerability"] {
-  border-top-color: var(--sel002-vulnerability);
-}
-
-body.sel-002-publication .metric-card[data-accent="hotspot"] {
-  border-top-color: var(--sel002-hotspot);
-}
-
-body.sel-002-publication .metric-card[data-accent="deficit"] {
-  border-top-color: var(--sel002-deficit);
-}
-
-body.sel-002-publication .metric-number {
-  color: var(--sel002-ink);
-  font-size: 40px;
-  line-height: 1;
-  font-weight: 650;
-}
-
-body.sel-002-publication .metric-label {
-  margin-top: 9px;
-  color: var(--sel002-muted);
-  font-size: 10px;
-  font-weight: 800;
-  line-height: 1.3;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .metric-sub {
-  margin-top: 9px;
-  color: var(--sel002-text);
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-body.sel-002-publication .principal-finding {
-  margin-top: 28px;
-  padding: 23px 26px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-left: 4px solid var(--sel002-green);
-  border-radius: 0 6px 6px 0;
-}
-
-body.sel-002-publication .principal-finding h3 {
-  margin: 0 0 8px;
-  color: var(--sel002-ink);
-  font-size: 17px;
-}
-
-body.sel-002-publication .scope-note,
-body.sel-002-publication .interpretation-boundary {
-  color: var(--sel002-muted);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-body.sel-002-publication .scope-note strong,
-body.sel-002-publication .interpretation-boundary strong {
-  color: var(--sel002-ink);
-}
-
-
-/* ============================================================
-   11 · STUDY AREA
-   ============================================================ */
-
-body.sel-002-publication .study-grid {
-  display: grid;
-  /* Same column recipe as previous hero grid so map matches hero media size */
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
   align-items: start;
 }
 
-body.sel-002-publication .study-copy strong {
-  color: var(--sel002-ink);
-}
 
-body.sel-002-publication .study-figure {
-  /* Same frame treatment as .publication-hero-media */
+/* ==========================================================
+   08. PUBLICATION SECTIONS
+   ========================================================== */
+
+body.sel-002-publication .publication-section {
   width: 100%;
-  margin: 0;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 12px 34px rgba(36, 52, 58, .08);
+  scroll-margin-top: 120px;
 }
 
-body.sel-002-publication .study-figure picture,
-body.sel-002-publication .study-figure img {
-  display: block;
+body.sel-002-publication .publication-section-inner {
   width: 100%;
 }
 
-body.sel-002-publication .study-figure img {
-  /* Identical aspect + fit as previous hero image */
-  aspect-ratio: var(--sel002-media-ratio);
-  object-fit: cover;
+
+/* ==========================================================
+   09. READABLE TEXT WIDTH
+   ----------------------------------------------------------
+   Text remains readable without constraining the page itself.
+   ========================================================== */
+
+body.sel-002-publication .publication-reading,
+body.sel-002-publication .publication-text,
+body.sel-002-publication .publication-section-lead {
+  max-width: var(--sel002-reading-width);
 }
 
-body.sel-002-publication .study-figure figcaption {
-  padding: 11px 15px;
-  color: var(--sel002-muted);
-  font-size: 12px;
-  line-height: 1.4;
-  border-top: 1px solid var(--sel002-line);
+body.sel-002-publication .publication-main p {
+  max-width: var(--sel002-reading-width);
 }
 
-/* Study-area metric cards — half previous size, numbers centred */
-body.sel-002-publication .metric-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-  overflow: hidden;
-  margin-top: 20px;
-  max-width: 380px;
-}
-
-body.sel-002-publication .metric-list > div {
-  padding: 10px 12px;
-  border-right: 1px solid var(--sel002-line);
-  border-bottom: 1px solid var(--sel002-line);
-  text-align: center;
-}
-
-body.sel-002-publication .metric-list > div:nth-child(even) {
-  border-right: 0;
-}
-
-body.sel-002-publication .metric-list > div:nth-last-child(-n + 2) {
-  border-bottom: 0;
-}
-
-body.sel-002-publication .metric-list strong {
-  display: block;
-  color: var(--sel002-ink);
-  font-size: 18px;
-  line-height: 1.1;
-  text-align: center;
-}
-
-body.sel-002-publication .metric-list span {
-  display: block;
-  margin-top: 3px;
-  color: var(--sel002-muted);
-  font-size: 10px;
-  line-height: 1.35;
-  text-align: center;
-}
-
-body.sel-002-publication .methodological-note {
-  margin-top: 28px;
-  padding: 18px 20px;
-  background: var(--sel002-green-pale);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-body.sel-002-publication .methodological-note strong {
-  color: var(--sel002-ink);
+body.sel-002-publication .publication-main ul,
+body.sel-002-publication .publication-main ol {
+  max-width: var(--sel002-reading-width);
 }
 
 
-/* ============================================================
-   12 · EVIDENCE
-   ============================================================ */
+/* ==========================================================
+   10. WIDE CONTENT
+   ----------------------------------------------------------
+   Maps, figures, dashboards and grids can occupy the full
+   width available from the global shell.
+   ========================================================== */
 
-body.sel-002-publication .evidence-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-body.sel-002-publication .evidence-card {
-  min-width: 0;
-  padding: 22px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-left: 4px solid var(--sel002-line);
-  border-radius: 0 6px 6px 0;
-}
-
-body.sel-002-publication .evidence-card[data-accent="access"] {
-  border-left-color: var(--sel002-access);
-}
-
-body.sel-002-publication .evidence-card[data-accent="service"] {
-  border-left-color: var(--sel002-service);
-}
-
-body.sel-002-publication .evidence-card[data-accent="vulnerability"] {
-  border-left-color: var(--sel002-vulnerability);
-}
-
-body.sel-002-publication .evidence-card[data-accent="hotspot"] {
-  border-left-color: var(--sel002-hotspot);
-}
-
-body.sel-002-publication .evidence-card[data-accent="deficit"] {
-  border-left-color: var(--sel002-deficit);
-}
-
-body.sel-002-publication .evidence-index,
-body.sel-002-publication .card-index {
-  display: block;
-  color: var(--sel002-muted);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .evidence-card h3 {
-  margin: 8px 0;
-  color: var(--sel002-ink);
-  font-size: 18px;
-  line-height: 1.2;
-}
-
-body.sel-002-publication .evidence-card p {
-  margin-bottom: 14px;
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-body.sel-002-publication .evidence-card strong {
-  display: block;
-  margin-bottom: 3px;
-  color: var(--sel002-ink);
-  font-size: 11px;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .evidence-card > span:last-child {
-  color: var(--sel002-muted);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-
-/* ============================================================
-   13 · DATASETS
-   ============================================================ */
-
-body.sel-002-publication .data-source-section {
-  margin-top: 44px;
-}
-
-body.sel-002-publication .subsection-heading {
-  margin-bottom: 20px;
-}
-
-body.sel-002-publication .subsection-heading h3 {
-  margin: 0;
-  color: var(--sel002-ink);
-  font-size: 23px;
-}
-
-body.sel-002-publication .dataset-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-body.sel-002-publication .dataset-card {
-  padding: 20px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-}
-
-body.sel-002-publication .dataset-card h4 {
-  margin: 8px 0;
-  color: var(--sel002-ink);
-  font-size: 16px;
-  line-height: 1.3;
-}
-
-body.sel-002-publication .dataset-card p {
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-body.sel-002-publication .dataset-card dl {
-  margin: 14px 0 0;
-  font-size: 11px;
-}
-
-body.sel-002-publication .dataset-card dt {
-  color: var(--sel002-muted);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-
-body.sel-002-publication .dataset-card dd {
-  margin: 2px 0 9px;
-  color: var(--sel002-text);
-}
-
-body.sel-002-publication .reproducibility-note,
-body.sel-002-publication .reproducibility-strip {
-  margin-top: 22px;
-  padding: 18px 20px;
-  background: var(--sel002-green-pale);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-body.sel-002-publication .reproducibility-note strong,
-body.sel-002-publication .reproducibility-strip strong {
-  color: var(--sel002-ink);
-}
-
-
-/* ============================================================
-   14 · MAP ATLAS (CAROUSEL)
-   ============================================================ */
-
-body.sel-002-publication #maps {
-  padding-top: 88px;
-  padding-bottom: 88px;
-  background: var(--sel002-bg);
-}
-
-body.sel-002-publication .atlas-reading-guide {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 22px;
-}
-
-body.sel-002-publication .atlas-reading-guide > div {
-  padding: 17px 19px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-}
-
-body.sel-002-publication .atlas-reading-guide span {
-  display: block;
-  color: var(--sel002-green);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .atlas-reading-guide strong {
-  display: block;
-  margin-top: 5px;
-  color: var(--sel002-ink);
-  font-size: 16px;
-}
-
-body.sel-002-publication .atlas-reading-guide p {
-  margin: 5px 0 0;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-body.sel-002-publication .map-evidence-chain {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px 11px;
-  margin: 0 0 24px;
-  padding: 12px 16px;
-  border-top: 1px solid var(--sel002-line);
-  border-bottom: 1px solid var(--sel002-line);
-  color: var(--sel002-muted);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .07em;
-}
-
-body.sel-002-publication .map-evidence-chain i {
-  color: var(--sel002-line);
-  font-style: normal;
-}
-
-/* Interactive atlas viewer */
-body.sel-002-publication .atlas-viewer {
-  display: grid;
-  grid-template-columns: 245px minmax(0, 1fr);
-  min-height: 680px;
-  background: var(--sel002-dark-deep);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 18px 50px rgba(23, 42, 58, .14);
-}
-
-body.sel-002-publication .atlas-index {
-  padding: 10px;
-  background: var(--sel002-dark);
-}
-
-body.sel-002-publication .atlas-item {
+body.sel-002-publication .publication-main .project-figure,
+body.sel-002-publication .publication-main .project-map,
+body.sel-002-publication .publication-main .map-atlas,
+body.sel-002-publication .publication-main .publication-map-atlas,
+body.sel-002-publication .publication-main .publication-dashboard,
+body.sel-002-publication .publication-main .publication-results-grid,
+body.sel-002-publication .publication-main .publication-evidence-grid {
   width: 100%;
-  display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
-  gap: 10px;
-  padding: 15px 12px;
-  text-align: left;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
-  color: #C8D6D0;
-  cursor: pointer;
-  transition: background .16s ease, color .16s ease;
+  max-width: none;
 }
 
-body.sel-002-publication .atlas-item span {
-  color: #7FA593;
-  font-size: 10px;
-  font-weight: 850;
+
+/* ==========================================================
+   11. MAPS
+   ========================================================== */
+
+body.sel-002-publication .project-map,
+body.sel-002-publication .publication-map-atlas {
+  width: 100%;
 }
 
-body.sel-002-publication .atlas-item strong {
-  font-size: 13px;
-  font-weight: 650;
-  line-height: 1.35;
+body.sel-002-publication .project-map-frame {
+  width: 100%;
+  max-width: none;
 }
 
-body.sel-002-publication .atlas-item:hover,
-body.sel-002-publication .atlas-item:focus-visible,
-body.sel-002-publication .atlas-item.is-active {
-  background: rgba(255, 255, 255, .08);
-  color: #fff;
-  outline: none;
-}
-
-body.sel-002-publication .atlas-item.is-active {
-  box-shadow: inset 3px 0 0 var(--sel002-green-light);
-}
-
-body.sel-002-publication .atlas-stage {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  background: var(--sel002-dark-deep);
-}
-
-body.sel-002-publication .atlas-image-wrap {
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 28px;
-  background: #253137;
-}
-
-body.sel-002-publication .atlas-image-wrap img {
+body.sel-002-publication .project-map-frame img,
+body.sel-002-publication .publication-map-item img {
   display: block;
   width: 100%;
-  max-height: 590px;
-  object-fit: contain;
-}
-
-body.sel-002-publication .atlas-caption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  padding: 23px 28px;
-  background: var(--sel002-dark-deep);
-}
-
-body.sel-002-publication .atlas-caption > div {
-  min-width: 0;
-}
-
-body.sel-002-publication .atlas-caption .atlas-label {
-  margin: 0 0 5px;
-  color: var(--sel002-green-light);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .atlas-caption h3 {
-  margin: 0 0 5px;
-  color: #fff;
-  font-size: 21px;
-  line-height: 1.2;
-}
-
-body.sel-002-publication .atlas-caption p {
-  margin: 0;
-  color: var(--sel002-dark-muted);
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-body.sel-002-publication .atlas-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-body.sel-002-publication .atlas-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 0 28px 20px;
-  color: var(--sel002-dark-muted);
-  background: var(--sel002-dark-deep);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .06em;
-}
-
-body.sel-002-publication .atlas-step {
-  border: 1px solid rgba(252, 252, 248, .22);
-  border-radius: 4px;
-  padding: 10px 14px;
-  background: transparent;
-  color: #FCFCF8;
-  cursor: pointer;
-  font: inherit;
-}
-
-body.sel-002-publication .atlas-step:disabled {
-  opacity: .35;
-  cursor: default;
-}
-
-body.sel-002-publication .map-atlas-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 22px;
-  margin-top: 28px;
-  flex-wrap: wrap;
+  height: auto;
 }
 
 
-/* ============================================================
-   15 · MAP MODAL
-   ============================================================ */
+/* ==========================================================
+   12. MAP ATLAS
+   ========================================================== */
 
-body.sel-002-publication .map-modal[hidden] {
-  display: none;
-}
-
-body.sel-002-publication .map-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 22px;
-  background: rgba(23, 42, 58, .84);
-  backdrop-filter: blur(6px);
-}
-
-body.sel-002-publication .map-modal-backdrop {
-  position: absolute;
-  inset: 0;
-}
-
-body.sel-002-publication .map-modal-panel {
-  position: relative;
-  z-index: 1;
-  width: min(1180px, 100%);
-  max-height: 94vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background: var(--sel002-white);
-  border-radius: 8px;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, .25);
-}
-
-body.sel-002-publication .map-modal-close {
-  position: absolute;
-  right: 12px;
-  top: 10px;
-  z-index: 3;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--sel002-line);
-  border-radius: 50%;
-  background: #fff;
-  color: var(--sel002-ink);
-  font-size: 25px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-body.sel-002-publication .map-modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 18px 60px 17px 22px;
-  border-bottom: 1px solid var(--sel002-line);
-}
-
-body.sel-002-publication .map-modal-id {
-  margin: 0 0 4px;
-  color: var(--sel002-green);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .map-modal-header h2 {
-  margin: 0;
-  color: var(--sel002-ink);
-  font-size: 23px;
-  line-height: 1.2;
-}
-
-body.sel-002-publication .map-modal-header p:last-child {
-  margin: 4px 0 0;
-  color: var(--sel002-muted);
-  font-size: 13px;
-}
-
-body.sel-002-publication .map-modal-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-body.sel-002-publication .map-modal-figure {
-  margin: 0;
-  padding: 18px;
-  background: #1E272C;
-  overflow: auto;
-  text-align: center;
-}
-
-body.sel-002-publication .map-modal-figure img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  max-height: 66vh;
-  margin-inline: auto;
-  object-fit: contain;
-}
-
-body.sel-002-publication .map-modal-figure figcaption {
-  max-width: 900px;
-  margin: 12px auto 0;
-  color: #D6E2E1;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-body.sel-002-publication .map-modal-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 13px 20px;
-  background: var(--sel002-bg);
-  border-top: 1px solid var(--sel002-line);
-}
-
-body.sel-002-publication .map-modal-nav {
-  display: flex;
-  gap: 8px;
-}
-
-body.sel-002-publication .map-modal-nav button {
-  min-height: 38px;
-  padding: 8px 13px;
-  background: #fff;
-  border: 1px solid var(--sel002-line);
-  border-radius: 4px;
-  color: var(--sel002-ink);
-  font-size: 11px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-body.sel-002-publication .map-modal-nav button:hover:not(:disabled) {
-  border-color: var(--sel002-green);
-  color: var(--sel002-green);
-}
-
-body.sel-002-publication .map-modal-nav button:disabled {
-  opacity: .4;
-  cursor: not-allowed;
-}
-
-body.sel-002-publication #modal-position {
-  color: var(--sel002-muted);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .05em;
-}
-
-
-/* ============================================================
-   16 · FINDINGS — DARK EVIDENCE BAND
-   ============================================================ */
-
-body.sel-002-publication #findings {
-  padding-top: 88px;
-  padding-bottom: 88px;
-  background: #0E1A14;
-  color: var(--sel002-dark-text);
-}
-
-body.sel-002-publication #findings .publication-number {
-  color: var(--sel002-accent);
-}
-
-body.sel-002-publication #findings h2 {
-  color: #fff;
-}
-
-body.sel-002-publication #findings .publication-intro {
-  color: #C8D6D0;
-}
-
-body.sel-002-publication .findings-grid {
+body.sel-002-publication .publication-map-grid,
+body.sel-002-publication .map-atlas-grid {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  background: rgba(255, 255, 255, .08);
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
 }
 
-body.sel-002-publication .finding-card {
-  min-height: 240px;
-  padding: 30px;
-  /* Black cards as previous */
-  background: #0A1210;
-  border: 0;
-  border-radius: 0;
-  color: var(--sel002-dark-text);
-}
 
-body.sel-002-publication .finding-card-wide {
-  grid-column: 1 / -1;
-  min-height: auto;
-}
+/* ==========================================================
+   13. DASHBOARD
+   ========================================================== */
 
-body.sel-002-publication .finding-card > span:first-child {
-  color: var(--sel002-green-light);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .finding-card h3 {
-  margin: 9px 0 10px;
-  color: #fff;
-  font-size: 22px;
-  line-height: 1.2;
-}
-
-body.sel-002-publication .finding-card p {
-  color: #C8D6D0;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-body.sel-002-publication .finding-card strong {
-  color: #fff;
-}
-
-body.sel-002-publication #findings .map-evidence-link {
-  display: inline-block;
-  margin-top: 12px;
-  color: #A9C8B9;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-body.sel-002-publication #findings .map-evidence-link:hover {
-  color: #fff;
-}
-
-body.sel-002-publication #findings .hotspot-table-wrap {
-  margin-top: 50px;
-  padding: 28px;
-  background: #0A1210;
-  border: 1px solid rgba(255, 255, 255, .08);
-  border-radius: 6px;
-}
-
-body.sel-002-publication #findings .hotspot-table-wrap .subsection-heading {
-  margin-bottom: 20px;
-}
-
-body.sel-002-publication #findings .subsection-heading h3 {
-  color: #fff;
-}
-
-body.sel-002-publication #findings .eyebrow {
-  color: var(--sel002-accent);
-}
-
-body.sel-002-publication .hotspot-table {
+body.sel-002-publication .publication-dashboard {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background: transparent;
 }
 
-body.sel-002-publication .hotspot-table th,
-body.sel-002-publication .hotspot-table td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
-}
-
-body.sel-002-publication .hotspot-table th {
-  color: #9FB2AA;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .hotspot-table td {
-  color: #E8EFEB;
-  font-size: 13px;
-}
-
-body.sel-002-publication .hotspot-table .hotspot-score,
-body.sel-002-publication .hotspot-table tbody td:last-child {
-  color: #D59A8E;
-  font-weight: 800;
-}
-
-/* Research questions — side-by-side cards on black */
-body.sel-002-publication .research-questions {
-  margin-top: 38px;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-}
-
-body.sel-002-publication .research-questions .subsection-heading {
-  margin-bottom: 20px;
-  padding: 0 4px;
-}
-
-body.sel-002-publication .research-questions .subsection-heading h3 {
-  color: #fff;
-}
-
-body.sel-002-publication .research-questions-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  background: rgba(255, 255, 255, .08);
-}
-
-body.sel-002-publication .research-questions article {
-  margin: 0;
-  padding: 26px 28px;
-  background: #0A1210;
-  min-height: 180px;
-}
-
-body.sel-002-publication .research-questions article > span {
-  color: var(--sel002-accent);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .research-questions h4 {
-  margin: 8px 0 10px;
-  color: #fff;
-  font-size: 16px;
-  line-height: 1.3;
-}
-
-body.sel-002-publication .research-questions p {
-  margin: 0;
-  color: #C8D6D0;
-  font-size: 14px;
-  line-height: 1.6;
+body.sel-002-publication .publication-dashboard-grid {
+  width: 100%;
 }
 
 
-/* ============================================================
-   17 · METHOD
-   ============================================================ */
+/* ==========================================================
+   14. EVIDENCE GRID
+   ========================================================== */
 
-body.sel-002-publication .method-flow {
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1fr) 28px
-    minmax(0, 1fr) 28px
-    minmax(0, 1fr) 28px
-    minmax(0, 1fr);
-  gap: 10px;
-  align-items: stretch;
-  margin: 30px 0 40px;
-}
-
-body.sel-002-publication .method-flow > div {
-  min-width: 0;
-  padding: 20px 18px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-top: 3px solid var(--sel002-green);
-}
-
-body.sel-002-publication .method-flow > div span {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--sel002-green);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .method-flow > div strong {
-  color: var(--sel002-ink);
-  font-size: 14px;
-}
-
-body.sel-002-publication .method-flow > i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--sel002-muted);
-  font-style: normal;
-  font-size: 20px;
-}
-
-body.sel-002-publication .method-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-body.sel-002-publication .method-card {
-  padding: 21px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-}
-
-body.sel-002-publication .method-card > span {
-  color: var(--sel002-green);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .method-card h3 {
-  margin: 8px 0 12px;
-  color: var(--sel002-ink);
-  font-size: 18px;
-}
-
-body.sel-002-publication .method-card ul {
-  margin: 0;
-  padding-left: 17px;
-}
-
-body.sel-002-publication .method-card li,
-body.sel-002-publication .method-card p {
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-body.sel-002-publication .method-card p {
-  margin-top: 12px;
-}
-
-body.sel-002-publication .interpretation-boundary {
-  margin-top: 28px;
-  padding-top: 25px;
-  border-top: 1px solid var(--sel002-line);
-}
-
-body.sel-002-publication .interpretation-boundary h3 {
-  margin-bottom: 8px;
-  color: var(--sel002-ink);
-  font-size: 17px;
-}
-
-
-/* ============================================================
-   18 · CONTRIBUTION / INVESTIGATION / FUTURE
-   ============================================================ */
-
-body.sel-002-publication .contribution-grid,
-body.sel-002-publication .future-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-body.sel-002-publication .contribution-section article,
-body.sel-002-publication .future-research {
-  padding: 22px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-}
-
-body.sel-002-publication .contribution-section article > span,
-body.sel-002-publication .future-research .eyebrow {
-  color: var(--sel002-green);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .contribution-section h3 {
-  margin: 8px 0 10px;
-  color: var(--sel002-ink);
-  font-size: 18px;
-}
-
-body.sel-002-publication .investigation-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-body.sel-002-publication .investigation-grid > article {
-  min-width: 0;
-  padding: 21px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-}
-
-body.sel-002-publication .investigation-grid > article > span {
-  color: var(--sel002-green);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .investigation-grid h3 {
-  color: var(--sel002-ink);
-  font-size: 18px;
-  line-height: 1.25;
-  margin: 8px 0 10px;
-}
-
-body.sel-002-publication .investigation-grid p {
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-body.sel-002-publication .investigation-grid .map-evidence-link {
-  display: inline-block;
-  margin-top: 12px;
-  color: var(--sel002-blue);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-body.sel-002-publication .investigation-grid .map-evidence-link:hover {
-  color: var(--sel002-green);
-  text-decoration: underline;
-}
-
-body.sel-002-publication .future-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-body.sel-002-publication .future-grid span {
-  padding: 10px 14px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 4px;
-  font-size: 13px;
-  color: var(--sel002-text);
-}
-
-
-/* ============================================================
-   19 · EVIDENCE BOUNDARIES
-   ============================================================ */
-
-body.sel-002-publication .evidence-boundaries {
-  margin-top: 52px;
-}
-
-body.sel-002-publication .boundary-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-body.sel-002-publication .boundary-grid > article {
-  padding: 17px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-}
-
-body.sel-002-publication .boundary-grid strong {
-  color: var(--sel002-ink);
-  font-size: 13px;
-}
-
-body.sel-002-publication .boundary-grid p {
-  margin: 4px 0 0;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-
-/* ============================================================
-   20 · OUTPUTS
-   ============================================================ */
-
-body.sel-002-publication #outputs {
-  background: #ECEBE6 !important;
-}
-
-body.sel-002-publication .output-grid {
+body.sel-002-publication .publication-evidence-grid {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-body.sel-002-publication .output-card {
-  display: block;
-  min-height: 135px;
-  padding: 21px;
-  background: var(--sel002-white);
-  border: 1px solid var(--sel002-line);
-  border-radius: 6px;
-  text-decoration: none;
-  transition: transform .18s, border-color .18s;
-}
-
-body.sel-002-publication .output-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--sel002-green);
-}
-
-body.sel-002-publication .output-card.featured {
-  border-top: 4px solid var(--sel002-green);
-}
-
-body.sel-002-publication .output-card > span {
-  color: var(--sel002-muted);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .08em;
-}
-
-body.sel-002-publication .output-card h3 {
-  margin: 8px 0;
-  color: var(--sel002-ink);
-  font-size: 17px;
-}
-
-body.sel-002-publication .output-card p {
-  margin-bottom: 15px;
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-body.sel-002-publication .output-card strong {
-  color: var(--sel002-blue);
-  font-size: 11px;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .repository-provenance {
-  margin: 18px 0 0;
-  font-size: 12px;
-  color: var(--sel002-muted);
-}
-
-body.sel-002-publication .repository-provenance a {
-  color: var(--sel002-green);
-  font-weight: 750;
-  text-decoration: none;
+  gap: clamp(1rem, 2vw, 1.75rem);
 }
 
 
-/* ============================================================
-   21 · FOOTER
-   ============================================================ */
+/* ==========================================================
+   15. RESULTS GRID
+   ========================================================== */
 
-body.sel-002-publication .site-footer {
-  background: var(--sel002-dark-deep) !important;
-  color: #C9D4D5;
-  padding: 58px 0 20px;
-  /* Full-bleed footer bar */
+body.sel-002-publication .publication-results-grid {
   width: 100%;
-}
-
-body.sel-002-publication .site-footer .footer-grid,
-body.sel-002-publication .site-footer .footer-bottom {
-  width: min(var(--sel002-max), calc(100% - 48px));
-  margin-inline: auto;
-}
-
-body.sel-002-publication .site-footer .footer-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-body.sel-002-publication .site-footer .footer-links {
-  display: flex;
-  gap: 65px;
-}
-
-body.sel-002-publication .site-footer .footer-link-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-body.sel-002-publication .site-footer .footer-link-group b {
-  color: #fff;
-  font-size: 10px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-body.sel-002-publication .site-footer .footer-link-group a {
-  color: #C9D4D5;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-body.sel-002-publication .site-footer .footer-link-group a:hover {
-  color: var(--sel002-green-light);
-}
-
-body.sel-002-publication .site-footer .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 48px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, .12);
-  color: #8F9DA0;
-  font-size: 11px;
-}
-
-body.sel-002-publication .footer-top-link {
-  color: #C9D4D5;
-  text-decoration: none;
-}
-
-body.sel-002-publication .footer-top-link:hover {
-  color: var(--sel002-green-light);
-}
-
-body.sel-002-publication .footer-brand-lockup {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-body.sel-002-publication .footer-brand-lockup img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-}
-
-body.sel-002-publication .footer-brand {
-  color: #fff;
-  font-size: .95rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
 }
 
 
-/* ============================================================
-   22 · FOCUS STATES
-   ============================================================ */
+/* ==========================================================
+   16. FOOTER
+   ----------------------------------------------------------
+   IMPORTANT:
+   Do NOT constrain the footer shell here.
+   The global footer controls its own layout.
+   ========================================================== */
 
-body.sel-002-publication button:focus-visible,
-body.sel-002-publication a:focus-visible {
-  outline: 2px solid var(--sel002-green);
-  outline-offset: 3px;
-}
+/*
+ * The following rules intentionally do NOT exist:
+ *
+ * body.sel-002-publication .site-footer .footer-grid {
+ *   max-width: 1240px;
+ * }
+ *
+ * body.sel-002-publication .site-footer .footer-bottom {
+ *   max-width: 1240px;
+ * }
+ *
+ * The canonical footer styles in:
+ *
+ * assets/css/core/footer.css
+ *
+ * control the footer width.
+ */
 
 
-/* ============================================================
-   23 · TABLET
-   ============================================================ */
+/* ==========================================================
+   17. RESPONSIVE — TABLET
+   ========================================================== */
 
-@media (max-width: 1050px) {
-  body.sel-002-publication .publication-hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr);
-    gap: 40px;
-  }
+@media (max-width: 1100px) {
 
-  body.sel-002-publication .evidence-grid,
-  body.sel-002-publication .dataset-grid {
+  body.sel-002-publication .publication-evidence-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  body.sel-002-publication .method-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  body.sel-002-publication .investigation-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  body.sel-002-publication .boundary-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 
-/* ============================================================
-   24 · MOBILE
-   ============================================================ */
+/* ==========================================================
+   18. RESPONSIVE — MOBILE
+   ========================================================== */
 
-@media (max-width: 760px) {
-  body.sel-002-publication {
-    --sel002-gutter: 16px;
-  }
+@media (max-width: 900px) {
 
-  body.sel-002-publication .shell,
-  body.sel-002-publication .publication-hero .sel-shell,
-  body.sel-002-publication .publication-toc-inner,
-  body.sel-002-publication .site-footer .footer-grid,
-  body.sel-002-publication .site-footer .footer-bottom {
-    width: calc(100% - 32px);
-  }
-
-  body.sel-002-publication .site-nav {
-    display: none;
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    top: 62px;
-    padding: 10px;
-    background: var(--sel002-dark-deep);
-    border: 1px solid rgba(255, 255, 255, .15);
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
-
-  body.sel-002-publication .site-nav.is-open {
-    display: flex;
-  }
-
-  body.sel-002-publication .site-nav a {
-    min-height: 44px;
-    padding: 0 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
-    justify-content: flex-start;
-  }
-
-  body.sel-002-publication .menu-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  body.sel-002-publication .publication-toc {
-    top: 68px;
-  }
-
-  body.sel-002-publication .publication-toc-inner {
-    gap: 22px;
-  }
-
-  body.sel-002-publication .publication-hero {
-    min-height: auto;
-    padding: 54px 0 40px;
-  }
-
-  body.sel-002-publication .publication-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  body.sel-002-publication .publication-hero h1 {
-    font-size: clamp(42px, 12vw, 58px);
-  }
-
-  body.sel-002-publication .publication-lede {
-    font-size: 17px;
-  }
-
-  body.sel-002-publication .publication-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  body.sel-002-publication .publication-section {
-    width: calc(100% - 32px);
-    padding: 58px 0;
-  }
-
-  body.sel-002-publication .publication-section-bg-alt,
-  body.sel-002-publication #maps,
-  body.sel-002-publication #findings,
-  body.sel-002-publication #outputs {
-    padding-inline: 16px;
-  }
-
-  body.sel-002-publication .publication-section-head {
-    margin-bottom: 24px;
-  }
-
-  body.sel-002-publication .metrics-grid,
-  body.sel-002-publication .evidence-grid,
-  body.sel-002-publication .dataset-grid,
-  body.sel-002-publication .method-grid,
-  body.sel-002-publication .investigation-grid,
-  body.sel-002-publication .boundary-grid,
-  body.sel-002-publication .output-grid {
+  body.sel-002-publication .publication-map-grid,
+  body.sel-002-publication .map-atlas-grid,
+  body.sel-002-publication .publication-results-grid {
     grid-template-columns: 1fr;
   }
 
-  body.sel-002-publication .study-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  body.sel-002-publication .atlas-reading-guide {
+  body.sel-002-publication .publication-evidence-grid {
     grid-template-columns: 1fr;
   }
 
-  body.sel-002-publication .atlas-viewer {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  body.sel-002-publication .atlas-index {
-    display: flex;
-    overflow-x: auto;
-    padding: 8px;
-    scrollbar-width: none;
-  }
-
-  body.sel-002-publication .atlas-index::-webkit-scrollbar {
-    display: none;
-  }
-
-  body.sel-002-publication .atlas-item {
-    flex: 0 0 155px;
-    grid-template-columns: 1fr;
-    gap: 4px;
-    border-right: 1px solid rgba(255, 255, 255, .08);
-    border-bottom: 0;
-  }
-
-  body.sel-002-publication .atlas-image-wrap {
-    min-height: 350px;
-    padding: 12px;
-  }
-
-  body.sel-002-publication .atlas-caption {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-
-  body.sel-002-publication .atlas-controls {
-    padding: 0 18px 18px;
-  }
-
-  body.sel-002-publication .findings-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.sel-002-publication .finding-card-wide {
-    grid-column: auto;
-  }
-
-  body.sel-002-publication .research-questions-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.sel-002-publication .metric-list {
-    max-width: 100%;
-  }
-
-  body.sel-002-publication .study-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.sel-002-publication .method-flow {
-    grid-template-columns: 1fr;
-  }
-
-  body.sel-002-publication .method-flow > i {
-    min-height: 20px;
-    transform: rotate(90deg);
-  }
-
-  body.sel-002-publication .contribution-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.sel-002-publication .map-atlas-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  body.sel-002-publication .site-footer .footer-grid {
-    flex-direction: column;
-  }
-
-  body.sel-002-publication .site-footer .footer-links {
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
-  body.sel-002-publication .map-modal {
-    padding: 10px;
-  }
-
-  body.sel-002-publication .map-modal-header {
-    padding-right: 55px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  body.sel-002-publication .map-modal-footer {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  body.sel-002-publication .map-modal-nav {
-    justify-content: space-between;
-  }
 }
 
 
-/* ============================================================
-   25 · REDUCED MOTION
-   ============================================================ */
+/* ==========================================================
+   19. MOBILE
+   ========================================================== */
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+@media (max-width: 640px) {
+
+  body.sel-002-publication .publication-layout-grid {
+    gap: 3rem;
   }
 
-  body.sel-002-publication *,
-  body.sel-002-publication *::before,
-  body.sel-002-publication *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
 }
+
+
+/* ==========================================================
+   20. ARCHITECTURAL SAFEGUARD
+   ----------------------------------------------------------
+   Do not add page-specific shell rules below this point.
+   ========================================================== */
+
+/*
+ * SEL-002 MUST inherit:
+ *
+ *   .shell
+ *   .container
+ *   .container-wide
+ *   .sel-shell
+ *
+ * from:
+ *
+ *   assets/css/core/layout.css
+ *
+ * There should be no SEL-002-specific:
+ *
+ *   max-width
+ *   width: calc(...)
+ *   margin-inline
+ *
+ * declarations targeting those global shell classes.
+ *
+ * Page-specific CSS controls the CONTENT inside the shell,
+ * not the shell itself.
+ */
