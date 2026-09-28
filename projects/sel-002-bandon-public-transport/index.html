@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/css/sel-theme.css">
   <link rel="stylesheet" href="/css/sel-components.css">
   <link rel="stylesheet" href="/css/sel-standards.css">
-  <!-- Consolidated publication stylesheet -->
+  <!-- Single consolidated stylesheet (replaces project-sel002.css + redesign + refinements) -->
   <link rel="stylesheet" href="/assets/css/pages/project-sel002.css">
 </head>
 
@@ -20,7 +20,7 @@
 <a class="sel-skip-link" href="#main-content">Skip to content</a>
 
 <div class="publication-progress" aria-hidden="true">
-  <div class="publication-progress-bar" style="width: 0%;"></div>
+  <div class="publication-progress-bar"></div>
 </div>
 
 <header class="site-header" id="site-header">
@@ -43,11 +43,11 @@
 <nav class="publication-toc" aria-label="Project contents">
   <div class="sel-shell publication-toc-inner">
     <a href="#overview" class="is-active"><span>01</span> Overview</a>
-    <a href="#study-area" class=""><span>02</span> Study area</a>
-    <a href="#evidence" class=""><span>03</span> Evidence</a>
-    <a href="#maps" class=""><span>04</span> Map atlas</a>
-    <a href="#findings" class=""><span>05</span> Findings</a>
-    <a href="#method" class=""><span>06</span> Method</a>
+    <a href="#study-area"><span>02</span> Study area</a>
+    <a href="#evidence"><span>03</span> Evidence</a>
+    <a href="#maps"><span>04</span> Map atlas</a>
+    <a href="#findings"><span>05</span> Findings</a>
+    <a href="#method"><span>06</span> Method</a>
   </div>
 </nav>
 
@@ -76,15 +76,20 @@
           </div>
 
           <div class="publication-actions">
-            <a class="sel-button sel-button-dark" href="#maps">Explore map series ↓</a>
-            <a class="sel-button sel-button-download" href="/assets/outputs/sel-002-bandon/reports/SEL-002_%20Bandon%20Public%20Transport%20Accessibility%20Analysis.pdf" target="_blank" rel="noopener">Download report ↗</a>
+            <a class="sel-button sel-button-dark" href="#maps">Explore the evidence ↓</a>
+            <a class="sel-button sel-button-download"
+               href="/assets/outputs/sel-002-bandon/reports/SEL-002_%20Bandon%20Public%20Transport%20Accessibility%20Analysis.pdf"
+               target="_blank" rel="noopener">Download report ↗</a>
           </div>
         </div>
 
         <figure class="publication-hero-media">
           <picture>
-            <source srcset="/assets/projects/SEL-002.jpg" type="image/webp">
-            <img src="/assets/projects/SEL-002.jpg" width="1600" height="900" loading="eager" decoding="async" alt="Bandon public transport accessibility study.">
+            <source srcset="/assets/projects/SEL-002.jpg" type="image/jpeg">
+            <img src="/assets/projects/SEL-002.jpg"
+                 width="1600" height="900"
+                 loading="eager" decoding="async"
+                 alt="Bandon public transport accessibility study.">
           </picture>
         </figure>
       </div>
@@ -212,7 +217,10 @@
           <figure class="study-figure">
             <picture>
               <source srcset="/assets/maps/sel-002-bandon/page/SEL002_Map00_NetworkBaseline.webp" type="image/webp">
-              <img src="/assets/maps/sel-002-bandon/full/SEL002_Map00_NetworkBaseline.png" width="1600" height="1120" loading="lazy" decoding="async" alt="Bandon Built-Up Area, transport network and principal public transport stops.">
+              <img src="/assets/maps/sel-002-bandon/full/SEL002_Map00_NetworkBaseline.png"
+                   width="1600" height="1120"
+                   loading="lazy" decoding="async"
+                   alt="Bandon Built-Up Area, transport network and principal public transport stops.">
             </picture>
             <figcaption>
               Map 01.00 · Bandon Built-Up Areas (BUA) and Network Baseline.
@@ -417,7 +425,10 @@
 
           <article class="atlas-stage">
             <div class="atlas-image-wrap">
-              <img id="atlas-image" src="/assets/maps/sel-002-bandon/page/SEL002_Map00_NetworkBaseline.webp" alt="Map 01.00: Base Context &amp; Transit Infrastructure." decoding="async">
+              <img id="atlas-image"
+                   src="/assets/maps/sel-002-bandon/page/SEL002_Map00_NetworkBaseline.webp"
+                   alt="Map 01.00: Base Context & Transit Infrastructure."
+                   decoding="async">
             </div>
 
             <div class="atlas-caption">
@@ -427,13 +438,14 @@
                 <p id="atlas-description">Bandon Built-Up Areas (BUA) and Network Baseline</p>
               </div>
               <div class="atlas-actions">
-                <a class="sel-button sel-button-download" id="atlas-download" download="" href="/assets/maps/sel-002-bandon/full/SEL002_Map00_NetworkBaseline.png">Download PNG ↓</a>
+                <a class="sel-button sel-button-download" id="atlas-download" download
+                   href="/assets/maps/sel-002-bandon/full/SEL002_Map00_NetworkBaseline.png">Download PNG ↓</a>
                 <button class="sel-button sel-button-dark" id="atlas-open" type="button">Open full map ↗</button>
               </div>
             </div>
 
             <div class="atlas-controls">
-              <button class="atlas-step" id="atlas-prev" type="button" disabled="">← Previous</button>
+              <button class="atlas-step" id="atlas-prev" type="button" disabled>← Previous</button>
               <span aria-live="polite" id="atlas-position">00 / 06</span>
               <button class="atlas-step" id="atlas-next" type="button">Next →</button>
             </div>
@@ -441,7 +453,7 @@
         </div>
 
         <div class="map-atlas-actions">
-          <a class="sel-button sel-button-dark" href="webmap/index.html" target="_blank" rel="noopener">Open interactive map ↗</a>
+          <a class="sel-button sel-button-dark" href="./webmap/index.html" target="_blank" rel="noopener">Open interactive map ↗</a>
           <a class="text-link" href="/assets/outputs/sel-002-bandon/maps/SEL_002_Map_atlas.pdf" target="_blank" rel="noopener">Download map atlas ↓</a>
         </div>
       </section>
@@ -449,10 +461,11 @@
       <!-- =======================================================
            MAP VIEWER MODAL
            ======================================================= -->
-      <div class="map-modal" id="map-modal" hidden="" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="map-modal-backdrop" data-close-map=""></div>
+      <div class="map-modal" id="map-modal" hidden aria-hidden="true" role="dialog"
+           aria-modal="true" aria-labelledby="modal-title">
+        <div class="map-modal-backdrop" data-close-map></div>
         <div class="map-modal-panel">
-          <button class="map-modal-close" type="button" data-close-map="" aria-label="Close map viewer">×</button>
+          <button class="map-modal-close" type="button" data-close-map aria-label="Close map viewer">×</button>
 
           <div class="map-modal-header">
             <div>
@@ -461,7 +474,7 @@
               <p id="modal-subtitle">Map description</p>
             </div>
             <div class="map-modal-actions">
-              <a id="modal-png" class="sel-button sel-button-dark" href="#" download="">Download PNG ↓</a>
+              <a id="modal-png" class="sel-button sel-button-dark" href="#" download>Download PNG ↓</a>
               <a id="modal-pdf" class="text-link" href="/assets/outputs/sel-002-bandon/maps/SEL_002_Map_atlas.pdf" target="_blank" rel="noopener">Map atlas PDF ↗</a>
             </div>
           </div>
@@ -814,42 +827,52 @@
         </div>
 
         <div class="output-grid">
-          <a class="output-card featured" href="/assets/outputs/sel-002-bandon/reports/SEL-002_%20Bandon%20Public%20Transport%20Accessibility%20Analysis.pdf" target="_blank" rel="noopener">
+          <a class="output-card featured"
+             href="/assets/outputs/sel-002-bandon/reports/SEL-002_%20Bandon%20Public%20Transport%20Accessibility%20Analysis.pdf"
+             target="_blank" rel="noopener">
             <span>REPORT</span>
             <h3>Full publication report</h3>
             <p>Complete analytical framework, results, limitations and references.</p>
             <strong>Download report ↗</strong>
           </a>
 
-          <a class="output-card" href="/assets/outputs/sel-002-bandon/reports/SEL-002_Executive%20Summary.pdf" target="_blank" rel="noopener">
+          <a class="output-card"
+             href="/assets/outputs/sel-002-bandon/reports/SEL-002_Executive%20Summary.pdf"
+             target="_blank" rel="noopener">
             <span>SUMMARY</span>
             <h3>Executive summary</h3>
             <p>Short-form presentation of the findings and analytical framework.</p>
             <strong>Download ↗</strong>
           </a>
 
-          <a class="output-card" href="/assets/outputs/sel-002-bandon/reports/Indicators.csv" download="">
+          <a class="output-card"
+             href="/assets/outputs/sel-002-bandon/reports/Indicators.csv"
+             download>
             <span>DATA</span>
             <h3>Indicator data</h3>
             <p>Small Area indicators and derived analytical measures.</p>
             <strong>Download ↓</strong>
           </a>
 
-          <a class="output-card" href="/assets/outputs/sel-002-bandon/maps/SEL_002_Map_atlas.pdf" target="_blank" rel="noopener">
+          <a class="output-card"
+             href="/assets/outputs/sel-002-bandon/maps/SEL_002_Map_atlas.pdf"
+             target="_blank" rel="noopener">
             <span>ATLAS</span>
             <h3>Seven-map atlas</h3>
             <p>High-resolution map sequence supporting the evidence chain.</p>
             <strong>Download atlas ↓</strong>
           </a>
 
-          <a class="output-card" href="webmap/index.html">
+          <a class="output-card" href="./webmap/index.html">
             <span>WEB MAP</span>
             <h3>Interactive spatial evidence</h3>
             <p>Explore analytical layers, search Small Areas and inspect mapped evidence.</p>
             <strong>Open map ↗</strong>
           </a>
 
-          <a class="output-card" href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io" target="_blank" rel="noopener">
+          <a class="output-card"
+             href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io"
+             target="_blank" rel="noopener">
             <span>REPOSITORY</span>
             <h3>GitHub repository</h3>
             <p>Publication assets, methods and reproducible website resources.</p>
@@ -859,7 +882,8 @@
 
         <p class="repository-provenance">
           Project provenance:
-          <a href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/projects/sel-002-bandon-public-transport" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+          <a href="https://github.com/Spatial-Evidence-Lab/spatial-evidence-lab.github.io/tree/main/projects/sel-002-bandon-public-transport"
+             target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
         </p>
 
         <div class="reproducibility-strip">
@@ -939,8 +963,7 @@
   </div>
 </footer>
 
-
-<script src="/js/sel-site.js" defer></script>
+<script src="/assets/js/sel-site.js" defer></script>
 
 <script>
 (() => {
@@ -1193,5 +1216,6 @@
   }, { passive: true });
 })();
 </script>
+
 </body>
 </html>
