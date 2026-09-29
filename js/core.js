@@ -1,131 +1,234 @@
 /* ==========================================================
    SPATIAL EVIDENCE LAB
-   PUBLICATION ENGINE v4.1B
-   Scrollspy + Reading Progress + Mobile TOC
+   CORE SITE JAVASCRIPT
+
+   Responsibilities:
+   - Header state
+   - Shared anchor scrolling
+   - Publication reading progress
+   - Shared publication section navigation
+
+   Does NOT handle:
+   - Map atlas / lightbox
+   - Project catalogue
+   - Taxonomy / filtering
+   - SEL-002-specific presentation
    ========================================================== */
 
-const progressBar=document.querySelector('.publication-progress-bar');
+(function () {
+    "use strict";
 
-function updateReadingProgress(){
 
-const scrollTop=window.scrollY;
-const documentHeight=document.documentElement.scrollHeight-window.innerHeight;
-const progress=Math.min((scrollTop/documentHeight)*100,100);
+    /* ======================================================
+       01. HEADER SCROLL STATE
+       ====================================================== */
 
-if(progressBar){
-progressBar.style.width=`${progress}%`;
-}
+    const header = document.querySelector(".site-header");
 
-}
+    if (header) {
 
-window.addEventListener('scroll',updateReadingProgress,{passive:true});
-updateReadingProgress();
+        const updateHeaderState = () => {
+            header.classList.toggle(
+                "scrolled",
+                window.scrollY > 8
+            );
+        };
 
-/* =========================
-   SCROLLSPY
-   ========================= */
+        updateHeaderState();
 
-const sections=document.querySelectorAll('section[id]');
-const navLinks=document.querySelectorAll('.publication-toc a,.publication-mobile-panel a');
+        window.addEventListener(
+            "scroll",
+            updateHeaderState,
+            { passive: true }
+        );
+    }
 
-const observer=new IntersectionObserver(entries=>{
 
-entries.forEach(entry=>{
+    /* ======================================================
+       02. SHARED ANCHOR SCROLLING
+       ====================================================== */
 
-if(entry.isIntersecting){
+    const anchorLinks = document.querySelectorAll(
+        'a[href^="#"]:not([href="#"])'
+    );
 
-const id=entry.target.id;
+    anchorLinks.forEach((link) => {
 
-navLinks.forEach(link=>{
+        link.addEventListener("click", (event) => {
 
-link.classList.remove('active');
+            const targetId = link.getAttribute("href");
 
-if(link.getAttribute('href')===`#${id}`){
-link.classList.add('active');
-}
+            if (!targetId) {
+                return;
+            }
 
-});
+            const target = document.querySelector(targetId);
 
-}
+            if (!target) {
+                return;
+            }
 
-});
+            event.preventDefault();
 
-},{
-rootMargin:'-40% 0px -50% 0px',
-threshold:.1
-});
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
-sections.forEach(section=>observer.observe(section));
+            /*
+             * Preserve the URL hash without forcing
+             * the browser to jump a second time.
+             */
+            if (history.replaceState) {
+                history.replaceState(
+                    null,
+                    "",
+                    targetId
+                );
+            }
+        });
 
-/* =========================
-   SMOOTH SCROLL OFFSET
-   ========================= */
+    });
 
-navLinks.forEach(link=>{
 
-link.addEventListener('click',event=>{
+    /* ======================================================
+       03. PUBLICATION READING PROGRESS
+       ====================================================== */
 
-const href=link.getAttribute('href');
+    const progressBar = document.querySelector(
+        ".publication-progress-bar"
+    );
 
-if(!href.startsWith('#')) return;
+    if (progressBar) {
 
-event.preventDefault();
+        const updateReadingProgress = () => {
 
-const target=document.querySelector(href);
-if(!target) return;
+            const documentHeight =
+                document.documentElement.scrollHeight -
+                window.innerHeight;
 
-const offset=90;
+            if (documentHeight <= 0) {
+                progressBar.style.width = "0%";
+                return;
+            }
 
-const position=target.getBoundingClientRect().top+window.pageYOffset-offset;
+            const progress =
+                (window.scrollY / documentHeight) * 100;
 
-window.scrollTo({
- top:position,
- behavior:'smooth'
-});
+            progressBar.style.width =
+                `${Math.min(100, Math.max(0, progress))}%`;
+        };
 
-closePublicationMenu();
+        updateReadingProgress();
 
-});
+        window.addEventListener(
+            "scroll",
+            updateReadingProgress,
+            { passive: true }
+        );
 
-});
+        window.addEventListener(
+            "resize",
+            updateReadingProgress
+        );
+    }
 
-/* =========================
-   MOBILE TOC
-   ========================= */
 
-const mobileButton=document.querySelector('.publication-mobile-button');
-const mobilePanel=document.querySelector('.publication-mobile-panel');
+    /* ======================================================
+       04. PUBLICATION SECTION SCROLLSPY
+       ====================================================== */
 
-function closePublicationMenu(){
-if(mobilePanel){
-mobilePanel.classList.remove('open');
-document.body.classList.remove('publication-lock');
-}
-}
+    const tocLinks = Array.from(
+        document.querySelectorAll(
+            ".publication-toc a[href^='#']"
+        )
+    );
 
-if(mobileButton){
-mobileButton.addEventListener('click',()=>{
-mobilePanel.classList.toggle('open');
-document.body.classList.toggle('publication-lock');
-});
-}
+    const publicationSections = tocLinks
+        .map((link) => {
+            const id = link.getAttribute("href");
 
-/* ESC closes menu */
+            if (!id) {
+                return null;
+            }
 
-document.addEventListener('keydown',event=>{
-if(event.key==='Escape') closePublicationMenu();
-});
+            return document.querySelector(id);
+        })
+        .filter(Boolean);
 
-/* =========================
-   ACTIVE HEADER SHADOW
-   ========================= */
 
-const header=document.querySelector('.site-header');
+    if (
+        tocLinks.length &&
+        publicationSections.length
+    ) {
 
-window.addEventListener('scroll',()=>{
-if(window.scrollY>40){
-header.classList.add('scrolled');
-}else{
-header.classList.remove('scrolled');
-}
-},{passive:true});
+        const setActiveSection = (sectionId) => {
+
+            tocLinks.forEach((link) => {
+
+                const isActive =
+                    link.getAttribute("href") ===
+                    `#${sectionId}`;
+
+                if (isActive) {
+                    link.setAttribute(
+                        "aria-current",
+                        "true"
+                    );
+                } else {
+                    link.removeAttribute(
+                        "aria-current"
+                    );
+                }
+
+            });
+        };
+
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                const visibleEntries = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort(
+                        (a, b) =>
+                            a.boundingClientRect.top -
+                            b.boundingClientRect.top
+                    );
+
+                if (!visibleEntries.length) {
+                    return;
+                }
+
+                setActiveSection(
+                    visibleEntries[0].target.id
+                );
+            },
+            {
+                rootMargin:
+                    "-120px 0px -60% 0px",
+                threshold: 0
+            }
+        );
+
+
+        publicationSections.forEach((section) => {
+            observer.observe(section);
+        });
+
+
+        /*
+         * Establish an initial state before scrolling.
+         */
+        const firstSection =
+            publicationSections[0];
+
+        if (firstSection) {
+            setActiveSection(
+                firstSection.id
+            );
+        }
+    }
+
+
+})();
