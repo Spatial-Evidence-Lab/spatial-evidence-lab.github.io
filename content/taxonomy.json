@@ -1595,30 +1595,124 @@
     }
   ],
   "canonicalSource": "content/taxonomy.json",
-  "statusDefinitions": [
+  "statusDefinitions": [],
+  "projectDomains": [
     {
-      "code": "ST01",
-      "name": "Exploratory",
-      "key": "exploratory",
-      "description": "Initial spatial research record; detailed analysis and outputs are not yet published."
+      "code": "RD01",
+      "name": "People & Quality of Life",
+      "key": "people-quality-of-life"
     },
     {
-      "code": "ST02",
-      "name": "In development",
-      "key": "in-development",
-      "description": "Research is actively being developed and documented."
+      "code": "RD02",
+      "name": "Accessibility, Mobility & Transport",
+      "key": "accessibility-mobility-transport"
     },
     {
-      "code": "ST03",
-      "name": "Published",
-      "key": "published",
-      "description": "Substantive research and associated public outputs are available."
+      "code": "RD03",
+      "name": "Environment, Climate & Natural Hazards",
+      "key": "environment-climate-natural-hazards"
     },
     {
-      "code": "ST04",
-      "name": "Archived",
-      "key": "archived",
-      "description": "Research is retained as part of the research record but is no longer active."
+      "code": "RD04",
+      "name": "Energy & Infrastructure",
+      "key": "energy-infrastructure"
+    },
+    {
+      "code": "RD05",
+      "name": "Housing & Socioeconomic Conditions",
+      "key": "housing-socioeconomic-conditions"
+    },
+    {
+      "code": "RD06",
+      "name": "Cities, Regions & Land Use",
+      "key": "cities-regions-land-use"
+    },
+    {
+      "code": "RD07",
+      "name": "Population & Demography",
+      "key": "population-demography"
+    }
+  ],
+  "projectThemes": [
+    {
+      "code": "TH17",
+      "name": "Quality of Life & Wellbeing",
+      "key": "quality-of-life-wellbeing"
+    },
+    {
+      "code": "TH16",
+      "name": "Population Vulnerability",
+      "key": "population-vulnerability"
+    },
+    {
+      "code": "TH12",
+      "name": "Living Conditions",
+      "key": "living-conditions"
+    },
+    {
+      "code": "TH01",
+      "name": "Accessibility",
+      "key": "accessibility"
+    },
+    {
+      "code": "TH13",
+      "name": "Mobility",
+      "key": "mobility"
+    },
+    {
+      "code": "TH18",
+      "name": "Regional Analysis",
+      "key": "regional-analysis"
+    },
+    {
+      "code": "TH07",
+      "name": "Forests & Land Cover",
+      "key": "forests-land-cover"
+    },
+    {
+      "code": "TH11",
+      "name": "Land Use",
+      "key": "land-use"
+    },
+    {
+      "code": "TH06",
+      "name": "Environmental Quality",
+      "key": "environmental-quality"
+    },
+    {
+      "code": "TH14",
+      "name": "Natural Hazards",
+      "key": "natural-hazards"
+    },
+    {
+      "code": "TH19",
+      "name": "Renewable Energy",
+      "key": "renewable-energy"
+    },
+    {
+      "code": "TH10",
+      "name": "Infrastructure Planning",
+      "key": "infrastructure-planning"
+    },
+    {
+      "code": "TH05",
+      "name": "Environmental Land Change",
+      "key": "environmental-land-change"
+    },
+    {
+      "code": "TH09",
+      "name": "Housing",
+      "key": "housing"
+    },
+    {
+      "code": "TH15",
+      "name": "Population",
+      "key": "population"
+    },
+    {
+      "code": "TH03",
+      "name": "Demography",
+      "key": "demography"
     }
   ]
 }
