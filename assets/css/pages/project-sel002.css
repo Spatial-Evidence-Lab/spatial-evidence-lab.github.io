@@ -719,43 +719,55 @@ body.sel-002-publication .output-card .output-link {
 
 
 /* ==========================================================
-   20. PUBLICATION TOC
+   20. SEL-002 PUBLICATION CONTENTS
+   Horizontal in-page navigation
    ========================================================== */
-
-/*
- * SEL-002 uses the horizontal publication contents pattern.
- *
- * The permanent side TOC is intentionally NOT recreated here.
- */
 
 body.sel-002-publication .publication-toc-wrapper {
   width: 100%;
+  margin-block: 2rem 4rem;
+  border-top: 1px solid var(--sel-border);
+  border-bottom: 1px solid var(--sel-border);
 }
 
 body.sel-002-publication .publication-toc {
   width: 100%;
+  padding-block: 1rem;
+}
+
+body.sel-002-publication .publication-toc-label {
+  margin-bottom: .75rem;
+  color: var(--sel002-accent);
+  font-weight: 600;
 }
 
 body.sel-002-publication .publication-toc-list {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem 1.25rem;
+  align-items: center;
+  gap: .35rem 1.25rem;
 }
 
-body.sel-002-publication .publication-toc a {
+body.sel-002-publication .publication-toc-list a {
   position: relative;
+  display: inline-block;
+  padding-block: .25rem;
 }
 
-body.sel-002-publication .publication-toc a[aria-current="true"] {
+body.sel-002-publication .publication-toc-list a:hover {
   color: var(--sel002-accent);
 }
 
-body.sel-002-publication .publication-toc a[aria-current="true"]::after {
+body.sel-002-publication .publication-toc-list a[aria-current="true"] {
+  color: var(--sel002-accent);
+}
+
+body.sel-002-publication .publication-toc-list a[aria-current="true"]::after {
   content: "";
   position: absolute;
-  left: 0;
   right: 0;
-  bottom: -.35rem;
+  bottom: -.2rem;
+  left: 0;
   height: 2px;
   background: var(--sel002-accent);
 }
@@ -960,7 +972,7 @@ body.sel-002-publication .publication-download:hover {
     gap: .75rem;
   }
 
-  body.sel-002-publication .publication-toc a[aria-current="true"]::after {
+  body.sel-002-publication .publication-toc-list a[aria-current="true"]::after {
     bottom: -.2rem;
   }
 
