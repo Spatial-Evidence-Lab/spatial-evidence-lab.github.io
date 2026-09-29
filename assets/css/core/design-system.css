@@ -38,7 +38,7 @@
 
     /* Brand */
     --sel-brand-blue: #142433;
-    --sel-brand-teal: #146B7F;
+    --sel-brand-teal: var(--sel-accent-dark);
     --sel-warm: #E48458;
 
     /* Functional UI */
@@ -63,20 +63,11 @@
     --sel-positive: #5F9478;
     --sel-negative: #B86B70;
 
-    /* Backwards-compatible aliases for existing components.
+    /* Backwards-compatible aliases still used by shared components.
        New code should use the semantic tokens above. */
-    --sel-box: #10262D;
+    --sel-box: var(--sel-surface);
     --sel-hero: #142F39;
-    --sel-blue: #3A97A0;
-    --sel-blue-dark: #146B7F;
-    --sel-blue-light: #5AAEB3;
-    --sel-blue-pale: #163139;
-    --sel-navy: #071318;
-    --sel-navy-2: #0B1B22;
-    --sel-navy-3: #10262D;
-    --sel-paper: #071318;
-    --sel-cyan: #3A97A0;
-    --sel-teal-light: #5AAEB3;
+    --sel-navy: var(--sel-brand-blue);
 
     /* Quality of life / research-domain colours.
        These are deliberately muted so they do not compete
@@ -95,18 +86,7 @@
        LAYOUT
        ----------------------------------------------------- */
 
-    /*
-       Historical token, not used to cap .shell/.container width anymore
-       (see assets/css/layout.css) — the shared shell is full-width
-       site-wide. Kept only in case a future component wants an optional
-       reading-measure cap.
-    */
-    --sel-content-max: 1200px;
-    --sel-gutter: clamp(16px, 2vw, 32px);
-    --max: none;
-    --content-width: none;
-
-    --shell-gutter: var(--sel-gutter);
+    /* Layout tokens are owned by assets/css/core/layout.css. */
     --shell-gutter-tablet: 20px;
     --shell-gutter-mobile: 16px;
     --shell-gutter-small: 14px;
@@ -115,8 +95,8 @@
     --radius-md: 8px;
     --radius-lg: 12px;
 
-    --header-content-height: 74px;
-    --sel-header-height: 74px;
+    --header-content-height: 68px;
+    --sel-header-height: 68px;
 
 
     /* -----------------------------------------------------
@@ -627,13 +607,13 @@ font-size:.82rem;
 text-transform:uppercase;
 letter-spacing:.14em;
 font-weight:700;
-color:var(--publication-cyan);
+color:var(--sel-accent-soft);
 }
 
 /* Accessible Focus States */
 
 :focus-visible{
-outline:3px solid var(--publication-cyan);
+outline:3px solid var(--sel-accent-soft);
 outline-offset:4px;
 border-radius:10px;
 }

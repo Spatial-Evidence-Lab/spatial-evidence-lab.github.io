@@ -500,7 +500,7 @@
     padding: 0;
     border: 2px solid var(--sel-bg);
     border-radius: 50%;
-    background: #004DA8;
+    background: var(--sel-accent-dark);
     box-shadow: 0 0 0 4px rgba(0,77,168,.18);
     transform: translate(-50%, -50%);
     cursor: pointer;
@@ -510,7 +510,7 @@
 .project-map-dot:focus-visible {
     width: 17px;
     height: 17px;
-    background: #004DA8;
+    background: var(--sel-accent-dark);
     box-shadow: 0 0 0 6px rgba(0,77,168,.22);
     outline: none;
 }
@@ -573,7 +573,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #004DA8;
+    background: var(--sel-accent-dark);
 }
 
 .projects-explore {

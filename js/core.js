@@ -20,6 +20,47 @@
 
 
     /* ======================================================
+       00. SHARED MOBILE NAVIGATION
+       ====================================================== */
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteNav = document.getElementById("site-nav");
+
+    if (menuToggle && siteNav) {
+
+        const closeMenu = () => {
+            siteNav.classList.remove("is-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+        };
+
+        menuToggle.addEventListener("click", () => {
+            const open = siteNav.classList.toggle("is-open");
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(open)
+            );
+        });
+
+        siteNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 900) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeMenu();
+                menuToggle.focus();
+            }
+        });
+    }
+
+
+    /* ======================================================
        01. HEADER SCROLL STATE
        ====================================================== */
 

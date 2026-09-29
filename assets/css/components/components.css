@@ -409,8 +409,8 @@ display:block;
 margin-bottom:10px;
 }
 
-.accent-blue{background:#17384A;}
-.accent-teal{background:#1F7A8C;}
+.accent-blue{background:var(--sel-brand-blue);}
+.accent-teal{background:var(--sel-brand-teal);}
 .accent-orange{background:#E58F65;}
 .accent-green{background:#2E8B57;}
 
@@ -442,7 +442,7 @@ margin-top:40px;
 background:white;
 border-radius:22px;
 padding:28px;
-border-top:6px solid #1F7A8C;
+border-top:6px solid var(--sel-brand-teal);
 box-shadow:0 12px 24px rgba(0,0,0,.06);
 }
 
@@ -455,7 +455,7 @@ font-size:.78rem;
 font-weight:700;
 text-transform:uppercase;
 letter-spacing:.1em;
-color:#1F7A8C;
+color:var(--sel-brand-teal);
 }
 
 /* Outputs */
@@ -651,7 +651,7 @@ box-shadow:0 16px 36px rgba(0,0,0,.12);
 }
 
 .action-card.primary{
-background:#17384A;
+background:var(--sel-brand-blue);
 color:white;
 }
 

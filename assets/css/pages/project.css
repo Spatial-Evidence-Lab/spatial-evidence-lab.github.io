@@ -1,4 +1,11 @@
 /* ==========================================================
+   SEL PROJECT TYPE A — STANDARD PROJECT
+   Shared architecture for SEL-001 and standard projects.
+   Do not create project-sel003.css / project-sel004.css etc.
+   unless a project introduces a genuinely unique interface.
+   ========================================================== */
+
+/* ==========================================================
    SPATIAL EVIDENCE LAB
    PROJECT PAGE STYLES
    ----------------------------------------------------------

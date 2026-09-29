@@ -1,10 +1,11 @@
-/* SEL CANONICAL LAYOUT SYSTEM */
-/* --sel-content-max is kept only for components that still opt into a
-   readable measure (e.g. paragraph max-widths). The shared shell/container
-   itself is intentionally full-width site-wide: it fills the viewport
-   minus the side gutter at any window size or zoom level, with no
-   max-width cap. */
-:root { --sel-content-max: 1200px; --sel-gutter: clamp(16px, 2vw, 32px); }
+/* SEL CANONICAL LAYOUT SYSTEM
+   The shared shell is owned here and has no desktop max-width cap.
+   Page-specific styles must not redefine .shell, .container,
+   .container-wide or .sel-shell width/max-width. */
+:root {
+  --sel-content-max: 1200px;
+  --sel-gutter: clamp(16px, 2vw, 32px);
+}
 
 .shell, .container, .container-wide, .sel-shell {
   width: calc(100% - (2 * var(--sel-gutter)));
@@ -33,9 +34,7 @@ img, svg, video, canvas, iframe, table { max-width: 100%; }
 }
 
 
-/* Canonical page-frame protection.
-   At extreme browser zoom-out the CSS viewport becomes very wide;
-   the frame remains capped rather than expanding with the viewport. */
+/* Canonical page-frame protection. */
 html, body {
   max-width: 100%;
   overflow-x: clip;

@@ -1,4 +1,11 @@
 /* ==========================================================
+   SEL PROJECT TYPE B — PUBLICATION PROJECT
+   SEL-002 is the canonical publication implementation.
+   This stylesheet contains only publication-specific treatment.
+   Global shell/layout remains owned by core/layout.css.
+   ========================================================== */
+
+/* ==========================================================
    SPATIAL EVIDENCE LAB
    SEL-002 — BANDON PUBLIC TRANSPORT ACCESSIBILITY
 
