@@ -1,149 +1,78 @@
 /* ==========================================================
    SPATIAL EVIDENCE LAB
    SEL-002 — BANDON PUBLIC TRANSPORT ACCESSIBILITY
-   PROJECT-SPECIFIC STYLES
+   PHASE 4 — FULL-WIDTH LAYOUT / READING WIDTH
    ----------------------------------------------------------
-   PHASE 3 — GLOBAL LAYOUT SYSTEM
+   DESIGN-SYSTEM RULE
 
-   HARD ARCHITECTURAL RULE:
-   This file must NOT redefine the global site shell.
+   Full-width content:
+     Uses the available width inside the canonical
+     site shell and gutter.
 
-   Global width is controlled exclusively by:
-     assets/css/core/layout.css
+   Reading content:
+     Uses a controlled reading measure of approximately
+     760px.
 
-   Canonical global shell:
-     .shell
-     .container
-     .container-wide
-     .sel-shell
+   IMPORTANT:
+     This file does NOT define the global shell.
 
-   Project-specific CSS may style:
-     - publication components
-     - project hero content
-     - evidence
-     - maps
-     - findings
-     - methodology
-     - dashboard
-     - project-specific spacing
-     - SEL-002-specific visual treatment
-
-   It must NOT impose another site-wide max-width.
+     Global shell ownership remains in:
+       assets/css/core/layout.css
 
    ========================================================== */
 
 
 /* ==========================================================
-   01. SEL-002 PROJECT VARIABLES
+   01. SEL-002 READING MEASURE
    ========================================================== */
 
 body.sel-002-publication {
 
   /*
-   * IMPORTANT:
-   * There is deliberately NO:
+   * This is deliberately a READING width.
    *
-   * --sel002-max: 1240px;
-   * --sel002-frame: calc(100% - 48px);
+   * It is NOT the width of the publication page.
    *
-   * The global layout system controls horizontal width.
+   * Do not replace this with:
+   *   1240px
+   *   1280px
+   *   1400px
+   *   1600px
+   *
+   * The page itself remains wide.
    */
 
   --sel002-reading-width: 760px;
 
-  --sel002-section-spacing:
-    clamp(4rem, 7vw, 7rem);
-
-  --sel002-block-spacing:
-    clamp(2rem, 4vw, 4rem);
-
 }
 
 
 /* ==========================================================
-   02. GLOBAL SHELL — DO NOT OVERRIDE
+   02. FULL-WIDTH CONTENT PRINCIPLE
    ========================================================== */
 
 /*
- * DO NOT add width or max-width rules to:
+ * Content components should use the full width available
+ * from the canonical global shell.
  *
- * .shell
- * .container
- * .container-wide
- * .sel-shell
- *
- * These classes are owned by:
- *
- * assets/css/core/layout.css
- *
- * The canonical rules are:
- *
- * .shell,
- * .container,
- * .container-wide,
- * .sel-shell {
- *   width: calc(100% - (2 * var(--sel-gutter)));
- *   max-width: none;
- *   margin-inline: auto;
- * }
- *
- * SEL-002 inherits that system.
+ * There is intentionally no arbitrary max-width here.
  */
 
-
-/* ==========================================================
-   03. PUBLICATION WRAPPER
-   ========================================================== */
-
-body.sel-002-publication .publication-layout {
-  width: 100%;
-}
-
-body.sel-002-publication .publication-shell {
-  width: 100%;
-}
-
-
-/* ==========================================================
-   04. PUBLICATION MAIN
-   ========================================================== */
-
-/*
- * The publication main area must use the available width
- * supplied by the canonical global shell.
- *
- * Do NOT impose:
- *
- * max-width: 1240px;
- * max-width: 1280px;
- * max-width: 1400px;
- * width: calc(100% - 48px);
- *
- * or any equivalent page-specific frame.
- */
-
+body.sel-002-publication .publication-layout,
+body.sel-002-publication .publication-shell,
+body.sel-002-publication .publication-layout-grid,
 body.sel-002-publication .publication-main {
   width: 100%;
   min-width: 0;
-  margin-inline: 0;
 }
 
 
 /* ==========================================================
-   05. PUBLICATION HERO
+   03. FULL-WIDTH HERO
    ========================================================== */
 
 body.sel-002-publication .publication-hero {
   width: 100%;
-}
-
-body.sel-002-publication .publication-hero .sel-shell {
-  /*
-   * Intentionally no width or max-width declaration.
-   *
-   * .sel-shell inherits the canonical global layout from
-   * assets/css/core/layout.css.
-   */
 }
 
 body.sel-002-publication .publication-hero-inner {
@@ -155,70 +84,47 @@ body.sel-002-publication .publication-hero-content {
 }
 
 
-/* ==========================================================
-   06. PUBLICATION TOC
-   ========================================================== */
+/*
+ * Hero heading may be wide.
+ *
+ * Do not constrain the entire hero to the reading width.
+ */
 
-body.sel-002-publication .publication-toc-wrapper {
-  width: 100%;
-}
-
-body.sel-002-publication .publication-toc-inner {
-  /*
-   * No page-specific max-width.
-   *
-   * The TOC follows the global shell.
-   */
-  width: 100%;
-}
-
-body.sel-002-publication .publication-toc {
-  width: 100%;
+body.sel-002-publication .publication-hero h1,
+body.sel-002-publication .publication-hero .project-hero-title {
+  max-width: 1100px;
 }
 
 
-/* ==========================================================
-   07. PUBLICATION LAYOUT GRID
-   ========================================================== */
+/*
+ * Hero introductory text can remain readable.
+ */
 
-body.sel-002-publication .publication-layout-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 5rem);
-  align-items: start;
-}
-
-
-/* ==========================================================
-   08. PUBLICATION SECTIONS
-   ========================================================== */
-
-body.sel-002-publication .publication-section {
-  width: 100%;
-  scroll-margin-top: 120px;
-}
-
-body.sel-002-publication .publication-section-inner {
-  width: 100%;
-}
-
-
-/* ==========================================================
-   09. READABLE TEXT WIDTH
-   ----------------------------------------------------------
-   Text remains readable without constraining the page itself.
-   ========================================================== */
-
-body.sel-002-publication .publication-reading,
-body.sel-002-publication .publication-text,
-body.sel-002-publication .publication-section-lead {
+body.sel-002-publication .publication-hero .project-hero-summary,
+body.sel-002-publication .publication-hero .publication-section-lead {
   max-width: var(--sel002-reading-width);
 }
 
-body.sel-002-publication .publication-main p {
+
+/* ==========================================================
+   04. READING CONTENT
+   ========================================================== */
+
+/*
+ * Paragraphs and explanatory prose use the reading measure.
+ */
+
+body.sel-002-publication .publication-main p,
+body.sel-002-publication .publication-main .publication-text,
+body.sel-002-publication .publication-main .publication-reading {
   max-width: var(--sel002-reading-width);
 }
+
+
+/*
+ * Lists containing explanatory prose should use the same
+ * reading measure.
+ */
 
 body.sel-002-publication .publication-main ul,
 body.sel-002-publication .publication-main ol {
@@ -226,139 +132,497 @@ body.sel-002-publication .publication-main ol {
 }
 
 
+/*
+ * Blockquotes and explanatory notes remain readable.
+ */
+
+body.sel-002-publication .publication-main blockquote,
+body.sel-002-publication .publication-main .publication-note,
+body.sel-002-publication .publication-main .project-key-message {
+  max-width: var(--sel002-reading-width);
+}
+
+
 /* ==========================================================
-   10. WIDE CONTENT
-   ----------------------------------------------------------
-   Maps, figures, dashboards and grids can occupy the full
-   width available from the global shell.
+   05. READING TYPOGRAPHY
    ========================================================== */
 
-body.sel-002-publication .publication-main .project-figure,
+body.sel-002-publication .publication-main .publication-text > :first-child,
+body.sel-002-publication .publication-main .publication-reading > :first-child {
+  margin-top: 0;
+}
+
+
+/*
+ * Keep normal paragraph rhythm independent of the wide
+ * page layout.
+ */
+
+body.sel-002-publication .publication-main p {
+  margin-block: 0 1.25rem;
+}
+
+body.sel-002-publication .publication-main p + p {
+  margin-top: 1rem;
+}
+
+
+/* ==========================================================
+   06. FULL-WIDTH MAPS
+   ========================================================== */
+
+/*
+ * Maps are visual evidence and should not inherit the
+ * 760px reading measure.
+ */
+
 body.sel-002-publication .publication-main .project-map,
-body.sel-002-publication .publication-main .map-atlas,
 body.sel-002-publication .publication-main .publication-map-atlas,
-body.sel-002-publication .publication-main .publication-dashboard,
-body.sel-002-publication .publication-main .publication-results-grid,
-body.sel-002-publication .publication-main .publication-evidence-grid {
+body.sel-002-publication .publication-main .map-atlas {
   width: 100%;
   max-width: none;
 }
 
 
-/* ==========================================================
-   11. MAPS
-   ========================================================== */
-
-body.sel-002-publication .project-map,
-body.sel-002-publication .publication-map-atlas {
-  width: 100%;
-}
+/* Map frame */
 
 body.sel-002-publication .project-map-frame {
   width: 100%;
   max-width: none;
+  overflow: hidden;
 }
 
+
+/* Map images */
+
+body.sel-002-publication .project-map-frame picture,
 body.sel-002-publication .project-map-frame img,
+body.sel-002-publication .publication-map-item picture,
 body.sel-002-publication .publication-map-item img {
   display: block;
   width: 100%;
+  max-width: none;
   height: auto;
 }
 
 
 /* ==========================================================
-   12. MAP ATLAS
+   07. MAP ATLAS
    ========================================================== */
 
 body.sel-002-publication .publication-map-grid,
 body.sel-002-publication .map-atlas-grid {
   width: 100%;
+  max-width: none;
+
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: clamp(1.25rem, 2.5vw, 2.5rem);
 }
 
 
-/* ==========================================================
-   13. DASHBOARD
-   ========================================================== */
+/*
+ * Atlas captions are explanatory content, so they can use
+ * a narrower reading measure without constraining the map.
+ */
 
-body.sel-002-publication .publication-dashboard {
-  width: 100%;
-}
-
-body.sel-002-publication .publication-dashboard-grid {
-  width: 100%;
+body.sel-002-publication .publication-map-caption,
+body.sel-002-publication .map-atlas-item figcaption {
+  max-width: var(--sel002-reading-width);
 }
 
 
 /* ==========================================================
-   14. EVIDENCE GRID
+   08. FULL-WIDTH EVIDENCE GRIDS
    ========================================================== */
 
 body.sel-002-publication .publication-evidence-grid {
   width: 100%;
+  max-width: none;
+
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   gap: clamp(1rem, 2vw, 1.75rem);
 }
 
 
-/* ==========================================================
-   15. RESULTS GRID
-   ========================================================== */
+/*
+ * Evidence cards are wide layout components.
+ */
 
-body.sel-002-publication .publication-results-grid {
+body.sel-002-publication .publication-evidence-card {
+  min-width: 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
+}
+
+
+/*
+ * Card prose remains readable.
+ */
+
+body.sel-002-publication .publication-evidence-card p {
+  max-width: var(--sel002-reading-width);
 }
 
 
 /* ==========================================================
-   16. FOOTER
-   ----------------------------------------------------------
-   IMPORTANT:
-   Do NOT constrain the footer shell here.
-   The global footer controls its own layout.
+   09. FULL-WIDTH RESULTS
    ========================================================== */
 
+body.sel-002-publication .publication-results-grid {
+  width: 100%;
+  max-width: none;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+body.sel-002-publication .publication-result {
+  min-width: 0;
+}
+
+
 /*
- * The following rules intentionally do NOT exist:
+ * Result text remains readable.
+ */
+
+body.sel-002-publication .publication-result p {
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* ==========================================================
+   10. FULL-WIDTH DASHBOARD
+   ========================================================== */
+
+body.sel-002-publication .publication-dashboard {
+  width: 100%;
+  max-width: none;
+}
+
+body.sel-002-publication .publication-dashboard-grid {
+  width: 100%;
+  max-width: none;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+}
+
+
+/* ==========================================================
+   11. FULL-WIDTH CARDS
+   ========================================================== */
+
+body.sel-002-publication .project-card-grid,
+body.sel-002-publication .project-findings,
+body.sel-002-publication .project-boundaries,
+body.sel-002-publication .project-outputs {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* ==========================================================
+   12. FULL-WIDTH IMAGE GALLERIES
+   ========================================================== */
+
+body.sel-002-publication .project-media-grid {
+  width: 100%;
+  max-width: none;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+body.sel-002-publication .project-media-grid--three {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+body.sel-002-publication .project-media-item {
+  min-width: 0;
+  width: 100%;
+}
+
+body.sel-002-publication .project-media-item picture,
+body.sel-002-publication .project-media-item img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+
+/* ==========================================================
+   13. FULL-WIDTH FIGURES
+   ========================================================== */
+
+body.sel-002-publication .project-figure {
+  width: 100%;
+  max-width: none;
+}
+
+body.sel-002-publication .project-figure picture,
+body.sel-002-publication .project-figure img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+
+/*
+ * Figure captions return to the reading measure.
+ */
+
+body.sel-002-publication .project-figure-caption,
+body.sel-002-publication .project-figure-note {
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* ==========================================================
+   14. FULL-WIDTH TABLES
+   ========================================================== */
+
+body.sel-002-publication .project-table-wrap {
+  width: 100%;
+  max-width: none;
+
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.sel-002-publication .project-table {
+  width: 100%;
+  max-width: none;
+}
+
+
+/*
+ * Tables should NOT inherit the 760px reading measure.
  *
- * body.sel-002-publication .site-footer .footer-grid {
- *   max-width: 1240px;
- * }
- *
- * body.sel-002-publication .site-footer .footer-bottom {
- *   max-width: 1240px;
- * }
- *
- * The canonical footer styles in:
- *
- * assets/css/core/footer.css
- *
- * control the footer width.
+ * They are data-display components rather than prose.
  */
 
 
 /* ==========================================================
-   17. RESPONSIVE — TABLET
+   15. FULL-WIDTH METHODOLOGY STRUCTURE
    ========================================================== */
 
-@media (max-width: 1100px) {
+body.sel-002-publication .publication-method-grid,
+body.sel-002-publication .project-methodology {
+  width: 100%;
+  max-width: none;
+}
 
-  body.sel-002-publication .publication-evidence-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+/*
+ * Methodology explanatory text remains readable.
+ */
+
+body.sel-002-publication .publication-method-item p,
+body.sel-002-publication .project-methodology-text {
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* ==========================================================
+   16. RESEARCH QUESTIONS
+   ========================================================== */
+
+body.sel-002-publication .project-questions {
+  width: 100%;
+  max-width: none;
+}
+
+body.sel-002-publication .project-question-text {
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* ==========================================================
+   17. CONTRIBUTION / INTERPRETATION
+   ========================================================== */
+
+body.sel-002-publication .project-contribution {
+  width: 100%;
+}
+
+body.sel-002-publication .project-contribution-content {
+  min-width: 0;
+}
+
+body.sel-002-publication .project-contribution-content p {
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* ==========================================================
+   18. EVIDENCE BOUNDARIES
+   ========================================================== */
+
+body.sel-002-publication .project-boundary p {
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* ==========================================================
+   19. OUTPUT DESCRIPTIONS
+   ========================================================== */
+
+body.sel-002-publication .project-output-description {
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* ==========================================================
+   20. SECTION BACKGROUNDS
+   ----------------------------------------------------------
+   Backgrounds can span the full section while the content
+   remains governed by the global shell.
+   ========================================================== */
+
+body.sel-002-publication .publication-section--wide,
+body.sel-002-publication .project-section--wide {
+  width: 100%;
+}
+
+
+/*
+ * If a section has a background, apply the background to
+ * the section itself rather than constraining a background
+ * wrapper to the reading width.
+ */
+
+body.sel-002-publication .publication-section--wide > *,
+body.sel-002-publication .project-section--wide > * {
+  min-width: 0;
+}
+
+
+/* ==========================================================
+   21. FULL-WIDTH CONTENT WITHIN GRID
+   ========================================================== */
+
+body.sel-002-publication .publication-layout-grid > *,
+body.sel-002-publication .publication-main > * {
+  min-width: 0;
+}
+
+
+/*
+ * Prevent long images, maps and tables from forcing the
+ * layout wider than the viewport.
+ */
+
+body.sel-002-publication img,
+body.sel-002-publication picture,
+body.sel-002-publication figure,
+body.sel-002-publication table {
+  max-width: 100%;
+}
+
+
+/* ==========================================================
+   22. READING WIDTH UTILITY
+   ----------------------------------------------------------
+   Use this class in HTML whenever content is explicitly
+   intended to be read as prose.
+   ========================================================== */
+
+body.sel-002-publication .reading-width {
+  width: 100%;
+  max-width: var(--sel002-reading-width);
+}
+
+
+/*
+ * Do not use .reading-width on:
+ *
+ * - maps
+ * - image galleries
+ * - dashboards
+ * - tables
+ * - evidence grids
+ * - cards
+ * - atlas layouts
+ */
+
+
+/* ==========================================================
+   23. FULL-WIDTH UTILITY
+   ----------------------------------------------------------
+   Explicit utility for wide visual/data components.
+   ========================================================== */
+
+body.sel-002-publication .full-width {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* ==========================================================
+   24. RESPONSIVE — LARGE DESKTOP
+   ========================================================== */
+
+/*
+ * No additional max-width is introduced at large desktop
+ * sizes. The page simply uses the available global shell.
+ */
+
+@media (min-width: 1800px) {
+
+  body.sel-002-publication .publication-map-grid,
+  body.sel-002-publication .map-atlas-grid {
+    gap: clamp(2rem, 2.5vw, 3rem);
   }
 
 }
 
 
 /* ==========================================================
-   18. RESPONSIVE — MOBILE
+   25. RESPONSIVE — TABLET
+   ========================================================== */
+
+@media (max-width: 1100px) {
+
+  body.sel-002-publication .publication-evidence-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  body.sel-002-publication .publication-dashboard-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  body.sel-002-publication .project-media-grid--three {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ==========================================================
+   26. RESPONSIVE — MOBILE
    ========================================================== */
 
 @media (max-width: 900px) {
@@ -373,48 +637,91 @@ body.sel-002-publication .publication-results-grid {
     grid-template-columns: 1fr;
   }
 
-}
+  body.sel-002-publication .publication-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 
-
-/* ==========================================================
-   19. MOBILE
-   ========================================================== */
-
-@media (max-width: 640px) {
-
-  body.sel-002-publication .publication-layout-grid {
-    gap: 3rem;
+  body.sel-002-publication .project-media-grid,
+  body.sel-002-publication .project-media-grid--three {
+    grid-template-columns: 1fr;
   }
 
 }
 
 
 /* ==========================================================
-   20. ARCHITECTURAL SAFEGUARD
-   ----------------------------------------------------------
-   Do not add page-specific shell rules below this point.
+   27. SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 640px) {
+
+  body.sel-002-publication {
+    --sel002-reading-width: 100%;
+  }
+
+  body.sel-002-publication .publication-main p,
+  body.sel-002-publication .publication-main ul,
+  body.sel-002-publication .publication-main ol,
+  body.sel-002-publication .publication-text,
+  body.sel-002-publication .publication-reading {
+    max-width: 100%;
+  }
+
+}
+
+
+/* ==========================================================
+   28. ARCHITECTURAL RULE
    ========================================================== */
 
 /*
- * SEL-002 MUST inherit:
+ * PHASE 4 RULE:
  *
- *   .shell
- *   .container
- *   .container-wide
- *   .sel-shell
+ * FULL-WIDTH
+ * ----------
+ * Hero
+ * Maps
+ * Map atlas
+ * Evidence grids
+ * Results grids
+ * Image galleries
+ * Tables
+ * Cards
+ * Dashboards
+ * Major section backgrounds
  *
- * from:
  *
- *   assets/css/core/layout.css
+ * READING WIDTH
+ * -------------
+ * Paragraphs
+ * Methodology prose
+ * Explanatory text
+ * Research-question text
+ * Interpretation
+ * Notes
+ * Captions where appropriate
  *
- * There should be no SEL-002-specific:
  *
- *   max-width
- *   width: calc(...)
- *   margin-inline
+ * READING WIDTH:
  *
- * declarations targeting those global shell classes.
+ *   --sel002-reading-width: 760px;
  *
- * Page-specific CSS controls the CONTENT inside the shell,
- * not the shell itself.
+ *
+ * NEVER DO THIS:
+ *
+ *   .publication-main {
+ *       max-width: 1240px;
+ *   }
+ *
+ *   .publication-main {
+ *       max-width: 1400px;
+ *   }
+ *
+ *   .publication-main {
+ *       max-width: 1600px;
+ *   }
+ *
+ *
+ * The page width belongs to the global layout system.
+ * The reading width belongs to the content system.
  */
