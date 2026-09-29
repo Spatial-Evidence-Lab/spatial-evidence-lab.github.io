@@ -44,7 +44,7 @@
         { key: "geographicLevel", label: "Geographic level", type: "array" },
         { key: "status", label: "Status", source: "statusDefinitions", type: "array" }
     ];
-    const featuredIds = ["SEL-001", "SEL-002", "SEL-003"];
+    const featuredIds = ["SEL-001", "SEL-002", "SEL-004"];
 
     const escapeHTML = value => String(value ?? "")
         .replace(/&/g, "&amp;").replace(/</g, "&lt;")
@@ -117,15 +117,14 @@
                 <div class="project-card-body">
                     <div class="project-card-meta-top">
                         <span class="project-card-id">${escapeHTML(project.id)}</span>
-                        <span class="project-card-status">${escapeHTML(project.status || "")}</span>
                     </div>
                     <p class="project-card-domain">${escapeHTML(domainName(project))}</p>
                     <h3>${escapeHTML(project.title || "Untitled project")}</h3>
-                    <div class="project-card-themes" aria-label="Themes">${createThemeLabels(project)}</div>
+                    <div class="project-card-themes" aria-label="Themes">${createThemeLabels(project)}<span class="project-card-status">${escapeHTML(project.status || "")}</span></div>
                     ${project.summary ? `<p class="project-card-description">${escapeHTML(project.summary)}</p>` : ""}
                     <div class="project-card-bottom">
                         <span class="project-card-location">${escapeHTML(locationName(project))}</span>
-                        <span class="project-card-link-label">View project →</span>
+                        <span class="project-card-link-label">View project <span aria-hidden="true">→</span></span>
                     </div>
                 </div>
             </a>`;
@@ -245,7 +244,14 @@
             const [projectsResponse,taxonomyResponse]=await Promise.all([fetch(projectsURL,{cache:"no-store"}),fetch(taxonomyURL,{cache:"no-store"})]);
             if(!projectsResponse.ok||!taxonomyResponse.ok) throw new Error("Unable to load project catalogue data.");
             projects=await projectsResponse.json(); taxonomy=await taxonomyResponse.json();
-            initialiseFilters(); renderFeatured(); renderProjects();
+            initialiseFilters();
+            const requestedDomain = new URLSearchParams(window.location.search).get("domain");
+            if (requestedDomain) {
+                const match = projects.find(project => project.researchDomain?.key === requestedDomain);
+                if (match) filterState.researchDomain = [match.researchDomain.name];
+                syncFilterControls();
+            }
+            renderFeatured(); renderProjects();
         }catch(error){
             console.error("SEL project catalogue:",error); if(featuredGrid)featuredGrid.innerHTML=""; grid.innerHTML="";
             if(emptyState){emptyState.hidden=false;emptyState.textContent="Project catalogue could not be loaded.";}

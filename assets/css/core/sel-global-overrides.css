@@ -1,0 +1,106 @@
+
+/* =========================================================
+   SEL GLOBAL CONSISTENCY OVERRIDES — September 2026
+   Shared content edge, footer alignment and project card actions.
+   ========================================================= */
+:root { --sel-gutter: clamp(20px, 2.4vw, 36px); }
+.shell, .container, .container-wide, .sel-shell {
+  width: calc(100% - (2 * var(--sel-gutter))) !important;
+  max-width: none; margin-inline: auto; box-sizing: border-box;
+}
+.site-header .shell, .site-footer > .footer-grid, .site-footer > .footer-bottom {
+  width: calc(100% - (2 * var(--sel-gutter))); margin-inline: auto;
+}
+/* Keep unwrapped content in project pages on the same content grid. */
+body.sel-publication .publication-hero > .sel-shell,
+body.sel-publication .publication-main,
+body.sel-publication .publication-toc {
+  width: calc(100% - (2 * var(--sel-gutter))); margin-inline: auto; box-sizing: border-box;
+}
+body.sel-publication .publication-section { padding-inline: var(--sel-gutter); box-sizing: border-box; }
+body.sel-publication .publication-toc-wrapper { padding-inline: 0; }
+/* Footer: one shared left/right edge; omit the duplicate bottom-right brand label. */
+.site-footer { box-sizing: border-box; }
+.site-footer .footer-grid { width: calc(100% - (2 * var(--sel-gutter))); margin-inline: auto; }
+.site-footer .footer-bottom { width: calc(100% - (2 * var(--sel-gutter))); margin-inline: auto; }
+.site-footer .footer-bottom > span { display: none !important; }
+/* Project cards: compact status badge alongside the theme chips and button-like CTA. */
+.project-card-themes { display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+.project-card-status { display:inline-flex; align-items:center; width:max-content; padding:3px 8px; border:1px solid var(--sel-border, rgba(255,255,255,.18)); border-radius:3px; font-size:.66rem; line-height:1.35; font-weight:700; letter-spacing:.03em; }
+.project-card-link-label { display:inline-flex; align-items:center; gap:7px; width:max-content; padding:8px 12px; border:1px solid var(--sel-border, rgba(255,255,255,.2)); border-radius:3px; font-size:.76rem; font-weight:700; line-height:1.25; }
+.project-card-link:hover .project-card-link-label { background:var(--sel-accent, #36c6b0); color:#071318; }
+/* Publication contents bar is a compact eyebrow/navigation row below the header. */
+body.sel-002-publication .publication-toc-wrapper { margin:0; border-top:0; border-bottom:1px solid var(--sel-border); background:var(--sel-header-bg, #172a3a); }
+body.sel-002-publication .publication-toc { padding-block:12px; }
+body.sel-002-publication .publication-toc-label { display:none; }
+body.sel-002-publication .publication-toc-list { gap:8px clamp(12px,1.8vw,24px); }
+body.sel-002-publication .publication-toc-list a { font-size:.72rem; font-weight:700; letter-spacing:.035em; text-transform:uppercase; }
+body.sel-002-publication .publication-hero { padding-block:clamp(42px,6vw,84px); }
+body.sel-002-publication .publication-hero-grid { align-items:center; }
+body.sel-002-publication .publication-hero-media { min-width:0; }
+body.sel-002-publication .publication-hero-media img { display:block; width:100%; height:100%; min-height:280px; object-fit:cover; }
+body.sel-002-publication .publication-actions .sel-button { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:11px 16px; font-size:.76rem; font-weight:700; text-decoration:none; }
+body.sel-002-publication .atlas-viewer { width:100%; max-width:100%; }
+body.sel-002-publication .atlas-stage { min-width:0; }
+body.sel-002-publication .atlas-image-wrap { min-width:0; }
+body.sel-002-publication .atlas-image-wrap img { display:block; width:100%; height:auto; max-height:720px; object-fit:contain; }
+@media (max-width:760px) {
+  body.sel-002-publication .publication-hero-grid { grid-template-columns:1fr; }
+  body.sel-002-publication .publication-toc-list { flex-wrap:nowrap; overflow-x:auto; padding-bottom:3px; }
+  body.sel-002-publication .publication-section { padding-inline:var(--sel-gutter); }
+}
+
+.site-footer .footer-copyright { display:none !important; }
+
+/* SEL-002 map atlas: restore the two-column navigator + map-stage composition. */
+body.sel-002-publication .atlas-viewer {
+  display:grid;
+  grid-template-columns:minmax(190px, 23%) minmax(0,1fr);
+  min-height:460px;
+  margin-top:2rem;
+  overflow:hidden;
+  border:1px solid var(--sel-border, rgba(255,255,255,.16));
+  background:var(--sel-surface, #10262d);
+}
+body.sel-002-publication .atlas-index {
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  padding:10px;
+  background:#123d35;
+}
+body.sel-002-publication .atlas-item {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:5px;
+  width:100%;
+  padding:13px 12px;
+  border:1px solid transparent;
+  background:transparent;
+  color:#eaf5f1;
+  text-align:left;
+  cursor:pointer;
+}
+body.sel-002-publication .atlas-item > span { font-size:.67rem; font-weight:700; letter-spacing:.08em; color:#9ed8c9; }
+body.sel-002-publication .atlas-item > strong { font-size:.82rem; line-height:1.35; font-weight:600; }
+body.sel-002-publication .atlas-item:hover,
+body.sel-002-publication .atlas-item.is-active { background:rgba(255,255,255,.09); border-color:rgba(255,255,255,.13); }
+body.sel-002-publication .atlas-stage { display:flex; flex-direction:column; min-width:0; padding:clamp(14px,2vw,28px); }
+body.sel-002-publication .atlas-image-wrap { display:flex; align-items:center; justify-content:center; flex:1 1 auto; min-height:300px; background:#202423; }
+body.sel-002-publication .atlas-image-wrap img { width:100%; height:100%; max-height:640px; object-fit:contain; }
+body.sel-002-publication .atlas-caption { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:18px 0 12px; }
+body.sel-002-publication .atlas-caption p { margin:5px 0 0; }
+body.sel-002-publication .atlas-label { color:var(--sel002-accent); font-size:.68rem; font-weight:700; letter-spacing:.08em; }
+body.sel-002-publication .atlas-caption h3 { margin:0; font-size:1.1rem; }
+body.sel-002-publication .atlas-actions { display:flex; flex-wrap:wrap; gap:9px; }
+body.sel-002-publication .atlas-controls { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:14px; border-top:1px solid var(--sel-border); }
+body.sel-002-publication .atlas-step { padding:8px 12px; border:1px solid var(--sel-border); background:transparent; color:inherit; cursor:pointer; font-size:.76rem; }
+body.sel-002-publication .atlas-step:disabled { opacity:.35; cursor:default; }
+body.sel-002-publication #atlas-position { font-size:.72rem; font-weight:700; letter-spacing:.06em; }
+@media(max-width:760px) {
+  body.sel-002-publication .atlas-viewer { grid-template-columns:1fr; }
+  body.sel-002-publication .atlas-index { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  body.sel-002-publication .atlas-caption { align-items:flex-start; flex-direction:column; }
+  body.sel-002-publication .atlas-image-wrap { min-height:230px; }
+}
