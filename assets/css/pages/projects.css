@@ -113,34 +113,30 @@
     padding-bottom: 72px;
 }
 
-.projects-section-heading {
-    margin-bottom: 28px;
-}
-
 .featured-grid {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 1fr);
     gap: 24px;
 }
 
 .featured-project {
-    position: relative;
     display: flex;
+    flex-direction: column;
     min-width: 0;
     overflow: hidden;
     border: 1px solid var(--sel-border);
     background: var(--sel-surface);
     color: var(--sel-text);
     text-decoration: none;
-    isolation: isolate;
+    transition: border-color var(--sel-transition), transform var(--sel-transition), background-color var(--sel-transition);
 }
 
 .featured-project--primary {
-    min-height: 520px;
+    min-height: 0;
 }
 
 .featured-project--secondary {
-    min-height: 248px;
+    min-height: 0;
 }
 
 .featured-secondary-column {
@@ -151,37 +147,33 @@
 }
 
 .featured-project-image {
-    position: absolute;
-    inset: 0;
+    position: static;
+    display: block;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
     object-fit: cover;
-    z-index: -2;
+    z-index: auto;
+    background: var(--sel-brand-blue);
 }
 
 .featured-project::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(180deg, rgba(7,19,24,.05) 15%, rgba(7,19,24,.78) 62%, rgba(7,19,24,.98) 100%);
-}
-
-.featured-project--secondary::after {
-    background: linear-gradient(180deg, rgba(7,19,24,.12), rgba(7,19,24,.94));
+    display: none;
 }
 
 .featured-project-body {
-    align-self: end;
-    width: 100%;
-    padding: 34px;
-}
-
-.featured-project--secondary .featured-project-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
     padding: 24px;
 }
 
-.project-card-id,
+.featured-project--secondary .featured-project-body {
+    padding: 20px;
+}
+
 .featured-project-id {
     color: var(--sel-accent-soft);
     font-size: 12px;
@@ -190,7 +182,6 @@
     text-transform: uppercase;
 }
 
-.project-card-status,
 .featured-project-status {
     margin-left: 10px;
     color: var(--sel-positive);
@@ -211,14 +202,14 @@
     margin: 0;
     max-width: 700px;
     color: var(--sel-white);
-    font-size: clamp(28px, 3vw, 42px);
+    font-size: clamp(1.35rem, 2.2vw, 2rem);
     font-weight: 700;
     letter-spacing: -.035em;
-    line-height: 1.05;
+    line-height: 1.08;
 }
 
 .featured-project--secondary h3 {
-    font-size: 22px;
+    font-size: clamp(1.15rem, 1.6vw, 1.45rem);
 }
 
 .featured-project-description {
@@ -229,8 +220,8 @@
     line-height: 1.5;
 }
 
-.featured-project-link,
-.project-card-link {
+.featured-project-link {
+    margin-top: auto;
     color: var(--sel-accent-soft);
     font-size: 13px;
     font-weight: 800;
@@ -239,6 +230,17 @@
 .featured-project:hover,
 .featured-project:focus-visible {
     border-color: var(--sel-accent);
+    background: var(--sel-raised);
+    transform: translateY(-2px);
+}
+
+.featured-project:hover .featured-project-image,
+.featured-project:focus-visible .featured-project-image {
+    transform: scale(1.015);
+}
+
+.featured-project-image {
+    transition: transform .35s ease;
 }
 
 .featured-project:hover .featured-project-link,
@@ -252,22 +254,11 @@
     border-bottom: 1px solid var(--sel-border);
 }
 
-.catalogue-heading-row {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 28px;
-}
 
-.catalogue-heading-row h2,
-.projects-place-heading h2 {
-    margin: 8px 0 0;
-    color: var(--sel-white);
-    font-size: clamp(1.3rem, 1.9vw, 1.6rem);
-    font-weight: 600;
-    letter-spacing: -.025em;
-    line-height: 1.2;
+.project-count-row {
+    display: flex;
+    justify-content: flex-end;
+    margin: -14px 0 22px;
 }
 
 .project-count,
@@ -335,15 +326,15 @@
     color: var(--sel-accent-soft);
 }
 
-.project-grid {
+.projects-page .project-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
     width: 100%;
     max-width: none;
 }
 
-.project-card {
+.projects-page .project-card {
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -353,37 +344,37 @@
     transition: border-color var(--sel-transition), transform var(--sel-transition), background-color var(--sel-transition);
 }
 
-.project-card:hover {
+.projects-page .project-card:hover {
     border-color: var(--sel-accent);
     transform: translateY(-2px);
     background: var(--sel-raised);
 }
 
-.project-card-image-wrap {
+.projects-page .project-card-image-wrap {
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--sel-brand-blue);
 }
 
-.project-card-image {
+.projects-page .project-card-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform .35s ease;
 }
 
-.project-card:hover .project-card-image {
+.projects-page .project-card:hover .project-card-image {
     transform: scale(1.025);
 }
 
-.project-card-body {
+.projects-page .project-card-body {
     display: flex;
     flex: 1;
     flex-direction: column;
     padding: 18px;
 }
 
-.project-card-meta-top {
+.projects-page .project-card-meta-top {
     display: flex;
     align-items: baseline;
     gap: 6px;
@@ -391,7 +382,7 @@
     min-height: 18px;
 }
 
-.project-card-domain {
+.projects-page .project-card-domain {
     margin: 11px 0 7px;
     color: var(--sel-accent-soft);
     font-size: 11px;
@@ -399,7 +390,7 @@
     line-height: 1.4;
 }
 
-.project-card h3 {
+.projects-page .project-card h3 {
     margin: 0;
     color: var(--sel-white);
     font-size: 18px;
@@ -408,7 +399,7 @@
     line-height: 1.15;
 }
 
-.project-card-description {
+.projects-page .project-card-description {
     display: -webkit-box;
     margin: 10px 0 14px;
     overflow: hidden;
@@ -419,7 +410,7 @@
     -webkit-line-clamp: 4;
 }
 
-.project-card-bottom {
+.projects-page .project-card-bottom {
     display: flex;
     flex-wrap: wrap;
     gap: 7px 12px;
@@ -429,7 +420,7 @@
     padding-top: 10px;
 }
 
-.project-card-location {
+.projects-page .project-card-location {
     color: var(--sel-muted);
     font-size: 11px;
     line-height: 1.4;
@@ -651,7 +642,7 @@
     }
 
     .featured-project--primary {
-        min-height: 390px;
+        min-height: 0;
     }
 
     .featured-secondary-column {
@@ -667,21 +658,21 @@
         font-size: 28px;
     }
 
-    .catalogue-heading-row,
-    .projects-place-heading {
-        display: block;
+    .project-count-row {
+        justify-content: flex-start;
+        margin: -12px 0 18px;
     }
 
     .project-count,
     .map-project-count {
-        margin-top: 12px;
+        margin-top: 0;
     }
 
     .project-filters {
         grid-template-columns: 1fr;
     }
 
-    .project-grid {
+    .projects-page .project-grid {
         grid-template-columns: 1fr;
     }
 
@@ -709,7 +700,7 @@
 }
 
 @media (max-width: 420px) {
-    .project-card-body {
+     .projects-page .project-card-body {
         padding: 19px;
     }
 
@@ -1058,6 +1049,44 @@
 .filter-clear-all:focus-visible {
     color: var(--sel-text);
     outline: none;
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT CATALOGUE CARDS
+   Page-scoped so the Projects catalogue cannot alter the
+   reusable cards used by Home, Methods, Data, About or
+   individual project pages. Image first; text always below.
+   --------------------------------------------------------- */
+
+.projects-page .project-card-link {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.projects-page .project-card-image-wrap {
+    flex: 0 0 auto;
+    aspect-ratio: 16 / 9;
+}
+
+.projects-page .project-card-body {
+    flex: 1 1 auto;
+    min-height: 210px;
+}
+
+.projects-page .project-card h3 {
+    font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+    line-height: 1.2;
+}
+
+@media (max-width: 1100px) {
+    .projects-page .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 /* ---------------------------------------------------------
