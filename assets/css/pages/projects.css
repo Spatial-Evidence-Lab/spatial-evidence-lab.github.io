@@ -607,7 +607,11 @@
     color: var(--sel-accent-soft);
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1200px) {
+    .filter-toolbar {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .project-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -622,6 +626,10 @@
 }
 
 @media (max-width: 760px) {
+    .filter-toolbar {
+        grid-template-columns: 1fr;
+    }
+
     .projects-hero {
         padding: 54px 0 62px;
     }
@@ -802,7 +810,7 @@
 
 .filter-toolbar {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 10px;
 }
 
