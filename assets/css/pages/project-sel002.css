@@ -1,445 +1,617 @@
 /* ==========================================================
    SPATIAL EVIDENCE LAB
    SEL-002 — BANDON PUBLIC TRANSPORT ACCESSIBILITY
-   PHASE 4 — FULL-WIDTH LAYOUT / READING WIDTH
-   ----------------------------------------------------------
-   DESIGN-SYSTEM RULE
 
-   Full-width content:
-     Uses the available width inside the canonical
-     site shell and gutter.
+   PAGE-SPECIFIC STYLES ONLY
 
-   Reading content:
-     Uses a controlled reading measure of approximately
-     760px.
+   Responsibility:
+   - SEL-002 hero
+   - publication sections
+   - evidence presentation
+   - map atlas
+   - findings
+   - methodology presentation
+   - publication-specific callouts
+   - SEL-002 accents
+   - responsive publication behaviour
 
-   IMPORTANT:
-     This file does NOT define the global shell.
+   This file MUST NOT define:
+   - global shell
+   - global header
+   - global footer
+   - global navigation
+   - global typography
+   - global site colours
+   - global layout width
 
-     Global shell ownership remains in:
-       assets/css/core/layout.css
-
+   Global architecture:
+   design-system.css
+       ↓
+   layout.css
+       ↓
+   components.css
+       ↓
+   navigation.css
+       ↓
+   footer.css
+       ↓
+   project.css
+       ↓
+   project-sel002.css
    ========================================================== */
 
 
 /* ==========================================================
-   01. SEL-002 READING MEASURE
+   01. SEL-002 PAGE TOKENS
    ========================================================== */
 
 body.sel-002-publication {
 
   /*
-   * This is deliberately a READING width.
-   *
-   * It is NOT the width of the publication page.
-   *
-   * Do not replace this with:
-   *   1240px
-   *   1280px
-   *   1400px
-   *   1600px
-   *
-   * The page itself remains wide.
+   * These are publication-specific tokens only.
+   * Site-wide design tokens remain in design-system.css.
    */
 
   --sel002-reading-width: 760px;
 
+  /*
+   * SEL-002 accent colours.
+   *
+   * These are intentionally muted and page-specific.
+   * Do not redefine the site's primary palette here.
+   */
+
+  --sel002-accent: #4C8E8D;
+  --sel002-accent-soft: color-mix(
+    in srgb,
+    var(--sel002-accent) 12%,
+    transparent
+  );
+
+  --sel002-accent-mid: color-mix(
+    in srgb,
+    var(--sel002-accent) 24%,
+    transparent
+  );
+
+  --sel002-accent-strong: color-mix(
+    in srgb,
+    var(--sel002-accent) 72%,
+    transparent
+  );
+
+  --sel002-equity: #8A6887;
+  --sel002-accessibility: #4C8E8D;
+  --sel002-population: #B88A4A;
+
 }
 
 
 /* ==========================================================
-   02. FULL-WIDTH CONTENT PRINCIPLE
-   ========================================================== */
-
-/*
- * Content components should use the full width available
- * from the canonical global shell.
- *
- * There is intentionally no arbitrary max-width here.
- */
-
-body.sel-002-publication .publication-layout,
-body.sel-002-publication .publication-shell,
-body.sel-002-publication .publication-layout-grid,
-body.sel-002-publication .publication-main {
-  width: 100%;
-  min-width: 0;
-}
-
-
-/* ==========================================================
-   03. FULL-WIDTH HERO
+   02. SEL-002 PUBLICATION HERO
    ========================================================== */
 
 body.sel-002-publication .publication-hero {
-  width: 100%;
+  position: relative;
+  isolation: isolate;
 }
 
-body.sel-002-publication .publication-hero-inner {
-  width: 100%;
+body.sel-002-publication .publication-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: var(--sel-border, currentColor);
+  opacity: .25;
+  pointer-events: none;
 }
 
-body.sel-002-publication .publication-hero-content {
-  width: 100%;
+body.sel-002-publication .publication-hero .sel-hero-eyebrow {
+  color: var(--sel002-accent);
 }
 
+body.sel-002-publication .publication-hero .sel-hero-title {
+  max-width: 16ch;
+}
+
+body.sel-002-publication .publication-hero .sel-hero-summary {
+  max-width: var(--sel002-reading-width);
+}
+
+body.sel-002-publication .publication-hero .project-meta {
+  margin-top: 2rem;
+}
+
+
+/* ==========================================================
+   03. PUBLICATION INTRODUCTION
+   ========================================================== */
+
+body.sel-002-publication .publication-intro {
+  position: relative;
+}
+
+body.sel-002-publication .publication-intro .publication-lead {
+  max-width: var(--sel002-reading-width);
+}
+
+body.sel-002-publication .publication-intro .publication-lead strong {
+  color: var(--sel002-accent);
+}
+
+
+/* ==========================================================
+   04. PUBLICATION SECTION PRESENTATION
+   ========================================================== */
+
+body.sel-002-publication .publication-section {
+  position: relative;
+  scroll-margin-top: 120px;
+}
+
+body.sel-002-publication .publication-section + .publication-section {
+  margin-top: clamp(4rem, 7vw, 7rem);
+}
+
+body.sel-002-publication .publication-section-header {
+  display: grid;
+  grid-template-columns: minmax(100px, .22fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+body.sel-002-publication .publication-section-number {
+  color: var(--sel002-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+body.sel-002-publication .publication-section-title {
+  max-width: 18ch;
+}
+
+body.sel-002-publication .publication-section-intro {
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* ==========================================================
+   05. PUBLICATION READING CONTENT
+   ========================================================== */
 
 /*
- * Hero heading may be wide.
+ * Reading width is deliberately limited here.
  *
- * Do not constrain the entire hero to the reading width.
+ * The publication itself remains wide.
+ * Only prose is constrained for readability.
  */
 
-body.sel-002-publication .publication-hero h1,
-body.sel-002-publication .publication-hero .project-hero-title {
-  max-width: 1100px;
+body.sel-002-publication .publication-section > p,
+body.sel-002-publication .publication-section > ul,
+body.sel-002-publication .publication-section > ol,
+body.sel-002-publication .publication-section > blockquote,
+body.sel-002-publication .publication-text,
+body.sel-002-publication .publication-reading {
+  max-width: var(--sel002-reading-width);
 }
 
+body.sel-002-publication .publication-reading {
+  width: 100%;
+}
 
-/*
- * Hero introductory text can remain readable.
- */
-
-body.sel-002-publication .publication-hero .project-hero-summary,
-body.sel-002-publication .publication-hero .publication-section-lead {
-  max-width: var(--sel002-reading-width);
+body.sel-002-publication .publication-section p + p {
+  margin-top: 1.25rem;
 }
 
 
 /* ==========================================================
-   04. READING CONTENT
+   06. EXECUTIVE DASHBOARD
    ========================================================== */
 
-/*
- * Paragraphs and explanatory prose use the reading measure.
- */
-
-body.sel-002-publication .publication-main p,
-body.sel-002-publication .publication-main .publication-text,
-body.sel-002-publication .publication-main .publication-reading {
-  max-width: var(--sel002-reading-width);
+body.sel-002-publication .publication-dashboard {
+  position: relative;
+  margin-block: clamp(2.5rem, 5vw, 5rem);
 }
 
-
-/*
- * Lists containing explanatory prose should use the same
- * reading measure.
- */
-
-body.sel-002-publication .publication-main ul,
-body.sel-002-publication .publication-main ol {
-  max-width: var(--sel002-reading-width);
+body.sel-002-publication .publication-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
 }
 
+body.sel-002-publication .publication-dashboard-card {
+  position: relative;
+  padding: clamp(1.25rem, 2vw, 2rem);
+  border: 1px solid var(--sel-border);
+  background: var(--sel-surface);
+}
 
-/*
- * Blockquotes and explanatory notes remain readable.
- */
+body.sel-002-publication .publication-dashboard-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 3px;
+  height: 100%;
+  background: var(--sel002-accent);
+}
 
-body.sel-002-publication .publication-main blockquote,
-body.sel-002-publication .publication-main .publication-note,
-body.sel-002-publication .publication-main .project-key-message {
-  max-width: var(--sel002-reading-width);
+body.sel-002-publication .publication-dashboard-value {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--sel002-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+body.sel-002-publication .publication-dashboard-label {
+  display: block;
 }
 
 
 /* ==========================================================
-   05. READING TYPOGRAPHY
+   07. SEL-002 KEY METRICS
    ========================================================== */
 
-body.sel-002-publication .publication-main .publication-text > :first-child,
-body.sel-002-publication .publication-main .publication-reading > :first-child {
+body.sel-002-publication .sel002-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block: 2.5rem;
+}
+
+body.sel-002-publication .sel002-metric {
+  padding: 1.5rem;
+  border: 1px solid var(--sel-border);
+  background: var(--sel-surface);
+}
+
+body.sel-002-publication .sel002-metric-value {
+  display: block;
+  color: var(--sel002-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+body.sel-002-publication .sel002-metric-label {
+  display: block;
+  margin-top: .4rem;
+}
+
+
+/* ==========================================================
+   08. EVIDENCE PRESENTATION
+   ========================================================== */
+
+body.sel-002-publication .evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+body.sel-002-publication .evidence-card {
+  position: relative;
+  padding: clamp(1.25rem, 2vw, 2rem);
+  border: 1px solid var(--sel-border);
+  background: var(--sel-surface);
+}
+
+body.sel-002-publication .evidence-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--sel002-accent);
+}
+
+body.sel-002-publication .evidence-card h3 {
   margin-top: 0;
 }
 
-
-/*
- * Keep normal paragraph rhythm independent of the wide
- * page layout.
- */
-
-body.sel-002-publication .publication-main p {
-  margin-block: 0 1.25rem;
+body.sel-002-publication .evidence-card p:last-child {
+  margin-bottom: 0;
 }
 
-body.sel-002-publication .publication-main p + p {
+body.sel-002-publication .evidence-card--population::before {
+  background: var(--sel002-population);
+}
+
+body.sel-002-publication .evidence-card--accessibility::before {
+  background: var(--sel002-accessibility);
+}
+
+body.sel-002-publication .evidence-card--equity::before {
+  background: var(--sel002-equity);
+}
+
+
+/* ==========================================================
+   09. STUDY AREA PRESENTATION
+   ========================================================== */
+
+body.sel-002-publication .study-area-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+body.sel-002-publication .study-area-facts {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--sel-border);
+}
+
+body.sel-002-publication .study-area-fact {
+  display: grid;
+  grid-template-columns: minmax(110px, .7fr) minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--sel-border);
+}
+
+body.sel-002-publication .study-area-fact-value {
+  color: var(--sel002-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ==========================================================
+   10. METHODOLOGY PRESENTATION
+   ========================================================== */
+
+body.sel-002-publication .methodology-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-block: 2.5rem;
+}
+
+body.sel-002-publication .methodology-step {
+  position: relative;
+  padding: 1.5rem;
+  border: 1px solid var(--sel-border);
+  background: var(--sel-surface);
+}
+
+body.sel-002-publication .methodology-step-number {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--sel002-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+body.sel-002-publication .methodology-step h3 {
+  margin-top: 0;
+}
+
+body.sel-002-publication .methodology-step p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   11. EQUITY WEIGHTING PRESENTATION
+   ========================================================== */
+
+body.sel-002-publication .equity-model {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .45fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  margin-block: 3rem;
+}
+
+body.sel-002-publication .equity-model-visual {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  min-height: 110px;
+  border: 1px solid var(--sel-border);
+  overflow: hidden;
+}
+
+body.sel-002-publication .equity-model-access {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: color-mix(
+    in srgb,
+    var(--sel002-accessibility) 18%,
+    transparent
+  );
+}
+
+body.sel-002-publication .equity-model-vulnerability {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: color-mix(
+    in srgb,
+    var(--sel002-equity) 18%,
+    transparent
+  );
+}
+
+body.sel-002-publication .equity-model-label {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+
+/* ==========================================================
+   12. PUBLICATION CALLOUTS
+   ========================================================== */
+
+body.sel-002-publication .publication-callout {
+  position: relative;
+  margin-block: 2.5rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--sel-border);
+  background: var(--sel002-accent-soft);
+}
+
+body.sel-002-publication .publication-callout::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--sel002-accent);
+}
+
+body.sel-002-publication .publication-callout-title {
+  margin-top: 0;
+  color: var(--sel002-accent);
+}
+
+body.sel-002-publication .publication-callout > :last-child {
+  margin-bottom: 0;
+}
+
+
+/* Key message */
+
+body.sel-002-publication .publication-key-message {
+  margin-block: 3rem;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border-left: 4px solid var(--sel002-accent);
+  background: var(--sel002-accent-soft);
+}
+
+body.sel-002-publication .publication-key-message p {
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* Evidence boundary */
+
+body.sel-002-publication .evidence-boundary {
+  border-left-color: var(--sel002-equity);
+}
+
+
+/* ==========================================================
+   13. MAP ATLAS
+   ========================================================== */
+
+body.sel-002-publication .map-atlas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 3vw, 3rem);
+  width: 100%;
+  margin-top: 3rem;
+}
+
+body.sel-002-publication .map-atlas-item {
+  min-width: 0;
+}
+
+body.sel-002-publication .map-atlas-figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--sel-border);
+  background: var(--sel-surface);
+}
+
+body.sel-002-publication .map-atlas-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.sel-002-publication .map-atlas-figure a {
+  display: block;
+}
+
+body.sel-002-publication .map-atlas-caption {
+  padding-top: 1rem;
+}
+
+body.sel-002-publication .map-atlas-id {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--sel002-accent);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+body.sel-002-publication .map-atlas-title {
+  margin: 0;
+}
+
+body.sel-002-publication .map-atlas-key-message {
+  margin-top: .75rem;
+  max-width: var(--sel002-reading-width);
+}
+
+
+/* Map emphasis */
+
+body.sel-002-publication .map-atlas-item--primary {
+  grid-column: 1 / -1;
+}
+
+body.sel-002-publication .map-atlas-item--primary .map-atlas-figure {
+  max-width: none;
+}
+
+
+/* ==========================================================
+   14. MAP FIGURE PRESENTATION
+   ========================================================== */
+
+body.sel-002-publication .publication-map {
+  width: 100%;
+  margin-block: 2.5rem;
+}
+
+body.sel-002-publication .publication-map figure {
+  margin: 0;
+}
+
+body.sel-002-publication .publication-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.sel-002-publication .publication-map figcaption {
+  max-width: var(--sel002-reading-width);
   margin-top: 1rem;
 }
 
 
 /* ==========================================================
-   06. FULL-WIDTH MAPS
+   15. RESULTS PRESENTATION
    ========================================================== */
 
-/*
- * Maps are visual evidence and should not inherit the
- * 760px reading measure.
- */
-
-body.sel-002-publication .publication-main .project-map,
-body.sel-002-publication .publication-main .publication-map-atlas,
-body.sel-002-publication .publication-main .map-atlas {
-  width: 100%;
-  max-width: none;
+body.sel-002-publication .findings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
 }
 
-
-/* Map frame */
-
-body.sel-002-publication .project-map-frame {
-  width: 100%;
-  max-width: none;
-  overflow: hidden;
+body.sel-002-publication .finding-card {
+  padding: clamp(1.5rem, 2vw, 2rem);
+  border: 1px solid var(--sel-border);
+  background: var(--sel-surface);
 }
 
-
-/* Map images */
-
-body.sel-002-publication .project-map-frame picture,
-body.sel-002-publication .project-map-frame img,
-body.sel-002-publication .publication-map-item picture,
-body.sel-002-publication .publication-map-item img {
+body.sel-002-publication .finding-card-number {
   display: block;
-  width: 100%;
-  max-width: none;
-  height: auto;
+  margin-bottom: 1rem;
+  color: var(--sel002-accent);
+  font-variant-numeric: tabular-nums;
 }
 
-
-/* ==========================================================
-   07. MAP ATLAS
-   ========================================================== */
-
-body.sel-002-publication .publication-map-grid,
-body.sel-002-publication .map-atlas-grid {
-  width: 100%;
-  max-width: none;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+body.sel-002-publication .finding-card h3 {
+  margin-top: 0;
 }
 
-
-/*
- * Atlas captions are explanatory content, so they can use
- * a narrower reading measure without constraining the map.
- */
-
-body.sel-002-publication .publication-map-caption,
-body.sel-002-publication .map-atlas-item figcaption {
-  max-width: var(--sel002-reading-width);
-}
-
-
-/* ==========================================================
-   08. FULL-WIDTH EVIDENCE GRIDS
-   ========================================================== */
-
-body.sel-002-publication .publication-evidence-grid {
-  width: 100%;
-  max-width: none;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: clamp(1rem, 2vw, 1.75rem);
-}
-
-
-/*
- * Evidence cards are wide layout components.
- */
-
-body.sel-002-publication .publication-evidence-card {
-  min-width: 0;
-  width: 100%;
-}
-
-
-/*
- * Card prose remains readable.
- */
-
-body.sel-002-publication .publication-evidence-card p {
-  max-width: var(--sel002-reading-width);
-}
-
-
-/* ==========================================================
-   09. FULL-WIDTH RESULTS
-   ========================================================== */
-
-body.sel-002-publication .publication-results-grid {
-  width: 100%;
-  max-width: none;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: clamp(1rem, 2vw, 2rem);
-}
-
-body.sel-002-publication .publication-result {
-  min-width: 0;
-}
-
-
-/*
- * Result text remains readable.
- */
-
-body.sel-002-publication .publication-result p {
-  max-width: var(--sel002-reading-width);
-}
-
-
-/* ==========================================================
-   10. FULL-WIDTH DASHBOARD
-   ========================================================== */
-
-body.sel-002-publication .publication-dashboard {
-  width: 100%;
-  max-width: none;
-}
-
-body.sel-002-publication .publication-dashboard-grid {
-  width: 100%;
-  max-width: none;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-}
-
-
-/* ==========================================================
-   11. FULL-WIDTH CARDS
-   ========================================================== */
-
-body.sel-002-publication .project-card-grid,
-body.sel-002-publication .project-findings,
-body.sel-002-publication .project-boundaries,
-body.sel-002-publication .project-outputs {
-  width: 100%;
-  max-width: none;
-}
-
-
-/* ==========================================================
-   12. FULL-WIDTH IMAGE GALLERIES
-   ========================================================== */
-
-body.sel-002-publication .project-media-grid {
-  width: 100%;
-  max-width: none;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: clamp(1rem, 2vw, 2rem);
-}
-
-body.sel-002-publication .project-media-grid--three {
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-}
-
-body.sel-002-publication .project-media-item {
-  min-width: 0;
-  width: 100%;
-}
-
-body.sel-002-publication .project-media-item picture,
-body.sel-002-publication .project-media-item img {
-  display: block;
-  width: 100%;
-  max-width: none;
-  height: auto;
-}
-
-
-/* ==========================================================
-   13. FULL-WIDTH FIGURES
-   ========================================================== */
-
-body.sel-002-publication .project-figure {
-  width: 100%;
-  max-width: none;
-}
-
-body.sel-002-publication .project-figure picture,
-body.sel-002-publication .project-figure img {
-  display: block;
-  width: 100%;
-  max-width: none;
-  height: auto;
-}
-
-
-/*
- * Figure captions return to the reading measure.
- */
-
-body.sel-002-publication .project-figure-caption,
-body.sel-002-publication .project-figure-note {
-  max-width: var(--sel002-reading-width);
-}
-
-
-/* ==========================================================
-   14. FULL-WIDTH TABLES
-   ========================================================== */
-
-body.sel-002-publication .project-table-wrap {
-  width: 100%;
-  max-width: none;
-
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-body.sel-002-publication .project-table {
-  width: 100%;
-  max-width: none;
-}
-
-
-/*
- * Tables should NOT inherit the 760px reading measure.
- *
- * They are data-display components rather than prose.
- */
-
-
-/* ==========================================================
-   15. FULL-WIDTH METHODOLOGY STRUCTURE
-   ========================================================== */
-
-body.sel-002-publication .publication-method-grid,
-body.sel-002-publication .project-methodology {
-  width: 100%;
-  max-width: none;
-}
-
-
-/*
- * Methodology explanatory text remains readable.
- */
-
-body.sel-002-publication .publication-method-item p,
-body.sel-002-publication .project-methodology-text {
-  max-width: var(--sel002-reading-width);
+body.sel-002-publication .finding-card p:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -447,281 +619,371 @@ body.sel-002-publication .project-methodology-text {
    16. RESEARCH QUESTIONS
    ========================================================== */
 
-body.sel-002-publication .project-questions {
-  width: 100%;
-  max-width: none;
+body.sel-002-publication .research-question-list {
+  display: grid;
+  gap: 1px;
+  margin-block: 2.5rem;
+  border-top: 1px solid var(--sel-border);
 }
 
-body.sel-002-publication .project-question-text {
+body.sel-002-publication .research-question {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--sel-border);
+}
+
+body.sel-002-publication .research-question-number {
+  color: var(--sel002-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+body.sel-002-publication .research-question p {
   max-width: var(--sel002-reading-width);
+  margin: 0;
 }
 
 
 /* ==========================================================
-   17. CONTRIBUTION / INTERPRETATION
+   17. RESEARCH CONTRIBUTION
    ========================================================== */
 
-body.sel-002-publication .project-contribution {
-  width: 100%;
+body.sel-002-publication .contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
 }
 
-body.sel-002-publication .project-contribution-content {
-  min-width: 0;
+body.sel-002-publication .contribution-card {
+  padding: 1.5rem;
+  border-top: 3px solid var(--sel002-accent);
+  background: var(--sel-surface);
 }
 
-body.sel-002-publication .project-contribution-content p {
-  max-width: var(--sel002-reading-width);
+body.sel-002-publication .contribution-card h3 {
+  margin-top: 0;
 }
 
 
 /* ==========================================================
-   18. EVIDENCE BOUNDARIES
+   18. FURTHER INVESTIGATION / EXTENSIONS
    ========================================================== */
 
-body.sel-002-publication .project-boundary p {
-  max-width: var(--sel002-reading-width);
+body.sel-002-publication .extension-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 2.5rem;
+}
+
+body.sel-002-publication .extension-item {
+  padding: 1.5rem;
+  border: 1px solid var(--sel-border);
+  background: var(--sel-surface);
+}
+
+body.sel-002-publication .extension-item h3 {
+  margin-top: 0;
 }
 
 
 /* ==========================================================
-   19. OUTPUT DESCRIPTIONS
+   19. OUTPUTS
    ========================================================== */
 
-body.sel-002-publication .project-output-description {
-  max-width: var(--sel002-reading-width);
+body.sel-002-publication .outputs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+body.sel-002-publication .output-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid var(--sel-border);
+  background: var(--sel-surface);
+}
+
+body.sel-002-publication .output-card h3 {
+  margin-top: 0;
+}
+
+body.sel-002-publication .output-card .output-link {
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 
 
 /* ==========================================================
-   20. SECTION BACKGROUNDS
-   ----------------------------------------------------------
-   Backgrounds can span the full section while the content
-   remains governed by the global shell.
+   20. PUBLICATION TOC
    ========================================================== */
-
-body.sel-002-publication .publication-section--wide,
-body.sel-002-publication .project-section--wide {
-  width: 100%;
-}
-
 
 /*
- * If a section has a background, apply the background to
- * the section itself rather than constraining a background
- * wrapper to the reading width.
- */
-
-body.sel-002-publication .publication-section--wide > *,
-body.sel-002-publication .project-section--wide > * {
-  min-width: 0;
-}
-
-
-/* ==========================================================
-   21. FULL-WIDTH CONTENT WITHIN GRID
-   ========================================================== */
-
-body.sel-002-publication .publication-layout-grid > *,
-body.sel-002-publication .publication-main > * {
-  min-width: 0;
-}
-
-
-/*
- * Prevent long images, maps and tables from forcing the
- * layout wider than the viewport.
- */
-
-body.sel-002-publication img,
-body.sel-002-publication picture,
-body.sel-002-publication figure,
-body.sel-002-publication table {
-  max-width: 100%;
-}
-
-
-/* ==========================================================
-   22. READING WIDTH UTILITY
-   ----------------------------------------------------------
-   Use this class in HTML whenever content is explicitly
-   intended to be read as prose.
-   ========================================================== */
-
-body.sel-002-publication .reading-width {
-  width: 100%;
-  max-width: var(--sel002-reading-width);
-}
-
-
-/*
- * Do not use .reading-width on:
+ * SEL-002 uses the horizontal publication contents pattern.
  *
- * - maps
- * - image galleries
- * - dashboards
- * - tables
- * - evidence grids
- * - cards
- * - atlas layouts
+ * The permanent side TOC is intentionally NOT recreated here.
  */
 
-
-/* ==========================================================
-   23. FULL-WIDTH UTILITY
-   ----------------------------------------------------------
-   Explicit utility for wide visual/data components.
-   ========================================================== */
-
-body.sel-002-publication .full-width {
+body.sel-002-publication .publication-toc-wrapper {
   width: 100%;
-  max-width: none;
+}
+
+body.sel-002-publication .publication-toc {
+  width: 100%;
+}
+
+body.sel-002-publication .publication-toc-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.25rem;
+}
+
+body.sel-002-publication .publication-toc a {
+  position: relative;
+}
+
+body.sel-002-publication .publication-toc a[aria-current="true"] {
+  color: var(--sel002-accent);
+}
+
+body.sel-002-publication .publication-toc a[aria-current="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -.35rem;
+  height: 2px;
+  background: var(--sel002-accent);
 }
 
 
 /* ==========================================================
-   24. RESPONSIVE — LARGE DESKTOP
+   21. PUBLICATION PROGRESS
    ========================================================== */
 
-/*
- * No additional max-width is introduced at large desktop
- * sizes. The page simply uses the available global shell.
- */
+body.sel-002-publication .publication-progress {
+  position: fixed;
+  z-index: 1000;
+  inset: 0 0 auto;
+  height: 3px;
+  pointer-events: none;
+}
 
-@media (min-width: 1800px) {
+body.sel-002-publication .publication-progress-bar {
+  width: 0;
+  height: 100%;
+  background: var(--sel002-accent);
+  transform-origin: left center;
+}
 
-  body.sel-002-publication .publication-map-grid,
-  body.sel-002-publication .map-atlas-grid {
-    gap: clamp(2rem, 2.5vw, 3rem);
+
+/* ==========================================================
+   22. PUBLICATION TABLES
+   ========================================================== */
+
+body.sel-002-publication .publication-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-block: 2rem;
+}
+
+body.sel-002-publication .publication-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+}
+
+body.sel-002-publication .publication-table th {
+  color: var(--sel002-accent);
+  font-weight: 600;
+  text-align: left;
+}
+
+body.sel-002-publication .publication-table th,
+body.sel-002-publication .publication-table td {
+  padding: .85rem 1rem;
+  border-bottom: 1px solid var(--sel-border);
+  vertical-align: top;
+}
+
+
+/* ==========================================================
+   23. METHOD NOTES
+   ========================================================== */
+
+body.sel-002-publication .method-note {
+  max-width: var(--sel002-reading-width);
+  margin-block: 2rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--sel002-accent);
+  background: var(--sel002-accent-soft);
+}
+
+body.sel-002-publication .method-note-title {
+  margin-top: 0;
+  color: var(--sel002-accent);
+}
+
+
+/* ==========================================================
+   24. REFERENCES / SOURCE NOTES
+   ========================================================== */
+
+body.sel-002-publication .source-note {
+  max-width: var(--sel002-reading-width);
+  padding-top: 1rem;
+  border-top: 1px solid var(--sel-border);
+}
+
+body.sel-002-publication .source-note + .source-note {
+  margin-top: 1rem;
+}
+
+
+/* ==========================================================
+   25. PUBLICATION DOWNLOADS
+   ========================================================== */
+
+body.sel-002-publication .publication-downloads {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+body.sel-002-publication .publication-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--sel-border);
+  background: var(--sel-surface);
+}
+
+body.sel-002-publication .publication-download:hover {
+  border-color: var(--sel002-accent);
+}
+
+
+/* ==========================================================
+   26. RESPONSIVE PUBLICATION BEHAVIOUR
+   ========================================================== */
+
+@media (max-width: 1200px) {
+
+  body.sel-002-publication .publication-dashboard-grid,
+  body.sel-002-publication .sel002-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.sel-002-publication .methodology-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.sel-002-publication .findings-grid,
+  body.sel-002-publication .contribution-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
 }
 
 
-/* ==========================================================
-   25. RESPONSIVE — TABLET
-   ========================================================== */
+@media (max-width: 980px) {
 
-@media (max-width: 1100px) {
-
-  body.sel-002-publication .publication-evidence-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+  body.sel-002-publication .publication-section-header {
+    grid-template-columns: 1fr;
+    gap: .75rem;
   }
 
-  body.sel-002-publication .publication-dashboard-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-  body.sel-002-publication .project-media-grid--three {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-}
-
-
-/* ==========================================================
-   26. RESPONSIVE — MOBILE
-   ========================================================== */
-
-@media (max-width: 900px) {
-
-  body.sel-002-publication .publication-map-grid,
-  body.sel-002-publication .map-atlas-grid,
-  body.sel-002-publication .publication-results-grid {
+  body.sel-002-publication .study-area-grid,
+  body.sel-002-publication .equity-model {
     grid-template-columns: 1fr;
   }
 
-  body.sel-002-publication .publication-evidence-grid {
+  body.sel-002-publication .evidence-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.sel-002-publication .map-atlas {
     grid-template-columns: 1fr;
   }
 
-  body.sel-002-publication .publication-dashboard-grid {
-    grid-template-columns: 1fr;
+  body.sel-002-publication .map-atlas-item--primary {
+    grid-column: auto;
   }
 
-  body.sel-002-publication .project-media-grid,
-  body.sel-002-publication .project-media-grid--three {
+  body.sel-002-publication .extension-list,
+  body.sel-002-publication .outputs-grid,
+  body.sel-002-publication .publication-downloads {
     grid-template-columns: 1fr;
   }
 
 }
 
 
-/* ==========================================================
-   27. SMALL MOBILE
-   ========================================================== */
+@media (max-width: 720px) {
 
-@media (max-width: 640px) {
-
-  body.sel-002-publication {
-    --sel002-reading-width: 100%;
+  body.sel-002-publication .publication-section + .publication-section {
+    margin-top: 4rem;
   }
 
-  body.sel-002-publication .publication-main p,
-  body.sel-002-publication .publication-main ul,
-  body.sel-002-publication .publication-main ol,
-  body.sel-002-publication .publication-text,
-  body.sel-002-publication .publication-reading {
-    max-width: 100%;
+  body.sel-002-publication .publication-dashboard-grid,
+  body.sel-002-publication .sel002-metrics,
+  body.sel-002-publication .evidence-grid,
+  body.sel-002-publication .findings-grid,
+  body.sel-002-publication .contribution-grid,
+  body.sel-002-publication .methodology-flow {
+    grid-template-columns: 1fr;
+  }
+
+  body.sel-002-publication .research-question {
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
+
+  body.sel-002-publication .study-area-fact {
+    grid-template-columns: 1fr;
+    gap: .35rem;
+  }
+
+  body.sel-002-publication .equity-model-visual {
+    grid-template-columns: 1fr;
+  }
+
+  body.sel-002-publication .publication-toc-list {
+    display: grid;
+    gap: .75rem;
+  }
+
+  body.sel-002-publication .publication-toc a[aria-current="true"]::after {
+    bottom: -.2rem;
   }
 
 }
 
 
 /* ==========================================================
-   28. ARCHITECTURAL RULE
+   27. PRINT
    ========================================================== */
 
-/*
- * PHASE 4 RULE:
- *
- * FULL-WIDTH
- * ----------
- * Hero
- * Maps
- * Map atlas
- * Evidence grids
- * Results grids
- * Image galleries
- * Tables
- * Cards
- * Dashboards
- * Major section backgrounds
- *
- *
- * READING WIDTH
- * -------------
- * Paragraphs
- * Methodology prose
- * Explanatory text
- * Research-question text
- * Interpretation
- * Notes
- * Captions where appropriate
- *
- *
- * READING WIDTH:
- *
- *   --sel002-reading-width: 760px;
- *
- *
- * NEVER DO THIS:
- *
- *   .publication-main {
- *       max-width: 1240px;
- *   }
- *
- *   .publication-main {
- *       max-width: 1400px;
- *   }
- *
- *   .publication-main {
- *       max-width: 1600px;
- *   }
- *
- *
- * The page width belongs to the global layout system.
- * The reading width belongs to the content system.
- */
+@media print {
+
+  body.sel-002-publication .publication-progress,
+  body.sel-002-publication .publication-toc-wrapper {
+    display: none;
+  }
+
+  body.sel-002-publication .publication-section {
+    break-inside: avoid;
+  }
+
+  body.sel-002-publication .map-atlas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
