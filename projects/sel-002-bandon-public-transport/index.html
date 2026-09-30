@@ -193,7 +193,11 @@
         </div>
 
         <div class="sel002-boundary-note">
-          <strong>Geographic boundary note.</strong> The 9,863 figure is the aggregate population of the 34 source Small Areas; it is not an alternative estimate of the Bandon BUA population. This distinction should be retained whenever the Small Area indicators are interpreted.
+          <p>The study distinguishes between two principal geographic units:</p>
+          <p><strong>Bandon Built-Up Area (BUA):</strong> Defines the spatial boundary and headline study population, containing 8,196 residents (Census 2022).</p>
+          <p><strong>CSO Small Areas:</strong> Comprises 34 Central Statistics Office (CSO) Small Areas with an aggregate Census population of 9,863 residents, serving as the underlying statistical geography for indicator construction.</p>
+          <h3>Boundary Intersection &amp; Contextual Interpretation</h3>
+          <p>The two population figures represent different spatial extents and must not be directly compared as competing estimates of Bandon’s urban population. Because Small Area boundaries do not align perfectly with the BUA boundary, several Small Areas intersect the study area only partially and extend beyond the BUA perimeter. Consequently, Small Area metrics reflect complete statistical units and function as contextual, area-level proxies rather than exact populations inside the BUA.</p>
         </div>
       </section>
 
@@ -243,22 +247,22 @@
             <article class="sel002-dataset-card">
               <span>DATA 01</span><h4>Tailte &Eacute;ireann / CSO geography</h4>
               <p>BUA boundary and Small Area polygons used for spatial aggregation, masking and reporting.</p>
-              <dl><dt>Role</dt><dd>Study geography</dd><dt>Reference</dt><dd>BUA + Small Areas</dd></dl>
+              <dl><dt>Role</dt><dd>Study boundaries</dd><dt>Output</dt><dd>BUA boundary &amp; 34 Small Area reporting units</dd></dl>
             </article>
             <article class="sel002-dataset-card">
               <span>DATA 02</span><h4>OpenStreetMap</h4>
               <p>Street and pedestrian network topology used to calculate network-based walking catchments.</p>
-              <dl><dt>Role</dt><dd>Network accessibility</dd><dt>Output</dt><dd>5 / 10 / 15 minute catchments</dd></dl>
+              <dl><dt>Role</dt><dd>Pedestrian Network Topology</dd><dt>Output</dt><dd>5 / 10 / 15 minute walking catchments</dd></dl>
             </article>
             <article class="sel002-dataset-card">
               <span>DATA 03</span><h4>CSO Census 2022</h4>
               <p>Small Area population indicators used to construct the Population Vulnerability Index.</p>
-              <dl><dt>Role</dt><dd>Population evidence</dd><dt>Reference</dt><dd>Census 2022</dd></dl>
+              <dl><dt>Role</dt><dd>Socio-Demographic Data</dd><dt>Output</dt><dd>Population Vulnerability Index</dd></dl>
             </article>
             <article class="sel002-dataset-card">
               <span>DATA 04</span><h4>NTA / Bus &Eacute;ireann GTFS</h4>
               <p>Scheduled stop times and route shapes used to derive peak-period service frequency and headway.</p>
-              <dl><dt>Role</dt><dd>Transport supply</dd><dt>Output</dt><dd>Frequency + headway</dd></dl>
+              <dl><dt>Role</dt><dd>Public Transport Supply</dd><dt>Output</dt><dd>Peak-period trip frequencies &amp; headway metrics</dd></dl>
             </article>
           </div>
           <div class="sel002-repro-note"><strong>Reproducibility protocol.</strong> GTFS timetables and OpenStreetMap street graphs are time-sensitive inputs. The production workflow records dataset versioning, extraction timestamps, spatial transformations, filtering steps and classification breaks.</div>
@@ -276,18 +280,23 @@
         </div>
 
         <div class="sel002-method-diagram" aria-label="Analytical methodology diagram">
-          <div class="sel002-method-node node-census"><span>INPUT</span><strong>CENSUS 2022</strong><small>Population indicators</small></div>
-          <div class="sel002-method-branch branch-census" aria-hidden="true"></div>
-          <div class="sel002-method-node node-vulnerability"><span>01</span><strong>Population<br>Vulnerability</strong></div>
+          <div class="sel002-method-column-input">
+            <div class="sel002-method-node node-census"><span>INPUT</span><strong>CENSUS 2022</strong><small>Population indicators</small></div>
+            <div class="sel002-method-node node-osm"><span>INPUT</span><strong>OSM NETWORK</strong><small>Pedestrian network</small></div>
+            <div class="sel002-method-node node-gtfs"><span>INPUT</span><strong>GTFS</strong><small>Scheduled service</small></div>
+          </div>
 
-          <div class="sel002-method-node node-osm"><span>INPUT</span><strong>OSM NETWORK</strong><small>Pedestrian network</small></div>
-          <div class="sel002-method-node node-access"><span>02</span><strong>Walking Access</strong><small>5 / 10 / 15 min bands</small></div>
-          <div class="sel002-method-node node-gtfs"><span>INPUT</span><strong>GTFS</strong><small>Scheduled service</small></div>
-          <div class="sel002-method-node node-service"><span>03</span><strong>Service Availability</strong><small>Frequency + headway</small></div>
+          <div class="sel002-method-column-process">
+            <div class="sel002-method-node node-vulnerability"><span>01</span><strong>Population Vulnerability</strong></div>
+            <div class="sel002-method-node node-access"><span>02</span><strong>Walking Access</strong><small>5 / 10 / 15 min bands</small></div>
+            <div class="sel002-method-node node-service"><span>03</span><strong>Service Availability</strong><small>Frequency + headway</small></div>
+          </div>
 
-          <div class="sel002-method-node node-cai"><span>04</span><strong>Composite Accessibility</strong><small>Walking + service</small></div>
-          <div class="sel002-method-node node-deficit"><span>05</span><strong>Access Deficit</strong><small>1 &minus; CAI<sub>norm</sub></small></div>
-          <div class="sel002-method-node node-final"><span>06</span><strong>Final Screening</strong><small>Access deficit + vulnerability</small></div>
+          <div class="sel002-method-final-grid">
+            <div class="sel002-method-node node-cai"><span>04</span><strong>Composite Accessibility</strong><small>Walking + service</small></div>
+            <div class="sel002-method-node node-deficit"><span>05</span><strong>Access Deficit</strong><small>1 &minus; CAI<sub>norm</sub></small></div>
+            <div class="sel002-method-node node-final"><span>06</span><strong>Final Screening</strong><small>Access deficit + vulnerability</small></div>
+          </div>
         </div>
 
         <div class="sel002-method-details">
@@ -372,7 +381,7 @@
         </div>
 
         <div class="sel002-screening">
-          <div class="sel002-subsection-heading"><p class="eyebrow">SCREENING AREAS</p><h3>Four areas identified by the final spatial screening.</h3></div>
+          <div class="sel002-subsection-heading"><h3>Critical Screening Priority Hotspots</h3></div>
           <div class="sel002-screening-grid">
             <article class="sel002-screening-card" data-hotspot="gully"><div><h4>Gully Peripheral Zone</h4><dl><div><dt>Access deficit</dt><dd>0.892</dd></div><div><dt>Vulnerability</dt><dd>0.884</dd></div><div><dt>Screening score</dt><dd>0.947</dd></div></dl><a href="#map-atlas" data-map-index="6">View on map &rarr;</a></div></article>
             <article class="sel002-screening-card" data-hotspot="clough"><div><h4>Cloughmacsimon Area</h4><dl><div><dt>Access deficit</dt><dd>0.810</dd></div><div><dt>Vulnerability</dt><dd>0.865</dd></div><div><dt>Screening score</dt><dd>0.895</dd></div></dl><a href="#map-atlas" data-map-index="6">View on map &rarr;</a></div></article>
@@ -405,10 +414,11 @@
           <div class="sel002-subsection-heading"><h3>What should happen next?</h3></div>
           <p class="publication-intro">The analysis identifies conditions that warrant further investigation. It does not determine which interventions should be funded or implemented.</p>
           <div class="sel002-investigation-grid">
-            <article><span>01</span><h3>Walking connections</h3><p>Investigate pedestrian connections between peripheral residential areas and principal public transport stops, including local network continuity and site conditions.</p><a href="#map-atlas" data-map-index="1">Evidence: Maps 01.01 and 01.05 &rarr;</a></article>
-            <article><span>02</span><h3>Service availability</h3><p>Review scheduled frequency and headway where weaker walking accessibility coincides with lower scheduled service availability.</p><a href="#map-atlas" data-map-index="3">Evidence: Maps 01.03 and 01.05 &rarr;</a></article>
+            <article><span>01</span><h3>Pedestrian Infrastructure</h3><p>Conduct site-level footway audits, eliminate barrier gaps, and improve crossings along access corridors connecting peripheral estates to central stops.</p><strong>Target areas: Gully, Cloughmacsimon, Kilbrogan</strong><a href="#map-atlas" data-map-index="1">Evidence: Maps 01.01 and 01.05 &rarr;</a></article>
+            <article><span>02</span><h3>Service Optimization</h3><p>Re-examine scheduled headways and timetable alignments on regional routes connecting Bandon to Cork City during peak commuter periods.</p><strong>Target areas: Central &amp; Intermediate Corridors</strong><a href="#map-atlas" data-map-index="3">Evidence: Maps 01.03 and 01.05 &rarr;</a></article>
             <article><span>03</span><h3>Vulnerability context</h3><p>Use population vulnerability as contextual evidence when assessing areas with relatively weak transport-system accessibility.</p><a href="#map-atlas" data-map-index="4">Evidence: Maps 01.04 and 01.06 &rarr;</a></article>
-            <article><span>04</span><h3>Monitoring</h3><p>Repeat the framework over time to monitor changes in network access, scheduled service and spatial equity.</p><a href="#map-atlas" data-map-index="5">Evidence: Composite Accessibility workflow &rarr;</a></article>
+            <article><span>04</span><h3>Flexible Transit (DRT)</h3><p>Evaluate Demand-Responsive Transit (DRT) or micro-transit feeder options for peripheral zones outside 15-minute walking catchments.</p><strong>Target areas: Outer Peripheral neighborhoods</strong><a href="#map-atlas" data-map-index="5">Evidence: Composite Accessibility workflow &rarr;</a></article>
+            <article><span>05</span><h3>Systematic Monitoring</h3><p>Re-run the GIS workflow periodically as GTFS schedules, pedestrian networks, and Census releases update.</p><strong>Target areas: Bandon BUA &amp; Regional Settlements</strong><a href="#map-atlas" data-map-index="5">Evidence: Composite Accessibility workflow &rarr;</a></article>
           </div>
         </div>
       </section>

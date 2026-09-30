@@ -337,14 +337,23 @@ body.project-sel002 .sel002-study-map img { display: block; width: 100%; height:
 body.project-sel002 .sel002-study-map figcaption { display: none; }
 body.project-sel002 .sel002-boundary-note {
   margin-top: 24px;
-  padding: 15px 18px;
+  padding: 18px 20px;
   background: var(--sel-raised);
   border: 1px solid var(--sel-border);
   color: var(--sel-text-soft);
   font-size: .72rem;
-  line-height: 1.55;
+  line-height: 1.6;
 }
+body.project-sel002 .sel002-boundary-note p { margin: 0 0 10px; }
+body.project-sel002 .sel002-boundary-note p:last-child { margin-bottom: 0; }
 body.project-sel002 .sel002-boundary-note strong { color: var(--sel-white); }
+body.project-sel002 .sel002-boundary-note h3 {
+  margin: 18px 0 10px;
+  color: var(--sel-text);
+  font-size: .86rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
 
 /* ==========================================================
    03 EVIDENCE
@@ -424,15 +433,28 @@ body.project-sel002 .sel002-repro-strip strong { color: var(--sel-text-soft); }
 
 body.project-sel002 .sel002-method-diagram {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: auto auto auto auto auto auto;
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 12px;
   align-items: stretch;
   position: relative;
   padding: clamp(22px, 3vw, 36px);
   background: var(--sel002-card);
   border: 1px solid var(--sel-border);
   overflow: hidden;
+}
+body.project-sel002 .sel002-method-column-input,
+body.project-sel002 .sel002-method-column-process {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(86px, 1fr));
+  gap: 10px;
+  min-width: 0;
+}
+body.project-sel002 .sel002-method-final-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  align-self: end;
+  min-width: 0;
 }
 body.project-sel002 .sel002-method-node {
   min-width: 0;
@@ -447,15 +469,15 @@ body.project-sel002 .sel002-method-node {
 body.project-sel002 .sel002-method-node span { margin-bottom: 6px; color: var(--sel-muted); font-size: .57rem; font-weight: 800; letter-spacing: .1em; }
 body.project-sel002 .sel002-method-node strong { color: var(--sel-white); font-size: .76rem; line-height: 1.25; }
 body.project-sel002 .sel002-method-node small { margin-top: 5px; color: var(--sel-body); font-size: .61rem; line-height: 1.35; }
-body.project-sel002 .node-census { grid-column: 1 / span 2; grid-row: 1; border-top: 3px solid var(--sel002-vulnerability); }
-body.project-sel002 .node-vulnerability { grid-column: 4 / span 2; grid-row: 1; border-top: 3px solid var(--sel002-vulnerability); }
-body.project-sel002 .node-osm { grid-column: 1 / span 2; grid-row: 2; border-top: 3px solid var(--sel002-access); }
-body.project-sel002 .node-access { grid-column: 4 / span 2; grid-row: 2; border-top: 3px solid var(--sel002-access); }
-body.project-sel002 .node-gtfs { grid-column: 1 / span 2; grid-row: 3; border-top: 3px solid var(--sel002-service); }
-body.project-sel002 .node-service { grid-column: 4 / span 2; grid-row: 3; border-top: 3px solid var(--sel002-service); }
-body.project-sel002 .node-cai { grid-column: 4 / span 2; grid-row: 4; align-self: stretch; border-top: 3px solid var(--sel002-composite); }
-body.project-sel002 .node-deficit { grid-column: 4 / span 2; grid-row: 5; align-self: stretch; border-top: 3px solid var(--sel002-composite); }
-body.project-sel002 .node-final { grid-column: 4 / span 2; grid-row: 6; align-self: stretch; border-top: 3px solid var(--sel002-screening); }
+body.project-sel002 .node-census { border-top: 3px solid var(--sel002-vulnerability); }
+body.project-sel002 .node-vulnerability { border-top: 3px solid var(--sel002-vulnerability); }
+body.project-sel002 .node-osm { border-top: 3px solid var(--sel002-access); }
+body.project-sel002 .node-access { border-top: 3px solid var(--sel002-access); }
+body.project-sel002 .node-gtfs { border-top: 3px solid var(--sel002-service); }
+body.project-sel002 .node-service { border-top: 3px solid var(--sel002-service); }
+body.project-sel002 .node-cai { border-top: 3px solid var(--sel002-composite); }
+body.project-sel002 .node-deficit { border-top: 3px solid var(--sel002-composite); }
+body.project-sel002 .node-final { border-top: 3px solid var(--sel002-screening); }
 body.project-sel002 .sel002-method-branch { display: none; }
 body.project-sel002 .sel002-method-diagram::after { display: none; }
 body.project-sel002 .sel002-method-details { margin-top: 14px; }
@@ -573,11 +595,13 @@ body.project-sel002 .sel002-contribution-grid h3 { margin: 9px 0 10px; }
 body.project-sel002 .sel002-contribution-grid p { margin: 0; color: var(--sel-body); font-size: .72rem; line-height: 1.55; }
 body.project-sel002 .sel002-investigation { margin-top: 48px; }
 body.project-sel002 .sel002-investigation > .publication-intro { max-width: 760px; }
-body.project-sel002 .sel002-investigation-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 22px; }
-body.project-sel002 .sel002-investigation-grid article { padding: 20px; border: 1px solid var(--sel-border); background: var(--sel-surface); }
+body.project-sel002 .sel002-investigation-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; margin-top: 22px; }
+body.project-sel002 .sel002-investigation-grid article { padding: 20px; border: 1px solid var(--sel-border); background: var(--sel-surface); display: flex; flex-direction: column; min-width: 0; }
 body.project-sel002 .sel002-investigation-grid article > span { color: var(--sel-muted); font-size: .61rem; font-weight: 800; }
 body.project-sel002 .sel002-investigation-grid h3 { margin: 9px 0 9px; font-size: .9rem; }
-body.project-sel002 .sel002-investigation-grid p { margin: 0 0 14px; color: var(--sel-body); font-size: .68rem; line-height: 1.55; }
+body.project-sel002 .sel002-investigation-grid p { margin: 0 0 12px; color: var(--sel-body); font-size: .68rem; line-height: 1.55; }
+body.project-sel002 .sel002-investigation-grid article > strong { margin: 0 0 14px; color: var(--sel-text-soft); font-size: .63rem; line-height: 1.45; }
+body.project-sel002 .sel002-investigation-grid a { margin-top: auto; }
 
 /* ==========================================================
    08 OUTPUTS
@@ -710,16 +734,8 @@ body.project-sel002 .sel002-map-modal-footer button:disabled { opacity: .35; cur
   body.project-sel002 .sel002-overview-grid,
   body.project-sel002 .sel002-study-grid { grid-template-columns: 1fr; }
   body.project-sel002 .sel002-overview-cards { grid-template-columns: repeat(3, minmax(0,1fr)); }
-  body.project-sel002 .sel002-method-diagram { grid-template-columns: repeat(2, minmax(0,1fr)); grid-template-rows: auto; }
-  body.project-sel002 .node-census,
-  body.project-sel002 .node-vulnerability,
-  body.project-sel002 .node-osm,
-  body.project-sel002 .node-access,
-  body.project-sel002 .node-gtfs,
-  body.project-sel002 .node-service,
-  body.project-sel002 .node-cai,
-  body.project-sel002 .node-deficit,
-  body.project-sel002 .node-final { grid-column: auto; grid-row: auto; }
+  body.project-sel002 .sel002-method-diagram { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  body.project-sel002 .sel002-method-final-grid { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0,1fr)); }
   body.project-sel002 .sel002-method-diagram::after { display: none; }
   body.project-sel002 .sel002-model-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   body.project-sel002 .sel002-findings-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
