@@ -1,1243 +1,770 @@
 /* ==========================================================
-   SEL PROJECT TYPE B — PUBLICATION PROJECT
-   SEL-002 is the canonical publication implementation.
-   This stylesheet contains only publication-specific treatment.
-   Global shell/layout remains owned by core/layout.css.
+   SPATIAL EVIDENCE LAB — SEL-002 PAGE COMPOSITION
+   ----------------------------------------------------------
+   Scope: body.project-sel002 only.
+   This file is intentionally loaded LAST on the page so that
+   SEL-002 can compose the shared SEL system without changing it.
+   No global selectors are introduced.
    ========================================================== */
+
+body.project-sel002 {
+  --sel002-access: #3A97A0;
+  --sel002-service: #5F9478;
+  --sel002-vulnerability: #8C6BB1;
+  --sel002-composite: #E48458;
+  --sel002-screening: #B86B70;
+  --sel002-card: #10262D;
+  --sel002-card-dark: #163139;
+  --sel002-line: rgba(255,255,255,.10);
+  --sel002-max: 1440px;
+}
+
+body.project-sel002 .publication-progress { z-index: 1300; }
+body.project-sel002 .publication-main { width: 100%; margin: 0; }
+body.project-sel002 .publication-section { scroll-margin-top: calc(var(--nav-height, 68px) + 62px); }
 
 /* ==========================================================
-   SPATIAL EVIDENCE LAB
-   SEL-002 — BANDON PUBLIC TRANSPORT ACCESSIBILITY
-
-   PAGE-SPECIFIC STYLES ONLY
-
-   Responsibility:
-   - SEL-002 hero
-   - publication sections
-   - evidence presentation
-   - map atlas
-   - findings
-   - methodology presentation
-   - publication-specific callouts
-   - SEL-002 accents
-   - responsive publication behaviour
-
-   This file MUST NOT define:
-   - global shell
-   - global header
-   - global footer
-   - global navigation
-   - global typography
-   - global site colours
-   - global layout width
-
-   Global architecture:
-   design-system.css
-       ↓
-   layout.css
-       ↓
-   components.css
-       ↓
-   navigation.css
-       ↓
-   footer.css
-       ↓
-   project.css
-       ↓
-   project-sel002.css
+   STICKY EVIDENCE NAVIGATOR
    ========================================================== */
 
+body.project-sel002 .sel002-evidence-nav {
+  position: sticky;
+  top: var(--nav-height, 68px);
+  z-index: 1100;
+  width: 100%;
+  background: rgba(16,38,45,.98);
+  border-bottom: 1px solid var(--sel-border);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+body.project-sel002 .sel002-evidence-nav-inner {
+  width: calc(100% - (2 * var(--sel-gutter)));
+  margin-inline: auto;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+body.project-sel002 .sel002-evidence-nav-label {
+  flex: 0 0 auto;
+  color: var(--sel-accent-soft);
+  font-size: .63rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body.project-sel002 .sel002-evidence-nav-links {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+body.project-sel002 .sel002-evidence-nav-links::-webkit-scrollbar { display: none; }
+
+body.project-sel002 .sel002-evidence-nav-links a {
+  flex: 0 0 auto;
+  color: var(--sel-text-soft);
+  text-decoration: none;
+  font-size: .66rem;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+}
+
+body.project-sel002 .sel002-evidence-nav-links a:hover,
+body.project-sel002 .sel002-evidence-nav-links a:focus-visible {
+  color: #fff;
+  border-bottom-color: var(--sel-accent-soft);
+}
 
 /* ==========================================================
-   01. SEL-002 PAGE TOKENS
+   HERO + SECTION HEAD GRID — composition only
    ========================================================== */
 
-body.sel-002-publication {
-
-  /*
-   * These are publication-specific tokens only.
-   * Site-wide design tokens remain in design-system.css.
-   */
-
-  --sel002-reading-width: 760px;
-
-  /*
-   * SEL-002 accent colours.
-   *
-   * These are intentionally muted and page-specific.
-   * Do not redefine the site's primary palette here.
-   */
-
-  --sel002-accent: #4C8E8D;
-  --sel002-accent-soft: color-mix(
-    in srgb,
-    var(--sel002-accent) 12%,
-    transparent
-  );
-
-  --sel002-accent-mid: color-mix(
-    in srgb,
-    var(--sel002-accent) 24%,
-    transparent
-  );
-
-  --sel002-accent-strong: color-mix(
-    in srgb,
-    var(--sel002-accent) 72%,
-    transparent
-  );
-
-  --sel002-equity: #8A6887;
-  --sel002-accessibility: #4C8E8D;
-  --sel002-population: #B88A4A;
-
-}
-
-
-/* ==========================================================
-   02. SEL-002 PUBLICATION HERO
-   ========================================================== */
-
-body.sel-002-publication .publication-hero {
-  position: relative;
-  isolation: isolate;
-}
-
-body.sel-002-publication .publication-hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 1px;
-  background: var(--sel-border, currentColor);
-  opacity: .25;
-  pointer-events: none;
-}
-
-body.sel-002-publication .publication-hero .sel-hero-eyebrow {
-  color: var(--sel002-accent);
-}
-
-body.sel-002-publication .publication-hero .sel-hero-title {
-  max-width: 16ch;
-}
-
-body.sel-002-publication .publication-hero .sel-hero-summary {
-  max-width: var(--sel002-reading-width);
-}
-
-body.sel-002-publication .publication-hero .project-meta {
-  margin-top: 2rem;
-}
-
-
-/* ==========================================================
-   03. PUBLICATION INTRODUCTION
-   ========================================================== */
-
-body.sel-002-publication .publication-intro {
-  position: relative;
-}
-
-body.sel-002-publication .publication-intro .publication-lead {
-  max-width: var(--sel002-reading-width);
-}
-
-body.sel-002-publication .publication-intro .publication-lead strong {
-  color: var(--sel002-accent);
-}
-
-
-/* ==========================================================
-   04. PUBLICATION SECTION PRESENTATION
-   ========================================================== */
-
-body.sel-002-publication .publication-section {
-  position: relative;
-  scroll-margin-top: 120px;
-}
-
-body.sel-002-publication .publication-section + .publication-section {
-  margin-top: clamp(4rem, 7vw, 7rem);
-}
-
-body.sel-002-publication .publication-section-header {
+body.project-sel002 .publication-hero-grid {
   display: grid;
-  grid-template-columns: minmax(100px, .22fr) minmax(0, 1fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+}
+
+/* Canonical SEL section hierarchy — matches Home / Methods / Data / About.
+   Keep the shared three-line structure: section ID → title → description. */
+body.project-sel002 .publication-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
   align-items: start;
-  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 52px;
 }
 
-body.sel-002-publication .publication-section-number {
-  color: var(--sel002-accent);
-  font-variant-numeric: tabular-nums;
+body.project-sel002 .publication-section-head > div {
+  display: block;
+  min-width: 0;
 }
 
-body.sel-002-publication .publication-section-title {
-  max-width: 18ch;
+body.project-sel002 .publication-section-head h2 {
+  max-width: 100%;
+  margin: 0;
+  color: var(--sel-text);
+  font-family: var(--sans);
+  font-size: var(--sel-section-subtitle-size);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.35;
 }
 
-body.sel-002-publication .publication-section-intro {
-  max-width: var(--sel002-reading-width);
+body.project-sel002 .publication-section-head .publication-intro {
+  max-width: 760px;
+  margin: 0;
+  color: var(--sel-body);
+  font-family: var(--sans);
+  font-size: var(--sel-section-description-size);
+  font-style: normal;
+  font-weight: var(--sel-body-weight);
+  letter-spacing: 0;
+  line-height: 1.55;
 }
-
 
 /* ==========================================================
-   05. PUBLICATION READING CONTENT
+   HERO — shared SEL typography/colour preserved
    ========================================================== */
 
-/*
- * Reading width is deliberately limited here.
- *
- * The publication itself remains wide.
- * Only prose is constrained for readability.
- */
-
-body.sel-002-publication .publication-section > p,
-body.sel-002-publication .publication-section > ul,
-body.sel-002-publication .publication-section > ol,
-body.sel-002-publication .publication-section > blockquote,
-body.sel-002-publication .publication-text,
-body.sel-002-publication .publication-reading {
-  max-width: var(--sel002-reading-width);
+body.project-sel002 .sel002-hero { padding-block: clamp(42px, 6vw, 84px); }
+body.project-sel002 .sel002-hero .publication-hero-grid { align-items: stretch; }
+body.project-sel002 .sel002-hero .publication-hero-copy { display: flex; flex-direction: column; justify-content: center; }
+body.project-sel002 .sel002-hero .publication-lede { max-width: 620px; }
+body.project-sel002 .sel002-hero-meta {
+  margin: 14px 0 0;
+  color: var(--sel-text-soft);
+  font-size: .69rem;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: .045em;
 }
+body.project-sel002 .sel002-hero .publication-actions { margin-top: 20px; }
+body.project-sel002 .sel002-hero-map { min-width: 0; height: 100%; margin: 0; }
+body.project-sel002 .sel002-hero-map picture,
+body.project-sel002 .sel002-hero-map img { display: block; width: 100%; height: 100%; }
+body.project-sel002 .sel002-hero-map img { min-height: 320px; object-fit: cover; }
 
-body.sel-002-publication .publication-reading {
-  width: 100%;
-}
-
-body.sel-002-publication .publication-section p + p {
-  margin-top: 1.25rem;
-}
-
-
-/* ==========================================================
-   06. EXECUTIVE DASHBOARD
-   ========================================================== */
-
-body.sel-002-publication .publication-dashboard {
-  position: relative;
-  margin-block: clamp(2.5rem, 5vw, 5rem);
-}
-
-body.sel-002-publication .publication-dashboard-grid {
+body.project-sel002 .sel002-stat-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
+  width: 50%;
+  margin-left: 50%;
+  border: 1px solid var(--sel-border);
+  border-top: 0;
+  background: var(--sel-bg);
 }
 
-body.sel-002-publication .publication-dashboard-card {
+body.project-sel002 .sel002-stat {
+  min-width: 0;
+  min-height: 62px;
+  padding: 9px 10px 8px;
+  border-right: 1px solid var(--sel-border);
   position: relative;
-  padding: clamp(1.25rem, 2vw, 2rem);
-  border: 1px solid var(--sel-border);
-  background: var(--sel-surface);
+  text-align: center;
 }
-
-body.sel-002-publication .publication-dashboard-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto auto 0;
-  width: 3px;
-  height: 100%;
-  background: var(--sel002-accent);
-}
-
-body.sel-002-publication .publication-dashboard-value {
-  display: block;
-  margin-bottom: .35rem;
-  color: var(--sel002-accent);
-  font-variant-numeric: tabular-nums;
-}
-
-body.sel-002-publication .publication-dashboard-label {
-  display: block;
-}
-
-
-/* ==========================================================
-   07. SEL-002 KEY METRICS
-   ========================================================== */
-
-body.sel-002-publication .sel002-metrics {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin-block: 2.5rem;
-}
-
-body.sel-002-publication .sel002-metric {
-  padding: 1.5rem;
-  border: 1px solid var(--sel-border);
-  background: var(--sel-surface);
-}
-
-body.sel-002-publication .sel002-metric-value {
-  display: block;
-  color: var(--sel002-accent);
-  font-variant-numeric: tabular-nums;
-}
-
-body.sel-002-publication .sel002-metric-label {
-  display: block;
-  margin-top: .4rem;
-}
-
-
-/* ==========================================================
-   08. EVIDENCE PRESENTATION
-   ========================================================== */
-
-body.sel-002-publication .evidence-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  width: 100%;
-  margin-top: 2.5rem;
-}
-
-body.sel-002-publication .evidence-card {
-  position: relative;
-  padding: clamp(1.25rem, 2vw, 2rem);
-  border: 1px solid var(--sel-border);
-  background: var(--sel-surface);
-}
-
-body.sel-002-publication .evidence-card::before {
+body.project-sel002 .sel002-stat:last-child { border-right: 0; }
+body.project-sel002 .sel002-stat::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   height: 3px;
-  background: var(--sel002-accent);
+  background: var(--sel-accent);
 }
-
-body.sel-002-publication .evidence-card h3 {
-  margin-top: 0;
+body.project-sel002 .sel002-stat[data-accent="access"]::before { background: var(--sel002-access); }
+body.project-sel002 .sel002-stat[data-accent="service"]::before { background: var(--sel002-service); }
+body.project-sel002 .sel002-stat[data-accent="hotspot"]::before { background: var(--sel002-screening); }
+body.project-sel002 .sel002-stat[data-accent="composite"]::before { background: var(--sel002-composite); }
+body.project-sel002 .sel002-stat strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--sel-white);
+  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.04em;
 }
-
-body.sel-002-publication .evidence-card p:last-child {
-  margin-bottom: 0;
+body.project-sel002 .sel002-stat span {
+  display: block;
+  max-width: 12ch;
+  margin-inline: auto;
+  color: var(--sel-body);
+  font-size: .58rem;
+  line-height: 1.4;
+  font-weight: 600;
 }
-
-body.sel-002-publication .evidence-card--population::before {
-  background: var(--sel002-population);
-}
-
-body.sel-002-publication .evidence-card--accessibility::before {
-  background: var(--sel002-accessibility);
-}
-
-body.sel-002-publication .evidence-card--equity::before {
-  background: var(--sel002-equity);
-}
-
 
 /* ==========================================================
-   09. STUDY AREA PRESENTATION
+   SHARED SECTION COMPOSITION
    ========================================================== */
 
-body.sel-002-publication .study-area-grid {
+body.project-sel002 .sel002-section {
+  padding-block: clamp(58px, 7vw, 96px);
+  background: var(--sel-bg);
+}
+body.project-sel002 .sel002-section-dark { background: var(--sel-section); }
+body.project-sel002 .sel002-section + .sel002-section { margin-top: 0; }
+body.project-sel002 .sel002-section-head { margin-bottom: 52px; }
+body.project-sel002 .sel002-section-head .publication-intro { max-width: 760px; }
+body.project-sel002 .sel002-section h2 { max-width: 100%; }
+body.project-sel002 .sel002-subsection-heading { margin-bottom: 22px; }
+body.project-sel002 .sel002-subsection-heading .eyebrow { margin-bottom: 8px; }
+body.project-sel002 .sel002-subsection-heading h3 { margin: 0; }
+body.project-sel002 .sel002-subsection-heading > p:not(.eyebrow) { max-width: 780px; margin: 10px 0 0; color: var(--sel-body); }
+
+/* ==========================================================
+   01 OVERVIEW
+   ========================================================== */
+
+body.project-sel002 .sel002-overview-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  gap: clamp(28px, 4vw, 56px);
   align-items: start;
 }
-
-body.sel-002-publication .study-area-facts {
+body.project-sel002 .sel002-overview-copy > p { max-width: 650px; }
+body.project-sel002 .sel002-principal-finding {
+  margin-top: 28px;
+  padding: 20px 22px;
+  background: var(--sel-box);
+  border-left: 3px solid var(--sel002-screening);
+}
+body.project-sel002 .sel002-principal-finding span,
+body.project-sel002 .sel002-card-index {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--sel-accent-soft);
+  font-size: .63rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+}
+body.project-sel002 .sel002-principal-finding p { margin: 0; color: var(--sel-text-soft); }
+body.project-sel002 .sel002-overview-cards {
   display: grid;
-  gap: 0;
-  border-top: 1px solid var(--sel-border);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
 }
-
-body.sel-002-publication .study-area-fact {
-  display: grid;
-  grid-template-columns: minmax(110px, .7fr) minmax(0, 1fr);
-  gap: 1rem;
-  padding-block: 1rem;
-  border-bottom: 1px solid var(--sel-border);
+body.project-sel002 .sel002-visual-card {
+  min-width: 0;
+  padding: 20px;
+  background: var(--sel002-card);
+  border: 1px solid var(--sel-border);
+  border-top: 3px solid var(--sel-accent);
 }
-
-body.sel-002-publication .study-area-fact-value {
-  color: var(--sel002-accent);
-  font-variant-numeric: tabular-nums;
+body.project-sel002 .sel002-visual-card[data-evidence="access"] { border-top-color: var(--sel002-access); }
+body.project-sel002 .sel002-visual-card[data-evidence="service"] { border-top-color: var(--sel002-service); }
+body.project-sel002 .sel002-visual-card[data-evidence="hotspot"] { border-top-color: var(--sel002-screening); }
+body.project-sel002 .sel002-visual-card span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--sel-body);
+  font-size: .61rem;
+  font-weight: 800;
+  letter-spacing: .08em;
 }
-
+body.project-sel002 .sel002-visual-card strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--sel-white);
+  font-size: clamp(1.45rem, 2.3vw, 2.2rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -.035em;
+}
+body.project-sel002 .sel002-visual-card p { margin: 0; color: var(--sel-body); font-size: .74rem; line-height: 1.55; }
+body.project-sel002 .sel002-muted-note {
+  margin-top: 24px;
+  padding: 13px 16px;
+  border: 1px solid var(--sel-border);
+  background: rgba(255,255,255,.035);
+  color: var(--sel-muted);
+  font-size: .68rem;
+  line-height: 1.55;
+}
 
 /* ==========================================================
-   10. METHODOLOGY PRESENTATION
+   02 STUDY AREA
    ========================================================== */
 
-body.sel-002-publication .methodology-flow {
+body.project-sel002 .sel002-study-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+body.project-sel002 .sel002-study-copy > p { max-width: 720px; }
+body.project-sel002 .sel002-study-facts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
-  margin-block: 2.5rem;
-}
-
-body.sel-002-publication .methodology-step {
-  position: relative;
-  padding: 1.5rem;
+  margin-top: 28px;
   border: 1px solid var(--sel-border);
-  background: var(--sel-surface);
+  background: var(--sel-border);
 }
-
-body.sel-002-publication .methodology-step-number {
-  display: block;
-  margin-bottom: 1rem;
-  color: var(--sel002-accent);
-  font-variant-numeric: tabular-nums;
-}
-
-body.sel-002-publication .methodology-step h3 {
-  margin-top: 0;
-}
-
-body.sel-002-publication .methodology-step p:last-child {
-  margin-bottom: 0;
-}
-
-
-/* ==========================================================
-   11. EQUITY WEIGHTING PRESENTATION
-   ========================================================== */
-
-body.sel-002-publication .equity-model {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, .45fr);
-  gap: clamp(2rem, 5vw, 5rem);
-  align-items: center;
-  margin-block: 3rem;
-}
-
-body.sel-002-publication .equity-model-visual {
-  display: grid;
-  grid-template-columns: 40fr 60fr;
-  min-height: 110px;
-  border: 1px solid var(--sel-border);
-  overflow: hidden;
-}
-
-body.sel-002-publication .equity-model-access {
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  background: color-mix(
-    in srgb,
-    var(--sel002-accessibility) 18%,
-    transparent
-  );
-}
-
-body.sel-002-publication .equity-model-vulnerability {
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  background: color-mix(
-    in srgb,
-    var(--sel002-equity) 18%,
-    transparent
-  );
-}
-
-body.sel-002-publication .equity-model-label {
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-}
-
-
-/* ==========================================================
-   12. PUBLICATION CALLOUTS
-   ========================================================== */
-
-body.sel-002-publication .publication-callout {
-  position: relative;
-  margin-block: 2.5rem;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  border: 1px solid var(--sel-border);
-  background: var(--sel002-accent-soft);
-}
-
-body.sel-002-publication .publication-callout::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: var(--sel002-accent);
-}
-
-body.sel-002-publication .publication-callout-title {
-  margin-top: 0;
-  color: var(--sel002-accent);
-}
-
-body.sel-002-publication .publication-callout > :last-child {
-  margin-bottom: 0;
-}
-
-
-/* Key message */
-
-body.sel-002-publication .publication-key-message {
-  margin-block: 3rem;
-  padding: clamp(1.75rem, 4vw, 3rem);
-  border-left: 4px solid var(--sel002-accent);
-  background: var(--sel002-accent-soft);
-}
-
-body.sel-002-publication .publication-key-message p {
-  max-width: var(--sel002-reading-width);
-}
-
-
-/* Evidence boundary */
-
-body.sel-002-publication .evidence-boundary {
-  border-left-color: var(--sel002-equity);
-}
-
-
-/* ==========================================================
-   13. MAP ATLAS
-   ========================================================== */
-
-body.sel-002-publication .map-atlas {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 3vw, 3rem);
-  width: 100%;
-  margin-top: 3rem;
-}
-
-body.sel-002-publication .map-atlas-item {
+body.project-sel002 .sel002-study-facts > div {
   min-width: 0;
+  padding: 18px 12px 16px;
+  background: var(--sel-section);
+  text-align: center;
 }
-
-body.sel-002-publication .map-atlas-figure {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
+body.project-sel002 .sel002-study-facts strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--sel-white);
+  font-size: 1.45rem;
+  line-height: 1;
+  font-weight: 800;
+}
+body.project-sel002 .sel002-study-facts span { display: block; color: var(--sel-body); font-size: .61rem; line-height: 1.4; }
+body.project-sel002 .sel002-study-map { margin: 0; min-width: 0; background: var(--sel-surface); }
+body.project-sel002 .sel002-study-map img { display: block; width: 100%; height: auto; }
+body.project-sel002 .sel002-study-map figcaption { display: none; }
+body.project-sel002 .sel002-boundary-note {
+  margin-top: 24px;
+  padding: 15px 18px;
+  background: var(--sel-raised);
   border: 1px solid var(--sel-border);
-  background: var(--sel-surface);
+  color: var(--sel-text-soft);
+  font-size: .72rem;
+  line-height: 1.55;
 }
-
-body.sel-002-publication .map-atlas-figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-body.sel-002-publication .map-atlas-figure a {
-  display: block;
-}
-
-body.sel-002-publication .map-atlas-caption {
-  padding-top: 1rem;
-}
-
-body.sel-002-publication .map-atlas-id {
-  display: block;
-  margin-bottom: .35rem;
-  color: var(--sel002-accent);
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-}
-
-body.sel-002-publication .map-atlas-title {
-  margin: 0;
-}
-
-body.sel-002-publication .map-atlas-key-message {
-  margin-top: .75rem;
-  max-width: var(--sel002-reading-width);
-}
-
-
-/* Map emphasis */
-
-body.sel-002-publication .map-atlas-item--primary {
-  grid-column: 1 / -1;
-}
-
-body.sel-002-publication .map-atlas-item--primary .map-atlas-figure {
-  max-width: none;
-}
-
+body.project-sel002 .sel002-boundary-note strong { color: var(--sel-white); }
 
 /* ==========================================================
-   14. MAP FIGURE PRESENTATION
+   03 EVIDENCE
    ========================================================== */
 
-body.sel-002-publication .publication-map {
-  width: 100%;
-  margin-block: 2.5rem;
-}
-
-body.sel-002-publication .publication-map figure {
-  margin: 0;
-}
-
-body.sel-002-publication .publication-map img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-body.sel-002-publication .publication-map figcaption {
-  max-width: var(--sel002-reading-width);
-  margin-top: 1rem;
-}
-
-
-/* ==========================================================
-   15. RESULTS PRESENTATION
-   ========================================================== */
-
-body.sel-002-publication .findings-grid {
+body.project-sel002 .sel002-evidence-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-top: 2.5rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
 }
-
-body.sel-002-publication .finding-card {
-  padding: clamp(1.5rem, 2vw, 2rem);
+body.project-sel002 .sel002-evidence-card,
+body.project-sel002 .sel002-dataset-card,
+body.project-sel002 .sel002-output-card {
+  min-width: 0;
+  background: var(--sel002-card);
   border: 1px solid var(--sel-border);
-  background: var(--sel-surface);
 }
-
-body.sel-002-publication .finding-card-number {
-  display: block;
-  margin-bottom: 1rem;
-  color: var(--sel002-accent);
-  font-variant-numeric: tabular-nums;
-}
-
-body.sel-002-publication .finding-card h3 {
-  margin-top: 0;
-}
-
-body.sel-002-publication .finding-card p:last-child {
-  margin-bottom: 0;
-}
-
-
-/* ==========================================================
-   16. RESEARCH QUESTIONS
-   ========================================================== */
-
-body.sel-002-publication .research-question-list {
-  display: grid;
-  gap: 1px;
-  margin-block: 2.5rem;
-  border-top: 1px solid var(--sel-border);
-}
-
-body.sel-002-publication .research-question {
-  display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
-  gap: 1.5rem;
-  padding-block: 1.5rem;
-  border-bottom: 1px solid var(--sel-border);
-}
-
-body.sel-002-publication .research-question-number {
-  color: var(--sel002-accent);
-  font-variant-numeric: tabular-nums;
-}
-
-body.sel-002-publication .research-question p {
-  max-width: var(--sel002-reading-width);
-  margin: 0;
-}
-
-
-/* ==========================================================
-   17. RESEARCH CONTRIBUTION
-   ========================================================== */
-
-body.sel-002-publication .contribution-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-top: 2.5rem;
-}
-
-body.sel-002-publication .contribution-card {
-  padding: 1.5rem;
-  border-top: 3px solid var(--sel002-accent);
-  background: var(--sel-surface);
-}
-
-body.sel-002-publication .contribution-card h3 {
-  margin-top: 0;
-}
-
-
-/* ==========================================================
-   18. FURTHER INVESTIGATION / EXTENSIONS
-   ========================================================== */
-
-body.sel-002-publication .extension-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: 2.5rem;
-}
-
-body.sel-002-publication .extension-item {
-  padding: 1.5rem;
-  border: 1px solid var(--sel-border);
-  background: var(--sel-surface);
-}
-
-body.sel-002-publication .extension-item h3 {
-  margin-top: 0;
-}
-
-
-/* ==========================================================
-   19. OUTPUTS
-   ========================================================== */
-
-body.sel-002-publication .outputs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 2.5rem;
-}
-
-body.sel-002-publication .output-card {
+body.project-sel002 .sel002-evidence-card {
+  min-height: 285px;
+  height: 100%;
+  padding: 22px;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  border-top: 3px solid var(--sel-accent);
+}
+body.project-sel002 .sel002-evidence-card[data-evidence="access"] { border-top-color: var(--sel002-access); }
+body.project-sel002 .sel002-evidence-card[data-evidence="service"] { border-top-color: var(--sel002-service); }
+body.project-sel002 .sel002-evidence-card[data-evidence="vulnerability"] { border-top-color: var(--sel002-vulnerability); }
+body.project-sel002 .sel002-evidence-card[data-evidence="screening"] { border-top-color: var(--sel002-screening); }
+body.project-sel002 .sel002-evidence-card h3 { margin: 0 0 12px; }
+body.project-sel002 .sel002-evidence-card p { margin: 0 0 18px; color: var(--sel-body); font-size: .76rem; line-height: 1.58; }
+body.project-sel002 .sel002-evidence-card > strong { display: block; color: var(--sel-text-soft); font-size: .67rem; line-height: 1.5; }
+body.project-sel002 .sel002-evidence-card > strong span { color: var(--sel-body); font-weight: 500; }
+body.project-sel002 .sel002-data-sources { margin-top: 48px; }
+body.project-sel002 .sel002-data-sources .sel002-subsection-heading h3 {
+  max-width: 100%;
+  margin: 0;
+  color: var(--sel-text);
+  font-family: var(--sans);
+  font-size: var(--sel-section-subtitle-size);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+body.project-sel002 .sel002-dataset-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+body.project-sel002 .sel002-dataset-card {
+  min-height: 285px;
+  height: 100%;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+body.project-sel002 .sel002-dataset-card dl { margin-top: auto; }
+body.project-sel002 .sel002-dataset-card > span { color: var(--sel-muted); font-size: .61rem; font-weight: 800; letter-spacing: .09em; }
+body.project-sel002 .sel002-dataset-card h4 { margin: 9px 0 10px; font-size: .88rem; }
+body.project-sel002 .sel002-dataset-card p { margin: 0 0 18px; color: var(--sel-body); font-size: .71rem; line-height: 1.55; }
+body.project-sel002 .sel002-dataset-card dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin: 0; padding-top: 12px; border-top: 1px solid var(--sel-line); }
+body.project-sel002 .sel002-dataset-card dt { color: var(--sel-muted); font-size: .61rem; font-weight: 700; }
+body.project-sel002 .sel002-dataset-card dd { margin: 0; color: var(--sel-text-soft); font-size: .63rem; text-align: right; }
+body.project-sel002 .sel002-repro-note,
+body.project-sel002 .sel002-repro-strip {
+  margin-top: 16px;
+  padding: 14px 17px;
+  border: 1px solid var(--sel-border);
+  background: rgba(255,255,255,.025);
+  color: var(--sel-body);
+  font-size: .68rem;
+  line-height: 1.55;
+}
+body.project-sel002 .sel002-repro-note strong,
+body.project-sel002 .sel002-repro-strip strong { color: var(--sel-text-soft); }
+
+/* ==========================================================
+   04 METHODOLOGY — ONE DIAGRAM + COLLAPSED DETAILS
+   ========================================================== */
+
+body.project-sel002 .sel002-method-diagram {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto auto auto auto auto auto;
+  gap: 10px;
+  align-items: stretch;
+  position: relative;
+  padding: clamp(22px, 3vw, 36px);
+  background: var(--sel002-card);
+  border: 1px solid var(--sel-border);
+  overflow: hidden;
+}
+body.project-sel002 .sel002-method-node {
+  min-width: 0;
+  min-height: 86px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: 1px solid var(--sel-border);
   background: var(--sel-surface);
 }
-
-body.sel-002-publication .output-card h3 {
-  margin-top: 0;
+body.project-sel002 .sel002-method-node span { margin-bottom: 6px; color: var(--sel-muted); font-size: .57rem; font-weight: 800; letter-spacing: .1em; }
+body.project-sel002 .sel002-method-node strong { color: var(--sel-white); font-size: .76rem; line-height: 1.25; }
+body.project-sel002 .sel002-method-node small { margin-top: 5px; color: var(--sel-body); font-size: .61rem; line-height: 1.35; }
+body.project-sel002 .node-census { grid-column: 1 / span 2; grid-row: 1; border-top: 3px solid var(--sel002-vulnerability); }
+body.project-sel002 .node-vulnerability { grid-column: 4 / span 2; grid-row: 1; border-top: 3px solid var(--sel002-vulnerability); }
+body.project-sel002 .node-osm { grid-column: 1 / span 2; grid-row: 2; border-top: 3px solid var(--sel002-access); }
+body.project-sel002 .node-access { grid-column: 4 / span 2; grid-row: 2; border-top: 3px solid var(--sel002-access); }
+body.project-sel002 .node-gtfs { grid-column: 1 / span 2; grid-row: 3; border-top: 3px solid var(--sel002-service); }
+body.project-sel002 .node-service { grid-column: 4 / span 2; grid-row: 3; border-top: 3px solid var(--sel002-service); }
+body.project-sel002 .node-cai { grid-column: 4 / span 2; grid-row: 4; align-self: stretch; border-top: 3px solid var(--sel002-composite); }
+body.project-sel002 .node-deficit { grid-column: 4 / span 2; grid-row: 5; align-self: stretch; border-top: 3px solid var(--sel002-composite); }
+body.project-sel002 .node-final { grid-column: 4 / span 2; grid-row: 6; align-self: stretch; border-top: 3px solid var(--sel002-screening); }
+body.project-sel002 .sel002-method-branch { display: none; }
+body.project-sel002 .sel002-method-diagram::after { display: none; }
+body.project-sel002 .sel002-method-details { margin-top: 14px; }
+body.project-sel002 .sel002-method-details details,
+body.project-sel002 .sel002-limitations {
+  border: 1px solid var(--sel-border);
+  background: rgba(255,255,255,.025);
 }
-
-body.sel-002-publication .output-card .output-link {
-  margin-top: auto;
-  padding-top: 1.5rem;
+body.project-sel002 .sel002-method-details summary,
+body.project-sel002 .sel002-limitations summary {
+  cursor: pointer;
+  padding: 15px 18px;
+  color: var(--sel-text-soft);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .05em;
 }
-
+body.project-sel002 .sel002-model-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--sel-border); border-top: 1px solid var(--sel-border); }
+body.project-sel002 .sel002-model-grid article { padding: 18px; background: var(--sel-section); }
+body.project-sel002 .sel002-model-grid article > span { color: var(--sel-muted); font-size: .59rem; font-weight: 800; letter-spacing: .08em; }
+body.project-sel002 .sel002-model-grid strong { display: block; margin: 8px 0; color: var(--sel-white); font-size: .84rem; }
+body.project-sel002 .sel002-model-grid p { margin: 0; color: var(--sel-body); font-size: .67rem; line-height: 1.5; }
+body.project-sel002 .sel002-method-guardrail { margin-top: 14px; padding: 14px 17px; border-left: 3px solid var(--sel-warning); background: rgba(193,141,69,.07); color: var(--sel-body); font-size: .67rem; line-height: 1.55; }
+body.project-sel002 .sel002-method-guardrail strong { color: var(--sel-text-soft); }
 
 /* ==========================================================
-   20. SEL-002 PUBLICATION CONTENTS
-   Horizontal in-page navigation
+   05 MAP ATLAS
    ========================================================== */
 
-body.sel-002-publication .publication-toc-wrapper {
-  width: 100%;
-  margin-block: 2rem 4rem;
-  border-top: 1px solid var(--sel-border);
-  border-bottom: 1px solid var(--sel-border);
-}
-
-body.sel-002-publication .publication-toc {
-  width: 100%;
-  padding-block: 1rem;
-}
-
-body.sel-002-publication .publication-toc-label {
-  margin-bottom: .75rem;
-  color: var(--sel002-accent);
-  font-weight: 600;
-}
-
-body.sel-002-publication .publication-toc-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: .35rem 1.25rem;
-}
-
-body.sel-002-publication .publication-toc-list a {
-  position: relative;
-  display: inline-block;
-  padding-block: .25rem;
-}
-
-body.sel-002-publication .publication-toc-list a:hover {
-  color: var(--sel002-accent);
-}
-
-body.sel-002-publication .publication-toc-list a[aria-current="true"] {
-  color: var(--sel002-accent);
-}
-
-body.sel-002-publication .publication-toc-list a[aria-current="true"]::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -.2rem;
-  left: 0;
-  height: 2px;
-  background: var(--sel002-accent);
-}
-
+body.project-sel002 .sel002-atlas-reading-guide { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 18px; }
+body.project-sel002 .sel002-atlas-reading-guide > div { padding: 17px 18px; border: 1px solid var(--sel-border); background: var(--sel002-card); }
+body.project-sel002 .sel002-atlas-reading-guide span { display: block; color: var(--sel-muted); font-size: .6rem; font-weight: 800; letter-spacing: .08em; }
+body.project-sel002 .sel002-atlas-reading-guide strong { display: block; margin-top: 7px; color: var(--sel-white); font-size: .78rem; }
+body.project-sel002 .sel002-atlas-reading-guide p { margin: 6px 0 0; color: var(--sel-body); font-size: .67rem; line-height: 1.45; }
+body.project-sel002 .sel002-map-chain { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 7px 9px; margin-bottom: 18px; }
+body.project-sel002 .sel002-map-chain span { padding: 7px 9px; border: 1px solid var(--sel-border); background: var(--sel002-card); color: var(--sel-text-soft); font-size: .58rem; font-weight: 800; letter-spacing: .07em; }
+body.project-sel002 .sel002-map-chain span[data-evidence="access"] { border-color: var(--sel002-access); }
+body.project-sel002 .sel002-map-chain span[data-evidence="service"] { border-color: var(--sel002-service); }
+body.project-sel002 .sel002-map-chain span[data-evidence="vulnerability"] { border-color: var(--sel002-vulnerability); }
+body.project-sel002 .sel002-map-chain span[data-evidence="composite"] { border-color: var(--sel002-composite); }
+body.project-sel002 .sel002-map-chain span[data-evidence="screening"] { border-color: var(--sel002-screening); }
+body.project-sel002 .sel002-map-chain i { color: var(--sel-muted); font-style: normal; }
+body.project-sel002 .sel002-atlas-viewer { display: grid; grid-template-columns: minmax(190px, 23%) minmax(0, 1fr); min-height: 500px; overflow: hidden; border: 1px solid var(--sel-border); background: var(--sel-surface); }
+body.project-sel002 .sel002-atlas-index { display: flex; flex-direction: column; gap: 2px; padding: 10px; background: #123d35; }
+body.project-sel002 .sel002-atlas-item { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; width: 100%; padding: 13px 12px; border: 1px solid transparent; background: transparent; color: #eaf5f1; text-align: left; cursor: pointer; }
+body.project-sel002 .sel002-atlas-item span { color: #9ed8c9; font-size: .63rem; font-weight: 800; letter-spacing: .08em; }
+body.project-sel002 .sel002-atlas-item strong { font-size: .78rem; line-height: 1.35; font-weight: 600; }
+body.project-sel002 .sel002-atlas-item:hover,
+body.project-sel002 .sel002-atlas-item.is-active { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.13); }
+body.project-sel002 .sel002-atlas-stage { display: flex; flex-direction: column; min-width: 0; padding: clamp(14px,2vw,28px); }
+body.project-sel002 .sel002-atlas-image-wrap { display: flex; align-items: center; justify-content: center; flex: 1 1 auto; min-height: 320px; background: #202423; }
+body.project-sel002 .sel002-atlas-image-wrap img { display: block; width: 100%; height: 100%; max-height: 650px; object-fit: contain; }
+body.project-sel002 .sel002-atlas-caption { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 18px 0 12px; }
+body.project-sel002 .sel002-atlas-caption p { margin: 5px 0 0; }
+body.project-sel002 .sel002-atlas-label { color: var(--sel-accent-soft); font-size: .64rem; font-weight: 800; letter-spacing: .08em; }
+body.project-sel002 .sel002-atlas-caption h3 { margin: 0; font-size: 1.1rem; }
+body.project-sel002 .sel002-atlas-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+body.project-sel002 .sel002-atlas-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; border-top: 1px solid var(--sel-border); }
+body.project-sel002 .sel002-atlas-step { padding: 8px 12px; border: 1px solid var(--sel-border); background: transparent; color: inherit; cursor: pointer; font-size: .72rem; }
+body.project-sel002 .sel002-atlas-step:disabled { opacity: .35; cursor: default; }
+body.project-sel002 .sel002-atlas-controls > span { font-size: .68rem; font-weight: 800; letter-spacing: .06em; }
+body.project-sel002 .sel002-map-atlas-actions { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 18px; }
 
 /* ==========================================================
-   21. PUBLICATION PROGRESS
+   06 FINDINGS — EVIDENCE DASHBOARD
    ========================================================== */
 
-body.sel-002-publication .publication-progress {
+body.project-sel002 .sel002-findings-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+body.project-sel002 .sel002-finding-card { min-width: 0; padding: 22px; background: var(--sel002-card); border: 1px solid var(--sel-border); border-top: 3px solid var(--sel-accent); }
+body.project-sel002 .sel002-finding-card[data-evidence="access"] { border-top-color: var(--sel002-access); }
+body.project-sel002 .sel002-finding-card[data-evidence="service"] { border-top-color: var(--sel002-service); }
+body.project-sel002 .sel002-finding-card[data-evidence="vulnerability"] { border-top-color: var(--sel002-vulnerability); }
+body.project-sel002 .sel002-finding-card[data-evidence="composite"] { border-top-color: var(--sel002-composite); }
+body.project-sel002 .sel002-finding-card[data-evidence="screening"] { border-top-color: var(--sel002-screening); }
+body.project-sel002 .sel002-finding-card-wide { grid-column: span 2; }
+body.project-sel002 .sel002-finding-card > span { display: block; margin-bottom: 9px; color: var(--sel-muted); font-size: .61rem; font-weight: 800; letter-spacing: .08em; }
+body.project-sel002 .sel002-finding-card h3 { margin: 0 0 10px; }
+body.project-sel002 .sel002-finding-card p { margin: 0 0 16px; color: var(--sel-body); font-size: .73rem; line-height: 1.55; }
+body.project-sel002 .sel002-finding-card a,
+body.project-sel002 .sel002-screening-card a,
+body.project-sel002 .sel002-investigation-grid a,
+body.project-sel002 .sel002-output-card a { color: var(--sel-accent-soft); font-size: .66rem; font-weight: 800; text-decoration: none; }
+body.project-sel002 .sel002-finding-card a:hover,
+body.project-sel002 .sel002-screening-card a:hover,
+body.project-sel002 .sel002-investigation-grid a:hover,
+body.project-sel002 .sel002-output-card a:hover { text-decoration: underline; }
+body.project-sel002 .sel002-screening { margin-top: 48px; }
+body.project-sel002 .sel002-screening-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+body.project-sel002 .sel002-screening-card { min-width: 0; overflow: hidden; background: var(--sel002-card); border: 1px solid var(--sel-border); }
+body.project-sel002 .sel002-screening-card { min-height: 255px; }
+body.project-sel002 .sel002-screening-card > div { padding: 20px; }
+body.project-sel002 .sel002-screening-card h4 { margin: 0 0 13px; font-size: .86rem; }
+body.project-sel002 .sel002-screening-card dl { margin: 0 0 14px; }
+body.project-sel002 .sel002-screening-card dl > div { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-top: 1px solid var(--sel-line); }
+body.project-sel002 .sel002-screening-card dt { color: var(--sel-muted); font-size: .61rem; }
+body.project-sel002 .sel002-screening-card dd { margin: 0; color: var(--sel-white); font-size: .67rem; font-weight: 800; }
+body.project-sel002 .sel002-research-questions { margin-top: 48px; }
+body.project-sel002 .sel002-research-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+body.project-sel002 .sel002-research-grid article { padding: 22px; border: 1px solid var(--sel-border); background: var(--sel-surface); }
+body.project-sel002 .sel002-research-grid span { color: var(--sel-muted); font-size: .61rem; font-weight: 800; letter-spacing: .08em; }
+body.project-sel002 .sel002-research-grid h4 { margin: 9px 0 10px; }
+body.project-sel002 .sel002-research-grid p { margin: 0; color: var(--sel-body); font-size: .71rem; line-height: 1.55; }
+
+/* ==========================================================
+   07 CONTRIBUTION
+   ========================================================== */
+
+body.project-sel002 .sel002-contribution-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+body.project-sel002 .sel002-contribution-grid article { padding: 22px; background: var(--sel002-card); border: 1px solid var(--sel-border); border-top: 3px solid var(--sel-accent); }
+body.project-sel002 .sel002-contribution-grid article[data-evidence="access"] { border-top-color: var(--sel002-access); }
+body.project-sel002 .sel002-contribution-grid article[data-evidence="vulnerability"] { border-top-color: var(--sel002-vulnerability); }
+body.project-sel002 .sel002-contribution-grid article[data-evidence="screening"] { border-top-color: var(--sel002-screening); }
+body.project-sel002 .sel002-contribution-grid span { color: var(--sel-muted); font-size: .61rem; font-weight: 800; letter-spacing: .08em; }
+body.project-sel002 .sel002-contribution-grid h3 { margin: 9px 0 10px; }
+body.project-sel002 .sel002-contribution-grid p { margin: 0; color: var(--sel-body); font-size: .72rem; line-height: 1.55; }
+body.project-sel002 .sel002-investigation { margin-top: 48px; }
+body.project-sel002 .sel002-investigation > .publication-intro { max-width: 760px; }
+body.project-sel002 .sel002-investigation-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 22px; }
+body.project-sel002 .sel002-investigation-grid article { padding: 20px; border: 1px solid var(--sel-border); background: var(--sel-surface); }
+body.project-sel002 .sel002-investigation-grid article > span { color: var(--sel-muted); font-size: .61rem; font-weight: 800; }
+body.project-sel002 .sel002-investigation-grid h3 { margin: 9px 0 9px; font-size: .9rem; }
+body.project-sel002 .sel002-investigation-grid p { margin: 0 0 14px; color: var(--sel-body); font-size: .68rem; line-height: 1.55; }
+
+/* ==========================================================
+   08 OUTPUTS
+   ========================================================== */
+
+body.project-sel002 .sel002-output-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+body.project-sel002 .sel002-output-card { display: flex; flex-direction: column; min-height: 230px; padding: 22px; border-top: 3px solid var(--sel-accent); text-decoration: none; }
+body.project-sel002 .sel002-output-card[data-evidence="access"] { border-top-color: var(--sel002-access); }
+body.project-sel002 .sel002-output-card[data-evidence="composite"] { border-top-color: var(--sel002-composite); }
+body.project-sel002 .sel002-output-card[data-evidence="vulnerability"] { border-top-color: var(--sel002-vulnerability); }
+body.project-sel002 .sel002-output-card[data-evidence="screening"] { border-top-color: var(--sel002-screening); }
+body.project-sel002 .sel002-output-card > span { color: var(--sel-muted); font-size: .6rem; font-weight: 800; letter-spacing: .08em; }
+body.project-sel002 .sel002-output-card h3 { margin: 10px 0 9px; }
+body.project-sel002 .sel002-output-card p { margin: 0 0 18px; color: var(--sel-body); font-size: .71rem; line-height: 1.55; }
+body.project-sel002 .sel002-output-card > a:last-child { margin-top: auto; }
+body.project-sel002 .sel002-output-links { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: auto; }
+body.project-sel002 .sel002-repro-strip { margin-top: 18px; }
+body.project-sel002 .sel002-limitations { margin-top: 12px; }
+body.project-sel002 .sel002-boundary-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--sel-border); border-top: 1px solid var(--sel-border); }
+body.project-sel002 .sel002-boundary-grid article { padding: 16px; background: var(--sel-section); }
+body.project-sel002 .sel002-boundary-grid strong { color: var(--sel-text-soft); font-size: .68rem; }
+body.project-sel002 .sel002-boundary-grid p { margin: 7px 0 0; color: var(--sel-body); font-size: .64rem; line-height: 1.5; }
+body.project-sel002 .sel002-extension-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 1px; background: var(--sel-border); border-top: 1px solid var(--sel-border); }
+body.project-sel002 .sel002-extension-grid span { padding: 17px; background: var(--sel-section); color: var(--sel-text-soft); font-size: .65rem; line-height: 1.45; }
+
+/* ==========================================================
+   FULL MAP VIEWER
+   ========================================================== */
+
+body.project-sel002.sel002-map-modal-open { overflow: hidden; }
+body.project-sel002 .sel002-map-modal[hidden] { display: none; }
+body.project-sel002 .sel002-map-modal {
   position: fixed;
-  z-index: 1000;
-  inset: 0 0 auto;
-  height: 3px;
-  pointer-events: none;
-}
-
-body.sel-002-publication .publication-progress-bar {
-  width: 0;
-  height: 100%;
-  background: var(--sel002-accent);
-  transform-origin: left center;
-}
-
-
-/* ==========================================================
-   22. PUBLICATION TABLES
-   ========================================================== */
-
-body.sel-002-publication .publication-table-wrap {
-  width: 100%;
-  overflow-x: auto;
-  margin-block: 2rem;
-}
-
-body.sel-002-publication .publication-table {
-  width: 100%;
-  min-width: 680px;
-  border-collapse: collapse;
-}
-
-body.sel-002-publication .publication-table th {
-  color: var(--sel002-accent);
-  font-weight: 600;
-  text-align: left;
-}
-
-body.sel-002-publication .publication-table th,
-body.sel-002-publication .publication-table td {
-  padding: .85rem 1rem;
-  border-bottom: 1px solid var(--sel-border);
-  vertical-align: top;
-}
-
-
-/* ==========================================================
-   23. METHOD NOTES
-   ========================================================== */
-
-body.sel-002-publication .method-note {
-  max-width: var(--sel002-reading-width);
-  margin-block: 2rem;
-  padding: 1.25rem 1.5rem;
-  border-left: 3px solid var(--sel002-accent);
-  background: var(--sel002-accent-soft);
-}
-
-body.sel-002-publication .method-note-title {
-  margin-top: 0;
-  color: var(--sel002-accent);
-}
-
-
-/* ==========================================================
-   24. REFERENCES / SOURCE NOTES
-   ========================================================== */
-
-body.sel-002-publication .source-note {
-  max-width: var(--sel002-reading-width);
-  padding-top: 1rem;
-  border-top: 1px solid var(--sel-border);
-}
-
-body.sel-002-publication .source-note + .source-note {
-  margin-top: 1rem;
-}
-
-
-/* ==========================================================
-   25. PUBLICATION DOWNLOADS
-   ========================================================== */
-
-body.sel-002-publication .publication-downloads {
+  inset: 0;
+  z-index: 2000;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+  place-items: center;
+  padding: 24px;
 }
-
-body.sel-002-publication .publication-download {
+body.project-sel002 .sel002-map-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7,19,24,.94);
+}
+body.project-sel002 .sel002-map-modal-panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(1500px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
+  background: var(--sel-section);
+  border: 1px solid var(--sel-border);
+  box-shadow: 0 24px 80px rgba(0,0,0,.45);
+}
+body.project-sel002 .sel002-map-modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
+  gap: 24px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--sel-border);
+}
+body.project-sel002 .sel002-map-modal-header h2 {
+  margin: 4px 0 0;
+  color: var(--sel-text);
+  font-family: var(--sans);
+  font-size: var(--sel-section-subtitle-size);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.35;
+}
+body.project-sel002 .sel002-map-modal-close {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
   border: 1px solid var(--sel-border);
-  background: var(--sel-surface);
+  background: transparent;
+  color: var(--sel-text);
+  font-size: 1.35rem;
+  cursor: pointer;
 }
-
-body.sel-002-publication .publication-download:hover {
-  border-color: var(--sel002-accent);
+body.project-sel002 .sel002-map-modal-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  flex: 1 1 auto;
+  padding: 18px;
+  background: #202423;
 }
-
+body.project-sel002 .sel002-map-modal-image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 190px);
+  object-fit: contain;
+}
+body.project-sel002 .sel002-map-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--sel-border);
+}
+body.project-sel002 .sel002-map-modal-actions { display: flex; gap: 8px; }
+body.project-sel002 .sel002-map-modal-footer button:disabled { opacity: .35; cursor: default; }
 
 /* ==========================================================
-   26. RESPONSIVE PUBLICATION BEHAVIOUR
+   RESPONSIVE — page-only
    ========================================================== */
 
 @media (max-width: 1200px) {
-
-  body.sel-002-publication .publication-dashboard-grid,
-  body.sel-002-publication .sel002-metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  body.sel-002-publication .methodology-flow {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  body.sel-002-publication .findings-grid,
-  body.sel-002-publication .contribution-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+  body.project-sel002 .sel002-evidence-grid,
+  body.project-sel002 .sel002-dataset-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  body.project-sel002 .sel002-screening-grid,
+  body.project-sel002 .sel002-output-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  body.project-sel002 .sel002-investigation-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  body.project-sel002 .sel002-boundary-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  body.project-sel002 .sel002-extension-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
-
 
 @media (max-width: 980px) {
-
-  body.sel-002-publication .publication-section-header {
-    grid-template-columns: 1fr;
-    gap: .75rem;
-  }
-
-  body.sel-002-publication .study-area-grid,
-  body.sel-002-publication .equity-model {
-    grid-template-columns: 1fr;
-  }
-
-  body.sel-002-publication .evidence-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  body.sel-002-publication .map-atlas {
-    grid-template-columns: 1fr;
-  }
-
-  body.sel-002-publication .map-atlas-item--primary {
-    grid-column: auto;
-  }
-
-  body.sel-002-publication .extension-list,
-  body.sel-002-publication .outputs-grid,
-  body.sel-002-publication .publication-downloads {
-    grid-template-columns: 1fr;
-  }
-
+  body.project-sel002 .sel002-stat-strip { width: 100%; margin-left: 0; }
+  body.project-sel002 .publication-hero-grid,
+  body.project-sel002 .publication-section-head { grid-template-columns: 1fr; }
+  body.project-sel002 .publication-section-head { align-items: start; }
+  body.project-sel002 .sel002-overview-grid,
+  body.project-sel002 .sel002-study-grid { grid-template-columns: 1fr; }
+  body.project-sel002 .sel002-overview-cards { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  body.project-sel002 .sel002-method-diagram { grid-template-columns: repeat(2, minmax(0,1fr)); grid-template-rows: auto; }
+  body.project-sel002 .node-census,
+  body.project-sel002 .node-vulnerability,
+  body.project-sel002 .node-osm,
+  body.project-sel002 .node-access,
+  body.project-sel002 .node-gtfs,
+  body.project-sel002 .node-service,
+  body.project-sel002 .node-cai,
+  body.project-sel002 .node-deficit,
+  body.project-sel002 .node-final { grid-column: auto; grid-row: auto; }
+  body.project-sel002 .sel002-method-diagram::after { display: none; }
+  body.project-sel002 .sel002-model-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  body.project-sel002 .sel002-findings-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  body.project-sel002 .sel002-finding-card-wide { grid-column: span 2; }
+  body.project-sel002 .sel002-contribution-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  body.project-sel002 .sel002-output-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
-
-@media (max-width: 720px) {
-
-  body.sel-002-publication .publication-section + .publication-section {
-    margin-top: 4rem;
-  }
-
-  body.sel-002-publication .publication-dashboard-grid,
-  body.sel-002-publication .sel002-metrics,
-  body.sel-002-publication .evidence-grid,
-  body.sel-002-publication .findings-grid,
-  body.sel-002-publication .contribution-grid,
-  body.sel-002-publication .methodology-flow {
-    grid-template-columns: 1fr;
-  }
-
-  body.sel-002-publication .research-question {
-    grid-template-columns: 1fr;
-    gap: .5rem;
-  }
-
-  body.sel-002-publication .study-area-fact {
-    grid-template-columns: 1fr;
-    gap: .35rem;
-  }
-
-  body.sel-002-publication .equity-model-visual {
-    grid-template-columns: 1fr;
-  }
-
-  body.sel-002-publication .publication-toc-list {
-    display: grid;
-    gap: .75rem;
-  }
-
-  body.sel-002-publication .publication-toc-list a[aria-current="true"]::after {
-    bottom: -.2rem;
-  }
-
+@media (max-width: 760px) {
+  body.project-sel002 .sel002-stat-strip { width: 100%; margin-left: 0; }
+  body.project-sel002 .sel002-evidence-nav-inner { width: calc(100% - (2 * var(--sel-gutter))); gap: 12px; }
+  body.project-sel002 .sel002-evidence-nav-label { display: none; }
+  body.project-sel002 .sel002-evidence-nav-links { width: 100%; gap: 16px; }
+  body.project-sel002 .sel002-evidence-nav-links a { line-height: 44px; }
+  body.project-sel002 .sel002-stat-strip,
+  body.project-sel002 .sel002-study-facts,
+  body.project-sel002 .sel002-overview-cards,
+  body.project-sel002 .sel002-evidence-grid,
+  body.project-sel002 .sel002-dataset-grid,
+  body.project-sel002 .sel002-atlas-reading-guide,
+  body.project-sel002 .sel002-findings-grid,
+  body.project-sel002 .sel002-screening-grid,
+  body.project-sel002 .sel002-research-grid,
+  body.project-sel002 .sel002-contribution-grid,
+  body.project-sel002 .sel002-investigation-grid,
+  body.project-sel002 .sel002-output-grid { grid-template-columns: 1fr; }
+  body.project-sel002 .sel002-stat { border-right: 0; border-bottom: 1px solid var(--sel-border); }
+  body.project-sel002 .sel002-stat:last-child { border-bottom: 0; }
+  body.project-sel002 .sel002-atlas-viewer { grid-template-columns: 1fr; }
+  body.project-sel002 .sel002-atlas-index { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.project-sel002 .sel002-atlas-caption,
+  body.project-sel002 .sel002-map-atlas-actions { align-items: flex-start; flex-direction: column; }
+  body.project-sel002 .sel002-atlas-image-wrap { min-height: 230px; }
+  body.project-sel002 .sel002-finding-card-wide { grid-column: auto; }
+  body.project-sel002 .sel002-boundary-grid,
+  body.project-sel002 .sel002-extension-grid { grid-template-columns: 1fr; }
+  body.project-sel002 .sel002-hero-map img { min-height: 230px; }
 }
 
-
-/* ==========================================================
-   27. PRINT
-   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  body.project-sel002 * { scroll-behavior: auto !important; }
+}
 
 @media print {
-
-  body.sel-002-publication .publication-progress,
-  body.sel-002-publication .publication-toc-wrapper {
-    display: none;
-  }
-
-  body.sel-002-publication .publication-section {
-    break-inside: avoid;
-  }
-
-  body.sel-002-publication .map-atlas {
-    grid-template-columns: 1fr 1fr;
-  }
-
+  body.project-sel002 .sel002-evidence-nav,
+  body.project-sel002 .publication-progress { display: none; }
+  body.project-sel002 .sel002-section { break-inside: avoid; }
 }
-
-/* ==========================================================
-   SEL-002 REFINEMENTS — 2026-09-30
-   Scoped exclusively to body.project-sel002.
-   Shared SEL typography, colour tokens, header and footer remain
-   owned by the global system.
-   ========================================================== */
-
-body.project-sel002 .publication-section,
-body.project-sel002 .publication-hero { scroll-margin-top: calc(var(--nav-height, 68px) + 52px); }
-
-/* Sticky evidence navigator */
-body.project-sel002 .sel002-section-nav {
-  position: sticky;
-  top: var(--nav-height, 68px);
-  z-index: 1100;
-  background: rgba(23,42,58,.98);
-  border-bottom: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 3px 14px rgba(0,0,0,.12);
-}
-body.project-sel002 .sel002-section-nav-inner {
-  width: min(1180px, calc(100% - 2rem));
-  margin-inline: auto;
-  min-height: 42px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-body.project-sel002 .sel002-section-nav-inner::-webkit-scrollbar { display:none; }
-body.project-sel002 .sel002-section-nav-label,
-body.project-sel002 .sel002-section-nav a {
-  flex: 0 0 auto;
-  color: rgba(255,255,255,.72);
-  font-size: .62rem;
-  font-weight: 800;
-  letter-spacing: .075em;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-body.project-sel002 .sel002-section-nav-label { color: var(--sel002-accent); margin-right: .35rem; }
-body.project-sel002 .sel002-section-nav a:hover,
-body.project-sel002 .sel002-section-nav a.is-active { color:#fff; }
-body.project-sel002 .sel002-section-nav a span { color: var(--sel002-accent); }
-
-/* Hero: stats are a compact strip directly beneath the map column. */
-body.project-sel002 .publication-hero-grid {
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  align-items:stretch;
-}
-body.project-sel002 .publication-hero-media { grid-column:2; grid-row:1; margin:0; }
-body.project-sel002 .publication-hero-copy { grid-column:1; grid-row:1; }
-body.project-sel002 .publication-stats {
-  grid-column:2;
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:2px;
-  width:100%;
-  margin:0;
-  padding:2px 0 0;
-  background:transparent;
-}
-body.project-sel002 .publication-stats > div {
-  min-width:0;
-  min-height:72px;
-  padding:.65rem .45rem .55rem;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  text-align:center;
-  background:var(--sel-surface,#172a3a);
-  border:1px solid var(--sel-border);
-}
-body.project-sel002 .publication-stats strong {
-  display:block;
-  margin:0 0 .25rem;
-  font-size:clamp(1rem,1.45vw,1.35rem);
-  line-height:1;
-  font-weight:800;
-  font-variant-numeric:tabular-nums;
-  color:#fff;
-}
-body.project-sel002 .publication-stats span { max-width:12ch; font-size:.58rem; line-height:1.25; color:var(--sel-muted); }
-
-/* Section heading follows the shared SEL project format. */
-body.project-sel002 .publication-section-head { display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,.72fr); gap:clamp(1.5rem,4vw,4rem); align-items:end; }
-body.project-sel002 .publication-section-head h2 { max-width:24ch; }
-body.project-sel002 .publication-section-head .publication-intro { max-width:var(--sel002-reading-width); }
-
-/* Study-area facts: one row, centred numbers. */
-body.project-sel002 #study-area .metric-list {
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:0;
-  border-top:1px solid var(--sel-border);
-  border-bottom:1px solid var(--sel-border);
-}
-body.project-sel002 #study-area .metric-list > div { min-width:0; padding:1rem .75rem; text-align:center; border-right:1px solid var(--sel-border); }
-body.project-sel002 #study-area .metric-list > div:last-child { border-right:0; }
-body.project-sel002 #study-area .metric-list strong { display:block; font-size:1.35rem; line-height:1; font-weight:800; text-align:center; color:#fff; font-variant-numeric:tabular-nums; }
-body.project-sel002 #study-area .metric-list span { display:block; margin-top:.35rem; font-size:.62rem; line-height:1.3; color:var(--sel-muted); }
-body.project-sel002 #study-area .study-figure figcaption { display:none; }
-body.project-sel002 #study-area .methodological-note { background:var(--sel002-accent-soft); border-color:var(--sel002-accent); }
-
-/* Evidence streams and source cards use identical four-column geometry. */
-body.project-sel002 #evidence .evidence-grid,
-body.project-sel002 #evidence .dataset-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; align-items:stretch; }
-body.project-sel002 #evidence .evidence-card,
-body.project-sel002 #evidence .dataset-card { height:100%; min-height:230px; display:flex; flex-direction:column; }
-body.project-sel002 #evidence .evidence-card[data-accent="access"]::before { background:#3B82F6; }
-body.project-sel002 #evidence .evidence-card[data-accent="service"]::before { background:#4FAE72; }
-body.project-sel002 #evidence .evidence-card[data-accent="vulnerability"]::before { background:#8B5FBF; }
-body.project-sel002 #evidence .evidence-card[data-accent="hotspot"]::before { background:#E58F65; }
-body.project-sel002 #evidence .dataset-card { border-top:3px solid var(--sel002-accent); }
-body.project-sel002 #evidence .data-source-section .subsection-heading h3 { max-width:24ch; font-size:clamp(1.35rem,2.2vw,2rem); line-height:1.12; font-weight:800; letter-spacing:-.03em; }
-body.project-sel002 #evidence .data-source-section { margin-top:3rem; }
-
-/* Compact methodology diagram */
-body.project-sel002 .sel002-method-diagram {
-  position:relative;
-  display:grid;
-  grid-template-columns:repeat(6,minmax(0,1fr));
-  grid-template-rows:auto auto auto auto auto;
-  gap:1rem;
-  margin:2.5rem 0;
-  padding:1.5rem;
-  border:1px solid var(--sel-border);
-  background:var(--sel-surface);
-  overflow:hidden;
-}
-body.project-sel002 .sel002-method-source,
-body.project-sel002 .sel002-method-node { position:relative; z-index:2; min-height:92px; padding:1rem; border:1px solid var(--sel-border); background:var(--sel-surface-raised,var(--sel-bg)); }
-body.project-sel002 .sel002-method-source { display:flex; flex-direction:column; justify-content:center; }
-body.project-sel002 .sel002-method-source strong { font-size:.8rem; letter-spacing:.02em; }
-body.project-sel002 .sel002-method-source small,
-body.project-sel002 .sel002-method-node small { display:block; margin-top:.25rem; color:var(--sel-muted); font-size:.68rem; line-height:1.35; }
-body.project-sel002 .sel002-method-kicker { color:var(--sel-muted); font-size:.55rem; font-weight:800; letter-spacing:.08em; }
-body.project-sel002 .sel002-method-node { display:grid; grid-template-columns:auto 1fr; column-gap:.65rem; align-items:center; }
-body.project-sel002 .sel002-method-node span { color:var(--sel002-accent); font-size:1rem; font-weight:800; font-variant-numeric:tabular-nums; }
-body.project-sel002 .sel002-method-node strong { font-size:.78rem; line-height:1.2; }
-body.project-sel002 .sel002-method-node small { grid-column:2; }
-body.project-sel002 .sel002-method-source-census { grid-column:1 / span 2; grid-row:1; border-top:3px solid #8B5FBF; }
-body.project-sel002 .sel002-method-source-osm { grid-column:3 / span 2; grid-row:1; border-top:3px solid #3B82F6; }
-body.project-sel002 .sel002-method-source-gtfs { grid-column:5 / span 2; grid-row:1; border-top:3px solid #4FAE72; }
-body.project-sel002 .sel002-method-vulnerability { grid-column:1 / span 2; grid-row:2; border-left:3px solid #8B5FBF; }
-body.project-sel002 .sel002-method-walking { grid-column:3; grid-row:2; border-left:3px solid #3B82F6; }
-body.project-sel002 .sel002-method-service { grid-column:5 / span 2; grid-row:2; border-left:3px solid #4FAE72; }
-body.project-sel002 .sel002-method-composite { grid-column:5 / span 2; grid-row:3; border-left:3px solid #E58F65; }
-body.project-sel002 .sel002-method-deficit { grid-column:5 / span 2; grid-row:4; border-left:3px solid #E58F65; }
-body.project-sel002 .sel002-method-screening { grid-column:5 / span 2; grid-row:5; border-left:3px solid #C95F5F; }
-body.project-sel002 .sel002-method-arrow { display:none; }
-body.project-sel002 .sel002-model-details { margin-top:1.25rem; border:1px solid var(--sel-border); background:transparent; }
-body.project-sel002 .sel002-model-details summary { cursor:pointer; padding:1rem 1.25rem; color:#fff; font-weight:700; }
-body.project-sel002 .sel002-model-details-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; padding:0 1px 1px; background:var(--sel-border); }
-body.project-sel002 .sel002-model-details-grid article { padding:1rem; background:var(--sel-surface); }
-body.project-sel002 .sel002-model-details-grid article span { display:block; margin-bottom:.35rem; color:var(--sel002-accent); font-size:.58rem; font-weight:800; letter-spacing:.08em; }
-body.project-sel002 .sel002-model-details-grid article strong { font-size:.9rem; }
-body.project-sel002 .sel002-model-details-grid article p { margin:.5rem 0 0; font-size:.72rem; color:var(--sel-muted); line-height:1.45; }
-
-/* Map controls: button treatment for all three actions. */
-body.project-sel002 .map-atlas-actions { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1.25rem; }
-body.project-sel002 .map-atlas-actions .sel-button { display:inline-flex; align-items:center; justify-content:center; }
-body.project-sel002 .map-modal-actions { display:flex; flex-wrap:wrap; gap:.6rem; }
-body.project-sel002 .map-modal-footer { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-body.project-sel002 .map-modal-nav:disabled { opacity:.35; cursor:not-allowed; }
-body.project-sel002 .sel002-map-open { overflow:hidden; }
-
-/* Findings screening cards */
-body.project-sel002 .sel002-screening-areas { margin-top:3rem; }
-body.project-sel002 .sel002-screening-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin-top:1.25rem; }
-body.project-sel002 .sel002-screening-card { min-height:255px; display:flex; flex-direction:column; padding:1.25rem; border:1px solid var(--sel-border); border-top:3px solid #C95F5F; background:var(--sel-surface); color:inherit; text-decoration:none; transition:border-color .18s ease,transform .18s ease; }
-body.project-sel002 .sel002-screening-card:hover { border-color:#C95F5F; transform:translateY(-2px); }
-body.project-sel002 .screening-card-kicker { color:#C95F5F; font-size:.58rem; font-weight:800; letter-spacing:.08em; }
-body.project-sel002 .sel002-screening-card h4 { margin:.55rem 0 1rem; font-size:1rem; }
-body.project-sel002 .sel002-screening-card dl { margin:0; }
-body.project-sel002 .sel002-screening-card dl div { display:flex; justify-content:space-between; gap:1rem; padding:.45rem 0; border-top:1px solid var(--sel-border); }
-body.project-sel002 .sel002-screening-card dt { color:var(--sel-muted); font-size:.68rem; }
-body.project-sel002 .sel002-screening-card dd { margin:0; color:#fff; font-size:.72rem; font-weight:800; font-variant-numeric:tabular-nums; }
-body.project-sel002 .sel002-screening-card > strong { margin-top:auto; padding-top:1rem; color:#fff; font-size:.68rem; }
-body.project-sel002 #findings .research-questions .subsection-heading h3,
-body.project-sel002 #findings .sel002-screening-areas .subsection-heading h3 { max-width:24ch; font-size:clamp(1.35rem,2.2vw,2rem); line-height:1.12; font-weight:800; letter-spacing:-.03em; }
-body.project-sel002 #findings .research-questions-grid h4 { max-width:34ch; }
-
-/* Contribution wording */
-body.project-sel002 #contribution .investigation-section .subsection-heading h3 { max-width:24ch; font-size:clamp(1.45rem,2.4vw,2.1rem); line-height:1.12; font-weight:800; letter-spacing:-.03em; }
-
-@media (max-width: 1100px) {
-  body.project-sel002 .sel002-screening-grid,
-  body.project-sel002 #evidence .evidence-grid,
-  body.project-sel002 #evidence .dataset-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  body.project-sel002 .sel002-model-details-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-}
-@media (max-width: 900px) {
-  body.project-sel002 .publication-hero-grid { grid-template-columns:1fr; }
-  body.project-sel002 .publication-hero-copy,
-  body.project-sel002 .publication-hero-media,
-  body.project-sel002 .publication-stats { grid-column:1; grid-row:auto; }
-  body.project-sel002 .publication-stats { grid-template-columns:repeat(4,minmax(0,1fr)); }
-  body.project-sel002 .publication-section-head { grid-template-columns:1fr; align-items:start; }
-  body.project-sel002 .sel002-method-diagram { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
-  body.project-sel002 .sel002-method-source-census,
-  body.project-sel002 .sel002-method-source-osm,
-  body.project-sel002 .sel002-method-source-gtfs,
-  body.project-sel002 .sel002-method-vulnerability,
-  body.project-sel002 .sel002-method-walking,
-  body.project-sel002 .sel002-method-service,
-  body.project-sel002 .sel002-method-composite,
-  body.project-sel002 .sel002-method-deficit,
-  body.project-sel002 .sel002-method-screening { grid-column:auto; grid-row:auto; }
-}
-@media (max-width: 700px) {
-  body.project-sel002 .publication-stats,
-  body.project-sel002 #study-area .metric-list,
-  body.project-sel002 .sel002-screening-grid,
-  body.project-sel002 #evidence .evidence-grid,
-  body.project-sel002 #evidence .dataset-grid,
-  body.project-sel002 .sel002-model-details-grid { grid-template-columns:1fr 1fr; }
-  body.project-sel002 .publication-stats > div { min-height:68px; }
-  body.project-sel002 #study-area .metric-list > div:nth-child(2) { border-right:0; }
-  body.project-sel002 #study-area .metric-list > div:nth-child(n+3) { border-top:1px solid var(--sel-border); }
-  body.project-sel002 .sel002-method-diagram { grid-template-columns:1fr; }
-  body.project-sel002 .map-modal-footer { flex-wrap:wrap; }
-}
-@media (max-width: 480px) {
-  body.project-sel002 .publication-stats,
-  body.project-sel002 #study-area .metric-list,
-  body.project-sel002 .sel002-screening-grid,
-  body.project-sel002 #evidence .evidence-grid,
-  body.project-sel002 #evidence .dataset-grid,
-  body.project-sel002 .sel002-model-details-grid { grid-template-columns:1fr; }
-}
-
